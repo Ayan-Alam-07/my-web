@@ -1,5 +1,4 @@
 import style from "./HomeEarn.module.css";
-import { motion } from "framer-motion";
 import { TbDeviceTvOld } from "react-icons/tb";
 import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
@@ -157,7 +156,7 @@ const HomeEarn = () => {
         </div>
 
         <div className="row text-white justify-content-around">
-          <div className="col-12 col-md-10 p-0 col-lg-9">
+          <div className="col-12 col-md-10 mb-3 p-0 col-lg-9">
             <div className="ms-sm-3">
               <img
                 src={giveawayBanner}
