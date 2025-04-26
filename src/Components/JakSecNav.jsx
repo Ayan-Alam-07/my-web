@@ -1,5 +1,5 @@
 import style from "./JakSecNav.module.css";
-import FitLogo from "../Assets/jk-logo.png";
+import FitLogo from "../assets/jk-logo.png";
 
 const JackNav = () => {
   return (

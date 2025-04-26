@@ -1,5 +1,5 @@
 import style from "./JakSecFoot.module.css";
-import logo from "../Assets/jk-logo.png";
+import logo from "../assets/jk-logo.png";
 import { FaCopyright } from "react-icons/fa";
 
 const JakSecFooter = () => {
