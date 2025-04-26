@@ -5,8 +5,6 @@ import { useState } from "react";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
-import giveawayBack from "../../assets/giveaway-back.jpg";
-import giveawayGiftBox from "../../assets/giveaway-Gift-Box.png";
 import giveawayBanner from "../../assets/giveaway-banner-3.png";
 
 const HomeEarn = () => {
