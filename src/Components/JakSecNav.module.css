@@ -1,0 +1,58 @@
+.nav {
+  background-color: #fcfcfc !important;
+  padding: 0.81vw 0;
+  user-select: none;
+}
+.FitLogo {
+  cursor: pointer;
+  margin: 0 2vw 0 115px;
+  height: 3.54vw;
+  width: 3.54vw;
+  transform: scale(1.2);
+  border-radius: 50%;
+  border: none;
+}
+
+.NavTitle {
+  font-family: "nunito";
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+.NavTitle p {
+  font-size: 24px;
+}
+.NavTitle span {
+  font-size: 25px;
+}
+@media (width <= 575px) {
+  .FitLogo {
+    margin: 0 0 0 1vw;
+    height: 8.04vw;
+    width: 8.04vw;
+  }
+  .NavTitle {
+    font-size: 6.48vw !important;
+    margin: 0 0 0 4vw;
+  }
+  .NavTitle p {
+    font-size: 6.5vw;
+  }
+  .NavTitle span {
+    font-size: 6.5vw;
+  }
+}
+@media (width > 575px) and (width < 991px) {
+  .FitLogo {
+    margin: 0.5vw 4vw 0.5vw 4.5vw;
+    height: 8.04vw;
+    width: 8.04vw;
+  }
+}
+
+@media (width > 1440px) {
+  .FitLogo {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}

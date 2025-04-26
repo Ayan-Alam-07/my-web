@@ -1,0 +1,83 @@
+img {
+  user-select: none;
+  cursor: pointer;
+}
+.detail {
+  font-size: 24px;
+}
+.timer {
+  font-size: 22px !important;
+}
+.FitPgImg {
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.FitImg02 {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+.FitImg03 {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+.FitImg04 {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  border-radius: 18px;
+}
+.FitImg05 {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+.FitImg06 {
+  width: 85%;
+  height: 50vh;
+  border-radius: 18px;
+}
+.bdrleft {
+  border: none;
+}
+.jkBtnPg1 {
+  background-color: #0d6efd;
+  color: #f2f2f2;
+  padding: 8px 26px;
+  text-transform: capitalize;
+  font-family: "outfit";
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  letter-spacing: 0.1vw;
+}
+@media (width > 991px) {
+  .FitImg02 {
+    width: 70%;
+    height: 69vh;
+    border-radius: 20px;
+  }
+  .FitImg03 {
+    border-radius: 10px;
+  }
+  .FitImg04 {
+    border-radius: 10px;
+    height: 60vh;
+    width: 90%;
+    margin: 0 0 10px 5%;
+  }
+  .FitImg05 {
+    width: 72.5%;
+    height: 71vh;
+  }
+  .FitImg06 {
+    width: 62%;
+    height: 46vh;
+  }
+  .bdrleft {
+    border-left: 2px solid black;
+  }
+}

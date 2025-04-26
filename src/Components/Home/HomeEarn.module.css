@@ -1,0 +1,194 @@
+.HomeEarnpara {
+  color: #fff;
+  font-size: 20px;
+  font-family: "nunito";
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.homeEarnTaskUnd {
+  display: block;
+  height: 5px;
+  width: 44px;
+  border-radius: 5px;
+  background-color: #ffd700;
+}
+.homeEarnTaskUnd2 {
+  display: block;
+  height: 6px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #ffd700;
+}
+.homeEarnTaskUnd3 {
+  display: block;
+  height: 6px;
+  width: 82px;
+  border-radius: 5px;
+  background-color: #ffd700;
+}
+.HomeEarnCard {
+  margin: 20px 0 15px 0;
+  height: 48vw;
+  width: 65vw;
+  border: none;
+  border-radius: 25px;
+  background-color: #fff; /* #161827 */
+}
+
+.HomeEarnCoins {
+  margin: 0 0 0 4.4vw;
+  font-size: 5.47vw;
+  font-family: "nunito";
+  font-weight: 700;
+}
+.HomeEarnAdsBtn {
+  padding: 2.7vw 7vw;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 4.5vw;
+  font-family: "outfit";
+  font-weight: 600;
+  letter-spacing: 0.12vw;
+}
+.HomeEarnAdsBtn:active {
+  background-color: #161827;
+}
+
+.giveBackImage {
+  width: 100%;
+  height: 270px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 25px;
+}
+
+.homeFollowLogo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.homeFollowDetail {
+  margin: 0 0 0 5vw;
+  font-size: 4.05vw;
+  font-weight: 700;
+  font-family: "nunito";
+  letter-spacing: 0.2vw;
+}
+.homeFollowBtn {
+  padding: 2.7vw 6.9vw;
+  text-shadow: 3px 3px 3px #161827;
+  font-family: "outfit";
+  font-size: 4.75vw;
+  font-weight: 600;
+  letter-spacing: 0.18vw;
+  background-color: #00bfa6;
+  color: #fff;
+  border: 1.8px solid #fff;
+  border-radius: 25px;
+}
+.homeFollowBtn:active {
+  background-color: #161827;
+  border: 2px solid #fff;
+}
+@media (min-width: 575px) {
+  .HomeEarnCard {
+    margin-left: 8vw;
+    height: 33.5vw;
+    width: 50vw;
+  }
+  .HomeEarnpara {
+    font-size: 20px;
+  }
+  .HomeEarnCoins {
+    margin: 0 0 0 3.3vw;
+    font-size: 3.39vw;
+  }
+  .HomeEarnAdsBtn {
+    padding: 11px 36px;
+    font-size: 2.65vw;
+  }
+  .giveBackImage {
+    height: 340px;
+  }
+  .homeFollowDetail {
+    margin: 0 0 0 3.3vw;
+    font-size: 2.77vw;
+    letter-spacing: 0.15vw;
+  }
+  .homeFollowBtn {
+    padding: 1.82vw 4.5vw;
+    font-size: 2.62vw;
+    letter-spacing: 0.26vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .homeFollowBtn:hover {
+    background-color: #161827;
+    border: 2px solid #fff;
+  }
+
+  .HomeEarnCard {
+    margin-top: 24px;
+    height: 18.7vw;
+    width: 27vw;
+  }
+  .HomeEarnpara {
+    font-size: 22px;
+  }
+
+  .HomeEarnCoins {
+    margin: 0 0 0 1.4vw;
+    font-size: 1.95vw;
+  }
+  .HomeEarnAdsBtn {
+    padding: 12px 36px;
+    font-size: 1.55vw;
+  }
+  .giveBackImage {
+    height: 370px;
+  }
+  .homeFollowDetail {
+    margin: 0 0 0 2.3vw;
+    font-size: 1.52vw;
+    letter-spacing: 0.1vw;
+  }
+  .homeFollowBtn {
+    padding: 1.17vw 2.8vw;
+    border: 2px solid #fff;
+    font-size: 1.53vw;
+  }
+}
+
+@media (min-width: 1301px) {
+  .HomeEarnCard {
+    height: 16vw;
+    width: 24.5vw;
+  }
+  .HomeEarnpara {
+    font-size: 23px;
+  }
+  .HomeEarnCoins {
+    margin: 0 0 0 1.2vw;
+    font-size: 1.75vw;
+  }
+  .HomeEarnAdsBtn {
+    padding: 11px 36px;
+    font-size: 1.35vw;
+  }
+  .giveBackImage {
+    height: 400px;
+  }
+  .homeFollowDetail {
+    margin: 0 0 0 2vw;
+    font-size: 1.2vw;
+    letter-spacing: 0.1vw;
+  }
+  .homeFollowBtn {
+    padding: 0.81vw 2.2vw;
+    font-size: 1.2vw;
+  }
+}

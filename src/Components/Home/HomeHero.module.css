@@ -1,0 +1,72 @@
+* {
+  user-select: none;
+}
+.availcont {
+  margin: 38px 0 22px 0;
+}
+
+.availCoins {
+  padding: 3.2vw 5.26vw;
+  border-radius: 25px;
+  font-family: "outfit";
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 3.84vw;
+  color: #fff;
+  background-color: #2e3147;
+}
+.homeBalance {
+  font-size: 6.5vw;
+  letter-spacing: 2px;
+  font-family: "outfit";
+  font-weight: 700;
+}
+
+.seperator {
+  height: 1px;
+  width: 20%;
+  background-color: #bebebe;
+}
+
+.homeWallet {
+  margin-top: 30px;
+  padding: 3.5vw 3.94vw;
+  border-radius: 25px;
+  border: none;
+  font-size: 4.1vw;
+  font-family: "outfit";
+  font-weight: 800;
+  letter-spacing: 0.15vw;
+  color: #161827;
+}
+.homeWallet:active {
+  color: #00bfa6;
+  background-color: #000;
+}
+@media (min-width: 576px) {
+  .availcont {
+    margin-left: 8%;
+  }
+  .availCoins {
+    padding: 12px 25px;
+    font-size: 17px;
+  }
+  .homeBalance {
+    font-size: 28px;
+  }
+  .homeWallet {
+    padding: 13px 18px;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .availcont {
+    margin-left: 12%;
+  }
+  .homeWallet {
+    margin-top: 22px;
+    margin-right: 9vw;
+  }
+}

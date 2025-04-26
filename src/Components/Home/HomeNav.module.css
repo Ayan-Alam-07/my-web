@@ -1,0 +1,69 @@
+.homeNav {
+  padding: 12px;
+}
+
+.homeLogoFir {
+  font-size: 28px !important;
+  color: #ffd700;
+  font-family: "poppins";
+  letter-spacing: 1px;
+}
+.homeLogoLas {
+  margin: 0 0 0 2.5px;
+  font-size: 28px !important;
+  font-family: "poppins";
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .homeNav {
+    padding: 13px;
+  }
+
+  .homeLogoFir {
+    font-size: 30px !important;
+  }
+  .homeLogoLas {
+    font-size: 30px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeNav {
+    padding: 17px;
+  }
+
+  .homeLogoFir {
+    font-size: 34px !important;
+  }
+  .homeLogoLas {
+    font-size: 34px !important;
+  }
+}
+
+@media (min-width: 1700px) {
+  .homeNav {
+    padding: 18px;
+  }
+
+  .homeLogoFir {
+    font-size: 36px !important;
+  }
+  .homeLogoLas {
+    font-size: 36px !important;
+  }
+}
+
+@media (min-width: 2300px) {
+  .homeNav {
+    padding: 20px;
+  }
+
+  .homeLogoFir {
+    font-size: 40px !important;
+  }
+  .homeLogoLas {
+    font-size: 40px !important;
+  }
+}
