@@ -1,10 +1,10 @@
 import style from "./JakSecPg01.module.css";
-import FitImg01 from "../Assets/jk-01.jpg";
-import FitImg02 from "../Assets/jk-02.jpg";
-import FitImg03 from "../Assets/jk-04.jpg";
-import FitImg04 from "../Assets/jk-03.jpg";
-import FitImg05 from "../Assets/jk-06.jpg";
-import FitImg06 from "../Assets/jk-07.jpg";
+import FitImg01 from "../assets/jk-01.jpg";
+import FitImg02 from "../assets/jk-02.jpg";
+import FitImg03 from "../assets/jk-04.jpg";
+import FitImg04 from "../assets/jk-03.jpg";
+import FitImg05 from "../assets/jk-06.jpg";
+import FitImg06 from "../assets/jk-07.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
