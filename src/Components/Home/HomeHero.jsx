@@ -1,9 +1,15 @@
 import style from "./HomeHero.module.css";
+import { useNavigate } from "react-router-dom";
 import { FaCoins } from "react-icons/fa6";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GiWallet } from "react-icons/gi";
 
 const HomeHero = () => {
+  const homeEarnToWalletUi = useNavigate();
+  const handleWalletClick = () => {
+    homeEarnToWalletUi("/WalletUi");
+  };
+
   return (
     <div className="container-fluid" style={{ backgroundColor: "#252636" }}>
       <div className="container">
@@ -42,7 +48,10 @@ const HomeHero = () => {
                 </div>
               </div>
               <div>
-                <button className={style.homeWallet}>
+                <button
+                  className={style.homeWallet}
+                  onClick={handleWalletClick}
+                >
                   <GiWallet style={{ fontSize: "25px", marginRight: "5px" }} />
                   My Wallet
                 </button>

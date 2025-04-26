@@ -1,22 +1,16 @@
 // import "./App.css"; apply in the jackpot sections!!
 import Home from "./Components/Home/Home";
+import WalletUi from "./Components/Wallet/WalletUi";
 import { Routes, Route } from "react-router-dom";
-import JackpotPg01 from "./Components/JakSecPg01";
-import JackpotPg02 from "./Components/JakSecPg02";
-import JackNav from "./Components/JakSecNav";
-import JakSecFooter from "./Components/JakSecFoot";
 
-const Jackpot = () => {
+const App = () => {
   return (
     <>
-      <Home></Home>
-      {/* <JackNav />
       <Routes>
-        <Route path="/" element={<JackpotPg02 />} />
-        <Route path="/JackpotPg02" element={<JackpotPg01 />} />
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/WalletUi" element={<WalletUi />}></Route>
       </Routes>
-      <JakSecFooter /> */}
     </>
   );
 };
-export default Jackpot;
+export default App;
