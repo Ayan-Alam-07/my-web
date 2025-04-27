@@ -1,13 +1,10 @@
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { useList } from "../../Context/ContextStore";
+import CommonNavArr from "../CommonComponents/CommonNavArr";
 
 const Wallet = () => {
-  const { list } = useList();
-  const itemNeeded = list[0];
   return (
-    <div>
-      <p>{itemNeeded}</p>
-    </div>
+    <>
+      <CommonNavArr></CommonNavArr>
+    </>
   );
 };
 export default Wallet;

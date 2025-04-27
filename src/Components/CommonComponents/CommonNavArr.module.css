@@ -1,0 +1,36 @@
+body {
+  background-color: #161827 !important;
+  color: #fff !important;
+}
+.commonLeftArr {
+  font-size: 38px;
+  cursor: pointer;
+}
+.commonNavName {
+  margin: 0 0 0 20px;
+  font-family: "outfit";
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.3vw;
+}
+
+@media (min-width: 576px) {
+  .commonLeftArr {
+    font-size: 37.5px;
+  }
+  .commonNavName {
+    margin: 0 0 0 25px;
+    letter-spacing: 0.21vw;
+    font-size: 25.5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .commonLeftArr {
+    font-size: 37px;
+  }
+  .commonNavName {
+    letter-spacing: 0.13vw;
+    font-size: 24px;
+  }
+}

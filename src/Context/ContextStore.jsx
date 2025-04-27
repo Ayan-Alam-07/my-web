@@ -3,10 +3,16 @@ import { createContext, useContext, useState } from "react";
 const ListContext = createContext();
 
 export const ListProvider = ({ children }) => {
-  const [list] = useState(["Wallet", "Giveaway Code"]);
+  const [list] = useState([
+    { id: 1, name: "Wallet" },
+    { id: 2, name: "Giveaway Code" },
+  ]);
+  const [currentList, setCurrentList] = useState(list[0]);
 
   return (
-    <ListContext.Provider value={{ list }}>{children}</ListContext.Provider>
+    <ListContext.Provider value={{ list, currentList, setCurrentList }}>
+      {children}
+    </ListContext.Provider>
   );
 };
 
