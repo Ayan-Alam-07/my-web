@@ -2,3 +2,48 @@ body {
   background-color: #181a2a !important;
   color: #fff !important;
 }
+
+* {
+  user-select: none;
+}
+
+.availPara {
+  padding: 3.2vw 3.26vw;
+  border-radius: 25px;
+  font-family: "outfit";
+  font-weight: 600;
+  letter-spacing: 0.22vw;
+  font-size: 3.45vw;
+  color: #fff;
+  background-color: #2e3147;
+}
+.homeBalance {
+  font-size: 5.55vw;
+  letter-spacing: 0.6vw;
+  font-family: "outfit";
+  font-weight: 700;
+}
+
+@media (min-width: 576px) {
+  .availPara {
+    padding: 12px 25px;
+    letter-spacing: 0.27vw;
+    font-size: 20px;
+  }
+  .homeBalance {
+    letter-spacing: 0.38vw;
+    font-size: 4.2vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .availPara {
+    padding: 10px 22px;
+    letter-spacing: 0.1vw;
+    font-size: 17px;
+  }
+  .homeBalance {
+    letter-spacing: 0.17vw;
+    font-size: 2.22vw;
+  }
+}
