@@ -7,7 +7,7 @@ import { GiWallet } from "react-icons/gi";
 const HomeHero = () => {
   const homeEarnToWalletUi = useNavigate();
   const handleWalletClick = () => {
-    homeEarnToWalletUi("/WalletUi");
+    homeEarnToWalletUi("/Wallet");
   };
 
   return (
