@@ -43,6 +43,7 @@
   color: #00bfa6;
   background-color: #000;
 }
+
 @media (min-width: 576px) {
   .availcont {
     margin-left: 8%;
@@ -68,5 +69,9 @@
   .homeWallet {
     margin-top: 22px;
     margin-right: 9vw;
+  }
+  .homeWallet:hover {
+    color: bisque;
+    background-color: #000;
   }
 }
