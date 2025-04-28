@@ -1,8 +1,13 @@
 import style from "./WalletBody.module.css";
 import { FaCoins } from "react-icons/fa6";
 import { FaIndianRupeeSign } from "react-icons/fa6";
+import { useState } from "react";
+import PaymentMethod from "./PaymentMethod";
+import Transactions from "./Transactions";
 
 const WalletBody = () => {
+  const [activeTab, setActiveTab] = useState("payment");
+
   return (
     <div className="container-fluid">
       <div className="container">
@@ -47,6 +52,36 @@ const WalletBody = () => {
             </div>
           </div>
           <div className="mt-2 mt-lg-3"></div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 p-0">
+            <div className="d-flex justify-content-end mt-3 pt-2">
+              <p
+                className={style.walletTabs}
+                onClick={() => setActiveTab("payment")}
+                style={{
+                  fontWeight: activeTab === "payment" ? "bold" : "normal",
+                  opacity: activeTab === "payment" ? "" : "0.7",
+                }}
+              >
+                Payment Method
+              </p>
+              <div className={style.tabsSeperator}></div>
+              <p
+                className={style.walletTabs}
+                onClick={() => setActiveTab("transactions")}
+                style={{
+                  fontWeight: activeTab === "transactions" ? "bold" : "normal",
+                  opacity: activeTab === "transactions" ? "1" : "0.7",
+                }}
+              >
+                Transactions
+              </p>
+            </div>
+            {activeTab === "payment" && <PaymentMethod />}
+            {activeTab === "transactions" && <Transactions />}
+          </div>
         </div>
       </div>
     </div>

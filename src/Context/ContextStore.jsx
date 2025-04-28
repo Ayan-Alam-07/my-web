@@ -10,7 +10,13 @@ export const ListProvider = ({ children }) => {
   const [currentList, setCurrentList] = useState(list[0]);
 
   return (
-    <ListContext.Provider value={{ list, currentList, setCurrentList }}>
+    <ListContext.Provider
+      value={{
+        list,
+        currentList,
+        setCurrentList,
+      }}
+    >
       {children}
     </ListContext.Provider>
   );

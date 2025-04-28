@@ -23,6 +23,16 @@ body {
   font-family: "outfit";
   font-weight: 700;
 }
+.walletTabs {
+  font-family: "outfit";
+  padding: 0 0 5px 0;
+  margin: 0 4vw;
+  font-size: 3.84vw;
+  letter-spacing: 0.2vw;
+}
+.tabsSeperator {
+  border-right: 2px solid #fff;
+}
 
 @media (min-width: 576px) {
   .availPara {
@@ -33,6 +43,14 @@ body {
   .homeBalance {
     letter-spacing: 0.38vw;
     font-size: 4.2vw;
+  }
+  .walletTabs {
+    font-size: 2.35vw;
+    margin-top: 12px;
+  }
+  .tabsSeperator {
+    margin-bottom: 3px;
+    margin-top: 10px;
   }
 }
 
@@ -45,5 +63,14 @@ body {
   .homeBalance {
     letter-spacing: 0.17vw;
     font-size: 2.22vw;
+  }
+  .walletTabs {
+    font-size: 1.27vw;
+    margin: 8px 1.5vw;
+    letter-spacing: 0.1vw;
+  }
+  .tabsSeperator {
+    margin-top: 9px;
+    margin-bottom: 9px;
   }
 }
