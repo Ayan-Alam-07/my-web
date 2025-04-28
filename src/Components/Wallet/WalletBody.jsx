@@ -46,7 +46,7 @@ const WalletBody = () => {
               </div>
             </div>
           </div>
-          <div className="mt-2"></div>
+          <div className="mt-2 mt-lg-3"></div>
         </div>
       </div>
     </div>

@@ -6,6 +6,9 @@ nav {
   font-size: 38px;
   cursor: pointer;
 }
+.commonLeftArr:active {
+  color: #999999;
+}
 .commonNavName {
   margin: 0 0 0 20px;
   font-family: "outfit";
