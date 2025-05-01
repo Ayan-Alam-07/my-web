@@ -13,9 +13,18 @@
   text-transform: capitalize;
   font-family: "outfit";
   font-weight: 700;
-  font-size: 3.1vw;
+  font-size: 3.2vw;
   letter-spacing: 0.2vw;
   color: red;
+}
+.scrollPayout {
+  margin: 3vw 0 0 2vw;
+  text-transform: capitalize;
+  font-family: "outfit";
+  font-weight: 700;
+  font-size: 3.5vw;
+  letter-spacing: 0.22vw;
+  color: #007bff;
 }
 .paymentLogoCont {
   height: 110px;
@@ -64,11 +73,68 @@
   font-size: 3.4vw;
 }
 
+.infoBox {
+  background-color: #2e3050;
+  border-radius: 14px;
+  padding: 4.45vw 5.15vw;
+  margin-top: 28px;
+  box-shadow: 4px 2px 20px rgba(213, 213, 213, 0.5);
+}
+.infoBox p {
+  font-family: "poppins";
+  font-weight: 700;
+  font-size: 4.3vw;
+}
+.infoLogo {
+  font-size: 4.4vw;
+  margin: 0 2vw 2vw 0;
+  color: #007bff;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 0;
+  color: #eaeaea;
+  font-family: "outfit";
+  font-weight: 500;
+  font-size: 4vw;
+  letter-spacing: 0.09vw;
+  line-height: 1.6;
+}
+
+.infoList li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.securePayIcon {
+  color: #00c875;
+}
+.trustUserIcon {
+  color: #ffd166;
+}
+.payTimeIcon {
+  color: #66d9ef;
+}
+.correctInfoIcon {
+  color: #ff6b6b;
+}
+
+.securePayIcon,
+.trustUserIcon,
+.payTimeIcon,
+.correctInfoIcon {
+  font-size: 6.07vw;
+  margin: 0 3.5vw 0 0;
+}
+
 .paymentBtn {
   background: transparent;
-  font-size: 5.4vw;
-  margin: 12vw 8vw 6vw 0;
-  padding: 2.1vw 7.8vw;
+  font-size: 5.6vw;
+  margin: 12vw 0 12vw 0;
+  padding: 2.5vw 8.8vw;
   border-radius: 25px;
   border: 3px solid #fff;
   color: #fff;
@@ -103,9 +169,29 @@
   .selectPymtMode {
     font-size: 2.12vw;
   }
+  .scrollPayout {
+    font-size: 2.4vw;
+  }
+  .infoLogo {
+    font-size: 3.15vw;
+    margin: 0 2vw 2vw 0;
+  }
+  .infoBox p {
+    font-size: 2.85vw;
+  }
+  .securePayIcon,
+  .trustUserIcon,
+  .payTimeIcon,
+  .correctInfoIcon {
+    font-size: 3.7vw;
+    margin: 0 2.4vw 0 0;
+  }
+  .infoList {
+    font-size: 2.6vw;
+  }
   .paymentBtn {
     font-size: 3vw;
-    margin: 8.8vw 3.8vw 0 0;
+    margin: 8.8vw 3.8vw 8.5vw 0;
     padding: 2.5vw 7.8vw;
   }
 }
@@ -130,6 +216,32 @@
     font-size: 1.25vw;
     letter-spacing: 0.1vw;
     margin-top: 0.72vw;
+  }
+  .scrollPayout {
+    letter-spacing: 0.1vw;
+    margin-top: 0.72vw;
+    font-size: 1.3vw;
+  }
+  .infoLogo {
+    font-size: 2.15vw;
+    margin: 0 1.42vw 1.32vw 0;
+  }
+  .infoBox {
+    margin-top: 35px;
+    padding: 2vw 2.83vw;
+  }
+  .infoBox p {
+    font-size: 1.65vw;
+  }
+  .securePayIcon,
+  .trustUserIcon,
+  .payTimeIcon,
+  .correctInfoIcon {
+    font-size: 2.35vw;
+    margin: 0 2.4vw 0 0;
+  }
+  .infoList {
+    font-size: 1.56vw;
   }
   .paymentBtn {
     font-size: 1.5vw;

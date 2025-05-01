@@ -5,6 +5,12 @@ import amazonLogo from "../../assets/amazon-logo.png";
 import googlePlayLogo from "../../assets/googlePlay-logo.png";
 import paypalLogo from "../../assets/paypal-logo.png";
 import { TbInfoOctagonFilled } from "react-icons/tb";
+import { CgInfo } from "react-icons/cg";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import { FaUserLock } from "react-icons/fa";
+import { BsStopwatchFill } from "react-icons/bs";
+import { CgDetailsMore } from "react-icons/cg";
+import { li } from "framer-motion/client";
 
 const PaymentMethod = () => {
   const [clicked, setClicked] = useState(false);
@@ -16,6 +22,29 @@ const PaymentMethod = () => {
     { id: 1, logo: amazonLogo },
     { id: 2, logo: googlePlayLogo },
     { id: 3, logo: paypalLogo },
+  ];
+
+  const infos = [
+    {
+      id: 1,
+      icon: <RiSecurePaymentFill className={style.securePayIcon} />,
+      text: "Secure & Trusted Payments.",
+    },
+    {
+      id: 2,
+      icon: <FaUserLock className={style.trustUserIcon} />,
+      text: "Trusted by 100,000+ users.",
+    },
+    {
+      id: 3,
+      icon: <BsStopwatchFill className={style.payTimeIcon} />,
+      text: "Payments processed within 24 hours.",
+    },
+    {
+      id: 4,
+      icon: <CgDetailsMore className={style.correctInfoIcon} />,
+      text: "Ensure all payment details are entered correctly.",
+    },
   ];
 
   return (
@@ -36,7 +65,12 @@ const PaymentMethod = () => {
             please select the payment method to proceed.
           </p>
         ) : (
-          ""
+          <p className={style.scrollPayout}>
+            <span className="fw-bold">
+              <TbInfoOctagonFilled className="me-2" />
+            </span>{" "}
+            please Scroll down for payout.
+          </p>
         )}
         <div className={`row ms-3 ms-sm-0 mb-3  mt-lg-2 ${style.lowDevices}`}>
           <div className="col-5 p-0 col-lg-2 mt-5 mt-lg-4  ms-md-5 ps-md-5">
@@ -70,13 +104,28 @@ const PaymentMethod = () => {
               </div>
             </div>
           ))}
-          <div className="row justify-content-center align-items-center">
-            <div className="col-4">
-              <div className="d-flex justify-content-center">
-                <button disabled={!clicked} className={style.paymentBtn}>
-                  Payout
-                </button>
-              </div>
+        </div>
+        <div className="row mb-lg-5 align-items-center justify-content-center justify-content-lg-between align-items-lg-end p-0">
+          <div className="col-12 col-lg-8 p-0 mt-4">
+            <div className={style.infoBox}>
+              <p className="mb-3 mb-lg-1 pb-1">
+                <CgInfo className={style.infoLogo} />
+                Must Read :
+              </p>
+              <ul className={style.infoList}>
+                {infos.map((info) => (
+                  <li key={info.id}>
+                    <span>{info.icon}</span> {info.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="col-4 col-lg-3">
+            <div className="d-flex justify-content-lg-center mb-lg-5 pb-lg-5">
+              <button disabled={!clicked} className={style.paymentBtn}>
+                Payout
+              </button>
             </div>
           </div>
         </div>
