@@ -10,9 +10,14 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 import { FaUserLock } from "react-icons/fa";
 import { BsStopwatchFill } from "react-icons/bs";
 import { CgDetailsMore } from "react-icons/cg";
-import { li } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
 
 const PaymentMethod = () => {
+  const navigate = useNavigate();
+  const handlePayout = () => {
+    navigate("/Payout");
+  };
+
   const [clicked, setClicked] = useState(false);
   const handleLogoClick = () => {
     setClicked(!clicked);
@@ -123,7 +128,11 @@ const PaymentMethod = () => {
           </div>
           <div className="col-5 col-md-4 col-lg-3">
             <div className="d-flex justify-content-lg-center align-items-center mb-lg-5 pb-lg-5">
-              <button disabled={!clicked} className={style.paymentBtn}>
+              <button
+                disabled={!clicked}
+                className={style.paymentBtn}
+                onClick={handlePayout}
+              >
                 Payout
               </button>
             </div>

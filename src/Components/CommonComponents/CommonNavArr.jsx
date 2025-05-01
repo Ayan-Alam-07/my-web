@@ -3,13 +3,16 @@ import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useList } from "../../Context/ContextStore";
 import { useNavigate } from "react-router-dom";
 
-const CommonNavArr = () => {
+const CommonNavArr = ({ id, navigation }) => {
   const navigate = useNavigate();
   const handleArrowClick = () => {
-    navigate("/");
+    navigate(navigation);
   };
 
+  const { list } = useList();
+
   const { currentList } = useList();
+  const navItem = list.find((item) => item.id === id); // get specific item by id
 
   return (
     <nav>
@@ -22,7 +25,9 @@ const CommonNavArr = () => {
                   className={style.commonLeftArr}
                   onClick={handleArrowClick}
                 />
-                <p className={style.commonNavName}>{currentList.name}</p>
+                <p className={style.commonNavName}>
+                  {navItem?.name || "Unknown"}
+                </p>
               </div>
             </div>
           </div>

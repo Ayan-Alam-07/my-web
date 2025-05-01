@@ -5,7 +5,8 @@ const ListContext = createContext();
 export const ListProvider = ({ children }) => {
   const [list] = useState([
     { id: 1, name: "Wallet" },
-    { id: 2, name: "Giveaway Code" },
+    { id: 2, name: "Payout" },
+    { id: 3, name: "Giveaway Code" },
   ]);
   const [currentList, setCurrentList] = useState(list[0]);
 
