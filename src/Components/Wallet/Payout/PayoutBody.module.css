@@ -1,0 +1,92 @@
+.voucherContainer {
+  text-align: center;
+  color: #000;
+}
+.voucherContainer h3 {
+  text-align: start;
+  color: #fff;
+}
+
+.voucherGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.voucherCard {
+  background: #303450;
+  color: #f1f1f1;
+  font-size: 13px;
+  margin: 6px;
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.selected {
+  border: 3px solid #00ffc3;
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.upiLogo {
+  background-color: #fff;
+  width: 60px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+
+.amountRup {
+  display: inline-block;
+  margin: 5.5vw 0 1vw 0;
+  padding: 2vw 3.5vw;
+  border: 2px solid #fff;
+  border-radius: 14px;
+}
+.progressBar {
+  background: #797b84;
+  height: 9px;
+  border-radius: 4px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  background: #00e6b8;
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.redeemBtn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #00d1b2;
+  border: none;
+  border-radius: 12px;
+  color: #2c2c2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.redeemBtn:disabled {
+  background: gray;
+  color: #222;
+  cursor: not-allowed;
+}
+
+@media (min-width: 575px) {
+  .voucherGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+}

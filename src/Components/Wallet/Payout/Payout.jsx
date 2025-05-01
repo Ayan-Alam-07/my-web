@@ -5,7 +5,7 @@ const Payout = () => {
   return (
     <>
       <CommonNavArr id={2} navigation={"/Wallet"}></CommonNavArr>
-      <PayoutBody></PayoutBody>
+      <PayoutBody />
     </>
   );
 };
