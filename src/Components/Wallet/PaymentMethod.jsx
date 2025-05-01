@@ -121,8 +121,8 @@ const PaymentMethod = () => {
               </ul>
             </div>
           </div>
-          <div className="col-4 col-lg-3">
-            <div className="d-flex justify-content-lg-center mb-lg-5 pb-lg-5">
+          <div className="col-5 col-md-4 col-lg-3">
+            <div className="d-flex justify-content-lg-center align-items-center mb-lg-5 pb-lg-5">
               <button disabled={!clicked} className={style.paymentBtn}>
                 Payout
               </button>

@@ -229,6 +229,7 @@
   .infoBox {
     margin-top: 35px;
     padding: 2vw 2.83vw;
+    box-shadow: 2px 2px 10px rgba(185, 185, 185, 0.5);
   }
   .infoBox p {
     font-size: 1.65vw;
