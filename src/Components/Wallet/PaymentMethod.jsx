@@ -113,7 +113,7 @@ const PaymentMethod = () => {
           {paymentOptionsUnavail.map((option) => (
             <div
               key={option.id}
-              className="col-5 p-0 col-lg-2 mt-5 mt-lg-4 ms-md-5 ps-md-5 ps-lg-0"
+              className="col-5 p-0 col-lg-2 mt-5 mt-lg-4 ms-md-5  ps-lg-0"
             >
               <div className={style.paymentOptionsCont}>
                 <p className={style.unavialPara}>Unavailable</p>

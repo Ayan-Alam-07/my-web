@@ -31,7 +31,7 @@
 }
 .voucherGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(48.3%, 1fr));
   gap: 12px;
   margin-top: 16px;
 }
@@ -51,7 +51,7 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* slight elevation */
 }
 .voucherCard:hover {
-  transform: scale(1.09);
+  transform: scale(1.07);
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
 }
 .selected {
@@ -65,26 +65,37 @@
 }
 
 .disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .upiLogo {
   background-color: #fff;
-  width: 60px;
+  width: 68px;
   border-radius: 20px;
-  margin-bottom: 6px;
+  margin: 6px 0;
 }
 
 .amountRup {
   display: inline-block;
+  font-family: "poppins";
+  font-size: 3.84vw;
+  font-weight: 800;
+  letter-spacing: 0.18vw;
   margin: 5.5vw 0 1vw 0;
   padding: 2vw 3.5vw;
   border: 2px solid #fff;
-  border-radius: 14px;
+  border-radius: 13px;
+}
+.balToFor {
+  font-family: "outfit";
+  font-size: 2.92vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
 }
 .progressBar {
-  background: #797b84;
+  background: #8f9099;
+  width: 100%;
   height: 9px;
   border-radius: 4px;
   margin-top: 4px;
@@ -95,7 +106,7 @@
 .fill {
   background: #00e6b8;
   height: 100%;
-  transition: width 0.3s;
+  transition: width 0.4s;
 }
 .redeemBtnCont {
   width: 100%;
@@ -120,16 +131,35 @@
   cursor: not-allowed;
 }
 
+@media (max-width: 400px) {
+  .amountRup {
+    font-size: 4.85vw;
+    letter-spacing: 0.4vw;
+    margin: 5.5vw 0 1vw 0;
+    padding: 2vw 4vw;
+    border: 3px solid #fff;
+    border-radius: 13px;
+  }
+  .balToFor {
+    font-size: 3.85vw;
+    letter-spacing: 0.2vw;
+  }
+  .progressBar {
+    height: 9px;
+    width: 80%;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+}
+
 @media (min-width: 575px) {
   .voucherCard:hover {
     transform: scale(1.04);
   }
-
   .voucherGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
-    gap: 12px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
   }
   .voucherContainer h3 {
     margin: 30px 0 0 0;
@@ -139,6 +169,26 @@
     letter-spacing: 0.1vw;
     text-align: start;
     color: #fff;
+  }
+  .upiLogo {
+    width: 78px;
+    margin: 12px 0 7px;
+  }
+  .amountRup {
+    font-size: 2.38vw;
+    letter-spacing: 0.22vw;
+    margin: 3.87vw 0 1.3vw 0;
+    padding: 1.78vw 2.93vw;
+    border: 3px solid #fff;
+    border-radius: 13px;
+  }
+  .balToFor {
+    font-size: 1.95vw;
+    letter-spacing: 0.09vw;
+  }
+  .progressBar {
+    width: 84%;
+    margin-top: 5px;
   }
 }
 
@@ -150,7 +200,10 @@
     transform: scale(1.03);
   }
   .voucherGrid {
-    margin-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+    gap: 12px;
+    margin-top: 30px;
   }
 
   .voucherContainer h3 {
@@ -161,6 +214,24 @@
     letter-spacing: 0.1vw;
     text-align: start;
     color: #fff;
+  }
+  .upiLogo {
+    width: 66px;
+    margin: 10px 0 6px;
+  }
+  .amountRup {
+    font-size: 1.38vw;
+    letter-spacing: 0.1vw;
+    margin: 1.82vw 0 1.1vw 0;
+    padding: 0.61vw 1.47vw;
+  }
+  .balToFor {
+    font-size: 1vw;
+    letter-spacing: 0.08vw;
+  }
+  .progressBar {
+    width: 84%;
+    margin-top: 3px;
   }
   .redeemBtnCont {
     width: 100%;

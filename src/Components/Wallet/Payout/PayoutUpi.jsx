@@ -1,6 +1,7 @@
 import style from "./PayoutUpi.module.css";
 import { useState } from "react";
 import upiLogo from "../../../assets/upi-logo-2.png";
+import { GiTwoCoins } from "react-icons/gi";
 
 const PayoutUpi = () => {
   const [balance] = useState(10000); // Your coin balance
@@ -59,17 +60,29 @@ const PayoutUpi = () => {
                   />
                   <p>
                     {" "}
-                    <span className={style.amountRup}>₹ {v.amount}</span>{" "}
+                    <span className={style.amountRup}>
+                      <span style={{ color: "#00c853", marginRight: "4px" }}>
+                        ₹
+                      </span>{" "}
+                      {v.amount}
+                    </span>{" "}
                   </p>
-                  <p>
+                  <p className={style.balToFor}>
+                    {" "}
+                    <GiTwoCoins
+                      className="me-1 me-lg-2"
+                      style={{ fontSize: "24px", color: "#ffd700" }}
+                    />
                     {balance.toLocaleString()} of{" "}
                     {v.requiredCoins.toLocaleString()} VEs
                   </p>
-                  <div className={style.progressBar}>
-                    <div
-                      className={style.fill}
-                      style={{ width: `${progress}%` }}
-                    ></div>
+                  <div className="d-flex justify-content-center">
+                    <div className={style.progressBar}>
+                      <div
+                        className={style.fill}
+                        style={{ width: `${progress}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               );
