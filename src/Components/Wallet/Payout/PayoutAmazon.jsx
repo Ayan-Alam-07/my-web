@@ -72,8 +72,14 @@ const PayoutAmazon = () => {
                       className="me-1 me-lg-2"
                       style={{ fontSize: "24px", color: "#ffd700" }}
                     />
-                    {balance.toLocaleString()} of{" "}
-                    {v.requiredCoins.toLocaleString()} VEs
+                    <span style={{ color: "#00ffc3" }}>
+                      {balance.toLocaleString()}
+                    </span>{" "}
+                    Of{" "}
+                    <span style={{ color: "#79acff" }}>
+                      {v.requiredCoins.toLocaleString()}
+                    </span>{" "}
+                    VEs
                   </p>
                   <div className="d-flex justify-content-center">
                     <div className={style.progressBar}>
