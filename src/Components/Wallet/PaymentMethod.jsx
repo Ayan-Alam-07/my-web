@@ -18,15 +18,26 @@ const PaymentMethod = () => {
     navigate("/Payout");
   };
 
-  const [clicked, setClicked] = useState(false);
-  const handleLogoClick = () => {
-    setClicked(!clicked);
+  const [selectedId, setselectedId] = useState(null);
+  const handleLogoClick = (id) => {
+    setselectedId(id);
   };
 
-  const paymentOptions = [
-    { id: 1, logo: amazonLogo },
-    { id: 2, logo: googlePlayLogo },
-    { id: 3, logo: paypalLogo },
+  const paymentOptionsAvail = [
+    { id: 1, name: "upi", logo: upiLogo, class: "paymentLogoUpi" },
+    { id: 2, name: "amazon", logo: amazonLogo, class: "paymentLogoAmazon" },
+    {
+      id: 3,
+      name: "googlePlay",
+      logo: googlePlayLogo,
+      class: "paymentLogoGPlay",
+    },
+  ];
+
+  const paymentOptionsUnavail = [
+    // { id: 1, logo: amazonLogo },
+    // { id: 1, logo: googlePlayLogo },
+    { id: 1, logo: paypalLogo },
   ];
 
   const infos = [
@@ -62,7 +73,7 @@ const PaymentMethod = () => {
             </div>
           </div>
         </div>
-        {!clicked ? (
+        {selectedId === null ? (
           <p className={style.selectPymtMode}>
             <span className="fw-bold">
               <TbInfoOctagonFilled />
@@ -78,23 +89,28 @@ const PaymentMethod = () => {
           </p>
         )}
         <div className={`row ms-3 ms-sm-0 mb-3  mt-lg-2 ${style.lowDevices}`}>
-          <div className="col-5 p-0 col-lg-2 mt-5 mt-lg-4  ms-md-5 ps-md-5">
+          {paymentOptionsAvail.map((availOption) => (
             <div
-              onClick={handleLogoClick}
-              className={`${style.paymentLogoCont}  ${
-                clicked ? style.clicked : ""
-              }`}
+              key={availOption.id}
+              className="col-5 p-0 col-lg-2 mt-5 mt-lg-4  ms-md-5 "
             >
-              <img
-                className={`${style.paymentLogo} ${
-                  clicked ? style.remMar : ""
+              <div
+                onClick={() => handleLogoClick(availOption.id)}
+                className={`${style.paymentLogoCont}  ${
+                  selectedId === availOption.id ? style.clicked : ""
                 }`}
-                src={upiLogo}
-                alt="UPI"
-              />
+              >
+                <img
+                  className={`${style[availOption.class]} ${
+                    selectedId === availOption.id ? style.remMar : ""
+                  }`}
+                  src={availOption.logo}
+                  alt="UPI"
+                />
+              </div>
             </div>
-          </div>
-          {paymentOptions.map((option) => (
+          ))}
+          {paymentOptionsUnavail.map((option) => (
             <div
               key={option.id}
               className="col-5 p-0 col-lg-2 mt-5 mt-lg-4 ms-md-5 ps-md-5 ps-lg-0"
@@ -129,7 +145,7 @@ const PaymentMethod = () => {
           <div className="col-5 col-md-4 col-lg-3">
             <div className="d-flex justify-content-lg-center align-items-center mb-lg-5 pb-lg-5">
               <button
-                disabled={!clicked}
+                disabled={selectedId === null}
                 className={style.paymentBtn}
                 onClick={handlePayout}
               >

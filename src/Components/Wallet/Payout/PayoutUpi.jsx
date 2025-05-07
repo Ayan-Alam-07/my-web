@@ -1,20 +1,20 @@
-import style from "./PayoutBody.module.css";
+import style from "./PayoutUpi.module.css";
 import { useState } from "react";
 import upiLogo from "../../../assets/upi-logo-2.png";
 
-const PayoutBody = () => {
+const PayoutUpi = () => {
   const [balance] = useState(10000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
 
   const vouchers = [
-    { id: 1, amount: 10, requiredCoins: 2500 },
-    { id: 2, amount: 25, requiredCoins: 6250 },
-    { id: 3, amount: 50, requiredCoins: 9000 },
-    { id: 4, amount: 100, requiredCoins: 18000 },
-    { id: 5, amount: 150, requiredCoins: 27000 },
-    { id: 6, amount: 250, requiredCoins: 45000 },
-    { id: 7, amount: 500, requiredCoins: 90000 },
-    { id: 8, amount: 1000, requiredCoins: 180000 },
+    { id: 1, amount: 10, requiredCoins: 2400 },
+    { id: 2, amount: 25, requiredCoins: 5800 },
+    { id: 3, amount: 50, requiredCoins: 10000 },
+    { id: 4, amount: 100, requiredCoins: 19500 },
+    { id: 5, amount: 150, requiredCoins: 28500 },
+    { id: 6, amount: 300, requiredCoins: 52500 },
+    { id: 7, amount: 500, requiredCoins: 80500 },
+    { id: 8, amount: 1000, requiredCoins: 150000 },
   ];
 
   const handleSelect = (id, required) => {
@@ -25,7 +25,20 @@ const PayoutBody = () => {
     <div className="container-fluid">
       <div className="container mt-3">
         <div className={style.voucherContainer}>
-          <h3>Available Voucher :</h3>
+          <h3>Available Vouchers :</h3>
+          <span className={style.voucherUnd}></span>{" "}
+          <span
+            className={`d-block mt-1 ${style.voucherUnd}`}
+            style={{ width: "57px" }}
+          ></span>
+          <p
+            className={`text-white mt-2 fw-medium ${style.voucherLabel}`}
+            style={{ fontSize: "18px", opacity: "0.8" }}
+          >
+            <span className="text-danger fw-bold">*</span> Claim Free UPI
+            Vouchers & Cashback Rewards – India.
+          </p>
+          <div className="mb-5"></div>
           <div className={style.voucherGrid}>
             {vouchers.map((v) => {
               const isAffordable = balance >= v.requiredCoins;
@@ -39,13 +52,18 @@ const PayoutBody = () => {
                   } ${!isAffordable ? style.disabled : ""}`}
                   onClick={() => handleSelect(v.id, v.requiredCoins)}
                 >
-                  <img src={upiLogo} alt="UPI" className={style.upiLogo} />
+                  <img
+                    src={upiLogo}
+                    alt="Earn Real Cash on Indian Rewards Website Using UPI in 2025"
+                    className={style.upiLogo}
+                  />
                   <p>
                     {" "}
                     <span className={style.amountRup}>₹ {v.amount}</span>{" "}
                   </p>
                   <p>
-                    {balance} of {v.requiredCoins} VEs
+                    {balance.toLocaleString()} of{" "}
+                    {v.requiredCoins.toLocaleString()} VEs
                   </p>
                   <div className={style.progressBar}>
                     <div
@@ -66,4 +84,4 @@ const PayoutBody = () => {
   );
 };
 
-export default PayoutBody;
+export default PayoutUpi;

@@ -66,10 +66,11 @@ const HomeEarn = () => {
           <div className="col-12">
             <div className="mt-5">
               <p className={`m-0 ${style.HomeEarnpara}`}>
-                Tasks : <span className={style.homeEarnTaskUnd}></span>{" "}
+                Do Tasks & Get Paid :{" "}
+                <span className={style.homeEarnTaskUnd}></span>{" "}
                 <span
                   className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "24px" }}
+                  style={{ width: "42px" }}
                 ></span>
               </p>
             </div>

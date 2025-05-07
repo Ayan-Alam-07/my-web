@@ -1,11 +1,11 @@
 import CommonNavArr from "../../CommonComponents/CommonNavArr";
-import PayoutBody from "./PayoutBody";
+import PayoutUpi from "./PayoutUpi";
 
 const Payout = () => {
   return (
     <>
       <CommonNavArr id={2} navigation={"/Wallet"}></CommonNavArr>
-      <PayoutBody />
+      <PayoutUpi />
     </>
   );
 };
