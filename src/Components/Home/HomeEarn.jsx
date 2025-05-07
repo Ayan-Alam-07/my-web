@@ -15,21 +15,25 @@ const HomeEarn = () => {
       name: "Facebook",
       logo: facebookLogo,
       link: "",
+      altKey: "Follow us on Facebook for giveaway codes and rewards",
     },
     {
       name: "Telegram",
       logo: telegramLogo,
       link: "https://t.me/+k_cUrmYv1r45ZDBl",
+      altKey: "Get exclusive reward codes on Telegram",
     },
     {
       name: "Telegram",
       logo: telegramLogo,
       link: "https://t.me/+k_cUrmYv1r45ZDBl",
+      altKey: "Join our Telegram group for instant giveaway codes",
     },
     {
       name: "YouTube",
       logo: youtubeLogo,
       link: "https://youtube.com/@veloopwatchearn",
+      altKey: "Subscribe to our YouTube channel for reward codes",
     },
   ];
 
@@ -73,8 +77,8 @@ const HomeEarn = () => {
               className="text-white mt-2 fw-medium"
               style={{ fontSize: "18px", opacity: "0.8" }}
             >
-              <span className="text-danger fw-bold">*</span> Complete task and
-              earn money.
+              <span className="text-danger fw-bold">*</span> Complete Task &
+              Earn Money, Simple Tasks for Instant Pay.
             </p>
           </div>
         </div>
@@ -103,8 +107,8 @@ const HomeEarn = () => {
               className="text-white mt-2 fw-medium"
               style={{ fontSize: "18px", opacity: "0.8" }}
             >
-              <span className="text-danger fw-bold">*</span> Watch Ads and earn
-              money easiest way.
+              <span className="text-danger fw-bold">*</span> Watch Ads & Earn
+              Real Cash, Best Reward Apps with Instant Withdrawal.
             </p>
           </div>
         </div>
@@ -161,7 +165,7 @@ const HomeEarn = () => {
               <img
                 src={giveawayBanner}
                 className={style.giveBackImage}
-                alt="Giveaway Background"
+                alt="Redeem giveaway code and earn instantly"
               />
             </div>
           </div>
@@ -182,8 +186,8 @@ const HomeEarn = () => {
               className="text-white mt-2 fw-medium"
               style={{ fontSize: "18px", opacity: "0.8" }}
             >
-              <span className="text-danger fw-bold">*</span> follow us in social
-              media and earn real money.
+              <span className="text-danger fw-bold">*</span> Follow Us In Social
+              Media & Earn Real Money, Get Paid To Do Simple Tasks.
             </p>
           </div>
         </div>
@@ -205,12 +209,19 @@ const HomeEarn = () => {
                     <img
                       src={follow.logo}
                       className={style.homeFollowLogo}
-                      alt="Facebook"
+                      alt={follow.altKey}
                       style={{
                         height: "100%",
                         width: "100%",
                         objectFit: "cover",
                       }}
+                      onClick={() =>
+                        window.open(
+                          follow.link,
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
+                      }
                     />
                   </div>
                   <div className="ms-2 ms-sm-3">
