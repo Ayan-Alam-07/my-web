@@ -14,8 +14,18 @@ import { useNavigate } from "react-router-dom";
 
 const PaymentMethod = () => {
   const navigate = useNavigate();
+  // const handlePayout = () => {
+  //   navigate("/Payout");
+  // };
+
   const handlePayout = () => {
-    navigate("/Payout");
+    const selectedOption = paymentOptionsAvail.find(
+      (option) => option.id === selectedId
+    );
+
+    if (selectedOption) {
+      navigate(`/Payout?method=${selectedOption.name}`);
+    }
   };
 
   const [selectedId, setselectedId] = useState(null);

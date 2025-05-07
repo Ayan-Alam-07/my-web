@@ -1,21 +1,19 @@
 import style from "./PayoutUpi.module.css";
 import { useState } from "react";
-import upiLogo from "../../../assets/upi-logo-2.png";
+import amazonLogo from "../../../assets/amazon-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
 
-const PayoutUpi = () => {
+const PayoutAmazon = () => {
   const [balance] = useState(10000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
 
   const vouchers = [
-    { id: 1, amount: 10, requiredCoins: 2400 },
-    { id: 2, amount: 25, requiredCoins: 5800 },
-    { id: 3, amount: 50, requiredCoins: 10000 },
-    { id: 4, amount: 100, requiredCoins: 19500 },
-    { id: 5, amount: 150, requiredCoins: 28500 },
-    { id: 6, amount: 300, requiredCoins: 52500 },
-    { id: 7, amount: 500, requiredCoins: 80500 },
-    { id: 8, amount: 1000, requiredCoins: 150000 },
+    { id: 1, amount: 10, requiredCoins: 2600 },
+    { id: 2, amount: 25, requiredCoins: 6000 },
+    { id: 3, amount: 50, requiredCoins: 11000 },
+    { id: 4, amount: 100, requiredCoins: 20500 },
+    { id: 5, amount: 150, requiredCoins: 30000 },
+    { id: 6, amount: 300, requiredCoins: 57000 },
   ];
 
   const handleSelect = (id, required) => {
@@ -36,9 +34,9 @@ const PayoutUpi = () => {
             className={`text-white mb-0 mt-2 fw-medium ${style.voucherLabel}`}
             style={{ fontSize: "18px", opacity: "0.8" }}
           >
-            <span className="text-danger fw-bold">*</span> Redeem UPI vouchers
-            instantly and enjoy hassle-free withdrawals directly to your bank
-            account — trusted by thousands across India!
+            <span className="text-danger fw-bold">*</span> Redeem your rewards
+            for Amazon Gift Cards and withdraw instantly – fast, secure, and
+            trusted by thousands across India.
           </p>
           <div className="mb-5 mb-lg-4"></div>
           <div className={`mb-4 pb-1 ${style.voucherGrid}`}>
@@ -50,14 +48,14 @@ const PayoutUpi = () => {
                 <div
                   key={v.id}
                   className={`${style.voucherCard} ${
-                    selectedId === v.id ? style.selected : ""
+                    selectedId === v.id ? style.selectedAmzGpl : ""
                   } ${!isAffordable ? style.disabled : ""}`}
                   onClick={() => handleSelect(v.id, v.requiredCoins)}
                 >
                   <img
-                    src={upiLogo}
-                    alt="Instant UPI Voucher Withdrawal – Rewards Website India"
-                    className={style.redeemLogo}
+                    src={amazonLogo}
+                    alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                    className={style.amazonLogo}
                   />
                   <p>
                     {" "}
@@ -80,7 +78,7 @@ const PayoutUpi = () => {
                   <div className="d-flex justify-content-center">
                     <div className={style.progressBar}>
                       <div
-                        className={style.fill}
+                        className={style.fillAmazon}
                         style={{ width: `${progress}%` }}
                       ></div>
                     </div>
@@ -100,4 +98,4 @@ const PayoutUpi = () => {
   );
 };
 
-export default PayoutUpi;
+export default PayoutAmazon;
