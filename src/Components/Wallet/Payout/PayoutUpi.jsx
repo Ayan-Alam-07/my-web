@@ -32,14 +32,14 @@ const PayoutUpi = () => {
             style={{ width: "57px" }}
           ></span>
           <p
-            className={`text-white mt-2 fw-medium ${style.voucherLabel}`}
+            className={`text-white mb-0 mt-2 fw-medium ${style.voucherLabel}`}
             style={{ fontSize: "18px", opacity: "0.8" }}
           >
             <span className="text-danger fw-bold">*</span> Claim Free UPI
             Vouchers & Cashback Rewards – India.
           </p>
-          <div className="mb-5"></div>
-          <div className={style.voucherGrid}>
+          <div className="mb-5 mb-lg-4"></div>
+          <div className={`mb-4 pb-1 ${style.voucherGrid}`}>
             {vouchers.map((v) => {
               const isAffordable = balance >= v.requiredCoins;
               const progress = Math.min((balance / v.requiredCoins) * 100, 100);
@@ -75,9 +75,11 @@ const PayoutUpi = () => {
               );
             })}
           </div>
-          <button disabled={!selectedId} className={style.redeemBtn}>
-            Redeem
-          </button>
+          <div className={style.redeemBtnCont}>
+            <button disabled={!selectedId} className={style.redeemBtn}>
+              Redeem
+            </button>
+          </div>
         </div>
       </div>
     </div>

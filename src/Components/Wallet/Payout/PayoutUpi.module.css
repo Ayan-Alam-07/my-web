@@ -1,4 +1,5 @@
 .voucherContainer {
+  position: relative;
   text-align: center;
   color: #000;
 }
@@ -40,16 +41,27 @@
   color: #f1f1f1;
   font-size: 13px;
   margin: 6px;
-  padding: 12px;
+  padding: 14px;
   border: 2px solid transparent;
   border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.4s ease-in-out;
   position: relative;
+  clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* slight elevation */
 }
-
+.voucherCard:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
+}
 .selected {
-  border: 3px solid #00ffc3;
+  border-bottom: 3.5px solid #ffd700;
+  border-right: 3.5px solid #ffd700;
+
+  border-top: 4px solid #00c853; /* #00ffc3 */
+  border-left: 4px solid #00c853;
+
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 10px rgba(0, 200, 83, 0.3);
 }
 
 .disabled {
@@ -85,10 +97,15 @@
   height: 100%;
   transition: width 0.3s;
 }
-
+.redeemBtnCont {
+  width: 100%;
+  padding: 15px 0 30px 0;
+  background-color: #181a2a;
+  position: sticky;
+  bottom: 0px;
+}
 .redeemBtn {
-  margin-top: 30px;
-  padding: 12px 24px;
+  padding: 14px 24px;
   background: #00d1b2;
   border: none;
   border-radius: 12px;
@@ -104,6 +121,10 @@
 }
 
 @media (min-width: 575px) {
+  .voucherCard:hover {
+    transform: scale(1.04);
+  }
+
   .voucherGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
@@ -122,6 +143,16 @@
 }
 
 @media (min-width: 992px) {
+  .voucherCard {
+    transition: all 0.3s ease-in-out;
+  }
+  .voucherCard:hover {
+    transform: scale(1.03);
+  }
+  .voucherGrid {
+    margin-top: 0px;
+  }
+
   .voucherContainer h3 {
     margin: 25px 0 0 0;
     font-family: "nunito";
@@ -130,5 +161,21 @@
     letter-spacing: 0.1vw;
     text-align: start;
     color: #fff;
+  }
+  .redeemBtnCont {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #181a2a;
+    position: sticky;
+    bottom: 0px;
+  }
+  .redeemBtn {
+    padding: 14px 24px;
+    background: #00d1b2;
+    border: none;
+    border-radius: 12px;
+    color: #2c2c2c;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
