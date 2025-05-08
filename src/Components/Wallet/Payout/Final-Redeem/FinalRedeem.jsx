@@ -1,7 +1,7 @@
 import style from "./FinalRedeem.module.css";
 import { useRef, useEffect } from "react";
 
-const FinalRedeem = ({ selectedVoucher, onClose }) => {
+const FinalRedeem = ({ selectedVoucher, onClose, name }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const FinalRedeem = ({ selectedVoucher, onClose }) => {
         <div className={`modal-content ${style.modalContent}`}>
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="staticBackdropLabel">
-              Enter Your UPI Details
+              Enter Your <span>{name}</span> Details
             </h1>
             <button
               type="button"
@@ -72,7 +72,7 @@ const FinalRedeem = ({ selectedVoucher, onClose }) => {
                     <div className="col-11">
                       <form>
                         <p className="m-0">
-                          <span className="text-danger fw-bold">*</span> Name:
+                          <span className="text-danger fw-bold">*</span> Name :
                         </p>
                         <input
                           type="text"
@@ -81,19 +81,36 @@ const FinalRedeem = ({ selectedVoucher, onClose }) => {
                         />
                       </form>
                       <div>
-                        <p className="m-0">
-                          <span className="text-danger fw-bold">*</span> UPI ID:
-                        </p>
-                        <input
-                          type="text"
-                          required
-                          placeholder="Enter Your UPI ID"
-                        />
+                        {name === "upi" ? (
+                          <>
+                            <p className="m-0">
+                              <span className="text-danger fw-bold">*</span> UPI
+                              ID:
+                            </p>
+                            <input
+                              type="text"
+                              required
+                              placeholder="Enter Your UPI ID"
+                            />
+                          </>
+                        ) : (
+                          <>
+                            <p className="m-0">
+                              <span className="text-danger fw-bold">*</span>{" "}
+                              Email I'd :
+                            </p>
+                            <input
+                              type="email"
+                              required
+                              placeholder="Enter Your Email Id"
+                            />
+                          </>
+                        )}
                       </div>
                       <div>
                         <p className="m-0">
                           <span className="text-danger fw-bold">*</span> Amount
-                          Selected:
+                          Selected :
                         </p>
                         <div className={style.amountFkInp}>
                           <span>

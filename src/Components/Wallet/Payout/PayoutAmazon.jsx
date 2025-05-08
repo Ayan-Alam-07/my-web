@@ -4,7 +4,7 @@ import { useState } from "react";
 import amazonLogo from "../../../assets/amazon-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
 
-const PayoutAmazon = () => {
+const PayoutAmazon = ({ name }) => {
   const [balance] = useState(10000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
   const [showFinalRedeem, setShowFinalRedeem] = useState(false);
@@ -35,6 +35,7 @@ const PayoutAmazon = () => {
         <FinalRedeem
           selectedVoucher={selectedVoucher}
           onClose={handleCloseModal}
+          name={name}
         />
       )}
       <div className="container-fluid">

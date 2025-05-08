@@ -12,9 +12,9 @@ const Payout = () => {
   return (
     <>
       <CommonNavArr id={2} navigation={"/Wallet"}></CommonNavArr>
-      {paymentMethod === "upi" ? <PayoutUpi /> : ""}
-      {paymentMethod === "amazon" ? <PayoutAmazon /> : ""}
-      {paymentMethod === "googlePlay" ? <PayoutGPlay /> : ""}
+      {paymentMethod === "upi" ? <PayoutUpi name="upi" /> : ""}
+      {paymentMethod === "amazon" ? <PayoutAmazon name="amazon" /> : ""}
+      {paymentMethod === "googlePlay" ? <PayoutGPlay name="G-Play" /> : ""}
     </>
   );
 };

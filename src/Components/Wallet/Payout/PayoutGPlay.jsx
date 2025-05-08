@@ -4,7 +4,7 @@ import { useState } from "react";
 import googlePlayLogo from "../../../assets/googlePlay-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
 
-const PayoutGPlay = () => {
+const PayoutGPlay = ({ name }) => {
   const [balance] = useState(10000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
   const [showFinalRedeem, setShowFinalRedeem] = useState(false);
@@ -34,6 +34,7 @@ const PayoutGPlay = () => {
         <FinalRedeem
           selectedVoucher={selectedVoucher}
           onClose={handleCloseModal}
+          name={name}
         />
       )}
       <div className="container-fluid">
