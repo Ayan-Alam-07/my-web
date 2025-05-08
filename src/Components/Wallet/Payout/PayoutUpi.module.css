@@ -1,7 +1,7 @@
 .voucherContainer {
   position: relative;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 
 .voucherUnd {
@@ -20,11 +20,11 @@
   font-weight: 700;
   letter-spacing: 0.1vw;
   text-align: start;
-  color: #fff;
 }
 .voucherLabel {
+  margin: 2.4vw 0 0 0;
   font-family: "nunito";
-  font-size: 5vw;
+  font-size: 3.8vw !important;
   font-weight: 700;
   letter-spacing: 0.1vw;
   text-align: start;
@@ -55,20 +55,19 @@
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
 }
 .selected {
-  border-bottom: 3.5px solid #ffd700;
-  border-right: 3.5px solid #ffd700;
+  border-bottom: 4.5px solid #ffd700;
+  border-right: 4.5px solid #ffd700;
 
-  border-top: 4px solid #00c853; /* #00ffc3 */
-  border-left: 4px solid #00c853;
+  border-top: 5px solid #00c853; /* #00ffc3 */
+  border-left: 5px solid #00c853;
 
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 10px rgba(0, 200, 83, 0.3);
 }
 .selectedAmzGpl {
-  border-top: 3.5px solid #ffd700;
-  border-left: 3.5px solid #ffd700;
-  /* color: #79acff; */
-  border-bottom: 4px solid #00c853; /* #00ffc3 */
-  border-right: 4px solid #00c853;
+  border-top: 4.5px solid #ffd700;
+  border-left: 4.5px solid #ffd700;
+  border-bottom: 5px solid #00c853; /* #00ffc3 */
+  border-right: 5px solid #00c853;
 
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 10px rgba(0, 200, 83, 0.3);
 }
@@ -163,7 +162,12 @@
   cursor: not-allowed;
 }
 
+/* FIXME: Media for Responsiveness */
+
 @media (max-width: 400px) {
+  .voucherLabel {
+    font-size: 14px !important;
+  }
   .amountRup {
     font-size: 4.85vw;
     letter-spacing: 0.4vw;
@@ -201,6 +205,10 @@
     letter-spacing: 0.1vw;
     text-align: start;
     color: #fff;
+  }
+  .voucherLabel {
+    font-size: 2.25vw !important;
+    margin: 1.72vw 0 0 0;
   }
   .redeemLogo {
     width: 78px;
@@ -254,6 +262,10 @@
     letter-spacing: 0.1vw;
     text-align: start;
     color: #fff;
+  }
+  .voucherLabel {
+    font-size: 1.3vw !important;
+    margin: 0.75vw 0 0 0;
   }
   .redeemLogo {
     width: 66px;
