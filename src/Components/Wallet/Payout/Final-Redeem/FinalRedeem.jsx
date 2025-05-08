@@ -81,7 +81,7 @@ const FinalRedeem = ({ selectedVoucher, onClose, name }) => {
                         />
                       </form>
                       <div>
-                        {name === "upi" ? (
+                        {name === "Upi" ? (
                           <>
                             <p className="m-0">
                               <span className="text-danger fw-bold">*</span> UPI
