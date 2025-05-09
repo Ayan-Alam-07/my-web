@@ -19,25 +19,25 @@
 .countryPara {
   margin: 0;
   font-family: "nunito";
-  font-size: 3.6vw;
+  font-size: 4vw;
   font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 10px;
+  padding: 10px 14px;
   background-color: #282c45;
   border-radius: 14px;
 }
 
 .countryPara img {
-  margin: 0 11px 0 5px;
-  width: 20px;
-  height: 17px;
+  margin: 0 10px 0 5px;
+  width: 24px;
+  height: 18px;
 }
 
 @media (min-width: 575px) {
   .countryPara {
-    font-size: 2.38vw;
+    font-size: 2.5vw;
     letter-spacing: 0.4px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 16px;
   }
 }
@@ -57,7 +57,8 @@
 
 @media (min-width: 992px) {
   .countryPara {
-    font-size: 1.23vw;
+    font-size: 1.43vw;
+    padding: 8px 18px;
     border-radius: 18px;
   }
 }

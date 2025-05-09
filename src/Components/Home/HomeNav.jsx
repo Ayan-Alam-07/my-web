@@ -39,7 +39,7 @@ const HomeNav = () => {
                     src={`https://flagcdn.com/w40/${locationData.country_code.toLowerCase()}.png`}
                     alt={`${locationData.country} flag`}
                   />
-                  {locationData.loading ? "Reg..." : locationData.country}
+                  {locationData.loading ? "Reg..." : locationData.country_code}
                   {locationData.error ? "Err. 404..." : ""}
                 </p>
               </div>

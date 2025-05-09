@@ -17,7 +17,7 @@ const HomeHero = () => {
           <div className="col-12 px-2 px-md-3 mb-1">
             <div className={style.availcont}>
               <span className={style.availCoins}>
-                <span>Available Coins</span>
+                <span>Available VEs</span>
               </span>
               <div className="d-flex text-white mt-4 pt-2 ms-lg-4 ms-3">
                 <FaCoins style={{ color: "#FFD700", fontSize: "36px" }} />
