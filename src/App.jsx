@@ -1,4 +1,4 @@
-// import "./App.css"; apply in the jackpot sections!!
+import "./AppLayout.css"; //apply App.css in the jackpot sections!!
 import Home from "./Components/Home/Home";
 import Wallet from "./Components/Wallet/Wallet";
 import Payout from "./Components/Wallet/Payout/Payout";

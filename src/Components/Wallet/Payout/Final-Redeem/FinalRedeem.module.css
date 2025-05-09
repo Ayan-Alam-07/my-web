@@ -46,6 +46,10 @@
   font-size: 4.6vw;
   letter-spacing: 0.15vw;
 }
+.fnlReedReqCoins {
+  color: #79acff;
+  font-size: 3.4vw;
+}
 .confirmRedeemBtn {
   padding: 12px 22px;
   font-family: "outfit";
@@ -109,6 +113,9 @@
     font-size: 4.4vw;
     letter-spacing: 0.15vw;
   }
+  .fnlReedReqCoins {
+    font-size: 2.9vw;
+  }
 }
 
 @media (min-width: 575px) {
@@ -136,6 +143,9 @@
     padding: 12px 25px;
     font-size: 3vw;
     letter-spacing: 0.15vw;
+  }
+  .fnlReedReqCoins {
+    font-size: 2.1vw;
   }
   .confirmRedeemBtn {
     padding: 13px 24px;
@@ -174,6 +184,9 @@
     padding: 12px 25px;
     font-size: 1.37vw;
     letter-spacing: 0.12vw;
+  }
+  .fnlReedReqCoins {
+    font-size: 1.07vw;
   }
   .confirmRedeemBtn {
     padding: 11px 22px;

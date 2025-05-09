@@ -16,6 +16,32 @@
   color: #fff;
 }
 
+.countryPara {
+  margin: 0;
+  font-family: "nunito";
+  font-size: 3.6vw;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  background-color: #282c45;
+  border-radius: 14px;
+}
+
+.countryPara img {
+  margin: 0 11px 0 5px;
+  width: 20px;
+  height: 17px;
+}
+
+@media (min-width: 575px) {
+  .countryPara {
+    font-size: 2.38vw;
+    letter-spacing: 0.4px;
+    padding: 10px 15px;
+    border-radius: 16px;
+  }
+}
+
 @media (min-width: 600px) {
   .homeNav {
     padding: 13px;
@@ -26,6 +52,13 @@
   }
   .homeLogoLas {
     font-size: 30px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .countryPara {
+    font-size: 1.23vw;
+    border-radius: 18px;
   }
 }
 

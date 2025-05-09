@@ -116,9 +116,7 @@ const FinalRedeem = ({ selectedVoucher, onClose, name }) => {
                           <span>
                             <span style={{ color: "#03b551" }}>₹ </span>
                             {selectedVoucher.amount}{" "}
-                            <span
-                              style={{ color: "#79acff", fontSize: "14px" }}
-                            >
+                            <span className={style.fnlReedReqCoins}>
                               <span>(</span>
                               {selectedVoucher.requiredCoins.toLocaleString()}
                               <span>
