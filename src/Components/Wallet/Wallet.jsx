@@ -4,7 +4,7 @@ import WalletBody from "./WalletBody";
 const Wallet = () => {
   return (
     <>
-      <CommonNavArr id={1} navigation={"/"}></CommonNavArr>
+      <CommonNavArr id={1} navigation={"/"} />
       <WalletBody></WalletBody>
     </>
   );
