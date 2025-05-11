@@ -1,5 +1,6 @@
 import style from "./HomeNav.module.css";
 import { useList } from "../../Context/ContextStore";
+import Loader from "../Loader/Loader";
 
 const HomeNav = () => {
   const { locationData } = useList(); // Or show a loader
@@ -34,14 +35,17 @@ const HomeNav = () => {
             </div>
             <div className="col-5 p-0 ">
               <div className="d-flex justify-content-end align-items-center">
-                <p className={style.countryPara}>
-                  <img
-                    src={`https://flagcdn.com/w40/${locationData.country_code.toLowerCase()}.png`}
-                    alt={`${locationData.country} flag`}
-                  />
-                  {locationData.loading ? "Reg..." : locationData.country_code}
+                {locationData.loading ? <Loader /> : ""}
+                <span className={style.countryPara}>
+                  {locationData.country_code && (
+                    <img
+                      src={`https://flagcdn.com/w40/${locationData.country_code.toLowerCase()}.png`}
+                      alt={`${locationData.country} flag`}
+                    />
+                  )}
+                  {locationData.loading ? "Reg...." : locationData.country_code}
                   {locationData.error ? "Err. 404..." : ""}
-                </p>
+                </span>
               </div>
             </div>
           </div>

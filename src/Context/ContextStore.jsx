@@ -21,12 +21,18 @@ export const ListProvider = ({ children }) => {
   useEffect(() => {
     const getLocation = async () => {
       try {
-        const response = await fetch("https://ipapi.co/json/");
+        const [response] = await Promise.all([
+          fetch("https://ipinfo.io/json?token=8ba1d0c5238794"),
+          new Promise((resolve) => setTimeout(resolve, 1900)), // 2-second minimum loader
+        ]);
         const data = await response.json();
+
+        // FIXME: 8ba1d0c5238794
+
         setLocationData({
           loading: false,
-          country: data.country_name,
-          country_code: data.country_code,
+          country: data.country || "Unknown",
+          country_code: data.country || "",
           error: false,
         });
       } catch (err) {

@@ -1,6 +1,10 @@
 import PayoutInd from "./PayMethReg/PayoutInd";
 
 const PaymentMethod = () => {
-  return <PayoutInd />;
+  return (
+    <>
+      <PayoutInd />
+    </>
+  );
 };
 export default PaymentMethod;
