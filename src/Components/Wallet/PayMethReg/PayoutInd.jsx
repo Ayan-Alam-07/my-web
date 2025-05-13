@@ -66,7 +66,7 @@ const PayoutInd = () => {
     {
       id: 4,
       icon: <CgDetailsMore className={style.correctInfoIcon} />,
-      text: "Ensure all payment details are entered correctly.",
+      text: "Ensure all payment details are entered correctly. Otherwise the amount will be lost and we are not responsible for it.",
     },
   ];
 
