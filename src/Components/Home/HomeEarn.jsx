@@ -6,8 +6,11 @@ import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
 import giveawayBanner from "../../assets/giveaway-banner-3.png";
+import { useList } from "../../Context/ContextStore";
 
 const HomeEarn = () => {
+  const { locationData } = useList(); // Or show a loader
+
   const nums = [1, 2, 3, 4, 5];
 
   const follows = [
@@ -37,10 +40,16 @@ const HomeEarn = () => {
     },
   ];
 
-  const generateRandomCoins = () => Math.floor(Math.random() * (80 - 49)) + 50;
+  // for tier 1 countries
+  const generateRandomCoinsT1 = () =>
+    Math.floor(Math.random() * (200 - 49)) + 50;
+
+  // for tier2 countries
+  const generateRandomCoinsT2 = () =>
+    Math.floor(Math.random() * (105 - 49)) + 50;
 
   const [coinValues, setCoinValues] = useState(
-    nums.map(() => generateRandomCoins())
+    nums.map(() => generateRandomCoinsT2())
   );
 
   const [available, setavailable] = useState(false); // change here
@@ -53,7 +62,7 @@ const HomeEarn = () => {
       //  automatically update the coin update logic is already written
       const updatedCoins = [...coinValues];
 
-      updatedCoins[index] = generateRandomCoins();
+      updatedCoins[index] = generateRandomCoinsT2();
 
       setCoinValues(updatedCoins);
     }

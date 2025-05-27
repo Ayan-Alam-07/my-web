@@ -31,19 +31,33 @@ const PayoutGlob = () => {
   };
 
   const paymentOptionsAvail = [
-    { id: 1, name: "paypal", logo: paypalLogo, class: "paymentLogoPaypal" },
-    { id: 2, name: "amazon", logo: amazonLogo, class: "paymentLogoAmazon" },
+    {
+      id: 1,
+      name: "paypal",
+      logo: paypalLogo,
+      class: "paymentLogoPaypal",
+      paraClass: "",
+    },
+    {
+      id: 2,
+      name: "amazon",
+      logo: amazonLogo,
+      class: "paymentLogoAmazon",
+      paraClass: "",
+    },
     {
       id: 3,
       name: "usdt",
       logo: usdtLogo,
       class: "paymentLogoGPlay",
+      paraClass: "usdtPara",
     },
     {
       id: 4,
       name: "btc",
       logo: btcLogo,
       class: "paymentLogoPaypal",
+      paraClass: "btcPara",
     },
   ];
 
@@ -115,11 +129,11 @@ const PayoutGlob = () => {
                   alt="UPI"
                 />
               </div>
-              <div className="d-flex justify-content-center">
+              <div>
                 <p
-                  className={`${style.payOptName}  ${
-                    selectedId === availOption.id ? style.activeName : ""
-                  }`}
+                  className={`${style.payOptName} ${
+                    style[availOption.paraClass]
+                  }  ${selectedId === availOption.id ? style.activeName : ""}`}
                 >
                   {availOption.name.toUpperCase()}
                 </p>

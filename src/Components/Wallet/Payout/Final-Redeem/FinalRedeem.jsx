@@ -1,7 +1,7 @@
 import style from "./FinalRedeem.module.css";
 import { useRef, useEffect } from "react";
 
-const FinalRedeem = ({ selectedVoucher, onClose, name }) => {
+const FinalRedeem = ({ selectedVoucher, onClose, name, currencyIcon }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -114,7 +114,11 @@ const FinalRedeem = ({ selectedVoucher, onClose, name }) => {
                         </p>
                         <div className={style.amountFkInp}>
                           <span>
-                            <span style={{ color: "#03b551" }}>₹ </span>
+                            <span
+                              style={{ color: "#03b551", marginRight: "7px" }}
+                            >
+                              {currencyIcon}
+                            </span>
                             {selectedVoucher.amount}{" "}
                             <span className={style.fnlReedReqCoins}>
                               <span>(</span>

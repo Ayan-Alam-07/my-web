@@ -216,6 +216,20 @@
   .scrollPayout {
     font-size: 2.4vw;
   }
+  .payOptName {
+    margin: 2vw 0 0 2.2vw;
+    font-family: "outfit";
+    font-size: 2vw;
+    font-weight: 700;
+    letter-spacing: 0.3vw;
+    text-align: start !important;
+  }
+  .usdtPara {
+    padding: 0 0 0 1.5vw;
+  }
+  .btcPara {
+    padding: 0 0 0 2.55vw;
+  }
   .infoLogo {
     font-size: 3.15vw;
     margin: 0 2vw 2vw 0;
@@ -265,6 +279,20 @@
     letter-spacing: 0.1vw;
     margin-top: 0.72vw;
     font-size: 1.3vw;
+  }
+  .payOptName {
+    margin: 1.2vw 0 0 0.9vw;
+    font-family: "outfit";
+    font-size: 1.2vw;
+    font-weight: 700;
+    letter-spacing: 0.14vw;
+    text-align: start !important;
+  }
+  .usdtPara {
+    padding: 0 0 0 1.35vw;
+  }
+  .btcPara {
+    padding: 0 0 0 2.15vw;
   }
   .infoLogo {
     font-size: 2.15vw;

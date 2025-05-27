@@ -1,20 +1,23 @@
 import style from "./PayoutUpi.module.css";
 import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import googlePlayLogo from "../../../assets/googlePlay-logo.png";
+import paypalLogo from "../../../assets/paypal-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
 
-const PayoutGPlay = ({ name }) => {
-  const [balance] = useState(10000); // Your coin balance
+const PayoutPaypal = ({ name }) => {
+  const [balance] = useState(1000000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
   const [showFinalRedeem, setShowFinalRedeem] = useState(false);
 
   const vouchers = [
-    { id: 1, amount: 10, requiredCoins: 2600 },
-    { id: 2, amount: 25, requiredCoins: 6000 },
-    { id: 3, amount: 50, requiredCoins: 11000 },
-    { id: 4, amount: 100, requiredCoins: 20500 },
-    { id: 5, amount: 150, requiredCoins: 30000 },
+    { id: 1, amount: 10, requiredCoins: 280000 },
+    { id: 2, amount: 20, requiredCoins: 500000 },
+    { id: 3, amount: 30, requiredCoins: 725000 },
+    { id: 4, amount: 50, requiredCoins: 1208000 },
+    { id: 5, amount: 100, requiredCoins: 2335000 },
+    { id: 6, amount: 250, requiredCoins: 5626000 },
+    { id: 7, amount: 500, requiredCoins: 10830000 },
+    { id: 8, amount: 2000, requiredCoins: 44175000 },
   ];
 
   const selectedVoucher = vouchers.find((v) => v.id === selectedId);
@@ -35,7 +38,7 @@ const PayoutGPlay = ({ name }) => {
           selectedVoucher={selectedVoucher}
           onClose={handleCloseModal}
           name={name}
-          currencyIcon="₹"
+          currencyIcon="$"
         />
       )}
       <div className="container-fluid">
@@ -51,10 +54,9 @@ const PayoutGPlay = ({ name }) => {
               className={`text-white mb-0 mt-2 fw-medium ${style.voucherLabel}`}
               style={{ fontSize: "18px", opacity: "0.8" }}
             >
-              <span className="text-danger fw-bold">*</span> Withdraw your
-              Google Play Store gift cards instantly and enjoy seamless app
-              purchases, games, and subscriptions — exclusively for our Indian
-              users!
+              <span className="text-danger fw-bold">*</span>Redeem Your Reward
+              Points for Instant PayPal Cash – Fast, Secure Withdrawals Trusted
+              Worldwide. Start Redeeming Your Earnings Now!
             </p>
             <div className="mb-5 mb-lg-4"></div>
             <div className={`mb-4 pb-1 ${style.voucherGrid}`}>
@@ -74,15 +76,15 @@ const PayoutGPlay = ({ name }) => {
                     onClick={() => handleSelect(v.id, v.requiredCoins)}
                   >
                     <img
-                      src={googlePlayLogo}
-                      alt="Google Play Store Gift Card Withdrawal – Rewards Website India"
-                      className={style.gPlayLogo}
+                      src={paypalLogo}
+                      alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                      className={style.paypalLogo}
                     />
                     <p>
                       {" "}
                       <span className={style.amountRup}>
                         <span style={{ color: "#00c853", marginRight: "4px" }}>
-                          ₹
+                          $
                         </span>{" "}
                         {v.amount}
                       </span>{" "}
@@ -130,4 +132,4 @@ const PayoutGPlay = ({ name }) => {
   );
 };
 
-export default PayoutGPlay;
+export default PayoutPaypal;

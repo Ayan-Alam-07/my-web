@@ -38,6 +38,7 @@ const PayoutUpi = ({ name }) => {
           selectedVoucher={selectedVoucher}
           onClose={handleCloseModal}
           name={name}
+          currencyIcon="₹"
         />
       )}
 

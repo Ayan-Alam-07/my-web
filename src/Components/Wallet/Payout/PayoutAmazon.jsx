@@ -10,12 +10,12 @@ const PayoutAmazon = ({ name }) => {
   const [showFinalRedeem, setShowFinalRedeem] = useState(false);
 
   const vouchers = [
-    { id: 1, amount: 10, requiredCoins: 2600 },
-    { id: 2, amount: 25, requiredCoins: 6000 },
-    { id: 3, amount: 50, requiredCoins: 11000 },
-    { id: 4, amount: 100, requiredCoins: 20500 },
-    { id: 5, amount: 150, requiredCoins: 30000 },
-    { id: 6, amount: 300, requiredCoins: 57000 },
+    { id: 1, amount: 10, requiredCoins: 2700 },
+    { id: 2, amount: 25, requiredCoins: 6250 },
+    { id: 3, amount: 50, requiredCoins: 12000 },
+    { id: 4, amount: 100, requiredCoins: 22000 },
+    { id: 5, amount: 150, requiredCoins: 31500 },
+    { id: 6, amount: 300, requiredCoins: 60000 },
   ];
 
   const selectedVoucher = vouchers.find((v) => v.id === selectedId);
@@ -36,6 +36,7 @@ const PayoutAmazon = ({ name }) => {
           selectedVoucher={selectedVoucher}
           onClose={handleCloseModal}
           name={name}
+          currencyIcon="₹"
         />
       )}
       <div className="container-fluid">

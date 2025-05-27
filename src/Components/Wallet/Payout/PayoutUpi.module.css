@@ -96,7 +96,13 @@
   border-radius: 20px;
   margin: 6px 0;
 }
-
+.paypalLogo {
+  background-color: #fff;
+  height: 69px;
+  width: 75px;
+  border-radius: 20px;
+  margin: 6px 0;
+}
 .amountRup {
   display: inline-block;
   font-family: "poppins";
