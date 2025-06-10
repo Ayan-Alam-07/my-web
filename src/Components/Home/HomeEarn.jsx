@@ -6,11 +6,9 @@ import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
 import giveawayBanner from "../../assets/giveaway-banner-3.png";
-import { useList } from "../../Context/ContextStore";
+import { GiProfit } from "react-icons/gi";
 
 const HomeEarn = () => {
-  const { locationData } = useList(); // Or show a loader
-
   const nums = [1, 2, 3, 4, 5];
 
   const follows = [
@@ -38,6 +36,15 @@ const HomeEarn = () => {
       link: "https://youtube.com/@veloopwatchearn",
       altKey: "Subscribe to our YouTube channel for reward codes",
     },
+  ];
+
+  const watchBonus = [
+    { id: 1, reqWatch: 1, doneWatch: "", bonusCoin: 15 },
+    { id: 2, reqWatch: 5, doneWatch: "", bonusCoin: 60 },
+    { id: 3, reqWatch: 9, doneWatch: "", bonusCoin: 100 },
+    { id: 4, reqWatch: 13, doneWatch: "", bonusCoin: 140 },
+    { id: 5, reqWatch: 18, doneWatch: "", bonusCoin: 200 },
+    { id: 6, reqWatch: 20, doneWatch: "", bonusCoin: 250 },
   ];
 
   // for tier 1 countries
@@ -71,6 +78,55 @@ const HomeEarn = () => {
   return (
     <div className="container-fluid" style={{ backgroundColor: "#161827" }}>
       <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="mt-5">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Bonus VEs : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p
+              className="text-white mt-2 fw-medium"
+              style={{ fontSize: "18px", opacity: "0.8" }}
+            >
+              <span className="text-danger fw-bold">*</span> Watch Ads and Earn
+              Points (VEs) Instantly – Complete Tasks and Get Bonus Rewards.
+              Trusted Globally for Earning Online.
+            </p>
+          </div>
+          <div className="col-12">
+            {watchBonus.map((bonus) => (
+              <div className={style.bonusCont}>
+                <div className={style.bonusinfoPointCont}>
+                  <p className="m-0">
+                    Watch{" "}
+                    <span style={{ color: "#007bff", margin: "0px" }}>Ad</span>{" "}
+                    Bonus
+                  </p>
+                  <span>
+                    + {bonus.bonusCoin}{" "}
+                    <span style={{ color: "#fff", margin: "4px" }}>VEs</span>
+                  </span>
+                </div>
+                <div className={style.bonusAdCount}>
+                  <h4>
+                    0 /{" "}
+                    <span style={{ color: "#007bff" }}>{bonus.reqWatch}</span>{" "}
+                  </h4>
+                  <button>
+                    <GiProfit className="me-2" />
+                    Claim
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="row ">
           <div className="col-12">
             <div className="mt-5">
