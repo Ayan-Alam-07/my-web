@@ -81,7 +81,21 @@ const FinalRedeem = ({ selectedVoucher, onClose, name, currencyIcon }) => {
                         />
                       </form>
                       <div>
-                        {name === "Upi" ? (
+                        {(name === "usdtGlob" || name === "btcGlob") && (
+                          <>
+                            <p className="m-0">
+                              <span className="text-danger fw-bold">*</span>{" "}
+                              Binance Pay ID:
+                            </p>
+                            <input
+                              type="text"
+                              required
+                              placeholder="Enter Your Binance ID"
+                            />
+                          </>
+                        )}
+
+                        {name === "Upi" && (
                           <>
                             <p className="m-0">
                               <span className="text-danger fw-bold">*</span> UPI
@@ -93,16 +107,18 @@ const FinalRedeem = ({ selectedVoucher, onClose, name, currencyIcon }) => {
                               placeholder="Enter Your UPI ID"
                             />
                           </>
-                        ) : (
+                        )}
+
+                        {!["usdtGlob", "btcGlob", "Upi"].includes(name) && (
                           <>
                             <p className="m-0">
                               <span className="text-danger fw-bold">*</span>{" "}
-                              Email I'd :
+                              Email ID:
                             </p>
                             <input
                               type="email"
                               required
-                              placeholder="Enter Your Email Id"
+                              placeholder="Enter Your Email ID"
                             />
                           </>
                         )}

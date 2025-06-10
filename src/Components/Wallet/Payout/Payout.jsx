@@ -6,6 +6,8 @@ import PayoutAmazon from "./PayoutAmazon";
 import PayoutGPlay from "./PayoutGPlay";
 import PayoutPaypal from "./PayoutPaypal";
 import PayoutAmazonGlob from "./PayoutAmazonGlob";
+import PayoutUsdtGlob from "./PayoutUsdt";
+import PayoutBtcGlob from "./PayoutBtc";
 
 const Payout = () => {
   const { locationData } = useList();
@@ -22,6 +24,8 @@ const Payout = () => {
       {paymentMethod === "upi" && <PayoutUpi name="Upi" />}
       {paymentMethod === "googlePlay" && <PayoutGPlay name="G-Play" />}
       {paymentMethod === "paypal" && <PayoutPaypal name="PayPal" />}
+      {paymentMethod === "usdt" && <PayoutUsdtGlob name="usdtGlob" />}
+      {paymentMethod === "btc" && <PayoutBtcGlob name="btcGlob" />}
 
       {paymentMethod === "amazon" &&
         (locationData.country === "IN" ? (

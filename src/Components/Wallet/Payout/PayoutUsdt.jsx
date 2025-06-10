@@ -1,21 +1,21 @@
 import style from "./PayoutUpi.module.css";
 import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import paypalLogo from "../../../assets/paypal-logo.png";
+import usdtLogo from "../../../assets/usdt-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
 
-const PayoutPaypal = ({ name }) => {
+const PayoutUsdtGlob = ({ name }) => {
   const [balance] = useState(1000000); // Your coin balance
   const [selectedId, setSelectedId] = useState(null);
   const [showFinalRedeem, setShowFinalRedeem] = useState(false);
 
   const vouchers = [
-    { id: 1, amount: 10, requiredCoins: 280000 },
-    { id: 2, amount: 20, requiredCoins: 500000 },
-    { id: 3, amount: 30, requiredCoins: 725000 },
-    { id: 4, amount: 50, requiredCoins: 1208000 },
-    { id: 5, amount: 100, requiredCoins: 2335000 },
-    { id: 6, amount: 250, requiredCoins: 5626000 },
+    { id: 1, amount: 0.3, requiredCoins: 7500 },
+    { id: 2, amount: 1, requiredCoins: 24000 },
+    { id: 3, amount: 5, requiredCoins: 120000 },
+    { id: 4, amount: 15, requiredCoins: 357000 },
+    { id: 5, amount: 50, requiredCoins: 1176000 },
+    { id: 6, amount: 100, requiredCoins: 2310000 },
   ];
 
   const selectedVoucher = vouchers.find((v) => v.id === selectedId);
@@ -52,9 +52,10 @@ const PayoutPaypal = ({ name }) => {
               className={`text-white mb-0 mt-2 fw-medium ${style.voucherLabel}`}
               style={{ fontSize: "18px", opacity: "0.8" }}
             >
-              <span className="text-danger fw-bold">*</span>Redeem Your Reward
-              Points for Instant PayPal Cash – Fast, Secure Withdrawals Trusted
-              Worldwide. Start Redeeming Your Earnings Now!
+              <span className="text-danger fw-bold">*</span> Instant USDT
+              Withdrawals – Fast, Secure Crypto Payouts to Any Country. Withdraw
+              Your Earnings Internationally with Low Fees and Trusted Global
+              Transfers.
             </p>
             <div className="mb-5 mb-lg-4"></div>
             <div className={`mb-4 pb-1 ${style.voucherGrid}`}>
@@ -74,7 +75,7 @@ const PayoutPaypal = ({ name }) => {
                     onClick={() => handleSelect(v.id, v.requiredCoins)}
                   >
                     <img
-                      src={paypalLogo}
+                      src={usdtLogo}
                       alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
                       className={style.paypalLogo}
                     />
@@ -130,4 +131,4 @@ const PayoutPaypal = ({ name }) => {
   );
 };
 
-export default PayoutPaypal;
+export default PayoutUsdtGlob;
