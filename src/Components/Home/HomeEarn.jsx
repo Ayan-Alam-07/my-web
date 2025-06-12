@@ -109,13 +109,15 @@ const HomeEarn = () => {
                   </p>
                   <span>
                     + {bonus.bonusCoin}{" "}
-                    <span style={{ color: "#fff", margin: "4px" }}>VEs</span>
+                    <span style={{ color: "#444", margin: "4px" }}>VEs</span>
                   </span>
                 </div>
                 <div className={style.bonusAdCount}>
                   <h4>
                     0 /{" "}
-                    <span style={{ color: "#007bff" }}>{bonus.reqWatch}</span>{" "}
+                    <span style={{ color: "#007bff", fontSize: " 18px" }}>
+                      {bonus.reqWatch}
+                    </span>{" "}
                   </h4>
                   <button>
                     <GiProfit className="me-2" />
