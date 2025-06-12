@@ -98,24 +98,23 @@ const HomeEarn = () => {
               Trusted Globally for Earning Online.
             </p>
           </div>
-          <div className="col-12">
+          <div className="col-12 p-0 p-md-2">
             {watchBonus.map((bonus) => (
-              <div className={style.bonusCont}>
+              <div key={bonus.id} className={style.bonusCont}>
                 <div className={style.bonusinfoPointCont}>
                   <p className="m-0">
-                    Watch{" "}
                     <span style={{ color: "#007bff", margin: "0px" }}>Ad</span>{" "}
                     Bonus
                   </p>
-                  <span>
+                  <span className={style.bonusCoin}>
                     + {bonus.bonusCoin}{" "}
-                    <span style={{ color: "#444", margin: "4px" }}>VEs</span>
+                    <span style={{ color: "#444", margin: "3px" }}>VEs</span>
                   </span>
                 </div>
                 <div className={style.bonusAdCount}>
-                  <h4>
+                  <h4 className={style.bonusCount}>
                     0 /{" "}
-                    <span style={{ color: "#007bff", fontSize: " 18px" }}>
+                    <span className={style.bonusReqWatch}>
                       {bonus.reqWatch}
                     </span>{" "}
                   </h4>
