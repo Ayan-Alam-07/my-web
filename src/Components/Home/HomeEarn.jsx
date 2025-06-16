@@ -108,7 +108,7 @@ const HomeEarn = () => {
                   </p>
                   <span className={style.bonusCoin}>
                     + {bonus.bonusCoin}{" "}
-                    <span style={{ color: "#444", margin: "3px" }}>VEs</span>
+                    <span style={{ color: "#fff", margin: "3px" }}>VEs</span>
                   </span>
                 </div>
                 <div className={style.bonusAdCount}>
@@ -179,7 +179,7 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <div className="row text-white mt-4 pt-1 mb-4">
+        <div className="row text-white mx-sm-3 mx-lg-0 mt-4 pt-1 mb-4">
           <div className="col-12 p-0">
             {nums.map((_, idx) => (
               <div
@@ -258,7 +258,7 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <div className="row justify-content-around">
+        <div className="row justify-content-around mx-sm-3 mx-lg-0">
           <div className="col-12 col-lg-10 mx-lg-3 px-lg-5 px-0 mt-4 pt-1 mb-4 text-white">
             {follows.map((follow, idx) => (
               <div
