@@ -7,20 +7,23 @@ const LandingNav = () => {
       <div>
         <nav>
           <div
-            className={`container d-flex align-items-center ${style.landingNavBlur}`}
+            className={`container d-flex align-items-center justify-content-between ${style.landingNavBlur}`}
           >
-            <div className={style.VeLoopLogo}>
-              <img
-                src={VeLoopLogoAni}
-                alt="Watch Ads & Earn Real Cash Online – Only on VELoop"
-              />
-            </div>
-            <h2 className={style.landingLogoTxt}>
-              <strong>
+            <div className="d-flex align-items-center ">
+              <div className={style.VeLoopLogo}>
+                <img
+                  src={VeLoopLogoAni}
+                  alt="Watch Ads & Earn Real Cash Online – Only on VELoop"
+                />
+              </div>
+              <h2 className={style.landingLogoTxt}>
                 <span style={{ color: "#ffd700", marginRight: "3px" }}>VE</span>
                 Loop
-              </strong>
-            </h2>
+              </h2>
+            </div>
+            <div>
+              <button className={style.landingLoginBtn}>Login / Signup</button>
+            </div>
           </div>
         </nav>
       </div>

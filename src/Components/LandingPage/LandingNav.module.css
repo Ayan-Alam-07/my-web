@@ -12,10 +12,10 @@
   left: 50px;
   width: 100%;
   background: rgba(255, 255, 255, 0.1); /* light tint */
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 15px 60px 0 rgba(31, 38, 135, 0.3);
+  box-shadow: 0 10px 40px 0 rgba(34, 42, 163, 0.4);
   color: white;
   z-index: 10;
 }
@@ -25,10 +25,10 @@
   width: 100%;
 }
 .VeLoopLogo {
-  margin: 0 0 0 3vw;
-  padding: 1vw;
-  height: 16vw;
-  width: 16vw;
+  cursor: pointer;
+  padding: 1.5vw;
+  height: 18vw;
+  width: 18vw;
   /* border-radius: 50%; */
   overflow: hidden;
 }
@@ -39,10 +39,73 @@
   object-fit: cover;
 }
 .landingLogoTxt {
-  margin: 0 0 0 5vw;
-  -webkit-text-stroke: 1.5px #000;
+  margin: 0 0 0 1vw;
+  -webkit-text-stroke: 1.6px #000;
   letter-spacing: 0.34vw;
   font-weight: 900;
   font-family: "poppins";
-  font-size: 7.5vw;
+  font-size: 7.4vw;
+}
+.landingLoginBtn {
+  padding: 2.5vw 3vw;
+  font-size: 4vw;
+  font-weight: 800;
+  font-family: "nunito";
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #757575;
+  border-radius: 14px;
+}
+.landingLoginBtn:active {
+  background-color: #00bfff;
+  -webkit-text-stroke: 0.4px #000;
+  transform: scale(1.03);
+}
+
+@media (min-width: 575px) {
+  .VeLoopLogo {
+    padding: 1vw;
+    height: 14vw;
+    width: 14vw;
+  }
+  .landingLogoTxt {
+    margin: 0 0 0 1.5vw;
+    -webkit-text-stroke: 1.4px #000;
+    letter-spacing: 0.2vw;
+    font-size: 5.5vw;
+  }
+  .landingLoginBtn {
+    margin: 0 1vw 0 0;
+    padding: 2.2vw 2.5vw;
+    letter-spacing: 0.071vw;
+    font-size: 3vw;
+    font-weight: 800;
+    font-family: "nunito";
+    border-radius: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .VeLoopLogo {
+    padding: 0.5vw;
+    height: 5.6vw;
+    width: 5.6vw;
+  }
+  .landingLogoTxt {
+    margin: 0 0 0 1.5vw;
+    -webkit-text-stroke: 1.1px #000;
+    letter-spacing: 0.2vw;
+    font-size: 2.5vw;
+  }
+  .landingLoginBtn {
+    margin: 0;
+    padding: 0.8vw 1.1vw;
+    letter-spacing: 0vw;
+    font-size: 1.4vw;
+    border-radius: 20px;
+  }
+  .landingLoginBtn:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+    -webkit-text-stroke: 0.31px #000;
+  }
 }
