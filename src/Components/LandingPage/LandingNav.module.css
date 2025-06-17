@@ -25,9 +25,10 @@
   width: 100%;
 }
 .VeLoopLogo {
+  margin: 0 0 0 3vw;
   padding: 1vw;
-  height: 15vw;
-  width: 15vw;
+  height: 16vw;
+  width: 16vw;
   /* border-radius: 50%; */
   overflow: hidden;
 }
@@ -38,10 +39,10 @@
   object-fit: cover;
 }
 .landingLogoTxt {
-  margin: 0 0 0 3vw;
-  -webkit-text-stroke: 1px #000;
-  letter-spacing: 0.2vw;
+  margin: 0 0 0 5vw;
+  -webkit-text-stroke: 1.5px #000;
+  letter-spacing: 0.34vw;
   font-weight: 900;
   font-family: "poppins";
-  font-size: 28px;
+  font-size: 7.5vw;
 }
