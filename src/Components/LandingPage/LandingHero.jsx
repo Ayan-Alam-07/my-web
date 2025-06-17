@@ -1,7 +1,12 @@
+import style from "./LandingHero.module.css";
+
 const LandingHero = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0">
       <div className="container"></div>
+      <div className={style.landingHeroWraper}>
+        <div className={style.landingHeroContWraper}></div>
+      </div>
     </div>
   );
 };

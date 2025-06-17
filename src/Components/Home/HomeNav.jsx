@@ -1,10 +1,11 @@
 import style from "./HomeNav.module.css";
 import { useList } from "../../Context/ContextStore";
 import Loader from "../Loader/Loader";
+import { useNavigate } from "react-router-dom";
 
 const HomeNav = () => {
   const { locationData } = useList(); // Or show a loader
-
+  const navigate = useNavigate();
   // const { loading, error, country, country_code } = locationData;
 
   // Don’t render if there was an error fetching location
@@ -23,8 +24,8 @@ const HomeNav = () => {
       <div className="container">
         <nav className={style.homeNav}>
           <div className="row justify-content-between align-items-center">
-            <div className="col-5">
-              <h2 className="m-0">
+            <div className="col-5" style={{ cursor: "pointer" }}>
+              <h2 className="m-0" onClick={() => navigate("/")}>
                 <span className={style.homeLogoFir}>
                   <strong>VE</strong>
                 </span>
