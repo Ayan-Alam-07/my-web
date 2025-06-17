@@ -15,7 +15,7 @@
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 42px 0 rgba(31, 38, 135, 0.3);
+  box-shadow: 0 15px 60px 0 rgba(31, 38, 135, 0.3);
   color: white;
   z-index: 10;
 }
