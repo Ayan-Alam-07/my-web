@@ -4,21 +4,30 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  /* background: #e9cff5 !important; */
 }
 .landingNav nav {
   position: static;
-  /* background: #fff !important; */
+  background: #fcdbee !important;
+
+  left: 50px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); /* light tint */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 42px 0 rgba(31, 38, 135, 0.3);
+  color: white;
+  z-index: 10;
 }
 .landingNavBlur {
-  background: transparent;
+  background: #fcdbee;
   height: 100%;
-  width: 200%;
+  width: 100%;
 }
 .VeLoopLogo {
   padding: 1vw;
-  height: 70px;
-  width: 70px;
+  height: 15vw;
+  width: 15vw;
   /* border-radius: 50%; */
   overflow: hidden;
 }
@@ -27,4 +36,12 @@
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
+}
+.landingLogoTxt {
+  margin: 0 0 0 3vw;
+  -webkit-text-stroke: 1px #000;
+  letter-spacing: 0.2vw;
+  font-weight: 900;
+  font-family: "poppins";
+  font-size: 28px;
 }
