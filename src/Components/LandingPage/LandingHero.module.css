@@ -1,12 +1,25 @@
 .landingHeroWraper {
-  background-image: url("../../assets/landing-back-6.png");
+  position: relative;
+  background-image: url("../../assets/landing-back-mob-4.png");
   background-size: cover;
-  height: 100vh;
+  background-position: 89.5% 0%;
+  background-repeat: no-repeat;
+  height: 99vh;
   width: 100%;
 }
+
 .landingHeroContWraper {
-  height: 100vh;
+  height: 99vh;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(2x);
+  /* backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2.5x); */
+}
+
+/* FIXME: media query */
+@media (min-width: 575px) {
+  .landingHeroWraper {
+    background-image: url("../../assets/landing-back-6.png");
+    background-size: cover;
+    background-position: 91% 0%; /* or top, left, 40% 60%, etc. */
+  }
 }

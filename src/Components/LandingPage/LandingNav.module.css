@@ -1,0 +1,30 @@
+.landingNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  /* background: #e9cff5 !important; */
+}
+.landingNav nav {
+  position: static;
+  /* background: #fff !important; */
+}
+.landingNavBlur {
+  background: transparent;
+  height: 100%;
+  width: 200%;
+}
+.VeLoopLogo {
+  padding: 1vw;
+  height: 70px;
+  width: 70px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+}
+.VeLoopLogo img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
