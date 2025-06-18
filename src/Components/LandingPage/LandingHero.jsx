@@ -16,7 +16,7 @@ const LandingHero = () => {
           <p className={style.landingHeroPara}>
             Turn your free time into real income by joining the easiest and most
             trusted way to earn money online. Get paid for watching ads,
-            completing app tasks, solving captchas, and referring friends.{" "}
+            completing app tasks, solving captchas, and referring friends, Etc.{" "}
             <span className={style.landingParaHideMob}>
               {" "}
               Start today and explore how easy it is to boost your income
