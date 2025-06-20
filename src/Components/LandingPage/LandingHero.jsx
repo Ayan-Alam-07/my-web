@@ -1,9 +1,7 @@
 import style from "./LandingHero.module.css";
-import { useNavigate } from "react-router-dom";
+import LandingCommonBtn from "../LandingPage/LandingCommon/LandingCommonBtn";
 
 const LandingHero = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="container-fluid p-0 mt-5">
       <div className={style.landingHeroWraper}>
@@ -29,12 +27,9 @@ const LandingHero = () => {
             </span>
           </p>
           <div className="d-flex justify-content-center pb-4">
-            <button
-              className={style.landingHeroBtn}
-              onClick={() => navigate("/Home")}
-            >
-              Starting Making Money Now
-            </button>
+            <LandingCommonBtn
+              btnText={"Starting Making Money Now"}
+            ></LandingCommonBtn>
           </div>
         </div>
       </div>

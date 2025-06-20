@@ -5,15 +5,7 @@
   width: 100%;
   overflow: hidden;
 }
-/* .gradient {
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  top: -2vw;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-} */
+
 .LandingEarnHds {
   padding: 5.5vw 0;
   font-family: "poppins";
@@ -40,10 +32,11 @@
   border: 1px solid #999999;
   border-radius: 25px;
   cursor: pointer;
+  transition: all 0.3s ease-in;
 }
-/* .card:hover {
+.card:hover {
   transform: scale(1.06);
-} */
+}
 
 .landingCardImg {
   margin: 2.5vw 0;
@@ -65,15 +58,6 @@
 }
 
 @media (min-width: 992px) {
-  .gradient {
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    top: -2vw;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-  }
   .LandingEarnHds {
     padding: 5.5vw 0;
     font-family: "poppins";

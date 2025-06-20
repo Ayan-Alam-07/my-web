@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import { flushSync } from "react-dom";
 import style from "./LandingEarnAbout.module.css";
+import LandingCommonBtn from "./LandingCommon/LandingCommonBtn";
 
 import watchAdImg from "../../assets/watch-ad.png";
 import appTaskImg from "../../assets/app-task.png";
@@ -101,7 +102,6 @@ const LandingEarnAbout = () => {
   return (
     <div className="container-fluid p-0">
       <div className={style.LandingEarnWraper} ref={sectionRef}>
-        <div className={style.gradient}></div>
         <h2 className={style.LandingEarnHds}>
           Start Earning Instantly with Simple Tasks
         </h2>
@@ -136,6 +136,9 @@ const LandingEarnAbout = () => {
             ))}
           </div>
         </Flipper>
+        <div className="d-flex justify-content-center align-items-center">
+          <LandingCommonBtn btnText={"Explore More"}></LandingCommonBtn>
+        </div>
       </div>
     </div>
   );

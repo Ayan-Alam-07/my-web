@@ -48,23 +48,6 @@
 .landingParaHideMob {
   display: none;
 }
-.landingHeroBtn {
-  margin: 3vw 0 0 0;
-  padding: 4.2vw 6vw;
-  font-size: 4vw;
-  font-family: "nunito";
-  font-weight: 700;
-  letter-spacing: 0.1vw;
-  background-color: #000;
-  color: #fff;
-  border: 2.04px solid #fff;
-  border-radius: 20px;
-}
-.landingHeroBtn:active {
-  background-color: transparent;
-  color: #000;
-  border: 2px solid #000;
-}
 
 /* FIXME: media query */
 @media (max-height: 750px) {
@@ -125,18 +108,6 @@
   .landingParaHideMob {
     display: block;
   }
-  .landingHeroBtn {
-    margin: 0 0 3.3vw 0;
-    padding: 2.3vw 5.2vw;
-    font-size: 3.7vw;
-    font-family: "nunito";
-    font-weight: 700;
-    letter-spacing: 0.09vw;
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 25px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -184,22 +155,5 @@
     text-transform: capitalize;
     text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.7);
     -webkit-text-stroke: 0.3px #fff;
-  }
-
-  .landingHeroBtn {
-    margin: 0 0 1.82vw 0;
-    font-size: 1.2vw;
-    font-family: "nunito";
-    font-weight: 700;
-    letter-spacing: 0.08vw;
-    background-color: #000;
-    color: #fff;
-    padding: 1vw 2.5vw;
-    border: 2px solid #fff;
-    border-radius: 25px;
-  }
-  .landingHeroBtn:hover {
-    transform: scale(1.03);
-    transition: all 0.1s ease-in-out;
   }
 }
