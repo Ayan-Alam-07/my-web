@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
+import { flushSync } from "react-dom";
 import style from "./LandingEarnAbout.module.css";
 
 import watchAdImg from "../../assets/watch-ad.png";
@@ -12,6 +13,7 @@ import bonusImg from "../../assets/bonus.png";
 import promoCodeImg from "../../assets/promo-code-3.png";
 
 const LandingEarnAbout = () => {
+  const sectionRef = useRef(null);
   const initialCards = [
     {
       id: 1,
@@ -78,21 +80,27 @@ const LandingEarnAbout = () => {
 
   useEffect(() => {
     const shuffleWithRandomDelay = () => {
-      setCards((prev) => shuffleCards(prev));
-      const nextDelay = Math.floor(Math.random() * 5000) + 10000; // 4000–6000 ms
+      const scrollY = window.scrollY;
+
+      // flushSync forces React to update DOM before continuing
+      flushSync(() => {
+        setCards((prev) => shuffleCards(prev));
+      });
+
+      window.scrollTo({ top: scrollY, behavior: "auto" });
+
+      const nextDelay = Math.floor(Math.random() * 5000) + 9000;
       timeoutRef.current = setTimeout(shuffleWithRandomDelay, nextDelay);
     };
 
     shuffleWithRandomDelay();
 
-    return () => {
-      clearTimeout(timeoutRef.current); // Cleanup
-    };
+    return () => clearTimeout(timeoutRef.current);
   }, []);
 
   return (
     <div className="container-fluid p-0">
-      <div className={style.LandingEarnWraper}>
+      <div className={style.LandingEarnWraper} ref={sectionRef}>
         <div className={style.gradient}></div>
         <h2 className={style.LandingEarnHds}>
           Start Earning Instantly with Simple Tasks
@@ -102,10 +110,6 @@ const LandingEarnAbout = () => {
           flipKey={cards.map((card) => card.id).join("-")}
           spring="stiff"
           decisionData={cards}
-          onStart={() => {
-            const scrollY = window.scrollY;
-            setTimeout(() => window.scrollTo({ top: scrollY }), 0);
-          }}
         >
           <div
             className={`row justify-content-center p-0 m-0 ${style.sliderWrapper}`}

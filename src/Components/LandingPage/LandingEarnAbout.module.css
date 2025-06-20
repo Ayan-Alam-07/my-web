@@ -3,6 +3,7 @@
   background-color: #ffecf8;
   height: auto;
   width: 100%;
+  overflow: hidden;
 }
 /* .gradient {
   height: 50px;
@@ -38,7 +39,11 @@
   align-items: center;
   border: 1px solid #999999;
   border-radius: 25px;
+  cursor: pointer;
 }
+/* .card:hover {
+  transform: scale(1.06);
+} */
 
 .landingCardImg {
   margin: 2.5vw 0;
