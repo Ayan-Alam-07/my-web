@@ -6,7 +6,6 @@ const LandingHero = () => {
 
   return (
     <div className="container-fluid p-0 mt-5">
-      <div className="container"></div>
       <div className={style.landingHeroWraper}>
         <div className={`col-11 col-lg-7 p-md-1 ${style.landingHeroContent}`}>
           <h1 className={style.landingHeroHds}>

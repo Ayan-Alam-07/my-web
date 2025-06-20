@@ -1,0 +1,119 @@
+.LandingEarnWraper {
+  position: relative;
+  background-color: #ffecf8;
+  height: auto;
+  width: 100%;
+}
+.gradient {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: -2vw;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+.LandingEarnHds {
+  padding: 5.5vw 0;
+  font-family: "poppins";
+  text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3);
+  font-size: 2.6vw;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  letter-spacing: 0.07vw;
+}
+.sliderWrapper {
+  display: flex;
+}
+.sliderTrack {
+  margin: 0 1vw;
+  color: #000;
+}
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #999999;
+  border-radius: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.landingCardImg {
+  margin: 2.5vw 0;
+  height: 4vw;
+  width: 4vw;
+}
+.cardContent {
+  background-color: #000;
+  border-radius: 25px;
+  border: 10px solid #fff;
+  padding: 2vw 3vw;
+  color: #fff;
+  text-align: start;
+}
+.cardsHds {
+  text-align: center;
+  font-size: 1.6vw;
+  padding: 0.41vw 0 1.4vw 0;
+}
+
+@media (min-width: 992px) {
+  .gradient {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: -2vw;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+  .LandingEarnHds {
+    padding: 5.5vw 0;
+    font-family: "poppins";
+    text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3);
+    font-size: 2.6vw;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    letter-spacing: 0.07vw;
+  }
+  .sliderWrapper {
+    display: flex;
+  }
+  .sliderTrack {
+    margin: 0 1vw;
+    color: #000;
+  }
+  .card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999999;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .landingCardImg {
+    margin: 2.5vw 0;
+    height: 4vw;
+    width: 4vw;
+  }
+  .cardContent {
+    background-color: #000;
+    border-radius: 25px;
+    border: 10px solid #fff;
+    padding: 2vw 3vw;
+    color: #fff;
+    text-align: start;
+  }
+  .cardsHds {
+    text-align: center;
+    font-size: 1.6vw;
+    padding: 0.41vw 0 1.4vw 0;
+  }
+}

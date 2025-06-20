@@ -14,6 +14,7 @@ const LandingNav = () => {
                 <img
                   src={VeLoopLogoAni}
                   alt="Watch Ads & Earn Real Cash Online – Only on VELoop"
+                  onClick={() => window.location.reload()}
                 />
               </div>
               <h2 className={style.landingLogoTxt}>

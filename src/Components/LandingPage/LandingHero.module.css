@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: 89.5% 0%;
   background-repeat: no-repeat;
-  height: 116.5vh;
+  height: 117.5vh;
   width: 100%;
 }
 
@@ -67,6 +67,16 @@
 }
 
 /* FIXME: media query */
+@media (max-height: 750px) {
+  .landingHeroWraper {
+    height: 140vh;
+  }
+}
+@media (height = 740px) {
+  .landingHeroWraper {
+    height: 124vh;
+  }
+}
 @media (min-width: 575px) {
   .landingHeroWraper {
     justify-content: center;
@@ -132,7 +142,7 @@
 @media (min-width: 992px) {
   .landingHeroWraper {
     justify-content: start;
-    height: 121vh;
+    height: 122vh;
     background-image: url("../../assets/landing-back-6.png");
     background-size: cover;
     background-position: 91% 0%; /* or top, left, 40% 60%, etc. */
@@ -140,7 +150,7 @@
   .landingHeroContent {
     cursor: text;
     position: absolute;
-    margin: 6.8vw 2.15vw 0 5.7vw;
+    margin: 7.2vw 2.15vw 0 5.7vw;
     background: rgba(255, 255, 255, 0.1); /* transparent white */
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px;
@@ -149,6 +159,7 @@
     -webkit-backdrop-filter: blur(10px);
     padding: 1.2vw 1.4vw;
     color: #fff;
+    z-index: 10;
   }
   .landingHeroHds {
     margin-top: 0;
@@ -176,7 +187,7 @@
   }
 
   .landingHeroBtn {
-    margin: 0;
+    margin: 0 0 1.82vw 0;
     font-size: 1.2vw;
     font-family: "nunito";
     font-weight: 700;
@@ -186,5 +197,9 @@
     padding: 1vw 2.5vw;
     border: 2px solid #fff;
     border-radius: 25px;
+  }
+  .landingHeroBtn:hover {
+    transform: scale(1.03);
+    transition: all 0.1s ease-in-out;
   }
 }
