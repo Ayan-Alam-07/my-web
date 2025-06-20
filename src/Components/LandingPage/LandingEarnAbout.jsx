@@ -98,14 +98,22 @@ const LandingEarnAbout = () => {
           Start Earning Instantly with Simple Tasks
         </h2>
 
-        <Flipper flipKey={cards.map((card) => card.id).join("-")}>
+        <Flipper
+          flipKey={cards.map((card) => card.id).join("-")}
+          spring="stiff"
+          decisionData={cards}
+          onStart={() => {
+            const scrollY = window.scrollY;
+            setTimeout(() => window.scrollTo({ top: scrollY }), 0);
+          }}
+        >
           <div
             className={`row justify-content-center p-0 m-0 ${style.sliderWrapper}`}
           >
             {cards.map((detail) => (
               <Flipped key={detail.id} flipId={detail.id}>
-                <div className="col-12 col-sm-6 col-lg-3 py-sm-3 py-lg-2">
-                  <div className={`${style.sliderTrack}`} id="slider-track">
+                <div className="col-12 col-sm-6 col-lg-3 pb-sm-3 pb-lg-5">
+                  <div className={`${style.sliderTrack}`}>
                     <div className={style.card}>
                       <img
                         src={detail.icon}
