@@ -20,7 +20,7 @@ const LandingEarnAbout = () => {
       id: 1,
       icon: watchAdImg,
       title: "Watch Ad & Earn",
-      para: "Watch ads and earn real rewards instantly. Get paid online easily by viewing simple video ads!",
+      para: "Watch ads online and earn real rewards instantly. Get paid daily by viewing simple video ads!",
     },
     {
       id: 2,
@@ -116,7 +116,7 @@ const LandingEarnAbout = () => {
           >
             {cards.map((detail) => (
               <Flipped key={detail.id} flipId={detail.id}>
-                <div className="col-12 col-sm-6 col-lg-3 pb-sm-3 pb-lg-5">
+                <div className="col-12 col-sm-6 col-lg-3 pb-5 ">
                   <div className={`${style.sliderTrack}`}>
                     <div className={style.card}>
                       <img
@@ -127,7 +127,7 @@ const LandingEarnAbout = () => {
                       />
                       <div className={style.cardContent}>
                         <h3 className={style.cardsHds}>{detail.title}</h3>
-                        <p className="m-0">{detail.para}</p>
+                        <p className={`m-0 ${style.cardPara}`}>{detail.para}</p>
                       </div>
                     </div>
                   </div>

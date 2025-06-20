@@ -7,20 +7,20 @@
 }
 
 .LandingEarnHds {
-  padding: 5.5vw 0;
+  padding: 17.5vw 0;
   font-family: "poppins";
   text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3);
-  font-size: 2.6vw;
-  font-weight: 700;
+  font-size: 5.8vw;
+  font-weight: 800;
   text-align: center;
   color: #000;
-  letter-spacing: 0.07vw;
+  letter-spacing: 0.3vw;
 }
 .sliderWrapper {
   display: flex;
 }
 .sliderTrack {
-  margin: 0 1vw;
+  margin: 0 10.2vw;
   color: #000;
 }
 .card {
@@ -29,32 +29,87 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #999999;
+  border: 2px solid #999999;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
 .card:hover {
-  transform: scale(1.06);
+  transform: scale(1.12);
 }
 
 .landingCardImg {
-  margin: 2.5vw 0;
-  height: 4vw;
-  width: 4vw;
+  margin: 6.5vw 0;
+  height: 17vw;
+  width: 17vw;
 }
 .cardContent {
   background-color: #000;
   border-radius: 25px;
-  border: 10px solid #fff;
-  padding: 2vw 3vw;
+  border: 12px solid #fff;
+  padding: 4vw 5vw;
   color: #fff;
   text-align: start;
 }
 .cardsHds {
+  padding: 4vw 0;
   text-align: center;
-  font-size: 1.6vw;
-  padding: 0.41vw 0 1.4vw 0;
+  font-size: 5.6vw;
+  font-weight: 700;
+  font-family: "poppins";
+}
+.cardPara {
+  padding: 2vw 3vw 4vw;
+  font-size: 4.7vw;
+}
+
+/* FIXME: MEDIA QUERY */
+
+@media (min-width: 575px) {
+  .LandingEarnHds {
+    padding: 10vw 3vw 12vw;
+    font-family: "poppins";
+    text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3);
+    font-size: 5vw;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    letter-spacing: 0.2vw;
+  }
+
+  .sliderTrack {
+    margin: 0 1vw;
+    color: #000;
+  }
+
+  .card:hover {
+    transform: scale(1.06);
+  }
+
+  .landingCardImg {
+    margin: 4.5vw 0;
+    height: 11vw;
+    width: 11vw;
+  }
+  .cardContent {
+    background-color: #000;
+    border-radius: 30px;
+    border: 18px solid #fff;
+    padding: 3vw 3vw;
+    color: #fff;
+    text-align: start;
+  }
+  .cardsHds {
+    padding: 2vw 0 3vw 0;
+    text-align: center;
+    font-size: 3.35vw;
+    letter-spacing: 0.061vw;
+  }
+  .cardPara {
+    padding: 0;
+    font-size: 25px;
+    letter-spacing: 0.2vw;
+  }
 }
 
 @media (min-width: 992px) {
@@ -76,14 +131,10 @@
     color: #000;
   }
   .card {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border: 1px solid #999999;
-    border-radius: 25px;
-    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.05);
   }
 
   .landingCardImg {
@@ -101,7 +152,13 @@
   }
   .cardsHds {
     text-align: center;
-    font-size: 1.6vw;
+    font-size: 1.35vw;
+    letter-spacing: 0.061vw;
     padding: 0.41vw 0 1.4vw 0;
+  }
+  .cardPara {
+    padding: 0;
+    font-size: 19px;
+    letter-spacing: 0;
   }
 }
