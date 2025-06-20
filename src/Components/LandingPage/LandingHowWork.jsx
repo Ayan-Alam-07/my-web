@@ -7,26 +7,30 @@ const LandingHowWork = () => {
   const howWorkCards = [
     {
       id: 1,
-      icon: "",
-
-      //   icon: HowWorkLogo,
-      title: "",
-      para: "",
+      class: "signupImg",
+      icon: HowWorkLogo,
+      alt: "Sign up now to start earning rewards instantly by joining our free and trusted online platform",
+      step: "Step 1.",
+      title: "Sign up",
+      para: "Create an account easily with Google, Facebook, Apple, or a secure crypto wallet for rewards.",
     },
     {
       id: 2,
-      icon: "",
-
-      //   icon: doTaskImg,
-      title: "",
-      para: "",
+      class: "taskImg",
+      icon: doTaskImg,
+      alt: "Complete simple online tasks to earn real rewards instantly from your phone or computer",
+      step: "Step 2.",
+      title: "Complete Tasks",
+      para: "Browse a wide range of tasks, from games to surveys, and pick the easiest way to earn online.",
     },
     {
       id: 3,
-      icon: "",
-      //   icon: getPaidImg,
-      title: "",
-      para: "",
+      class: "paidImg",
+      icon: getPaidImg,
+      alt: "Get paid online for completing tasks, watching ads, and participating in simple reward programs",
+      step: "Step 3.",
+      title: "Get paid",
+      para: "Follow the task guidelines, complete tasks, and get rewarded. Easily transfer your earnings to your crypto wallet.",
     },
   ];
   return (
@@ -35,22 +39,21 @@ const LandingHowWork = () => {
         <div className={style.landingCont}>
           <h2 className={style.landingWorkHds}>How it Works ?</h2>
 
-          <div
-            className={`row justify-content-center p-0 m-0 ${style.sliderWrapper}`}
-          >
+          <div className={`row  p-0 m-0 ${style.sliderWrapper}`}>
             {howWorkCards.map((card) => (
-              <div className="col-12 col-sm-6 col-lg-3 pb-5 ">
-                <div className={`${style.sliderTrack}`}>
+              <div key={card.id} className="col-12 col-sm-6 col-lg-4 pb-5 ">
+                <div className={`${style.sliderTrack} ${style[card.class]}`}>
                   <div className={style.card}>
                     <img
                       src={card.icon}
-                      alt=""
+                      alt={card.alt}
                       style={{ borderRadius: "7px" }}
-                      className={style.landingCardImg}
+                      className={`${style.landingCardImg} `}
                     />
                     <div className={style.cardContent}>
+                      <p className={style.cardStepPara}>{card.step}</p>
                       <h3 className={style.cardsHds}>{card.title}</h3>
-                      <p className={`m-0 ${style.cardPara}`}>{card.para}</p>
+                      <p className={style.cardPara}>{card.para}</p>
                     </div>
                   </div>
                 </div>

@@ -7,12 +7,12 @@
   width: 100%;
 }
 .landingCont {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .landingWorkHds {
-  padding: 15.5vw 0;
+  padding: 18.5vw 0 15vw;
   font-family: "poppins";
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   font-size: 8.3vw;
@@ -22,21 +22,121 @@
   -webkit-text-stroke: 3px #000;
   letter-spacing: 0.17vw;
 }
-
+.sliderWrapper {
+  display: flex;
+}
+.sliderTrack {
+  margin: 0 8vw;
+  color: #fff;
+  padding: 2vw 8.2vw;
+  border-radius: 25px;
+  border: 2px solid #fff;
+}
+.signupImg {
+  background-color: #6ba6ff;
+}
+.taskImg {
+  background-color: #416ef0;
+}
+.paidImg {
+  background-color: #0044bc;
+}
+.landingCardImg {
+  margin: 5vw 0 7.7vw;
+  height: 90px;
+  width: 90px;
+}
+.cardStepPara {
+  margin: 0 0 5vw 0;
+  -webkit-text-stroke: 0.2px #000;
+  font-family: "nunito";
+  font-size: 6.3vw;
+  font-weight: 600;
+}
+.cardsHds {
+  margin: 0 0 4vw 0;
+  font-family: "poppins";
+  font-size: 6vw;
+  font-weight: 800;
+}
+.cardPara {
+  margin: 0 0 7vw 0;
+  font-family: "outfit";
+  font-size: 4vw;
+  font-weight: 600;
+}
 /* FIXME: MEDIA QUERY */
-@media (min-width: 992px) {
+@media (min-width: 575px) {
   .landingWorkWraper {
-    background-image: url("../../assets/landing-back-9.jpg"); /* 15 */
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* height: 100vh; */
-    width: 100%;
+    background-position: center left;
   }
   .landingWorkHds {
-    padding: 5.5vw 0;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    padding: 8vw 0 6vw;
+    font-size: 5vw;
+    -webkit-text-stroke: 2px #000;
+    letter-spacing: 0.08vw;
+  }
+  .sliderWrapper {
+    justify-content: start;
+  }
+  .sliderTrack {
+    margin: 0 1vw;
+    padding: 3vw 4.8vw;
+  }
+  .landingCardImg {
+    margin: 1.4vw 0 2vw;
+    height: 95px;
+    width: 95px;
+  }
+  .cardStepPara {
+    margin: 0 0 2vw 0;
+    -webkit-text-stroke: 0.1px #000;
+    font-size: 2.7vw;
+  }
+  .cardsHds {
+    margin: 0 0 2vw 0;
+    font-size: 3.2vw;
+    font-weight: 700;
+  }
+  .cardPara {
+    margin: 0 0 1.6vw 0;
+    font-size: 2.17vw;
+    letter-spacing: 0.007vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .landingWorkWraper {
+    background-position: center center;
+  }
+  .landingWorkHds {
+    padding: 4.5vw 0 4vw;
     font-size: 3.3vw;
     -webkit-text-stroke: 2px #000;
     letter-spacing: 0.08vw;
+  }
+  .sliderTrack {
+    margin: 0 1.2vw;
+    padding: 2vw 3.8vw;
+  }
+  .landingCardImg {
+    margin: 1.4vw 0 2vw;
+    height: 100px;
+    width: 100px;
+  }
+  .cardStepPara {
+    margin: 0 0 1.6vw 0;
+    -webkit-text-stroke: 0.1px #000;
+    font-size: 1.8vw;
+  }
+  .cardsHds {
+    margin: 0 0 1vw 0;
+    font-size: 2vw;
+    font-weight: 700;
+  }
+  .cardPara {
+    margin: 0 0 1.6vw 0;
+    font-size: 1.15vw;
+    letter-spacing: 0.007vw;
   }
 }

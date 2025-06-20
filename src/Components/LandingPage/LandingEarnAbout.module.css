@@ -1,9 +1,9 @@
 .LandingEarnWraper {
   position: relative;
   background-color: #ffecf8;
-  height: auto;
   width: 100%;
   overflow: hidden;
+  contain: layout paint; /* ✅ Prevents layout shift illusion */
 }
 
 .LandingEarnHds {
@@ -18,6 +18,10 @@
 }
 .sliderWrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 780px;
+  overflow: hidden;
 }
 .sliderTrack {
   margin: 0 10.2vw;
@@ -33,6 +37,7 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  height: 100%;
 }
 .card:hover {
   transform: scale(1.12);
@@ -56,7 +61,7 @@
   text-align: center;
   font-size: 5.6vw;
   font-weight: 700;
-  font-family: "poppins";
+  font-family: "poppins", sans-serif;
 }
 .cardPara {
   padding: 2vw 3vw 4vw;

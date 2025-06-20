@@ -19,48 +19,56 @@ const LandingEarnAbout = () => {
     {
       id: 1,
       icon: watchAdImg,
+      alt: "Watch ads online and earn real rewards instantly by viewing simple video advertisements",
       title: "Watch Ad & Earn",
       para: "Watch ads online and earn real rewards instantly. Get paid daily by viewing simple video ads!",
     },
     {
       id: 2,
       icon: appTaskImg,
+      alt: "Complete app tasks like installs and signups to earn real money online instantly",
       title: "App Task",
       para: "Earn real money by completing app tasks like installs, signups, and usage—quick and easy!",
     },
     {
       id: 3,
       icon: playGameImg,
+      alt: "Play fun mobile games and earn real money online instantly with engaging game tasks",
       title: "Play & Earn",
       para: "Play fun mobile games and earn real rewards instantly—no investment, just pure entertainment!",
     },
     {
       id: 4,
       icon: bonusImg,
+      alt: "Earn daily bonus income by completing simple online tasks and challenges for extra rewards",
       title: "Bonus Income",
       para: "Unlock bonus income by completing tasks and challenges—extra rewards every day!",
     },
     {
       id: 5,
       icon: socialMediaImg,
+      alt: "Earn social rewards by sharing content, referring friends, and engaging on social media platforms",
       title: "Social Rewards",
       para: "Earn social rewards by sharing, referring, and engaging—get paid for your social media activity!",
     },
     {
       id: 6,
       icon: captchaImg,
+      alt: "Solve simple captchas online to earn real money easily with instant rewards for every task",
       title: "Captcha & Earn",
       para: "Solve simple captchas and earn real money online—fast, easy, and available anytime!",
     },
     {
       id: 7,
       icon: promoCodeImg,
+      alt: "Redeem promo codes to earn instant rewards, cashback, or bonus income online effortlessly",
       title: "Promo Code",
       para: "Redeem promo codes to earn instant rewards—exclusive deals for extra income every day!",
     },
     {
       id: 8,
       icon: surveyImg,
+      alt: "Take online surveys to earn real rewards by sharing your opinions on products and services",
       title: "Take Survey",
       para: "Take surveys and earn real rewards—share your opinion and get paid instantly!",
     },
@@ -81,16 +89,11 @@ const LandingEarnAbout = () => {
 
   useEffect(() => {
     const shuffleWithRandomDelay = () => {
-      const scrollY = window.scrollY;
-
-      // flushSync forces React to update DOM before continuing
       flushSync(() => {
         setCards((prev) => shuffleCards(prev));
       });
 
-      window.scrollTo({ top: scrollY, behavior: "auto" });
-
-      const nextDelay = Math.floor(Math.random() * 5000) + 9000;
+      const nextDelay = Math.floor(Math.random() * 7500) + 12000;
       timeoutRef.current = setTimeout(shuffleWithRandomDelay, nextDelay);
     };
 
@@ -121,7 +124,7 @@ const LandingEarnAbout = () => {
                     <div className={style.card}>
                       <img
                         src={detail.icon}
-                        alt=""
+                        alt={detail.alt}
                         style={{ borderRadius: "7px" }}
                         className={style.landingCardImg}
                       />
