@@ -136,8 +136,8 @@ const LandingEarnAbout = () => {
             ))}
           </div>
         </Flipper>
-        <div className="d-flex justify-content-center align-items-center">
-          <LandingCommonBtn btnText={"Explore More"}></LandingCommonBtn>
+        <div className="d-flex justify-content-center align-items-center pb-4 pb-lg-3">
+          <LandingCommonBtn btnText={"Start Earning Now"}></LandingCommonBtn>
         </div>
       </div>
     </div>
