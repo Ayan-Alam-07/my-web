@@ -78,7 +78,7 @@
   }
 
   .sliderTrack {
-    margin: 0 1vw;
+    margin: 0 0.91vw;
     color: #000;
   }
 
@@ -107,8 +107,8 @@
   }
   .cardPara {
     padding: 0;
-    font-size: 25px;
-    letter-spacing: 0.2vw;
+    font-size: 19px;
+    letter-spacing: 0.17vw;
   }
 }
 

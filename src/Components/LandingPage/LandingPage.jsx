@@ -1,13 +1,15 @@
 import LandingHero from "./LandingHero";
 import LandingNav from "./LandingNav";
 import LandingEarnAbout from "./LandingEarnAbout";
+import LandingHowWork from "./LandingHowWork";
 
 const LandingPage = () => {
   return (
     <>
-      <LandingNav></LandingNav>
-      <LandingHero></LandingHero>
-      <LandingEarnAbout></LandingEarnAbout>
+      <LandingNav />
+      <LandingHero />
+      <LandingEarnAbout />
+      <LandingHowWork />
     </>
   );
 };
