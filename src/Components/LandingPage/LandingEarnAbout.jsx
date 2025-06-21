@@ -118,7 +118,7 @@ const LandingEarnAbout = () => {
           decisionData={cards}
         >
           <div
-            className={`row justify-content-center p-0 m-0 ${style.sliderWrapper}`}
+            className={`row justify-content-center p-0  m-0 ${style.sliderWrapper}`}
           >
             {cards.map((detail) => (
               <Flipped key={detail.id} flipId={detail.id}>
@@ -142,7 +142,7 @@ const LandingEarnAbout = () => {
             ))}
           </div>
         </Flipper>
-        <div className="d-flex justify-content-center align-items-center pb-4 pb-lg-3">
+        <div className="d-flex justify-content-center align-items-center pb-5 mb-3 mb-sm-3 mb-lg-0 ">
           <LandingCommonBtn btnText={"Start Earning Now"}></LandingCommonBtn>
         </div>
       </div>

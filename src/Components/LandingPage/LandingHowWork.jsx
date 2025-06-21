@@ -39,7 +39,7 @@ const LandingHowWork = () => {
         <div className={style.landingCont}>
           <h2 className={style.landingWorkHds}>How it Works ?</h2>
 
-          <div className={`row  p-0 m-0 ${style.sliderWrapper}`}>
+          <div className={`row p-0 pb-5 m-0 ${style.sliderWrapper}`}>
             {howWorkCards.map((card) => (
               <div key={card.id} className="col-12 col-sm-6 col-lg-4 pb-5 ">
                 <div className={`${style.sliderTrack} ${style[card.class]}`}>
