@@ -1,6 +1,6 @@
 import style from "./LandingHowWork.module.css";
 import HowWorkLogo from "../../assets/work-veloop-logo.png";
-// import doTaskImg from "../../assets/do-task.png";
+import doTaskImg from "../../assets/do-task.png";
 import getPaidImg from "../../assets/get-paid.png";
 
 const LandingHowWork = () => {
