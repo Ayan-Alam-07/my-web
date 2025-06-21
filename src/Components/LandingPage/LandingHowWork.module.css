@@ -22,6 +22,7 @@
   -webkit-text-stroke: 3px #000;
   letter-spacing: 0.17vw;
 }
+
 .sliderWrapper {
   display: flex;
 }
@@ -31,6 +32,15 @@
   padding: 2vw 8.2vw;
   border-radius: 25px;
   border: 2px solid #fff;
+  cursor: pointer;
+}
+.sliderTrack:hover h3 {
+  transform: scale(1.08);
+  transition: transform 0.2s ease;
+}
+.sliderTrack:hover .landingCardImg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 .signupImg {
   background-color: #6ba6ff;
