@@ -89,8 +89,11 @@ const LandingEarnAbout = () => {
 
   useEffect(() => {
     const shuffleWithRandomDelay = () => {
-      flushSync(() => {
-        setCards((prev) => shuffleCards(prev));
+      // defer flushSync to avoid lifecycle conflict
+      queueMicrotask(() => {
+        flushSync(() => {
+          setCards((prev) => shuffleCards(prev));
+        });
       });
 
       const nextDelay = Math.floor(Math.random() * 7500) + 12000;
