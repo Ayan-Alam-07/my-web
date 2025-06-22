@@ -36,6 +36,15 @@
   width: 100%;
   height: auto;
 }
+.ErnMnyFrmDevic {
+  text-align: start;
+  padding: 10vw 7.17vw;
+  background-color: #f9fafb;
+}
+.ErnMnyFrmDevic h2 {
+  text-align: center;
+  color: #000;
+}
 
 /* FIXME: media query */
 @media (min-width: 575px) {
@@ -61,6 +70,14 @@
     padding: 0.47vw 0;
     font-size: 17px;
   }
+  .ErnMnyFrmDevic {
+    text-align: center;
+    padding: 9.37vw 7.17vw;
+    background-color: #f9fafb;
+  }
+  .ErnMnyFrmDevic p {
+    padding: 1.72vw 3.47vw 0;
+  }
 }
 @media (min-width: 992px) {
   .AboutHds {
@@ -84,5 +101,13 @@
   .aboutCommPara {
     padding: 0.47vw 0;
     font-size: 17px;
+  }
+  .ErnMnyFrmDevic {
+    text-align: center;
+    padding: 3.37vw 7.17vw;
+    background-color: #f9fafb;
+  }
+  .ErnMnyFrmDevic p {
+    padding: 0 14.7vw;
   }
 }
