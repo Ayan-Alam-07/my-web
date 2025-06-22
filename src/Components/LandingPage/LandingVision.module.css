@@ -43,6 +43,11 @@
   text-align: center;
   color: #ffffff;
   box-shadow: 3px 4px 25px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+}
+.VisionCard:hover .visionCardDetail {
+  animation: all 0.3s ease-in-out;
+  transform: scale(1.17);
 }
 
 .visionCard1 {
@@ -153,7 +158,7 @@
     padding: 0 0 2vw 0;
   }
   .landingVisionHds {
-    padding: 5.17vw 0 1.57vw;
+    padding: 4.17vw 0 1.57vw;
     font-size: 3.2vw;
     font-weight: 700;
     letter-spacing: 0.1vw;
