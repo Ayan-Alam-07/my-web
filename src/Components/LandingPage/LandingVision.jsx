@@ -43,7 +43,7 @@ const LandingVision = () => {
             earning extra income in a way that fits your lifestyle.
           </p>
 
-          <div className={`row pb-5 pb-lg-0 m-0 ${style.sliderWrapper}`}>
+          <div className={`row pb-5 m-0 ${style.sliderWrapper}`}>
             {visionCards.map((card) => (
               <div
                 key={card.id}
