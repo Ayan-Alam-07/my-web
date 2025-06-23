@@ -14,6 +14,37 @@
   margin: 4.57vw 0;
 }
 
+.soonAppHds {
+  font-family: "nunito";
+  font-weight: 700;
+  font-size: 4.37vw;
+  margin: 0 0 5.17vw 0;
+}
+.footerCont {
+  padding: 1vw 2vw 3vw;
+  background-color: #000;
+}
+.footerListCont {
+  padding: 1vw 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+}
+.footerListCont li:hover {
+  color: #ffffff99;
+  text-decoration: underline;
+}
+.footerListCont li {
+  padding: 1.77vw 0;
+  font-family: "outfit";
+}
+.footerSecHds {
+  font-family: "poppins";
+  font-size: 5.97vw;
+}
+.footerSecHdsMob {
+  margin: 6.7vw 0 0 0;
+}
 /* FIXME: MEDIA QUERY */
 @media (min-width: 575px) {
   .upperFooter {
@@ -26,6 +57,22 @@
   .upperFooter p {
     font-size: 17px;
     margin: 1.17vw 0;
+  }
+  .footerCont {
+    padding: 1vw 4vw 3vw;
+  }
+  .soonAppHds {
+    font-size: 2.97vw;
+    margin: 0 0 2.77vw 0;
+  }
+  .footerListCont li {
+    padding: 0.87vw 0;
+  }
+  .footerSecHds {
+    font-size: 3.07vw;
+  }
+  .footerSecHdsMob {
+    margin: 0;
   }
 }
 
@@ -41,5 +88,15 @@
     font-size: 17px;
     margin: 1.17vw 0;
     letter-spacing: 0.01vw;
+  }
+  .soonAppHds {
+    font-size: 18px;
+    margin: 0 0 1.47vw 0;
+  }
+  .footerSecHds {
+    font-size: 1.77vw;
+  }
+  .footerListCont li {
+    padding: 0.57vw 0;
   }
 }
