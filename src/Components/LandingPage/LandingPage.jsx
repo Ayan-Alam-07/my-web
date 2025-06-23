@@ -42,7 +42,7 @@ const LandingPage = () => {
     const timer = setTimeout(() => {
       setShowLoader(false);
       document.body.style.overflow = "auto"; // Enable scroll after loader
-    }, 1700);
+    }, 2006);
 
     return () => {
       clearTimeout(timer);
