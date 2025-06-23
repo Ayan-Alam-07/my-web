@@ -9,7 +9,8 @@
 }
 .upperFooter p {
   font-size: 4.27vw;
-  font-family: sans-serif;
+  font-family: "outfit";
+  letter-spacing: 0.071vw;
   margin: 4.57vw 0;
 }
 
@@ -39,5 +40,6 @@
   .upperFooter p {
     font-size: 17px;
     margin: 1.17vw 0;
+    letter-spacing: 0.01vw;
   }
 }
