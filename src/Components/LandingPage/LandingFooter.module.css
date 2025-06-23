@@ -1,0 +1,42 @@
+.upperFooter {
+  padding: 12.7vw;
+}
+.upperFooter h2 {
+  font-family: "poppins";
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  font-size: 8.67vw;
+}
+.upperFooter p {
+  font-size: 4.27vw;
+  margin: 4.57vw 0;
+}
+
+/* FIXME: MEDIA QUERY */
+@media (min-width: 575px) {
+  .upperFooter {
+    padding: 9.77vw 0 7.7vw;
+  }
+  .upperFooter h2 {
+    letter-spacing: 0.02vw;
+    font-size: 5.17vw;
+  }
+  .upperFooter p {
+    font-size: 17px;
+    margin: 1.17vw 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .upperFooter {
+    padding: 4.7vw 0 2vw;
+  }
+  .upperFooter h2 {
+    letter-spacing: 0.02vw;
+    font-size: 3.17vw;
+  }
+  .upperFooter p {
+    font-size: 17px;
+    margin: 1.17vw 0;
+  }
+}

@@ -4,6 +4,7 @@ import LandingEarnAbout from "./LandingEarnAbout";
 import LandingHowWork from "./LandingHowWork";
 import LandingVision from "./LandingVision";
 import LandingAboutVELoop from "./LandingAboutVELoop";
+import LandingFooter from "./LandingFooter";
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <LandingHowWork />
       <LandingVision />
       <LandingAboutVELoop />
+      <LandingFooter />
     </>
   );
 };
