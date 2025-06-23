@@ -1,26 +1,3 @@
-// import LandingHero from "./LandingHero";
-// import LandingNav from "./LandingNav";
-// import LandingEarnAbout from "./LandingEarnAbout";
-// import LandingHowWork from "./LandingHowWork";
-// import LandingVision from "./LandingVision";
-// import LandingAboutVELoop from "./LandingAboutVELoop";
-// import LandingFooter from "./LandingFooter";
-
-// const LandingPage = () => {
-//   return (
-//     <>
-//       <LandingNav />
-//       <LandingHero />
-//       <LandingEarnAbout />
-//       <LandingHowWork />
-//       <LandingVision />
-//       <LandingAboutVELoop />
-//       <LandingFooter />
-//     </>
-//   );
-// };
-
-// export default LandingPage;
 import { useState, useEffect } from "react";
 import Loader from "../Loader/Loader"; // path to your loader component
 
@@ -42,7 +19,7 @@ const LandingPage = () => {
     const timer = setTimeout(() => {
       setShowLoader(false);
       document.body.style.overflow = "auto"; // Enable scroll after loader
-    }, 2006);
+    }, 2500);
 
     return () => {
       clearTimeout(timer);
