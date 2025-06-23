@@ -1,9 +1,10 @@
 .landingWorkWraper {
-  background-image: url("../../assets/landing-back-9.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
+  /* background-image: url("../../assets/landing-back-9.jpg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center bottom; */
   /* height: 100vh; */
+  background-color: #f9fafb;
   width: 100%;
 }
 .landingCont {

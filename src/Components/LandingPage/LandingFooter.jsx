@@ -10,7 +10,7 @@ const LandingFooter = () => {
           <p>
             Earn money online by completing microtasks anytime and anywhere.
           </p>
-          <div className="mt-4 mt-sm-5 mt-lg-0 mb-3 mb-lg-0 pt-lg-3">
+          <div className="mt-4 pt-sm-3 pt-lg-0 mb-3 mb-lg-0 pt-lg-3">
             <LandingCommonBtn
               lndngClass={"lndngClass"}
               btnText={"Start Earning"}

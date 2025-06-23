@@ -15,7 +15,7 @@
 /* FIXME: MEDIA QUERY */
 @media (min-width: 575px) {
   .upperFooter {
-    padding: 9.77vw 0 7.7vw;
+    padding: 9.87vw 0 4.87vw;
   }
   .upperFooter h2 {
     letter-spacing: 0.02vw;
