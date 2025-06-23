@@ -127,6 +127,7 @@ const LandingEarnAbout = () => {
                     <div className={style.card}>
                       <img
                         src={detail.icon}
+                        loading="lazy"
                         alt={detail.alt}
                         style={{ borderRadius: "7px" }}
                         className={style.landingCardImg}

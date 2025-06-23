@@ -9,7 +9,7 @@ const LandingVision = () => {
       id: 1,
       background: VisionBackPaidImg,
       class: "visionCard1",
-      alt: "",
+      alt: "Total Paid Out to Users by VELoop Rewards Platform",
       title: "Total Paid Out",
       detail: "1 500 470+",
     },
@@ -17,7 +17,7 @@ const LandingVision = () => {
       id: 2,
       background: VisionBackRegImg,
       class: "visionCard2",
-      alt: "",
+      alt: "Total Registered Users Worldwide on VELoop Platform",
       title: "Registered Users",
       detail: "1 570 253+",
     },
@@ -25,7 +25,7 @@ const LandingVision = () => {
       id: 3,
       background: VisionBackPayImg,
       class: "visionCard3",
-      alt: "",
+      alt: "VELoop Total Payout Distributed Globally to Users",
       title: "Total Pay Out",
       detail: "150 745+",
     },
@@ -53,7 +53,8 @@ const LandingVision = () => {
                   <div className={style.VisionImgCont}>
                     <img
                       src={card.background}
-                      alt=""
+                      loading="lazy"
+                      alt={card.alt}
                       className={style.visionCardImg}
                     />
                   </div>

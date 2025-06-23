@@ -115,8 +115,6 @@
     justify-content: start;
     height: 122vh;
     background-image: url("../../assets/landing-back-6.png");
-    background-size: cover;
-    background-position: 91% 0%; /* or top, left, 40% 60%, etc. */
   }
   .landingHeroContent {
     cursor: text;

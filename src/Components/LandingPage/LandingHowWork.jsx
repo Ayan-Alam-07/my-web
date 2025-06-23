@@ -46,6 +46,7 @@ const LandingHowWork = () => {
                   <div className={style.card}>
                     <img
                       src={card.icon}
+                      loading="lazy"
                       alt={card.alt}
                       style={{ borderRadius: "7px" }}
                       className={`${style.landingCardImg} `}

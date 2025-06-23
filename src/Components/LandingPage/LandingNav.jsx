@@ -12,6 +12,7 @@ const LandingNav = () => {
             <div className="d-flex align-items-center ">
               <div className={style.VeLoopLogo}>
                 <img
+                  loading="lazy"
                   src={VeLoopLogoAni}
                   alt="Watch Ads & Earn Real Cash Online – Only on VELoop"
                   onClick={() => window.location.reload()}
