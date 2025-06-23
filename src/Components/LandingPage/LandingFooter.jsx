@@ -3,7 +3,7 @@ import LandingCommonBtn from "./LandingCommon/LandingCommonBtn";
 
 const LandingFooter = () => {
   return (
-    <footer style={{ backgroundColor: "#416ef0", textAlign: "center" }}>
+    <div style={{ backgroundColor: "#416ef0", textAlign: "center" }}>
       <div className="container-fluid">
         <div className={style.upperFooter}>
           <h2>Small tasks, real rewards</h2>
@@ -18,7 +18,7 @@ const LandingFooter = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 export default LandingFooter;
