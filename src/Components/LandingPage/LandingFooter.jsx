@@ -41,7 +41,6 @@ const LandingFooter = () => {
       <footer className={style.footerCont}>
         <div className="container-fluid pt-5 px-lg-5">
           <div className="row ">
-            {/* App Promo Section */}
             <div className="col-12 col-lg-3  mt-2 mb-5 my-lg-0 ">
               <h3 className={style.soonAppHds}>Get Soon The App</h3>
               <img
@@ -51,7 +50,6 @@ const LandingFooter = () => {
               />
             </div>
 
-            {/* Earn/Business/Company Links */}
             {earnMny.map((section, index) => (
               <div key={index} className="col-6 col-sm-4 col-lg-3  ">
                 <h3
