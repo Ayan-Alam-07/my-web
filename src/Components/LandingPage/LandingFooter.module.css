@@ -36,10 +36,13 @@
 }
 .footerListCont li {
   padding: 1.77vw 0;
+  font-size: 4.57vw;
+  font-weight: 600;
   font-family: "outfit";
 }
 .footerSecHds {
   font-family: "poppins";
+  font-weight: 700;
   font-size: 5.97vw;
 }
 .footerSecHdsMob {
@@ -67,6 +70,8 @@
   }
   .footerListCont li {
     padding: 0.87vw 0;
+    font-size: 2.27vw;
+    letter-spacing: 0.1vw;
   }
   .footerSecHds {
     font-size: 3.07vw;
@@ -98,5 +103,8 @@
   }
   .footerListCont li {
     padding: 0.57vw 0;
+    font-size: 19px;
+    letter-spacing: 0.07vw;
+    font-weight: 500;
   }
 }
