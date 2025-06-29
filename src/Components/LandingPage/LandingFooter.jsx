@@ -1,6 +1,13 @@
 import style from "./LandingFooter.module.css";
+import { FaRegCopyright } from "react-icons/fa6";
 import LandingCommonBtn from "./LandingCommon/LandingCommonBtn";
 import storeImg from "../../assets/footer-soon.png";
+import xImg from "../../assets/footer-x.png";
+import facebookImg from "../../assets/footer-facebook.png";
+import instaImg from "../../assets/footer-insta.png";
+import telegramImg from "../../assets/footer-telegram.png";
+import youtubeImg from "../../assets/footer-youtube.png";
+import { a } from "framer-motion/client";
 
 const LandingFooter = () => {
   const earnMny = [
@@ -18,6 +25,34 @@ const LandingFooter = () => {
     {
       title: "Company",
       options: ["About Us", "Terms of Service", "Privacy Policy"],
+    },
+  ];
+
+  const socials = [
+    {
+      icon: xImg,
+      href: "",
+      alt: "Earn free global rewards on X (formerly Twitter) with our trusted rewards website",
+    },
+    {
+      icon: facebookImg,
+      href: "",
+      alt: "Join our trusted global rewards website and earn free rewards on Facebook",
+    },
+    {
+      icon: instaImg,
+      href: "",
+      alt: "Join our trusted global rewards site to earn free rewards on Instagram",
+    },
+    {
+      icon: telegramImg,
+      href: "https://t.me/+k_cUrmYv1r45ZDBl",
+      alt: "Get free rewards globally on Telegram with our trusted rewards platform",
+    },
+    {
+      icon: youtubeImg,
+      href: "https://youtube.com/@veloopwatchearn",
+      alt: "Earn rewards worldwide on YouTube with our trusted rewards website",
     },
   ];
   return (
@@ -71,6 +106,28 @@ const LandingFooter = () => {
                   )}
                 </ul>
               </div>
+            ))}
+          </div>
+        </div>
+        <div
+          className="row d-flex justify-content-between mt-5 pt-4"
+          style={{ borderTop: "2px solid rgba(255,255,255,0.15)" }}
+        >
+          <div className={`col-12 col-sm-6 ${style.lowerFootDetail}`}>
+            <FaRegCopyright /> 2025, VELoop. <span>Terms & Privacy policy</span>
+          </div>
+          <div className={`col-12 col-sm-6 ${style.lowerFootSocials}`}>
+            {socials.map((social, idx) => (
+              <a
+                key={idx}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={social.href}
+                className={style.lowerFootAnc}
+              >
+                {" "}
+                <img src={social.icon} alt={social.alt} />{" "}
+              </a>
             ))}
           </div>
         </div>
