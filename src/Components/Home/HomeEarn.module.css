@@ -91,6 +91,17 @@
   border: none;
   border-radius: 25px;
   background-color: #fff; /* #161827 */
+  overflow: hidden;
+}
+.HomeEarnCard img {
+  transform: scale(1.4);
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.6s ease-in-out;
+}
+.HomeEarnCard img:hover {
+  transform: scale(1.6);
 }
 
 .HomeEarnCoins {
@@ -277,18 +288,8 @@
     margin-top: 24px;
     height: 18.7vw;
     width: 27vw;
-    overflow: hidden;
   }
-  .HomeEarnCard img {
-    transform: scale(1.4);
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    transition: all 0.6s ease-in-out;
-  }
-  .HomeEarnCard img:hover {
-    transform: scale(1.6);
-  }
+
   .HomeEarnpara {
     font-size: 22px;
   }
