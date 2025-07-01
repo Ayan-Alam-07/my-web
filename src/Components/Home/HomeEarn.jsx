@@ -2,6 +2,7 @@ import style from "./HomeEarn.module.css";
 import { TbDeviceTvOld } from "react-icons/tb";
 import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
+import taskCaptchaImg from "../../assets/task-captcha-7.png";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
@@ -151,10 +152,12 @@ const HomeEarn = () => {
         </div>
         <div className="row justify-content-evenly ">
           <div className="col-lg-4 col-10 mx-4 mx-lg-0 mt-1">
-            <div className={style.HomeEarnCard}></div>
+            <div className={style.HomeEarnCard}>
+              <img src={taskCaptchaImg} loading="lazy" alt="" />
+            </div>
           </div>
           <div className="col-lg-4 col-10 mx-4 mx-lg-0">
-            <div className={`${style.HomeEarnCard}`}></div>
+            <div className={style.HomeEarnCard}></div>
           </div>
         </div>
 
