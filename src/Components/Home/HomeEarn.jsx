@@ -2,6 +2,7 @@ import style from "./HomeEarn.module.css";
 import { TbDeviceTvOld } from "react-icons/tb";
 import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import taskCaptchaImg from "../../assets/task-captcha-7.png";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
@@ -11,6 +12,8 @@ import { GiProfit } from "react-icons/gi";
 
 const HomeEarn = () => {
   const nums = [1, 2, 3, 4, 5];
+
+  const navigate = useNavigate();
 
   const follows = [
     {
@@ -153,7 +156,12 @@ const HomeEarn = () => {
         <div className="row justify-content-evenly ">
           <div className="col-lg-4 col-10 mx-4 mx-lg-0 mt-1">
             <div className={style.HomeEarnCard}>
-              <img src={taskCaptchaImg} loading="lazy" alt="" />
+              <img
+                src={taskCaptchaImg}
+                loading="lazy"
+                alt="Solve captcha online and earn money easily by completing simple captcha tasks and get paid instantly"
+                onClick={() => navigate("/captcha-tasks")}
+              />
             </div>
           </div>
           <div className="col-lg-4 col-10 mx-4 mx-lg-0">

@@ -1,4 +1,7 @@
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
   background-color: #161827 !important;
   color: #fff !important;
 }
@@ -12,7 +15,7 @@ nav {
 .commonNavName {
   margin: 0 0 0 20px;
   font-family: "outfit";
-  font-size: 25px;
+  font-size: 6.67vw;
   font-weight: 700;
   letter-spacing: 0.3vw;
 }
@@ -34,6 +37,22 @@ nav {
   }
   .commonNavName {
     letter-spacing: 0.13vw;
-    font-size: 24px;
+    font-size: 26px;
+  }
+  .captchaGems {
+    background-color: #333544;
+    margin: 0 3.17vw 0 0;
+    padding: 7px 2.27vw;
+    border: none;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    font-family: "outfit", sans-serif;
+    font-weight: 600;
+    font-size: 1.4vw;
+    letter-spacing: 0.1vw;
+  }
+  .captchaGems p {
+    margin: 0 0 0 10px;
   }
 }

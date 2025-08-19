@@ -3,6 +3,7 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import Home from "./Components/Home/Home";
 import Wallet from "./Components/Wallet/Wallet";
 import Payout from "./Components/Wallet/Payout/Payout";
+import Task from "./Components/Home/Task/Task";
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/Home" element={<Home />}></Route>
         <Route path="/Wallet" element={<Wallet />}></Route>
         <Route path="/Payout" element={<Payout />}></Route>
+        <Route path="/captcha-tasks" element={<Task />}></Route>
       </Routes>
     </>
   );

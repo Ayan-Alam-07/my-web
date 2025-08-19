@@ -7,6 +7,7 @@ export const ListProvider = ({ children }) => {
     { id: 1, name: "Wallet" },
     { id: 2, name: "Payout" },
     { id: 3, name: "Giveaway Code" },
+    { id: 4, name: "Captcha Entry	" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);
