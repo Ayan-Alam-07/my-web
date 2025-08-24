@@ -1,0 +1,36 @@
+.optImgCont {
+  margin: 2vw 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b5d6d;
+  border-radius: 25px;
+  height: 30vh;
+  width: 47vh;
+}
+.optImg {
+  height: 140px;
+  width: 140px;
+}
+.optPara {
+  margin: 2.7vw 0;
+  padding: 1.27vw 3.7vw;
+  border: none;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #000;
+  font-family: "outfit", sans-serif;
+  font-size: 1.47vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+}
+.optCorrect {
+  border: 3px solid #7fe768;
+  background-color: #000;
+  color: #7fe768;
+}
+.optWrong {
+  border: 3px solid #db423d;
+  background-color: #000;
+  color: #db423d;
+}
