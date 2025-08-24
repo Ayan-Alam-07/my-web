@@ -1,10 +1,10 @@
 .optImgCont {
-  margin: 2vw 0 0 0;
+  margin: 1.72vw 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #5b5d6d;
-  border-radius: 25px;
+  border-radius: 20px;
   height: 30vh;
   width: 47vh;
 }
@@ -13,7 +13,7 @@
   width: 140px;
 }
 .optPara {
-  margin: 2.7vw 0;
+  margin: 2.27vw 0;
   padding: 1.27vw 3.7vw;
   border: none;
   border-radius: 25px;
