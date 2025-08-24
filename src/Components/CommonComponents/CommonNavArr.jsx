@@ -1,20 +1,31 @@
 import style from "../CommonComponents/CommonNavArr.module.css";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useList } from "../../Context/ContextStore";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoDiamond } from "react-icons/io5";
 import gemAnmation from "../../assets/gem-gifs/gem-5.gif";
 
-const CommonNavArr = ({ id, navigation }) => {
+const CommonNavArr = ({ id, name, navigation }) => {
   const navigate = useNavigate();
   const handleArrowClick = () => {
     navigate(navigation);
   };
 
-  const { list } = useList();
+  const { list, currentList, setCurrentList } = useList();
 
-  const { currentList } = useList();
+  // const { list } = useList();
+  // const { currentList } = useList();
   const navItem = list.find((item) => item.id === id); // get specific item by id
+
+  // updated later
+  useEffect(() => {
+    if (id === 5 && name) {
+      setCurrentList({ id, name });
+    } else if (navItem) {
+      setCurrentList(navItem);
+    }
+  }, [id, name, list, navItem, setCurrentList]);
 
   return (
     <>
@@ -30,7 +41,7 @@ const CommonNavArr = ({ id, navigation }) => {
                       onClick={handleArrowClick}
                     />
                     <h1 className={style.commonNavName}>
-                      {navItem?.name || "Unknown"}
+                      {name || navItem?.name || "Unknown"}
                     </h1>
                   </div>
                   {id === 4 && (
