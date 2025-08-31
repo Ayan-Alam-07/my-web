@@ -3,10 +3,40 @@ import { useNavigate } from "react-router-dom";
 import cptchScrth from "../../../assets/captcha-gif/captcha-scratching.gif";
 
 const TaskContent = () => {
+  function replaceDigits(str, replacements) {
+    let chars = str.split("");
+    replacements.forEach(([index, newDigit]) => {
+      chars[index] = newDigit;
+    });
+    return chars.join("");
+  }
+
   const captcha = Math.floor(100000 + Math.random() * 900000);
-  const captcha2 = Math.floor(100000 + Math.random() * 870000);
-  const captcha3 = Math.floor(100000 + Math.random() * 840000);
-  const captcha4 = Math.floor(100000 + Math.random() * 850000);
+  const firstNum = captcha.toString()[0];
+  const secNum = captcha.toString()[1];
+  const lastNum = captcha.toString()[5];
+
+  let captcha2 = Math.floor(100000 + Math.random() * 990000);
+  let captcha2Str = captcha2.toString();
+  captcha2Str = replaceDigits(captcha2Str, [
+    [0, firstNum],
+    [1, secNum],
+    [5, lastNum],
+  ]);
+  captcha2Str = parseInt(captcha2Str, 10);
+  captcha2 = captcha2Str;
+
+  let captcha3 = Math.floor(100000 + Math.random() * 890000);
+  let captcha3Str = captcha3.toString();
+  captcha3Str = replaceDigits(captcha3Str, [
+    [0, firstNum],
+    [1, secNum],
+    [5, lastNum],
+  ]);
+  captcha3Str = parseInt(captcha3Str, 10);
+  captcha3 = captcha3Str;
+
+  const captcha4 = Math.floor(100000 + Math.random() * 790000);
 
   const options = [
     { id: 1, value: captcha },
@@ -40,6 +70,7 @@ const TaskContent = () => {
           <div className={style.shownCaptcha}>
             <div className={style.cptchGif}>
               <img
+                loading="lazy"
                 src={cptchScrth}
                 alt="Earn money online by captcha filling tasks and get real cash rewards"
               />

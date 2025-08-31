@@ -23,6 +23,7 @@ const TaskOptionChecker = () => {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className={style.optImgCont}>
               <img
+                loading="lazy"
                 className={style.optImg}
                 src={resultBool ? capCorrect : capWrong}
                 alt=""
