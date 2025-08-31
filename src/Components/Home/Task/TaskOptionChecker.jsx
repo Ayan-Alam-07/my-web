@@ -8,8 +8,6 @@ const TaskOptionChecker = () => {
   const location = useLocation();
   const { result, resultBool } = location.state || {};
 
-  console.log(resultBool); // returns True or False
-
   return (
     <>
       <CommonNavArr
@@ -36,6 +34,23 @@ const TaskOptionChecker = () => {
             >
               {result}
             </p>
+            {resultBool ? (
+              <>
+                <p className={style.statusPara}>
+                  Congratulations, You Won the Game.
+                </p>
+                <h4 className={style.wonGemCount}>
+                  You Won <span style={{ color: "#006affff" }}>1.25 </span>Gems
+                </h4>{" "}
+              </>
+            ) : (
+              <>
+                <p className={style.statusPara}>Oops, You Lose the Game.</p>
+                <h4 className={style.wonGemCount}>
+                  You Won <span style={{ color: "#006affff" }}>1 </span>Gems
+                </h4>{" "}
+              </>
+            )}
           </div>
         </div>
       </div>
