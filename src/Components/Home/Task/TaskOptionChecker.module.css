@@ -1,6 +1,6 @@
 .optImgCont {
   padding: 0.7vw 3.7vw;
-  margin: 14.72vw 2vw 0;
+  margin: 9.72vw 2vw 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@
 }
 .statusPara {
   text-align: center;
-  margin: 7vw 0 4.17vw 0;
+  margin: 6vw 0 4.17vw 0;
   font-size: 5.47vw;
   font-family: "nunito";
   font-weight: 600;
@@ -76,7 +76,7 @@
 .claimRewardBtn,
 .goBackBtn {
   margin: 3.57vw 0;
-  padding: 3.37vw 5.7vw;
+  padding: 3.37vw 8.7vw;
   font-size: 4.47vw;
   font-family: "outfit";
   border: none;
