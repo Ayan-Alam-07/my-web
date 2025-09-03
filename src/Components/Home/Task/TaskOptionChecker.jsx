@@ -48,10 +48,12 @@ const TaskOptionChecker = () => {
             ) : (
               <>
                 <p className={style.statusPara}>
-                  <span>Oops</span>, You Lose the Game.
+                  <span className={style.statusParaDppr}>Oops</span>, You Lose
+                  the Game.
                 </p>
                 <h4 className={style.wonGemCount}>
-                  You Won <span style={{ color: "#006affff" }}>1 </span>Gems
+                  You Still Won <span style={{ color: "#006affff" }}>1 </span>
+                  Gem
                 </h4>{" "}
               </>
             )}

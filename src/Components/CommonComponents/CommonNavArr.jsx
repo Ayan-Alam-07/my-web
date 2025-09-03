@@ -4,7 +4,7 @@ import { useList } from "../../Context/ContextStore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoDiamond } from "react-icons/io5";
-import gemAnmation from "../../assets/gem-gifs/gem-5.gif";
+import gemAnmation from "../../assets/gem-gifs/gem-4.gif";
 
 const CommonNavArr = ({ id, name, navigation }) => {
   const navigate = useNavigate();
@@ -47,15 +47,16 @@ const CommonNavArr = ({ id, name, navigation }) => {
                   {id === 4 && (
                     <div className={style.captchaGemsCont}>
                       <div className={style.captchaGems}>
-                        <IoDiamond style={{ color: "#9ed5fcff" }} />
-                        {/* <div>
+                        {/* <IoDiamond style={{ color: "#9ed5fcff" }} /> */}
+                        <div>
                           <img
+                            loading="lazy"
                             src={gemAnmation}
                             alt=""
                             className={style.gemAnimation}
                           />
-                        </div> */}
-                        <p className=" p-0">Gems : 00</p>
+                        </div>
+                        <p className="m-0 p-0">Gems : 00</p>
                       </div>
                     </div>
                   )}
@@ -69,11 +70,16 @@ const CommonNavArr = ({ id, name, navigation }) => {
         <div>
           <div className={style.captchaGemsMob}>
             <div className={style.captchaGems}>
-              <IoDiamond style={{ color: "#9ed5fcff" }} />
-              {/* <div>
-                      <img src={gemAnmation} alt="" />
-                    </div> */}
-              <p className=" p-0">Gems : 00</p>
+              {/* <IoDiamond style={{ color: "#9ed5fcff" }} /> */}
+              <div>
+                <img
+                  loading="lazy"
+                  src={gemAnmation}
+                  alt=""
+                  className={style.gemAnimation}
+                />
+              </div>
+              <p className="m-0 p-0">Gems : 00</p>
             </div>
           </div>
         </div>
