@@ -15,7 +15,7 @@
 }
 .optPara {
   margin: 9.87vw 0 0;
-  padding: 3.7vw 6.7vw;
+  padding: 3.47vw 6.7vw;
   border: none;
   border-radius: 16px;
   background-color: #fff;
@@ -37,6 +37,79 @@
   color: #db423d;
 }
 
+.statusParaAppr {
+  color: #ffd700;
+  font-weight: 800;
+  text-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
+}
+.statusPara {
+  text-align: center;
+  margin: 7vw 0 4.17vw 0;
+  font-size: 5.47vw;
+  font-family: "nunito";
+  font-weight: 600;
+  letter-spacing: 0.27vw;
+}
+.wonGemCount {
+  font-size: 6.07vw;
+  font-family: "poppins";
+  letter-spacing: 0.27vw;
+  font-weight: 500;
+}
+.gemWonTxt {
+  font-weight: 700;
+  color: #006aff;
+  text-shadow: 0 5px 15px rgba(0, 106, 255, 0.6);
+}
+
+.buttonsCont {
+  margin: 3.87vw 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.claimRewardBtn,
+.goBackBtn {
+  margin: 3.57vw 0;
+  padding: 3.37vw 5.7vw;
+  font-size: 4.47vw;
+  font-family: "outfit";
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border-radius: 12px;
+  letter-spacing: 0.08vw;
+}
+
+.claimRewardBtn {
+  background-color: #d4af37;
+  color: #181a2a;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+}
+.claimRewardBtn:hover {
+  background-color: #ffd700;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.7);
+}
+.claimRewardBtn:active {
+  background-color: #b8860b;
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.6) inset;
+}
+
+.goBackBtn {
+  background-color: #6b7280;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(107, 114, 128, 0.4);
+}
+.goBackBtn:hover {
+  background-color: #4b5563;
+  box-shadow: 0 6px 14px rgba(75, 85, 99, 0.6);
+}
+.goBackBtn:active {
+  background-color: #374151;
+  box-shadow: 0 2px 6px rgba(55, 65, 81, 0.6) inset;
+}
+
 /* FIXME: media query */
 
 @media (min-width: 576px) {
@@ -52,7 +125,7 @@
     width: 240px;
   }
   .optPara {
-    margin: 4.77vw 0 0;
+    margin: 5.77vw 0 0;
     padding: 2.27vw 5.7vw;
     border-radius: 18px;
     font-size: 3.07vw;
@@ -64,6 +137,29 @@
   }
   .optWrong {
     border: 2.7px solid #db423d;
+  }
+  .statusPara {
+    margin: 4.45vw 0 2.37vw 0;
+    font-size: 3.17vw;
+    letter-spacing: 0.2vw;
+  }
+  .wonGemCount {
+    font-size: 3.47vw;
+    letter-spacing: 0.17vw;
+  }
+
+  .buttonsCont {
+    margin: 5.07vw 0 0 0;
+    flex-direction: row;
+  }
+  .claimRewardBtn,
+  .goBackBtn {
+    margin: 0 5.57vw;
+    padding: 1.77vw 3.47vw;
+    font-size: 2.7vw;
+    transition: 0.3s ease;
+    border-radius: 12px;
+    letter-spacing: 0.08vw;
   }
 }
 
@@ -79,7 +175,7 @@
     width: 140px;
   }
   .optPara {
-    margin: 2.07vw 0;
+    margin: 2.07vw 0 1.7vw;
     padding: 0.97vw 3.07vw;
     border-radius: 20px;
     font-size: 1.47vw;
@@ -91,5 +187,28 @@
   }
   .optWrong {
     border: 3px solid #db423d;
+  }
+  .statusPara {
+    margin: 0 0 1vw 0;
+    font-size: 1.87vw;
+    letter-spacing: 0.07vw;
+  }
+  .wonGemCount {
+    font-size: 1.7vw;
+    letter-spacing: 0.07vw;
+  }
+
+  .buttonsCont {
+    margin: 1.87vw 0 0 0;
+  }
+
+  .claimRewardBtn,
+  .goBackBtn {
+    margin: 0 3.37vw;
+    padding: 0.84vw 1.67vw;
+    font-size: 1.47vw;
+    transition: 0.3s ease;
+    border-radius: 12px;
+    letter-spacing: 0.08vw;
   }
 }

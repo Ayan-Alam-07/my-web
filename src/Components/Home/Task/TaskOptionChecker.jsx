@@ -1,10 +1,11 @@
 import style from "./TaskOptionChecker.module.css";
 import capWrong from "../../../assets/captcha-opt/wrong-opt.png";
 import capCorrect from "../../../assets/captcha-opt/correct-opt.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import CommonNavArr from "../../CommonComponents/CommonNavArr";
 
 const TaskOptionChecker = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { result, resultBool } = location.state || {};
 
@@ -37,20 +38,33 @@ const TaskOptionChecker = () => {
             {resultBool ? (
               <>
                 <p className={style.statusPara}>
-                  Congratulations, You Won the Game.
+                  <span className={style.statusParaAppr}>Congratulations</span>,
+                  You Won the Game.
                 </p>
                 <h4 className={style.wonGemCount}>
-                  You Won <span style={{ color: "#006affff" }}>1.25 </span>Gems
+                  You Won <span className={style.gemWonTxt}>1.25 </span>Gems
                 </h4>{" "}
               </>
             ) : (
               <>
-                <p className={style.statusPara}>Oops, You Lose the Game.</p>
+                <p className={style.statusPara}>
+                  <span>Oops</span>, You Lose the Game.
+                </p>
                 <h4 className={style.wonGemCount}>
                   You Won <span style={{ color: "#006affff" }}>1 </span>Gems
                 </h4>{" "}
               </>
             )}
+
+            <div className={style.buttonsCont}>
+              <button className={style.claimRewardBtn}>Claim Reward</button>
+              <button
+                className={style.goBackBtn}
+                onClick={() => navigate("/captcha-tasks")}
+              >
+                Go Back
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,6 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Rubik+Pixels&display=swap"); */
-
 .shownCaptcha {
   margin: 12.7vw 0 0 0;
-  padding: 10.07vw;
+  padding: 15.7vw 10.07vw;
   background-color: #36394d;
   position: relative;
   display: flex;
@@ -27,10 +25,10 @@
 .captchaScratchar2 {
   z-index: 10;
   position: absolute;
-  height: 3.67px;
+  height: 4.07px;
   width: 84%;
   background-color: #ffffff;
-  top: 17.37vw;
+  top: 22.77vw;
 }
 .captchaScratchar2 {
   width: 77%;
@@ -80,7 +78,7 @@
 @media (min-width: 576px) {
   .shownCaptcha {
     margin: 12vw 0 0 0;
-    padding: 10vw 10.7vw;
+    padding: 12vw 10.7vw;
     width: 70%;
     border-radius: 24px;
   }
@@ -92,9 +90,9 @@
 
   .captchaScratchar,
   .captchaScratchar2 {
-    height: 4.17px;
+    height: 4.77px;
     width: 75%;
-    top: 14.57vw;
+    top: 16.57vw;
   }
   .captchaTxt {
     font-size: 6.67vw;
@@ -109,7 +107,7 @@
     font-size: 3.07vw;
     border-radius: 20px;
     letter-spacing: 0.31vw;
-    box-shadow: 0 5px 22px rgba(30, 144, 255, 0.35);
+    box-shadow: 0 5px 22px rgba(37, 144, 255, 0.45);
   }
 }
 
@@ -139,7 +137,7 @@
   .captchaScratchar,
   .captchaScratchar2 {
     position: absolute;
-    height: 3.37px;
+    height: 3.57px;
     width: 75%;
     background-color: #ffffff;
     top: 6.07vw;
