@@ -24,7 +24,7 @@ const TaskOptionChecker = () => {
               <img
                 loading="lazy"
                 className={`${style.optImg} ${
-                  resultBool ? "" : style.wrongOptImg
+                  !resultBool ? style.wrongOptImg : ""
                 }`}
                 src={resultBool ? capCorrect : capWrong}
                 alt="Congratulations, you earned coins for captcha verification on rewards website"
