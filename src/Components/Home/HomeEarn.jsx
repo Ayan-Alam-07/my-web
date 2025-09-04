@@ -244,6 +244,7 @@ const HomeEarn = () => {
                 src={giveawayBanner}
                 className={style.giveBackImage}
                 alt="Redeem giveaway code and earn instantly"
+                onClick={() => navigate("/giveaway-code")}
               />
             </div>
           </div>

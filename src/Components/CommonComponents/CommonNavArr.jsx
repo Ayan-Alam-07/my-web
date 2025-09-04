@@ -3,7 +3,6 @@ import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useList } from "../../Context/ContextStore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { IoDiamond } from "react-icons/io5";
 import gemAnmation from "../../assets/gem-gifs/gem-4.gif";
 
 const CommonNavArr = ({ id, name, navigation }) => {
@@ -47,7 +46,6 @@ const CommonNavArr = ({ id, name, navigation }) => {
                   {id === 4 && (
                     <div className={style.captchaGemsCont}>
                       <div className={style.captchaGems}>
-                        {/* <IoDiamond style={{ color: "#9ed5fcff" }} /> */}
                         <div>
                           <img
                             loading="lazy"
@@ -81,7 +79,6 @@ const CommonNavArr = ({ id, name, navigation }) => {
         <div>
           <div className={style.captchaGemsMob}>
             <div className={style.captchaGems}>
-              {/* <IoDiamond style={{ color: "#9ed5fcff" }} /> */}
               <div>
                 <img
                   loading="lazy"

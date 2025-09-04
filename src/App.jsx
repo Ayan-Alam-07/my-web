@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home";
 import Wallet from "./Components/Wallet/Wallet";
 import Payout from "./Components/Wallet/Payout/Payout";
 import Task from "./Components/Home/Task/Task";
+import Giveaway from "./Components/Home/Giveaway/Giveaway";
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import TaskOptionChecker from "./Components/Home/Task/TaskOptionChecker";
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/Wallet" element={<Wallet />}></Route>
         <Route path="/Payout" element={<Payout />}></Route>
         <Route path="/captcha-tasks" element={<Task />}></Route>
+        <Route path="/giveaway-code" element={<Giveaway />}></Route>
         <Route
           path="/TaskOptionChecker"
           element={<TaskOptionChecker />}
