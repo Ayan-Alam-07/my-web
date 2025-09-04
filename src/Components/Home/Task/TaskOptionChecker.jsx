@@ -54,7 +54,7 @@ const TaskOptionChecker = () => {
                   the Game.
                 </p>
                 <h4 className={style.wonGemCount}>
-                  You Still Won <span style={{ color: "#006affff" }}>1 </span>
+                  You Still Won <span className={style.gemWonTxt}>1.00 </span>
                   Gem
                 </h4>{" "}
               </>

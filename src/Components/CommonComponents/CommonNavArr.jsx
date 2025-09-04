@@ -52,11 +52,22 @@ const CommonNavArr = ({ id, name, navigation }) => {
                           <img
                             loading="lazy"
                             src={gemAnmation}
-                            alt=""
+                            alt="Wallet gems converted to coins and redeemed to bank account on rewards website"
                             className={style.gemAnimation}
                           />
                         </div>
-                        <p className="m-0 p-0">Gems : 00</p>
+                        <p className="m-0 p-0">
+                          Gems :{" "}
+                          <span
+                            style={{
+                              color: "#1ABC9C",
+                              fontFamily: "poppins",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            00.0
+                          </span>
+                        </p>
                       </div>
                     </div>
                   )}
@@ -75,11 +86,22 @@ const CommonNavArr = ({ id, name, navigation }) => {
                 <img
                   loading="lazy"
                   src={gemAnmation}
-                  alt=""
+                  alt="Wallet gems converted to coins and redeemed to bank account on rewards website"
                   className={style.gemAnimation}
                 />
               </div>
-              <p className="m-0 p-0">Gems : 00</p>
+              <p className="m-0 p-0">
+                Gems :{" "}
+                <span
+                  style={{
+                    color: "#1ABC9C",
+                    fontFamily: "poppins",
+                    marginLeft: "3px",
+                  }}
+                >
+                  00.0
+                </span>
+              </p>
             </div>
           </div>
         </div>
