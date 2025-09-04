@@ -1,6 +1,6 @@
 import style from "./TaskOptionChecker.module.css";
-import capWrong from "../../../assets/captcha-opt/wrong-opt.png";
-import capCorrect from "../../../assets/captcha-opt/correct-opt.png";
+import capWrong from "../../../assets/captcha-opt/wrong-opt-2.gif";
+import capCorrect from "../../../assets/captcha-opt/correct-opt-3.gif";
 import { useLocation, useNavigate } from "react-router-dom";
 import CommonNavArr from "../../CommonComponents/CommonNavArr";
 
@@ -23,9 +23,11 @@ const TaskOptionChecker = () => {
             <div className={style.optImgCont}>
               <img
                 loading="lazy"
-                className={style.optImg}
+                className={`${style.optImg} ${
+                  resultBool ? "" : style.wrongOptImg
+                }`}
                 src={resultBool ? capCorrect : capWrong}
-                alt=""
+                alt="Congratulations, you earned coins for captcha verification on rewards website"
               />
             </div>
             <p
