@@ -1,0 +1,368 @@
+.givHds {
+  margin: 10vw 0 12vw;
+  font-family: "poppins";
+  font-size: 6.57vw;
+  text-align: center;
+}
+
+.givImgCont {
+  padding: 3.91vw 4vw 2.88vw;
+  display: flex;
+  justify-content: center;
+  height: 28vh;
+  width: 80vw;
+  background-color: #202445;
+  border: none;
+  border-radius: 20px;
+}
+.givImg {
+  height: 25vh;
+  width: 67vw;
+  cursor: pointer;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+  /* filter: drop-shadow(0 0 12px rgba(0, 153, 255, 0.8)); */
+  /* filter: drop-shadow(0 0 14px rgba(155, 89, 182, 0.8)); */
+}
+.givImg:hover {
+  transform: scale(1.07);
+  transition: 0.4s ease;
+}
+
+.inputContainer {
+  position: relative;
+  margin: 10.17vw 0 7vw;
+  width: 70.7vw;
+}
+.inputContainer input {
+  width: 100%;
+  padding: 3vw 4vw;
+  font-size: 4vw;
+  text-transform: uppercase;
+  border: 2px dotted #7e7e7e;
+  border-radius: 12px;
+  background-color: #272941;
+  color: #fff;
+  letter-spacing: 0.37vw;
+  text-shadow: 0 1px 0 #fff, 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.inputContainer label {
+  position: absolute;
+  font-weight: 600;
+  font-size: 3.7vw;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a5a4a4;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* When input is focused or has text */
+.inputContainer input:focus + label,
+.inputContainer input:not(:placeholder-shown) + label {
+  top: -3px;
+  left: 4.07vw;
+  font-size: 3.47vw;
+  color: #22d3ee;
+  background: #181a2a;
+  padding: 0 0.97vw;
+  outline: none;
+}
+
+.inputContainer input:focus {
+  background: #181a2a;
+}
+.inputContainer input:not(:placeholder-shown) {
+  background: #181a2a;
+}
+
+.claimBtn {
+  padding: 2.87vw 0;
+  width: 100%;
+  font-family: "poppins";
+  font-size: 4.17vw;
+  font-weight: 700;
+  background-color: #e91e63;
+  color: #fff;
+  outline: none;
+  border: 3px solid #e91e63;
+  border-radius: 12px;
+  letter-spacing: 0.37vw;
+}
+
+.claimBtn:active {
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #e91e63;
+  font-weight: 800;
+  letter-spacing: 0.4vw;
+}
+
+.followSuperCont {
+  margin: 11.77vw 5vw;
+}
+.getCodePara {
+  font-family: "nunito";
+  font-weight: 700;
+  font-size: 4.47vw;
+}
+
+.followCont {
+  margin: 7.7vw 0 3vw !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  /* flex-direction: column; */
+}
+
+.followImgCont {
+  position: relative;
+  display: flex;
+  /* flex-direction: column !important; */
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  background-color: #fff;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+}
+.followNonComm img {
+  transform: scale(1.7);
+}
+.followNonComm img:hover {
+  transform: scale(2.1);
+}
+.followCommImg {
+  height: 80px;
+  width: 80px;
+}
+.followCommImg:hover {
+  transform: scale(1.2);
+  transition: 0.2s ease-in-out;
+}
+
+.objNamePara {
+  position: absolute;
+  bottom: -55px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 4.47vw;
+  font-family: "outfit";
+  font-weight: 600;
+  letter-spacing: 0.07vw;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: -100%;
+  }
+}
+
+.youtube {
+  font-size: 4.57vw !important;
+  color: #ff4545;
+  text-shadow: 
+  /* White stroke (outline) */ -0.7px -0.7px 0 #000000,
+    0.7px -0.7px 0 #000000, -0.7px 0.7px 0 #000000, 0.7px 0.7px 0 #000000,
+    /* Red glow */ 0 0 2px #ff4545, 0 0 4px rgba(255, 69, 69, 0.7),
+    0 0 8px rgba(120, 30, 30, 0.5);
+
+  animation: typing 8s steps(25, end) infinite;
+}
+.instagram {
+  color: #fabd41;
+  text-shadow: 
+  /* White stroke (outline) */ -0.7px -0.7px 0 #000000,
+    0.7px -0.7px 0 #000000, -0.7px 0.7px 0 #000000, 0.7px 0.7px 0 #000000,
+    0 0 1px #fabd41, 0 0 2px rgba(250, 189, 65, 0.6),
+    0 0 3px rgba(120, 90, 20, 0.4);
+  animation: typing 5s steps(25, end) infinite;
+}
+.telegram {
+  color: #22d3ee;
+  text-shadow: 
+  /* White stroke (outline) */ -0.7px -0.7px 0 #000000,
+    0.7px -0.7px 0 #000000, -0.7px 0.7px 0 #000000, 0.7px 0.7px 0 #000000,
+    0 0 1px #22d3ee, 0 0 2px rgba(0, 188, 212, 0.6),
+    0 0 3px rgba(8, 145, 178, 0.4);
+  animation: typing 6s steps(25, end) infinite;
+}
+
+/* FIXME: Media query */
+
+@media (min-width: 575px) {
+  .givHds {
+    margin: 3vw 0 5vw 0;
+    font-size: 3.87vw;
+  }
+
+  .givImgCont {
+    padding: 2.5vw 5vw 2.88vw;
+    height: 30vh;
+    width: 60vw;
+    border-radius: 24px;
+  }
+  .givImg {
+    height: 26vh;
+    width: 46vw;
+  }
+
+  .inputContainer {
+    margin: 6.27vw 0 4.27vw;
+    width: 44vw;
+  }
+  .inputContainer input {
+    padding: 1.77vw 2vw;
+    font-size: 2.27vw;
+    border: 2.5px dotted #7e7e7e;
+    border-radius: 14px;
+    letter-spacing: 0.21vw;
+  }
+
+  .inputContainer label {
+    left: 30px;
+    font-size: 2.37vw;
+  }
+
+  /* When input is focused or has text */
+  .inputContainer input:focus + label,
+  .inputContainer input:not(:placeholder-shown) + label {
+    top: -4.3px;
+    left: 1.37vw;
+    font-size: 1.87vw;
+    margin: 0 0 0 0.9vw;
+    padding: 0 0.5vw;
+  }
+
+  .claimBtn {
+    font-size: 2.2vw;
+    text-align: center;
+    padding: 1.47vw 0;
+    border-radius: 18px;
+    letter-spacing: 0.051vw;
+  }
+
+  .followSuperCont {
+    margin: 5vw 2vw 0;
+  }
+  .getCodePara {
+    font-size: 2.47vw;
+  }
+
+  .followCont {
+    flex-direction: row;
+    margin: 5.27vw 0 2vw !important;
+  }
+
+  .followImgCont {
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+  }
+
+  .followCommImg {
+    height: 85px;
+    width: 85px;
+  }
+
+  .objNamePara {
+    bottom: -65px;
+    font-size: 2.17vw;
+    letter-spacing: 0.14vw;
+  }
+
+  .youtube {
+    font-size: 2.37vw !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .givHds {
+    margin: 2vw 0;
+    font-size: 2.47vw;
+  }
+
+  .givImgCont {
+    padding: 0.91vw 5vw 7.88vw;
+    height: 40vh;
+    width: 28vw;
+    border-radius: 24px;
+  }
+  .givImg {
+    height: 36vh;
+    width: 27vw;
+  }
+
+  .inputContainer {
+    margin: 2.17vw 0 2vw;
+    width: 23.7vw;
+  }
+  .inputContainer input {
+    padding: 0.9vw;
+    font-size: 1.2vw;
+    border: 2.5px dotted #7e7e7e;
+    border-radius: 10px;
+    letter-spacing: 0.07vw;
+  }
+
+  .inputContainer label {
+    left: 20px;
+    font-size: 1.27vw;
+  }
+
+  /* When input is focused or has text */
+  .inputContainer input:focus + label,
+  .inputContainer input:not(:placeholder-shown) + label {
+    top: -4.3px;
+    left: 1.37vw;
+    font-size: 1.07vw;
+    padding: 0 0.3vw;
+  }
+
+  .claimBtn {
+    font-size: 1.3vw;
+    padding: 0.67vw 0;
+    border-radius: 18px;
+    letter-spacing: 0.051vw;
+  }
+
+  .followSuperCont {
+    margin: 2vw 6vw;
+  }
+  .getCodePara {
+    font-size: 1.4vw;
+  }
+
+  .followCont {
+    margin: 1.7vw 0 5vw !important;
+  }
+
+  .followImgCont {
+    height: 90px;
+    width: 90px;
+    border-radius: 25%;
+  }
+
+  .followCommImg {
+    height: 80px;
+    width: 80px;
+  }
+
+  .objNamePara {
+    bottom: -55px;
+    font-size: 1.1vw;
+    letter-spacing: 0.07vw;
+  }
+
+  .youtube {
+    font-size: 1.2vw !important;
+  }
+}
