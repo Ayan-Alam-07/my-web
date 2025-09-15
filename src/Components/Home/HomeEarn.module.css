@@ -85,6 +85,7 @@
 }
 
 .HomeEarnCard {
+  position: relative;
   margin: 20px 0 15px 0;
   height: 50vw;
   width: 69vw;
@@ -104,23 +105,17 @@
   transform: scale(1.6);
 }
 
-.exchangeImg {
-  padding: 10vw;
-  border-top-left-radius: 63px;
-  border-end-end-radius: 63px;
-  /* border-radius: 65px; */
-  animation: scalePulse 3s ease-in-out infinite;
+.limitedDeal {
+  margin: 0 0 0 0;
+  height: 64px !important;
+  width: 145px !important;
+  z-index: 7;
+  position: absolute;
+  top: -1px;
 }
-@keyframes scalePulse {
-  0% {
-    transform: scaleY(1.17) scale(1.17);
-  }
-  50% {
-    transform: scaleY(1.22) scale(1.25);
-  }
-  100% {
-    transform: scaleY(1.17) scale(1.17);
-  }
+.exchangeImg {
+  z-index: 10;
+  padding: 10vw 7vw 9vw;
 }
 
 .HomeEarnCoins {
@@ -228,21 +223,16 @@
     height: 33.5vw;
     width: 50vw;
   }
+  .limitedDeal {
+    margin: 0 0 0 8.4vw;
+    height: 80px !important;
+    width: 140px !important;
+    top: -4.2px;
+  }
   .exchangeImg {
-    padding: 5vw 4.7vw;
-    border-radius: 56px;
+    padding: 7vw 5.7vw;
   }
-  @keyframes scalePulse {
-    0% {
-      transform: scaleY(1.1) scale(1.03);
-    }
-    50% {
-      transform: scaleY(1.1) scale(1.1);
-    }
-    100% {
-      transform: scaleY(1.1) scale(1.03);
-    }
-  }
+
   .HomeEarnpara {
     font-size: 20px;
   }
@@ -323,9 +313,14 @@
     height: 18.7vw;
     width: 27vw;
   }
+  .limitedDeal {
+    margin: 0;
+    height: 80px !important;
+    width: 130px !important;
+    top: -1px;
+  }
   .exchangeImg {
-    padding: 2.4vw;
-    border-radius: 50px;
+    padding: 3.7vw 4vw;
   }
 
   .HomeEarnpara {

@@ -4,7 +4,8 @@ import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import taskCaptchaImg from "../../assets/task-captcha-7.png";
-import exchangeImg from "../../assets/exchange-center/exchange-1.png";
+import exchangeImg from "../../assets/exchange-center/exchange-gif-3.gif";
+import limitedDeal from "../../assets/exchange-center/limited-deal.gif";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
@@ -165,7 +166,11 @@ const HomeEarn = () => {
               />
             </div>
           </div>
-          <div className="col-lg-4 col-10 mx-4 mx-lg-0">
+          <div
+            className="col-lg-4 col-10 mx-4 mx-lg-0"
+            style={{ position: "relative" }}
+          >
+            <img src={limitedDeal} className={style.limitedDeal} alt="" />
             <div className={style.HomeEarnCard}>
               <img
                 src={exchangeImg}
