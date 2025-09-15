@@ -86,8 +86,8 @@
 
 .HomeEarnCard {
   margin: 20px 0 15px 0;
-  height: 48vw;
-  width: 65vw;
+  height: 50vw;
+  width: 69vw;
   border: none;
   border-radius: 25px;
   background-color: #fff; /* #161827 */
@@ -105,19 +105,21 @@
 }
 
 .exchangeImg {
-  padding: 12vw;
-  border-radius: 58px;
+  padding: 10vw;
+  border-top-left-radius: 63px;
+  border-end-end-radius: 63px;
+  /* border-radius: 65px; */
   animation: scalePulse 3s ease-in-out infinite;
 }
 @keyframes scalePulse {
   0% {
-    transform: scaleY(1.29) scale(1.29);
+    transform: scaleY(1.17) scale(1.17);
   }
   50% {
-    transform: scaleY(1.33) scale(1.33);
+    transform: scaleY(1.22) scale(1.26);
   }
   100% {
-    transform: scaleY(1.29) scale(1.29);
+    transform: scaleY(1.17) scale(1.17);
   }
 }
 

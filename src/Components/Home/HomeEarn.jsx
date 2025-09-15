@@ -155,7 +155,7 @@ const HomeEarn = () => {
           </div>
         </div>
         <div className="row justify-content-evenly ">
-          <div className="col-lg-4 col-10 mx-4 mx-lg-0 mt-1">
+          <div className="col-lg-4 col-10 mx-4 mb-3 mb-sm-0 mx-lg-0 mt-1">
             <div className={style.HomeEarnCard}>
               <img
                 src={taskCaptchaImg}
