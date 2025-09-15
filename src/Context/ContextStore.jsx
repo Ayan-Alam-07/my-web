@@ -9,6 +9,7 @@ export const ListProvider = ({ children }) => {
     { id: 3, name: "Giveaway Code" },
     { id: 4, name: "Captcha Entry	" },
     { id: 5, name: "taskOptionChecker" },
+    { id: 6, name: "Exchange Center" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);

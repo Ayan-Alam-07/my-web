@@ -8,6 +8,7 @@ import Giveaway from "./Components/Home/Giveaway/Giveaway";
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import TaskOptionChecker from "./Components/Home/Task/TaskOptionChecker";
+import ExchangeCenter from "./Components/Home/ExchangeCenter/ExchangeCenter";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           path="/TaskOptionChecker"
           element={<TaskOptionChecker />}
         ></Route>
+        <Route path="/Exchange-Center" element={<ExchangeCenter />}></Route>
       </Routes>
     </>
   );

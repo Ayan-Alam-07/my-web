@@ -104,6 +104,23 @@
   transform: scale(1.6);
 }
 
+.exchangeImg {
+  padding: 11vw;
+  border-radius: 60px;
+  animation: scalePulse 3s ease-in-out infinite;
+}
+@keyframes scalePulse {
+  0% {
+    transform: scaleY(1.17) scale(1.17);
+  }
+  50% {
+    transform: scaleY(1.2) scale(1.26);
+  }
+  100% {
+    transform: scaleY(1.17) scale(1.17);
+  }
+}
+
 .HomeEarnCoins {
   margin: 0 0 0 4.4vw;
   font-size: 5.47vw;
@@ -209,6 +226,21 @@
     height: 33.5vw;
     width: 50vw;
   }
+  .exchangeImg {
+    padding: 5vw 4.7vw;
+    border-radius: 56px;
+  }
+  @keyframes scalePulse {
+    0% {
+      transform: scaleY(1.1) scale(1.03);
+    }
+    50% {
+      transform: scaleY(1.1) scale(1.1);
+    }
+    100% {
+      transform: scaleY(1.1) scale(1.03);
+    }
+  }
   .HomeEarnpara {
     font-size: 20px;
   }
@@ -288,6 +320,10 @@
     margin-top: 24px;
     height: 18.7vw;
     width: 27vw;
+  }
+  .exchangeImg {
+    padding: 2.4vw;
+    border-radius: 50px;
   }
 
   .HomeEarnpara {

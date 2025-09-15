@@ -4,6 +4,7 @@ import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import taskCaptchaImg from "../../assets/task-captcha-7.png";
+import exchangeImg from "../../assets/exchange-center/exchange-1.png";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
@@ -165,7 +166,15 @@ const HomeEarn = () => {
             </div>
           </div>
           <div className="col-lg-4 col-10 mx-4 mx-lg-0">
-            <div className={style.HomeEarnCard}></div>
+            <div className={style.HomeEarnCard}>
+              <img
+                src={exchangeImg}
+                className={style.exchangeImg}
+                loading="lazy"
+                alt="Solve captcha online and earn money easily by completing simple captcha tasks and get paid instantly"
+                onClick={() => navigate("/Exchange-Center")}
+              />
+            </div>
           </div>
         </div>
 
