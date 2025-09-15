@@ -116,7 +116,7 @@
     transform: scaleY(1.17) scale(1.17);
   }
   50% {
-    transform: scaleY(1.22) scale(1.26);
+    transform: scaleY(1.22) scale(1.25);
   }
   100% {
     transform: scaleY(1.17) scale(1.17);
