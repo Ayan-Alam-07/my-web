@@ -111,13 +111,13 @@
 }
 @keyframes scalePulse {
   0% {
-    transform: scaleY(1.22) scale(1.22);
+    transform: scaleY(1.29) scale(1.29);
   }
   50% {
-    transform: scaleY(1.26) scale(1.27);
+    transform: scaleY(1.33) scale(1.33);
   }
   100% {
-    transform: scaleY(1.22) scale(1.22);
+    transform: scaleY(1.29) scale(1.29);
   }
 }
 
