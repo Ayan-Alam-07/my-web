@@ -106,18 +106,18 @@
 
 .exchangeImg {
   padding: 11vw;
-  border-radius: 60px;
+  border-radius: 55px;
   animation: scalePulse 3s ease-in-out infinite;
 }
 @keyframes scalePulse {
   0% {
-    transform: scaleY(1.17) scale(1.17);
+    transform: scaleY(1.22) scale(1.22);
   }
   50% {
-    transform: scaleY(1.2) scale(1.26);
+    transform: scaleY(1.26) scale(1.27);
   }
   100% {
-    transform: scaleY(1.17) scale(1.17);
+    transform: scaleY(1.22) scale(1.22);
   }
 }
 
