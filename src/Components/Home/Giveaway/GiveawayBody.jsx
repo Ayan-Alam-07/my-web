@@ -1,5 +1,6 @@
 import style from "./GiveawayBody.module.css";
 import givImg from "../../../assets/giveaway/images/giveaway-img-4.png";
+import liveBadge from "../../../assets/badges/live-badge.gif";
 import followYou from "../../../assets/follow/gif/youtube/youtube-1.gif";
 import followInsta from "../../../assets/follow/gif/instagram/instagram-2.gif";
 import followTele1 from "../../../assets/follow/gif/telegram/telegram-1.gif";
@@ -53,8 +54,17 @@ const GiveawayBody = () => {
         </h3>
 
         <div className="d-flex justify-content-center align-items-center flex-column">
-          <div className={style.givImgCont}>
-            <img loading="lazy" src={givImg} alt="" className={style.givImg} />
+          <div style={{ position: "relative" }}>
+            <img src={liveBadge} className={style.liveBadge} alt="" />
+            <div className={style.liveBadgeBack}></div>
+            <div className={style.givImgCont}>
+              <img
+                loading="lazy"
+                src={givImg}
+                alt=""
+                className={style.givImg}
+              />
+            </div>
           </div>
           <div className={style.inpBtnCont}>
             <div className={style.inputContainer}>
