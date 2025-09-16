@@ -13,19 +13,19 @@
   width: 80vw;
   background-color: #202445;
   border: none;
+  cursor: pointer;
   border-radius: 20px;
 }
 .givImg {
-  height: 25vh;
-  width: 67vw;
-  cursor: pointer;
+  height: 23vh;
+  width: 56vw;
+  transition: all 0.7s ease;
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
   /* filter: drop-shadow(0 0 12px rgba(0, 153, 255, 0.8)); */
   /* filter: drop-shadow(0 0 14px rgba(155, 89, 182, 0.8)); */
 }
-.givImg:hover {
+.givImgCont:hover .givImg {
   transform: scale(1.07);
-  transition: 0.4s ease;
 }
 
 .inputContainer {
@@ -212,8 +212,8 @@
     border-radius: 24px;
   }
   .givImg {
-    height: 26vh;
-    width: 46vw;
+    height: 25vh;
+    width: 38vw;
   }
 
   .inputContainer {
@@ -295,13 +295,13 @@
 
   .givImgCont {
     padding: 0.91vw 5vw 7.88vw;
-    height: 40vh;
-    width: 28vw;
+    height: 39vh;
+    width: 30vw;
     border-radius: 24px;
   }
   .givImg {
-    height: 36vh;
-    width: 27vw;
+    height: 33vh;
+    width: 17vw;
   }
 
   .inputContainer {
