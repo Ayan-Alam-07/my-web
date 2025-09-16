@@ -105,7 +105,17 @@
   transform: scale(1.6);
 }
 
-.limitedDeal {
+.newBadge {
+  position: absolute;
+  margin: 0;
+  height: 120px !important;
+  width: 140px !important;
+  z-index: 7;
+  top: -33px;
+  left: -22px;
+}
+
+.limitedBadge {
   margin: 0 0 0 0;
   height: 64px !important;
   width: 145px !important;
@@ -223,7 +233,12 @@
     height: 33.5vw;
     width: 50vw;
   }
-  .limitedDeal {
+  .newBadge {
+    height: 130px !important;
+    top: -35px;
+    left: 42px;
+  }
+  .limitedBadge {
     margin: 0 0 0 8.4vw;
     height: 80px !important;
     width: 140px !important;
@@ -313,7 +328,13 @@
     height: 18.7vw;
     width: 27vw;
   }
-  .limitedDeal {
+  .newBadge {
+    height: 110px !important;
+    top: -24px;
+    left: -20px;
+  }
+
+  .limitedBadge {
     margin: 0;
     height: 80px !important;
     width: 130px !important;

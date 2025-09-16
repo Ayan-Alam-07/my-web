@@ -5,7 +5,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import taskCaptchaImg from "../../assets/task-captcha-7.png";
 import exchangeImg from "../../assets/exchange-center/exchange-gif-3.gif";
-import limitedDeal from "../../assets/exchange-center/limited-deal.gif";
+import limitedBadge from "../../assets/badges/limited-badge.gif";
+import newBadge from "../../assets/badges/new-badge.gif";
 import facebookLogo from "../../assets/follow-facebook.png";
 import telegramLogo from "../../assets/follow-telegram.png";
 import youtubeLogo from "../../assets/follow-youtube.png";
@@ -156,7 +157,11 @@ const HomeEarn = () => {
           </div>
         </div>
         <div className="row justify-content-evenly ">
-          <div className="col-lg-4 col-10 mx-4 mb-3 mb-sm-0 mx-lg-0 mt-1">
+          <div
+            className="col-lg-4 col-10 mx-4 mb-3 mb-sm-0 mx-lg-0 mt-1"
+            style={{ position: "relative" }}
+          >
+            <img src={newBadge} className={style.newBadge} alt="" />
             <div className={style.HomeEarnCard}>
               <img
                 src={taskCaptchaImg}
@@ -170,7 +175,7 @@ const HomeEarn = () => {
             className="col-lg-4 col-10 mx-4 mx-lg-0"
             style={{ position: "relative" }}
           >
-            <img src={limitedDeal} className={style.limitedDeal} alt="" />
+            <img src={limitedBadge} className={style.limitedBadge} alt="" />
             <div className={style.HomeEarnCard}>
               <img
                 src={exchangeImg}
