@@ -55,13 +55,17 @@ const GiveawayBody = () => {
 
         <div className="d-flex justify-content-center align-items-center flex-column">
           <div style={{ position: "relative" }}>
-            <img src={liveBadge} className={style.liveBadge} alt="" />
+            <img
+              src={liveBadge}
+              className={style.liveBadge}
+              alt="Giveaway live badge – giveaway is active now"
+            />
             <div className={style.liveBadgeBack}></div>
             <div className={style.givImgCont}>
               <img
                 loading="lazy"
                 src={givImg}
-                alt=""
+                alt="Giveaway code entry – enter your code here to claim rewards"
                 className={style.givImg}
               />
             </div>
