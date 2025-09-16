@@ -25,7 +25,7 @@ const App = () => {
           path="/TaskOptionChecker"
           element={<TaskOptionChecker />}
         ></Route>
-        <Route path="/Exchange-Center" element={<ExchangeCenter />}></Route>
+        <Route path="/exchange-center" element={<ExchangeCenter />}></Route>
       </Routes>
     </>
   );

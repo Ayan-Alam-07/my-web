@@ -182,7 +182,7 @@ const HomeEarn = () => {
                 className={style.exchangeImg}
                 loading="lazy"
                 alt="Solve captcha online and earn money easily by completing simple captcha tasks and get paid instantly"
-                onClick={() => navigate("/Exchange-Center")}
+                onClick={() => navigate("/exchange-center")}
               />
             </div>
           </div>

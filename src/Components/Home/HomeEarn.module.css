@@ -336,9 +336,10 @@
 
   .limitedBadge {
     margin: 0;
-    height: 80px !important;
+    height: 60px !important;
     width: 130px !important;
-    top: -1px;
+    top: 2.5px;
+    left: 18px;
   }
   .exchangeImg {
     padding: 3.7vw 4vw;
