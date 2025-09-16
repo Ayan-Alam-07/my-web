@@ -1,7 +1,7 @@
 import style from "../CommonComponents/CommonNavArr.module.css";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useList } from "../../Context/ContextStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import gemAnmation from "../../assets/gem-gifs/gem-4.gif";
 
@@ -11,7 +11,8 @@ const CommonNavArr = ({ id, name, navigation }) => {
     navigate(navigation);
   };
 
-  const { list, currentList, setCurrentList } = useList();
+  const { list, currentList, setCurrentList, arrowState, setArrowState } =
+    useList();
 
   // const { list } = useList();
   // const { currentList } = useList();
@@ -26,6 +27,8 @@ const CommonNavArr = ({ id, name, navigation }) => {
     }
   }, [id, name, list, navItem, setCurrentList]);
 
+  useEffect(() => {}, [arrowState]);
+
   return (
     <>
       <nav>
@@ -37,7 +40,15 @@ const CommonNavArr = ({ id, name, navigation }) => {
                   <div className="d-flex align-items-center">
                     <IoIosArrowDropleftCircle
                       className={style.commonLeftArr}
-                      onClick={handleArrowClick}
+                      // onClick={handleArrowClick}
+                      onClick={() => {
+                        if (id === 6 && arrowState) {
+                          navigate("/captcha-tasks");
+                          setArrowState(false);
+                        } else {
+                          handleArrowClick();
+                        }
+                      }}
                     />
                     <h1 className={style.commonNavName}>
                       {name || navItem?.name || "Unknown"}
@@ -67,6 +78,14 @@ const CommonNavArr = ({ id, name, navigation }) => {
                           </span>
                         </p>
                       </div>
+                      <button
+                        onClick={() => {
+                          setArrowState(true); // update state
+                          navigate("/exchange-center"); // redirect
+                        }}
+                      >
+                        exc
+                      </button>
                     </div>
                   )}
                 </div>

@@ -14,6 +14,8 @@ export const ListProvider = ({ children }) => {
 
   const [currentList, setCurrentList] = useState(list[0]);
 
+  const [arrowState, setArrowState] = useState(false);
+
   const [locationData, setLocationData] = useState({
     loading: true,
     country: "",
@@ -59,6 +61,8 @@ export const ListProvider = ({ children }) => {
         currentList,
         setCurrentList,
         locationData,
+        arrowState,
+        setArrowState,
       }}
     >
       {children}
