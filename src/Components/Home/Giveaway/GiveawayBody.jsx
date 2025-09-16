@@ -1,5 +1,5 @@
 import style from "./GiveawayBody.module.css";
-import givImg from "../../../assets/giveaway/images/giveaway-img-1.png";
+import givImg from "../../../assets/giveaway/images/giveaway-img-4.png";
 import followYou from "../../../assets/follow/gif/youtube/youtube-1.gif";
 import followInsta from "../../../assets/follow/gif/instagram/instagram-2.gif";
 import followTele1 from "../../../assets/follow/gif/telegram/telegram-1.gif";
