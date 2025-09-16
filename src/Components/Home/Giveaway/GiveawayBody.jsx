@@ -11,29 +11,36 @@ const GiveawayBody = () => {
       id: 1,
       name: "Youtube ...",
       nameClass: "youtube",
+      link: "https://youtube.com/@veloopwatchearn",
       logo: followYou,
-      altTag: "",
+      altTag:
+        "YouTube giveaway code – watch our channel video to claim rewards",
     },
     {
       id: 2,
       name: "Instagram ..",
       nameClass: "instagram",
+      link: "",
       logo: followInsta,
-      altTag: "",
+      altTag:
+        "Instagram giveaway code – copy from profile, paste to earn rewards",
     },
     {
       id: 3,
       name: "Telegram 1.",
       nameClass: "telegram",
+      link: "https://t.me/+k_cUrmYv1r45ZDBl",
       logo: followTele1,
-      altTag: "",
+      altTag: "Telegram giveaway code – paste to earn rewards",
     },
     {
       id: 4,
       name: "Telegram 2.",
       nameClass: "telegram",
+      link: "https://t.me/+k_cUrmYv1r45ZDBl",
       logo: followTele2,
-      altTag: "",
+      altTag:
+        "Get the giveaway code from our Telegram handle and paste it here for rewards",
     },
   ];
 
@@ -51,8 +58,14 @@ const GiveawayBody = () => {
           </div>
           <div className={style.inpBtnCont}>
             <div className={style.inputContainer}>
-              <input type="text" placeholder=" " required />
-              <label htmlFor="name">Giveaway Code</label>
+              <input
+                type="text"
+                name="giveawayCode"
+                id="giveawayCode"
+                placeholder=" "
+                required
+              />
+              <label htmlFor="giveawayCode">Giveaway Code</label>
             </div>
             <div className="d-flex justify-content-center">
               <button className={style.claimBtn}>Claim Now</button>
@@ -72,15 +85,23 @@ const GiveawayBody = () => {
                     obj.id == 3 ? style.followNonComm : ""
                   }`}
                 >
-                  <img
-                    loading="lazy"
-                    src={obj.logo}
-                    alt={obj.altTag}
-                    className={style.followCommImg}
-                  />
-                  <p className={`${style.objNamePara} ${style[obj.nameClass]}`}>
-                    {obj.name}
-                  </p>
+                  <div
+                    onClick={() =>
+                      window.open(obj.link, "_blank", "noopener,noreferrer")
+                    }
+                  >
+                    <img
+                      loading="lazy"
+                      src={obj.logo}
+                      alt={obj.altTag}
+                      className={style.followCommImg}
+                    />
+                    <p
+                      className={`${style.objNamePara} ${style[obj.nameClass]}`}
+                    >
+                      {obj.name}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
