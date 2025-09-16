@@ -92,6 +92,7 @@
 
 .inputContainer input:focus {
   background: #181a2a;
+  border: 2px solid #fff;
 }
 .inputContainer input:not(:placeholder-shown) {
   background: #181a2a;
