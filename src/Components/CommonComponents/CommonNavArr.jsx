@@ -1,7 +1,8 @@
 import style from "../CommonComponents/CommonNavArr.module.css";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
+import excBtnImg from "../../assets/gem-gifs/cap-exc-btn.gif";
 import { useList } from "../../Context/ContextStore";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import gemAnmation from "../../assets/gem-gifs/gem-4.gif";
 
@@ -69,7 +70,8 @@ const CommonNavArr = ({ id, name, navigation }) => {
                           Gems :{" "}
                           <span
                             style={{
-                              color: "#1ABC9C",
+                              // color: "#1ABC9C",
+                              color: "#e4c812ff",
                               fontFamily: "poppins",
                               marginLeft: "3px",
                             }}
@@ -79,12 +81,14 @@ const CommonNavArr = ({ id, name, navigation }) => {
                         </p>
                       </div>
                       <button
+                        className={style.capToExcBtn}
                         onClick={() => {
                           setArrowState(true); // update state
                           navigate("/exchange-center"); // redirect
                         }}
                       >
-                        exc
+                        <span>Exc</span>
+                        <img src={excBtnImg} alt="" />
                       </button>
                     </div>
                   )}
@@ -110,7 +114,8 @@ const CommonNavArr = ({ id, name, navigation }) => {
                 Gems :{" "}
                 <span
                   style={{
-                    color: "#1ABC9C",
+                    // color: "#1ABC9C",
+                    color: "#FCE222",
                     fontFamily: "poppins",
                     marginLeft: "3px",
                   }}
@@ -119,6 +124,16 @@ const CommonNavArr = ({ id, name, navigation }) => {
                 </span>
               </p>
             </div>
+            <button
+              className={style.capToExcBtn}
+              onClick={() => {
+                setArrowState(true); // update state
+                navigate("/exchange-center"); // redirect
+              }}
+            >
+              Exc
+              <img src={excBtnImg} alt="" />
+            </button>
           </div>
         </div>
       )}
