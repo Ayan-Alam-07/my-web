@@ -12,8 +12,28 @@ const ExchangeCenterBody = () => {
   const gemSelection2 = Math.floor(Math.random() * (34 - 24 + 1)) + 24;
 
   const treasureCard = [
-    { id: 1, randomCoin: randCoin1, reqGems: gemSelection1 },
-    { id: 2, randomCoin: randCoin2, reqGems: gemSelection2 },
+    {
+      id: 1,
+      randomCoin: randCoin1,
+      reqGems: gemSelection1,
+      paraMob1:
+        "Watch ads to earn extra Gems, unlock Treasure, and convert them into",
+      paraMob2: "For maximum Rewards every day.",
+      paraOth1: "Get more Gems to unlock the Treasure and convert them into",
+      paraOth2:
+        "By simply Watching Ads, you can collect extra Gems, Exchange them and Maximize your Rewards.",
+    },
+    {
+      id: 2,
+      randomCoin: randCoin2,
+      reqGems: gemSelection2,
+      paraMob1: "Watch ads, gather Gems, and turn them into  ",
+      paraMob2: "To unlock bigger rewards for free instantly online today.",
+      paraOth1:
+        "Collect Gems every day, discover secret treasures, and quickly turn them into",
+      paraOth2:
+        "Simply watch ads to earn extra Gems, trade them, and increase your rewards instantly.",
+    },
   ];
 
   return (
@@ -22,9 +42,7 @@ const ExchangeCenterBody = () => {
         {treasureCard.map((card) => (
           <div
             key={card.id}
-            className={`${
-              card.id === 2 ? "mt-sm-5 pt-sm-2 mt-lg-3 pt-lg-3" : ""
-            }`}
+            className={`${card.id === 2 ? "mt-5 pt-sm-2 mt-lg-3 pt-lg-3" : ""}`}
           >
             <div
               className={`${style.wholeTresCont} ${
@@ -60,8 +78,28 @@ const ExchangeCenterBody = () => {
                       <span className={style.tresSSubRefVes}>VEs</span>
                     </h4>
                   </div>
-                  <p className={style.tresPara}>
-                    Get more Gems to unlock the Treasure and convert them into
+
+                  <p className={`${style.tresPara} ${style.tresMob}`}>
+                    {card.paraMob1}
+                    <span className={style.tresCoinCont}>
+                      <img
+                        className={`${style.tresCoinImg} ${
+                          card.id === 2 ? style.tresCoinImg2 : ""
+                        }`}
+                        loading="lazy"
+                        src={coin}
+                        alt="Earn free coins by exchanging gems and watching ads to unlock rewards"
+                        title="Unlock rewards by exchanging gems for coins"
+                      />{" "}
+                    </span>{" "}
+                    <span className={style.tresCoinValue}>
+                      {card.randomCoin} Coins.
+                    </span>{" "}
+                    {card.paraMob2}
+                  </p>
+
+                  <p className={`${style.tresPara} ${style.tresOth}`}>
+                    {card.paraOth1}
                     <span className={style.tresCoinCont}>
                       <img
                         className={style.tresCoinImg}
@@ -74,8 +112,7 @@ const ExchangeCenterBody = () => {
                     <span className={style.tresCoinValue}>
                       {card.randomCoin} Coins.
                     </span>{" "}
-                    By simply Watching Ads, you can collect extra Gems, Exchange
-                    them and Maximize your Rewards.
+                    {card.paraOth2}
                   </p>
                 </div>
               </div>

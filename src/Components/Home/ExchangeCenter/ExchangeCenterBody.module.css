@@ -1,5 +1,5 @@
 .wholeTresCont {
-  margin: 1.47vw 7.97vw 0;
+  margin: 7.7vw 0 0 0;
   background-color: #fff;
   color: #000;
   border-radius: 14px;
@@ -11,11 +11,11 @@
 }
 
 .treasureImgCont {
-  padding: 1.2vw 1.87vw;
+  padding: 1.2vw 1vw;
 }
 .treasureImg {
-  height: 120px;
-  width: 120px;
+  height: 95px;
+  width: 105px;
   transition: all 0.4s ease;
 }
 .treasureImg:hover {
@@ -25,12 +25,12 @@
 .wholeContentCont {
   background-color: #f7f7f7;
   border-top-right-radius: 14px;
-  padding: 0.91vw 2vw;
+  padding: 3.87vw 2.27vw 3vw;
 }
 
 .tresFrstHds,
 .tresSrstHds {
-  padding: 0.2vw 0;
+  padding: 0.45vw 0;
   font-family: "outfit";
   font-weight: 700;
   margin: 0;
@@ -41,12 +41,17 @@
 .tresSrstHds:hover {
   transform: scale(1.01);
 }
+.tresFrstHds {
+  font-size: 5.37vw;
+}
 .tresSrstHds {
+  padding-top: 1.77vw;
+  font-size: 4.27vw;
   border-bottom: 1px solid #e9e9e9;
 }
 
 .tresSSubRefGem {
-  margin: 0 0 0 4px;
+  margin: 0 0 0 3px;
   color: #a020f0;
   letter-spacing: 0.01vw;
   font-weight: 600;
@@ -55,13 +60,13 @@
   transform: scale(1.1);
 }
 .tresExcSwapImg {
-  height: 45px;
-  width: 50px;
+  height: 36px;
+  width: 35px;
   transition: all 0.5s ease-in-out;
 }
 .tresSSubRefVes {
   color: #ffd700;
-  letter-spacing: 0.13vw;
+  letter-spacing: 0.1vw;
   text-shadow:
     /* Black outline (stroke effect) */ -1px -1px 0 #000000,
     1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000,
@@ -72,11 +77,15 @@
 .tresPara {
   display: inline-block;
   margin: 0;
-  padding: 0.67vw 0 0.2vw;
+  padding: 1.7vw 0 0.7vw;
   font-family: "nunito";
   font-weight: 600;
+  font-size: 15px;
   color: #313131;
-  line-height: 2vw;
+}
+
+.tresOth {
+  display: none;
 }
 
 .tresCoinCont {
@@ -84,11 +93,14 @@
 }
 .tresCoinImg {
   position: absolute;
-  top: -9px;
-  left: -14px;
-  height: 40px;
-  width: 50px;
+  top: -7px;
+  left: -11px;
+  height: 35px;
+  width: 45px;
   transition: all 0.4s ease-in-out;
+}
+.tresCoinImg2 {
+  left: -15px !important;
 }
 .tresCoinImg:hover {
   transform: scale(1.3);
@@ -96,10 +108,11 @@
 .tresCoinValue {
   color: #000;
   font-weight: 700;
-  margin: 0 0 0 1.3vw;
+  margin: 0 0 0 4.47vw;
 }
 
 .reqGemCont {
+  padding: 2vw 0;
   background-color: #d6eaff;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
@@ -107,17 +120,17 @@
 }
 .tresGemImg {
   position: absolute;
-  top: -12px;
-  margin: 0 4.87vw 0 0;
-  height: 65px;
-  width: 65px;
+  top: -5px;
+  margin: 0 14.7vw 0 0;
+  height: 55px;
+  width: 55px;
 }
 
 .tresReqGem {
   margin: 0;
   padding: 0.7vw 0;
   font-family: "poppins";
-  font-size: 1.57vw;
+  font-size: 4.87vw;
   font-weight: 700;
   color: #181a2a;
 }
@@ -174,6 +187,13 @@
     font-size: 17px;
     letter-spacing: 0.091vw;
   }
+  .tresMob {
+    display: none;
+  }
+  .tresOth {
+    display: block;
+  }
+
   .tresCoinCont {
     display: inline-block;
   }
@@ -209,7 +229,7 @@
 
 @media (min-width: 992px) {
   .wholeTresCont {
-    margin: 1.47vw 7.97vw 0;
+    margin: 1.47vw 8.27vw 0;
   }
 
   .treasureImg {
