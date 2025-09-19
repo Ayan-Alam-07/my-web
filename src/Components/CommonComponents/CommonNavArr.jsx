@@ -88,7 +88,11 @@ const CommonNavArr = ({ id, name, navigation }) => {
                         }}
                       >
                         <span>Exc</span>
-                        <img src={excBtnImg} alt="" />
+                        <img
+                          loading="lazy"
+                          src={excBtnImg}
+                          alt="Exchange gems into coins and withdraw rewards securely to your bank account"
+                        />
                       </button>
                     </div>
                   )}
@@ -132,7 +136,11 @@ const CommonNavArr = ({ id, name, navigation }) => {
               }}
             >
               Exc
-              <img src={excBtnImg} alt="" />
+              <img
+                loading="lazy"
+                src={excBtnImg}
+                alt="Exchange gems into coins and withdraw rewards securely to your bank account"
+              />
             </button>
           </div>
         </div>
