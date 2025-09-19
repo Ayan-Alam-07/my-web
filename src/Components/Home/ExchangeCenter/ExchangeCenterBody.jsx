@@ -16,6 +16,14 @@ const ExchangeCenterBody = () => {
       id: 1,
       randomCoin: randCoin1,
       reqGems: gemSelection1,
+      treasureImgAlt:
+        "Unlock treasure chest with Gems and turn them into coins for big rewards",
+      treasureSwapAlt:
+        "Easily exchange Gems for valuable VEs or reward points within seconds",
+      treasureCoinAlt:
+        "See exact coin value received from Gem exchanges in real time",
+      treasureGemAlt:
+        "Check how many Gems are needed to unlock exclusive in-game rewards",
       paraMob1:
         "Watch ads to earn extra Gems, unlock Treasure, and convert them into",
       paraMob2: "For maximum Rewards every day.",
@@ -27,12 +35,20 @@ const ExchangeCenterBody = () => {
       id: 2,
       randomCoin: randCoin2,
       reqGems: gemSelection2,
+      treasureImgAlt:
+        "Gather Gems from treasure chest by viewing ads and trade them into coins instantly",
+      treasureSwapAlt:
+        "Quickly trade Gems for premium VEs or exclusive points for top-tier rewards",
+      treasureCoinAlt:
+        "View how many coins your Gems are worth with dynamic conversion rates",
+      treasureGemAlt:
+        "Discover Gem requirements for accessing premium rewards and bonuses",
       paraMob1: "Watch ads, gather Gems, and turn them into  ",
       paraMob2: "To unlock bigger rewards for free instantly online today.",
       paraOth1:
-        "Collect Gems every day, discover secret treasures, and quickly turn them into",
+        "Collect Gems every day, discover secret Treasures, and Quickly turn into",
       paraOth2:
-        "Simply watch ads to earn extra Gems, trade them, and increase your rewards instantly.",
+        "Simply watch Ads to earn extra Gems, trade them, and Increase your Rewards Instantly.",
     },
   ];
 
@@ -55,7 +71,7 @@ const ExchangeCenterBody = () => {
                     className={style.treasureImg}
                     loading="lazy"
                     src={treasure}
-                    alt="Unlock big treasure rewards and earn exciting coins from gems"
+                    alt={card.treasureImgAlt}
                   />
                 </div>
                 <div className={style.wholeContentCont}>
@@ -73,7 +89,7 @@ const ExchangeCenterBody = () => {
                         className={style.tresExcSwapImg}
                         loading="lazy"
                         src={ExcSwap}
-                        alt="Exchange gems into coins and earn rewards instantly"
+                        alt={card.treasureSwapAlt}
                       />{" "}
                       <span className={style.tresSSubRefVes}>VEs</span>
                     </h4>
@@ -88,7 +104,7 @@ const ExchangeCenterBody = () => {
                         }`}
                         loading="lazy"
                         src={coin}
-                        alt="Earn free coins by exchanging gems and watching ads to unlock rewards"
+                        alt={card.treasureCoinAlt}
                         title="Unlock rewards by exchanging gems for coins"
                       />{" "}
                     </span>{" "}
@@ -105,7 +121,7 @@ const ExchangeCenterBody = () => {
                         className={style.tresCoinImg}
                         loading="lazy"
                         src={coin}
-                        alt="Earn free coins by exchanging gems and watching ads to unlock rewards"
+                        alt={card.treasureCoinAlt}
                         title="Unlock rewards by exchanging gems for coins"
                       />{" "}
                     </span>{" "}
@@ -123,7 +139,7 @@ const ExchangeCenterBody = () => {
                   className={style.tresGemImg}
                   loading="lazy"
                   src={gem}
-                  alt=""
+                  alt={card.treasureGemAlt}
                 />
                 <p className={style.tresReqGem}>{card.reqGems}</p>
               </div>
