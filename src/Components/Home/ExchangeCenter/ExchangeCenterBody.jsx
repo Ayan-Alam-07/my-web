@@ -23,7 +23,7 @@ const ExchangeCenterBody = () => {
       treasureCoinAlt:
         "See exact coin value received from Gem exchanges in real time",
       treasureGemAlt:
-        "Check how many Gems are needed to unlock exclusive in-game rewards",
+        "Find out the exact number of Gems needed to unlock rare in-game items",
       paraMob1:
         "Watch ads to earn extra Gems, unlock Treasure, and convert them into",
       paraMob2: "For maximum Rewards every day.",
@@ -42,7 +42,7 @@ const ExchangeCenterBody = () => {
       treasureCoinAlt:
         "View how many coins your Gems are worth with dynamic conversion rates",
       treasureGemAlt:
-        "Discover Gem requirements for accessing premium rewards and bonuses",
+        "Learn the Gem cost to access premium-level rewards and bonus content",
       paraMob1: "Watch ads, gather Gems, and turn them into  ",
       paraMob2: "To unlock bigger rewards for free instantly online today.",
       paraOth1:
@@ -105,7 +105,6 @@ const ExchangeCenterBody = () => {
                         loading="lazy"
                         src={coin}
                         alt={card.treasureCoinAlt}
-                        title="Unlock rewards by exchanging gems for coins"
                       />{" "}
                     </span>{" "}
                     <span className={style.tresCoinValue}>
@@ -122,7 +121,6 @@ const ExchangeCenterBody = () => {
                         loading="lazy"
                         src={coin}
                         alt={card.treasureCoinAlt}
-                        title="Unlock rewards by exchanging gems for coins"
                       />{" "}
                     </span>{" "}
                     <span className={style.tresCoinValue}>
