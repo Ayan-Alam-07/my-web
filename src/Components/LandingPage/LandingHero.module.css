@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background-image: url("../../assets/landing-back-mob-4.png");
+  background-image: url("../../assets/landing-back-mob-4.webp");
   background-size: cover;
   background-position: 89.5% 0%;
   background-repeat: no-repeat;
@@ -64,7 +64,6 @@
   .landingHeroWraper {
     justify-content: center;
     height: 118vh;
-    background-image: url("../../assets/landing-back-mob-4.png");
     background-size: cover;
     background-position: 91% 0%; /* or top, left, 40% 60%, etc. */
   }
@@ -114,7 +113,7 @@
   .landingHeroWraper {
     justify-content: start;
     height: 122vh;
-    background-image: url("../../assets/landing-back-6.png");
+    background-image: url("../../assets/landing-back-6.webp");
   }
   .landingHeroContent {
     cursor: text;

@@ -30,7 +30,7 @@
 
 .tresFrstHds,
 .tresSrstHds {
-  padding: 0.45vw 0;
+  padding: 0.75vw 0;
   font-family: "outfit";
   font-weight: 700;
   margin: 0;
@@ -45,7 +45,7 @@
   font-size: 5.37vw;
 }
 .tresSrstHds {
-  padding-top: 1.77vw;
+  padding: 3.37vw 0 16px;
   font-size: 4.27vw;
   border-bottom: 1px solid #e9e9e9;
 }
@@ -60,11 +60,15 @@
   transform: scale(1.1);
 }
 .tresExcSwapImg {
-  height: 36px;
-  width: 35px;
+  position: absolute;
+  top: -21px;
+  left: -5px;
+  height: 30px;
+  width: 32px;
   transition: all 0.5s ease-in-out;
 }
 .tresSSubRefVes {
+  margin: 0 0 0 7.07vw;
   color: #ffd700;
   letter-spacing: 0.1vw;
   text-shadow:
@@ -156,7 +160,7 @@
 
   .tresFrstHds,
   .tresSrstHds {
-    padding: 0.37vw 0 0.57vw;
+    padding: 2.27vw 0 0.57vw;
     line-height: 1.7vw;
   }
   .tresFrstHds {
@@ -165,6 +169,7 @@
   }
 
   .tresSrstHds {
+    padding-bottom: 16px;
     font-size: 20px;
   }
 
@@ -174,10 +179,13 @@
   }
 
   .tresExcSwapImg {
+    top: -29px;
+    left: -7px;
     height: 45px;
     width: 50px;
   }
   .tresSSubRefVes {
+    margin: 0 0 0 5.27vw;
     letter-spacing: 0.37vw;
   }
 
@@ -203,7 +211,6 @@
     height: 40px;
     width: 50px;
   }
-
   .tresCoinValue {
     margin: 0 0 0 2.37vw;
   }
@@ -243,16 +250,21 @@
 
   .tresFrstHds,
   .tresSrstHds {
-    padding: 0.1vw 0;
+    padding: 0.3vw 0;
   }
   .tresFrstHds {
     font-size: 26px;
   }
   .tresSrstHds {
+    padding-bottom: 10px;
     font-size: 22px;
+  }
+  .tresExcSwapImg {
+    left: -5px;
   }
 
   .tresSSubRefVes {
+    margin: 0 0 0 3.37vw;
     letter-spacing: 0.13vw;
   }
 

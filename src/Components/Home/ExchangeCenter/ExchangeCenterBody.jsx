@@ -1,8 +1,9 @@
 import style from "./ExchangeCenterBody.module.css";
-import ExcSwap from "../../../assets/gem-gifs/cap-exc-btn.gif";
-import treasure from "../../../assets/exchange-center/treasure.gif";
-import coin from "../../../assets/exchange-center/coin.gif";
-import gem from "../../../assets/gem-gifs/gem-4.gif";
+import excSwap from "../../../assets/gem-gifs/cap-exc-btn.webm";
+// import treasure from "../../../assets/exchange-center/treasure.gif";
+import treasure from "../../../assets/exchange-center/treasure.webm";
+import coin from "../../../assets/exchange-center/coin.webm";
+import gem from "../../../assets/gem-gifs/gem-4.webm";
 
 const ExchangeCenterBody = () => {
   const randCoin1 = Math.floor(Math.random() * (295 - 160 + 1)) + 160;
@@ -67,12 +68,16 @@ const ExchangeCenterBody = () => {
             >
               <div className="d-flex align-items-center">
                 <div className={style.treasureImgCont}>
-                  <img
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className={style.treasureImg}
-                    loading="lazy"
-                    src={treasure}
-                    alt={card.treasureImgAlt}
-                  />
+                  >
+                    <source src={treasure} type="video/webm" />
+                    Update your browser or Use Google Chrome.
+                  </video>
                 </div>
                 <div className={style.wholeContentCont}>
                   <div className="py-1">
@@ -85,12 +90,27 @@ const ExchangeCenterBody = () => {
                     <h4 className={style.tresSrstHds}>
                       Exchange{" "}
                       <span className={style.tresSSubRefGem}>Gems</span>{" "}
-                      <img
+                      {/* <img
                         className={style.tresExcSwapImg}
                         loading="lazy"
                         src={ExcSwap}
                         alt={card.treasureSwapAlt}
-                      />{" "}
+                      />{" "} */}
+                      <div
+                        className="d-inline-block"
+                        style={{ position: "relative" }}
+                      >
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className={style.tresExcSwapImg}
+                        >
+                          <source src={excSwap} type="video/webm" />
+                          Update your browser or Use Google Chrome.
+                        </video>
+                      </div>
                       <span className={style.tresSSubRefVes}>VEs</span>
                     </h4>
                   </div>
@@ -98,14 +118,18 @@ const ExchangeCenterBody = () => {
                   <p className={`${style.tresPara} ${style.tresMob}`}>
                     {card.paraMob1}
                     <span className={style.tresCoinCont}>
-                      <img
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className={`${style.tresCoinImg} ${
                           card.id === 2 ? style.tresCoinImg2 : ""
                         }`}
-                        loading="lazy"
-                        src={coin}
-                        alt={card.treasureCoinAlt}
-                      />{" "}
+                      >
+                        <source src={coin} type="video/webm" />
+                        Update your browser or Use Google Chrome.
+                      </video>
                     </span>{" "}
                     <span className={style.tresCoinValue}>
                       {card.randomCoin} Coins.
@@ -116,12 +140,16 @@ const ExchangeCenterBody = () => {
                   <p className={`${style.tresPara} ${style.tresOth}`}>
                     {card.paraOth1}
                     <span className={style.tresCoinCont}>
-                      <img
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className={style.tresCoinImg}
-                        loading="lazy"
-                        src={coin}
-                        alt={card.treasureCoinAlt}
-                      />{" "}
+                      >
+                        <source src={coin} type="video/webm" />
+                        Update your browser or Use Google Chrome.
+                      </video>
                     </span>{" "}
                     <span className={style.tresCoinValue}>
                       {card.randomCoin} Coins.
@@ -133,12 +161,16 @@ const ExchangeCenterBody = () => {
               <div
                 className={`d-flex justify-content-center align-items-center ${style.reqGemCont}`}
               >
-                <img
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className={style.tresGemImg}
-                  loading="lazy"
-                  src={gem}
-                  alt={card.treasureGemAlt}
-                />
+                >
+                  <source src={gem} type="video/webm" />
+                  Update your browser or Use Google Chrome.
+                </video>
                 <p className={style.tresReqGem}>{card.reqGems}</p>
               </div>
             </div>
