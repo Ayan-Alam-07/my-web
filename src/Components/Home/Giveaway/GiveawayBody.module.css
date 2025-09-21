@@ -314,14 +314,14 @@
   }
 
   .givImgCont {
-    padding: 0.91vw 5vw 7.88vw;
-    height: 39vh;
-    width: 30vw;
+    padding: 0.91vw 5vw 3vw;
+    height: 19vw;
+    width: 31vw;
     border-radius: 24px;
   }
   .givImg {
-    height: 33vh;
-    width: 17vw;
+    height: 16vw;
+    width: 18vw;
   }
 
   .inputContainer {

@@ -1,10 +1,10 @@
 import style from "./GiveawayBody.module.css";
-import givImg from "../../../assets/giveaway/images/giveaway-img-4.png";
-import liveBadge from "../../../assets/badges/live-badge.gif";
-import followYou from "../../../assets/follow/gif/youtube/youtube-1.gif";
-import followInsta from "../../../assets/follow/gif/instagram/instagram-2.gif";
-import followTele1 from "../../../assets/follow/gif/telegram/telegram-1.gif";
-import followTele2 from "../../../assets/follow/gif/telegram/telegram-2.gif";
+import givImg from "../../../assets/giveaway/images/giveaway-img-4.webp";
+import liveBadge from "../../../assets/badges/live-badge.webp";
+import followYou from "../../../assets/follow/gif/youtube/youtube-1.webp";
+import followInsta from "../../../assets/follow/gif/instagram/instagram-2.webp";
+import followTele1 from "../../../assets/follow/gif/telegram/telegram-1.webp";
+import followTele2 from "../../../assets/follow/gif/telegram/telegram-2.webp";
 
 const GiveawayBody = () => {
   const followList = [
