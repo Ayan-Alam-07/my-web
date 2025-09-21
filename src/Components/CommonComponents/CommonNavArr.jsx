@@ -1,10 +1,10 @@
 import style from "../CommonComponents/CommonNavArr.module.css";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-import excBtnImg from "../../assets/gem-gifs/cap-exc-btn.gif";
 import { useList } from "../../Context/ContextStore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import gemAnmation from "../../assets/gem-gifs/gem-4.gif";
+import excBtnImg from "../../assets/gem-gifs/cap-exc-btn.webm";
+import gemAnmation from "../../assets/gem-gifs/gem-4.webm";
 
 const CommonNavArr = ({ id, name, navigation }) => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const CommonNavArr = ({ id, name, navigation }) => {
         <div className="container-fluid">
           <div className="container">
             <div className="row p-0 ">
-              <div className="col-12 py-3">
+              <div className="col-12 py-3 pe-sm-0 pe-lg-2">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="d-flex align-items-center">
                     <IoIosArrowDropleftCircle
@@ -59,12 +59,16 @@ const CommonNavArr = ({ id, name, navigation }) => {
                     <div className={style.captchaGemsCont}>
                       <div className={style.captchaGems}>
                         <div>
-                          <img
-                            loading="lazy"
-                            src={gemAnmation}
-                            alt="Wallet gems converted to coins and redeemed to bank account on rewards website"
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className={style.gemAnimation}
-                          />
+                          >
+                            <source src={gemAnmation} type="video/webm" />
+                            Update your browser or Use Google Chrome.
+                          </video>
                         </div>
                         <p className="m-0 p-0">
                           Gems :{" "}
@@ -88,11 +92,23 @@ const CommonNavArr = ({ id, name, navigation }) => {
                         }}
                       >
                         <span>Exc</span>
-                        <img
+                        <div className={style.capExcCont}>
+                          {/* <img
                           loading="lazy"
                           src={excBtnImg}
                           alt="Exchange gems into coins and withdraw rewards securely to your bank account"
-                        />
+                        /> */}
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className={style.capToExcAni}
+                          >
+                            <source src={excBtnImg} type="video/webm" />
+                            Update your browser or Use Google Chrome.
+                          </video>
+                        </div>
                       </button>
                     </div>
                   )}
@@ -107,12 +123,16 @@ const CommonNavArr = ({ id, name, navigation }) => {
           <div className={style.captchaGemsMob}>
             <div className={style.captchaGems}>
               <div>
-                <img
-                  loading="lazy"
-                  src={gemAnmation}
-                  alt="Wallet gems converted to coins and redeemed to bank account on rewards website"
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className={style.gemAnimation}
-                />
+                >
+                  <source src={gemAnmation} type="video/webm" />
+                  Update your browser or Use Google Chrome.
+                </video>
               </div>
               <p className="m-0 p-0">
                 Gems :{" "}
@@ -135,12 +155,21 @@ const CommonNavArr = ({ id, name, navigation }) => {
                 navigate("/exchange-center"); // redirect
               }}
             >
-              Exc
-              <img
-                loading="lazy"
-                src={excBtnImg}
-                alt="Exchange gems into coins and withdraw rewards securely to your bank account"
-              />
+              <div className="d-flex align-items-center">
+                <span>Exc</span>
+                <div className={style.capExcCont}>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={style.capToExcAni}
+                  >
+                    <source src={excBtnImg} type="video/webm" />
+                    Update your browser or Use Google Chrome.
+                  </video>
+                </div>
+              </div>
             </button>
           </div>
         </div>

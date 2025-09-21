@@ -17,14 +17,6 @@ const ExchangeCenterBody = () => {
       id: 1,
       randomCoin: randCoin1,
       reqGems: gemSelection1,
-      treasureImgAlt:
-        "Unlock treasure chest with Gems and turn them into coins for big rewards",
-      treasureSwapAlt:
-        "Easily exchange Gems for valuable VEs or reward points within seconds",
-      treasureCoinAlt:
-        "See exact coin value received from Gem exchanges in real time",
-      treasureGemAlt:
-        "Find out the exact number of Gems needed to unlock rare in-game items",
       paraMob1:
         "Watch ads to earn extra Gems, unlock Treasure, and convert them into",
       paraMob2: "For maximum Rewards every day.",
@@ -36,14 +28,6 @@ const ExchangeCenterBody = () => {
       id: 2,
       randomCoin: randCoin2,
       reqGems: gemSelection2,
-      treasureImgAlt:
-        "Gather Gems from treasure chest by viewing ads and trade them into coins instantly",
-      treasureSwapAlt:
-        "Quickly trade Gems for premium VEs or exclusive points for top-tier rewards",
-      treasureCoinAlt:
-        "View how many coins your Gems are worth with dynamic conversion rates",
-      treasureGemAlt:
-        "Learn the Gem cost to access premium-level rewards and bonus content",
       paraMob1: "Watch ads, gather Gems, and turn them into  ",
       paraMob2: "To unlock bigger rewards for free instantly online today.",
       paraOth1:
@@ -90,12 +74,6 @@ const ExchangeCenterBody = () => {
                     <h4 className={style.tresSrstHds}>
                       Exchange{" "}
                       <span className={style.tresSSubRefGem}>Gems</span>{" "}
-                      {/* <img
-                        className={style.tresExcSwapImg}
-                        loading="lazy"
-                        src={ExcSwap}
-                        alt={card.treasureSwapAlt}
-                      />{" "} */}
                       <div
                         className="d-inline-block"
                         style={{ position: "relative" }}

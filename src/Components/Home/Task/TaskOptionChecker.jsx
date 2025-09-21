@@ -1,6 +1,6 @@
 import style from "./TaskOptionChecker.module.css";
-import capWrong from "../../../assets/captcha-opt/wrong-opt-2.gif";
-import capCorrect from "../../../assets/captcha-opt/correct-opt-3.gif";
+import capWrong from "../../../assets/captcha-opt/wrong-opt-2.webm";
+import capCorrect from "../../../assets/captcha-opt/correct-opt-3.webm";
 import { useLocation, useNavigate } from "react-router-dom";
 import CommonNavArr from "../../CommonComponents/CommonNavArr";
 
@@ -21,14 +21,21 @@ const TaskOptionChecker = () => {
         <div className="container">
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className={style.optImgCont}>
-              <img
-                loading="lazy"
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 className={`${style.optImg} ${
                   !resultBool ? style.wrongOptImg : ""
                 }`}
-                src={resultBool ? capCorrect : capWrong}
-                alt="Congratulations, you earned coins for captcha verification on rewards website"
-              />
+              >
+                <source
+                  src={resultBool ? capCorrect : capWrong}
+                  type="video/webm"
+                />
+                Update your browser or Use Google Chrome.
+              </video>
             </div>
             <p
               className={`${style.optPara} ${
