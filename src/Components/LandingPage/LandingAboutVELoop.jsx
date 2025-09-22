@@ -1,8 +1,8 @@
 import style from "./LandingAboutVELoop.module.css";
-import aboutVETaskImg from "../../assets/about-ve-task.png";
-import aboutVEMakeMnyImg from "../../assets/about-ve-make-money.png";
-import aboutVEPaidInstantImg from "../../assets/about-ve-paid-instant.png";
-import aboutVESupportImg from "../../assets/about-ve-custumer-support.png";
+import aboutVETaskImg from "../../assets/landing/landing-about/about-ve-task.webp";
+import aboutVEMakeMnyImg from "../../assets/landing/landing-about/about-ve-make-money.webp";
+import aboutVEPaidInstantImg from "../../assets/landing/landing-about/about-ve-paid-instant.webp";
+import aboutVESupportImg from "../../assets/landing/landing-about/about-ve-custumer-support.webp";
 
 const LandingAboutVELoop = () => {
   const AboutSect = [

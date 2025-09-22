@@ -1,7 +1,7 @@
 import style from "./LandingHowWork.module.css";
-import HowWorkLogo from "../../assets/work-veloop-logo.png";
-import doTaskImg from "../../assets/task-v3.png";
-import getPaidImg from "../../assets/get-paid.png";
+import HowWorkLogo from "../../assets/landing/landing-work/work-veloop-logo.webp";
+import doTaskImg from "../../assets/landing/landing-work/task-v3.webp";
+import getPaidImg from "../../assets/landing/landing-work/get-paid.webp";
 
 const LandingHowWork = () => {
   const howWorkCards = [

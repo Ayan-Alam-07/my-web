@@ -1,7 +1,7 @@
 import style from "./LandingVision.module.css";
-import VisionBackPaidImg from "../../assets/vision-back-paidout.png";
-import VisionBackRegImg from "../../assets/vision-back-reg.png";
-import VisionBackPayImg from "../../assets/vision-back-payout.png";
+import VisionBackPaidImg from "../../assets/landing/landing-vision/vision-back-paidout.webp";
+import VisionBackRegImg from "../../assets/landing/landing-vision/vision-back-reg.webp";
+import VisionBackPayImg from "../../assets/landing/landing-vision/vision-back-payout.webp";
 
 const LandingVision = () => {
   const visionCards = [

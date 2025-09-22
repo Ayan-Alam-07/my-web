@@ -1,13 +1,13 @@
 import style from "./LandingFooter.module.css";
 import { FaRegCopyright } from "react-icons/fa6";
 import LandingCommonBtn from "./LandingCommon/LandingCommonBtn";
-import storeImg from "../../assets/footer-soon.png";
-import xImg from "../../assets/footer-x.png";
-import facebookImg from "../../assets/footer-facebook.png";
-import instaImg from "../../assets/footer-insta.png";
-import telegramImg from "../../assets/footer-telegram.png";
-import youtubeImg from "../../assets/footer-youtube.png";
-import { a } from "framer-motion/client";
+
+import storeImg from "../../assets/landing/landing-footer/footer-soon.webp";
+import xImg from "../../assets/landing/landing-footer/footer-x.webp";
+import facebookImg from "../../assets/landing/landing-footer/footer-facebook.webp";
+import instaImg from "../../assets/landing/landing-footer/footer-insta.webp";
+import telegramImg from "../../assets/landing/landing-footer/footer-telegram.webp";
+import youtubeImg from "../../assets/landing/landing-footer/footer-youtube.webp";
 
 const LandingFooter = () => {
   const earnMny = [
@@ -126,7 +126,7 @@ const LandingFooter = () => {
                 className={style.lowerFootAnc}
               >
                 {" "}
-                <img src={social.icon} alt={social.alt} />{" "}
+                <img loading="lazy" src={social.icon} alt={social.alt} />{" "}
               </a>
             ))}
           </div>

@@ -1,17 +1,17 @@
+import style from "./LandingEarnAbout.module.css";
 import { useEffect, useState, useRef } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import { flushSync } from "react-dom";
-import style from "./LandingEarnAbout.module.css";
 import LandingCommonBtn from "./LandingCommon/LandingCommonBtn";
 
-import watchAdImg from "../../assets/watch-ad.png";
-import appTaskImg from "../../assets/app-task.png";
-import playGameImg from "../../assets/play-game.png";
-import socialMediaImg from "../../assets/social-media.png";
-import surveyImg from "../../assets/survey.png";
-import captchaImg from "../../assets/captcha.png";
-import bonusImg from "../../assets/bonus.png";
-import promoCodeImg from "../../assets/promo-code-3.png";
+import watchAdImg from "../../assets/landing/landing-earn/watch-ad.webp";
+import appTaskImg from "../../assets/landing/landing-earn/app-task.webp";
+import playGameImg from "../../assets/landing/landing-earn/play-game.webp";
+import socialMediaImg from "../../assets/landing/landing-earn/social-media.webp";
+import surveyImg from "../../assets/landing/landing-earn/survey.webp";
+import captchaImg from "../../assets/landing/landing-earn/captcha.webp";
+import bonusImg from "../../assets/landing/landing-earn/bonus.webp";
+import promoCodeImg from "../../assets/landing/landing-earn/promo-code.webp";
 
 const LandingEarnAbout = () => {
   const sectionRef = useRef(null);

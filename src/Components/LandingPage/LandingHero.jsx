@@ -19,18 +19,18 @@ const LandingHero = () => {
               Start today and explore how easy it is to boost your income
               anytime, anywhere.
             </span>
-            <span className="d-block mt-3 pt-3 mt-lg-2 pt-lg-2">
+            <div className="d-flex justify-content-center mt-2 pt-2 mt-sm-4 mt-lg-3 pt-lg-2">
+              <LandingCommonBtn
+                btnText={"Starting Making Money Now"}
+              ></LandingCommonBtn>
+            </div>
+            <span className="d-block mt-3 pt-2 mt-sm-2 pt-sm-0 mt-lg-0 pt-lg-0">
               Our platform offers multiple legit earning options — designed for
               students, job seekers, With instant rewards, daily bonuses, promo
               codes, and a user-friendly dashboard, earning online has never
               been this simple and rewarding.
             </span>
           </p>
-          <div className="d-flex justify-content-center pb-4">
-            <LandingCommonBtn
-              btnText={"Starting Making Money Now"}
-            ></LandingCommonBtn>
-          </div>
         </div>
       </div>
     </div>
