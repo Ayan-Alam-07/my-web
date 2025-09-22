@@ -28,7 +28,7 @@
   background-color: #ffd700;
 }
 .bonusCont {
-  background-image: url(../../assets/bonusBack.png);
+  background-image: url(../../assets/bonusBack.webp);
   object-fit: cover;
   color: #000;
   display: flex;

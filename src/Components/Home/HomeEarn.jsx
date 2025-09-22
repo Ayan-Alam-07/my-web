@@ -3,14 +3,15 @@ import { TbDeviceTvOld } from "react-icons/tb";
 import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import taskCaptchaImg from "../../assets/task-captcha-7.png";
+
+import taskCaptchaImg from "../../assets/task-captcha-3.webp";
 import exchangeImg from "../../assets/exchange-center/exchange-gif-3.gif";
-import limitedBadge from "../../assets/badges/limited-badge.gif";
-import newBadge from "../../assets/badges/new-badge.gif";
-import facebookLogo from "../../assets/follow-facebook.png";
-import telegramLogo from "../../assets/follow-telegram.png";
-import youtubeLogo from "../../assets/follow-youtube.png";
-import giveawayBanner from "../../assets/giveaway-banner-3.png";
+import limitedBadge from "../../assets/badges/limited-badge.webp";
+import newBadge from "../../assets/badges/new-badge.webp";
+import giveawayBanner from "../../assets/giveaway-banner-3.webp";
+import facebookLogo from "../../assets/home-follow/follow-facebook.webp";
+import telegramLogo from "../../assets/home-follow/follow-telegram.webp";
+import youtubeLogo from "../../assets/home-follow/follow-youtube.webp";
 import { GiProfit } from "react-icons/gi";
 
 const HomeEarn = () => {
@@ -161,7 +162,12 @@ const HomeEarn = () => {
             className="col-lg-4 col-10 mx-4 mb-3 mb-sm-0 mx-lg-0 mt-1"
             style={{ position: "relative" }}
           >
-            <img src={newBadge} className={style.newBadge} alt="" />
+            <img
+              loading="lazy"
+              src={newBadge}
+              className={style.newBadge}
+              alt="New captcha earning option with high income rewards feature"
+            />
             <div className={style.HomeEarnCard}>
               <img
                 src={taskCaptchaImg}
@@ -175,7 +181,12 @@ const HomeEarn = () => {
             className="col-lg-4 col-10 mx-4 mx-lg-0"
             style={{ position: "relative" }}
           >
-            <img src={limitedBadge} className={style.limitedBadge} alt="" />
+            <img
+              loading="lazy"
+              src={limitedBadge}
+              className={style.limitedBadge}
+              alt="Limited time deals showing high value exchange rewards"
+            />
             <div className={style.HomeEarnCard}>
               <img
                 src={exchangeImg}
@@ -260,9 +271,10 @@ const HomeEarn = () => {
           <div className="col-12 col-md-10 mb-3 pb-2 p-0 col-lg-9">
             <div className="ms-sm-3">
               <img
+                loading="lazy"
                 src={giveawayBanner}
                 className={style.giveBackImage}
-                alt="Redeem giveaway code and earn instantly"
+                alt="Exclusive giveaway section where users can earn exciting rewards by entering unique giveaway code"
                 onClick={() => navigate("/giveaway-code")}
               />
             </div>
@@ -305,6 +317,7 @@ const HomeEarn = () => {
                     }}
                   >
                     <img
+                      loading="lazy"
                       src={follow.logo}
                       className={style.homeFollowLogo}
                       alt={follow.altKey}
