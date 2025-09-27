@@ -21,17 +21,17 @@ const Payout = () => {
   return (
     <>
       <CommonNavArr id={2} navigation={"/Wallet"}></CommonNavArr>
-      {paymentMethod === "upi" && <PayoutUpi name="Upi" />}
+      {paymentMethod === "upi" && <PayoutUpi name="UPI" />}
       {paymentMethod === "googlePlay" && <PayoutGPlay name="G-Play" />}
       {paymentMethod === "paypal" && <PayoutPaypal name="PayPal" />}
-      {paymentMethod === "usdt" && <PayoutUsdtGlob name="usdtGlob" />}
-      {paymentMethod === "btc" && <PayoutBtcGlob name="btcGlob" />}
+      {paymentMethod === "usdt" && <PayoutUsdtGlob name="USDT" />}
+      {paymentMethod === "btc" && <PayoutBtcGlob name="BTC" />}
 
       {paymentMethod === "amazon" &&
         (locationData.country === "IN" ? (
           <PayoutAmazon name="Amazon" />
         ) : (
-          <PayoutAmazonGlob name="amazonGlob" />
+          <PayoutAmazonGlob name="Amazon" />
         ))}
       {console.log("Country:", locationData.country)}
     </>

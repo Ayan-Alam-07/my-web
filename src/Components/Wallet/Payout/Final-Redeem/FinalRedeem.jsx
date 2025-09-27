@@ -110,7 +110,7 @@ const FinalRedeem = ({ selectedVoucher, onClose, name, currencyIcon }) => {
                         )}
 
                         {!["usdtGlob", "btcGlob", "Upi"].includes(name) && (
-                          <>
+                          <div>
                             <p className="m-0">
                               <span className="text-danger fw-bold">*</span>{" "}
                               Email ID:
@@ -120,7 +120,7 @@ const FinalRedeem = ({ selectedVoucher, onClose, name, currencyIcon }) => {
                               required
                               placeholder="Enter Your Email ID"
                             />
-                          </>
+                          </div>
                         )}
                       </div>
                       <div>

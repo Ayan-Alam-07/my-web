@@ -1,7 +1,9 @@
 nav {
   position: sticky;
+  width: 100%;
+  height: auto;
   top: 0;
-  z-index: 9999;
+  z-index: 1;
   background-color: #161827 !important;
   color: #fff !important;
 }
