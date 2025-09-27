@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import googlePlayLogo from "../../../assets/googlePlay-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import googlePlayLogo from "../../../assets/wallet/googlePlay-logo.webp";
 
 const PayoutGPlay = ({ name }) => {
   const [balance] = useState(10000); // Your coin balance
@@ -75,7 +76,7 @@ const PayoutGPlay = ({ name }) => {
                   >
                     <img
                       src={googlePlayLogo}
-                      alt="Google Play Store Gift Card Withdrawal – Rewards Website India"
+                      alt="Secure Google Play Store Gift Card withdrawal for instant rewards payout in India"
                       className={style.gPlayLogo}
                     />
                     <p>

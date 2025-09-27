@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import btcLogo from "../../../assets/btc-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import btcLogo from "../../../assets/wallet/btc-logo.webp";
 
 const PayoutBtcGlob = ({ name }) => {
   const [balance] = useState(1000000); // Your coin balance
@@ -75,7 +76,7 @@ const PayoutBtcGlob = ({ name }) => {
                   >
                     <img
                       src={btcLogo}
-                      alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                      alt="Trusted BTC withdrawal option for secure instant global crypto rewards payout"
                       className={style.paypalLogo}
                     />
                     <p>

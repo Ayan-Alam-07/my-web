@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import paypalLogo from "../../../assets/amazon-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import amazonGlobLogo from "../../../assets/wallet/amazon-logo.webp";
 
 const PayoutAmazonGlob = ({ name }) => {
   const [balance] = useState(1000000); // Your coin balance
@@ -75,8 +76,8 @@ const PayoutAmazonGlob = ({ name }) => {
                     onClick={() => handleSelect(v.id, v.requiredCoins)}
                   >
                     <img
-                      src={paypalLogo}
-                      alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                      src={amazonGlobLogo}
+                      alt="Trusted Amazon Gift Card withdrawal option for instant global rewards payout"
                       className={style.paypalLogo}
                     />
                     <p>

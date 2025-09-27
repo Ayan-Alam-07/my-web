@@ -1,9 +1,4 @@
 import style from "../PayMethReg/PayoutComm.module.css";
-import { useState } from "react";
-import usdtLogo from "../../../assets/usdt-logo.png";
-import btcLogo from "../../../assets/btc-logo.png";
-import amazonLogo from "../../../assets/amazon-logo.png";
-import paypalLogo from "../../../assets/paypal-logo.png";
 import { TbInfoOctagonFilled } from "react-icons/tb";
 import { CgInfo } from "react-icons/cg";
 import { RiSecurePaymentFill } from "react-icons/ri";
@@ -11,6 +6,12 @@ import { FaUserLock } from "react-icons/fa";
 import { BsStopwatchFill } from "react-icons/bs";
 import { CgDetailsMore } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import usdtLogo from "../../../assets/wallet/usdt-logo.webp";
+import btcLogo from "../../../assets/wallet/btc-logo.webp";
+import amazonLogo from "../../../assets/wallet/amazon-logo.webp";
+import paypalLogo from "../../../assets/wallet/paypal-logo.webp";
 
 const PayoutGlob = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const PayoutGlob = () => {
       id: 1,
       name: "paypal",
       logo: paypalLogo,
+      alt: "Secure PayPal withdrawal option for instant global rewards payout cashout",
       class: "paymentLogoPaypal",
       paraClass: "",
     },
@@ -42,6 +44,7 @@ const PayoutGlob = () => {
       id: 2,
       name: "amazon",
       logo: amazonLogo,
+      alt: "Secure Amazon withdrawal option for international rewards redemption payout",
       class: "paymentLogoAmazon",
       paraClass: "",
     },
@@ -49,6 +52,7 @@ const PayoutGlob = () => {
       id: 3,
       name: "usdt",
       logo: usdtLogo,
+      alt: "Secure USDT withdrawal option for global crypto rewards transfer payout",
       class: "paymentLogoGPlay",
       paraClass: "usdtPara",
     },
@@ -56,6 +60,7 @@ const PayoutGlob = () => {
       id: 4,
       name: "btc",
       logo: btcLogo,
+      alt: "Fast Bitcoin withdrawal option for worldwide crypto rewards instant cashout",
       class: "paymentLogoPaypal",
       paraClass: "btcPara",
     },
@@ -126,7 +131,7 @@ const PayoutGlob = () => {
                     selectedId === availOption.id ? style.remMar : ""
                   }`}
                   src={availOption.logo}
-                  alt="UPI"
+                  alt={availOption.alt}
                 />
               </div>
               <div>

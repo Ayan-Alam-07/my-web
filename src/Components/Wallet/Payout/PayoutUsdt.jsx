@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import usdtLogo from "../../../assets/usdt-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import usdtLogo from "../../../assets/wallet/usdt-logo.webp";
 
 const PayoutUsdtGlob = ({ name }) => {
   const [balance] = useState(1000000); // Your coin balance
@@ -76,7 +77,7 @@ const PayoutUsdtGlob = ({ name }) => {
                   >
                     <img
                       src={usdtLogo}
-                      alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                      alt="Trusted USDT withdrawal option for secure instant global crypto rewards payout"
                       className={style.paypalLogo}
                     />
                     <p>

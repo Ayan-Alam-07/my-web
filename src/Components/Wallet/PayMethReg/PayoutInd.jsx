@@ -1,9 +1,5 @@
 import style from "./PayoutComm.module.css";
 import { useState } from "react";
-import upiLogo from "../../../assets/upi-logo-2.png";
-import amazonLogo from "../../../assets/amazon-logo.png";
-import googlePlayLogo from "../../../assets/googlePlay-logo.png";
-import paypalLogo from "../../../assets/paypal-logo.png";
 import { TbInfoOctagonFilled } from "react-icons/tb";
 import { CgInfo } from "react-icons/cg";
 import { RiSecurePaymentFill } from "react-icons/ri";
@@ -11,6 +7,11 @@ import { FaUserLock } from "react-icons/fa";
 import { BsStopwatchFill } from "react-icons/bs";
 import { CgDetailsMore } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+
+import upiLogo from "../../../assets/wallet/upi-logo.webp";
+import amazonLogo from "../../../assets/wallet/amazon-logo.webp";
+import googlePlayLogo from "../../../assets/wallet/googlePlay-logo.webp";
+import paypalLogo from "../../../assets/wallet/paypal-logo.webp";
 
 const PayoutInd = () => {
   const navigate = useNavigate();
@@ -31,20 +32,35 @@ const PayoutInd = () => {
   };
 
   const paymentOptionsAvail = [
-    { id: 1, name: "upi", logo: upiLogo, class: "paymentLogoUpi" },
-    { id: 2, name: "amazon", logo: amazonLogo, class: "paymentLogoAmazon" },
+    {
+      id: 1,
+      name: "upi",
+      logo: upiLogo,
+      alt: "Secure UPI withdrawal to transfer directly to bank account for instant India rewards payout",
+      class: "paymentLogoUpi",
+    },
+    {
+      id: 2,
+      name: "amazon",
+      logo: amazonLogo,
+      alt: "Trusted Amazon Gift Card India withdrawal option for instant rewards redemption",
+      class: "paymentLogoAmazon",
+    },
     {
       id: 3,
       name: "googlePlay",
       logo: googlePlayLogo,
+      alt: "Secure Google Play withdrawal option for instant global rewards transfer",
       class: "paymentLogoGPlay",
     },
   ];
 
   const paymentOptionsUnavail = [
-    // { id: 1, logo: amazonLogo },
-    // { id: 1, logo: googlePlayLogo },
-    { id: 1, logo: paypalLogo },
+    {
+      id: 1,
+      logo: paypalLogo,
+      alt: "Trusted PayPal India withdrawal option for instant rewards cashout payout",
+    },
   ];
 
   const infos = [
@@ -112,7 +128,7 @@ const PayoutInd = () => {
                     selectedId === availOption.id ? style.remMar : ""
                   }`}
                   src={availOption.logo}
-                  alt="UPI"
+                  alt={availOption.alt}
                 />
               </div>
             </div>
@@ -126,7 +142,7 @@ const PayoutInd = () => {
                 <p className={style.unavialPara}>Unavailable</p>
                 <img
                   src={option.logo}
-                  alt="logo"
+                  alt={option.alt}
                   className={style.paymentOptionsLogo}
                 />
               </div>

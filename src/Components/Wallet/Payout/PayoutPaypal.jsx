@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import paypalLogo from "../../../assets/paypal-logo.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import paypalLogo from "../../../assets/wallet/paypal-logo.webp";
 
 const PayoutPaypal = ({ name }) => {
   const [balance] = useState(1000000); // Your coin balance
@@ -75,7 +76,7 @@ const PayoutPaypal = ({ name }) => {
                   >
                     <img
                       src={paypalLogo}
-                      alt="Get Free Amazon Vouchers Online from Trusted Rewards Website in India"
+                      alt="Trusted PayPal withdrawal option for instant rewards transfer worldwide"
                       className={style.paypalLogo}
                     />
                     <p>

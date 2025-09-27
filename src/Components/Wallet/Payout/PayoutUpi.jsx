@@ -1,8 +1,9 @@
 import style from "./PayoutUpi.module.css";
-import FinalRedeem from "./Final-Redeem/FinalRedeem";
 import { useState } from "react";
-import upiLogo from "../../../assets/upi-logo-2.png";
 import { GiTwoCoins } from "react-icons/gi";
+import FinalRedeem from "./Final-Redeem/FinalRedeem";
+
+import upiLogo from "../../../assets/wallet/upi-logo.webp";
 
 const PayoutUpi = ({ name }) => {
   const [balance] = useState(10000); // Your coin balance
@@ -78,7 +79,7 @@ const PayoutUpi = ({ name }) => {
                   >
                     <img
                       src={upiLogo}
-                      alt="Instant UPI Voucher Withdrawal – Rewards Website India"
+                      alt="Instant UPI voucher withdrawal to transfer rewards directly to bank account in India"
                       className={style.redeemLogo}
                     />
                     <p>
