@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import TaskOptionChecker from "./Components/Home/Task/TaskOptionChecker";
 import ExchangeCenter from "./Components/Home/ExchangeCenter/ExchangeCenter";
+import Bonus from "./Components/Home/Bonus/Bonus";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           element={<TaskOptionChecker />}
         ></Route>
         <Route path="/exchange-center" element={<ExchangeCenter />}></Route>
+        <Route path="/watchAd-bonus" element={<Bonus />}></Route>
       </Routes>
     </>
   );

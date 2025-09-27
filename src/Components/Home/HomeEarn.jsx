@@ -4,6 +4,7 @@ import { GiTwoCoins } from "react-icons/gi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import bonusImg from "../../assets/bonus.webp";
 import taskCaptchaImg from "../../assets/task-captcha-3.webp";
 import exchangeImg from "../../assets/exchange-center/exchange-gif-3.gif";
 import limitedBadge from "../../assets/badges/limited-badge.webp";
@@ -12,7 +13,6 @@ import giveawayBanner from "../../assets/giveaway-banner-3.webp";
 import facebookLogo from "../../assets/home-follow/follow-facebook.webp";
 import telegramLogo from "../../assets/home-follow/follow-telegram.webp";
 import youtubeLogo from "../../assets/home-follow/follow-youtube.webp";
-import { GiProfit } from "react-icons/gi";
 
 const HomeEarn = () => {
   const nums = [1, 2, 3, 4, 5];
@@ -46,15 +46,6 @@ const HomeEarn = () => {
     },
   ];
 
-  const watchBonus = [
-    { id: 1, reqWatch: 1, doneWatch: "", bonusCoin: 15 },
-    { id: 2, reqWatch: 5, doneWatch: "", bonusCoin: 60 },
-    { id: 3, reqWatch: 9, doneWatch: "", bonusCoin: 100 },
-    { id: 4, reqWatch: 13, doneWatch: "", bonusCoin: 140 },
-    { id: 5, reqWatch: 18, doneWatch: "", bonusCoin: 200 },
-    { id: 6, reqWatch: 20, doneWatch: "", bonusCoin: 250 },
-  ];
-
   // for tier 1 countries
   const generateRandomCoinsT1 = () =>
     Math.floor(Math.random() * (200 - 49)) + 50;
@@ -86,7 +77,7 @@ const HomeEarn = () => {
   return (
     <div className="container-fluid" style={{ backgroundColor: "#161827" }}>
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center">
           <div className="col-12">
             <div className="mt-5">
               <p className={`m-0 ${style.HomeEarnpara}`}>
@@ -106,33 +97,19 @@ const HomeEarn = () => {
               Trusted Globally for Earning Online.
             </p>
           </div>
-          <div className="col-12 p-0 p-md-2">
-            {watchBonus.map((bonus) => (
-              <div key={bonus.id} className={style.bonusCont}>
-                <div className={style.bonusinfoPointCont}>
-                  <p className="m-0">
-                    <span style={{ color: "#007bff", margin: "0px" }}>Ad</span>{" "}
-                    Bonus
-                  </p>
-                  <span className={style.bonusCoin}>
-                    + {bonus.bonusCoin}{" "}
-                    <span style={{ color: "#fff", margin: "3px" }}>VEs</span>
-                  </span>
-                </div>
-                <div className={style.bonusAdCount}>
-                  <h4 className={style.bonusCount}>
-                    0 /{" "}
-                    <span className={style.bonusReqWatch}>
-                      {bonus.reqWatch}
-                    </span>{" "}
-                  </h4>
-                  <button>
-                    <GiProfit className="me-2" />
-                    Claim
-                  </button>
-                </div>
+          <div className="row justify-content-center mt-2 pt-1">
+            <div
+              className="d-flex justify-content-center col-12 col-md-10 col-lg-8 pt-3 p-0"
+              onClick={() => navigate("/watchAd-bonus")}
+            >
+              <div className={style.bonusImgCont}>
+                <img
+                  src={bonusImg}
+                  className={style.bonusImg}
+                  alt="Claim bonus instantly by watching ads online for extra free rewards"
+                />
               </div>
-            ))}
+            </div>
           </div>
         </div>
 

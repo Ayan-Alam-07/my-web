@@ -27,61 +27,22 @@
   border-radius: 5px;
   background-color: #ffd700;
 }
-.bonusCont {
-  background-image: url(../../assets/bonusBack.webp);
-  object-fit: cover;
-  color: #000;
+
+.bonusImgCont {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3.5vw 3vw;
-  margin: 4vw 0 0 0;
-  border: 2px solid #dcdcdc;
-  border-radius: 20px;
+  justify-content: center;
+  background-color: #fff;
+  height: 60vw;
+  width: 99%;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
 }
-.bonusinfoPointCont {
-  display: flex;
+.bonusImgCont:hover {
+  transform: scale(1.027);
 }
-.bonusCoin {
-  font-size: 4.1vw !important;
-  margin: 0 0 0 2.5vw;
-  color: #ffd700;
-  -webkit-text-stroke: 0.65px #000;
-  font-weight: 900;
-}
-.bonusCount {
-  font-size: 4.5vw;
-}
-.bonusReqWatch {
-  font-size: 4.7vw;
-  font-size: "poppins";
-  color: #007bff;
-  font-weight: 600;
-}
-.bonusinfoPointCont {
-  font-size: 3.8vw;
-  font-weight: 800;
-  font-family: "poppins";
-  letter-spacing: 0.2vw;
-}
-.bonusAdCount {
-  display: flex;
-  align-items: center;
-}
-.bonusAdCount button {
-  margin: 0 0 0 3vw;
-  padding: 2vw 2.5vw;
-  border: none;
-  border-radius: 14px;
-  font-size: 4vw;
-  font-family: "outfit";
-  font-weight: 600;
-  letter-spacing: 0.15vw;
-}
-.bonusAdCount button:hover {
-  background-color: #000;
-  color: #fff;
-  transform: scale(1.05);
+.bonusImg {
+  object-fit: contain;
 }
 
 .HomeEarnCard {
@@ -91,7 +52,7 @@
   width: 69vw;
   border: none;
   border-radius: 25px;
-  background-color: #fff; /* #161827 */
+  background-color: #fcfcfd;
   overflow: hidden;
 }
 .HomeEarnCard img {
@@ -191,43 +152,11 @@
   border: 2px solid #fff;
 }
 @media (min-width: 575px) {
-  .bonusCont {
-    padding: 2.8vw 5vw;
-    margin: 2.9vw 2vw 0;
-    border: none;
-    border-radius: 20px;
+  .bonusImgCont {
+    height: 40vw;
+    width: 64.7vw;
+    border-radius: 18px;
   }
-
-  .bonusCoin {
-    font-size: 3vw !important;
-    margin: 0 0 0 2.5vw;
-  }
-  .bonusCount {
-    font-size: 3.1vw;
-    font-weight: 700;
-  }
-  .bonusReqWatch {
-    font-size: 22px;
-    color: #007bff;
-    font-weight: 900;
-  }
-  .bonusinfoPointCont {
-    font-size: 2.85vw;
-    font-weight: 800;
-    letter-spacing: 0.2vw;
-  }
-
-  .bonusAdCount button {
-    margin: 0 0 0 4vw;
-    padding: 2vw 2.25vw;
-    border: none;
-    background-color: #fff;
-    border-radius: 14px;
-    font-size: 2.64vw;
-    font-weight: 600;
-    letter-spacing: 0.12vw;
-  }
-
   .HomeEarnCard {
     margin-left: 8vw;
     height: 33.5vw;
@@ -285,42 +214,10 @@
     background-color: #161827;
     border: 2px solid #fff;
   }
-  .bonusCont {
-    padding: 1vw 5vw;
-    margin: 2vw 7vw 0;
-    border: none;
-    border-radius: 20px;
+  .bonusImgCont {
+    height: 27vw;
+    width: 50vw;
   }
-
-  .bonusCoin {
-    font-size: 1.6vw !important;
-    margin: 0 0 0 2.5vw;
-  }
-  .bonusCount {
-    font-size: 1.6vw;
-    font-weight: 700;
-  }
-  .bonusReqWatch {
-    font-size: 20px;
-    color: #007bff;
-    font-weight: 900;
-  }
-  .bonusinfoPointCont {
-    font-size: 1.4vw;
-    font-weight: 800;
-    letter-spacing: 0.2vw;
-  }
-
-  .bonusAdCount button {
-    margin: 0 0 0 3vw;
-    padding: 0.85vw 1.2vw;
-    border: none;
-    border-radius: 14px;
-    font-size: 1.25vw;
-    font-weight: 600;
-    letter-spacing: 0.1vw;
-  }
-
   .HomeEarnCard {
     cursor: pointer;
     margin-left: 0vw;
