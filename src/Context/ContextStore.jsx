@@ -11,6 +11,7 @@ export const ListProvider = ({ children }) => {
     { id: 5, name: "taskOptionChecker" },
     { id: 6, name: "Exchange Center" },
     { id: 7, name: "Watch-Ad Bonus" },
+    { id: 8, name: "Login / Signup" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);
