@@ -1,7 +1,12 @@
 import style from "./LandingNav.module.css";
 import VeLoopLogoAni from "../../assets/Animation-VELoop.gif";
+import { useNavigate } from "react-router-dom";
 
 const LandingNav = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/login");
+  };
   return (
     <div className={`container-fluid p-0 ${style.landingNav}`}>
       <div>
@@ -24,7 +29,9 @@ const LandingNav = () => {
               </h2>
             </div>
             <div>
-              <button className={style.landingLoginBtn}>Login / Signup</button>
+              <button className={style.landingLoginBtn} onClick={handleLogin}>
+                Login / Signup
+              </button>
             </div>
           </div>
         </nav>
