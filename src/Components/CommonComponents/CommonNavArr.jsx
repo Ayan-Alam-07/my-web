@@ -32,7 +32,7 @@ const CommonNavArr = ({ id, name, navigation }) => {
 
   return (
     <>
-      <nav className={id === 3 && style.giveSpec}>
+      <nav className={`shadow-sm ${id === 3 && style.giveSpec}`}>
         <div className="container-fluid">
           <div className="container">
             <div className="row p-0 ">

@@ -15,7 +15,9 @@ const HomeNav = () => {
     <div
       className="container-fluid"
       style={{
-        backgroundColor: "#151726",
+        width: "100%",
+        // backgroundColor: "#151726",
+        backgroundColor: "#10121d",
         position: "sticky",
         top: "0px",
         zIndex: "100",

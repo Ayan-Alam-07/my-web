@@ -10,7 +10,8 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import TaskOptionChecker from "./Components/Home/Task/TaskOptionChecker";
 import ExchangeCenter from "./Components/Home/ExchangeCenter/ExchangeCenter";
 import Bonus from "./Components/Home/Bonus/Bonus";
-import LoginSignup from "./Components/Login/LoginSignup";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 
 const App = () => {
   return (
@@ -29,7 +30,8 @@ const App = () => {
         ></Route>
         <Route path="/exchange-center" element={<ExchangeCenter />}></Route>
         <Route path="/watchAd-bonus" element={<Bonus />}></Route>
-        <Route path="/login" element={<LoginSignup />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
     </>
   );
