@@ -28,7 +28,9 @@ export default function Login() {
 
       <div className="container-fluid">
         <div className="container-md px-0 px-md-2 mt-5">
-          <h3 className="text-center">Login To Your Account</h3>
+          <h3 className="text-center" style={{ fontFamily: "outfit" }}>
+            Login To Your Account
+          </h3>
           <form className="d-flex justify-content-center">
             <div className={style.formContainer}>
               <label htmlFor="email">
@@ -57,7 +59,7 @@ export default function Login() {
               <br />
 
               <p className="float-end" onClick={() => navigate("/register")}>
-                Register
+                Don't have Account?
               </p>
               <div
                 style={{ width: "100%" }}
