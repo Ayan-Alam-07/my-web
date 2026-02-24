@@ -41,7 +41,7 @@ export default function Register() {
       <CommonNavArr id={9} navigation={"/login"} />
 
       <div className="container-fluid">
-        <div className="container my-5 pb-3">
+        <div className="container px-0 px-md-2 my-5 pb-3">
           <form className="d-flex justify-content-center">
             <div className={`${loginStyle.formContainer} ${style.formCont}`}>
               <label htmlFor="email">
