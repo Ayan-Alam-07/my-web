@@ -1,6 +1,5 @@
 .formContainer {
-  width: 50%;
-  padding: 30px 45px !important;
+  padding: 30px 25px !important;
   text-align: center;
   background: rgba(255, 255, 255, 0.15); /* translucent background */
   backdrop-filter: blur(12px);
@@ -23,7 +22,7 @@
 .formContainer input {
   width: 100%;
   padding: 8px 18px;
-  margin: 5px 0;
+  margin: 7px 0;
   border: none;
   border-radius: 10px;
   outline: none;
@@ -42,7 +41,8 @@
 }
 
 .formContainer button {
-  margin: 50px 0 0 57px;
+  margin: 16px 0 0 0;
+  width: 100%;
   padding: 10px 7vw;
   border: 4px solid transparent;
   border-radius: 18px;
@@ -64,4 +64,71 @@
   color: #fff;
   background-color: #3b82f6;
   border: 4px solid #3b82f6;
+}
+
+/* ============================================= Responsivness ============================================ */
+
+@media (min-width: 576px) {
+  .formContainer {
+    margin: 50px 0 0 0;
+    width: 80%;
+    padding: 50px 45px !important;
+  }
+
+  .formContainer input {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 12px 0;
+  }
+
+  .formContainer p {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+
+  .formContainer button {
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 10px 5vw;
+    border: 4px solid transparent;
+    font-size: 22px;
+    letter-spacing: 0.7px;
+  }
+  .formContainer label {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .formContainer {
+    margin: 0;
+    width: 50%;
+    padding: 30px 45px !important;
+    padding: 2rem;
+  }
+
+  .formContainer input {
+    width: 100%;
+    padding: 8px 18px;
+    margin: 5px 0;
+  }
+
+  .formContainer p {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .formContainer button {
+    text-align: center;
+    align-items: center;
+    width: 75%;
+    margin: 20px 0 0 0;
+    padding: 10px 25px;
+    border: 4px solid transparent;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+  .formContainer label {
+    font-size: 16px;
+  }
 }

@@ -98,8 +98,10 @@ export default function Register() {
               >
                 Login
               </p>
-              <div className="mt-3">
-                <button onClick={register}>Register</button>
+              <div style={{ width: "100%" }} className="mt-5 pt-2">
+                <button style={{ width: "90%" }} onClick={register}>
+                  Register
+                </button>
               </div>
             </div>
           </form>

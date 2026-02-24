@@ -58,8 +58,12 @@ export default function Login() {
               <p className="float-end" onClick={() => navigate("/register")}>
                 Register
               </p>
-
-              <button onClick={login}>Login</button>
+              <div
+                style={{ width: "100%" }}
+                className="d-flex align-items-center justify-content-center"
+              >
+                <button onClick={login}>Login</button>
+              </div>
             </div>
           </form>
         </div>
