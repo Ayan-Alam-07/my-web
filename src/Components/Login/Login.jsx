@@ -27,7 +27,7 @@ export default function Login() {
       <CommonNavArr id={8} navigation={"/"} />
 
       <div className="container-fluid">
-        <div className="container px-0 px-md-2 mt-5">
+        <div className="container-md px-0 px-md-2 mt-5">
           <form className="d-flex justify-content-center">
             <div className={style.formContainer}>
               <label htmlFor="email">
