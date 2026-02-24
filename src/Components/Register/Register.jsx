@@ -42,6 +42,7 @@ export default function Register() {
 
       <div className="container-fluid">
         <div className="container px-0 px-md-2 my-5 pb-3">
+          <h3 className="text-center">Create Your New Account</h3>
           <form className="d-flex justify-content-center">
             <div className={`${loginStyle.formContainer} ${style.formCont}`}>
               <label htmlFor="email">
