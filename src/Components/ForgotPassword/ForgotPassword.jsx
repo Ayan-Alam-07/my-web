@@ -95,112 +95,117 @@ export default function ForgotPassword() {
   return (
     <div>
       <CommonNavArr id={10} navigation={"/login"} />
-      <div
-        className="mt-4"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2 className="mb-5">Change Your Password</h2>
+      <div className="container">
+        <div
+          className="mt-5 mt-lg-4"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h2 className="mb-lg-5">Change Your Password</h2>
 
-        {step === 1 && (
-          <form className={loginStyle.formContainer}>
-            <label>
-              Email :
-              <input
-                type="email"
-                placeholder="Enter your registered email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
+          {step === 1 && (
+            <form className={loginStyle.formContainer}>
+              <label>
+                Email :
+                <input
+                  type="email"
+                  placeholder="Enter your registered email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </label>
 
-            <div style={{ position: "relative" }} className="mb-lg-5">
-              <p
-                className="pt-lg-2"
-                style={{
-                  cursor: "pointer",
-                  color: "#fff",
-                  position: "absolute",
-                  right: "0",
-                }}
-                onClick={() => navigate("/login")}
+              <div
+                style={{ position: "relative" }}
+                className="mt-2 mb-5 mb-lg-5"
               >
-                Back to Login
-              </p>
-            </div>
+                <p
+                  className="pt-lg-2 "
+                  style={{
+                    cursor: "pointer",
+                    color: "#fff",
+                    position: "absolute",
+                    right: "0",
+                  }}
+                  onClick={() => navigate("/login")}
+                >
+                  Back to Login
+                </p>
+              </div>
 
-            {/* <br /> */}
+              {/* <br /> */}
 
-            <button
-              type="button"
-              disabled={timer > 0 || lockedUntil || loading}
-              onClick={sendResetOtp}
-              className={loginStyle.forgetPssBtn}
-            >
-              {lockedUntil
-                ? "Account Locked"
-                : timer > 0
-                  ? `Resend OTP (${timer}s)`
-                  : "Send Reset OTP"}
-            </button>
-          </form>
-        )}
+              <button
+                type="button"
+                disabled={timer > 0 || lockedUntil || loading}
+                onClick={sendResetOtp}
+                className={` ${loginStyle.forgetPssBtn}`}
+              >
+                {lockedUntil
+                  ? "Account Locked"
+                  : timer > 0
+                    ? `Resend OTP (${timer}s)`
+                    : "Send Reset OTP"}
+              </button>
+            </form>
+          )}
 
-        {step === 2 && (
-          <form onSubmit={resetPassword} className={loginStyle.formContainer}>
-            <label>OTP:</label>
-            <input
-              type="number"
-              placeholder="Enter OTP"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-            />
+          {step === 2 && (
+            <form onSubmit={resetPassword} className={loginStyle.formContainer}>
+              <label>OTP:</label>
+              <input
+                type="number"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+              />
 
-            <br />
-            <br />
+              <br />
+              <br />
 
-            <label>New Password:</label>
-            <input
-              type="password"
-              placeholder="Enter new password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-            />
+              <label>New Password:</label>
+              <input
+                type="password"
+                placeholder="Enter new password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
 
-            <br />
-            <br />
+              <br />
+              <br />
 
-            <button
-              type="submit"
-              disabled={loading}
-              className={loginStyle.forgetPssBtn}
-            >
-              Reset Password
-            </button>
+              <button
+                type="submit"
+                disabled={loading}
+                className={loginStyle.forgetPssBtn}
+              >
+                Reset Password
+              </button>
 
-            <br />
-            <br />
+              <br />
+              <br />
 
-            <button
-              type="button"
-              disabled={timer > 0}
-              onClick={sendResetOtp}
-              className={`${loginStyle.forgetPssBtn} ${timer <= 0 && loginStyle.forgetPssResendBtn}`}
-              style={{
-                background: timer > 0 ? "#ccc" : "#007bff",
-                cursor: timer > 0 ? "not-allowed" : "pointer",
-              }}
-            >
-              {timer > 0 ? `Resend OTP (${timer}s)` : "Resend OTP"}
-            </button>
-          </form>
-        )}
+              <button
+                type="button"
+                disabled={timer > 0}
+                onClick={sendResetOtp}
+                className={`${loginStyle.forgetPssBtn} ${timer <= 0 && loginStyle.forgetPssResendBtn}`}
+                style={{
+                  background: timer > 0 ? "#ccc" : "#007bff",
+                  cursor: timer > 0 ? "not-allowed" : "pointer",
+                }}
+              >
+                {timer > 0 ? `Resend OTP (${timer}s)` : "Resend OTP"}
+              </button>
+            </form>
+          )}
 
-        <br />
+          <br />
+        </div>
       </div>
     </div>
   );
