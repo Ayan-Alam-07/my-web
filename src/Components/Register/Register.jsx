@@ -108,6 +108,7 @@ export default function Register() {
               <label htmlFor="email">
                 Email :
                 <input
+                  type="email"
                   required
                   id="email"
                   placeholder="Email"
@@ -160,6 +161,7 @@ export default function Register() {
               <label htmlFor="refferCode">
                 Reffer Code :
                 <input
+                  type="number"
                   id="refferCode"
                   placeholder="Referral Code (Optional)"
                   value={form.referralInput}

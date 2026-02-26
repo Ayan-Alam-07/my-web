@@ -97,7 +97,7 @@ export default function ForgotPassword() {
       <CommonNavArr id={10} navigation={"/login"} />
       <div className="container">
         <div
-          className="mt-5 mt-lg-4"
+          className="mt-5 pt-4 pt-lg-2 mt-lg-5"
           style={{
             display: "flex",
             flexDirection: "column",
