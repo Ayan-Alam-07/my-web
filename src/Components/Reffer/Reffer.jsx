@@ -10,17 +10,22 @@ export default function Referral() {
 
   if (!user) return <p>Please Login</p>;
 
-  const link = `http://localhost:5173/register?ref=${user.referralCode}`;
+  const referralLink = `${window.location.origin}/register?ref=${user.referralCode}`;
 
   return (
-    <div>
-      <h2>Referral Program</h2>
+    <div style={{ maxWidth: 400, margin: "auto" }}>
+      <h2>Referral Dashboard</h2>
 
-      <h3>Your Code: {user.referralCode}</h3>
+      <p>User ID: {user.userId}</p>
+      <p>Total Coins: {user.coins}</p>
 
-      <input value={link} readOnly />
+      <h3>Your Referral Code</h3>
+      <p>{user.referralCode}</p>
 
-      <p>You earn 137 coins per referral</p>
+      <h4>Share this link:</h4>
+      <input value={referralLink} readOnly />
+
+      <p>Earn 111 coins per successful referral</p>
     </div>
   );
 }

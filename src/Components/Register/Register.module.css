@@ -7,12 +7,13 @@
   align-items: center;
 }
 
-.emailOtpCont a {
+.sendOtpBtn {
   margin: 0 0 0 10px;
   padding: 8px 6px;
   width: 57%;
   text-align: center;
   background-color: #3b82f6;
+  color: #fff;
   border-radius: 14px;
   border: 2px solid transparent;
   font-weight: 600;
@@ -20,8 +21,8 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.emailOtpCont a:hover {
-  transform: scale(1.05);
+.sendOtpBtn:active {
+  transform: scale(0.9);
 }
 
 @media (min-width: 576px) {
@@ -30,7 +31,7 @@
     font-size: 18px;
   }
 
-  .emailOtpCont a {
+  .submitBtn {
     margin: 0 0 0 10px;
     padding: 8px 6px;
     width: 40%;
@@ -42,7 +43,7 @@
   .formCont label {
     font-size: 18px;
   }
-  .emailOtpCont a {
+  .sendOtpBtn {
     width: 37%;
     font-size: 16px;
   }
