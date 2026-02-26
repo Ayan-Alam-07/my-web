@@ -28,6 +28,12 @@
   outline: none;
 }
 
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .formContainer p {
   display: block;
   font-size: 18px;
@@ -83,6 +89,12 @@
   .formContainer p {
     font-size: 22px;
     letter-spacing: 0.5px;
+  }
+
+  .actionsContainer {
+    margin: 0 0 20px 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
   .submitBtn,

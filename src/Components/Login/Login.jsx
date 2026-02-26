@@ -67,16 +67,23 @@ export default function Login() {
 
               <br />
 
-              <p className="float-end" onClick={() => navigate("/register")}>
-                Don't have Account?
-              </p>
-              <p
-                className="float-start"
-                style={{ cursor: "pointer" }}
-                onClick={() => navigate("/forgot-password")}
-              >
-                Forgot Password?
-              </p>
+              <div className={style.actionsContainer}>
+                <p
+                  className="mb-2 mb-md-0"
+                  onClick={() => navigate("/register")}
+                >
+                  Don't have Account?
+                </p>
+                {/* <br /> */}
+                <p
+                  className="mb-4 mb-md-0"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/forgot-password")}
+                >
+                  Forgot Password?
+                </p>
+              </div>
+
               <div
                 style={{ width: "100%" }}
                 className="d-flex align-items-center justify-content-center"
