@@ -4,9 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 const LandingNav = () => {
   const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+
   const handleLogin = () => {
     navigate("/login");
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+
   return (
     <div className={`container-fluid p-0 ${style.landingNav}`}>
       <div>
@@ -29,9 +37,18 @@ const LandingNav = () => {
               </h2>
             </div>
             <div>
-              <button className={style.landingLoginBtn} onClick={handleLogin}>
-                Login / Signup
-              </button>
+              {!user ? (
+                <button className={style.landingLoginBtn} onClick={handleLogin}>
+                  Login / Signup
+                </button>
+              ) : (
+                <button
+                  className={style.landingLoginBtn}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              )}
             </div>
           </div>
         </nav>
