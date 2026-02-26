@@ -71,6 +71,7 @@ export default function Login() {
                 Don't have Account?
               </p>
               <p
+                className="float-start"
                 style={{ cursor: "pointer" }}
                 onClick={() => navigate("/forgot-password")}
               >

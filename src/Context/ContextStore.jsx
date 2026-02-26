@@ -13,6 +13,7 @@ export const ListProvider = ({ children }) => {
     { id: 7, name: "Watch-Ad Bonus" },
     { id: 8, name: "Login" },
     { id: 9, name: "Register" },
+    { id: 10, name: "Forget Password" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);
