@@ -10,7 +10,7 @@
 .sendOtpBtn {
   margin: 0 0 0 10px;
   padding: 8px 6px;
-  width: 57%;
+  width: 65%;
   text-align: center;
   background-color: #3b82f6;
   color: #fff;
@@ -21,7 +21,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.sendOtpBtn:active {
+.sendOtpBtnActive:active {
   transform: scale(0.9);
 }
 
@@ -34,7 +34,7 @@
   .submitBtn {
     margin: 0 0 0 10px;
     padding: 8px 6px;
-    width: 40%;
+    width: 50%;
     font-size: 18px;
   }
 }
@@ -44,7 +44,7 @@
     font-size: 18px;
   }
   .sendOtpBtn {
-    width: 37%;
+    width: 47%;
     font-size: 16px;
   }
 }

@@ -12,6 +12,7 @@ import ExchangeCenter from "./Components/Home/ExchangeCenter/ExchangeCenter";
 import Bonus from "./Components/Home/Bonus/Bonus";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/watchAd-bonus" element={<Bonus />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </>
   );

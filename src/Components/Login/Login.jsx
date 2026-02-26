@@ -19,10 +19,8 @@ export default function Login() {
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password },
       );
-
       localStorage.setItem("user", JSON.stringify(res.data));
-
-      navigate("/Home"); // ✅ SPA navigation
+      navigate("/Home");
     } catch (error) {
       alert(error.response?.data || "Login failed");
     }
@@ -71,6 +69,12 @@ export default function Login() {
 
               <p className="float-end" onClick={() => navigate("/register")}>
                 Don't have Account?
+              </p>
+              <p
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/forgot-password")}
+              >
+                Forgot Password?
               </p>
               <div
                 style={{ width: "100%" }}

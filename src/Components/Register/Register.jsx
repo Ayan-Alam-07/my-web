@@ -6,10 +6,15 @@ import CommonNavArr from "../CommonComponents/CommonNavArr";
 import style from "./Register.module.css";
 import loginStyle from "../Login/Login.module.css";
 import SignInOr from "../CommonComponents/SignInOr";
+import { FaLock } from "react-icons/fa";
 
 export default function Register() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [otpSent, setOtpSent] = useState(false);
+  const [timer, setTimer] = useState(0);
+  const [isSending, setIsSending] = useState(false);
+  const [lockedUntil, setLockedUntil] = useState(null);
 
   const [form, setForm] = useState({
     email: "",
@@ -26,17 +31,44 @@ export default function Register() {
     }
   }, [location]);
 
+  useEffect(() => {
+    let interval;
+
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+    }
+
+    return () => clearInterval(interval);
+  }, [timer]);
+
   const sendOtp = async () => {
+    if (!form.email) {
+      alert("Please enter email first");
+      return;
+    }
+
     try {
+      setIsSending(true);
+
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/send-otp`,
         { email: form.email },
       );
 
       alert(res.data.message);
+
+      setOtpSent(true);
+      setTimer(60); // 🔥 Start 60 second timer
     } catch (error) {
-      console.error(error);
-      alert(error.response?.data || "OTP sending failed");
+      if (error.response?.status === 403) {
+        setLockedUntil(error.response.data.lockUntil);
+      }
+
+      alert(error.response?.data?.message || error.response?.data);
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -93,13 +125,21 @@ export default function Register() {
                     placeholder="Enter OTP"
                     onChange={(e) => setForm({ ...form, otp: e.target.value })}
                   />
-                  {/* <a onClick={sendOtp}>Send OTP</a> */}
                   <button
                     type="button"
-                    className={style.sendOtpBtn}
+                    disabled={timer > 0 || lockedUntil}
+                    className={`${style.sendOtpBtn} ${timer <= 0 && style.sendOtpBtnActive}`}
                     onClick={sendOtp}
+                    style={{
+                      background: timer > 0 ? "#ccc" : "#007bff",
+                      cursor: timer > 0 ? "not-allowed" : "pointer",
+                    }}
                   >
-                    Send OTP
+                    {lockedUntil
+                      ? `Acc ${(<FaLock />)}`
+                      : timer > 0
+                        ? `Resend OTP (${timer}s)`
+                        : "Send OTP"}
                   </button>
                 </div>
               </label>
