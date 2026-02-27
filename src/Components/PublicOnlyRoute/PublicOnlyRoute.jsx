@@ -4,7 +4,7 @@ import { useList } from "../../Context/ContextStore";
 export default function PublicOnlyRoute({ children }) {
   const { isAuthenticated } = useList();
 
-  if (!isAuthenticated) {
+  if (isAuthenticated) {
     return <Navigate to="/Home" replace />;
   }
 

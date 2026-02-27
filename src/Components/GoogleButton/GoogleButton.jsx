@@ -17,17 +17,22 @@ export default function GoogleButton({ referralInput }) {
   }, []);
 
   const handleCredentialResponse = async (response) => {
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/auth/google-login`,
-      {
-        token: response.credential,
-        referralInput,
-      },
-    );
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/auth/google-login`,
+        {
+          token: response.credential,
+          referralInput,
+        },
+      );
 
-    localStorage.setItem("user", JSON.stringify(res.data));
-    alert("Google Login Success");
-    navigate("/Home");
+      login(res.data); // 🔥 UPDATE CONTEXT FIRST
+      navigate("/Home"); // 🔥 THEN NAVIGATE
+      // localStorage.setItem("user", JSON.stringify(res.data));
+    } catch (err) {
+      alert("Google login failed");
+      console.log(err);
+    }
   };
 
   return <div id="googleBtn" style={{ marginTop: "15px" }}></div>;

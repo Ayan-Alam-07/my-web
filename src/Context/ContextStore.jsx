@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 const ListContext = createContext();
 
@@ -16,8 +15,6 @@ export const ListProvider = ({ children }) => {
     { id: 9, name: "Register" },
     { id: 10, name: "Forget Password" },
   ]);
-
-  const navigate = useNavigate();
 
   const [currentList, setCurrentList] = useState(list[0]);
   const [arrowState, setArrowState] = useState(false);
@@ -41,7 +38,7 @@ export const ListProvider = ({ children }) => {
     setUser(null);
   };
 
-  const isAuthenticated = user !== null; //isauthenciated not update imediately so that the <publicOnlyRoute/> breaks
+  const isAuthenticated = user !== null;
 
   // =================================== location ===========================
 
