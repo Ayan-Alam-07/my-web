@@ -72,7 +72,7 @@ export default function Login() {
 
               <div className={style.actionsContainer}>
                 <p
-                  className="mb-2 mb-md-0"
+                  className="mb-3 pb-1 mb-md-0 pb-md-0"
                   onClick={() => navigate("/register")}
                 >
                   Don't have Account?
