@@ -1,15 +1,15 @@
 import style from "./HomeNav.module.css";
 import { useList } from "../../Context/ContextStore";
 import Loader from "../Loader/Loader";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const HomeNav = () => {
-  const { locationData } = useList(); // Or show a loader
-  const navigate = useNavigate();
-  // const { loading, error, country, country_code } = locationData;
+  const { locationData, logout } = useList(); // Or show a loader
+  // const navigate = useNavigate();
 
-  // Don’t render if there was an error fetching location
-  // if (error) return console.log(error);
+  const handleLogo = () => {
+    logout();
+  };
 
   return (
     <div
@@ -27,7 +27,7 @@ const HomeNav = () => {
         <nav className={style.homeNav}>
           <div className="row justify-content-between align-items-center">
             <div className="col-5" style={{ cursor: "pointer" }}>
-              <h2 className="m-0" onClick={() => navigate("/")}>
+              <h2 className="m-0" onClick={handleLogo}>
                 <span className={style.homeLogoFir}>
                   <strong>VE</strong>
                 </span>

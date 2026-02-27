@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useList } from "../../Context/ContextStore";
 
 export default function GoogleButton({ referralInput }) {
+  const { login } = useList();
   const navigate = useNavigate();
+
   useEffect(() => {
     window.google.accounts.id.initialize({
       client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
