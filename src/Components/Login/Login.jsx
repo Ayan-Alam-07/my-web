@@ -5,11 +5,13 @@ import CommonNavArr from "../CommonComponents/CommonNavArr";
 import style from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import SignInOr from "../CommonComponents/SignInOr";
+import { useList } from "../../Context/ContextStore";
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useList();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ export default function Login() {
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password },
       );
-      localStorage.setItem("user", JSON.stringify(res.data));
+      login(res.data);
       navigate("/Home");
     } catch (error) {
       alert(error.response?.data || "Login failed");

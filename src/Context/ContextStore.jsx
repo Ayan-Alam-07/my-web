@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ListContext = createContext();
 
@@ -16,9 +17,33 @@ export const ListProvider = ({ children }) => {
     { id: 10, name: "Forget Password" },
   ]);
 
-  const [currentList, setCurrentList] = useState(list[0]);
+  const navigate = useNavigate();
 
+  const [currentList, setCurrentList] = useState(list[0]);
   const [arrowState, setArrowState] = useState(false);
+
+  // =========================
+  // 🔐 AUTH STATE
+  // =========================
+
+  const [user, setUser] = useState(() => {
+    const stored = localStorage.getItem("user");
+    return stored ? JSON.parse(stored) : null;
+  });
+
+  const login = (data) => {
+    localStorage.setItem("user", JSON.stringify(data));
+    setUser(data);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
+
+  const isAuthenticated = user !== null; //isauthenciated not update imediately so that the <publicOnlyRoute/> breaks
+
+  // =================================== location ===========================
 
   const [locationData, setLocationData] = useState({
     loading: true,
@@ -67,6 +92,12 @@ export const ListProvider = ({ children }) => {
         locationData,
         arrowState,
         setArrowState,
+
+        // 🔐 Auth values
+        user,
+        login,
+        logout,
+        isAuthenticated,
       }}
     >
       {children}

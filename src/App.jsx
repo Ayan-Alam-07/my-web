@@ -13,27 +13,120 @@ import Bonus from "./Components/Home/Bonus/Bonus";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import PublicOnlyRoute from "./Components/PublicOnlyRoute/PublicOnlyRoute";
 
 const App = () => {
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/Home" element={<Home />}></Route>
-        <Route path="/Wallet" element={<Wallet />}></Route>
-        <Route path="/Payout" element={<Payout />}></Route>
-        <Route path="/captcha-tasks" element={<Task />}></Route>
-        <Route path="/giveaway-code" element={<Giveaway />}></Route>
+        {/* public routes no login required */}
+        <Route
+          path="/"
+          element={
+            <PublicOnlyRoute>
+              <LandingPage />
+            </PublicOnlyRoute>
+          }
+        ></Route>
+        <Route
+          path="/login"
+          element={
+            <PublicOnlyRoute>
+              <Login />
+            </PublicOnlyRoute>
+          }
+        ></Route>
+        <Route
+          path="/register"
+          element={
+            <PublicOnlyRoute>
+              <Register />
+            </PublicOnlyRoute>
+          }
+        ></Route>
+        <Route
+          path="/forgot-password"
+          element={
+            <PublicOnlyRoute>
+              <ForgotPassword />
+            </PublicOnlyRoute>
+          }
+        />
+
+        {/* private route login required */}
+        <Route
+          path="/Home"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/Wallet"
+          element={
+            <ProtectedRoute>
+              <Wallet />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/Payout"
+          element={
+            <ProtectedRoute>
+              <Payout />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/captcha-tasks"
+          element={
+            <ProtectedRoute>
+              <Task />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/giveaway-code"
+          element={
+            <ProtectedRoute>
+              <Giveaway />
+            </ProtectedRoute>
+          }
+        ></Route>
+
         <Route
           path="/TaskOptionChecker"
-          element={<TaskOptionChecker />}
+          element={
+            <ProtectedRoute>
+              <TaskOptionChecker />
+            </ProtectedRoute>
+          }
         ></Route>
-        <Route path="/exchange-center" element={<ExchangeCenter />}></Route>
-        <Route path="/watchAd-bonus" element={<Bonus />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route
+          path="/exchange-center"
+          element={
+            <ProtectedRoute>
+              <ExchangeCenter />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/watchAd-bonus"
+          element={
+            <ProtectedRoute>
+              <Bonus />
+            </ProtectedRoute>
+          }
+        ></Route>
       </Routes>
     </>
   );

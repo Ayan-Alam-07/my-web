@@ -1,18 +1,20 @@
 import style from "./LandingNav.module.css";
 import VeLoopLogoAni from "../../assets/Animation-VELoop.gif";
 import { useNavigate } from "react-router-dom";
+import { useList } from "../../Context/ContextStore";
 
 const LandingNav = () => {
   const navigate = useNavigate();
-  const user = localStorage.getItem("user");
+
+  const { isAuthenticated, logout } = useList();
 
   const handleLogin = () => {
     navigate("/login");
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    navigate("/");
+    logout(); // update context first
+    navigate("/", { replace: true });
   };
 
   return (
@@ -37,15 +39,12 @@ const LandingNav = () => {
               </h2>
             </div>
             <div>
-              {!user ? (
+              {!isAuthenticated ? (
                 <button className={style.landingLoginBtn} onClick={handleLogin}>
                   Login / Signup
                 </button>
               ) : (
-                <button
-                  className={style.landingLoginBtn}
-                  onClick={handleLogout}
-                >
+                <button className={style.landingLoginBtn} onClick={logout}>
                   Logout
                 </button>
               )}
