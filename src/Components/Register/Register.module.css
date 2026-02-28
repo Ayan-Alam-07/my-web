@@ -10,7 +10,7 @@
 .sendOtpBtn {
   margin: 0 0 0 10px;
   padding: 8px 6px;
-  width: 65%;
+  width: 100%;
   text-align: center;
   background-color: #3b82f6;
   color: #fff;
@@ -37,6 +37,10 @@
     width: 50%;
     font-size: 18px;
   }
+  .sendOtpBtn {
+    font-size: 2.37vw;
+    width: 62%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -44,7 +48,7 @@
     font-size: 18px;
   }
   .sendOtpBtn {
-    width: 47%;
+    width: 54%;
     font-size: 16px;
   }
 }

@@ -109,11 +109,12 @@ export default function ForgotPassword() {
           <h2 className="mb-lg-5">Change Your Password</h2>
 
           {step === 1 && (
-            <form className={loginStyle.formContainer}>
+            <form onSubmit={sendResetOtp} className={loginStyle.formContainer}>
               <label>
                 Email :
                 <input
                   type="email"
+                  required
                   placeholder="Enter your registered email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -160,6 +161,7 @@ export default function ForgotPassword() {
               <label>OTP:</label>
               <input
                 type="number"
+                required
                 placeholder="Enter OTP"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
@@ -171,6 +173,7 @@ export default function ForgotPassword() {
               <label>New Password:</label>
               <input
                 type="password"
+                required
                 placeholder="Enter new password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
