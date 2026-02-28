@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import loginStyle from "../Login/Login.module.css";
 import CommonNavArr from "../CommonComponents/CommonNavArr";
+import { showError, showSuccess, showWarning } from "../../utils/Toast";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function ForgotPassword() {
     e.preventDefault();
 
     if (!email) {
-      alert("Please enter your email");
+      showWarning("Please enter your email");
       return;
     }
 
@@ -49,7 +50,7 @@ export default function ForgotPassword() {
         email,
       });
 
-      alert(res.data.message);
+      showSuccess(res.data.message);
       setStep(2);
       setTimer(60);
     } catch (error) {
@@ -57,7 +58,7 @@ export default function ForgotPassword() {
         setLockedUntil(error.response.data.lockUntil);
       }
 
-      alert(error.response?.data?.message || error.response?.data);
+      showError(error.response?.data?.message || error.response?.data);
     } finally {
       setLoading(false);
     }
@@ -78,7 +79,7 @@ export default function ForgotPassword() {
         newPassword,
       });
 
-      alert(res.data.message);
+      showSuccess(res.data.message);
 
       navigate("/login");
     } catch (error) {
@@ -86,7 +87,7 @@ export default function ForgotPassword() {
         setLockedUntil(true);
       }
 
-      alert(error.response?.data);
+      showError(error.response?.data);
     } finally {
       setLoading(false);
     }

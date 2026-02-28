@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { showWarning } from "../utils/Toast";
 
 const ListContext = createContext();
 
@@ -36,6 +37,7 @@ export const ListProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("user");
     setUser(null);
+    showWarning("Logged out contact customer service if you facing any issue");
   };
 
   const isAuthenticated = user !== null;

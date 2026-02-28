@@ -6,6 +6,7 @@ import style from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import SignInOr from "../CommonComponents/SignInOr";
 import { useList } from "../../Context/ContextStore";
+import { showSuccess, showError } from "../../utils/Toast";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -22,9 +23,10 @@ export default function Login() {
         { email, password },
       );
       login(res.data);
+      showSuccess("Login successful");
       navigate("/Home");
     } catch (error) {
-      alert(error.response?.data || "Login failed");
+      showError(error.response?.data || "Login failed");
     }
   };
 

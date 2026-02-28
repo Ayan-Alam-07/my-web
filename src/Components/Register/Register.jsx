@@ -7,6 +7,7 @@ import style from "./Register.module.css";
 import loginStyle from "../Login/Login.module.css";
 import SignInOr from "../CommonComponents/SignInOr";
 import { FaLock } from "react-icons/fa";
+import { showSuccess, showError, showWarning } from "../../utils/Toast";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ export default function Register() {
 
   const sendOtp = async () => {
     if (!form.email) {
-      alert("Please enter email first");
+      showWarning("Please enter email first");
       return;
     }
 
@@ -57,7 +58,7 @@ export default function Register() {
         { email: form.email },
       );
 
-      alert(res.data.message);
+      showSuccess(res.data.message);
 
       setOtpSent(true);
       setTimer(60); // 🔥 Start 60 second timer
@@ -66,7 +67,7 @@ export default function Register() {
         setLockedUntil(error.response.data.lockUntil);
       }
 
-      alert(error.response?.data?.message || error.response?.data);
+      showError(error.response?.data?.message || error.response?.data);
     } finally {
       setIsSending(false);
     }
@@ -81,11 +82,11 @@ export default function Register() {
         form,
       );
 
-      alert("Registered Successfully");
+      showSuccess("Registered Successfully, Please login");
 
       navigate("/login");
     } catch (error) {
-      alert(error.response?.data || "Registration failed");
+      showError(error.response?.data || "Registration failed");
     }
   };
 

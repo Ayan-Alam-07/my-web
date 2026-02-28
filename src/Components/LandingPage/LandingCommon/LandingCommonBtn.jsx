@@ -1,4 +1,5 @@
 import { useList } from "../../../Context/ContextStore";
+import { showWarning } from "../../../utils/Toast";
 import style from "./LandingCommonBtn.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +11,7 @@ const LandingCommonBtn = ({ btnText, lndngClass }) => {
     if (isAuthenticated) {
       navigate("/Home");
     } else {
+      showWarning("Login to start earning");
       navigate("/login");
     }
   };

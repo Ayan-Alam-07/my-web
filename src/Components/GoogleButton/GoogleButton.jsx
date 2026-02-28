@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useList } from "../../Context/ContextStore";
+import { showError, showSuccess } from "../../utils/Toast";
 
 export default function GoogleButton({ referralInput }) {
   const { login } = useList();
@@ -30,10 +31,11 @@ export default function GoogleButton({ referralInput }) {
       );
 
       login(res.data); // 🔥 UPDATE CONTEXT FIRST
+      showSuccess("Loggin success");
       navigate("/Home"); // 🔥 THEN NAVIGATE
       // localStorage.setItem("user", JSON.stringify(res.data));
     } catch (err) {
-      alert("Google login failed");
+      showError("Google login failed");
       console.log(err);
     }
   };
