@@ -3,6 +3,10 @@
   top: 90px !important;
 }
 
+.Toastify__toast-container .Toastify__toast {
+  font-family: "nunito", sans-serif !important;
+}
+
 /* 📱 Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .Toastify__toast-container {
