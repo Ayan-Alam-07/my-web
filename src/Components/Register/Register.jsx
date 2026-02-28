@@ -8,6 +8,7 @@ import loginStyle from "../Login/Login.module.css";
 import SignInOr from "../CommonComponents/SignInOr";
 import { FaLock } from "react-icons/fa";
 import { showSuccess, showError, showWarning } from "../../utils/Toast";
+import { useList } from "../../Context/ContextStore";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ export default function Register() {
   const [timer, setTimer] = useState(0);
   const [isSending, setIsSending] = useState(false);
   const [lockedUntil, setLockedUntil] = useState(null);
+
+  const { setIsLoading } = useList();
 
   const [form, setForm] = useState({
     email: "",
@@ -52,12 +55,13 @@ export default function Register() {
 
     try {
       setIsSending(true);
+      setIsLoading(true);
 
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/send-otp`,
         { email: form.email },
       );
-
+      setIsLoading(false);
       showSuccess(res.data.message);
 
       setOtpSent(true);
@@ -66,7 +70,7 @@ export default function Register() {
       if (error.response?.status === 403) {
         setLockedUntil(error.response.data.lockUntil);
       }
-
+      setIsLoading(false);
       showError(error.response?.data?.message || error.response?.data);
     } finally {
       setIsSending(false);
@@ -77,15 +81,17 @@ export default function Register() {
     e.preventDefault();
 
     try {
+      setIsLoading(true);
       await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/register`,
         form,
       );
-
+      setIsLoading(false);
       showSuccess("Registered Successfully, Please login");
 
       navigate("/login");
     } catch (error) {
+      setIsLoading(false);
       showError(error.response?.data || "Registration failed");
     }
   };

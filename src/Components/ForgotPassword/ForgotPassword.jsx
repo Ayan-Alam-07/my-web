@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import loginStyle from "../Login/Login.module.css";
 import CommonNavArr from "../CommonComponents/CommonNavArr";
 import { showError, showSuccess, showWarning } from "../../utils/Toast";
+import { useList } from "../../Context/ContextStore";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ export default function ForgotPassword() {
   const [timer, setTimer] = useState(0);
   const [lockedUntil, setLockedUntil] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const { setIsLoading } = useList();
 
   const API = import.meta.env.VITE_API_URL;
 
@@ -44,12 +47,13 @@ export default function ForgotPassword() {
     }
 
     try {
+      setIsLoading(true);
       setLoading(true);
 
       const res = await axios.post(`${API}/api/auth/forgot-password/send-otp`, {
         email,
       });
-
+      setIsLoading(false);
       showSuccess(res.data.message);
       setStep(2);
       setTimer(60);
@@ -57,7 +61,7 @@ export default function ForgotPassword() {
       if (error.response?.status === 403) {
         setLockedUntil(error.response.data.lockUntil);
       }
-
+      setIsLoading(false);
       showError(error.response?.data?.message || error.response?.data);
     } finally {
       setLoading(false);
@@ -72,21 +76,21 @@ export default function ForgotPassword() {
 
     try {
       setLoading(true);
+      setIsLoading(true);
 
       const res = await axios.post(`${API}/api/auth/forgot-password/reset`, {
         email,
         otp,
         newPassword,
       });
-
+      setIsLoading(false);
       showSuccess(res.data.message);
-
       navigate("/login");
     } catch (error) {
       if (error.response?.status === 403) {
         setLockedUntil(true);
       }
-
+      setIsLoading(false);
       showError(error.response?.data);
     } finally {
       setLoading(false);

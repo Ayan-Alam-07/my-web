@@ -15,11 +15,17 @@ import Register from "./Components/Register/Register";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import PublicOnlyRoute from "./Components/PublicOnlyRoute/PublicOnlyRoute";
+import Loader from "./Components/Loader/Loader";
+import { useList } from "./Context/ContextStore";
 
 const App = () => {
+  const { isLoading } = useList();
+
   return (
     <>
       <ScrollToTop />
+      {isLoading && <Loader />}
+
       <Routes>
         {/* public routes no login required */}
         <Route

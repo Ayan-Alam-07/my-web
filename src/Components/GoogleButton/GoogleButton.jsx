@@ -5,7 +5,7 @@ import { useList } from "../../Context/ContextStore";
 import { showError, showSuccess } from "../../utils/Toast";
 
 export default function GoogleButton({ referralInput }) {
-  const { login } = useList();
+  const { login, setIsLoading } = useList();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +22,7 @@ export default function GoogleButton({ referralInput }) {
 
   const handleCredentialResponse = async (response) => {
     try {
+      setIsLoading(true);
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/google-login`,
         {
@@ -31,12 +32,12 @@ export default function GoogleButton({ referralInput }) {
       );
 
       login(res.data); // 🔥 UPDATE CONTEXT FIRST
-      showSuccess("Loggin success");
+      setIsLoading(false);
+      showSuccess("Login success");
       navigate("/Home"); // 🔥 THEN NAVIGATE
-      // localStorage.setItem("user", JSON.stringify(res.data));
     } catch (err) {
+      setIsLoading(false);
       showError("Google login failed");
-      console.log(err);
     }
   };
 

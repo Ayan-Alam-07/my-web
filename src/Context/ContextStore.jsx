@@ -19,6 +19,7 @@ export const ListProvider = ({ children }) => {
 
   const [currentList, setCurrentList] = useState(list[0]);
   const [arrowState, setArrowState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // =========================
   // 🔐 AUTH STATE
@@ -91,6 +92,8 @@ export const ListProvider = ({ children }) => {
         locationData,
         arrowState,
         setArrowState,
+        isLoading,
+        setIsLoading,
 
         // 🔐 Auth values
         user,

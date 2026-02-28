@@ -12,20 +12,23 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useList();
+  const { login, setIsLoading } = useList();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
+      setIsLoading(true);
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password },
       );
       login(res.data);
+      setIsLoading(false);
       showSuccess("Login successful");
       navigate("/Home");
     } catch (error) {
+      setIsLoading(false);
       showError(error.response?.data || "Login failed");
     }
   };
