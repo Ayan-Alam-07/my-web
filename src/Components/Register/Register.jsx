@@ -92,7 +92,11 @@ export default function Register() {
       navigate("/login");
     } catch (error) {
       setIsLoading(false);
-      showError(error.response?.data || "Registration failed");
+      showError(
+        error.response?.data?.message ||
+          error.response?.data ||
+          "Registration failed",
+      );
     }
   };
 
@@ -179,7 +183,10 @@ export default function Register() {
               </label>
               <p
                 className="float-end mt-3 pt-1"
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  navigate("/login");
+                  showSuccess("Welcome back! Please login to continue earning");
+                }}
               >
                 Already have an account?
               </p>

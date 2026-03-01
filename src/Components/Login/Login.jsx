@@ -78,7 +78,12 @@ export default function Login() {
               <div className={style.actionsContainer}>
                 <p
                   className="mb-3 pb-1 mb-md-0 pb-md-0"
-                  onClick={() => navigate("/register")}
+                  onClick={() => {
+                    navigate("/register");
+                    showSuccess(
+                      "We welcome you to our platform where you can earn by just completing simple task and get paid",
+                    );
+                  }}
                 >
                   Don't have Account?
                 </p>
