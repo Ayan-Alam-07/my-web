@@ -17,6 +17,7 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import PublicOnlyRoute from "./Components/PublicOnlyRoute/PublicOnlyRoute";
 import Loader from "./Components/Loader/Loader";
 import { useList } from "./Context/ContextStore";
+import Referral from "./Components/Reffer/Reffer";
 
 const App = () => {
   const { isLoading } = useList();
@@ -130,6 +131,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Bonus />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/Referral"
+          element={
+            <ProtectedRoute>
+              <Referral />
             </ProtectedRoute>
           }
         ></Route>
