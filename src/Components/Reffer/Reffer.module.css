@@ -208,3 +208,121 @@
   font-size: 15px;
   color: #cfcfd4;
 }
+
+/* ============================= */
+/* 📱 MOBILE DEVICES (≤ 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .referralContainer {
+    padding: 20px 10px;
+  }
+
+  .referralCard {
+    padding: 30px 18px;
+    border-radius: 14px;
+  }
+
+  .referralHeader {
+    margin-bottom: 35px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .rewardBox {
+    padding: 14px;
+  }
+
+  .rewardBox span {
+    font-size: 18px;
+  }
+
+  .rewardBox::after {
+    font-size: 28px;
+    right: 12px;
+    top: 6px;
+  }
+
+  .codeSection {
+    align-items: center;
+  }
+
+  .codeBox {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 17px;
+  }
+
+  .linkBox {
+    flex-direction: column;
+  }
+
+  .linkBox input {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .copyBtn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .whatsappBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statsBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rulesBox {
+    padding: 16px;
+  }
+
+  .rulesBox li {
+    font-size: 14px;
+  }
+
+  .rulesBox ul {
+    padding: 0 0 0 14px;
+  }
+}
+
+/* ============================= */
+/* 📲 TABLETS (481px – 1024px) */
+/* ============================= */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .referralContainer {
+    padding: 30px 20px;
+  }
+
+  .referralCard {
+    padding: 35px 30px;
+    max-width: 640px;
+  }
+
+  .codeBox {
+    width: 90%;
+  }
+
+  .linkBox {
+    gap: 12px;
+  }
+
+  .copyBtn {
+    padding: 10px 18px;
+  }
+
+  .whatsappBtn {
+    padding: 12px 18px;
+  }
+
+  .statsBox {
+    margin-top: 40px;
+  }
+
+  .rulesBox {
+    margin-top: 40px;
+  }
+}

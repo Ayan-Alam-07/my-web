@@ -64,7 +64,7 @@ export default function Referral() {
               <div className={style.linkBox}>
                 <input value={referralLink} readOnly />
                 <button className={style.copyBtn} onClick={copyRefferLink}>
-                  <FaCopy />
+                  <FaCopy /> <span className="md-d-none">Copy Reffer Link</span>
                 </button>
               </div>
             </div>
