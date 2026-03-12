@@ -1,0 +1,339 @@
+.voucherContainer {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.voucherUnd {
+  margin: 4px 0 0 0;
+  display: block;
+  height: 5px;
+  width: 107px;
+  border-radius: 5px;
+  background-color: #ffd700;
+}
+
+.voucherContainer h3 {
+  margin: 10px 0 0 0;
+  font-family: "nunito";
+  font-size: 5vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  text-align: start;
+}
+.voucherLabel {
+  margin: 2.4vw 0 0 0;
+  font-family: "nunito";
+  font-size: 3.8vw !important;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  text-align: start;
+}
+.voucherGrid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(48.3%, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(51%, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding: 0 15px;
+}
+
+.voucherCard {
+  background: #303450;
+  color: #f1f1f1;
+  font-size: 13px;
+  margin: 6px;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* slight elevation */
+}
+.voucherCard:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
+}
+.selected {
+  border-bottom: 4.5px solid #ffd700;
+  border-right: 4.5px solid #ffd700;
+
+  border-top: 5px solid #00c853; /* #00ffc3 */
+  border-left: 5px solid #00c853;
+
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.4),
+    0 0 10px rgba(0, 200, 83, 0.3);
+}
+.selectedAmzGpl {
+  border-top: 4.5px solid #ffd700;
+  border-left: 4.5px solid #ffd700;
+  border-bottom: 5px solid #00c853; /* #00ffc3 */
+  border-right: 5px solid #00c853;
+
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.4),
+    0 0 10px rgba(0, 200, 83, 0.3);
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.redeemLogo {
+  background-color: #fff;
+  width: 68px;
+  border-radius: 20px;
+  margin: 6px 0;
+}
+.amazonLogo {
+  background-color: #fff;
+  width: 68px;
+  height: 80px;
+  border-radius: 20px;
+  margin: 6px 0;
+}
+.gPlayLogo {
+  background-color: #fff;
+  width: 78px;
+  height: 70px;
+  border-radius: 20px;
+  margin: 6px 0;
+}
+.paypalLogo {
+  background-color: #fff;
+  height: 69px;
+  width: 75px;
+  border-radius: 20px;
+  margin: 6px 0;
+}
+.amountRup {
+  display: inline-block;
+  font-family: "poppins";
+  font-size: 4.57vw;
+  font-weight: 800;
+  letter-spacing: 0.18vw;
+  margin: 5.5vw 0 2vw 0;
+  padding: 2.7vw 6vw;
+  border: 2px solid #fff;
+  border-radius: 13px;
+}
+.balToFor {
+  font-family:
+    "outfit",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 3.85vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+}
+.progressBar {
+  background: #8f9099;
+  width: 100%;
+  height: 9px;
+  border-radius: 4px;
+  margin: 4px 25px 16px;
+  /* margin-top: 4px; */
+  /* margin-bottom: 10px; */
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); /* container shadow */
+}
+
+.fill {
+  background: #00e6b8;
+  height: 100%;
+  transition: width 0.4s;
+}
+.fillAmazon {
+  background: linear-gradient(90deg, #fd9900, #ffb347);
+  box-shadow:
+    0 0 8px rgba(253, 153, 0, 0.9),
+    /* core glow */ 0 0 16px rgba(253, 153, 0, 0.6),
+    /* outer glow */ 0 0 24px rgba(253, 153, 0, 0.4); /* soft spread */
+
+  height: 100%;
+  transition: width 0.4s;
+}
+.redeemBtnCont {
+  width: 100%;
+  padding: 15px 0 30px 0;
+  background-color: #181a2a;
+  position: sticky;
+  bottom: 0px;
+}
+.redeemBtn {
+  padding: 14px 24px;
+  background: #00d1b2;
+  border: none;
+  border-radius: 12px;
+  color: #2c2c2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.redeemBtn:disabled {
+  background: gray;
+  color: #222;
+  cursor: not-allowed;
+}
+
+/* FIXME: Media for Responsiveness */
+
+@media (max-width: 400px) {
+  .voucherLabel {
+    font-size: 14px !important;
+  }
+  .amountRup {
+    font-size: 4.85vw;
+    letter-spacing: 0.4vw;
+    margin: 5.5vw 0 1vw 0;
+    padding: 2vw 4vw;
+    border: 3px solid #fff;
+    border-radius: 13px;
+  }
+  .balToFor {
+    font-size: 3.85vw;
+    letter-spacing: 0.2vw;
+  }
+  .progressBar {
+    height: 9px;
+    width: 80%;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 575px) {
+  .voucherCard:hover {
+    transform: scale(1.04);
+  }
+  .voucherGrid {
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+  }
+  .voucherContainer h3 {
+    margin: 30px 0 0 0;
+    font-family: "nunito";
+    font-size: 2.95vw;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    text-align: start;
+    color: #fff;
+  }
+  .voucherLabel {
+    font-size: 2.25vw !important;
+    margin: 1.72vw 0 0 0;
+  }
+  .redeemLogo {
+    width: 78px;
+    margin: 12px 0 7px;
+  }
+  .amazonLogo {
+    width: 75px;
+    height: 86px;
+  }
+  .gPlayLogo {
+    width: 84px;
+    height: 74px;
+  }
+  .amountRup {
+    font-size: 2.38vw;
+    letter-spacing: 0.22vw;
+    margin: 3.87vw 0 1.3vw 0;
+    padding: 1.78vw 2.93vw;
+    border: 3px solid #fff;
+    border-radius: 13px;
+  }
+  .balToFor {
+    font-size: 1.95vw;
+    letter-spacing: 0.09vw;
+  }
+  .progressBar {
+    width: 87%;
+    margin: 3px 22px 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  .voucherCard {
+    transition: all 0.3s ease-in-out;
+  }
+  .voucherCard:hover {
+    transform: scale(1.03);
+  }
+  .voucherGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .voucherContainer h3 {
+    margin: 25px 0 0 0;
+    font-family: "nunito";
+    font-size: 1.45vw;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    text-align: start;
+    color: #fff;
+  }
+  .voucherLabel {
+    font-size: 1.3vw !important;
+    margin: 0.75vw 0 0 0;
+  }
+  .redeemLogo {
+    width: 66px;
+    margin: 10px 0 6px;
+  }
+  .amazonLogo {
+    width: 74px;
+    height: 76px;
+  }
+  .gPlayLogo {
+    width: 78px;
+    height: 70px;
+  }
+  .amountRup {
+    font-size: 1.38vw;
+    letter-spacing: 0.1vw;
+    margin: 1.82vw 0 1.1vw 0;
+    padding: 0.61vw 1.47vw;
+  }
+  .balToFor {
+    font-size: 1vw;
+    letter-spacing: 0.08vw;
+  }
+  .progressBar {
+    width: 85%;
+    margin: 3px 18px 12px;
+  }
+  .redeemBtnCont {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #181a2a;
+    position: sticky;
+    bottom: 0px;
+  }
+  .redeemBtn {
+    padding: 14px 24px;
+    background: #00d1b2;
+    border: none;
+    border-radius: 12px;
+    color: #2c2c2c;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,144 @@
+@media (width <= 576px) {
+  h3 {
+    font-family: "outfit";
+    font-weight: 800 !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 575px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 700px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 755px;
+  }
+  p,
+  span {
+    font-size: 17px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 24px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 940px;
+  }
+  p,
+  span {
+    font-size: 17.8px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 25px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+  p,
+  span {
+    font-size: 20.8px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 24px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1300px;
+  }
+  p,
+  span {
+    font-size: 20.2px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 27px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 1700px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1590px;
+  }
+  p,
+  span {
+    font-size: 25px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 32px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 2100px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1920px;
+  }
+  p,
+  span {
+    font-size: 30px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 39px !important;
+    font-weight: 800 !important;
+  }
+}
+@media (min-width: 2600px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 2390px;
+  }
+  p,
+  span {
+    font-size: 35.5px;
+  }
+  h3 {
+    font-family: "outfit";
+    font-size: 43px !important;
+    font-weight: 800 !important;
+  }
+}

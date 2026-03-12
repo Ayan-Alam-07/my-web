@@ -1,0 +1,29 @@
+/* Default (Laptop & Desktop) */
+.Toastify__toast-container {
+  top: 90px !important;
+}
+
+.Toastify__toast-container .Toastify__toast {
+  font-family: "nunito", sans-serif !important;
+}
+
+/* 📱 Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    top: 80px !important;
+    width: 75% !important;
+    right: 10px !important;
+    left: auto !important;
+  }
+  .Toastify__toast-container .Toastify__toast {
+    margin-bottom: 10px !important;
+    font-size: 16px;
+  }
+}
+
+/* 📲 Tablet (481px – 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .Toastify__toast-container {
+    top: 100px !important;
+  }
+}

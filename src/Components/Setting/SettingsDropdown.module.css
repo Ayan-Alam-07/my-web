@@ -1,0 +1,155 @@
+.settingsContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family:
+    "poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.profileSection {
+  display: flex;
+  align-items: end;
+  padding: 15px 20px 12px 20px;
+  border-bottom: 1px solid #2a2d45;
+}
+
+.profileName {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.userId {
+  font-weight: 500;
+  color: #8a8fa3;
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+/* Avatar */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4e73ff, #6a5af9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Settings Icon */
+.settingsIcon {
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.5s ease;
+}
+
+.rotate {
+  transform: rotate(360deg);
+}
+
+/* Dropdown Base (Hidden State) */
+.settingsDropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #181a2a;
+  border: 1px solid #2a2d45;
+  border-radius: 12px;
+  padding: 10px 0;
+  width: 320px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Open State */
+.dropdownOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Items */
+.dropdownItem {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background: #24273a;
+}
+
+/* Logout */
+.logoutButton {
+  margin: 10px 15px;
+  padding: 9px 0;
+  width: calc(100% - 30px);
+  border: 1px solid red;
+  color: red;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settingsDropdown {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .settingsDropdown {
+    right: -15px;
+    width: 65vw;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .settingsIcon {
+    font-size: 22px;
+  }
+}
