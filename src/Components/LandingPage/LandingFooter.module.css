@@ -1,0 +1,148 @@
+.upperFooter {
+  padding: 12.7vw;
+}
+.upperFooter h2 {
+  font-family: "poppins";
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  font-size: 8.67vw;
+}
+.upperFooter p {
+  font-size: 4.27vw;
+  font-family: "outfit";
+  letter-spacing: 0.071vw;
+  margin: 4.57vw 0;
+}
+
+.soonAppHds {
+  font-family: "nunito";
+  font-weight: 700;
+  font-size: 4.37vw;
+  margin: 0 0 5.17vw 0;
+}
+.footerCont {
+  padding: 1vw 2vw 3vw;
+  background-color: #000;
+}
+.footerListCont {
+  padding: 1vw 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+}
+.footerListCont li:hover {
+  color: #ffffff99;
+  text-decoration: underline;
+}
+.footerListCont li {
+  padding: 1.77vw 0;
+  font-size: 4.57vw;
+  /* font-weight: 600; */
+  color: #f6f6f6;
+  font-family: "outfit";
+}
+.footerSecHds {
+  font-family: "poppins";
+  font-weight: 700;
+  font-size: 5.97vw;
+}
+.footerSecHdsMob {
+  margin: 6.7vw 0 0 0;
+}
+.lowerFootDetail {
+  padding: 0 4.7vw !important;
+  font-family: "nunito";
+  font-weight: 600;
+  cursor: text;
+}
+.lowerFootSocials {
+  padding: 3vw 0 0 0;
+  text-align: center;
+}
+.lowerFootAnc {
+  text-decoration: none;
+  margin: 0 2.07vw;
+}
+.lowerFootAnc img:hover,
+.lowerFootDetail span:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+/* FIXME: MEDIA QUERY */
+@media (min-width: 575px) {
+  .upperFooter {
+    padding: 9.87vw 0 4.87vw;
+  }
+  .upperFooter h2 {
+    letter-spacing: 0.02vw;
+    font-size: 5.17vw;
+  }
+  .upperFooter p {
+    font-size: 17px;
+    margin: 1.17vw 0;
+  }
+  .footerCont {
+    padding: 1vw 4vw 3vw;
+  }
+  .soonAppHds {
+    font-size: 3.07vw;
+    margin: 0 0 2.77vw 0;
+  }
+  .footerListCont li {
+    padding: 0.87vw 0;
+    font-size: 2.27vw;
+    letter-spacing: 0.1vw;
+  }
+  .footerSecHds {
+    font-size: 3.17vw;
+  }
+  .footerSecHdsMob {
+    margin: 0;
+  }
+  .lowerFootSocials {
+    padding: 0;
+    text-align: right;
+  }
+  .lowerFootDetail {
+    padding: 0 12px !important;
+  }
+  .lowerFootAnc {
+    margin: 0 1.17vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .footerCont {
+    padding: 1vw 4vw 2.07vw;
+  }
+  .upperFooter {
+    padding: 4.7vw 0 2vw;
+  }
+  .upperFooter h2 {
+    letter-spacing: 0.02vw;
+    font-size: 3.17vw;
+  }
+  .upperFooter p {
+    font-size: 17px;
+    margin: 1.17vw 0;
+    letter-spacing: 0.01vw;
+  }
+  .soonAppHds {
+    font-size: 18px;
+    margin: 0 0 1.47vw 0;
+  }
+  .footerSecHds {
+    font-size: 1.77vw;
+  }
+  .footerListCont li {
+    padding: 0.57vw 0;
+    font-size: 18px;
+    letter-spacing: 0.07vw;
+  }
+  .lowerFootDetail {
+    padding: 0 14px !important;
+  }
+  .lowerFootAnc {
+    margin: 0 0.67vw;
+  }
+}

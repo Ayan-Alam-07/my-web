@@ -1,0 +1,186 @@
+.referralEntryCard {
+  position: relative;
+  min-height: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 50px 60px;
+  margin: 10px 0 60px 0;
+
+  background: url("https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1600")
+    center/cover no-repeat;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  font-family:
+    "poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* Dark overlay layer */
+.referralEntryCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 26, 42, 0.45); /* lower = more visible image */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.referralEntryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(255, 193, 7, 0.2);
+}
+
+/* dark overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(24, 26, 42, 0.9),
+    rgba(32, 35, 70, 0.8)
+  );
+}
+
+/* ============================= */
+/* 🔥 Alternative Backgrounds */
+/* ============================= */
+
+/* 1️⃣ Golden Coins Dark Background */
+/* url("https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=1600") */
+
+/* 2️⃣ Digital Money / Crypto Glow */
+/* url("https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&w=1600") */
+
+/* 3️⃣ Dark Abstract Gradient Tech */
+/* url("https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1600") */
+
+/* 4️⃣ Finance Dashboard Style */
+/* url("https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1600") */
+
+/* 5️⃣ Dark Neon Lines Premium */
+/* url("https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1600") */
+
+/* 6th default first time */
+/* url("https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1600" */
+
+.content h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 18px;
+  color: #cfcfd4;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.content span {
+  color: #ffc107;
+  font-weight: 700;
+}
+
+.ctaBtn {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ctaBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.6);
+}
+
+/* ============================= */
+/* 📱 MOBILE DEVICES (≤ 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .referralEntryCard {
+    min-height: 220px;
+    padding: 25px 20px;
+    border-radius: 16px;
+    align-items: flex-start;
+    margin: 10px 0 60px 0;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .content span {
+    font-size: 15px;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 25px;
+  }
+}
+
+/* ============================= */
+/* 📲 TABLETS (481px – 1024px) */
+/* ============================= */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .referralEntryCard {
+    min-height: 260px;
+    padding: 35px 40px;
+    border-radius: 20px;
+    margin: 10px 0 70px 0;
+  }
+
+  .content h2 {
+    font-size: 30px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .content span {
+    font-size: 17px;
+  }
+
+  .ctaBtn {
+    padding: 13px 26px;
+    font-size: 15px;
+  }
+}

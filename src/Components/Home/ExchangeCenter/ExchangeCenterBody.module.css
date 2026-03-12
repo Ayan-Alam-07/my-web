@@ -1,0 +1,307 @@
+.wholeTresCont {
+  margin: 7.7vw 0 0 0;
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 14px;
+  transition: all 0.3s ease-in;
+}
+.wholeTresCont:hover {
+  transform: scale(1.01);
+}
+
+.treasureImgCont {
+  padding: 1.2vw 1vw;
+}
+.treasureImg {
+  height: 95px;
+  width: 105px;
+  transition: all 0.3s ease;
+}
+.treasureImg:hover {
+  transform: scale(1.15);
+}
+
+.wholeContentCont {
+  background-color: #ebebeb;
+  border-top-right-radius: 14px;
+  padding: 3.87vw 2.27vw 3vw;
+}
+
+.tresFrstHds,
+.tresSrstHds {
+  padding: 0.75vw 0;
+  font-family: "outfit";
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.7vw;
+  transition: all 0.25s ease-in-out;
+}
+.tresFrstHds:hover,
+.tresSrstHds:hover {
+  transform: scale(1.01);
+}
+.tresFrstHds {
+  font-size: 5.37vw;
+}
+.tresSrstHds {
+  padding: 3.37vw 0 16px;
+  font-size: 4.27vw;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.tresSSubRefGem {
+  margin: 0 0 0 3px;
+  color: #a020f0;
+  letter-spacing: 0.01vw;
+  font-weight: 600;
+}
+.tresSrstHds:hover .tresExcSwapImg {
+  transform: scale(1.07);
+}
+.tresExcSwapImg {
+  position: absolute;
+  top: -21px;
+  left: -5px;
+  height: 30px;
+  width: 32px;
+  transition: all 0.3s ease-in-out;
+}
+.tresSSubRefVes {
+  margin: 0 0 0 6.97vw;
+  color: #ffd700;
+  letter-spacing: 0.1vw;
+  text-shadow:
+    /* Black outline (stroke effect) */
+    -1px -1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px 1px 0 #000000,
+    /* Golden glow */ 0 0 3px #ffd700,
+    0 0 5px #ffd700,
+    0 0 9px rgba(255, 215, 0, 0.6),
+    0 0 11px rgba(179, 155, 20, 0.6);
+}
+
+.tresPara {
+  display: inline-block;
+  margin: 0;
+  padding: 1.7vw 0 0.7vw;
+  font-family: "nunito";
+  font-weight: 600;
+  font-size: 15px;
+  color: #313131;
+}
+
+.tresOth {
+  display: none;
+}
+
+.tresCoinCont {
+  position: relative;
+}
+.tresCoinImg {
+  position: absolute;
+  top: -7px;
+  left: -11px;
+  height: 35px;
+  width: 45px;
+  transition: all 0.3s ease-in-out;
+}
+.tresCoinImg2 {
+  left: -15px !important;
+}
+.tresCoinImg:hover {
+  transform: scale(1.3);
+}
+.tresCoinValue {
+  color: #000;
+  font-weight: 700;
+  margin: 0 0 0 4.47vw;
+}
+
+.reqGemCont {
+  padding: 2vw 0;
+  /* background-color: #d6eaff; */
+  background-color: #c1e0ff;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  position: relative;
+  cursor: pointer;
+}
+.tresGemImg {
+  position: absolute;
+  top: -5px;
+  margin: 0 14.7vw 0 0;
+  height: 55px;
+  width: 55px;
+}
+
+.tresReqGem {
+  margin: 0;
+  padding: 0.7vw 0;
+  font-family: "poppins";
+  font-size: 4.87vw;
+  font-weight: 700;
+  color: #181a2a;
+}
+
+/* FIXME: MEDIA QUERY */
+
+@media (min-width: 575px) {
+  .wholeTresCont {
+    margin: 6.47vw 1.97vw 0;
+  }
+
+  .treasureImgCont {
+    padding: 1.2vw 1.87vw;
+  }
+  .treasureImg {
+    height: 115px;
+    width: 127px;
+  }
+
+  .wholeContentCont {
+    padding: 0.91vw 3.5vw;
+  }
+
+  .tresFrstHds,
+  .tresSrstHds {
+    padding: 2.27vw 0 0.57vw;
+    line-height: 1.7vw;
+  }
+  .tresFrstHds {
+    font-size: 24px;
+    padding: 2vw 0 0 0;
+  }
+
+  .tresSrstHds {
+    padding-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .tresSSubRefGem {
+    margin: 0 0 0 4px;
+    letter-spacing: 0.01vw;
+  }
+
+  .tresExcSwapImg {
+    top: -29px;
+    left: -7px;
+    height: 45px;
+    width: 50px;
+  }
+  .tresSSubRefVes {
+    margin: 0 0 0 5.27vw;
+    letter-spacing: 0.37vw;
+  }
+
+  .tresPara {
+    padding: 1.37vw 0 1.17vw;
+    line-height: 2.47vw;
+    font-size: 16px;
+    letter-spacing: 0.091vw;
+  }
+  .tresMob {
+    display: none;
+  }
+  .tresOth {
+    display: block;
+  }
+
+  .tresCoinCont {
+    display: inline-block;
+  }
+  .tresCoinImg {
+    top: -26px;
+    left: -13px;
+    height: 40px;
+    width: 50px;
+  }
+  .tresCoinValue {
+    margin: 0 0 0 2.37vw;
+  }
+
+  .reqGemCont {
+    padding: 0.7vw 0;
+  }
+  .tresGemImg {
+    top: -9px;
+    margin: 0 8.87vw 0 0;
+    height: 65px;
+    width: 65px;
+  }
+
+  .tresReqGem {
+    margin: 0;
+    padding: 0.71vw 0;
+    font-size: 3.07vw;
+  }
+}
+
+/* TODO: another for laptops */
+
+@media (min-width: 992px) {
+  .wholeTresCont {
+    margin: 1.47vw 8.27vw 0;
+  }
+
+  .treasureImg {
+    height: 120px;
+    width: 120px;
+  }
+
+  .wholeContentCont {
+    padding: 0.91vw 2vw;
+  }
+
+  .tresFrstHds,
+  .tresSrstHds {
+    padding: 0.3vw 0;
+  }
+  .tresFrstHds {
+    font-size: 26px;
+  }
+  .tresSrstHds {
+    padding-bottom: 10px;
+    font-size: 22px;
+  }
+  .tresExcSwapImg {
+    left: -5px;
+  }
+
+  .tresSSubRefVes {
+    margin: 0 0 0 3.37vw;
+    letter-spacing: 0.13vw;
+  }
+
+  .tresPara {
+    padding: 0.57vw 0 0.2vw;
+    line-height: 2vw;
+    font-size: 16px;
+    letter-spacing: 0vw;
+  }
+
+  .tresCoinImg {
+    top: -26px;
+    left: -14px;
+  }
+
+  .tresCoinValue {
+    margin: 0 0 0 1.3vw;
+  }
+
+  .reqGemCont {
+    padding: 5px 0;
+  }
+
+  .tresGemImg {
+    top: -14px;
+    padding: 0.57vw;
+    margin: 0 5vw 0 0;
+  }
+
+  .tresReqGem {
+    padding: 0.51vw 0;
+    font-size: 1.57vw;
+  }
+}

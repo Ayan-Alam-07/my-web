@@ -1,0 +1,26 @@
+.gemIcon {
+  font-size: 28px;
+  color: #a020f0;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 6px rgba(160, 32, 240, 0.6));
+  animation: gemGlow 2s ease-in-out infinite;
+}
+
+@keyframes gemGlow {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(160, 32, 240, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(160, 32, 240, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(160, 32, 240, 0.5));
+  }
+}
+
+@media (min-width: 576px) {
+  .gemIcon {
+    font-size: 28px;
+    margin-right: 8px;
+  }
+}
