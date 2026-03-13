@@ -190,7 +190,7 @@ import { useList } from "../../../Context/ContextStore";
 import { showError, showSuccess } from "../../../utils/Toast";
 
 const ExchangeCenterBody = () => {
-  const { user } = useList();
+  const { user, setIsLoading } = useList();
 
   const [offers, setOffers] = useState([]);
 
@@ -202,6 +202,7 @@ const ExchangeCenterBody = () => {
 
   const fetchOffers = async () => {
     try {
+      setIsLoading(true);
       const res = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/exchange/offers`,
         {
@@ -210,9 +211,10 @@ const ExchangeCenterBody = () => {
           },
         },
       );
-
+      setIsLoading(false);
       setOffers(res.data);
     } catch (err) {
+      setIsLoading(false);
       showError("Failed to load exchange offers");
     }
   };
@@ -261,7 +263,7 @@ const ExchangeCenterBody = () => {
             key={card.cardId}
             className={`${
               card.cardId === 2 || card.cardId === 3
-                ? "mt-5 pt-sm-2 mt-lg-3 pt-lg-3"
+                ? "mt-5 pt-sm-2 mt-lg-3 pt-lg-2"
                 : ""
             }`}
           >
@@ -323,13 +325,16 @@ const ExchangeCenterBody = () => {
                       </video>
                     </span>
                     <span className={style.tresCoinValue}>
-                      {card.coins} Coins
+                      {card.coins} VEs{" "}
                     </span>
-                    by exchanging gems.
+                    by exchanging gems, Collect Gems every day & discover
+                    Treasures.
                   </p>
 
                   <p className={`${style.tresPara} ${style.tresOth}`}>
-                    Collect Gems from ads and convert them into
+                    {card.cardId === 1
+                      ? "Collect Gems every day, discover secret Treasures, and Quickly turn into"
+                      : "Collect Gems from ads and convert them into"}
                     <span className={style.tresCoinCont}>
                       <video
                         autoPlay
@@ -342,9 +347,13 @@ const ExchangeCenterBody = () => {
                       </video>
                     </span>
                     <span className={style.tresCoinValue}>
-                      {card.coins} Coins
-                    </span>
-                    instantly.
+                      {card.coins} VEs
+                    </span>{" "}
+                    instantly.{" "}
+                    {card.cardId === 2
+                      ? "Simply watch Ads to earn extra Gems, trade them, and Increase your Rewards Instantly."
+                      : "By simply Watching Ads, you can collect extra gems."}{" "}
+                    {card.cardId === 3 && "For maximum Rewards every day."}
                   </p>
                 </div>
               </div>
@@ -352,20 +361,16 @@ const ExchangeCenterBody = () => {
               <div
                 className={`d-flex justify-content-center align-items-center ${style.reqGemCont}`}
               >
-                <Gems />
-
-                <p className={style.tresReqGem}>{card.gemsRequired}</p>
-              </div>
-
-              <div className="text-center pb-3">
                 <button
-                  className={style.exchangeBtn}
+                  // className={style.exchangeBtn}
+                  className={style.tresReqGem}
                   onClick={() => handleExchange(card.cardId)}
                   disabled={loadingCard === card.cardId}
                 >
+                  <Gems />
                   {loadingCard === card.cardId
                     ? "Processing..."
-                    : "Unlock Treasure"}
+                    : card.gemsRequired}
                 </button>
               </div>
             </div>

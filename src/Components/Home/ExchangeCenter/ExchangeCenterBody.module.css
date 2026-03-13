@@ -1,9 +1,10 @@
 .wholeTresCont {
   margin: 7.7vw 0 0 0;
-  background-color: #f0f0f0;
+  background-color: #ebebeb;
   color: #000;
   border-radius: 14px;
   transition: all 0.3s ease-in;
+  overflow: hidden;
 }
 .wholeTresCont:hover {
   transform: scale(1.01);
@@ -11,9 +12,10 @@
 
 .treasureImgCont {
   padding: 1.2vw 1vw;
+  background-color: #f5f5f5;
 }
 .treasureImg {
-  height: 95px;
+  height: 190px;
   width: 105px;
   transition: all 0.3s ease;
 }
@@ -22,9 +24,11 @@
 }
 
 .wholeContentCont {
+  width: 100%;
   background-color: #ebebeb;
   border-top-right-radius: 14px;
-  padding: 3.87vw 2.27vw 3vw;
+  /* padding: 3.87vw 2.27vw 3vw; */
+  padding: 0 2.3vw;
 }
 
 .tresFrstHds,
@@ -138,11 +142,15 @@
 
 .tresReqGem {
   margin: 0;
+  width: 100%;
   padding: 0.7vw 0;
   font-family: "poppins";
   font-size: 4.87vw;
   font-weight: 700;
   color: #181a2a;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 /* FIXME: MEDIA QUERY */
@@ -156,12 +164,12 @@
     padding: 1.2vw 1.87vw;
   }
   .treasureImg {
-    height: 115px;
+    height: 151px;
     width: 127px;
   }
 
   .wholeContentCont {
-    padding: 0.91vw 3.5vw;
+    padding: 0 3.5vw;
   }
 
   .tresFrstHds,
@@ -197,9 +205,9 @@
 
   .tresPara {
     padding: 1.37vw 0 1.17vw;
-    line-height: 2.47vw;
+    line-height: 21px;
     font-size: 16px;
-    letter-spacing: 0.091vw;
+    letter-spacing: 0.1px;
   }
   .tresMob {
     display: none;
@@ -251,7 +259,7 @@
   }
 
   .wholeContentCont {
-    padding: 0.91vw 2vw;
+    padding: 0 2vw;
   }
 
   .tresFrstHds,
