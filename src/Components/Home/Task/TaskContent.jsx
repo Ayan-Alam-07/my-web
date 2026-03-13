@@ -1,66 +1,74 @@
 import style from "./TaskContent.module.css";
 import { useNavigate } from "react-router-dom";
 import cptchScrth from "../../../assets/captcha-gif/captcha-scratching.gif";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useList } from "../../../Context/ContextStore";
+import { showError } from "../../../utils/Toast";
 
 const TaskContent = () => {
-  function replaceDigits(str, replacements) {
-    let chars = str.split("");
-    replacements.forEach(([index, newDigit]) => {
-      chars[index] = newDigit;
-    });
-    return chars.join("");
-  }
-
-  const captcha = Math.floor(100000 + Math.random() * 900000);
-  const firstNum = captcha.toString()[0];
-  const secNum = captcha.toString()[1];
-  const lastNum = captcha.toString()[5];
-
-  let captcha2 = Math.floor(100000 + Math.random() * 990000);
-  let captcha2Str = captcha2.toString();
-  captcha2Str = replaceDigits(captcha2Str, [
-    [0, firstNum],
-    [1, secNum],
-    [5, lastNum],
-  ]);
-  captcha2Str = parseInt(captcha2Str, 10);
-  captcha2 = captcha2Str;
-
-  let captcha3 = Math.floor(100000 + Math.random() * 890000);
-  let captcha3Str = captcha3.toString();
-  captcha3Str = replaceDigits(captcha3Str, [
-    [0, firstNum],
-    [1, secNum],
-    [5, lastNum],
-  ]);
-  captcha3Str = parseInt(captcha3Str, 10);
-  captcha3 = captcha3Str;
-
-  const captcha4 = Math.floor(100000 + Math.random() * 790000);
-
-  const options = [
-    { id: 1, value: captcha },
-    { id: 2, value: captcha2 },
-    { id: 3, value: captcha3 },
-    { id: 4, value: captcha4 },
-  ].sort(() => Math.random() - 0.5);
-
-  let result;
-
+  const num = [1, 2, 3, 4];
   const navigate = useNavigate();
 
-  const handleOptins = (id) => {
-    if (captcha && id == 1) {
-      result = true;
-    } else {
-      result = false;
+  const { user, setIsLoading } = useList();
+
+  const [captcha, setCaptcha] = useState(null);
+  const [options, setOptions] = useState([]);
+  const [taskId, setTaskId] = useState(null);
+
+  const fetchCaptcha = async () => {
+    try {
+      setIsLoading(true);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/captcha/task`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        },
+      );
+      setCaptcha(res.data.captcha);
+      setOptions(res.data.options);
+      setTaskId(res.data.taskId);
+      setIsLoading(false);
+    } catch {
+      setIsLoading(false);
+      showError("Captcha failed");
     }
-    navigate("/taskOptionChecker", {
-      state: {
-        result: result ? "Correct Option" : "Wrong Option",
-        resultBool: result,
-      },
-    });
+  };
+
+  useEffect(() => {
+    fetchCaptcha();
+  }, []);
+
+  const handleOptins = async (value) => {
+    try {
+      setIsLoading(true);
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/captcha/verify`,
+        {
+          taskId,
+          selected: value,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        },
+      );
+      setIsLoading(false);
+      navigate("/taskOptionChecker", {
+        state: {
+          result: res.data.result ? "Correct Option" : "Wrong Option",
+          resultBool: res.data.result,
+          reward: res.data.reward,
+        },
+      });
+    } catch (err) {
+      setIsLoading(false);
+      console.log(err.response?.data);
+      showError("Captcha verification failed");
+    }
   };
 
   return (
@@ -89,20 +97,33 @@ const TaskContent = () => {
               <span className={style.challengeLineA}></span>
               <span className={style.challengeLineB}></span>
 
-              <p className={style.challengeCode}>{captcha}</p>
+              {!captcha ? (
+                <p className={style.challengeCode}>777777</p>
+              ) : (
+                <p className={style.challengeCode}>{captcha}</p>
+              )}
+              {/* <p className={style.challengeCode}>{captcha}</p> */}
             </div>
           </div>
 
           {/* OPTIONS */}
-
           <div className={style.captchaAnswerGrid}>
+            {options.length === 0 &&
+              num.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`${idx === 1 || idx === 3 ? style.answerTileAdp : ""} ${style.captchaAnswerTile}`}
+                >
+                  <span className={style.answerValue}>777777</span>
+                </div>
+              ))}
             {options.map((opt, idx) => (
               <div
-                key={opt.id}
+                key={idx}
                 className={`${idx === 1 || idx === 3 ? style.answerTileAdp : ""} ${style.captchaAnswerTile}`}
-                onClick={() => handleOptins(opt.id)}
+                onClick={() => handleOptins(opt)}
               >
-                <span className={style.answerValue}>{opt.value}</span>
+                <span className={style.answerValue}>{opt}</span>
               </div>
             ))}
           </div>

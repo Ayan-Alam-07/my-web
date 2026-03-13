@@ -111,7 +111,7 @@ const App = () => {
         ></Route>
 
         <Route
-          path="/TaskOptionChecker"
+          path="taskOptionChecker"
           element={
             <ProtectedRoute>
               <TaskOptionChecker />

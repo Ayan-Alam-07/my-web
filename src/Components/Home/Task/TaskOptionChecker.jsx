@@ -9,7 +9,7 @@ import { GiDiamonds } from "react-icons/gi";
 const TaskOptionChecker = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { result, resultBool } = location.state || {};
+  const { result, resultBool, reward } = location.state || {};
 
   return (
     <>
@@ -55,7 +55,10 @@ const TaskOptionChecker = () => {
 
                   <h4 className={style.wonGemCount}>
                     <GiDiamonds className={style.gemIcon} />
-                    You Won <span className={style.gemWonTxt}>1</span> Gems
+                    You Won <span className={style.gemWonTxt}>
+                      {reward}
+                    </span>{" "}
+                    Gems
                   </h4>
                 </>
               ) : (
@@ -72,10 +75,8 @@ const TaskOptionChecker = () => {
 
                   <h4 className={style.wonGemCount}>
                     <GiDiamonds className={style.gemIcon} />
-                    You Still Won <span className={style.gemWonTxt}>
-                      0.75
-                    </span>{" "}
-                    Gem
+                    You Still Won{" "}
+                    <span className={style.gemWonTxt}>{reward}</span> Gem
                   </h4>
                 </>
               )}
