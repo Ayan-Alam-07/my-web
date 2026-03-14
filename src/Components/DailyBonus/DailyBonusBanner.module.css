@@ -1,0 +1,174 @@
+.bannerCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 22px 26px;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  margin-bottom: 20px;
+}
+
+.bannerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.giftIcon {
+  font-size: 40px;
+  color: #f59e0b;
+
+  animation: floatGift 3s ease-in-out infinite;
+}
+
+@keyframes floatGift {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.leftSection h3 {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.leftSection p {
+  margin: 4px 0 8px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.rewardTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  color: gold;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.openBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.openBtn:hover {
+  transform: scale(1.05);
+}
+
+/* shimmer animation */
+
+.openBtn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+
+  transition: all 0.6s;
+}
+
+.openBtn:hover::before {
+  left: 120%;
+}
+
+@media (min-width: 576px) {
+  .bannerCard {
+    padding: 24px 28px;
+  }
+
+  .giftIcon {
+    font-size: 44px;
+  }
+
+  .leftSection h3 {
+    font-size: 22px;
+  }
+
+  .openBtn {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .bannerCard {
+    padding: 26px 34px;
+  }
+
+  .giftIcon {
+    font-size: 48px;
+  }
+
+  .leftSection h3 {
+    font-size: 24px;
+  }
+
+  .leftSection p {
+    font-size: 15px;
+  }
+
+  .openBtn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}

@@ -17,6 +17,7 @@ import youtubeLogo from "../../assets/home-follow/follow-youtube.webp";
 import ReferralBanner from "../Reffer/RefferBanner";
 import ReferralEntryCard from "../Reffer/ReferralEntryCard";
 import WatchAdBanner from "../WatchAD/WatchAdBanner";
+import DailyBonusBanner from "../DailyBonus/DailyBonusBanner";
 
 const HomeEarn = () => {
   const nums = [1, 2, 3, 4, 5];
@@ -80,6 +81,29 @@ const HomeEarn = () => {
         <div className="mt-5 pt-2">
           <ReferralBanner />
         </div>
+
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <div className="mt-2">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Daily Bonus : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Complete Tasks and
+              Get Bonus Rewards.{" "}
+              <span className="d-none d-md-inline-block">
+                Trusted Globally for Earning Online.
+              </span>
+            </p>
+          </div>
+        </div>
+        <DailyBonusBanner />
+
         <div className="row justify-content-center">
           <div className="col-12">
             <div className="mt-2">

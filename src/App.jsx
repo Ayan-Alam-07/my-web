@@ -20,6 +20,7 @@ import { useList } from "./Context/ContextStore";
 import Referral from "./Components/Reffer/Reffer";
 import ReferralHistory from "./ReferralHistory/ReferralHistory";
 import WatchAd from "./Components/WatchAD/WatchAd";
+import DailyBonus from "./Components/DailyBonus/DailyBonus";
 
 const App = () => {
   const { isLoading } = useList();
@@ -70,6 +71,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/daily-bonus"
+          element={
+            <ProtectedRoute>
+              <DailyBonus />
             </ProtectedRoute>
           }
         ></Route>

@@ -25,6 +25,7 @@ export const ListProvider = ({ children }) => {
     { id: 11, name: "Reffer & Earn" },
     { id: 12, name: "Referral History" },
     { id: 13, name: "Watch Ads" },
+    { id: 14, name: "Daily Bonus" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);

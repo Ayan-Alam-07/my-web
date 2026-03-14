@@ -1,0 +1,316 @@
+.bonusWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.bonusCard {
+  /* width: 420px; */
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  border-radius: 14px;
+  padding: 45px 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  transition: transform 0.25s ease;
+  font-family:
+    "outfit",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.bonusCard:hover {
+  transform: translateY(-6px);
+}
+
+.header h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.header p {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+.iconGift {
+  font-size: 55px;
+  color: #f59e0b;
+  margin-bottom: 17px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rewardSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 24px 16px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.coinIcon {
+  font-size: 40px;
+  color: #a020f0;
+  filter: drop-shadow(0 0 6px rgba(160, 32, 240, 0.6));
+  animation: gemGlow 1.7s ease-in-out infinite;
+}
+
+@keyframes gemGlow {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(160, 32, 240, 0.5));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(160, 32, 240, 0.9));
+    transform: scale(1.15);
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(160, 32, 240, 0.5));
+    transform: scale(1);
+  }
+}
+
+.rewardTitle {
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+.rewardSection h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.steps {
+  text-align: left;
+  margin: 40px 0 30px;
+}
+
+.steps h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.steps ul {
+  list-style: none;
+  padding: 0;
+  font-weight: 400;
+  color: #e4e4e4;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 11px 0;
+  font-size: 15px;
+}
+
+.stepIcon {
+  color: #4ade80;
+  animation: iconBounce 2.5s infinite;
+}
+
+/* step icon animation */
+@keyframes iconBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.claimBtn {
+  position: relative;
+  width: 100%;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  color: black;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.claimBtn:hover {
+  transform: scale(1.04);
+}
+
+/* shimmer effect */
+.claimBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  /* transition: all 0.7s; */
+  animation: buttonShine 2.8s linear infinite;
+}
+
+/* .claimBtn:hover::before {
+  left: 120%;
+} */
+
+@keyframes buttonShine {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+.claimBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (min-width: 576px) {
+  .bonusWrapper {
+    margin: 100px 0 40px;
+  }
+
+  .bonusCard {
+    width: 87%;
+    padding: 60px 45px;
+    border-radius: 18px;
+  }
+
+  .iconGift {
+    font-size: 75px;
+  }
+
+  .header h2 {
+    font-size: 34px;
+  }
+
+  .header p {
+    font-size: 17px;
+  }
+
+  .rewardSection {
+    padding: 32px 18px;
+  }
+
+  .rewardTitle {
+    font-size: 20px;
+  }
+
+  .coinIcon {
+    font-size: 50px;
+  }
+
+  .rewardSection h3 {
+    font-size: 30px;
+  }
+
+  .steps {
+    margin-bottom: 47px;
+  }
+
+  .steps h4 {
+    margin: 40px 0 16px 0;
+    font-size: 26px;
+  }
+  .steps li {
+    font-size: 17px;
+  }
+
+  .claimBtn {
+    font-size: 22px;
+    padding: 17px 22px;
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .bonusWrapper {
+    margin: 45px 0 55px;
+  }
+
+  .bonusCard {
+    width: 560px;
+    padding: 40px 65px;
+  }
+
+  .iconGift {
+    font-size: 60px;
+  }
+
+  .header h2 {
+    font-size: 32px;
+  }
+
+  .rewardSection {
+    padding: 24px 18px;
+  }
+
+  .rewardTitle {
+    font-size: 15px;
+  }
+
+  .coinIcon {
+    font-size: 36px;
+  }
+
+  .rewardSection h3 {
+    font-size: 25px;
+  }
+
+  .steps {
+    margin-bottom: 30px;
+  }
+
+  .steps h4 {
+    margin: 34px 0 15px 0;
+  }
+  .steps li {
+    font-size: 16px;
+  }
+
+  .claimBtn {
+    font-size: 20px;
+    padding: 16px 18px;
+    width: 80%;
+  }
+}
