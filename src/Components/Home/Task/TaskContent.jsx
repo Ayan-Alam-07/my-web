@@ -4,7 +4,7 @@ import cptchScrth from "../../../assets/captcha-gif/captcha-scratching.gif";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useList } from "../../../Context/ContextStore";
-import { showError } from "../../../utils/Toast";
+import { showError, showWarning } from "../../../utils/Toast";
 
 const TaskContent = () => {
   const num = [1, 2, 3, 4];
@@ -67,9 +67,9 @@ const TaskContent = () => {
     } catch (err) {
       setIsLoading(false);
       if (err.response?.data) {
-        showError("⏳ Please wait 3 seconds before next captcha");
+        showWarning("⏳ Please wait 3 seconds before next captcha");
       } else if (err.response?.status === 429) {
-        showError("⏳ Wait 7 seconds before next captcha");
+        showWarning("⏳ Wait 7 seconds before next captcha");
       } else {
         console.log(err.response?.data);
         showError("Captcha verification failed");
