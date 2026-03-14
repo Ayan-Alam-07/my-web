@@ -66,8 +66,12 @@ const TaskContent = () => {
       });
     } catch (err) {
       setIsLoading(false);
-      console.log(err.response?.data);
-      showError("Captcha verification failed");
+      if (err.response?.data) {
+        showError("⏳ Please wait 3 seconds before next captcha");
+      } else {
+        console.log(err.response?.data);
+        showError("Captcha verification failed");
+      }
     }
   };
 
