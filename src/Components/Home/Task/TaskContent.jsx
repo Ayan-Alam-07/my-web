@@ -68,6 +68,8 @@ const TaskContent = () => {
       setIsLoading(false);
       if (err.response?.data) {
         showError("⏳ Please wait 3 seconds before next captcha");
+      } else if (err.response?.status === 429) {
+        showError("⏳ Wait 7 seconds before next captcha");
       } else {
         console.log(err.response?.data);
         showError("Captcha verification failed");
