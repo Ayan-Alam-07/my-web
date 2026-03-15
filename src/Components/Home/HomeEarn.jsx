@@ -102,7 +102,11 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <DailyBonusBanner />
+        <div className="row justify-content-center mt-2 mb-3 pb-1 px-2">
+          <div className="col-12 col-md-11 col-lg-10 p-0">
+            <DailyBonusBanner />
+          </div>
+        </div>
 
         <div className="row justify-content-center">
           <div className="col-12">
