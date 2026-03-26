@@ -39,7 +39,7 @@ const WatchAdBanner = () => {
 
                 <div className={style.watchAdsCounter}>
                   <FaCoins className={style.coinIcon} />
-                  <span className={style.rewardCounter}>Upto +200 VEs</span>
+                  <span className={style.rewardCounter}>Upto +1000 VEs</span>
                 </div>
               </div>
             </div>

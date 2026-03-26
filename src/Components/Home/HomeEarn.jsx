@@ -1,5 +1,4 @@
 import style from "./HomeEarn.module.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   FaKeyboard,
@@ -7,9 +6,7 @@ import {
   FaGift,
   FaArrowRight,
 } from "react-icons/fa";
-import { GiSparkles } from "react-icons/gi";
 import { RiHandCoinFill } from "react-icons/ri";
-
 import giveawayBanner from "../../assets/giveaway-banner-3.webp";
 import facebookLogo from "../../assets/home-follow/follow-facebook.webp";
 import telegramLogo from "../../assets/home-follow/follow-telegram.webp";
@@ -18,10 +15,10 @@ import ReferralBanner from "../Reffer/RefferBanner";
 import ReferralEntryCard from "../Reffer/ReferralEntryCard";
 import WatchAdBanner from "../WatchAD/WatchAdBanner";
 import DailyBonusBanner from "../DailyBonus/DailyBonusBanner";
+import TapEarnBanner from "../TapNEarn/TapNEarnBanner";
+import TapToken from "../TapNEarn/TapToken";
 
 const HomeEarn = () => {
-  const nums = [1, 2, 3, 4, 5];
-
   const navigate = useNavigate();
 
   const follows = [
@@ -50,30 +47,6 @@ const HomeEarn = () => {
       altKey: "Subscribe to our YouTube channel for reward codes",
     },
   ];
-
-  // for tier2 countries
-  const generateRandomCoinsT2 = () =>
-    Math.floor(Math.random() * (80 - 49)) + 25;
-
-  const [coinValues, setCoinValues] = useState(
-    nums.map(() => generateRandomCoinsT2()),
-  );
-
-  const [available, setavailable] = useState(false); // change here
-
-  const handleWatchAd = (index) => {
-    if (available) {
-      // and here for to change the coin value after claim the previous coins.
-      // before it add a claim condition like after watch ad and postback then change whatch button
-      //  to claim button and then claim and after claim the coin value will
-      //  automatically update the coin update logic is already written
-      const updatedCoins = [...coinValues];
-
-      updatedCoins[index] = generateRandomCoinsT2();
-
-      setCoinValues(updatedCoins);
-    }
-  };
 
   return (
     <div className="container-fluid" style={{ backgroundColor: "#161827" }}>
@@ -108,6 +81,35 @@ const HomeEarn = () => {
           </div>
         </div>
 
+        {/* Tap and Earn */}
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <div className="mt-2">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Tap & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Tap repeatedly to
+              earn instant VEs and rewards
+            </p>
+          </div>
+        </div>
+        <div className="row justify-content-evenly mt-2 mb-4 pb-3 px-2">
+          <div className="col-12 col-md-10 col-lg-4 p-0">
+            <TapEarnBanner />
+          </div>
+
+          <div className="col-12 col-md-10 col-lg-4 p-0">
+            <TapToken />
+          </div>
+        </div>
+
+        {/* bonus section */}
         <div className="row justify-content-center">
           <div className="col-12">
             <div className="mt-2">

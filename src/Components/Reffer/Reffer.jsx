@@ -37,7 +37,7 @@ export default function Referral() {
             },
           },
         );
-        showSuccess("Fetched referral details");
+        // showSuccess("Fetched referral details");
         setTotalReferrals(res.data.totalReferrals);
       } catch (err) {
         showError(err.response?.data || "Error fetching referral data");
