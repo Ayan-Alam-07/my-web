@@ -401,6 +401,9 @@ const HomeEarn = () => {
             ))}
           </div>
         </div>
+        <p className="text-center" style={{ color: "#757575" }}>
+          More Features & Earning option are on the Way...
+        </p>
       </div>
     </div>
   );

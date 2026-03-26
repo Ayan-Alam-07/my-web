@@ -143,6 +143,11 @@
   font-weight: 600;
   font-size: 17px;
   color: #6fb0ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.openBtn:hover {
+  transform: scale(1.1);
 }
 
 .rewardArrow {
