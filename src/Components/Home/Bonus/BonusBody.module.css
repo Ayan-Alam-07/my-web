@@ -1,133 +1,236 @@
 .bonusCont {
-  background-image: url(../../../assets/bonusBack.webp);
-  object-fit: cover;
-  color: #000;
+  background: linear-gradient(135deg, #232547, #1c1e35);
+  padding: 25px 28px;
+  margin: 0 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  font-family:
+    "outfit",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.bonusCont:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* TOP */
+.bonusinfoPointCont {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4.07vw 3vw;
-  margin: 6vw 0 0 0;
-  border: 2px solid #dcdcdc;
-  border-radius: 20px;
 }
-.bonusinfoPointCont {
-  display: flex;
+.adPara {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
 }
+.adText {
+  color: #3b82f6;
+}
+
 .bonusCoin {
-  font-size: 4.1vw !important;
-  margin: 0 0 0 2.5vw;
-  color: #ffd700;
-  -webkit-text-stroke: 0.65px #000;
-  font-weight: 900;
+  font-size: 22px;
+  font-weight: 700;
+  color: #facc15;
 }
-.bonusCount {
-  font-size: 4.5vw;
+
+.bonusCoin span {
+  color: #e5e7eb;
 }
-.bonusReqWatch {
-  font-size: 4.7vw;
-  font-size: "poppins";
-  color: #007bff;
-  font-weight: 600;
+
+/* PROGRESS */
+.progressWrap {
+  margin: 16px 0 28px;
 }
-.bonusinfoPointCont {
-  font-size: 3.8vw;
-  font-weight: 800;
-  font-family: "poppins";
-  letter-spacing: 0.2vw;
+
+.progressText {
+  font-size: 15px;
+  color: #c8cacf;
+  margin-bottom: 7px;
+  font-weight: 500;
 }
+
+.progressBar {
+  width: 100%;
+  height: 7px;
+  background: #374961;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #3b82f6; /* blue-500 */
+  transition: width 0.4s ease;
+}
+
+/* BOTTOM */
 .bonusAdCount {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.bonusAdCount button {
-  margin: 0 0 0 2vw;
-  padding: 2vw 2.27vw;
+
+.bonusCount {
+  margin: 0;
+  font-size: 18px;
+  color: #e5e7eb;
+}
+.completedBonus {
+  font-size: 20px;
+}
+
+.bonusReqWatch {
+  /* color: #9ca3af; */
+  color: #3b82f6;
+  font-weight: 700;
+  font-family: "nunito", sans-serif;
+}
+
+/* BUTTON */
+.claimBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 8px;
   border: none;
-  border-radius: 14px;
-  font-size: 4vw;
-  font-family: "outfit";
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.15vw;
-}
-.bonusAdCount button:hover {
-  background-color: #000;
-  color: #fff;
-  transform: scale(1.05);
+  transition: 0.25s;
+  letter-spacing: 0.1px;
 }
 
-@media (min-width: 575px) {
+/* LOCKED */
+.locked {
+  background: #293444;
+  color: #888f9e;
+}
+
+/* ACTIVE */
+.active {
+  background: #3b82f6; /* blue-500 */
+  color: white;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.active:hover {
+  transform: scale(1.03);
+}
+
+/* SHIMMER */
+.active::before {
+  content: "";
+  position: absolute;
+  left: -120%;
+  top: 0;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+}
+
+.active:hover::before {
+  left: 120%;
+  transition: 1s;
+}
+
+@media (min-width: 576px) {
   .bonusCont {
-    padding: 2.67vw 5vw;
-    margin: 3.9vw 2.2vw 0;
-    border: none;
-    border-radius: 20px;
-  }
-
-  .bonusCoin {
-    font-size: 3vw !important;
-    margin: 0 0 0 2.5vw;
-  }
-  .bonusCount {
-    font-size: 3.1vw;
-    font-weight: 700;
-  }
-  .bonusReqWatch {
-    font-size: 22px;
-    color: #007bff;
-    font-weight: 900;
+    padding: 42px 35px;
+    margin: 16px 0 0 0;
   }
   .bonusinfoPointCont {
-    font-size: 2.85vw;
-    font-weight: 800;
-    letter-spacing: 0.2vw;
+    margin: 0 0 20px 0;
+  }
+  .adPara {
+    font-size: 20px;
+  }
+  .bonusCoin {
+    font-size: 22px;
   }
 
-  .bonusAdCount button {
-    margin: 0 0 0 4vw;
-    padding: 2vw 2.25vw;
-    border: none;
-    background-color: #fff;
-    border-radius: 14px;
-    font-size: 2.64vw;
-    font-weight: 600;
-    letter-spacing: 0.12vw;
+  .bonusReqWatch {
+    font-size: 22px;
+  }
+  .completedBonus {
+    font-size: 26px;
+  }
+  .progressWrap {
+    margin: 16px 6px 30px;
+  }
+  .progressBar {
+    height: 7px;
+  }
+  .progressText {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .bonusCount {
+    font-size: 20px;
+  }
+  .claimBtn {
+    width: 60%;
+    padding: 10px 20px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 992px) {
   .bonusCont {
-    padding: 0.9vw 5vw;
-    margin: 2.37vw 8.37vw 0;
-    border: none;
-    border-radius: 13px;
+    padding: 30px 25px;
+    margin: 16px 0 0;
   }
-
+  .bonusinfoPointCont {
+    margin: 0 0 14px 0;
+  }
+  .adPara {
+    font-size: 18px;
+  }
   .bonusCoin {
-    font-size: 1.6vw !important;
-    margin: 0 0 0 2.5vw;
-  }
-  .bonusCount {
-    font-size: 1.6vw;
-    font-weight: 700;
+    font-size: 19px;
   }
   .bonusReqWatch {
     font-size: 20px;
-    color: #007bff;
-    font-weight: 900;
   }
-  .bonusinfoPointCont {
-    font-size: 1.4vw;
-    font-weight: 800;
-    letter-spacing: 0.2vw;
+  .completedBonus {
+    font-size: 22px;
   }
-
-  .bonusAdCount button {
-    margin: 0 0 0 3vw;
-    padding: 0.85vw 1.2vw;
-    border: none;
-    border-radius: 14px;
-    font-size: 1.25vw;
-    font-weight: 600;
-    letter-spacing: 0.1vw;
+  .progressWrap {
+    margin: 16px 0 24px;
+  }
+  .progressText {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .bonusCount {
+    font-size: 17px;
+  }
+  .claimBtn {
+    width: 55%;
+    padding: 8px 20px;
+    font-size: 15px;
   }
 }
