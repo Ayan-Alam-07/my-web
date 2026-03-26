@@ -21,6 +21,7 @@ import Referral from "./Components/Reffer/Reffer";
 import ReferralHistory from "./ReferralHistory/ReferralHistory";
 import WatchAd from "./Components/WatchAD/WatchAd";
 import DailyBonus from "./Components/DailyBonus/DailyBonus";
+import TapTokenExc from "./Components/TapNEarn/TapTokenExc";
 
 const App = () => {
   const { isLoading } = useList();
@@ -170,6 +171,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <WatchAd />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/tap-token"
+          element={
+            <ProtectedRoute>
+              <TapTokenExc />
             </ProtectedRoute>
           }
         ></Route>
