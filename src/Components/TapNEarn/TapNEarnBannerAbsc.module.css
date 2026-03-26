@@ -273,7 +273,7 @@
 
 @media (min-width: 992px) {
   .bannerCard {
-    padding: 30px 45px 25px;
+    padding: 30px 45px 16px;
   }
   .tapIcon {
     font-size: 46px;

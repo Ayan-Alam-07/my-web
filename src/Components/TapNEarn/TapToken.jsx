@@ -5,7 +5,7 @@ const TapToken = () => {
     <TapEarnBannerAbsc
       hedding={"Tap Token"}
       para={"Exchange your Tap Token into exclusive rewards"}
-      navigateTo={"/"}
+      navigateTo={"/tap-token"}
       val={false}
     />
   );
