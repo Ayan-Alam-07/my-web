@@ -3,12 +3,17 @@ import style from "./TapNEarnBannerAbsc.module.css";
 import { SiJsonwebtokens } from "react-icons/si";
 import { FaHandPointer, FaCoins, FaArrowRight } from "react-icons/fa";
 import { RxTokens } from "react-icons/rx";
+import { showWarning } from "../../utils/Toast";
 
 function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
   const navigate = useNavigate();
 
   const goToTapEarn = () => {
-    navigate(navigateTo);
+    if (!val) {
+      navigate(navigateTo);
+      return;
+    }
+    showWarning("Tap & Earn is Currently Development available very soon...");
   };
 
   return (
