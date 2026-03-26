@@ -95,16 +95,16 @@ const HomeEarn = () => {
             </div>
             <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
               <span className="text-danger fw-bold">*</span> Tap repeatedly to
-              earn instant VEs and rewards
+              earn instant VEs, Gift cards and rewards
             </p>
           </div>
         </div>
         <div className="row justify-content-evenly mt-2 mb-4 pb-3 px-2">
-          <div className="col-12 col-md-10 col-lg-4 p-0">
+          <div className="col-12 col-md-9 col-lg-4 p-0">
             <TapEarnBanner />
           </div>
 
-          <div className="col-12 col-md-10 col-lg-4 p-0">
+          <div className="col-12 col-md-9 col-lg-4 p-0 mt-4 pt-3 mt-lg-0 pt-lg-0">
             <TapToken />
           </div>
         </div>

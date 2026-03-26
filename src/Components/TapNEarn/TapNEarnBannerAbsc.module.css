@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #232547, #1c1e35);
-  padding: 22px 26px;
+  padding: 30px 30px 26px;
   border-radius: 18px;
   position: relative;
   overflow: hidden;
@@ -72,7 +72,6 @@
 }
 
 /* LEFT */
-
 .leftSection {
   display: flex;
   width: 100%;
@@ -82,11 +81,9 @@
 }
 
 .tapIcon {
-  font-size: 42px;
+  font-size: 38px;
   color: #3b82f6;
-
   filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
-
   animation: tapPulse 2.5s infinite;
 }
 
@@ -104,35 +101,32 @@
 
 .leftSection h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 23px;
   color: white;
   font-weight: 600;
 }
 
 .leftSection p {
-  margin: 4px 0 8px;
-  font-size: 14px;
+  margin: 4px 0 18px;
+  font-size: 15px;
   font-weight: 400;
   color: #94a3b8;
 }
 
 /* reward tag */
-
 .rewardTag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   position: relative;
-
   background: linear-gradient(120deg, #3b82f6, #60a5fa);
-  padding: 6px 12px;
+  padding: 10px 16px;
+  margin: 0 0 26px 0;
   border-radius: 6px;
   overflow: hidden;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-
   color: white;
-
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
@@ -147,6 +141,7 @@
   background-color: transparent;
   border: none;
   font-weight: 600;
+  font-size: 17px;
   color: #6fb0ff;
 }
 
@@ -246,30 +241,28 @@
 
 @media (min-width: 576px) {
   .bannerCard {
-    padding: 30px 45px;
+    padding: 38px 55px 30px;
   }
   .tapIcon {
-    font-size: 56px;
+    font-size: 60px;
   }
   .leftSection h3 {
-    margin: 0;
-    font-size: 22px;
+    margin: 10px 0 0 0;
+    font-size: 26px;
   }
   .leftSection p {
-    margin: 4px 0 8px;
-    font-size: 14px;
+    margin: 6px 0 16px;
+    font-size: 15px;
   }
   .rewardTag {
-    padding: 10px 12px;
+    padding: 12px 22px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    margin: 0 0 10px 0;
   }
   .openBtn {
     padding: 12px 18px;
-    font-size: 14px;
-  }
-  .coinParticles span {
-    bottom: -20px;
-    width: 10px;
-    height: 10px;
+    font-size: 20px;
   }
 }
 
@@ -296,10 +289,5 @@
   }
   .openBtn {
     font-size: 15px;
-  }
-  .coinParticles span {
-    bottom: -20px;
-    width: 10px;
-    height: 10px;
   }
 }

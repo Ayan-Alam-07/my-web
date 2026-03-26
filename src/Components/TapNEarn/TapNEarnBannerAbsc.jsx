@@ -13,7 +13,9 @@ function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
       navigate(navigateTo);
       return;
     }
-    showWarning("Tap & Earn is Currently Development available very soon...");
+    showWarning(
+      "Tap & Earn is Currently under maintainance and available very soon...",
+    );
   };
 
   return (
@@ -41,7 +43,7 @@ function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
           <p>{para}</p>
           <div className={style.rewardTag}>
             {val ? <FaCoins /> : <SiJsonwebtokens />}
-            <span>{val ? "Unlimited Rewards" : "Exchange Rewards"}</span>
+            <span>{val ? "Unlimited Rewards" : "Reward Center"}</span>
           </div>
           <div className="d-flex justify-content-center">
             <button className={style.openBtn}>
