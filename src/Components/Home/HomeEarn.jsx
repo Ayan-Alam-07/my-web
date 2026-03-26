@@ -104,7 +104,7 @@ const HomeEarn = () => {
             <TapEarnBanner />
           </div>
 
-          <div className="col-12 col-md-9 col-lg-4 p-0 mt-4 pt-3 mt-lg-0 pt-lg-0">
+          <div className="col-12 col-md-9 col-lg-4 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
             <TapToken />
           </div>
         </div>
