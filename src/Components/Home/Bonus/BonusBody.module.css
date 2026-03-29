@@ -121,6 +121,7 @@
 .locked {
   background: #293444;
   color: #888f9e;
+  cursor: not-allowed;
 }
 
 /* ACTIVE */

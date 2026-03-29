@@ -66,6 +66,10 @@ const BonusBody = () => {
     { id: 7, reqWatch: 50, bonusCoin: 400 },
   ];
 
+  const handleClaim = () => {
+    console.log("claimable");
+  };
+
   return (
     <div className="container-fluid mt-4 pt-1">
       <div className="container">
@@ -120,9 +124,11 @@ const BonusBody = () => {
                     </h4>
 
                     <button
+                      disabled={!isUnlocked}
                       className={`${style.claimBtn} ${
                         isUnlocked ? style.active : style.locked
                       }`}
+                      onClick={handleClaim}
                     >
                       <GiProfit />
                       {isUnlocked ? "Claim" : "Locked"}
