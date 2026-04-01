@@ -11,3 +11,7 @@ export const showError = (message) => {
 export const showWarning = (message) => {
   toast.warning(message);
 };
+
+export const showInfo = (message) => {
+  toast.info(message);
+};

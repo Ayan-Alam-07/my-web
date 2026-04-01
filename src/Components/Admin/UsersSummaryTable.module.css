@@ -1,0 +1,138 @@
+/* UsersSummaryTable.module.css */
+
+.tableWrapper {
+  background: #1c1c2b;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 35px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.subHeading {
+  color: #bdbdbd;
+  font-size: 14px;
+  margin: 0;
+}
+
+.totalUsersBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2d2d44;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.table thead {
+  background: #2a2a40;
+}
+
+.table th {
+  padding: 14px 16px;
+  text-align: left;
+  color: #d4d4d4;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #33334d;
+}
+
+.table td {
+  padding: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  border-bottom: 1px solid #2f2f46;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.referralBadge {
+  background: rgba(108, 99, 255, 0.15);
+  color: #8f88ff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.coinBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.gemBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 200, 255, 0.15);
+  color: #00c8ff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.adsBadge,
+.todayAdsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 87, 87, 0.15);
+  color: #ff5757;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.todayAdsBadge {
+  /* background: rgba(255, 87, 87, 0.15); */
+  /* color: #ff5757; */
+  /* background-color: #f28dfc; */
+  background-color: rgba(141, 252, 160, 0.15);
+  /* color: #eb0dff; */
+  color: #34ff34;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 30px;
+  color: #a0a0a0;
+  font-size: 15px;
+}

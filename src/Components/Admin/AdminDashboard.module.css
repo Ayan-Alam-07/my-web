@@ -1,0 +1,39 @@
+/* AdminDashboard.module.css */
+
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #111827;
+}
+
+.sidebarSection {
+  width: 20%;
+  min-width: 280px;
+  max-width: 320px;
+  background: #1a1f2e;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contentSection {
+  width: 80%;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebarSection {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .contentSection {
+    width: 100%;
+    padding: 20px;
+  }
+}

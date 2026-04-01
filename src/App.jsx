@@ -22,6 +22,8 @@ import ReferralHistory from "./ReferralHistory/ReferralHistory";
 import WatchAd from "./Components/WatchAD/WatchAd";
 import DailyBonus from "./Components/DailyBonus/DailyBonus";
 import TapTokenExc from "./Components/TapNEarn/TapTokenExc";
+import AdminRoute from "../src/Components/AdminRoute/AdminRoute";
+import AdminDashboard from "../src/Components/Admin/AdminDashboard";
 
 const App = () => {
   const { isLoading } = useList();
@@ -63,6 +65,17 @@ const App = () => {
             <PublicOnlyRoute>
               <ForgotPassword />
             </PublicOnlyRoute>
+          }
+        />
+
+        {/* ADMIN ROUTE */}
+
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
           }
         />
 

@@ -1,0 +1,169 @@
+/* WithdrawalsTable.module.css */
+
+.tableWrapper {
+  background: #1c1c2b;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 35px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.subHeading {
+  color: #bdbdbd;
+  font-size: 14px;
+  margin: 0;
+}
+
+.requestBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2d2d44;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 950px;
+}
+
+.table thead {
+  background: #2a2a40;
+}
+
+.table th {
+  padding: 14px 16px;
+  text-align: left;
+  color: #d4d4d4;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #33334d;
+}
+
+.table td {
+  padding: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  border-bottom: 1px solid #2f2f46;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.amountBadge {
+  background: rgba(40, 167, 69, 0.15);
+  color: #2ecc71;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.modeBadge {
+  background: rgba(0, 123, 255, 0.15);
+  color: #4aa3ff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.paid {
+  background: rgba(40, 167, 69, 0.15);
+  color: #2ecc71;
+}
+
+.rejected {
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff5a6b;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.paidBtn,
+.rejectBtn {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.paidBtn {
+  background: #2ecc71;
+  color: #ffffff;
+}
+
+.paidBtn:hover {
+  background: #27ae60;
+}
+
+.rejectBtn {
+  background: #ff5a6b;
+  color: #ffffff;
+}
+
+.rejectBtn:hover {
+  background: #e04857;
+}
+
+.paidBtn:disabled,
+.rejectBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 30px;
+  color: #a0a0a0;
+  font-size: 15px;
+}

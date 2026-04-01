@@ -102,15 +102,16 @@ export const ListProvider = ({ children }) => {
     return () => clearInterval(interval);
   }, [user?.token]);
 
-  //
   const login = (data) => {
     localStorage.removeItem("referralCode");
     localStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("token", JSON.stringify(data.token));
     setUser(data);
   };
 
   const logout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setUser(null);
     navigate("/login");
     showWarning("Logged out contact customer service if you facing any issue");

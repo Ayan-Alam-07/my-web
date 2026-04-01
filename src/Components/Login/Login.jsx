@@ -24,6 +24,7 @@ export default function Login() {
         { email, password },
       );
       login(res.data);
+
       setIsLoading(false);
       showSuccess("Login successful");
       navigate("/Home");
