@@ -15,7 +15,6 @@ const CommonNavArr = ({ id, name, navigation }) => {
 
   const {
     list,
-    currentList,
     setCurrentList,
     arrowState,
     setArrowState,
