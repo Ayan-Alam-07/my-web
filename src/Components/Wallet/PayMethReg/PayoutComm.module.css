@@ -2,7 +2,7 @@
   margin: 0;
   font-size: 3.6vw;
   font-family: "poppins";
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.3px;
   font-weight: 400;
 }
 .lowDevices {
@@ -114,7 +114,10 @@
 }
 .activeName {
   color: #ffd700;
-  text-shadow: 0 0 2px #ffd700, 0 0 2px #ffc107, 0 0 1px #ff9800;
+  text-shadow:
+    0 0 2px #ffd700,
+    0 0 2px #ffc107,
+    0 0 1px #ff9800;
 }
 
 .infoBox {
@@ -268,7 +271,6 @@
   }
   .tabsPara {
     font-size: 1.29vw;
-    letter-spacing: 0.1vw;
   }
   .selectPymtMode {
     font-size: 1.25vw;
