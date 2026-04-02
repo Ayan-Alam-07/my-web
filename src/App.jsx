@@ -24,6 +24,7 @@ import DailyBonus from "./Components/DailyBonus/DailyBonus";
 import TapTokenExc from "./Components/TapNEarn/TapTokenExc";
 import AdminRoute from "../src/Components/AdminRoute/AdminRoute";
 import AdminDashboard from "../src/Components/Admin/AdminDashboard";
+import Transactions from "./Components/Transaction/Transactions";
 
 const App = () => {
   const { isLoading } = useList();
@@ -103,6 +104,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Wallet />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/redeem-history"
+          element={
+            <ProtectedRoute>
+              <Transactions />
             </ProtectedRoute>
           }
         ></Route>
