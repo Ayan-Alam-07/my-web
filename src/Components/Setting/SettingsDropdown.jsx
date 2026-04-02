@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FiSettings } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import styles from "./SettingsDropdown.module.css";
@@ -11,7 +11,7 @@ export default function SettingsDropdown() {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  const { user, logout } = useList(); // getting user from context
+  const { user, logout, setIsRedeemHistory } = useList(); // getting user from context
 
   const email = user?.email || "";
   const extractedName = email ? email.substring(0, 6) : "User";
@@ -52,15 +52,19 @@ export default function SettingsDropdown() {
     },
     {
       id: 3,
-      title: "Invite History",
-      click: () => navigate("/invite-history"),
+      title: "Wallet",
+      click: () => navigate("/wallet"),
     },
     {
       id: 4,
-      title: "Transactions",
-      click: () => navigate("/wallet"),
+      title: "Redeem History",
+      click: () => {
+        setIsRedeemHistory(true);
+        navigate("/redeem-history");
+      },
     },
   ];
+  const menuLength = dropDownMenu.length;
 
   return (
     <div className={styles.settingsContainer} ref={dropdownRef}>
@@ -108,6 +112,9 @@ export default function SettingsDropdown() {
           <div
             key={menu.id}
             className={styles.dropdownItem}
+            style={{
+              borderBottom: menu.id !== menuLength && "2px solid #1f2238",
+            }}
             onClick={menu.click}
           >
             {menu.title}
