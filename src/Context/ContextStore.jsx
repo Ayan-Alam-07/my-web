@@ -27,12 +27,14 @@ export const ListProvider = ({ children }) => {
     { id: 13, name: "Watch Ads" },
     { id: 14, name: "Daily Bonus" },
     { id: 15, name: "Tap Token" },
+    { id: 16, name: "Redeem History" },
   ]);
 
   const [currentList, setCurrentList] = useState(list[0]);
   const [arrowState, setArrowState] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isInviteToHistory, setIsInviteToHistory] = useState(false);
+  const [isRedeemHistory, setIsRedeemHistory] = useState(false);
 
   // const [coins, setCoins] = useState(user?.coins || 0);
 
@@ -172,6 +174,8 @@ export const ListProvider = ({ children }) => {
         setIsLoading,
         isInviteToHistory,
         setIsInviteToHistory,
+        isRedeemHistory,
+        setIsRedeemHistory,
 
         // 🔐 Auth values
         user,
