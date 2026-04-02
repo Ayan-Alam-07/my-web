@@ -7,10 +7,11 @@ import { useList } from "../../Context/ContextStore";
 import RefreshCoins from "../CommonComponents/RefreshButton";
 
 const HomeHero = () => {
-  const { user, isLoading } = useList();
+  const { user, isLoading, setIsRedeemHistory } = useList();
 
   const homeEarnToWalletUi = useNavigate();
   const handleWalletClick = () => {
+    setIsRedeemHistory(false);
     homeEarnToWalletUi("/Wallet");
   };
 
@@ -38,7 +39,7 @@ const HomeHero = () => {
           <div className={style.seperator}></div>
           <div className="col-12 px-2 px-md-3 mt-1">
             <div
-              className={`d-flex align-items-center justify-content-between ${style.availcont}`}
+              className={`d-flex flex-column flex-md-row align-items-md-center justify-content-between ${style.availcont}`}
             >
               <div>
                 <span className={style.availCoins}>
@@ -60,7 +61,7 @@ const HomeHero = () => {
                   className={style.homeWallet}
                   onClick={handleWalletClick}
                 >
-                  <GiWallet style={{ fontSize: "25px", marginRight: "5px" }} />
+                  <GiWallet style={{ fontSize: "25px", marginRight: "7px" }} />
                   My Wallet
                 </button>
               </div>

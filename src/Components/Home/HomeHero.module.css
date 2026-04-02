@@ -29,19 +29,42 @@
 }
 
 .homeWallet {
-  margin-top: 30px;
-  padding: 3.5vw 3.94vw;
-  border-radius: 25px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 34px 0 12px 0;
+  padding: 3.5vw 4vw;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 160, 255, 0.12);
   font-size: 4.1vw;
-  font-family: "outfit";
-  font-weight: 800;
-  letter-spacing: 0.15vw;
-  color: #161827;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12vw;
+  color: #eaf0ff;
+  background: linear-gradient(145deg, #3d5afe, #5c7cff);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
 }
+
+.homeWallet:hover {
+  background: linear-gradient(145deg, #6980ff, #5c7cff);
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.55),
+    0 0 12px rgba(80, 130, 255, 0.2);
+}
+
 .homeWallet:active {
-  color: #00bfa6;
-  background-color: #000;
+  transform: scale(0.97);
+  color: #ffffff;
+  /* background: linear-gradient(145deg, #3d5afe, #5c7cff); */
+  background: linear-gradient(145deg, #2b3a55, #243048);
+  box-shadow:
+    0 4px 14px rgba(70, 110, 255, 0.5),
+    0 0 14px rgba(90, 130, 255, 0.35);
 }
 
 @media (min-width: 576px) {
@@ -56,8 +79,9 @@
     font-size: 28px;
   }
   .homeWallet {
-    padding: 13px 18px;
-    letter-spacing: 1.2px;
+    margin: 30px 0 0 0;
+    padding: 13px 8.7vw;
+    letter-spacing: 0.7px;
     font-size: 18px;
   }
 }
@@ -67,11 +91,8 @@
     margin-left: 12%;
   }
   .homeWallet {
+    padding: 14px 6.7vw;
     margin-top: 22px;
-    margin-right: 9vw;
-  }
-  .homeWallet:hover {
-    color: bisque;
-    background-color: #000;
+    /* margin-right: 9vw; */
   }
 }
