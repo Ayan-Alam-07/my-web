@@ -1,0 +1,124 @@
+.container {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+.card {
+  width: 28%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #111827, #1f2937);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 50%;
+  filter: blur(18px);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.3);
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.imageWrapper {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.amount {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .amount {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

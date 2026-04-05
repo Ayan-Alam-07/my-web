@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { showError, showSuccess, showWarning } from "../utils/Toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { getMyWithdrawals } from "../services/walletService";
 
 const ListContext = createContext();
 
@@ -30,15 +31,40 @@ export const ListProvider = ({ children }) => {
     { id: 16, name: "Redeem History" },
   ]);
 
+  const [withdrawals, setWithdrawals] = useState([]);
   const [currentList, setCurrentList] = useState(list[0]);
   const [arrowState, setArrowState] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isInviteToHistory, setIsInviteToHistory] = useState(false);
-  const [isRedeemHistory, setIsRedeemHistory] = useState(false);
+  const [isRedeemHistory, setIsRedeemHistory] = useState(true);
 
   // const [coins, setCoins] = useState(user?.coins || 0);
 
   const navigate = useNavigate();
+
+  // =========================
+  // 🔐 fetching Withdrawals
+  // =========================
+
+  const fetchWithdrawals = async () => {
+    try {
+      const response = await getMyWithdrawals();
+
+      setWithdrawals(
+        Array.isArray(response)
+          ? response
+          : Array.isArray(response?.withdrawals)
+            ? response.withdrawals
+            : [],
+      );
+    } catch (error) {
+      console.error("Fetch Withdrawals Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchWithdrawals();
+  }, []);
 
   // =========================
   // 🔐 AUTH STATE
@@ -176,6 +202,9 @@ export const ListProvider = ({ children }) => {
         setIsInviteToHistory,
         isRedeemHistory,
         setIsRedeemHistory,
+
+        withdrawals,
+        fetchWithdrawals,
 
         // 🔐 Auth values
         user,

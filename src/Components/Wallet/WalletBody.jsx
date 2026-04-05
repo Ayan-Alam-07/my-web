@@ -8,7 +8,7 @@ import { useList } from "../../Context/ContextStore";
 import RefreshCoins from "../../Components/CommonComponents/RefreshButton";
 
 const WalletBody = () => {
-  const { user } = useList();
+  const { user, setIsRedeemHistory } = useList();
   const [activeTab, setActiveTab] = useState("payment");
   const [showTransaction, setShowTransaction] = useState(false);
 
@@ -76,6 +76,7 @@ const WalletBody = () => {
                 className={style.walletTabs}
                 onClick={() => {
                   setShowTransaction(true);
+                  setIsRedeemHistory(false);
                   setActiveTab("transactions");
                 }}
                 style={{

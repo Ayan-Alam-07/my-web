@@ -1,0 +1,171 @@
+.transactionsWrapper {
+  background: #1c1c2b;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  width: 100%;
+  overflow: hidden;
+}
+
+.transactionsWrapper h2 {
+  color: #ffffff;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #2a2a40;
+}
+
+.table th {
+  padding: 10px 12px;
+  text-align: left;
+  color: #d4d4d4;
+  font-size: 12px;
+  border-bottom: 1px solid #33334d;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 10px 12px;
+  color: #ffffff;
+  border-bottom: 1px solid #2f2f46;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+  min-width: 60px;
+}
+
+.pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.paid {
+  background: rgba(40, 167, 69, 0.15);
+  color: #2ecc71;
+}
+
+.rejected {
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff5a6b;
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  color: #9ca3af;
+  padding: 45px 22px;
+  font-size: 13px;
+}
+
+.historyPara {
+  margin: 0;
+  font-size: 4vw;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+@media (min-width: 576px) {
+  .transactionsWrapper {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .transactionsWrapper h2 {
+    font-size: 20px;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .status {
+    font-size: 11px;
+    padding: 5px 10px;
+    min-width: 70px;
+  }
+
+  .historyPara {
+    font-size: 2.3vw;
+  }
+  .emptyState {
+    padding: 40px 22px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .transactionsWrapper {
+    padding: 22px;
+  }
+
+  .transactionsWrapper h2 {
+    font-size: 22px;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+
+  .table th,
+  .table td {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+  .transactionsWrapper {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .transactionsWrapper h2 {
+    font-size: 24px;
+  }
+
+  .historyPara {
+    font-size: 1.29vw;
+  }
+  .emptyState {
+    font-size: 15px;
+  }
+}
