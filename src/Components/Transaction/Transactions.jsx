@@ -50,9 +50,13 @@ const Transactions = ({ showTransaction }) => {
                 {withdrawals.length > 0 ? (
                   withdrawals.map((item) => (
                     <tr key={item._id}>
-                      <td>₹{item.payoutAmount || 0}</td>
+                      <td className={style.payAmt}>
+                        ₹{item.payoutAmount || 0}
+                      </td>
                       <td>{item.payoutType || "N/A"}</td>
-                      <td>{item.deductedCoins || 0}</td>
+                      <td className={style.payAmt}>
+                        {item.deductedCoins || 0}
+                      </td>
                       <td>
                         <span
                           className={`${style.status} ${style[item.status]}`}
