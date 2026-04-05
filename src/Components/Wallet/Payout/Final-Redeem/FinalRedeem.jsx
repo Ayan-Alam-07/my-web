@@ -297,7 +297,6 @@ const FinalRedeem = ({
         response?.message || "Withdrawal request submitted successfully",
       );
 
-      // setIsRedeemHistory(true);
       navigate("/redeem-history");
 
       const bootstrap =
@@ -317,6 +316,7 @@ const FinalRedeem = ({
           "Failed to submit withdrawal request",
       );
     } finally {
+      setIsRedeemHistory(true);
       setLoading(false);
     }
   };

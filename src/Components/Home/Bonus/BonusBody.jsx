@@ -1,39 +1,90 @@
+// src/Components/Bonus/BonusBody.jsx
+
+import { useEffect, useState } from "react";
 import style from "./BonusBody.module.css";
 import { GiProfit } from "react-icons/gi";
+import {
+  claimBonusReward,
+  getBonusRewards,
+} from "../../../services/bounsService";
+import { showError, showSuccess } from "../../../utils/Toast";
+import { useList } from "../../../Context/ContextStore";
+import { TiTick } from "react-icons/ti";
 
 const BonusBody = () => {
-  const doneWatch = 5;
+  const { fetchCoins, setIsLoading } = useList();
 
-  const watchBonus = [
-    { id: 1, reqWatch: 1, bonusCoin: 10 },
-    { id: 2, reqWatch: 5, bonusCoin: 35 },
-    { id: 3, reqWatch: 10, bonusCoin: 75 },
-    { id: 4, reqWatch: 18, bonusCoin: 100 },
-    { id: 5, reqWatch: 25, bonusCoin: 160 },
-    { id: 6, reqWatch: 30, bonusCoin: 220 },
-    { id: 7, reqWatch: 50, bonusCoin: 400 },
-  ];
+  const [doneWatch, setDoneWatch] = useState(0);
+  const [watchBonus, setWatchBonus] = useState([]);
+  const [loadingId, setLoadingId] = useState("");
 
-  const handleClaim = () => {
-    console.log("claimable");
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchBonusRewards = async () => {
+      try {
+        const data = await getBonusRewards();
+
+        setDoneWatch(data?.todayAdsWatched || 0);
+        setWatchBonus(data?.rewards || []);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBonusRewards();
+  }, []);
+
+  const handleClaim = async (bonus) => {
+    setIsLoading(true);
+    try {
+      if (doneWatch < bonus.reqWatch) {
+        return showError(
+          `Watch at least ${bonus.reqWatch} ads to claim this reward`,
+        );
+      }
+
+      setLoadingId(bonus._id);
+
+      const response = await claimBonusReward(bonus._id);
+
+      fetchCoins(false);
+      showSuccess(response?.message || "Bonus claimed successfully");
+
+      setWatchBonus((prev) =>
+        prev.map((item) =>
+          item._id === bonus._id ? { ...item, claimed: true } : item,
+        ),
+      );
+    } catch (error) {
+      console.error(error);
+
+      showError(
+        error?.response?.data?.message || "Failed to claim bonus reward",
+      );
+    } finally {
+      setLoadingId("");
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className="container-fluid mt-4 pt-1">
       <div className="container">
-        <div className="row mb-4 ">
+        <div className="row mb-4">
           {watchBonus.map((bonus) => {
             const completed = Math.min(doneWatch, bonus.reqWatch);
             const progress = (completed / bonus.reqWatch) * 100;
             const isUnlocked = doneWatch >= bonus.reqWatch;
+            const isClaimed = bonus.claimed;
 
             return (
               <div
-                key={bonus.id}
+                key={bonus._id}
                 className="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-3"
               >
                 <div className={style.bonusCont}>
-                  {/* TOP */}
                   <div className={style.bonusinfoPointCont}>
                     <p className={style.adPara}>
                       <span className={style.adText}>Ad</span> Bonus
@@ -44,7 +95,6 @@ const BonusBody = () => {
                     </span>
                   </div>
 
-                  {/* PROGRESS */}
                   <div className={style.progressWrap}>
                     <div className={style.progressText}>
                       {Math.round(progress)}%
@@ -58,13 +108,9 @@ const BonusBody = () => {
                     </div>
                   </div>
 
-                  {/* ACTION */}
                   <div className={style.bonusAdCount}>
                     <h4 className={style.bonusCount}>
-                      {/* {doneWatch} /{" "} */}
-                      <span className={style.completedBonus}>
-                        {completed}
-                      </span>{" "}
+                      <span className={style.completedBonus}>{completed}</span>{" "}
                       /{" "}
                       <span className={style.bonusReqWatch}>
                         {bonus.reqWatch}
@@ -72,14 +118,21 @@ const BonusBody = () => {
                     </h4>
 
                     <button
-                      disabled={!isUnlocked}
                       className={`${style.claimBtn} ${
-                        isUnlocked ? style.active : style.locked
-                      }`}
-                      onClick={handleClaim}
+                        isUnlocked && !isClaimed ? style.active : ""
+                      } ${!isUnlocked ? style.locked : ""} ${isClaimed ? style.bonusClaimed : ""}`}
+                      onClick={() => handleClaim(bonus)}
+                      disabled={loadingId === bonus._id || isClaimed}
                     >
-                      <GiProfit />
-                      {isUnlocked ? "Claim" : "Locked"}
+                      {isClaimed ? <TiTick size={18} /> : <GiProfit />}
+
+                      {isClaimed
+                        ? "Claimed"
+                        : loadingId === bonus._id
+                          ? "Claiming..."
+                          : isUnlocked
+                            ? "Claim"
+                            : "Locked"}
                     </button>
                   </div>
                 </div>
