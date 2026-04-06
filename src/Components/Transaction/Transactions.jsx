@@ -25,6 +25,7 @@ const Transactions = () => {
   } = useList();
   const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("All");
+  // const withdrawals = [];
 
   useEffect(() => {
     setIsLoading(true);
@@ -71,9 +72,7 @@ const Transactions = () => {
     <div className={`mb-5 ${isRedeemHistory ? "container-fluid px-0" : ""}`}>
       {isRedeemHistory && <CommonNavArr id={16} navigation={"/Home"} />}
 
-      <div
-        className={`${isRedeemHistory ? "container px-3 mt-4 mt-md-5 " : ""}`}
-      >
+      <div className={`${isRedeemHistory ? "container px-3 mt-5" : ""}`}>
         {/* {!isRedeemHistory && showTransaction && (
           <div className="mt-4 pt-3 pt-lg-0 mt-lg-0">
             <p className={style.historyPara}>Transactions History</p>
@@ -185,7 +184,9 @@ const Transactions = () => {
               ))}
             </div>
           ) : (
-            <div className={style.emptyContainer}>
+            <div
+              className={`${isRedeemHistory ? "pt-5" : ""} ${style.emptyContainer}`}
+            >
               <div className={style.emptyCard}>
                 <FaWallet className={style.emptyIcon} />
                 <h3>No Withdrawals Found</h3>
