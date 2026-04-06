@@ -20,6 +20,8 @@ const CommonNavArr = ({ id, name, navigation }) => {
     setArrowState,
     isInviteToHistory,
     setIsInviteToHistory,
+    isWalletToHistory,
+    setIsWalletToHistory,
   } = useList();
 
   // const { list } = useList();
@@ -56,6 +58,9 @@ const CommonNavArr = ({ id, name, navigation }) => {
                         } else if (id === 12 && isInviteToHistory) {
                           navigate("/referral");
                           setIsInviteToHistory(false);
+                        } else if (id === 16 && isWalletToHistory) {
+                          navigate("/wallet");
+                          setIsWalletToHistory(false);
                         } else {
                           handleArrowClick();
                         }

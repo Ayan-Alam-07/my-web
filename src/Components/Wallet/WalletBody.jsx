@@ -10,7 +10,7 @@ import RefreshCoins from "../../Components/CommonComponents/RefreshButton";
 const WalletBody = () => {
   const { user, setIsRedeemHistory } = useList();
   const [activeTab, setActiveTab] = useState("payment");
-  const [showTransaction, setShowTransaction] = useState(false);
+  // const [showTransaction, setShowTransaction] = useState(false);
 
   return (
     <div className="container-fluid">
@@ -75,7 +75,7 @@ const WalletBody = () => {
               <p
                 className={style.walletTabs}
                 onClick={() => {
-                  setShowTransaction(true);
+                  // setShowTransaction(true);
                   setIsRedeemHistory(false);
                   setActiveTab("transactions");
                 }}
@@ -89,7 +89,7 @@ const WalletBody = () => {
             </div>
             {activeTab === "payment" && <PaymentMethod />}
             {activeTab === "transactions" && (
-              <Transactions showTransaction={showTransaction} />
+              <Transactions /> //showTransaction={showTransaction}
             )}
           </div>
         </div>

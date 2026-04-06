@@ -37,6 +37,7 @@ export const ListProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isInviteToHistory, setIsInviteToHistory] = useState(false);
   const [isRedeemHistory, setIsRedeemHistory] = useState(true);
+  const [isWalletToHistory, setIsWalletToHistory] = useState(false);
 
   // const [coins, setCoins] = useState(user?.coins || 0);
 
@@ -161,11 +162,9 @@ export const ListProvider = ({ children }) => {
       try {
         const [response] = await Promise.all([
           fetch("https://ipinfo.io/json?token=8ba1d0c5238794"),
-          new Promise((resolve) => setTimeout(resolve, 1900)), // 2-second minimum loader
+          new Promise((resolve) => setTimeout(resolve, 1500)), // 1.5-second minimum loader
         ]);
         const data = await response.json();
-
-        // FIXME: 8ba1d0c5238794
 
         setLocationData({
           loading: false,
@@ -202,6 +201,8 @@ export const ListProvider = ({ children }) => {
         setIsInviteToHistory,
         isRedeemHistory,
         setIsRedeemHistory,
+        isWalletToHistory,
+        setIsWalletToHistory,
 
         withdrawals,
         fetchWithdrawals,
