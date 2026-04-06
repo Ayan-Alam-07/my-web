@@ -189,7 +189,7 @@ const Transactions = () => {
               <div className={style.emptyCard}>
                 <FaWallet className={style.emptyIcon} />
                 <h3>No Withdrawals Found</h3>
-                <p>Your filtered withdrawal history will appear here.</p>
+                <p>Your withdrawal history will appear here.</p>
               </div>
             </div>
           )}
