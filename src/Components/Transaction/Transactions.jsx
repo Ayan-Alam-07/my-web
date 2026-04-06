@@ -21,9 +21,8 @@ const Transactions = () => {
     setIsRedeemHistory,
     setIsWalletToHistory,
     setIsLoading,
-    // withdrawals,
+    withdrawals,
   } = useList();
-  const withdrawals = [];
   const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("All");
 
