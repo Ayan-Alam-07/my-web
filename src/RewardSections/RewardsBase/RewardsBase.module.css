@@ -1,0 +1,373 @@
+/* PreviewDailyCheckIn.module.css */
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  height: 300px;
+  background: linear-gradient(145deg, #1b1e31, #242842);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* dailycheck-in */
+.dailyCheckCard:hover {
+  border-color: rgba(124, 92, 255, 0.35);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.4),
+    0 10px 30px rgba(124, 92, 255, 0.15);
+}
+
+/* spinWheel */
+.spinWheelCard:hover {
+  border-color: rgba(255, 110, 169, 0.3);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.4),
+    0 10px 24px rgba(255, 110, 169, 0.16);
+}
+
+/* dailyMission */
+.dailyMissionCard:hover {
+  border-color: rgba(77, 168, 255, 0.28);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(77, 168, 255, 0.14);
+}
+
+/* achievement */
+.achievementCard:hover {
+  border-color: rgba(247, 184, 75, 0.28);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(247, 184, 75, 0.14);
+}
+
+/* levelXP */
+.levelXPCard:hover {
+  border-color: rgba(124, 92, 255, 0.28);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(124, 92, 255, 0.16);
+}
+
+.bgGlow {
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+}
+
+/* dailyCheck-in */
+.dailyCheckGlow {
+  background: radial-gradient(
+    circle,
+    rgba(124, 92, 255, 0.22),
+    transparent 70%
+  );
+}
+
+/* spinWheel */
+.spinWheelGlow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 110, 169, 0.18),
+    transparent 70%
+  );
+}
+
+/* dailyMission */
+.dailyMissionGlow {
+  background: radial-gradient(
+    circle,
+    rgba(77, 168, 255, 0.14),
+    transparent 70%
+  );
+}
+
+/* achievement */
+.achievementGlow {
+  background: radial-gradient(
+    circle,
+    rgba(247, 184, 75, 0.15),
+    transparent 70%
+  );
+}
+
+/* LevelXP */
+.levelXPGlow {
+  background: radial-gradient(circle, rgba(77, 255, 101, 0.1), transparent 65%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.iconBox {
+  width: 54px;
+  height: 54px;
+  min-width: 58px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* dailyCheck-in */
+.dailyCheckIconBox {
+  background: linear-gradient(135deg, #7c5cff, #9d7dff);
+  box-shadow: 0 12px 25px rgba(124, 92, 255, 0.3);
+}
+
+/* spinWheel */
+.spinWheelIconBox {
+  background: linear-gradient(135deg, #ff6ea9, #7c5cff);
+  box-shadow: 0 10px 20px rgba(255, 110, 169, 0.2);
+}
+
+/* dailyMission */
+.dailyMissionIconBox {
+  background: linear-gradient(135deg, #4da8ff, #7c5cff);
+  box-shadow: 0 12px 25px rgba(92, 203, 255, 0.3);
+}
+
+/* achievement */
+.achievementIconBox {
+  background: linear-gradient(135deg, #f7b84b, #ff8c42);
+  box-shadow: 0 10px 20px rgba(247, 184, 75, 0.2);
+}
+
+/* levelXP [levelXP has the RankLevel so this will comes from the level component] */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7c5cff, #5f8bff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(124, 92, 255, 0.2);
+}
+
+.headingContent {
+  flex: 1;
+}
+
+.headingContent h3 {
+  color: #f5f7fb;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* dailyCheck-in */
+.dailyCheckBadge {
+  background: rgba(124, 92, 255, 0.12);
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  color: #b9a7ff;
+}
+
+/* spinWheel */
+.spinWheelBadge {
+  background: rgba(255, 110, 169, 0.12);
+  border: 1px solid rgba(255, 110, 169, 0.15);
+  color: #ff9dc5;
+}
+
+/* dailyMission */
+.dailyMissionBadge {
+  background: rgba(77, 168, 255, 0.12);
+  border: 1px solid rgba(77, 168, 255, 0.18);
+  color: #7cc2ff;
+}
+
+/* achievement */
+.achievementBadge {
+  background: rgba(247, 184, 75, 0.12);
+  border: 1px solid rgba(247, 184, 75, 0.18);
+  color: #f7b84b;
+}
+
+/* levelXP */
+.levelXPBadge {
+  background: rgba(53, 208, 127, 0.12);
+  border: 1px solid rgba(53, 208, 127, 0.18);
+  color: #35d07f;
+}
+
+.actionBtn {
+  height: 50px;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.actionBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* dailyCheck-in */
+.dailyCheckBtn {
+  background: linear-gradient(135deg, #7c5cff, #5f8bff);
+}
+.dailyCheckBtn:hover {
+  box-shadow: 0 12px 24px rgba(124, 92, 255, 0.3);
+}
+
+/* spinWheel */
+.spinWheelBtn {
+  background: linear-gradient(135deg, #ff6ea9, #7c5cff);
+}
+.spinWheelBtn:hover {
+  box-shadow: 0 10px 20px rgba(255, 110, 169, 0.25);
+}
+
+/* dailyMission */
+.dailyMissionBtn {
+  background: linear-gradient(135deg, #4da8ff, #7c5cff);
+}
+.dailyMissionBtn:hover {
+  box-shadow: 0 10px 20px rgba(77, 168, 255, 0.22);
+}
+
+/* achievement */
+.achievementBtn {
+  background: linear-gradient(135deg, #f7b84b, #ff8c42);
+}
+.achievementBtn:hover {
+  box-shadow: 0 10px 20px rgba(247, 184, 75, 0.2);
+}
+
+/* levelXP */
+.levelXPBtn {
+  background: linear-gradient(135deg, #7c5cff, #5f8bff);
+}
+.levelXPBtn:hover {
+  box-shadow: 0 10px 20px rgba(124, 92, 255, 0.22);
+}
+
+@media (min-width: 576px) {
+  .card {
+    /* min-width: 400px; */
+    max-width: 500px;
+    height: 330px;
+    padding: 24px 22px;
+  }
+
+  .iconBox {
+    width: 54px;
+    height: 54px;
+    min-width: 56px;
+  }
+
+  .levelBadge {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .headingContent h3 {
+    font-size: 20px;
+    margin: 0 0 6px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .actionBtn {
+    height: 60px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    min-width: 420px;
+    max-width: 420px;
+    height: 300px;
+    padding: 18px 20px;
+  }
+
+  .iconBox {
+    width: 54px;
+    height: 54px;
+    min-width: 56px;
+  }
+
+  .levelBadge {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .headingContent h3 {
+    font-size: 20px;
+    margin: 0 0 6px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .actionBtn {
+    height: 52px;
+    font-size: 16px;
+  }
+}

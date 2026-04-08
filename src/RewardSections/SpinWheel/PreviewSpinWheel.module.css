@@ -1,0 +1,103 @@
+/* PreviewSpinWheel.module.css */
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.wheelWrapper {
+  position: relative;
+  width: 95px;
+  height: 95px;
+}
+
+.pointer {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 14px solid #f7b84b;
+  z-index: 3;
+}
+
+.wheel {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.06);
+  background: conic-gradient(
+    #ff6ea9 0deg 72deg,
+    #7c5cff 72deg 144deg,
+    #4da8ff 144deg 216deg,
+    #35d07f 216deg 288deg,
+    #f7b84b 288deg 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinWheel 4s linear infinite;
+  position: relative;
+}
+
+.centerCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #161827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Add this animation */
+@keyframes spinWheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rewardStack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 11px 0;
+}
+
+.rewardChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #f3f4f6;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.rewardChip svg {
+  color: #f7b84b;
+}

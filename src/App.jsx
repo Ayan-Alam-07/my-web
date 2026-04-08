@@ -25,6 +25,7 @@ import TapTokenExc from "./Components/TapNEarn/TapTokenExc";
 import AdminRoute from "../src/Components/AdminRoute/AdminRoute";
 import AdminDashboard from "../src/Components/Admin/AdminDashboard";
 import Transactions from "./Components/Transaction/Transactions";
+import DailyCheckInCard from "./RewardSections/DailyCheckIn/DailyCheckInCard";
 
 const App = () => {
   const { isLoading } = useList();
@@ -203,6 +204,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <TapTokenExc />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/daily-streak"
+          element={
+            <ProtectedRoute>
+              <DailyCheckInCard />
             </ProtectedRoute>
           }
         ></Route>

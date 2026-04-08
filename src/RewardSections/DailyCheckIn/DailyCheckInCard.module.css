@@ -1,0 +1,187 @@
+.card {
+  width: 100%;
+  min-width: 320px;
+  max-width: 420px;
+  background: linear-gradient(145deg, #1d2033, #232742);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 92, 255, 0.35);
+  box-shadow: 0 20px 40px rgba(124, 92, 255, 0.2);
+}
+
+.topGlow {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 92, 255, 0.35),
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.iconBox {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c5cff, #ff6ea9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 25px rgba(124, 92, 255, 0.35);
+}
+
+.header h2 {
+  font-size: 20px;
+  color: #f3f4f6;
+  margin: 0;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+.streakInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.streakLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cfd3dc;
+  font-size: 14px;
+}
+
+.streakCount {
+  background: rgba(53, 208, 127, 0.15);
+  color: #35d07f;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.daysContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dayCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.dayIcon {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7b84b;
+}
+
+.dayText {
+  display: block;
+  color: #f3f4f6;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.dayCard small {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.activeDay {
+  border-color: rgba(53, 208, 127, 0.45);
+  background: rgba(53, 208, 127, 0.08);
+}
+
+.activeDay .dayIcon {
+  background: rgba(53, 208, 127, 0.18);
+  color: #35d07f;
+}
+
+.specialDay {
+  border-color: rgba(247, 184, 75, 0.35);
+  background: rgba(247, 184, 75, 0.08);
+}
+
+.specialDay .dayIcon {
+  background: rgba(247, 184, 75, 0.15);
+  color: #f7b84b;
+}
+
+.claimBtn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #7c5cff, #4da8ff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.claimBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(124, 92, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  .daysContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+}

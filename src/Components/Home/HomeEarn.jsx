@@ -17,6 +17,7 @@ import WatchAdBanner from "../WatchAD/WatchAdBanner";
 import DailyBonusBanner from "../DailyBonus/DailyBonusBanner";
 import TapEarnBanner from "../TapNEarn/TapNEarnBanner";
 import TapToken from "../TapNEarn/TapToken";
+import RewardSections from "../../RewardSections/RewardSections";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -55,7 +56,11 @@ const HomeEarn = () => {
           <ReferralBanner />
         </div>
 
-        <div className="row justify-content-center">
+        {/* Rewards Sections */}
+        <h3>Features:</h3>
+        <RewardSections />
+
+        <div className="row justify-content-center mt-4">
           <div className="col-12">
             <div className="mt-2">
               <p className={`m-0 ${style.HomeEarnpara}`}>
