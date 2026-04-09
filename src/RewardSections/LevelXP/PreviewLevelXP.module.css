@@ -3,26 +3,13 @@
 .middleSection {
   position: relative;
   z-index: 2;
-}
-
-.middleSection h3 {
-  color: #f5f7fb;
-  font-size: 22px;
-  margin: 0 0 8px;
-  font-weight: 700;
-}
-
-.middleSection p {
-  color: #9ca3af;
-  font-size: 12px;
-  line-height: 1.6;
-  margin: 0 0 18px;
+  margin: 0 0 22px 0;
 }
 
 .progressWrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .progressInfo {
@@ -33,13 +20,13 @@
 
 .progressInfo span {
   color: #f5f7fb;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .progressInfo strong {
   color: #9ca3af;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -61,7 +48,7 @@
 
 .rewardCards {
   display: flex;
-  gap: 10px;
+  gap: 9px;
   position: relative;
   z-index: 2;
 }
@@ -69,16 +56,16 @@
 .rewardCard {
   flex: 1;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 10px;
   display: flex;
-  gap: 10px;
+  gap: 9px;
   align-items: center;
 }
 
 .rewardIcon {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 12px;
   background: rgba(124, 92, 255, 0.14);
   color: #7c5cff;
@@ -95,12 +82,88 @@
 .rewardCard span {
   display: block;
   color: #9ca3af;
-  font-size: 12px;
-  margin-bottom: 4px;
+  font-size: 11px;
 }
 
 .rewardCard strong {
   color: #f5f7fb;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
+}
+
+@media (min-width: 576px) {
+  .middleSection {
+    margin: 0 0 16px 0;
+  }
+
+  .progressWrapper {
+    gap: 8px;
+  }
+
+  .progressInfo span {
+    font-size: 14px;
+  }
+
+  .progressInfo strong {
+    font-size: 14px;
+  }
+
+  .progressFill {
+    width: 82%;
+  }
+
+  .rewardCards {
+    gap: 16px;
+  }
+
+  .rewardCard {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .rewardIcon {
+    width: 38px;
+    height: 36px;
+  }
+
+  .rewardCard span {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .rewardCard strong {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .middleSection {
+    margin: 0 0 20px 0;
+  }
+
+  .progressInfo span {
+    font-size: 12px;
+  }
+
+  .progressInfo strong {
+    font-size: 11px;
+  }
+
+  .progressFill {
+    width: 82%;
+  }
+
+  .rewardCard {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .rewardIcon {
+    width: 36px;
+  }
+
+  .rewardCard span {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
 }
