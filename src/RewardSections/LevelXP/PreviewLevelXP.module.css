@@ -48,7 +48,7 @@
 
 .rewardCards {
   display: flex;
-  gap: 9px;
+  gap: 13px;
   position: relative;
   z-index: 2;
 }

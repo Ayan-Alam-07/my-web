@@ -23,7 +23,7 @@
 .badgeCard span,
 .lockedBadge span {
   color: #34c47b;
-  font-size: 12px;
+  font-size: 3.5vw;
   font-weight: 600;
   text-align: center;
 }
