@@ -254,7 +254,7 @@
   }
 
   .cardWrapper {
-    width: calc(100vw - 60px);
+    width: calc(100vw - 56px);
   }
 
   .placeholderCard {

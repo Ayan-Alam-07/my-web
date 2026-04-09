@@ -10,34 +10,6 @@ import PreviewLevelXP from "./LevelXP/PreviewLevelXP";
 const RewardSections = () => {
   const scrollRef = useRef(null);
 
-  // useEffect(() => {
-  //   const container = scrollRef.current;
-
-  //   const interval = setInterval(() => {
-  //     if (!container) return;
-
-  //     const card = container.querySelector(`.${styles.cardWrapper}`);
-  //     const cardWidth = card?.offsetWidth + -40;
-
-  //     if (
-  //       container.scrollLeft + container.offsetWidth >=
-  //       container.scrollWidth - 10
-  //     ) {
-  //       container.scrollTo({
-  //         left: 0,
-  //         behavior: "smooth",
-  //       });
-  //     } else {
-  //       container.scrollBy({
-  //         left: cardWidth,
-  //         behavior: "smooth",
-  //       });
-  //     }
-  //   }, 3500);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
   useEffect(() => {
     const container = scrollRef.current;
 
