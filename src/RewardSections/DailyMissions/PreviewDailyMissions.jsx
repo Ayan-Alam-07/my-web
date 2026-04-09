@@ -10,14 +10,15 @@ const PreviewDailyMissions = () => {
       id: 1,
       icons: <CheckCircle2 size={17} />,
       text: "Watch Ads",
-      reward: "Upto +1000 VEs",
+      reward: "+1000 VEs",
       tag: "completed",
     },
     {
       id: 2,
       icons: <Zap size={17} />,
       text: "Complete 2 Offers & More...",
-      reward: "+500 VEs",
+      mobText: "Do Task & More...",
+      reward: "+500 VEs ",
       tag: "active",
     },
   ];
@@ -43,8 +44,17 @@ const PreviewDailyMissions = () => {
             className={`${styles.missionItem} ${styles[item.tag]}`}
           >
             <div className={styles.left}>
-              {item.icons}
-              <span>{item.text}</span>
+              <span>{item.icons}</span>
+              <span>
+                {item.id === 2 ? (
+                  <span>
+                    <span className={styles.nonMobTxt}>{item.text}</span>
+                    <span className={styles.mobTxt}>{item.mobText}</span>
+                  </span>
+                ) : (
+                  item.text
+                )}
+              </span>
             </div>
             <div className={styles.reward}>{item.reward}</div>
           </div>
