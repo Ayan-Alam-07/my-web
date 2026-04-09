@@ -4,15 +4,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   position: relative;
   z-index: 2;
 }
 
 .wheelWrapper {
   position: relative;
-  width: 95px;
-  height: 95px;
+  width: 90px;
+  height: 90px;
 }
 
 .pointer {
@@ -48,8 +48,8 @@
 }
 
 .centerCircle {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #161827;
   display: flex;
@@ -83,7 +83,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  margin: 0 0 11px 0;
+  margin: 0 0 8px 0;
 }
 
 .rewardChip {
@@ -91,13 +91,49 @@
   align-items: center;
   gap: 6px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
-  padding: 7px 10px;
+  border-radius: 8px;
+  padding: 7px 9px;
   color: #f3f4f6;
-  font-size: 11px;
+  font-size: 2.45vw;
   font-weight: 500;
 }
 
 .rewardChip svg {
   color: #f7b84b;
+}
+
+@media (min-width: 576px) {
+  .middle {
+    gap: 16px;
+  }
+  .wheelWrapper {
+    width: 90px;
+    height: 90px;
+  }
+  .wheel {
+    width: 90px;
+    height: 90px;
+  }
+  .centerCircle {
+    width: 32px;
+    height: 32px;
+  }
+  .rewardStack {
+    gap: 8px;
+    margin: 0 0 11px 0;
+  }
+  .rewardChip {
+    gap: 7px;
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 999px;
+  }
+}
+
+@media (min-width: 992px) {
+  .rewardChip {
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
 }

@@ -33,7 +33,7 @@ const PreviewSpinWheel = () => {
         <div className={styles.rewardStack}>
           <div className={styles.rewardChip}>
             <Coins size={14} />
-            <span>500 Coins</span>
+            <span>500 VEs</span>
           </div>
 
           <div className={styles.rewardChip}>
