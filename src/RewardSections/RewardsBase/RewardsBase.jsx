@@ -45,7 +45,7 @@ const RewardsBase = ({
         </span>
       </div>
 
-      {children}
+      <span className={styles.childrens}>{children}</span>
 
       <button className={`${styles.actionBtn} ${styles[btnClass]}`}>
         {btnText} {/* btnText */}
