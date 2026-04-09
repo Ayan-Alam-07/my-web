@@ -2,8 +2,8 @@
 
 .badgesGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
   position: relative;
   z-index: 2;
 }
@@ -12,9 +12,9 @@
 .lockedBadge {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 16px;
-  padding: 12px 10px;
+  padding: 10px 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   border: 1px solid transparent;
@@ -23,7 +23,7 @@
 .badgeCard span,
 .lockedBadge span {
   color: #34c47b;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
 }
@@ -32,8 +32,8 @@
 }
 
 .badgeIcon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -63,4 +63,39 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
+}
+
+@media (min-width: 576px) {
+  .badgesGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .badgeCard,
+  .lockedBadge {
+    padding: 12px 9px;
+    flex-direction: column;
+  }
+
+  .badgeCard span,
+  .lockedBadge span {
+    font-size: 11px;
+  }
+
+  .badgeIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lockCircle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 992px) {
+  .badgeIcon {
+    width: 36px;
+    height: 36px;
+  }
 }
