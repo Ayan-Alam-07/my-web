@@ -28,7 +28,7 @@ const PreviewDailyCheckIn = () => {
 
             <div>
               <span>Today's Reward</span>
-              <h4>20 Coins</h4>
+              <h4>20 VEs</h4>
             </div>
           </div>
         </div>

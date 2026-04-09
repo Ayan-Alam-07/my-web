@@ -1,126 +1,10 @@
 /* PreviewDailyCheckIn.module.css */
 
-.card {
-  width: 100%;
-  max-width: 420px;
-  height: 300px;
-  background: linear-gradient(145deg, #1b1e31, #242842);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 30px;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(124, 92, 255, 0.35);
-  box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.4),
-    0 10px 30px rgba(124, 92, 255, 0.15);
-}
-
-.bgGlow {
-  position: absolute;
-  top: -90px;
-  right: -70px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(
-    circle,
-    rgba(124, 92, 255, 0.22),
-    transparent 70%
-  );
-  border-radius: 50%;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 14px;
-  position: relative;
-  z-index: 2;
-}
-
-.left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1;
-}
-
-.iconBox {
-  width: 58px;
-  height: 58px;
-  min-width: 58px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #7c5cff, #9d7dff);
-  box-shadow: 0 12px 25px rgba(124, 92, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.headingContent {
-  flex: 1;
-}
-
-.badge {
-  display: inline-flex;
-  padding: 6px 12px;
-  background: rgba(124, 92, 255, 0.12);
-  border: 1px solid rgba(124, 92, 255, 0.2);
-  border-radius: 999px;
-  color: #b9a7ff;
-  font-size: 11px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.headingContent h3 {
-  color: #f5f7fb;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 6px;
-  line-height: 1.2;
-}
-
-.streakCount {
-  min-width: 72px;
-  height: 72px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.streakCount span {
-  color: #9ca3af;
-  font-size: 11px;
-  margin-bottom: 2px;
-}
-
-.streakCount strong {
-  color: #35d07f;
-  font-size: 28px;
-  font-weight: 700;
-}
-
 .rewardSection {
+  padding: 0 14px;
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   position: relative;
   z-index: 2;
 }
@@ -130,19 +14,19 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-  padding: 14px;
+  padding: 9px 20px;
   backdrop-filter: blur(10px);
 }
 
 .rewardTop {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .rewardIcon {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 36px;
   border-radius: 14px;
   background: rgba(53, 208, 127, 0.12);
   color: #35d07f;
@@ -159,36 +43,70 @@
 .rewardTop span {
   display: block;
   color: #9ca3af;
-  font-size: 11px;
-  margin-bottom: 4px;
+  font-size: 10px;
+  margin-bottom: 2px;
 }
 
 .rewardTop h4 {
   color: #f5f7fb;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
   font-weight: 700;
 }
 
-.actionBtn {
-  height: 50px;
-  border: none;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #7c5cff, #5f8bff);
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
+@media (min-width: 576px) {
+  .rewardSection {
+    gap: 18px;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .rewardCard {
+    padding: 18px 14px;
+  }
+
+  .rewardTop {
+    gap: 14px;
+  }
+
+  .rewardIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .rewardTop span {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .rewardTop h4 {
+    font-size: 16px;
+  }
 }
 
-.actionBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(124, 92, 255, 0.3);
+@media (min-width: 992px) {
+  .rewardSection {
+    gap: 14px;
+  }
+
+  .rewardCard {
+    padding: 14px;
+  }
+
+  .rewardTop {
+    gap: 10px;
+  }
+
+  .rewardIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .rewardTop span {
+    font-size: 11px;
+  }
+
+  .rewardTop h4 {
+    font-size: 15px;
+  }
 }
