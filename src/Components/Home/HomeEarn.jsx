@@ -18,6 +18,7 @@ import DailyBonusBanner from "../DailyBonus/DailyBonusBanner";
 import TapEarnBanner from "../TapNEarn/TapNEarnBanner";
 import TapToken from "../TapNEarn/TapToken";
 import RewardSections from "../../RewardSections/RewardSections";
+import QuickLinks from "../../RewardSections/QuickLinks/QuickLinks";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -349,6 +350,13 @@ const HomeEarn = () => {
           </div>
         </div>
 
+        {/* Quick Links */}
+        <p className={`pt-2 mb-0 ${style.HomeEarnpara}`}> Quick Links:</p>
+        <div className=" ">
+          <QuickLinks />
+        </div>
+
+        {/* follow & Earn */}
         <div className="row ">
           <div className="col-12 mt-3">
             <div>

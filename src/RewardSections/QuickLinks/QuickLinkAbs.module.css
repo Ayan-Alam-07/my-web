@@ -1,0 +1,240 @@
+.card {
+  min-width: fit-content;
+  /* height: 48px; */
+  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
+  padding: 20px 16px;
+  border-radius: 18px;
+  /* background: rgba(255, 255, 255, 0.04); */
+  background: linear-gradient(135deg, #232547, #1c1e35);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  margin: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease-in;
+}
+
+.card:hover::before {
+  left: 120%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.22);
+  /* background: rgba(255, 255, 255, 0.06); */
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7c5cff, #4da8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.wrapper1 {
+  background: linear-gradient(135deg, #7c5cff, #4da8ff);
+}
+
+.border1:hover {
+  border-color: rgba(124, 92, 255, 0.35);
+}
+
+.wrapper2 {
+  background: linear-gradient(135deg, #ff6ea9, #ff8c42) !important;
+}
+
+.border2:hover {
+  border-color: rgba(255, 110, 169, 0.35);
+}
+
+.wrapper3 {
+  background: linear-gradient(135deg, #35d07f, #4da8ff);
+}
+
+.border3:hover {
+  border-color: rgba(53, 208, 127, 0.35);
+}
+
+.wrapper4 {
+  background: linear-gradient(135deg, #f7b84b, #ff8c42);
+}
+
+.border4:hover {
+  border-color: rgba(247, 184, 75, 0.35);
+}
+
+.card:nth-child(12n + 4) {
+  transform: scale(1.2);
+  margin: 12px;
+}
+.card:nth-child(12n + 4)::before {
+  left: 120%;
+}
+
+/* .active {
+  border-color: red;
+} */
+
+.card:nth-child(12n + 3)::before,
+.card:nth-child(12n + 2)::before,
+.card:nth-child(12n + 1)::before {
+  left: 120%;
+}
+
+.wrapper5 {
+  background: linear-gradient(135deg, #5f8bff, #7c5cff);
+}
+
+.border5:hover {
+  border-color: rgba(95, 139, 255, 0.35);
+}
+
+.wrapper6 {
+  background: linear-gradient(135deg, #00c2ff, #4da8ff);
+}
+
+.border6:hover {
+  border-color: rgba(0, 194, 255, 0.35);
+}
+
+.wrapper7 {
+  background: linear-gradient(135deg, #00d4aa, #35d07f);
+}
+
+.border7:hover {
+  border-color: rgba(0, 212, 170, 0.35);
+}
+
+.wrapper8 {
+  background: linear-gradient(135deg, #ff5e7a, #ff6ea9);
+}
+
+.border8:hover {
+  border-color: rgba(255, 94, 122, 0.35);
+}
+
+.wrapper9 {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.border9:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.wrapper10 {
+  background: linear-gradient(135deg, #22c55e, #84cc16);
+}
+
+.border10:hover {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.wrapper11 {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+.border11:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+}
+
+.wrapper12 {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.border12:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.title {
+  color: #ececec;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card.border1.activeCard {
+  border-color: rgba(124, 92, 255, 0.35);
+  box-shadow: 0 10px 20px rgba(124, 92, 255, 0.12);
+}
+
+.card.border2.activeCard {
+  border-color: rgba(255, 110, 169, 0.35);
+  box-shadow: 0 10px 20px rgba(255, 110, 169, 0.12);
+}
+
+.card.border3.activeCard {
+  border-color: rgba(53, 208, 127, 0.35);
+  box-shadow: 0 10px 20px rgba(53, 208, 127, 0.12);
+}
+
+.card.border4.activeCard {
+  border-color: rgba(247, 184, 75, 0.35);
+  box-shadow: 0 10px 20px rgba(247, 184, 75, 0.12);
+}
+
+.card.border5.activeCard {
+  border-color: rgba(95, 139, 255, 0.35);
+  box-shadow: 0 10px 20px rgba(95, 139, 255, 0.12);
+}
+
+.card.border6.activeCard {
+  border-color: rgba(0, 194, 255, 0.35);
+  box-shadow: 0 10px 20px rgba(0, 194, 255, 0.12);
+}
+
+.card.border7.activeCard {
+  border-color: rgba(0, 212, 170, 0.35);
+  box-shadow: 0 10px 20px rgba(0, 212, 170, 0.12);
+}
+
+.card.border8.activeCard {
+  border-color: rgba(255, 94, 122, 0.35);
+  box-shadow: 0 10px 20px rgba(255, 94, 122, 0.12);
+}
+
+.card.border9.activeCard {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.12);
+}
+
+.card.border10.activeCard {
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.12);
+}
+
+.card.border11.activeCard {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.12);
+}
+
+.card.border12.activeCard {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 10px 20px rgba(6, 182, 212, 0.12);
+}

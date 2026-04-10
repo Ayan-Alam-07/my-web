@@ -1,0 +1,51 @@
+.wrapper {
+  width: 100%;
+  min-height: 180px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  padding: 6px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  padding-right: 12px;
+  min-height: 150px;
+}
+
+.fadeLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, #161827, rgba(22, 24, 39, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to left, #161827, rgba(22, 24, 39, 0));
+  z-index: 2;
+  pointer-events: none;
+}
