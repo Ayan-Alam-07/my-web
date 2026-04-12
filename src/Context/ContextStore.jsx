@@ -29,6 +29,7 @@ export const ListProvider = ({ children }) => {
     { id: 14, name: "Daily Bonus" },
     { id: 15, name: "Tap Token" },
     { id: 16, name: "Redeem History" },
+    { id: 17, name: "Daily Streak" },
   ]);
 
   const [withdrawals, setWithdrawals] = useState([]);

@@ -18,6 +18,7 @@ const PreviewDailyCheckIn = () => {
       iconBoxClass={"dailyCheckIconBox"}
       badgeClass={"dailyCheckBadge"}
       btnClass={"dailyCheckBtn"}
+      navigation={"daily-streak"}
     >
       <div className={styles.rewardSection}>
         <div className={styles.rewardCard}>

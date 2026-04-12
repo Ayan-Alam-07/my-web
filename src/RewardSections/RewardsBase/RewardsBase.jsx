@@ -1,6 +1,7 @@
 import { ChevronRight, Crown } from "lucide-react";
 import styles from "./RewardsBase.module.css";
 import Badge from "./Badge";
+import { useNavigate } from "react-router-dom";
 
 const RewardsBase = ({
   icon,
@@ -13,9 +14,15 @@ const RewardsBase = ({
   iconBoxClass,
   badgeClass,
   btnClass,
+  navigation,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className={`${styles.card} ${styles[cardClass]}`}>
+    <div
+      className={`${styles.card} ${styles[cardClass]}`}
+      onClick={() => navigate(`/${navigation}`)}
+    >
       <div className={`${styles.bgGlow} ${styles[glowClass]}`}></div>
 
       <div className={styles.header}>
