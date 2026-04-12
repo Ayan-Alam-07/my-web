@@ -1,5 +1,6 @@
 import { ChevronRight, Crown } from "lucide-react";
 import styles from "./RewardsBase.module.css";
+import Badge from "./Badge";
 
 const RewardsBase = ({
   icon,
@@ -40,9 +41,10 @@ const RewardsBase = ({
             </div>
           </div>
         )}
-        <span className={`${styles.badge} ${styles[badgeClass]}`}>
+        {/* <span className={`${styles.badge} ${styles[badgeClass]}`}>
           {title === "level" && "Grow"} {badge}
-        </span>
+        </span> */}
+        <Badge title={title} badgeClass={badgeClass} badge={badge} />
       </div>
 
       <span className={styles.childrens}>{children}</span>
