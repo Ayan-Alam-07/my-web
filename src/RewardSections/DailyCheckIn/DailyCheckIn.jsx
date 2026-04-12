@@ -284,10 +284,6 @@ export default function DailyCheckIn() {
   }, []);
 
   useEffect(() => {
-    console.log(rewards);
-  }, [rewards]);
-
-  useEffect(() => {
     if (!nextClaimAt) return;
 
     const interval = setInterval(() => {
