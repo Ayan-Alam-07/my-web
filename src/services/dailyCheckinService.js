@@ -77,13 +77,32 @@ const getToken = () => {
 export const getDailyCheckinRewards = async () => {
   const token = getToken();
 
-  const response = await axios.get(`${API_URL}/api/daily-checkin`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  // const response = await axios.get(`${API_URL}/api/daily-checkin`, {
+  //   headers: {
+  //     Authorization: `Bearer ${token}`,
+  //   },
+  // });
 
-  return response.data;
+  // return response.data;
+
+  try {
+    const response = await axios.get(`${API_URL}/api/daily-checkin`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      window.location.href = "/login";
+    }
+
+    throw error;
+  }
 };
 
 export const claimDailyCheckinReward = async () => {
