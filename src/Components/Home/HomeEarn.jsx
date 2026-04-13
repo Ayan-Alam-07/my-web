@@ -351,8 +351,8 @@ const HomeEarn = () => {
         </div>
 
         {/* Quick Links */}
-        <p className={`pt-2 mb-0 ${style.HomeEarnpara}`}> Quick Links:</p>
-        <div className=" ">
+        <p className={`pt-2 mb-0 ${style.HomeEarnpara}`}> Upcoming Features:</p>
+        <div className="">
           <QuickLinks />
         </div>
 
