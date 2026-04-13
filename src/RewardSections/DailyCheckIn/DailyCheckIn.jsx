@@ -329,26 +329,6 @@ export default function DailyCheckIn() {
     }
   };
 
-  // const handleClaim = async () => {
-  //   if (isClaiming) return;
-
-  //   setIsClaiming(true);
-
-  //   try {
-  //     const data = await claimDailyCheckinReward();
-
-  //     setClaimedDays(data.claimedDays || []);
-  //     setCurrentDay(data.streakDay >= 7 ? 1 : data.streakDay + 1);
-  //     setNextClaimAt(data.nextClaimAt || null);
-
-  //     fetchRewards();
-  //   } catch (error) {
-  //     console.log(error.response?.data?.message);
-  //   } finally {
-  //     setIsClaiming(false);
-  //   }
-  // };
-
   const handleClaim = async () => {
     if (isClaiming) return;
 
@@ -420,7 +400,7 @@ export default function DailyCheckIn() {
       <CommonNavArr id={17} navigation={"/Home"} />
 
       <div className={styles.pageWrapper}>
-        <div className="container mt-4">
+        <div className="container mt-4 px-md-1 px-lg-2">
           <div className={styles.heroSection}>
             <div className={styles.heroLeft}>
               <div className={styles.topBadge}>
@@ -471,7 +451,7 @@ export default function DailyCheckIn() {
 
                 {nextClaimAt && !canClaimNow && (
                   <div className={styles.timerBox}>
-                    <FaClock />
+                    <FaClock className="me-2" />
                     <span>{countdown}</span>
                   </div>
                 )}
@@ -503,10 +483,6 @@ export default function DailyCheckIn() {
 
           <div className={styles.rewardGrid}>
             {rewards.map((item) => {
-              // const isCompleted = claimedDays.includes(item.day);
-              // const isCurrent =
-              //   item.day === currentDay && !claimedDays.includes(item.day);
-              // const isLocked = item.day > currentDay;
               const isCompleted = item.isClaimed;
               const isCurrent = item.isCurrent;
               const isLocked = item.isLocked;
@@ -523,7 +499,11 @@ export default function DailyCheckIn() {
                     <div className={styles.dayBadge}>Day {item.day}</div>
 
                     <div className={styles.rewardBadge}>
-                      {item.day === 7 ? "VIP" : item.type}
+                      {item.day === 7
+                        ? "VIP"
+                        : item.type === "giftcard"
+                          ? "Gift card"
+                          : item.type}
                     </div>
                   </div>
 
