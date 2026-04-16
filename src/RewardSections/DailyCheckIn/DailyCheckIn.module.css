@@ -308,6 +308,16 @@
 
 .completed {
   opacity: 0.9;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 255, 0, 0.14),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(15, 255, 7, 0.3);
+  box-shadow: 0 14px 38px rgba(0, 255, 0, 0.12);
+}
+.completed:hover {
+  border-color: rgba(7, 255, 40, 0.15);
 }
 
 .lockedCard {
@@ -653,7 +663,7 @@
   }
 
   .rewardCard {
-    padding: 22px;
+    padding: 24px 22px;
     align-items: start;
   }
 
