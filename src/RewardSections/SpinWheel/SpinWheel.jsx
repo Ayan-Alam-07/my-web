@@ -55,7 +55,6 @@ const SpinWheel = () => {
       const response = await playSpin();
       setIsLoading(false);
       const reward = response.data.reward;
-      // console.log(reward);
 
       const rewardIndex = rewards.findIndex((item) => item._id === reward._id);
 
@@ -179,8 +178,19 @@ const SpinWheel = () => {
                       }}
                     >
                       <div className={styles.sliceInner}>
-                        <span className={styles.sliceLabel}>
-                          {reward.title}
+                        <span
+                          className={styles.sliceLabel}
+                          style={{
+                            fontSize:
+                              index === 3 || index === 4 || index === 5
+                                ? "12px"
+                                : "",
+                          }}
+                        >
+                          <span className="d-inline-block me-2">
+                            {getRewardIcon(reward)}
+                          </span>
+                          <span>{index === 8 ? "Lose" : reward.title}</span>
                         </span>
                       </div>
                     </div>
@@ -194,7 +204,7 @@ const SpinWheel = () => {
                   onClick={handleSpin}
                   disabled={isLoading || spins <= 0 || isSpinning}
                 >
-                  {isLoading ? "..." : "SPIN"}
+                  {isLoading ? "ZoOo" : "SPIN"}
                 </button>
               </div>
             </div>
@@ -202,7 +212,7 @@ const SpinWheel = () => {
           <div className="d-flex justify-content-center align-items-center">
             <button
               disabled={isSpinning}
-              className={`${styles.spinWheelBtn} ${spins >= 0 && styles.outOfspin}`}
+              className={`${styles.spinWheelBtn} ${spins <= 0 && styles.outOfspin}`}
               onClick={handleSpin}
             >
               {isSpinning
@@ -246,8 +256,16 @@ const SpinWheel = () => {
                   {getRewardIcon(selectedReward)}
                 </div>
 
-                <h2>Congratulations</h2>
-                <p>You Won</p>
+                <h2>
+                  {selectedReward.rewardType === "LOSE"
+                    ? "Unfortunately"
+                    : "Congratulations"}
+                </h2>
+                <p>
+                  {selectedReward.rewardType === "LOSE"
+                    ? "You Lose"
+                    : "You Won"}
+                </p>
 
                 <h1>{selectedReward.title}</h1>
 

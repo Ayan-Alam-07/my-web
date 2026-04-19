@@ -34,12 +34,14 @@
   align-items: center;
   gap: 14px;
   margin-bottom: 32px;
+  font-family: "Poppins", sans-serif;
 }
 
 .title {
   font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 2px;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 0.2px;
 }
 
 .subtitle {
@@ -137,8 +139,8 @@
 
 .wheel {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   overflow: hidden;
   background: #111827;
@@ -169,7 +171,7 @@
 .sliceInner {
   position: absolute;
   top: 57px;
-  left: -10px;
+  left: -17px;
   width: 120px;
   display: flex;
   justify-content: center;
@@ -186,6 +188,7 @@
   max-width: 80px;
   word-break: break-word;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.3px;
 }
 
 .centerCircle {
