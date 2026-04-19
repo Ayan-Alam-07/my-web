@@ -15,6 +15,8 @@ const SpinWheel = () => {
   const [showPopup, setShowPopup] = useState(false);
   const { isLoading, setIsLoading } = useList();
 
+  const [isSpinning, setIsSpinning] = useState(false);
+
   useEffect(() => {
     fetchSpinDetails();
   }, []);
@@ -40,13 +42,15 @@ const SpinWheel = () => {
 
   const handleSpin = async () => {
     if (isLoading || spins <= 0 || rewards.length === 0) return;
-
+    setIsLoading(true);
     try {
-      // setIsLoading(true);
+      setIsSpinning(true);
+
       setSelectedReward(null);
       setShowPopup(false);
 
       const response = await playSpin();
+      setIsLoading(false);
       const reward = response.data.reward;
       // console.log(reward);
 
@@ -98,6 +102,7 @@ const SpinWheel = () => {
           setSelectedReward(reward);
           setShowPopup(true);
           setIsLoading(false);
+          setIsSpinning(false);
         },
         randomDuration * 1000 + 100,
       );
@@ -184,7 +189,7 @@ const SpinWheel = () => {
                 <button
                   className={styles.spinButton}
                   onClick={handleSpin}
-                  disabled={isLoading || spins <= 0}
+                  disabled={isLoading || spins <= 0 || isSpinning}
                 >
                   {isLoading ? "..." : "SPIN"}
                 </button>
@@ -192,8 +197,12 @@ const SpinWheel = () => {
             </div>
           </div>
           <div className="d-flex justify-content-center align-items-center">
-            <button className={styles.spinWheelBtn} onClick={handleSpin}>
-              spin the wheel
+            <button
+              disabled={isSpinning}
+              className={styles.spinWheelBtn}
+              onClick={handleSpin}
+            >
+              {isSpinning ? "Spinning" : "Spin & Win"}
             </button>
           </div>
 
