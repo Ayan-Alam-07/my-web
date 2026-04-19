@@ -1,0 +1,386 @@
+/* SpinWheel.module.css */
+
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.22), transparent 30%),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #030712 0%, #0f172a 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.spinsCard {
+  min-width: 190px;
+  padding: 16px 30px;
+  border-radius: 24px;
+  /* background: rgba(255, 255, 255, 0.06); */
+  background: linear-gradient(135deg, #232547, #1c1e35);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  text-align: center;
+}
+
+.spinsCard span {
+  display: block;
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.spinsCard h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #facc15;
+}
+
+.rewardCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.rewardCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rewardCardIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.rewardCard h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rewardCard p {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.wheelSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 25px;
+  /* overflow: hidden; */
+}
+
+.pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 40px solid #ffffff;
+  z-index: 2;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.45));
+}
+
+.wheel {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111827;
+  border: 12px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.55),
+    0 0 100px rgba(99, 102, 241, 0.18);
+}
+
+.slice {
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  top: 0;
+  left: 50%;
+  transform-origin: left bottom;
+  overflow: hidden;
+}
+
+.sliceShape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: left bottom;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.sliceInner {
+  position: absolute;
+  top: 57px;
+  left: -10px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(120deg);
+}
+
+.sliceLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.15;
+  max-width: 80px;
+  word-break: break-word;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.centerCircle {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffffff, #d1d5db);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    inset 0 3px 12px rgba(255, 255, 255, 0.45),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.spinButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(180deg, #fde047 0%, #f59e0b 100%);
+  color: #111827;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.spinButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.bottomCard {
+  margin: 40px auto 0;
+  width: fit-content;
+  min-width: 360px;
+  padding: 20px 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bottomItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bottomItem span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.bottomItem strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bottomDivider {
+  width: 1px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.spinWheelBtn {
+  width: 37%;
+  margin: 20px 0 100px;
+  padding: 14px 24px;
+
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.4px;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4); /* SaaS gradient */
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+  transition: all 0.25s ease;
+}
+
+.spinWheelBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.35);
+  background: linear-gradient(135deg, #4338ca, #0891b2);
+}
+
+.spinWheelBtn:active {
+  transform: scale(0.99);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popupCard {
+  width: 360px;
+  padding: 32px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popupRewardIcon {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.popupCard h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.popupCard p {
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.popupCard h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.popupButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fde047 0%, #f59e0b 100%);
+  color: #111827;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 18px;
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wheel {
+    width: 340px;
+    height: 340px;
+  }
+
+  .pointer {
+    top: -16px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 26px solid #ffffff;
+  }
+
+  .sliceInner {
+    left: 48px;
+    top: 55px;
+    width: 70px;
+  }
+
+  .sliceLabel {
+    font-size: 8px;
+    max-width: 55px;
+  }
+
+  .centerCircle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .spinButton {
+    width: 65px;
+    height: 65px;
+    font-size: 12px;
+  }
+
+  .bottomCard {
+    width: 100%;
+    min-width: auto;
+  }
+}

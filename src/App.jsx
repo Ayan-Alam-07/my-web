@@ -26,6 +26,7 @@ import AdminRoute from "../src/Components/AdminRoute/AdminRoute";
 import AdminDashboard from "../src/Components/Admin/AdminDashboard";
 import Transactions from "./Components/Transaction/Transactions";
 import DailyCheckIn from "./RewardSections/DailyCheckIn/DailyCheckIn";
+import SpinWheel from "./RewardSections/SpinWheel/SpinWheel";
 
 const App = () => {
   const { isLoading } = useList();
@@ -213,6 +214,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <DailyCheckIn />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/spin-wheel"
+          element={
+            <ProtectedRoute>
+              <SpinWheel />
             </ProtectedRoute>
           }
         ></Route>
