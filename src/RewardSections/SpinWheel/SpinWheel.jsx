@@ -6,6 +6,7 @@ import { getSpinDetails, playSpin } from "../../services/spinService";
 import { FaCoins, FaGift, FaBolt, FaRedo } from "react-icons/fa";
 import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
+import { showError } from "../../utils/Toast";
 
 const SpinWheel = () => {
   const [rewards, setRewards] = useState([]);
@@ -41,6 +42,8 @@ const SpinWheel = () => {
   }, [rewards]);
 
   const handleSpin = async () => {
+    if (spins <= 0)
+      showError(`you have ${spins} spin, Earn spins to claim Rewards`);
     if (isLoading || spins <= 0 || rewards.length === 0) return;
     setIsLoading(true);
     try {
@@ -199,10 +202,14 @@ const SpinWheel = () => {
           <div className="d-flex justify-content-center align-items-center">
             <button
               disabled={isSpinning}
-              className={styles.spinWheelBtn}
+              className={`${styles.spinWheelBtn} ${spins >= 0 && styles.outOfspin}`}
               onClick={handleSpin}
             >
-              {isSpinning ? "Spinning" : "Spin & Win"}
+              {isSpinning
+                ? "Wait for Reward"
+                : spins <= 0
+                  ? "Out of spin"
+                  : "Spin & Win"}
             </button>
           </div>
 
