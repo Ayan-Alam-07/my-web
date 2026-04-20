@@ -353,6 +353,9 @@
     left: -5.5vw;
     top: 54px;
   }
+  .sliceLabel {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 413px) {
