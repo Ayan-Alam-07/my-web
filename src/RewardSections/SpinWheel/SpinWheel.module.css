@@ -172,8 +172,9 @@
 
 .sliceInner {
   position: absolute;
-  top: 47px;
-  left: -29px;
+  top: 54px;
+  /* left: -29px; */
+  left: -8vw;
   width: 140px;
   display: flex;
   justify-content: center;
@@ -339,6 +340,26 @@
 /* ============================================================================================================= */
 /* =======================================       MEDIA QUERY      ============================================== */
 /* ============================================================================================================= */
+
+@media (min-width: 375px) {
+  .sliceInner {
+    left: -8vw;
+    top: 50px;
+  }
+}
+
+@media (min-width: 412px) {
+  .sliceInner {
+    left: -5.5vw;
+    top: 54px;
+  }
+}
+
+@media (min-width: 430px) {
+  .sliceInner {
+    left: -5vw;
+  }
+}
 
 @media (min-width: 576px) {
   .page {
