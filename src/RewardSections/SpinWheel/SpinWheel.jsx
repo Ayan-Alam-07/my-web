@@ -181,16 +181,21 @@ const SpinWheel = () => {
                         <span
                           className={styles.sliceLabel}
                           style={{
-                            fontSize:
-                              index === 3 || index === 4 || index === 5
-                                ? "12px"
-                                : "",
+                            fontSize: index === 4 || index === 5 ? "15px" : "",
                           }}
                         >
-                          <span className="d-inline-block me-2">
+                          <span className="d-inline-block me-1">
                             {getRewardIcon(reward)}
                           </span>
-                          <span>{index === 8 ? "Lose" : reward.title}</span>
+                          <span>
+                            {index === 8
+                              ? "Lose"
+                              : index === 4 || index === 5
+                                ? `₹ ${reward.value} RS`
+                                : index === 3
+                                  ? "1 Spin"
+                                  : reward.title}
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -226,7 +231,7 @@ const SpinWheel = () => {
           <div>
             <h5 className="mb-4">Rewards Probabilities: </h5>
             <div className={styles.rewardCards}>
-              {rewards.map((reward) => (
+              {rewards.map((reward, idx) => (
                 <div key={reward._id} className={styles.rewardCard}>
                   <div
                     className={styles.rewardCardIcon}
@@ -235,9 +240,17 @@ const SpinWheel = () => {
                     {getRewardIcon(reward)}
                   </div>
 
-                  <div>
-                    <h4>{reward.title}</h4>
-                    <p>{reward.probability}% Chance</p>
+                  <div className="d-flex justify-content-between align-items-center align-items-lg-start flex-column">
+                    <h4>
+                      {idx === 8
+                        ? "Lose"
+                        : idx === 4 || idx === 5
+                          ? `Gift Card ₹${reward.value}`
+                          : idx === 3
+                            ? "Free Spin"
+                            : reward.title}
+                    </h4>
+                    <p className="m-0">{reward.probability}% Chance</p>
                   </div>
                 </div>
               ))}
@@ -253,7 +266,9 @@ const SpinWheel = () => {
                   className={styles.popupRewardIcon}
                   style={{ background: selectedReward.color }}
                 >
-                  {getRewardIcon(selectedReward)}
+                  <span className="d-inline-block mt-2">
+                    {getRewardIcon(selectedReward)}
+                  </span>
                 </div>
 
                 <h2>

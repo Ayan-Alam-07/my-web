@@ -2,7 +2,7 @@
 
 .page {
   min-height: 100vh;
-  padding: 32px;
+  padding: 32px 0;
   background:
     radial-gradient(circle at top, rgba(99, 102, 241, 0.22), transparent 30%),
     radial-gradient(
@@ -31,14 +31,15 @@
 .topSection {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: 14px;
-  margin-bottom: 32px;
+  margin-bottom: 50px;
   font-family: "Poppins", sans-serif;
 }
 
 .title {
-  font-size: 34px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 0;
   letter-spacing: 0.2px;
@@ -46,16 +47,15 @@
 
 .subtitle {
   color: #94a3b8;
-  font-size: 16px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .spinsCard {
-  min-width: 190px;
-  padding: 16px 30px;
+  min-width: 150px;
+  padding: 11px 34px;
   border-radius: 24px;
-  /* background: rgba(255, 255, 255, 0.06); */
   background: linear-gradient(135deg, #232547, #1c1e35);
-
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
   text-align: center;
@@ -65,19 +65,19 @@
   display: block;
   color: #94a3b8;
   font-size: 14px;
-  margin: 0 0 4px;
+  margin: 0 0 7px;
 }
 
 .spinsCard h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: #facc15;
 }
 
 .rewardCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
   margin-bottom: 50px;
 }
@@ -85,7 +85,8 @@
 .rewardCard {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-direction: column;
+  gap: 18px;
   padding: 18px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.05);
@@ -104,14 +105,14 @@
 }
 
 .rewardCard h4 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .rewardCard p {
   color: #94a3b8;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .wheelSection {
@@ -120,7 +121,6 @@
   justify-content: center;
   align-items: center;
   margin: 40px 0 25px;
-  /* overflow: hidden; */
 }
 
 .pointer {
@@ -139,8 +139,8 @@
 
 .wheel {
   position: relative;
-  width: 380px;
-  height: 380px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
   overflow: hidden;
   background: #111827;
@@ -170,9 +170,9 @@
 
 .sliceInner {
   position: absolute;
-  top: 57px;
-  left: -17px;
-  width: 120px;
+  top: 45px;
+  left: -30px;
+  width: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,7 +180,7 @@
 }
 
 .sliceLabel {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #fff;
   text-align: center;
@@ -193,8 +193,8 @@
 
 .centerCircle {
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 94px;
+  height: 94px;
   border-radius: 50%;
   background: linear-gradient(180deg, #ffffff, #d1d5db);
   top: 50%;
@@ -226,45 +226,10 @@
   cursor: not-allowed;
 }
 
-.bottomCard {
-  margin: 40px auto 0;
-  width: fit-content;
-  min-width: 360px;
-  padding: 20px 24px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.bottomItem {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.bottomItem span {
-  color: #94a3b8;
-  font-size: 13px;
-}
-
-.bottomItem strong {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.bottomDivider {
-  width: 1px;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
 .spinWheelBtn {
-  width: 37%;
-  margin: 20px 0 100px;
-  padding: 16px 24px;
+  width: 85%;
+  margin: 20px 0 70px;
+  padding: 14px 24px;
   font-size: 17px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
@@ -317,8 +282,8 @@
 }
 
 .popupCard {
-  width: 360px;
-  padding: 32px;
+  width: 80vw;
+  padding: 32px 18px;
   border-radius: 30px;
   background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
   text-align: center;
@@ -326,8 +291,8 @@
 }
 
 .popupRewardIcon {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 24px;
   margin: 0 auto 20px;
   display: flex;
@@ -338,23 +303,29 @@
 }
 
 .popupCard h2 {
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .popupCard p {
   color: #94a3b8;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 .popupCard h1 {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 24px;
+  letter-spacing: 0.1px;
 }
 
 .popupButton {
   width: 100%;
-  padding: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 17px;
   border: none;
   border-radius: 16px;
   background: linear-gradient(180deg, #fde047 0%, #f59e0b 100%);
@@ -363,52 +334,259 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* ============================================================================================================= */
+/* =======================================       MEDIA QUERY      ============================================== */
+/* ============================================================================================================= */
+
+@media (min-width: 576px) {
   .page {
-    padding: 18px;
+    padding: 47px 32px 32px;
   }
 
   .topSection {
-    flex-direction: column;
-    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 80px;
+    flex-direction: row;
   }
 
-  .wheel {
-    width: 340px;
-    height: 340px;
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    text-align: start;
+  }
+
+  .spinsCard {
+    min-width: 160px;
+    padding: 18px 34px;
+  }
+
+  .spinsCard span {
+    font-size: 15px;
+    margin: 0 0 6px;
+    letter-spacing: 0.2px;
+  }
+
+  .spinsCard h2 {
+    font-size: 28px;
+    letter-spacing: 0.7px;
+  }
+
+  .rewardCards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .rewardCard {
+    padding: 20px 17px;
+    flex-direction: row;
+    gap: 14px;
+  }
+
+  .rewardCardIcon {
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+  }
+
+  .rewardCard h4 {
+    font-size: 16px;
+  }
+
+  .rewardCard p {
+    font-size: 13px;
+  }
+
+  .wheelSection {
+    margin: 40px 0 25px;
   }
 
   .pointer {
-    top: -16px;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    border-top: 26px solid #ffffff;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wheel {
+    width: 460px;
+    height: 460px;
   }
 
   .sliceInner {
-    left: 48px;
-    top: 55px;
-    width: 70px;
+    top: 70px;
+    left: -23px;
+    width: 150px;
   }
 
   .sliceLabel {
-    font-size: 8px;
-    max-width: 55px;
+    font-size: 16px;
+    max-width: 160px;
+  }
+
+  .sliceLabelFnt {
+    font-size: 15px;
   }
 
   .centerCircle {
-    width: 110px;
-    height: 110px;
+    width: 105px;
+    height: 105px;
   }
 
   .spinButton {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+  }
+
+  .spinWheelBtn {
+    width: 75%;
+    margin: 50px 0 100px;
+    padding: 18px 24px;
+    font-size: 18px;
+  }
+
+  .popupCard {
+    padding: 50px 40px;
+    width: 420px;
+  }
+
+  .popupRewardIcon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 24px;
+    font-size: 36px;
+  }
+
+  .popupCard h2 {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .popupCard p {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .popupCard h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .popupButton {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 992px) {
+  .page {
+    padding: 32px;
+  }
+
+  .topSection {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .spinsCard {
+    min-width: 190px;
+    padding: 16px 30px;
+  }
+
+  .spinsCard span {
+    font-size: 14px;
+    margin: 0 0 4px;
+  }
+
+  .rewardCards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .rewardCardIcon {
+    font-size: 22px;
+  }
+
+  .rewardCard h4 {
+    font-size: 15px;
+  }
+
+  .rewardCard p {
     font-size: 12px;
   }
 
-  .bottomCard {
-    width: 100%;
-    min-width: auto;
+  .pointer {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wheel {
+    width: 380px;
+    height: 380px;
+  }
+
+  .sliceInner {
+    top: 57px;
+    left: -17px;
+    width: 120px;
+  }
+
+  .sliceLabel {
+    font-size: 13px;
+    max-width: 80px;
+  }
+
+  .sliceLabelFnt {
+    font-size: 12.5px;
+  }
+
+  .centerCircle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .spinWheelBtn {
+    width: 37%;
+    margin: 37px 0 100px;
+    padding: 16px 24px;
+    font-size: 17px;
+  }
+
+  .popupCard {
+    width: 360px;
+    padding: 32px;
+  }
+
+  .popupRewardIcon {
+    margin: 0 auto 20px;
+    font-size: 34px;
+  }
+
+  .popupCard h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .popupCard p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .popupCard h1 {
+    font-size: 24px;
+  }
+
+  .popupButton {
+    font-size: 18px;
+    padding: 13px 22px;
   }
 }
