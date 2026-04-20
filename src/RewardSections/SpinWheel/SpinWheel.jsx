@@ -189,7 +189,7 @@ const SpinWheel = () => {
                           </span>
                           <span>
                             {index === 8
-                              ? "Lose"
+                              ? "Loose"
                               : index === 4 || index === 5
                                 ? `₹ ${reward.value} RS`
                                 : index === 3
