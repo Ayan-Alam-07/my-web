@@ -268,6 +268,7 @@ import {
 } from "../../services/dailyCheckinService";
 import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
+import CirLoader from "../../Components/CommonComponents/CirLoader";
 
 export default function DailyCheckIn() {
   const [rewards, setRewards] = useState([]);
@@ -387,12 +388,7 @@ export default function DailyCheckIn() {
     !nextClaimAt || new Date(nextClaimAt).getTime() <= new Date().getTime();
 
   if (isLoading) {
-    return (
-      <div className={styles.loadingWrapper}>
-        <div className={styles.loader}></div>
-        <p>Loading your streak rewards...</p>
-      </div>
-    );
+    return <CirLoader para={"Loading your streak rewards"} />;
   }
 
   return (

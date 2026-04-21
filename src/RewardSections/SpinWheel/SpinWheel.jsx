@@ -7,6 +7,7 @@ import { FaCoins, FaGift, FaBolt, FaRedo } from "react-icons/fa";
 import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
 import { showError } from "../../utils/Toast";
+import CirLoader from "../../Components/CommonComponents/CirLoader";
 
 const SpinWheel = () => {
   const [rewards, setRewards] = useState([]);
@@ -15,6 +16,7 @@ const SpinWheel = () => {
   const [selectedReward, setSelectedReward] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const { isLoading, setIsLoading } = useList();
+  const [isFetchSpin, setIsFetchSpin] = useState(false);
 
   const [isSpinning, setIsSpinning] = useState(false);
 
@@ -24,9 +26,9 @@ const SpinWheel = () => {
 
   const fetchSpinDetails = async () => {
     setIsLoading(true);
+    setIsFetchSpin(true);
     try {
       const response = await getSpinDetails();
-
       setRewards(response.data.rewards || []);
       setSpins(response.data.totalSpins || 0);
       // console.log(rewards);
@@ -34,6 +36,7 @@ const SpinWheel = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      setIsFetchSpin(false);
     }
   };
 
@@ -151,82 +154,90 @@ const SpinWheel = () => {
             </div>
           </div>
 
-          <div className={styles.wheelSection}>
-            <div className={styles.pointer}></div>
+          {!isFetchSpin ? (
+            <>
+              <div className={styles.wheelSection}>
+                <div className={styles.pointer}></div>
 
-            <div
-              className={styles.wheel}
-              style={{
-                transform: `rotate(${rotation}deg)`,
-                transition: "transform 5.5s cubic-bezier(0.12, 0.8, 0.18, 1)",
-              }}
-            >
-              {rewards.map((reward, index) => {
-                const angle = 360 / rewards.length;
-                return (
-                  <div
-                    key={reward._id}
-                    className={styles.slice}
-                    style={{
-                      transform: `rotate(${index * angle}deg)`,
-                    }}
-                  >
-                    <div
-                      className={styles.sliceShape}
-                      style={{
-                        background: reward.color,
-                      }}
-                    >
-                      <div className={styles.sliceInner}>
-                        <span
-                          className={styles.sliceLabel}
+                <div
+                  className={styles.wheel}
+                  style={{
+                    transform: `rotate(${rotation}deg)`,
+                    transition:
+                      "transform 5.5s cubic-bezier(0.12, 0.8, 0.18, 1)",
+                  }}
+                >
+                  {rewards.map((reward, index) => {
+                    const angle = 360 / rewards.length;
+                    return (
+                      <div
+                        key={reward._id}
+                        className={styles.slice}
+                        style={{
+                          transform: `rotate(${index * angle}deg)`,
+                        }}
+                      >
+                        <div
+                          className={styles.sliceShape}
                           style={{
-                            fontSize: index === 4 || index === 5 ? "15px" : "",
+                            background: reward.color,
                           }}
                         >
-                          <span className="d-inline-block me-1">
-                            {getRewardIcon(reward)}
-                          </span>
-                          <span>
-                            {index === 8
-                              ? "Loose"
-                              : index === 4 || index === 5
-                                ? `₹ ${reward.value} RS`
-                                : index === 3
-                                  ? "1 Spin"
-                                  : reward.title}
-                          </span>
-                        </span>
+                          <div className={styles.sliceInner}>
+                            <span
+                              className={styles.sliceLabel}
+                              style={{
+                                fontSize:
+                                  index === 4 || index === 5 ? "15px" : "",
+                              }}
+                            >
+                              <span className="d-inline-block me-1">
+                                {getRewardIcon(reward)}
+                              </span>
+                              <span>
+                                {index === 8
+                                  ? "Loose"
+                                  : index === 4 || index === 5
+                                    ? `₹ ${reward.value} RS`
+                                    : index === 3
+                                      ? "1 Spin"
+                                      : reward.title}
+                              </span>
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
 
-              <div className={styles.centerCircle}>
+                  <div className={styles.centerCircle}>
+                    <button
+                      className={styles.spinButton}
+                      onClick={handleSpin}
+                      disabled={isLoading || spins <= 0 || isSpinning}
+                    >
+                      {isLoading ? "ZoOo" : "SPIN"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="d-flex justify-content-center align-items-center">
                 <button
-                  className={styles.spinButton}
+                  disabled={isSpinning}
+                  className={`${styles.spinWheelBtn} ${spins <= 0 && styles.outOfspin}`}
                   onClick={handleSpin}
-                  disabled={isLoading || spins <= 0 || isSpinning}
                 >
-                  {isLoading ? "ZoOo" : "SPIN"}
+                  {isSpinning
+                    ? "Wait for Reward"
+                    : spins <= 0
+                      ? "Out of spin"
+                      : "Spin & Win"}
                 </button>
               </div>
-            </div>
-          </div>
-          <div className="d-flex justify-content-center align-items-center">
-            <button
-              disabled={isSpinning}
-              className={`${styles.spinWheelBtn} ${spins <= 0 && styles.outOfspin}`}
-              onClick={handleSpin}
-            >
-              {isSpinning
-                ? "Wait for Reward"
-                : spins <= 0
-                  ? "Out of spin"
-                  : "Spin & Win"}
-            </button>
-          </div>
+            </>
+          ) : (
+            <CirLoader para={"Fetching the Spin Rewards"} />
+          )}
 
           <div>
             <h5 className="mb-4">Rewards Probabilities: </h5>
