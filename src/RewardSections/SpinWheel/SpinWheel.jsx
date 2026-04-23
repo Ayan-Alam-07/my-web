@@ -29,9 +29,9 @@ const SpinWheel = () => {
     setIsFetchSpin(true);
     try {
       const response = await getSpinDetails();
+
       setRewards(response.data.rewards || []);
-      setSpins(response.data.totalSpins || 0);
-      // console.log(rewards);
+      setSpins(response.data.availableSpins || 0);
     } catch (error) {
       console.log(error);
     } finally {
@@ -47,8 +47,11 @@ const SpinWheel = () => {
   const handleSpin = async () => {
     if (spins <= 0)
       showError(`you have ${spins} spin, Earn spins to claim Rewards`);
+
     if (isLoading || spins <= 0 || rewards.length === 0) return;
+
     setIsLoading(true);
+
     try {
       setIsSpinning(true);
 
@@ -57,6 +60,7 @@ const SpinWheel = () => {
 
       const response = await playSpin();
       setIsLoading(false);
+
       const reward = response.data.reward;
 
       const rewardIndex = rewards.findIndex((item) => item._id === reward._id);
@@ -100,7 +104,8 @@ const SpinWheel = () => {
 
       setRotation(finalRotation);
 
-      setSpins(response.data.remainingSpins);
+      // setSpins(response.data.remainingSpins);
+      setSpins(response.data.availableSpins);
 
       setTimeout(
         () => {
@@ -198,7 +203,7 @@ const SpinWheel = () => {
                                 {index === 8
                                   ? "Loose"
                                   : index === 4 || index === 5
-                                    ? `₹ ${reward.value} RS`
+                                    ? `₹ ${reward.amount} RS`
                                     : index === 3
                                       ? "1 Spin"
                                       : reward.title}
