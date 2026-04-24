@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getMyWithdrawals } from "../services/walletService";
 
+import { getDailyCheckinRewards } from "../services/dailyCheckinService";
+
 const ListContext = createContext();
 
 export const ListProvider = ({ children }) => {
@@ -41,13 +43,20 @@ export const ListProvider = ({ children }) => {
   const [isRedeemHistory, setIsRedeemHistory] = useState(true);
   const [isWalletToHistory, setIsWalletToHistory] = useState(false);
 
-  // const [coins, setCoins] = useState(user?.coins || 0);
+  const [rewards, setRewards] = useState([]);
+  const [currentDay, setCurrentDay] = useState(1);
+  const [claimedDays, setClaimedDays] = useState([]);
+  const [nextClaimAt, setNextClaimAt] = useState(null);
 
   const navigate = useNavigate();
 
   // =========================
   // 🔐 fetching Withdrawals
   // =========================
+
+  useEffect(() => {
+    fetchRewards();
+  }, []);
 
   const fetchWithdrawals = async () => {
     try {
@@ -68,6 +77,27 @@ export const ListProvider = ({ children }) => {
   useEffect(() => {
     fetchWithdrawals();
   }, []);
+
+  // =========================
+  // 🔐 Daily check-in
+  // =========================
+
+  const fetchRewards = async () => {
+    setIsLoading(true);
+
+    try {
+      const data = await getDailyCheckinRewards();
+
+      setRewards(data.rewards || []);
+      setCurrentDay(data.currentDay || 1);
+      setClaimedDays(data.claimedDays || []);
+      setNextClaimAt(data.nextClaimAt || null);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   // =========================
   // 🔐 AUTH STATE
@@ -150,7 +180,7 @@ export const ListProvider = ({ children }) => {
 
   const isAuthenticated = user !== null;
 
-  // =================================== location ===========================
+  // ======================================================== location =================================================
 
   const [locationData, setLocationData] = useState({
     loading: true,
@@ -205,6 +235,16 @@ export const ListProvider = ({ children }) => {
         setIsRedeemHistory,
         isWalletToHistory,
         setIsWalletToHistory,
+        currentDay,
+        setCurrentDay,
+        rewards,
+        setRewards,
+        claimedDays,
+        setClaimedDays,
+        nextClaimAt,
+        setNextClaimAt,
+
+        fetchRewards,
 
         withdrawals,
         fetchWithdrawals,

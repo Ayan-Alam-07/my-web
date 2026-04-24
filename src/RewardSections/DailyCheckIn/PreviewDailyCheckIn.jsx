@@ -1,11 +1,14 @@
 // PreviewDailyCheckIn.jsx
 
+import { useList } from "../../Context/ContextStore";
 import RewardsBase from "../RewardsBase/RewardsBase";
 import styles from "./PreviewDailyCheckIn.module.css";
 import { Flame, Coins, Gift } from "lucide-react";
 
 const PreviewDailyCheckIn = () => {
   const icon = <Flame size={26} />;
+
+  const { currentDay, rewards } = useList();
 
   return (
     <RewardsBase
@@ -29,7 +32,7 @@ const PreviewDailyCheckIn = () => {
 
             <div>
               <span>Today's Reward</span>
-              <h4>20 VEs</h4>
+              <h4>{rewards.find((r) => r.day === currentDay)?.reward}</h4>
             </div>
           </div>
         </div>

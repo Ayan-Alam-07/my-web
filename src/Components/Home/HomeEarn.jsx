@@ -58,7 +58,7 @@ const HomeEarn = () => {
         </div>
 
         {/* Rewards Sections */}
-        <h3 className={style.HomeEarnpara}>Features:</h3>
+        <h3 className={`pb-2 ${style.HomeEarnpara}`}>Features:</h3>
         <RewardSections />
 
         <div className="row justify-content-center mt-4">
