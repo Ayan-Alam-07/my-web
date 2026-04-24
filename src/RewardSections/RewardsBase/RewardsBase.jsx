@@ -24,7 +24,7 @@ const RewardsBase = ({
 
   return (
     <div
-      className={`${styles.card} ${styles[cardClass]}`}
+      className={`${styles.card} ${styles[cardClass]} ${isLocked && styles.active} ${badge === "Daily Challenges" && isLocked ? styles.missionActive : badge === "Achievements" && isLocked ? styles.achievementsActive : ""}`}
       onClick={() => {
         if (!isLocked) {
           navigate(`/${navigation}`);
