@@ -269,7 +269,7 @@ const SpinWheel = () => {
               </div>
             </>
           ) : (
-            <CirLoader para={"Fetching the Spin Rewards"} />
+            <CirLoader id={1} para={"Fetching the Spin Rewards"} />
           )}
 
           <div>

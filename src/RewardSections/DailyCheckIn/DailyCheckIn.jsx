@@ -388,7 +388,7 @@ export default function DailyCheckIn() {
     !nextClaimAt || new Date(nextClaimAt).getTime() <= new Date().getTime();
 
   if (isLoading) {
-    return <CirLoader para={"Loading your streak rewards"} />;
+    return <CirLoader id={2} para={"Loading your streak rewards"} />;
   }
 
   return (
