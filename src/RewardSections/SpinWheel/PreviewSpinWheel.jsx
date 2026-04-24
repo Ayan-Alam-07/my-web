@@ -19,6 +19,7 @@ const PreviewSpinWheel = () => {
       badgeClass={"spinWheelBadge"}
       btnClass={"spinWheelBtn"}
       navigation={"spin-wheel"}
+      isLocked={false}
     >
       <div className={styles.middle}>
         <div className={styles.wheelWrapper}>

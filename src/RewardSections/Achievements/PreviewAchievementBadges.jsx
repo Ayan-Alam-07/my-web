@@ -29,6 +29,8 @@ const PreviewAchievementBadges = () => {
       iconBoxClass={"achievementIconBox"}
       badgeClass={"achievementBadge"}
       btnClass={"achievementBtn"}
+      isLocked={true}
+      unlockLevel={3}
     >
       <div className={styles.badgesGrid}>
         {badges.map((badge) => (

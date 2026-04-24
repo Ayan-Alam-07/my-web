@@ -22,6 +22,7 @@ const PreviewDailyCheckIn = () => {
       badgeClass={"dailyCheckBadge"}
       btnClass={"dailyCheckBtn"}
       navigation={"daily-streak"}
+      isLocked={false}
     >
       <div className={styles.rewardSection}>
         <div className={styles.rewardCard}>

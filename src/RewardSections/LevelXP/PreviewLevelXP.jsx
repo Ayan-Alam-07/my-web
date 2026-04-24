@@ -15,6 +15,7 @@ const PreviewLevelXP = () => {
       glowClass={"levelXPGlow"}
       badgeClass={"levelXPBadge"}
       btnClass={"levelXPBtn"}
+      isLocked={false}
     >
       <div className={styles.middleSection}>
         <div className={styles.progressWrapper}>

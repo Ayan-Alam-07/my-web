@@ -2,6 +2,8 @@ import { ChevronRight, Crown } from "lucide-react";
 import styles from "./RewardsBase.module.css";
 import Badge from "./Badge";
 import { useNavigate } from "react-router-dom";
+import { showInfo, showWarning } from "../../utils/Toast";
+import { useList } from "../../Context/ContextStore";
 
 const RewardsBase = ({
   icon,
@@ -15,14 +17,35 @@ const RewardsBase = ({
   badgeClass,
   btnClass,
   navigation,
+  isLocked,
+  unlockLevel,
 }) => {
   const navigate = useNavigate();
 
   return (
     <div
       className={`${styles.card} ${styles[cardClass]}`}
-      onClick={() => navigate(`/${navigation}`)}
+      onClick={() => {
+        if (!isLocked) {
+          navigate(`/${navigation}`);
+        } else {
+          showWarning(`LevelUp to unlock ${badge}`);
+          // showInfo(`LevelUp to unlock ${badge}`);
+        }
+      }}
     >
+      {/* overlay */}
+      {isLocked && (
+        <div className={styles.lockedOverlay}>
+          <div className={styles.lockedContent}>
+            <span className={styles.lockedIcon}>🔒</span>
+            <span className={styles.lockedText}>
+              UnLock at Level {unlockLevel}
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className={`${styles.bgGlow} ${styles[glowClass]}`}></div>
 
       <div className={styles.header}>

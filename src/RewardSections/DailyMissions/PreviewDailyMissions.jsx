@@ -36,6 +36,8 @@ const PreviewDailyMissions = () => {
       iconBoxClass={"dailyMissionIconBox"}
       badgeClass={"dailyMissionBadge"}
       btnClass={"dailyMissionBtn"}
+      isLocked={true}
+      unlockLevel={2}
     >
       <div className={styles.missionList}>
         {milestone.map((item) => (
