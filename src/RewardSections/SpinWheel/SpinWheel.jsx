@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import styles from "./SpinWheel.module.css";
-import { getSpinDetails, playSpin } from "../../services/spinService";
+import {
+  getSpinDetails,
+  playSpin,
+  claimSpinReward,
+  discardSpinReward,
+} from "../../services/spinService";
 import { FaCoins, FaGift, FaBolt, FaRedo } from "react-icons/fa";
 import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
@@ -22,6 +27,7 @@ const SpinWheel = () => {
 
   useEffect(() => {
     fetchSpinDetails();
+    // console.log(rewards);
   }, []);
 
   const fetchSpinDetails = async () => {
@@ -45,67 +51,49 @@ const SpinWheel = () => {
   }, [rewards]);
 
   const handleSpin = async () => {
-    if (spins <= 0)
-      showError(`you have ${spins} spin, Earn spins to claim Rewards`);
+    if (spins <= 0) {
+      showError(`You have ${spins} spin left. Earn spins to claim rewards.`);
+      return;
+    }
 
-    if (isLoading || spins <= 0 || rewards.length === 0) return;
+    if (isLoading || isSpinning || rewards.length === 0) return;
 
     setIsLoading(true);
+    setIsSpinning(true);
+    setSelectedReward(null);
+    setShowPopup(false);
 
     try {
-      setIsSpinning(true);
-
-      setSelectedReward(null);
-      setShowPopup(false);
-
       const response = await playSpin();
-      setIsLoading(false);
-
       const reward = response.data.reward;
 
-      const rewardIndex = rewards.findIndex((item) => item._id === reward._id);
+      // const rewardIndex = rewards.findIndex((item) => item._id === reward._id);
+      const rewardIndex = rewards.findIndex(
+        (item) => item.order === response.data.rewardOrder,
+      );
+      setIsLoading(false);
 
       if (rewardIndex === -1) {
-        setIsLoading(false);
-        return;
+        throw new Error("Reward not found in wheel data");
       }
 
       const sliceAngle = 360 / rewards.length;
-
-      // exact center angle of backend selected reward
       const rewardCenterAngle = rewardIndex * sliceAngle + sliceAngle / 2;
-
-      // pointer is fixed at top center
       const pointerAngle = 0;
-
-      // random extra spins between 6 and 10
       const randomSpins = Math.floor(Math.random() * 5) + 6;
-
-      // random animation duration between 2s and 4s
       const randomDuration = Math.floor(Math.random() * 3) + 3;
-
-      // final angle where selected reward should stop under pointer
       const stopAngle = 360 - rewardCenterAngle + pointerAngle;
-
-      // normalize current rotation
       const normalizedRotation = rotation % 360;
-
-      // make sure wheel continues forward only
       const deltaRotation =
         360 * randomSpins + ((stopAngle - normalizedRotation + 360) % 360);
-
       const finalRotation = rotation + deltaRotation;
 
       const wheelElement = document.querySelector(`.${styles.wheel}`);
-
       if (wheelElement) {
         wheelElement.style.transition = `transform ${randomDuration}s cubic-bezier(0.08, 0.85, 0.18, 1)`;
       }
 
       setRotation(finalRotation);
-
-      // setSpins(response.data.remainingSpins);
-      setSpins(response.data.availableSpins);
 
       setTimeout(
         () => {
@@ -116,8 +104,46 @@ const SpinWheel = () => {
         },
         randomDuration * 1000 + 100,
       );
+      setSpins(response.data.availableSpins);
     } catch (error) {
-      console.log(error);
+      console.log("Spin error:", error?.response?.data || error.message);
+      showError(error?.response?.data?.message || "Spin failed");
+      setIsLoading(false);
+      setIsSpinning(false);
+    }
+  };
+
+  const handleClaimReward = async () => {
+    try {
+      setIsLoading(true);
+      const response = await claimSpinReward();
+      setSpins(response.data.availableSpins);
+      setShowPopup(false);
+      setSelectedReward(null);
+    } catch (error) {
+      console.log(
+        "Claim reward error:",
+        error?.response?.data || error.message,
+      );
+      showError(error?.response?.data?.message || "Failed to claim reward");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDiscardReward = async () => {
+    try {
+      setIsLoading(true);
+      await discardSpinReward();
+      setShowPopup(false);
+      setSelectedReward(null);
+    } catch (error) {
+      console.log(
+        "Discard reward error:",
+        error?.response?.data || error.message,
+      );
+      showError(error?.response?.data?.message || "Failed to discard reward");
+    } finally {
       setIsLoading(false);
     }
   };
@@ -125,14 +151,16 @@ const SpinWheel = () => {
   const getRewardIcon = (reward) => {
     if (reward.icon) return reward.icon;
 
-    switch (reward.rewardType) {
-      case "VE":
+    const rewardType = reward.rewardType || reward.type;
+
+    switch (rewardType) {
+      case "coins":
         return <FaCoins />;
-      case "XP":
+      case "xp":
         return <FaBolt />;
-      case "FREE_SPIN":
+      case "free_spin":
         return <FaRedo />;
-      case "GIFT_VOUCHER":
+      case "voucher":
         return <FaGift />;
       default:
         return "🎁";
@@ -221,7 +249,7 @@ const SpinWheel = () => {
                       onClick={handleSpin}
                       disabled={isLoading || spins <= 0 || isSpinning}
                     >
-                      {isLoading ? "ZoOo" : "SPIN"}
+                      {isSpinning ? "ZoOo" : "SPIN"}
                     </button>
                   </div>
                 </div>
@@ -261,7 +289,7 @@ const SpinWheel = () => {
                       {idx === 8
                         ? "Lose"
                         : idx === 4 || idx === 5
-                          ? `Gift Card ₹${reward.value}`
+                          ? `Gift Card ₹${reward.amount}`
                           : idx === 3
                             ? "Free Spin"
                             : reward.title}
@@ -288,23 +316,30 @@ const SpinWheel = () => {
                 </div>
 
                 <h2>
-                  {selectedReward.rewardType === "LOSE"
+                  {selectedReward.type === "empty"
                     ? "Unfortunately"
                     : "Congratulations"}
                 </h2>
                 <p>
-                  {selectedReward.rewardType === "LOSE"
-                    ? "You Lose"
-                    : "You Won"}
+                  {selectedReward.type === "empty" ? "You Lose" : "You Won"}
                 </p>
 
                 <h1>{selectedReward.title}</h1>
 
                 <button
-                  className={styles.popupButton}
-                  onClick={() => setShowPopup(false)}
+                  className={` ${styles.popupButton} ${styles.discardRwd}`}
+                  onClick={handleDiscardReward}
+                  disabled={isLoading}
                 >
-                  Awesome
+                  No Thanks
+                </button>
+
+                <button
+                  className={` mt-3 ${styles.popupButton}`}
+                  onClick={handleClaimReward}
+                  disabled={isLoading}
+                >
+                  Claim Reward
                 </button>
               </div>
             </div>
