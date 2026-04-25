@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./LvlDashboard.module.css";
 
 import { getLevel, getLeaderboard } from "../../../services/levelService";
-import ProgressBar from "../components/ProgressBar";
-import LvlBadge from "../components/LvlBadge";
-import LvlLeaderboard from "../components/LvlLeaderboard";
-import ActionButtons from "../components/ActionButtons";
+import ProgressBar from "../Components/ProgressBar";
+import LvlBadge from "../Components/LvlBadge";
+import LvlLeaderboard from "../Components/LvlLeaderboard";
+import ActionButtons from "../Components/ActionButtons";
 
 const LvlDashboard = () => {
   const [data, setData] = useState(null);
