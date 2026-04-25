@@ -1,0 +1,17 @@
+.container {
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  background: #111827;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.row:hover {
+  background: #1f2937;
+}

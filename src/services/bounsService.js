@@ -21,12 +21,14 @@ API.interceptors.request.use((config) => {
 });
 
 export const getBonusRewards = async () => {
-  const res = await API.get("/api/bonus");
+  // const res = await API.get("/api/bonus");
+  const res = await API.get("/bonus");
   return res.data;
 };
 
 export const claimBonusReward = async (rewardId) => {
-  const res = await API.post("/api/bonus/claim", {
+  // const res = await API.post("/api/bonus/claim", {
+  const res = await API.post("/bonus/claim", {
     rewardId,
   });
 

@@ -16,6 +16,7 @@ const PreviewLevelXP = () => {
       badgeClass={"levelXPBadge"}
       btnClass={"levelXPBtn"}
       isLocked={false}
+      navigation={"Lvl-Dashboard"}
     >
       <div className={styles.middleSection}>
         <div className={styles.progressWrapper}>

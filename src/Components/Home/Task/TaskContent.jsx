@@ -20,7 +20,8 @@ const TaskContent = () => {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/captcha/task`,
+        // `${import.meta.env.VITE_API_URL}/api/captcha/task`,
+        `${import.meta.env.VITE_API_URL}/captcha/task`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -45,7 +46,8 @@ const TaskContent = () => {
     try {
       setIsLoading(true);
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/captcha/verify`,
+        // `${import.meta.env.VITE_API_URL}/api/captcha/verify`,
+        `${import.meta.env.VITE_API_URL}/captcha/verify`,
         {
           taskId,
           selected: value,

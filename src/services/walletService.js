@@ -69,7 +69,8 @@ API.interceptors.request.use(
 
 export const getWalletDetails = async () => {
   try {
-    const res = await API.get("/api/wallet/details");
+    // const res = await API.get("/api/wallet/details");
+    const res = await API.get("/wallet/details");
     return res.data;
   } catch (error) {
     console.error("Get Wallet Details Error:", error);
@@ -79,7 +80,8 @@ export const getWalletDetails = async () => {
 
 export const getVoucherOptions = async (payoutType) => {
   try {
-    const res = await API.get(`/api/vouchers/${payoutType}`);
+    // const res = await API.get(`/api/vouchers/${payoutType}`);
+    const res = await API.get(`/vouchers/${payoutType}`);
     return res.data;
   } catch (error) {
     console.error("Get Voucher Options Error:", error);
@@ -89,7 +91,8 @@ export const getVoucherOptions = async (payoutType) => {
 
 export const getAllVouchers = async () => {
   try {
-    const res = await API.get("/api/vouchers");
+    // const res = await API.get("/api/vouchers");
+    const res = await API.get("/vouchers");
     return res.data;
   } catch (error) {
     console.error("Get All Vouchers Error:", error);
@@ -99,7 +102,8 @@ export const getAllVouchers = async () => {
 
 export const createWithdrawal = async (payload) => {
   try {
-    const res = await API.post("/api/withdrawals/create", payload);
+    // const res = await API.post("/api/withdrawals/create", payload);
+    const res = await API.post("/withdrawals/create", payload);
     return res.data;
   } catch (error) {
     console.error("Create Withdrawal Error:", error);
@@ -109,7 +113,8 @@ export const createWithdrawal = async (payload) => {
 
 export const getMyWithdrawals = async () => {
   try {
-    const res = await API.get("/api/withdrawals/my-history");
+    // const res = await API.get("/api/withdrawals/my-history");
+    const res = await API.get("/withdrawals/my-history");
     return res.data;
   } catch (error) {
     console.error("Get My Withdrawals Error:", error);

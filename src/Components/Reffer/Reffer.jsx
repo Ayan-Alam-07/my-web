@@ -30,14 +30,14 @@ export default function Referral() {
         setIsLoading(true);
 
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/auth/referral-history`,
+          // `${import.meta.env.VITE_API_URL}/api/auth/referral-history`,
+          `${import.meta.env.VITE_API_URL}/auth/referral-history`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
             },
           },
         );
-        // showSuccess("Fetched referral details");
         setTotalReferrals(res.data.totalReferrals);
       } catch (err) {
         showError(err.response?.data || "Error fetching referral data");

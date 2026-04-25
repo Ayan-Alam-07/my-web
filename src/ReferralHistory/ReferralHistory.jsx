@@ -17,7 +17,8 @@ export default function ReferralHistory() {
         setIsLoading(true);
 
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/auth/referral-history`,
+          // `${import.meta.env.VITE_API_URL}/api/auth/referral-history`,
+          `${import.meta.env.VITE_API_URL}/auth/referral-history`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,

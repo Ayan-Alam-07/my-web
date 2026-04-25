@@ -110,7 +110,8 @@ export const ListProvider = ({ children }) => {
       if (manual) setIsLoading(true);
 
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/auth/user-coins`,
+        // `${import.meta.env.VITE_API_URL}/api/auth/user-coins`,
+        `${import.meta.env.VITE_API_URL}/auth/user-coins`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

@@ -27,6 +27,7 @@ import AdminDashboard from "../src/Components/Admin/AdminDashboard";
 import Transactions from "./Components/Transaction/Transactions";
 import DailyCheckIn from "./RewardSections/DailyCheckIn/DailyCheckIn";
 import SpinWheel from "./RewardSections/SpinWheel/SpinWheel";
+import LvlDashboard from "./RewardSections/LevelXP/pages/LvlDashboard";
 
 const App = () => {
   const { isLoading } = useList();
@@ -223,6 +224,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <SpinWheel />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/Lvl-Dashboard"
+          element={
+            <ProtectedRoute>
+              <LvlDashboard />
             </ProtectedRoute>
           }
         ></Route>
