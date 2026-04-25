@@ -4,7 +4,7 @@ const CirLoader = ({ para, id }) => {
   return (
     <div
       className={styles.loadingWrapper}
-      style={{ minHeight: id === 1 ? "70vh" : "50vh" }}
+      style={{ minHeight: id === 1 || id === 4 ? "70vh" : "50vh" }}
     >
       <div className={styles.loader}></div>
       <p>{`${para}...`}</p>
