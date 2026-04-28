@@ -3,6 +3,7 @@
 import styles from "./PreviewLevelXP.module.css";
 import { TrendingUp, Zap, Star } from "lucide-react";
 import RewardsBase from "../RewardsBase/RewardsBase";
+import LvlProgressBar from "./Components/LvlProgressBar";
 
 const PreviewLevelXP = () => {
   const badge = <TrendingUp size={14} style={{ marginLeft: "3px" }} />;
@@ -18,18 +19,8 @@ const PreviewLevelXP = () => {
       isLocked={false}
       navigation={"Lvl-Dashboard"}
     >
-      <div className={styles.middleSection}>
-        <div className={styles.progressWrapper}>
-          <div className={styles.progressInfo}>
-            <span>2,450 XP</span>
-            <strong>3,000 XP</strong>
-          </div>
+      <LvlProgressBar status={false} />
 
-          <div className={styles.progressBar}>
-            <div className={styles.progressFill}></div>
-          </div>
-        </div>
-      </div>
       <div className={styles.rewardCards}>
         <div className={styles.rewardCard}>
           <div className={styles.rewardIcon}>
@@ -38,7 +29,12 @@ const PreviewLevelXP = () => {
 
           <div>
             <span>Next Reward</span>
-            <strong>+100 VEs</strong>
+            <strong className={`d-flex align-items-center ${styles.lvlGift}`}>
+              <p className="m-0 d-inline-block" style={{ color: "#e2e60a" }}>
+                ₹ 25
+              </p>{" "}
+              <p className="m-0 ms-1">Gift Card</p>
+            </strong>
           </div>
         </div>
 
@@ -49,7 +45,7 @@ const PreviewLevelXP = () => {
 
           <div>
             <span>Unlock At</span>
-            <strong>Level 13</strong>
+            <strong>Level 7</strong>
           </div>
         </div>
       </div>

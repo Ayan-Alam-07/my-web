@@ -1,51 +1,3 @@
-/* PreviewLevelXP.module.css */
-
-.middleSection {
-  position: relative;
-  z-index: 2;
-  margin: 0 0 22px 0;
-}
-
-.progressWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.progressInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.progressInfo span {
-  color: #f5f7fb;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.progressInfo strong {
-  color: #9ca3af;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.progressBar {
-  width: 100%;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-}
-
-.progressFill {
-  width: 82%;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #7c5cff, #5f8bff);
-  box-shadow: 0 0 12px rgba(124, 92, 255, 0.35);
-}
-
 .rewardCards {
   display: flex;
   gap: 13px;
@@ -90,28 +42,11 @@
   font-size: 13px;
   font-weight: 700;
 }
+.lvlGift {
+  font-size: 12px;
+}
 
 @media (min-width: 576px) {
-  .middleSection {
-    margin: 0 0 16px 0;
-  }
-
-  .progressWrapper {
-    gap: 8px;
-  }
-
-  .progressInfo span {
-    font-size: 14px;
-  }
-
-  .progressInfo strong {
-    font-size: 14px;
-  }
-
-  .progressFill {
-    width: 82%;
-  }
-
   .rewardCards {
     gap: 16px;
   }
@@ -131,28 +66,13 @@
     margin-bottom: 3px;
   }
 
-  .rewardCard strong {
+  .rewardCard strong,
+  .lvlGift {
     font-size: 14px;
   }
 }
 
 @media (min-width: 992px) {
-  .middleSection {
-    margin: 0 0 20px 0;
-  }
-
-  .progressInfo span {
-    font-size: 12px;
-  }
-
-  .progressInfo strong {
-    font-size: 11px;
-  }
-
-  .progressFill {
-    width: 82%;
-  }
-
   .rewardCard {
     padding: 12px;
     gap: 10px;
@@ -165,5 +85,9 @@
   .rewardCard span {
     font-size: 12px;
     margin-bottom: 4px;
+  }
+
+  .lvlGift {
+    font-size: 13px;
   }
 }

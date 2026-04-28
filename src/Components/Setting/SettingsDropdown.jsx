@@ -57,6 +57,11 @@ export default function SettingsDropdown() {
     },
     {
       id: 4,
+      title: "Leaderboard",
+      click: () => navigate("/leaderboard"),
+    },
+    {
+      id: 5,
       title: "Redeem History",
       click: () => {
         setIsRedeemHistory(true);

@@ -1,13 +1,16 @@
 import styles from "./CirLoader.module.css";
 
-const CirLoader = ({ para, id }) => {
+const CirLoader = ({ para, id, title }) => {
   return (
     <div
       className={styles.loadingWrapper}
-      style={{ minHeight: id === 1 || id === 4 ? "70vh" : "50vh" }}
+      style={{
+        minHeight:
+          id === 1 ? "70vh" : title === "leaderboard" ? "30vh" : "50vh",
+      }}
     >
       <div className={styles.loader}></div>
-      <p>{`${para}...`}</p>
+      <p className={styles.para}>{`${para}...`}</p>
     </div>
   );
 };

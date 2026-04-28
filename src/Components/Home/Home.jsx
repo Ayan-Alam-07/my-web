@@ -7,11 +7,12 @@ import { useEffect } from "react";
 
 const Home = () => {
   const location = useLocation();
-  const { user, fetchCoins } = useList();
+  const { user, fetchCoins, fetchData } = useList();
 
   useEffect(() => {
     if (user?.token) {
       fetchCoins(false);
+      fetchData();
     }
   }, [location.pathname]);
 

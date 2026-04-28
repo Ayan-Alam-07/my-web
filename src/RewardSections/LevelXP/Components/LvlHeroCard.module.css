@@ -1,0 +1,145 @@
+.heroCard {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 28px;
+  /* background:
+    linear-gradient(135deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.88)),
+    linear-gradient(135deg, #0f172a, #1e293b); */
+  background: linear-gradient(135deg, #232547, #1c1e35);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  position: relative;
+}
+
+.heroCard::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  right: 24px;
+  background: radial-gradient(
+    circle,
+    rgba(250, 204, 21, 0.24),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.left h1 {
+  margin: 8px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.left p {
+  margin: 0;
+  max-width: 560px;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.kicker {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.14);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  color: #bfdbfe;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.metaBox {
+  min-width: 180px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metaBox span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.metaBox strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.coinPanel {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(250, 204, 21, 0.15), rgba(245, 158, 11, 0.08)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(250, 204, 21, 0.18);
+}
+
+.coinLabel {
+  color: #fde68a;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.coinValueWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 8px;
+}
+
+.coinIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #111827;
+  font-size: 1.2rem;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.28);
+}
+
+.coinValueWrap h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.coinHint {
+  margin: 0;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .heroCard {
+    grid-template-columns: 1fr;
+  }
+}

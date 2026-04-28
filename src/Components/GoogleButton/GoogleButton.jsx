@@ -15,7 +15,8 @@ export default function GoogleButton({ referralInput }) {
       setIsLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/google-login`,
+        // `${import.meta.env.VITE_API_URL}/api/auth/google-login`,
+        `${import.meta.env.VITE_API_URL}/auth/google-login`,
         {
           token: response.credential,
           referralInput: localStorage.getItem("referralCode"),

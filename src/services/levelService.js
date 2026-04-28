@@ -23,8 +23,8 @@ export const getLevel = () => {
   const raw = localStorage.getItem("token");
   const token = cleanToken(raw);
 
-  console.log("RAW TOKEN:", raw);
-  console.log("CLEAN TOKEN:", token);
+  // console.log("RAW TOKEN:", raw);
+  // console.log("CLEAN TOKEN:", token);
 
   return API.get("/level/me", {
     headers: { Authorization: `Bearer ${token}` },

@@ -22,6 +22,8 @@ const RewardsBase = ({
 }) => {
   const navigate = useNavigate();
 
+  const { data } = useList();
+
   return (
     <div
       className={`${styles.card} ${styles[cardClass]} ${isLocked && styles.active} ${badge === "Daily Challenges" && isLocked ? styles.missionActive : badge === "Achievements" && isLocked ? styles.achievementsActive : ""}`}
@@ -63,7 +65,8 @@ const RewardsBase = ({
           <div className={styles.topSection}>
             <div className={styles.levelBadge}>
               <Crown size={22} />
-              <span>Level 12</span>
+              {/* <span>Level 12</span> */}
+              <span>Level {data.level}</span>
             </div>
 
             <div className={styles.headingContent}>
@@ -71,9 +74,7 @@ const RewardsBase = ({
             </div>
           </div>
         )}
-        {/* <span className={`${styles.badge} ${styles[badgeClass]}`}>
-          {title === "level" && "Grow"} {badge}
-        </span> */}
+
         <Badge title={title} badgeClass={badgeClass} badge={badge} />
       </div>
 

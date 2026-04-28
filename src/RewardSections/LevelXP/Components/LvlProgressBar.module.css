@@ -1,0 +1,153 @@
+.middleSection {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 22px 0;
+}
+
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressInfo span {
+  color: #f5f7fb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.progressInfo strong {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7c5cff, #5f8bff);
+  box-shadow: 0 0 12px rgba(124, 92, 255, 0.35);
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.topRow,
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topRow {
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.label {
+  margin: 0 0 6px;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.topRow h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.nextPill {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  color: #bfdbfe;
+  font-weight: 700;
+  font-size: 0.84rem;
+}
+
+.barShell {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.barFill {
+  position: relative;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e 0%, #14b8a6 45%, #3b82f6 100%);
+  transition: width 0.45s ease;
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.22);
+}
+
+.glow {
+  position: absolute;
+  right: 6px;
+  top: 2px;
+  width: 28px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  filter: blur(4px);
+}
+
+.bottomRow {
+  margin-top: 12px;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+}
+
+@media (min-width: 576px) {
+  .middleSection {
+    margin: 0 0 16px 0;
+  }
+
+  .progressWrapper {
+    gap: 8px;
+  }
+
+  .progressInfo span {
+    font-size: 14px;
+  }
+
+  .progressInfo strong {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .middleSection {
+    margin: 0 0 20px 0;
+  }
+
+  .progressInfo span {
+    font-size: 12px;
+  }
+
+  .progressInfo strong {
+    font-size: 11px;
+  }
+}

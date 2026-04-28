@@ -5,6 +5,7 @@ import axios from "axios";
 import { getMyWithdrawals } from "../services/walletService";
 
 import { getDailyCheckinRewards } from "../services/dailyCheckinService";
+import { getLevel, getLeaderboard } from "../services/levelService";
 
 const ListContext = createContext();
 
@@ -34,6 +35,7 @@ export const ListProvider = ({ children }) => {
     { id: 17, name: "Daily Streak" },
     { id: 18, name: "Spin The Wheel" },
     { id: 19, name: "Level-Up" },
+    { id: 20, name: "Leaderboard" },
   ]);
 
   const [withdrawals, setWithdrawals] = useState([]);
@@ -49,15 +51,16 @@ export const ListProvider = ({ children }) => {
   const [claimedDays, setClaimedDays] = useState([]);
   const [nextClaimAt, setNextClaimAt] = useState(null);
 
+  const [data, setData] = useState(null);
+  const [dataLoading, setDataLoading] = useState(true);
+  const [leaderboard, setLeaderboard] = useState([]);
+
   const navigate = useNavigate();
+  // const token = localStorage.getItem("token");
 
   // =========================
   // 🔐 fetching Withdrawals
   // =========================
-
-  useEffect(() => {
-    fetchRewards();
-  }, []);
 
   const fetchWithdrawals = async () => {
     try {
@@ -75,9 +78,41 @@ export const ListProvider = ({ children }) => {
     }
   };
 
+  // useEffect(() => {
+  //   fetchWithdrawals();
+  // }, []);
+
+  // =========================
+  // 🔐 Level & leaderboard
+  // =========================
+
+  const fetchData = async () => {
+    if (!user?.token) return;
+
+    try {
+      setDataLoading(true);
+
+      const res = await getLevel(user.token);
+      const lb = await getLeaderboard();
+
+      setData(res?.data ?? { xp: 0, nextXP: 0, progress: 0 });
+      setLeaderboard(Array.isArray(lb?.data) ? lb.data : []);
+    } catch (error) {
+      console.error("fetchData error:", error);
+      setData({ xp: 0, nextXP: 0, progress: 0 });
+      setLeaderboard([]);
+    } finally {
+      setDataLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetchWithdrawals();
-  }, []);
+    if (!user?.token) {
+      setDataLoading(false);
+      return;
+    }
+    fetchData();
+  }, [user?.token]);
 
   // =========================
   // 🔐 Daily check-in
@@ -168,7 +203,8 @@ export const ListProvider = ({ children }) => {
   const login = (data) => {
     localStorage.removeItem("referralCode");
     localStorage.setItem("user", JSON.stringify(data));
-    localStorage.setItem("token", JSON.stringify(data.token));
+    // localStorage.setItem("token", JSON.stringify(data.token));
+    localStorage.setItem("token", data.token);
     setUser(data);
   };
 
@@ -181,6 +217,15 @@ export const ListProvider = ({ children }) => {
   };
 
   const isAuthenticated = user !== null;
+
+  // =========================
+  // 🔐 fetching All the data of application
+  // =========================
+
+  useEffect(() => {
+    fetchRewards();
+    fetchWithdrawals();
+  }, []);
 
   // ======================================================== location =================================================
 
@@ -247,6 +292,15 @@ export const ListProvider = ({ children }) => {
         setNextClaimAt,
 
         fetchRewards,
+
+        data,
+        setData,
+        leaderboard,
+        setLeaderboard,
+        dataLoading,
+        setDataLoading,
+
+        fetchData,
 
         withdrawals,
         fetchWithdrawals,
