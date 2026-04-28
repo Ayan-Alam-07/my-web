@@ -78,9 +78,9 @@ export const ListProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchWithdrawals();
-  // }, []);
+  useEffect(() => {
+    fetchWithdrawals();
+  }, []);
 
   // =========================
   // 🔐 Level & leaderboard
@@ -224,7 +224,6 @@ export const ListProvider = ({ children }) => {
 
   useEffect(() => {
     fetchRewards();
-    fetchWithdrawals();
   }, []);
 
   // ======================================================== location =================================================
