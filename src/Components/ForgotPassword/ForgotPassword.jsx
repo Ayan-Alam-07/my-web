@@ -50,7 +50,8 @@ export default function ForgotPassword() {
       setIsLoading(true);
       setLoading(true);
 
-      const res = await axios.post(`${API}/api/auth/forgot-password/send-otp`, {
+      // const res = await axios.post(`${API}/api/auth/forgot-password/send-otp`, {
+      const res = await axios.post(`${API}/auth/forgot-password/send-otp`, {
         email,
       });
       setIsLoading(false);
