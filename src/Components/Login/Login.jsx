@@ -20,7 +20,8 @@ export default function Login() {
     try {
       setIsLoading(true);
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        // `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        `${import.meta.env.VITE_API_URL}/auth/login`,
         { email, password },
       );
       login(res.data);
