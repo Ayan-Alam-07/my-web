@@ -22,7 +22,7 @@ const RewardsBase = ({
 }) => {
   const navigate = useNavigate();
 
-  const { data } = useList();
+  const { data, user } = useList();
 
   return (
     <div
@@ -66,7 +66,7 @@ const RewardsBase = ({
             <div className={styles.levelBadge}>
               <Crown size={22} />
               {/* <span>Level 12</span> */}
-              {/* <span>Level {data.level}</span> */}
+              <span>Level {user.level}</span>
             </div>
 
             <div className={styles.headingContent}>
