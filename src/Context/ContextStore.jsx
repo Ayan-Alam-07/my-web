@@ -137,6 +137,12 @@ export const ListProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    if (!user?.token) return;
+
+    fetchRewards();
+  }, [user?.token]);
+
   // =========================
   // 🔐 AUTH STATE
   // =========================
@@ -223,10 +229,6 @@ export const ListProvider = ({ children }) => {
   // =========================
   // 🔐 fetching All the data of application
   // =========================
-
-  useEffect(() => {
-    fetchRewards();
-  }, []);
 
   // ======================================================== location =================================================
 
