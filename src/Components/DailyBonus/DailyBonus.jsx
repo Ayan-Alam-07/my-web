@@ -13,7 +13,8 @@ function DailyBonus() {
     try {
       setIsLoading(true);
 
-      const res = await axios.post("/api/daily-bonus/start");
+      // const res = await axios.post("/api/daily-bonus/start");
+      const res = await axios.post("/daily-bonus/start");
 
       const taskId = res.data.taskId;
 
@@ -23,7 +24,8 @@ function DailyBonus() {
 
       // simulation example
       setTimeout(async () => {
-        const verify = await axios.post("/api/daily-bonus/verify", {
+        // const verify = await axios.post("/api/daily-bonus/verify", {
+        const verify = await axios.post("/daily-bonus/verify", {
           taskId,
           status: "success",
         });
