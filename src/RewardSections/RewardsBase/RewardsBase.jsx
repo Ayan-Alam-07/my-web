@@ -66,7 +66,7 @@ const RewardsBase = ({
             <div className={styles.levelBadge}>
               <Crown size={22} />
               {/* <span>Level 12</span> */}
-              <span>Level {data.level}</span>
+              {/* <span>Level {data.level}</span> */}
             </div>
 
             <div className={styles.headingContent}>

@@ -79,8 +79,10 @@ export const ListProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchWithdrawals();
-  }, []);
+    if (user?.token) {
+      fetchWithdrawals();
+    }
+  }, [user?.token]);
 
   // =========================
   // 🔐 Level & leaderboard
