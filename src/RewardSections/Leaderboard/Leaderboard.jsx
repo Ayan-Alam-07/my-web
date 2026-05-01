@@ -6,8 +6,6 @@ import { useLocation } from "react-router-dom";
 import CirLoader from "../../Components/CommonComponents/CirLoader";
 
 const Leaderboard = () => {
-  //{ users = [] }
-
   const { leaderboard, fetchData, isLoading } = useList();
   const users = leaderboard;
 

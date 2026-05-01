@@ -11,7 +11,7 @@ export default function SettingsDropdown() {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  const { user, logout, setIsRedeemHistory } = useList(); // getting user from context
+  const { user, level, logout, setIsRedeemHistory } = useList(); // getting user from context
 
   const email = user?.email || "";
   const extractedName = email ? email.substring(0, 6) : "User";
@@ -86,9 +86,12 @@ export default function SettingsDropdown() {
           isOpen ? styles.dropdownOpen : ""
         }`}
       >
-        <div className="d-flex align-items-center ms-3 mb-2">
+        <div className=" d-flex align-items-center ms-3 mb-2">
           {/* Avatar */}
-          <div className={styles.avatar} onClick={() => navigate("/profile")}>
+          <div
+            className={` ${styles.avatar}`}
+            onClick={() => navigate("/profile")}
+          >
             {user?.photo ? (
               <img src={user.photo} alt="profile" />
             ) : (
@@ -97,9 +100,18 @@ export default function SettingsDropdown() {
           </div>
 
           {/* Profile Section */}
-          <div className={styles.profileSection}>
+          <div className={`${styles.profileSection}`}>
             <div>
-              <div className={styles.profileName}>{extractedName}</div>
+              <div className={styles.profileName}>
+                {extractedName}{" "}
+                <span
+                  className={`${styles.userLevel} ${styles[`lvl${level}`]}`}
+                >
+                  LVL {level}
+                  {/* LVL {data.level} */}
+                </span>
+              </div>
+
               <div className={styles.userId}>
                 ID: {user?.userId || "fetching..."}
               </div>

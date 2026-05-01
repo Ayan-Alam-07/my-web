@@ -52,6 +52,7 @@ export const ListProvider = ({ children }) => {
   const [nextClaimAt, setNextClaimAt] = useState(null);
 
   const [data, setData] = useState(null);
+  const [level, setLevel] = useState(0);
   const [dataLoading, setDataLoading] = useState(true);
   const [leaderboard, setLeaderboard] = useState([]);
 
@@ -99,10 +100,12 @@ export const ListProvider = ({ children }) => {
 
       setData(res?.data ?? { xp: 0, nextXP: 0, progress: 0 });
       setLeaderboard(Array.isArray(lb?.data) ? lb.data : []);
+      setLevel(res.data?.level);
     } catch (error) {
       console.error("fetchData error:", error);
       setData({ xp: 0, nextXP: 0, progress: 0 });
       setLeaderboard([]);
+      setLevel("Err");
     } finally {
       setDataLoading(false);
     }
@@ -293,6 +296,7 @@ export const ListProvider = ({ children }) => {
         setClaimedDays,
         nextClaimAt,
         setNextClaimAt,
+        level,
 
         fetchRewards,
 

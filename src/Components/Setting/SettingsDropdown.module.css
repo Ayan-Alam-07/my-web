@@ -26,9 +26,68 @@
 }
 
 .profileName {
+  position: relative;
   font-size: 14px;
   font-weight: 600;
   color: white;
+}
+
+.userLevel {
+  position: absolute;
+  top: -6px;
+  right: -100px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border: 1px solid;
+  display: inline-block;
+  backdrop-filter: blur(6px);
+}
+
+/* 🔘 LEVEL 0 — Neutral Grey (Starter) */
+.lvl0 {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.25);
+  color: #94a3b8;
+}
+
+/* 🟡 LEVEL 1–2 — Premium Gold */
+.lvl1,
+.lvl2 {
+  background: rgba(255, 200, 80, 0.12);
+  border-color: rgba(255, 180, 40, 0.25);
+  color: #e6b84a;
+}
+
+/* 🌹 LEVEL 3 — Rose Gold (Luxury feel) */
+.lvl3 {
+  background: rgba(255, 140, 120, 0.12);
+  border-color: rgba(255, 120, 100, 0.25);
+  color: #ff9e8a;
+}
+
+/* 🔵 LEVEL 4–5 — Trust Cyan (clean + modern) */
+.lvl4,
+.lvl5 {
+  background: rgba(80, 200, 255, 0.12);
+  border-color: rgba(60, 180, 240, 0.25);
+  color: #6fd3ff;
+}
+
+/* ⚡ LEVEL 6 — Electric Indigo (high-tier energy) */
+.lvl6 {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.25);
+  color: #8f9bff;
+}
+
+/* 🟣 LEVEL 7 — Royal Purple (elite) */
+.lvl7 {
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.25);
+  color: #c084fc;
 }
 
 .userId {

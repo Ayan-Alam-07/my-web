@@ -2,7 +2,7 @@ import { useList } from "../../../Context/ContextStore";
 import styles from "./LvlProgressBar.module.css";
 
 const LvlProgressBar = ({ status }) => {
-  const { data, dataLoading } = useList();
+  const { data, level, dataLoading } = useList();
 
   if (dataLoading || !data) return null;
 
@@ -55,7 +55,13 @@ const LvlProgressBar = ({ status }) => {
       {status && (
         <div className={styles.bottomRow}>
           <span>{progress.toFixed(0)}% completed</span>
-          <span>{remaining} XP left to level up</span>
+          {level !== 7 ? (
+            <span>
+              {remaining} XP left to level up to {level + 1}
+            </span>
+          ) : (
+            <span>You have reached maximum levels wait for new Level.</span>
+          )}
         </div>
       )}
     </div>

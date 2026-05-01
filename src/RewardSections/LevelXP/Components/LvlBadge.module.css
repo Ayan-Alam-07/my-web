@@ -26,6 +26,7 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  color: #f2f8ff;
 }
 
 .header {
@@ -50,7 +51,7 @@
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: #f8fafc;
+  /* color: #f8fafc; */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -134,7 +135,7 @@
 .content h3 {
   margin: 0 0 8px;
   font-size: 1.35rem;
-  color: #ffffff;
+  /* color: #ffffff; */
   font-weight: 800;
 }
 
@@ -168,7 +169,7 @@
 }
 
 .metaItem strong {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-size: 0.98rem;
 }
 

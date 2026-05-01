@@ -73,7 +73,7 @@ const LvlBadge = ({ badge = "Bronze" }) => {
 
       <div className={styles.header}>
         <span className={styles.eyebrow}>Reward badge</span>
-        <span className={styles.statusPill}>Verified tier</span>
+        <span className={styles.statusPill}>Verified Tier</span>
       </div>
 
       <div className={styles.badgeShell}>

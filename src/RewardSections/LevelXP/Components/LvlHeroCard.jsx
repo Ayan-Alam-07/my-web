@@ -1,7 +1,32 @@
 import styles from "./LvlHeroCard.module.css";
+import { PiTreasureChestFill } from "react-icons/pi";
+import { FaCoins } from "react-icons/fa";
 
 const LvlHeroCard = ({ data }) => {
   const remaining = Math.max((data?.nextXP ?? 0) - (data?.xp ?? 0), 0);
+
+  const metaLvlData = [
+    { title: "Current badge", reward: data?.badge || "Starter" },
+    { title: "XP left to next level", reward: `${remaining} XP` },
+    { title: "Next Level", reward: data.level },
+  ];
+
+  const metaRewards = [
+    {
+      title: "Available VEs",
+      value: data?.coins,
+      icon: <FaCoins />,
+      desc: "Use your VEs to redeem rewards, & stay active.",
+    },
+    {
+      title: "Next Reward",
+      value: `${data?.lvlReward}`,
+      icon: <PiTreasureChestFill />,
+      desc: "Use your VEs to redeem rewards, & stay active.",
+    },
+  ];
+
+  const rewardlen = metaRewards.length - 1;
 
   return (
     <div className={styles.heroCard}>
@@ -14,26 +39,49 @@ const LvlHeroCard = ({ data }) => {
         </p>
 
         <div className={styles.metaRow}>
-          <div className={styles.metaBox}>
-            <span>Current badge</span>
-            <strong>{data?.badge || "Starter"}</strong>
-          </div>
-          <div className={styles.metaBox}>
-            <span>XP left to next level</span>
-            <strong>{remaining} XP</strong>
-          </div>
+          {metaLvlData.map((meta, idx) => (
+            <div
+              key={idx}
+              className={`${styles.metaBox} ${idx === metaLvlData.length - 1 ? styles.nextLevel : ""}`}
+              style={{ width: idx === metaLvlData.length - 1 ? "96%" : "" }}
+            >
+              <span>{meta.title}</span>
+              <strong>{meta.reward}</strong>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className={styles.coinPanel}>
-        <span className={styles.coinLabel}>Available coins</span>
-        <div className={styles.coinValueWrap}>
-          <span className={styles.coinIcon}>✦</span>
-          <h2>{data?.coins ?? 0}</h2>
-        </div>
-        <p className={styles.coinHint}>
-          Use your balance to redeem rewards, climb faster, and stay active.
-        </p>
+      <div style={{ display: "grid", gap: "20px" }}>
+        {metaRewards.map((reward, idx) => (
+          <div
+            key={idx}
+            className={`${styles.coinPanel} ${idx === rewardlen ? styles.nxtReward : ""}`}
+          >
+            <span
+              className={styles.coinLabel}
+              style={{ color: idx === rewardlen ? "#ff9e8a" : "#fde68a" }}
+            >
+              {reward.title}
+            </span>
+            <div className={styles.coinValueWrap}>
+              <span
+                className={styles.coinIcon}
+                style={{
+                  background:
+                    idx === rewardlen
+                      ? "linear-gradient(135deg, #FFC1B3, #E57F6C)"
+                      : "linear-gradient(135deg, #facc15, #f59e0b)",
+                }}
+              >
+                {reward.icon}
+              </span>
+
+              <h2>{reward.value}</h2>
+            </div>
+            <p className={styles.coinHint}>{reward.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
