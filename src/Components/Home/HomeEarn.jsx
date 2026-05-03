@@ -19,6 +19,8 @@ import TapEarnBanner from "../TapNEarn/TapNEarnBanner";
 import TapToken from "../TapNEarn/TapToken";
 import RewardSections from "../../RewardSections/RewardSections";
 import QuickLinks from "../../RewardSections/QuickLinks/QuickLinks";
+import RewardArrow from "../CommonComponents/RewardArrow";
+import LeaderboardBanner from "../../RewardSections/Leaderboard/LeaderboardBanner";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -234,6 +236,7 @@ const HomeEarn = () => {
           </div>
         </div>
 
+        {/* watch ad */}
         <div className="row ">
           <div className="col-12">
             <div className="mt-5">
@@ -253,6 +256,29 @@ const HomeEarn = () => {
           </div>
         </div>
         <WatchAdBanner />
+
+        {/* leaderboard  */}
+
+        <div className="row mt-3 mb-lg-2">
+          <div className="col-12">
+            <div>
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Leaderboard :<span className={style.homeEarnTaskUnd3}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
+                  style={{ width: "50px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Participate in
+              leaderboard and get rewarded even when you are offline
+            </p>
+          </div>
+        </div>
+        <div className="mt-1 pt-1 mb-5 pb-3">
+          <LeaderboardBanner />
+        </div>
 
         {/* reffer section */}
         <div className="row  mt-3 mb-lg-2">
@@ -338,7 +364,7 @@ const HomeEarn = () => {
 
                   <div className={style.rewardCTA}>
                     Enter Giveaway
-                    <FaArrowRight className={style.rewardArrow} />
+                    <RewardArrow />
                   </div>
                 </div>
 
@@ -414,7 +440,10 @@ const HomeEarn = () => {
             ))}
           </div>
         </div>
-        <p className="text-center" style={{ color: "#757575" }}>
+        <p
+          className="text-center"
+          style={{ color: "#757575", fontFamily: "outfit, sans-serif" }}
+        >
           More Features & Earning option are on the Way...
         </p>
       </div>

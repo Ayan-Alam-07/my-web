@@ -465,23 +465,6 @@
   }
 }
 
-/* ARROW */
-.rewardArrow {
-  animation: arrowMove 1.3s infinite;
-}
-
-@keyframes arrowMove {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .rewardClaimIcon {
   position: absolute;
   right: 18px;

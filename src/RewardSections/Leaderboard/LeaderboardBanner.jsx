@@ -7,15 +7,29 @@ import {
   FaBolt,
   FaCoins,
   FaCrown,
+  FaRupeeSign,
 } from "react-icons/fa";
+
+import { FaIndianRupeeSign } from "react-icons/fa6";
+
 import styles from "./LeaderboardBanner.module.css";
+import RewardArrow from "../../Components/CommonComponents/RewardArrow";
 
 const LeaderboardBanner = () => {
   const navigate = useNavigate();
 
+  const leadBadges = [
+    "Top earner gets rewarded",
+    `Earn Upto`,
+    "Weekly Reset",
+    "Everyone earns something",
+    "Previous #1 Winner: ",
+  ];
+
+  const len = leadBadges.length - 1;
+
   return (
-    <button
-      type="button"
+    <div
       className={` ${styles.banner}`}
       onClick={() => navigate("/leaderboard")}
       aria-label="Open weekly leaderboard"
@@ -25,8 +39,11 @@ const LeaderboardBanner = () => {
       <div className={styles.orbBlue}></div>
       <div className={styles.orbPurple}></div>
 
-      <div className="row justify-content-around align-items-center">
-        <div className={`col-4 mt-5 ${styles.iconCluster}`} aria-hidden="true">
+      <div className="row justify-content-around flex-lg-row flex-column align-items-center">
+        <div
+          className={`col-10 col-md-7 col-lg-3 mb-lg-0 ${styles.iconCluster}`}
+          aria-hidden="true"
+        >
           <div className={`${styles.heroIconCard} ${styles.hero}`}>
             <FaTrophy className={styles.heroIcon} />
           </div>
@@ -50,33 +67,53 @@ const LeaderboardBanner = () => {
           <div className={`${styles.floatingIcon} ${styles.crown}`}>
             <FaCrown />
           </div>
-          <span className={styles.eyebrow}>Weekly coins leaderboard</span>
+          <span className={styles.eyebrow}>Weekly Coins Leaderboard</span>
         </div>
 
-        <div className="col-6">
+        <div className="col-12 col-lg-7 px-1 px-md-3">
           <div className={` ${styles.content}`}>
-            {/* <span className={styles.eyebrow}>Weekly coins leaderboard</span> */}
+            {/* <div className="d-none d-lg-inline-block"> */}
+            <FaCoins className={styles.coinsWatermark} />
+            <FaRupeeSign
+              className={`${styles.coinsWatermark} ${styles.rupWatermark}`}
+            />
+            {/* </div> */}
             <h3>Earn the most coins this week and unlock rewards</h3>
             <p>
               This board ranks users by coins earned in the current week. The
-              top earner gets a bonus reward, and every participant earns
-              recognition when they stay active and climb higher.
+              top earner gets High rewards, and every participants will Earn.
             </p>
 
             <div className={styles.badges}>
-              <span>Top earner gets rewarded</span>
-              <span>Weekly reset</span>
-              <span>Everyone earns something</span>
+              {leadBadges.map((badge, idx) => (
+                <span
+                  key={idx}
+                  className={`${styles.leadBadges} ${idx === len - 1 ? styles.leadBdgHide : ""}`}
+                >
+                  {badge}{" "}
+                  {idx === 1 ? (
+                    <span>
+                      <FaRupeeSign />
+                      1000
+                    </span>
+                  ) : idx === len ? (
+                    <span> #Uhd4527j</span>
+                  ) : (
+                    ""
+                  )}
+                </span>
+              ))}
             </div>
           </div>
-
-          <div className={styles.cta}>
-            <span>View board</span>
-            <FaArrowRight />
+          <div className="d-flex ">
+            <button className={styles.cta}>
+              <span>View Leaderboard</span>
+              <RewardArrow />
+            </button>
           </div>
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 

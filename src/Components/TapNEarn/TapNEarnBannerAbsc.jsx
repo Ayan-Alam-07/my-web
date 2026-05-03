@@ -4,6 +4,7 @@ import { SiJsonwebtokens } from "react-icons/si";
 import { FaHandPointer, FaCoins, FaArrowRight } from "react-icons/fa";
 import { RxTokens } from "react-icons/rx";
 import { showWarning } from "../../utils/Toast";
+import RewardArrow from "../CommonComponents/RewardArrow";
 
 function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
   const navigate = useNavigate();
@@ -47,11 +48,11 @@ function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
           </div>
           <div className="d-flex justify-content-center">
             <button className={style.openBtn}>
-              {val ? "Start Earning" : "Exchange Now"}
-              <FaArrowRight
-                style={{ marginLeft: "10px" }}
-                className={style.rewardArrow}
-              />
+              <span className="me-2 pe-1">
+                {val ? "Start Earning" : "Exchange Now"}
+              </span>
+
+              <RewardArrow />
             </button>
           </div>
         </div>

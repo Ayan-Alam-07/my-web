@@ -1,5 +1,6 @@
 import { ChevronRight, Crown } from "lucide-react";
 import styles from "./RewardsBase.module.css";
+import arrowStyle from "../../Components/CommonComponents/RewardArrow.module.css";
 import Badge from "./Badge";
 import { useNavigate } from "react-router-dom";
 import { showInfo, showWarning } from "../../utils/Toast";
@@ -82,7 +83,7 @@ const RewardsBase = ({
 
       <button className={`${styles.actionBtn} ${styles[btnClass]}`}>
         {btnText} {/* btnText */}
-        <ChevronRight size={18} />
+        <ChevronRight size={18} className={arrowStyle.rewardArrow} />
       </button>
     </div>
   );

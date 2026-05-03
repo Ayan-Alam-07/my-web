@@ -150,22 +150,6 @@
   transform: scale(1.1);
 }
 
-.rewardArrow {
-  animation: arrowMove 1.7s infinite;
-}
-
-@keyframes arrowMove {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(8px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /* shimmer */
 .rewardTag::before {
   content: "";
