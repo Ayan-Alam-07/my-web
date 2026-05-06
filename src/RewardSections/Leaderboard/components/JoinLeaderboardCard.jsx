@@ -14,14 +14,18 @@ const JoinLeaderboardCard = ({ joining, onJoin }) => {
 
       <h3>Join this week’s premium rewards race</h3>
       <p>
-        Enter once for the week, compete by earning VEs, and use XP as the
-        Tie-Breaker when weekly VEs match.
-        <br />
-        We charge a small joining fee to ensure a fair and genuine competition.
-        This helps prevent bots and fake entries, keeping the leaderboard
-        authentic and competitive. By maintaining real participation, we make
-        sure that rewards go to true winners who earn their place through honest
-        effort.
+        <span className="d-none d-lg-inline-block">
+          Enter once for the week, compete by earning VEs, and use XP as the
+          Tie-Breaker when weekly VEs match.
+        </span>
+
+        <span className="d-block">
+          We charge a small joining fee to ensure a fair and genuine
+          competition. This helps prevent bots and fake entries, keeping the
+          leaderboard authentic and competitive. By maintaining real
+          participation, we make sure that rewards go to true winners who earn
+          their place through honest effort.
+        </span>
       </p>
 
       <div className="d-flex flex-column gap-3 mt-4">

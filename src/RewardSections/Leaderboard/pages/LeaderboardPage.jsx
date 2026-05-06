@@ -129,7 +129,7 @@ const LeaderboardPage = () => {
       <CommonNavArr id={20} navigation={"/Home"} />
       <div className={styles.pageWrap}>
         <div className="container-fluid px-3 px-lg-4 py-4">
-          <div className="container px-0 px-lg-3">
+          <div className="container px-0 px-md-3">
             <LeaderboardHero
               currentUserRank={currentUserRank}
               participated={participated}

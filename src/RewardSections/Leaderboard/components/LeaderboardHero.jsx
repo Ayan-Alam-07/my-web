@@ -88,7 +88,7 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
             <div className={styles.rankTop}>
               <div>
                 <p>Your weekly standing</p>
-                <h3>Live rank snapshot</h3>
+                <h3>Live Rank Snapshot</h3>
               </div>
               <div className={styles.rankIcon}>
                 <FaCrown />
