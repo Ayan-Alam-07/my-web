@@ -67,7 +67,13 @@ const LeaderboardBanner = () => {
           <div className={`${styles.floatingIcon} ${styles.crown}`}>
             <FaCrown />
           </div>
-          <span className={styles.eyebrow}>Weekly Coins Leaderboard</span>
+          <span className={styles.eyebrow}>
+            Weekly VE
+            <span style={{ textTransform: "lowercase", marginRight: "4.5px" }}>
+              s
+            </span>
+            Leaderboard
+          </span>
         </div>
 
         <div className="col-12 col-lg-7 px-1 px-md-3">
@@ -78,10 +84,10 @@ const LeaderboardBanner = () => {
               className={`${styles.coinsWatermark} ${styles.rupWatermark}`}
             />
             {/* </div> */}
-            <h3>Earn the most coins this week and unlock rewards</h3>
+            <h3>Earn the most VEs this week and Get Rewarded</h3>
             <p>
-              This board ranks users by coins earned in the current week. The
-              top earner gets High rewards, and every participants will Earn.
+              This board ranks users by VEs earned in the current week. The top
+              earner gets High rewards, and every participants will Earn.
             </p>
 
             <div className={styles.badges}>

@@ -1,0 +1,69 @@
+.currentUserRow td {
+  background: rgba(56, 189, 248, 0.05) !important;
+}
+
+.rankWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rankGold {
+  color: #fde047;
+}
+
+.rankSilver {
+  color: #cbd5e1;
+}
+
+.rankBronze {
+  color: #fb923c;
+}
+
+.rankDefault {
+  color: #e2e8f0;
+}
+
+.userId {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.weeklyCoins {
+  color: #6ee7b7 !important;
+  font-weight: 700;
+}
+
+.xp {
+  color: #7dd3fc !important;
+  font-weight: 600;
+}
+
+.coins {
+  color: #dbe4f3 !important;
+}
+
+.youBadge,
+.activeBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.youBadge {
+  color: #b6f3ff;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+}
+
+.activeBadge {
+  color: #c0cad9;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

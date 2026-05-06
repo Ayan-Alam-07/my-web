@@ -1,0 +1,134 @@
+.wrap {
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.head span {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #8ea0bc;
+}
+
+.head h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.winnerCard {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 24px;
+  background: #0a1627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.first::before,
+.second::before,
+.third::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+}
+
+.first::before {
+  background: linear-gradient(90deg, #fde047, #fb923c);
+}
+
+.second::before {
+  background: linear-gradient(90deg, #e2e8f0, #94a3b8);
+}
+
+.third::before {
+  background: linear-gradient(90deg, #fb923c, #92400e);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topBar span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d7e0ef;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #facc15;
+  font-size: 1.3rem;
+}
+
+.winnerCard h3 {
+  margin-top: 22px;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 800;
+}
+
+.winnerCard p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #92a3bc;
+}
+
+.dataBox {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dataBox small {
+  display: block;
+  color: #7f90aa;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.66rem;
+}
+
+.dataBox strong {
+  display: block;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.skeleton {
+  height: 220px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}

@@ -28,7 +28,7 @@ import Transactions from "./Components/Transaction/Transactions";
 import DailyCheckIn from "./RewardSections/DailyCheckIn/DailyCheckIn";
 import SpinWheel from "./RewardSections/SpinWheel/SpinWheel";
 import LvlDashboard from "./RewardSections/LevelXP/pages/LvlDashboard";
-import Leaderboard from "./RewardSections/Leaderboard/Leaderboard";
+import LeaderboardPage from "./RewardSections/Leaderboard/pages/LeaderboardPage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -242,7 +242,7 @@ const App = () => {
           path="/leaderboard"
           element={
             <ProtectedRoute>
-              <Leaderboard />
+              <LeaderboardPage />
             </ProtectedRoute>
           }
         ></Route>

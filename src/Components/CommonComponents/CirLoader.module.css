@@ -32,6 +32,8 @@
     "Helvetica Neue",
     sans-serif;
   text-align: center;
+  background: transparent !important;
+  color: #cfd8e3 !important;
 }
 
 @keyframes spin {

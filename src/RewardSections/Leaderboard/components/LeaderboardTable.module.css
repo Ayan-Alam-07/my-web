@@ -1,0 +1,144 @@
+.tableWrap {
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.topHead span {
+  color: #8ea0bc;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+}
+
+.topHead h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.ruleBox {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #0a1627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ruleBox small {
+  display: block;
+  color: #7d8ca5;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+}
+
+.ruleBox strong {
+  display: block;
+  margin-top: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.tableResponsive {
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.tableCustom {
+  color: #fff;
+  --bs-table-bg: #081321;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.04);
+  --bs-table-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.tableCustom thead th {
+  background: rgba(255, 255, 255, 0.04);
+  color: #8ea0bc;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.skeletonRow {
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  animation: pulse 1.15s infinite ease-in-out;
+}
+
+.emptyCell {
+  text-align: center;
+  color: #90a0b9 !important;
+  padding: 48px 16px !important;
+}
+
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.pageBtn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-radius: 16px;
+  padding: 11px 16px;
+  font-weight: 600;
+}
+
+.pageBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pageText {
+  color: #91a0b8;
+}
+
+.pageText strong {
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 768px) {
+  .topHead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .paginationRow {
+    flex-direction: column;
+  }
+
+  .pageBtn {
+    width: 100%;
+  }
+}
