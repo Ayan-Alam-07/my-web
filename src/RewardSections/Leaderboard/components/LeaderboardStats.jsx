@@ -46,7 +46,7 @@ const LeaderboardStats = ({
   return (
     <section className="row g-3">
       {stats.map((stat, idx) => (
-        <div key={stat.label} className="col-12 col-md-4 col-xl-3">
+        <div key={stat.label} className="col-6 col-md-4 col-xl-3">
           <div className={styles.statCard}>
             <div className={styles.topRow}>
               <span>{stat.label}</span>

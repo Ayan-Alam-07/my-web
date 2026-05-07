@@ -20,11 +20,18 @@ const JoinLeaderboardCard = ({ joining, onJoin }) => {
         </span>
 
         <span className="d-block">
-          We charge a small joining fee to ensure a fair and genuine
-          competition. This helps prevent bots and fake entries, keeping the
-          leaderboard authentic and competitive. By maintaining real
-          participation, we make sure that rewards go to true winners who earn
-          their place through honest effort.
+          <span className="d-none d-md-block">
+            We charge a small joining fee to ensure a fair and genuine
+            competition. This helps prevent bots and fake entries, keeping the
+            leaderboard authentic and competitive. By maintaining real
+            participation, we make sure that rewards go to true winners who earn
+            their place through honest effort.
+          </span>
+          <span className="d-md-none">
+            A small joining fee helps prevent fake entries and keeps the
+            competition fair for real participants and genuine active
+            competitors.
+          </span>
         </span>
       </p>
 

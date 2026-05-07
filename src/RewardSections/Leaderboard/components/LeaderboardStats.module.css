@@ -1,6 +1,7 @@
 .statCard {
-  height: 100%;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -9,13 +10,14 @@
 
 .topRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
 }
 
 .topRow span {
-  font-size: 0.74rem;
+  font-size: 3.2vw;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #8ea0bc;
@@ -24,26 +26,27 @@
 .statCard h3 {
   display: flex;
   align-items: center;
-  margin-top: 18px;
+  justify-content: center;
+  margin-top: 22px;
   margin-bottom: 0;
-  font-size: 2rem;
+  font-size: 4.9vw;
   font-weight: 800;
 }
 
 .rightArr {
-  margin: 0 0 0 10px;
-  font-size: 26px;
+  margin: 0 0 0 7px;
+  font-size: 18.5px;
 }
 
 .iconBox {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 52px;
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .blue {
@@ -62,4 +65,64 @@
 .yellow {
   background: linear-gradient(135deg, #ffdb63, #ffcb20);
   color: #152336;
+}
+
+@media (min-width: 576px) {
+  .statCard {
+    padding: 24px 20px;
+  }
+
+  .topRow {
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .topRow span {
+    font-size: 1.57vw;
+  }
+
+  .statCard h3 {
+    margin-top: 20px;
+    font-size: 1.45rem;
+    justify-content: start;
+  }
+
+  .rightArr {
+    font-size: 22px;
+  }
+
+  .iconBox {
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .statCard {
+    padding: 20px;
+  }
+
+  .topRow {
+    gap: 16px;
+  }
+
+  .topRow span {
+    font-size: 0.9rem;
+  }
+
+  .statCard h3 {
+    margin-top: 20px;
+    font-size: 1.7rem;
+  }
+
+  .rightArr {
+    font-size: 24px;
+  }
+
+  .iconBox {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
 }
