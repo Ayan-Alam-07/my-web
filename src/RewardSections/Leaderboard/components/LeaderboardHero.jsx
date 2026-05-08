@@ -45,39 +45,55 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
     <section className={styles.heroCard}>
       <div className="row g-4 align-items-center">
         <div className="col-12 col-lg-7">
-          <div className={styles.badgePill}>
-            <FaShieldAlt />
-            <span>Weekly rewards leaderboard</span>
-          </div>
-
-          <h1 className={styles.heading}>
-            Earn more this week, rank higher, and unlock premium leaderboard
-            rewards.
-          </h1>
-
-          <p className={styles.subtext}>
-            Ranking is based on highest weekly VEs earned. If two users have the
-            same weekly VEs, the user with higher XP is shown above.
-          </p>
-
-          <div className="d-flex flex-wrap gap-3 mt-4">
-            <div className={styles.infoChip}>
-              <FaCoins className={styles.yellowIcon} />
-              <div>
-                <span>Entry fee</span>
-                <strong>250 VEs + 70 XP</strong>
-              </div>
-              <a
-                href={!participated ? "#joinLeaderboard" : ""}
-                className={`${styles.statusLght} ${!participated ? styles.statusDotRed : styles.statusDotGreen}`}
-              ></a>
+          <div className="mx-lg-3">
+            <div className={styles.badgePill}>
+              <FaShieldAlt />
+              <span>Weekly rewards leaderboard</span>
             </div>
 
-            <div className={styles.infoChip}>
-              <SiThunderstore className={styles.blueIcon} />
-              <div>
-                <span>Weekly reset</span>
-                <strong>Sunday 11:59 PM</strong>
+            <h1 className={styles.heading}>
+              <span className="d-md-none">
+                Earn coins, climb ranks, and unlock rewards
+              </span>
+
+              <span className="d-none d-md-block d-lg-none">
+                Earn more coins, rank higher, and win premium rewards
+              </span>
+
+              <span className="d-none d-lg-block">
+                Earn more this week, rank higher, and unlock premium leaderboard
+                rewards
+              </span>
+            </h1>
+
+            <p className={styles.subtext}>
+              Ranking is based on highest weekly VEs earned. If two users have
+              the same weekly VEs, the user with higher XP is shown above.
+            </p>
+
+            <div className="row justify-content-evenly justify-content-lg-start flex-wrap py-2 py-lg-0 mt-3 mt-md-4">
+              <div className="col-12 col-md-6 col-lg-5">
+                <div className={styles.infoChip}>
+                  <FaCoins className={styles.yellowIcon} />
+                  <div>
+                    <span>Entry fee</span>
+                    <strong>250 VEs + 70 XP</strong>
+                  </div>
+                  <a
+                    href={!participated ? "#joinLeaderboard" : ""}
+                    className={`${styles.statusLght} ${!participated ? styles.statusDotRed : styles.statusDotGreen}`}
+                  ></a>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-6 mt-3 mt-md-0 col-lg-5">
+                <div className={styles.infoChip}>
+                  <SiThunderstore className={styles.blueIcon} />
+                  <div>
+                    <span>Weekly reset</span>
+                    <strong>Sunday 11:59 PM</strong>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -95,7 +111,7 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
               </div>
             </div>
 
-            <div className="row g-3 mt-1">
+            <div className="row g-3 g-md-4 g-lg-3 mt-2 mt-md-3">
               {rankStats.map((stats, idx) => (
                 <div
                   key={idx}
