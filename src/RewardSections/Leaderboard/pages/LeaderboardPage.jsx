@@ -12,6 +12,7 @@ import {
 } from "../../../services/leaderboardApi";
 import CommonNavArr from "../../../Components/CommonComponents/CommonNavArr";
 import { useList } from "../../../Context/ContextStore";
+import { showError, showSuccess } from "../../../utils/Toast";
 
 const LeaderboardPage = () => {
   const [loading, setLoading] = useState(true);
@@ -38,7 +39,7 @@ const LeaderboardPage = () => {
         sessionStorage.getItem("accessToken");
 
       if (!token) {
-        alert("Please login first.");
+        showError("Please login first.");
         window.location.href = "/login";
         return;
       }
@@ -66,7 +67,7 @@ const LeaderboardPage = () => {
         localStorage.removeItem("accessToken");
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("accessToken");
-        alert("Session expired. Please login again.");
+        showError("Session expired. Please login again.");
         window.location.href = "/login";
       }
     } finally {
@@ -96,7 +97,8 @@ const LeaderboardPage = () => {
         sessionStorage.getItem("accessToken");
 
       if (!token) {
-        alert("Please login first.");
+        showError("Please login first.");
+        showError("You Need to Login First");
         window.location.href = "/login";
         return;
       }
@@ -105,7 +107,7 @@ const LeaderboardPage = () => {
       setIsLoading(true);
       await joinWeeklyLeaderboard();
       await fetchLeaderboard(1);
-      alert("Joined leaderboard successfully");
+      showSuccess("Joined leaderboard successfully");
     } catch (error) {
       if (error?.response?.status === 401) {
         localStorage.removeItem("token");
@@ -116,8 +118,7 @@ const LeaderboardPage = () => {
         window.location.href = "/login";
         return;
       }
-
-      alert(error?.response?.data?.message || "Failed to join leaderboard");
+      showError(error?.response?.data?.message || "Failed to join leaderboard");
     } finally {
       setJoining(false);
       setIsLoading(false);
