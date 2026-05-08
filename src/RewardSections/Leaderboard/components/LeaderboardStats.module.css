@@ -33,9 +33,13 @@
   font-weight: 800;
 }
 
+.join {
+  font-size: inherit;
+}
+
 .rightArr {
   margin: 0 0 0 7px;
-  font-size: 18.5px;
+  font-size: 18px;
 }
 
 .iconBox {

@@ -58,9 +58,7 @@ const LeaderboardStats = ({
               {!participated && idx === stats.length - 1 ? (
                 <a
                   href={"#joinLeaderboard"}
-                  className={
-                    !participated && idx === stats.length - 1 && inStyle.joinNow
-                  }
+                  className={`${styles.join} ${!participated && idx === stats.length - 1 && inStyle.joinNow}`}
                 >
                   {stat.value}
                   <span className={`${styles.rightArr}`}>
