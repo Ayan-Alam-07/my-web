@@ -125,17 +125,17 @@ const LeaderboardPage = () => {
   };
 
   return (
-    <div className="container-fkuid px-0">
+    <div className="container-fluid px-0">
       <CommonNavArr id={20} navigation={"/Home"} />
       <div className={styles.pageWrap}>
-        <div className="container-fluid px-3 px-lg-4 py-4">
+        <div className="container-fluid px-3 px-lg-4 pt-5 pb-4">
           <div className="container px-0 px-md-3">
             <LeaderboardHero
               currentUserRank={currentUserRank}
               participated={participated}
             />
 
-            <div className="row g-4 mt-1">
+            <div className="row g-4 mt-2">
               <div className="col-12 ">
                 <div className="d-flex flex-column gap-4">
                   <LeaderboardStats
@@ -147,29 +147,31 @@ const LeaderboardPage = () => {
                 </div>
               </div>
 
-              {!participated ? (
-                <div className="col-12 ">
-                  <div className="d-flex flex-column gap-4">
-                    <JoinLeaderboardCard
-                      joining={joining}
-                      onJoin={handleJoin}
-                    />
+              <span className="mt-4 pt-2">
+                {!participated ? (
+                  <div className="col-12 ">
+                    <div className="d-flex flex-column gap-4">
+                      <JoinLeaderboardCard
+                        joining={joining}
+                        onJoin={handleJoin}
+                      />
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div className="col-12">
-                  <TopWinners winners={topThree} />
-                  <div className="mt-3">
-                    <LeaderboardTable
-                      rows={leaderboard}
-                      page={meta.page}
-                      totalPages={meta.totalPages}
-                      onPageChange={fetchLeaderboard}
-                      currentUserRank={currentUserRank}
-                    />
+                ) : (
+                  <div className="col-12">
+                    <TopWinners winners={topThree} />
+                    <div className="mt-3">
+                      <LeaderboardTable
+                        rows={leaderboard}
+                        page={meta.page}
+                        totalPages={meta.totalPages}
+                        onPageChange={fetchLeaderboard}
+                        currentUserRank={currentUserRank}
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </span>
 
               {/* <WeeklyRewardsCard /> */}
             </div>
