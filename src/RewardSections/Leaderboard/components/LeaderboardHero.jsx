@@ -10,8 +10,10 @@ import { AiFillThunderbolt } from "react-icons/ai";
 
 import styles from "./LeaderboardHero.module.css";
 import { style } from "framer-motion/client";
+import { useList } from "../../../Context/ContextStore";
 
 const LeaderboardHero = ({ currentUserRank, participated }) => {
+  const { data } = useList();
   const rank = currentUserRank?.rank || 0;
 
   // console.log(currentUserRank);
@@ -31,7 +33,7 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
       title: "XP",
       icon: <AiFillThunderbolt />,
       class: "statXP",
-      value: currentUserRank?.xp ?? 0,
+      value: data?.xp || currentUserRank?.xp || 0,
     },
     {
       title: "Weekly VEs",
