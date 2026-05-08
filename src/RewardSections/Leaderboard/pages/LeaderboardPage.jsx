@@ -110,11 +110,11 @@ const LeaderboardPage = () => {
       showSuccess("Joined leaderboard successfully");
     } catch (error) {
       if (error?.response?.status === 401) {
+        alert("Session expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("accessToken");
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("accessToken");
-        alert("Session expired. Please login again.");
         window.location.href = "/login";
         return;
       }
