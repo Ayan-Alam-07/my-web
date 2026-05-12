@@ -327,16 +327,16 @@
   .tableHead {
     grid-template-columns:
       1.6fr
-      2fr
-      2.1fr
+      1.8fr
+      2.3fr
       1.4fr
       2.1fr
       1.1fr;
   }
   .row {
     grid-template-columns:
-      4.5fr
-      2.2fr
+      4.3fr
+      2.4fr
       2.1fr
       2.1fr
       1.7fr;
@@ -377,7 +377,7 @@
 
   .coinCell,
   .xpCell {
-    font-size: 14px;
+    font-size: 15px;
     gap: 6px;
   }
 
