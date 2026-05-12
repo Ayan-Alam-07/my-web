@@ -1,144 +1,418 @@
-.tableWrap {
-  padding: 22px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.05);
+.wrapper {
+  margin-top: 2rem;
+  border-radius: 30px;
+  padding: 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.95),
+    rgba(2, 6, 23, 0.98)
+  );
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.topHead {
+.header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 22px;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.topHead span {
-  color: #8ea0bc;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.74rem;
+.header span {
+  color: #8ab4ff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
 }
 
-.topHead h2 {
-  margin-top: 10px;
-  margin-bottom: 0;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 700;
+.header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
 }
 
 .ruleBox {
-  padding: 14px 16px;
+  padding: 14px 40px;
   border-radius: 18px;
-  background: #0a1627;
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .ruleBox small {
   display: block;
-  color: #7d8ca5;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.68rem;
+  color: #94a3b8;
+  letter-spacing: 1px;
 }
 
 .ruleBox strong {
-  display: block;
-  margin-top: 6px;
-  color: #fff;
-  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
-.tableResponsive {
-  border-radius: 22px;
-  overflow: hidden;
+/* Horizontal scroll wrapper keeps the table layout intact on small screens */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.tableContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
-.tableCustom {
-  color: #fff;
-  --bs-table-bg: #081321;
-  --bs-table-striped-bg: transparent;
-  --bs-table-hover-bg: rgba(255, 255, 255, 0.04);
-  --bs-table-border-color: rgba(255, 255, 255, 0.06);
+.tableHead {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.4fr
+    1.8fr
+    1.3fr
+    1.6fr
+    1.5fr;
+  align-items: center;
+  min-width: 800px; /* preserves table structure on every device */
 }
 
-.tableCustom thead th {
-  background: rgba(255, 255, 255, 0.04);
-  color: #8ea0bc;
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  white-space: nowrap;
+.row {
+  display: grid;
+  grid-template-columns:
+    3fr
+    2fr
+    1.9fr
+    1.7fr
+    2fr;
+  align-items: center;
+  min-width: 800px;
 }
 
-.skeletonRow {
-  height: 52px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  animation: pulse 1.15s infinite ease-in-out;
+.tableHead {
+  padding: 18px 24px;
+  color: #94a3b8;
+  font-size: 15px;
 }
 
-.emptyCell {
-  text-align: center;
-  color: #90a0b9 !important;
-  padding: 48px 16px !important;
+.row {
+  position: relative;
+  margin-top: 14px;
+  padding: 19px 30px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.35s ease;
 }
 
-.paginationRow {
+.row:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.4);
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(255, 255, 255, 0.03)
+  );
+}
+
+.activeRow {
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.12);
+}
+
+.rank {
+  position: absolute;
+  top: 7px;
+  left: 14px;
+  color: #6740e9;
+  font-weight: 700;
+}
+
+.userInfo {
+  margin-left: 34px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 18px;
 }
 
-.pageBtn {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  border-radius: 16px;
-  padding: 11px 16px;
+.userInfo img {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+}
+
+.userInfo h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.userInfo span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.coinCell,
+.xpCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
   font-weight: 600;
 }
 
-.pageBtn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+.coinCell svg {
+  color: #facc15;
+}
+.xpCell svg {
+  color: #8b5cf6;
 }
 
-.pageText {
-  color: #91a0b8;
+.activeStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.14);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
 }
 
-.pageText strong {
-  color: #fff;
+.offlineStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.45;
+.pagination {
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  border: none;
+  padding: 12px 26px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 600;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+}
+
+.pagination div {
+  color: #cbd5e1;
+}
+
+.empty {
+  padding: 4rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 1.5rem;
+    border-radius: 24px;
   }
-  50% {
-    opacity: 1;
+
+  .header h2 {
+    font-size: 1.6rem;
   }
-  100% {
-    opacity: 0.45;
+
+  .tableHead,
+  .row {
+    padding: 16px 18px;
+    min-width: 1000px;
+  }
+
+  .tableHead {
+    grid-template-columns:
+      1.3fr
+      2fr
+      2.1fr
+      1.5fr
+      1.9fr
+      1.2fr;
+  }
+  .row {
+    grid-template-columns:
+      4fr
+      2.2fr
+      2.3fr
+      1.8fr
+      1.8fr;
+    font-size: 17px;
+  }
+
+  .rank {
+    top: 10px;
+    left: 18px;
+  }
+
+  .userInfo {
+    margin: 0 0 0 57px;
+  }
+
+  .userInfo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .activeStatus,
+  .offlineStatus {
+    padding: 16px 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .pagination button {
+    padding: 14px 30px;
+    letter-spacing: 0.4px;
+    font-size: 17px;
   }
 }
 
-@media (max-width: 768px) {
-  .topHead {
-    flex-direction: column;
-    align-items: stretch;
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .wrapper {
+    margin-top: 1rem;
+    padding: 1.4rem 1rem;
+    border-radius: 20px;
   }
 
-  .paginationRow {
-    flex-direction: column;
+  .header {
+    margin-bottom: 1.25rem;
   }
 
-  .pageBtn {
+  .header h2 {
+    font-size: 6vw;
+    letter-spacing: 0.3px;
+  }
+  .header span {
+    font-size: 13px;
+  }
+
+  .ruleBox {
+    margin: 0 auto;
     width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  .tableHead,
+  .row {
+    padding: 16px;
+    min-width: 780px; /* keeps the same column layout, scrolls horizontally */
+  }
+
+  .tableHead {
+    grid-template-columns:
+      1.6fr
+      2fr
+      2.1fr
+      1.4fr
+      2.1fr
+      1.1fr;
+  }
+  .row {
+    grid-template-columns:
+      4.5fr
+      2.2fr
+      2.1fr
+      2.1fr
+      1.7fr;
+    font-size: 14px;
+  }
+
+  .row {
+    margin-top: 14px;
+    border-radius: 18px;
+  }
+
+  .row:hover {
+    transform: none;
+  } /* no lift on touch */
+
+  .rank {
+    left: 12px;
+    font-size: 15px;
+  }
+
+  .userInfo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  .userInfo {
+    gap: 12px;
+    margin: 0 0 0 45px;
+  }
+  .userInfo h4 {
+    font-size: 14px;
+  }
+  .userInfo span {
+    font-size: 12px;
+  }
+
+  .coinCell,
+  .xpCell {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .activeStatus,
+  .offlineStatus {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .pagination {
+    margin-top: 1.25rem;
+  }
+
+  .pagination button {
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  .empty {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width: 380px) {
+  .wrapper {
+    padding: 0.9rem;
+    border-radius: 16px;
+  }
+  .header h2 {
+    font-size: 1.2rem;
+  }
+  .tableHead,
+  .row {
+    min-width: 700px;
   }
 }

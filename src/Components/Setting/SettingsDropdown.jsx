@@ -106,6 +106,7 @@ export default function SettingsDropdown() {
                 {extractedName}{" "}
                 <span
                   className={`${styles.userLevel} ${styles[`lvl${level}`]}`}
+                  onClick={() => navigate("/Lvl-Dashboard")}
                 >
                   LVL {level}
                   {/* LVL {data.level} */}

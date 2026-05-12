@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
+import { FaCoins, FaBolt, FaCheckCircle } from "react-icons/fa";
+import { PiCoinsFill } from "react-icons/pi";
 import styles from "./LeaderboardTable.module.css";
-import LeaderboardRow from "./LeaderboardRow";
 import { useList } from "../../../Context/ContextStore";
 import CirLoader from "../../../Components/CommonComponents/CirLoader";
+
 const LeaderboardTable = ({
   rows,
   page,
@@ -10,90 +13,106 @@ const LeaderboardTable = ({
   currentUserRank,
 }) => {
   const { isLoading } = useList();
-  // const isLoading = true;
+
   return (
-    <section className={styles.tableWrap}>
-      <div className={styles.topHead}>
+    <section className={styles.wrapper}>
+      <div className={styles.header}>
         <div>
-          <span>Rankings</span>
-          <h2>Weekly leaderboard standings</h2>
+          <span>Leaderboard Rankings</span>
+          <h2>Weekly Reward Standings</h2>
         </div>
 
         <div className={styles.ruleBox}>
-          <small>Tie-Break rule</small>
-          <strong>Higher weekly coins, then higher XP</strong>
+          <small>Tie Break Priority</small>
+          <strong>Weekly Coins → XP</strong>
         </div>
       </div>
 
-      <span className={`table-responsive ${styles.tableResponsive}`}>
+      <div className={styles.tableContainer}>
+        <div className={styles.tableHead}>
+          <div>Rank</div>
+          <div>User</div>
+          <div>Weekly Coins</div>
+          <div>XP</div>
+          <div>Total Coins</div>
+          <div>Status</div>
+        </div>
+
         {isLoading ? (
-          <CirLoader para={"Fetching Leaderboard participants"} />
+          <CirLoader para={"Loading premium rankings"} />
+        ) : rows.length ? (
+          rows.map((user, index) => {
+            const isCurrent = currentUserRank?.userId === user.userId;
+
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.04 }}
+                key={user.userId}
+                className={`${styles.row} ${isCurrent ? styles.activeRow : ""}`}
+              >
+                <span className={styles.rank}>#{user.rank}</span>
+
+                <div className={styles.userInfo}>
+                  <img
+                    src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.userId}`}
+                    alt="VELoop rewards user image"
+                  />
+
+                  <div>
+                    <h4>{user.userId}</h4>
+                    <span>Premium competitor</span>
+                  </div>
+                </div>
+
+                <div className={styles.coinCell}>
+                  <FaCoins />
+                  {user.weeklyCoinsEarned?.toLocaleString()}
+                </div>
+
+                <div className={styles.xpCell}>
+                  <FaBolt />
+                  {user.xp?.toLocaleString()}
+                </div>
+
+                <div className={styles.xpCell}>
+                  <PiCoinsFill style={{ color: "#ffd700" }} />
+                  {user.coins?.toLocaleString()}
+                </div>
+
+                <div>
+                  <span
+                    className={
+                      currentUserRank.participated
+                        ? styles.activeStatus
+                        : styles.offlineStatus
+                    }
+                  >
+                    <FaCheckCircle />
+                    Active
+                  </span>
+                </div>
+              </motion.div>
+            );
+          })
         ) : (
-          <table className={`table align-middle mb-0 ${styles.tableCustom}`}>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>User ID</th>
-                <th>Weekly Coins</th>
-                <th>XP</th>
-                <th>Total Coins</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-
-            {/* {isLoading ? (
-            <CirLoader para={"Fetching Leaderboard participants"} />
-          ) : ( */}
-            <tbody>
-              {
-                // isLoading ? (
-                // ) : // [...Array(8)].map((_, index) => (
-                //   <tr key={index}>
-                //     <td colSpan="6">
-                //       <div className={styles.skeletonRow} />
-                //     </td>
-                //   </tr>
-                // ))
-                rows.length ? (
-                  rows.map((user) => (
-                    <LeaderboardRow
-                      key={`${user.userId}-${user.rank}`}
-                      user={user}
-                      isCurrentUser={currentUserRank?.userId === user.userId}
-                    />
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="6" className={styles.emptyCell}>
-                      No participants yet. Join this week’s leaderboard and
-                      become the first ranked user.
-                    </td>
-                  </tr>
-                )
-              }
-            </tbody>
-            {/* )} */}
-          </table>
+          <div className={styles.empty}>
+            No leaderboard participants available.
+          </div>
         )}
-      </span>
+      </div>
 
-      <div className={styles.paginationRow}>
-        <button
-          type="button"
-          className={styles.pageBtn}
-          disabled={page <= 1}
-          onClick={() => onPageChange(page - 1)}
-        >
+      <div className={styles.pagination}>
+        <button disabled={page <= 1} onClick={() => onPageChange(page - 1)}>
           Previous
         </button>
 
-        <div className={styles.pageText}>
+        <div>
           Page <strong>{page}</strong> of <strong>{totalPages}</strong>
         </div>
 
         <button
-          type="button"
-          className={styles.pageBtn}
           disabled={page >= totalPages}
           onClick={() => onPageChange(page + 1)}
         >
