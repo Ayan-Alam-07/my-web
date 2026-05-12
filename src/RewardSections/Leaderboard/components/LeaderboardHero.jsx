@@ -1,16 +1,16 @@
 import {
-  // FaBolt,
+  FaBolt,
   FaCoins,
   FaTrophy,
   FaCrown,
   FaShieldAlt,
 } from "react-icons/fa";
 import { SiThunderstore } from "react-icons/si";
-import { AiFillThunderbolt } from "react-icons/ai";
 
 import styles from "./LeaderboardHero.module.css";
 import { style } from "framer-motion/client";
 import { useList } from "../../../Context/ContextStore";
+import { showSuccess, showWarning } from "../../../utils/Toast";
 
 const LeaderboardHero = ({ currentUserRank, participated }) => {
   const { data } = useList();
@@ -31,7 +31,7 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
     },
     {
       title: "XP",
-      icon: <AiFillThunderbolt />,
+      icon: <FaBolt />,
       class: "statXP",
       value: data?.xp || currentUserRank?.xp || 0,
     },
@@ -82,7 +82,14 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
                     <strong>250 VEs + 70 XP</strong>
                   </div>
                   <a
-                    href={!participated ? "#joinLeaderboard" : ""}
+                    href={!participated ? "#joinLeaderboard" : "#"}
+                    onClick={() => {
+                      if (participated)
+                        return showSuccess(
+                          "You already participated leaderboard!",
+                        );
+                      showWarning("participate leaderboard First!!");
+                    }}
                     className={`${styles.statusLght} ${!participated ? styles.statusDotRed : styles.statusDotGreen}`}
                   ></a>
                 </div>

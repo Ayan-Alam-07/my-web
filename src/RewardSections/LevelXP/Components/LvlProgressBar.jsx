@@ -1,5 +1,6 @@
 import { useList } from "../../../Context/ContextStore";
 import styles from "./LvlProgressBar.module.css";
+import { FaBolt } from "react-icons/fa";
 
 const LvlProgressBar = ({ status }) => {
   const { data, level, dataLoading } = useList();
@@ -21,11 +22,13 @@ const LvlProgressBar = ({ status }) => {
           <div className={styles.topRow}>
             <div>
               <p className={styles.label}>Current XP</p>
-              <h3>{xp} XP</h3>
+              <h3>
+                <FaBolt style={{ color: "#8b5cf6" }} /> {xp} XP
+              </h3>
             </div>
 
             <div className={styles.rightInfo}>
-              <span className={styles.nextPill}>{nextXP} XP target</span>
+              <span className={styles.nextPill}>XP target</span>
             </div>
           </div>
 
@@ -41,8 +44,12 @@ const LvlProgressBar = ({ status }) => {
         <div className={styles.middleSection}>
           <div className={styles.progressWrapper}>
             <div className={styles.progressInfo}>
-              <span>{xp} XP</span>
-              <strong>{nextXP} XP</strong>
+              <span>
+                <FaBolt style={{ color: "#8b5cf6" }} /> {xp} XP
+              </span>
+              <strong>
+                <FaBolt style={{ color: "#8b5cf6" }} /> {nextXP} XP
+              </strong>
             </div>
 
             <div className={styles.progressBar}>
