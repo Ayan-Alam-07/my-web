@@ -43,7 +43,7 @@ function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
           <div className="d-flex justify-content-center">
             <button className={style.openBtn}>
               <span className="me-2 pe-1">
-                {val ? "Start Earning" : "Exchange Now"}
+                {val ? "Start Earning" : "Swap Now"}
               </span>
 
               <RewardArrow />

@@ -84,9 +84,22 @@
 }
 
 .statValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.4px;
+}
+
+.transferBtn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background-color: #4360fe;
+  color: #fff;
 }
 
 .statLabel {
@@ -99,10 +112,68 @@
   .statsGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .statCard {
+    padding: 16px 16px;
+  }
+
+  .statTop {
+    margin-bottom: 10px;
+  }
+
+  .statIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .statBadge {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+    margin-top: 2px;
+  }
 }
 
 @media (min-width: 992px) {
   .statsGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .statCard {
+    padding: 16px 16px;
+  }
+
+  .statTop {
+    margin-bottom: 10px;
+  }
+
+  .statIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .statBadge {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+    margin-top: 2px;
   }
 }

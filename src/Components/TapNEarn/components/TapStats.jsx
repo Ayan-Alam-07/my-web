@@ -40,6 +40,8 @@ export default function TapStats({ taps, spins, tokens, locked }) {
     },
   ];
 
+  const length = cards.length - 1;
+
   return (
     <div className={styles.statsGrid}>
       {cards.map((c, i) => (
@@ -58,7 +60,16 @@ export default function TapStats({ taps, spins, tokens, locked }) {
               {c.badge}
             </span>
           </div>
-          <div className={styles.statValue}>{c.value}</div>
+          <div className={styles.statValue}>
+            <span>{c.value}</span>
+            {i === 0 || i === length ? (
+              ""
+            ) : (
+              <div>
+                <button className={styles.transferBtn}>Transfer</button>
+              </div>
+            )}
+          </div>
           <div className={styles.statLabel}>{c.label}</div>
         </motion.div>
       ))}
