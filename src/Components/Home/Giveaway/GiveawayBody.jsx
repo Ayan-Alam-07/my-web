@@ -1,128 +1,154 @@
-import style from "./GiveawayBody.module.css";
-import givImg from "../../../assets/giveaway/images/giveaway-img-4.webp";
-import liveBadge from "../../../assets/badges/live-badge.webp";
-import followYou from "../../../assets/follow/gif/youtube/youtube-1.webp";
-import followInsta from "../../../assets/follow/gif/instagram/instagram-2.webp";
-import followTele1 from "../../../assets/follow/gif/telegram/telegram-1.webp";
-import followTele2 from "../../../assets/follow/gif/telegram/telegram-2.webp";
+import { useEffect, useState } from "react";
+import { useList } from "../../../Context/ContextStore";
+import styles from "./GiveawayBody.module.css";
 
-const GiveawayBody = () => {
-  const followList = [
-    {
-      id: 1,
-      name: "Youtube ...",
-      nameClass: "youtube",
-      link: "https://youtube.com/@veloopwatchearn",
-      logo: followYou,
-      altTag:
-        "YouTube giveaway code – watch our channel video to claim rewards",
-    },
-    {
-      id: 2,
-      name: "Instagram ..",
-      nameClass: "instagram",
-      link: "",
-      logo: followInsta,
-      altTag:
-        "Instagram giveaway code – copy from profile, paste to earn rewards",
-    },
-    {
-      id: 3,
-      name: "Telegram 1.",
-      nameClass: "telegram",
-      link: "https://t.me/+k_cUrmYv1r45ZDBl",
-      logo: followTele1,
-      altTag: "Telegram giveaway code – paste to earn rewards",
-    },
-    {
-      id: 4,
-      name: "Telegram 2.",
-      nameClass: "telegram",
-      link: "https://t.me/+k_cUrmYv1r45ZDBl",
-      logo: followTele2,
-      altTag:
-        "Get the giveaway code from our Telegram handle and paste it here for rewards",
-    },
-  ];
+export default function GiveawayBody() {
+  const [code, setCode] = useState("");
+  const [status, setStatus] = useState({ type: "idle", msg: "" });
+  const [valChange, setValChange] = useState(false);
+  const { isLoading, setIsLoading } = useList();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!code.trim()) {
+      setStatus({ type: "error", msg: "Please enter a code." });
+      return;
+    }
+    setIsLoading(true);
+    setStatus({ type: "idle", msg: "" });
+
+    // Simulated redeem — replace with your API call
+    setTimeout(() => {
+      setIsLoading(false);
+      // Example logic: codes starting with "WIN" win
+      if (code.trim().toUpperCase().startsWith("WIN")) {
+        setStatus({
+          type: "success",
+          msg: "🎉 Congrats! Your reward has been credited.",
+        });
+        setCode("");
+      } else {
+        setStatus({
+          type: "error",
+          msg: "Invalid or already-used code. Try another.",
+        });
+        setCode("");
+      }
+    }, 900);
+  };
+
+  const handleOnChange = (e) => {
+    setCode(e.target.value);
+  };
+
+  useEffect(() => {
+    if (code !== "") {
+      return setValChange(true);
+    } else {
+      setValChange(false);
+    }
+  });
 
   return (
-    <div className="container-fluid">
-      <div className="container">
-        <h3 className={style.givHds}>
-          Enter <span style={{ color: "#ffd700" }}>Giveaway</span>{" "}
-          <span style={{ color: "#22D3EE" }}>Code</span>
-        </h3>
+    <section className={styles.wrapper}>
+      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.card}>
+        <div className={styles.badge}>
+          <span className={styles.dot} /> Live Giveaway
+        </div>
 
-        <div className="d-flex justify-content-center align-items-center flex-column">
-          <div style={{ position: "relative" }}>
-            <img
-              src={liveBadge}
-              className={style.liveBadge}
-              alt="Giveaway live badge – giveaway is active now"
+        <h2 className={styles.title}>
+          Enter Your Code.{" "}
+          <span className={styles.gradient}>Win Instant Rewards.</span>
+        </h2>
+        <p className={styles.subtitle}>
+          Redeem your secret code below and unlock cash, gift cards, and
+          exclusive perks — delivered to your wallet within seconds.
+        </p>
+
+        <form onSubmit={handleSubmit}>
+          <div className={styles.form}>
+            <input
+              type="text"
+              value={code}
+              onChange={handleOnChange}
+              placeholder="ENTER YOUR REWARD CODE"
+              className={`${styles.input} ${valChange ? styles.inputvalue : ""}`}
+              maxLength={16}
+              minLength={14}
+              spellCheck={false}
+              autoComplete="off"
             />
-            <div className={style.liveBadgeBack}></div>
-            <div className={style.givImgCont}>
-              <img
-                loading="lazy"
-                src={givImg}
-                alt="Giveaway code entry – enter your code here to claim rewards"
-                className={style.givImg}
-              />
+            <button
+              type="submit"
+              className={`d-none d-md-inline-flex ${styles.button}`}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <span className={styles.spinner} />
+              ) : (
+                <>
+                  Claim Reward <span className={styles.arrow}>→</span>
+                </>
+              )}
+            </button>
+          </div>
+          <button
+            type="submit"
+            className={`d-md-none my-3 ${styles.button}`}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className={styles.spinner} />
+            ) : (
+              <>
+                Claim Reward <span className={styles.arrow}>→</span>
+              </>
+            )}
+          </button>
+        </form>
+
+        {status.msg && (
+          <div
+            className={`${styles.status} ${
+              status.type === "success" ? styles.success : styles.error
+            }`}
+          >
+            {status.msg}
+          </div>
+        )}
+
+        <div className={styles.trustRow}>
+          <div className={styles.trustItem}>
+            <span className={styles.trustIcon}>🔒</span>
+            <div>
+              <strong>Secure & Verified</strong>
+              <p>256-bit encrypted redemption</p>
             </div>
           </div>
-          <div className={style.inpBtnCont}>
-            <div className={style.inputContainer}>
-              <input
-                type="text"
-                name="giveawayCode"
-                id="giveawayCode"
-                placeholder=" "
-                required
-              />
-              <label htmlFor="giveawayCode">Giveaway Code</label>
+          <div className={styles.trustItem}>
+            <span className={styles.trustIcon}>⚡</span>
+            <div>
+              <strong>Instant Payout</strong>
+              <p>Rewards in under 30 seconds</p>
             </div>
-            <div className="d-flex justify-content-center">
-              <button className={style.claimBtn}>Claim Now</button>
+          </div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustIcon}>⭐</span>
+            <div>
+              <strong>4.9/5 Rated</strong>
+              <p>Trusted by 250,000+ users</p>
             </div>
           </div>
         </div>
-        <div className={style.followSuperCont}>
-          <p className={style.getCodePara}>Get Code On:</p>
-          <div className={`row ${style.followCont}`}>
-            {followList.map((obj) => (
-              <div
-                key={obj.id}
-                className="d-flex justify-content-center mb-5 pb-4 mb-sm-0 pb-sm-0 col-6 col-md-3"
-              >
-                <div
-                  className={`${style.followImgCont} ${
-                    obj.id == 3 ? style.followNonComm : ""
-                  }`}
-                >
-                  <div
-                    onClick={() =>
-                      window.open(obj.link, "_blank", "noopener,noreferrer")
-                    }
-                  >
-                    <img
-                      loading="lazy"
-                      src={obj.logo}
-                      alt={obj.altTag}
-                      className={style.followCommImg}
-                    />
-                    <p
-                      className={`${style.objNamePara} ${style[obj.nameClass]}`}
-                    >
-                      {obj.name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+
+        <div className={styles.winners}>
+          <span className={styles.pulse} />
+          <p>
+            <strong>Aarav S.</strong> just won <strong>₹500</strong> · 2 min ago
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-export default GiveawayBody;
+}
