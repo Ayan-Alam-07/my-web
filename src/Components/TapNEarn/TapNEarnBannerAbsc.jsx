@@ -10,13 +10,7 @@ function TapEarnBannerAbsc({ hedding, para, navigateTo, val }) {
   const navigate = useNavigate();
 
   const goToTapEarn = () => {
-    if (!val) {
-      navigate(navigateTo);
-      return;
-    }
-    showWarning(
-      "Tap & Earn is Currently under maintainance and available very soon...",
-    );
+    navigate(navigateTo);
   };
 
   return (

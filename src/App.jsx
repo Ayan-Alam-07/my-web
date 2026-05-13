@@ -29,6 +29,7 @@ import DailyCheckIn from "./RewardSections/DailyCheckIn/DailyCheckIn";
 import SpinWheel from "./RewardSections/SpinWheel/SpinWheel";
 import LvlDashboard from "./RewardSections/LevelXP/pages/LvlDashboard";
 import LeaderboardPage from "./RewardSections/Leaderboard/pages/LeaderboardPage";
+import TapEarn from "./Components/TapNEarn/pages/TapEarn";
 
 const App = () => {
   const { isLoading } = useList();
@@ -198,6 +199,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <WatchAd />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/tap-n-earn"
+          element={
+            <ProtectedRoute>
+              <TapEarn />
             </ProtectedRoute>
           }
         ></Route>

@@ -5,7 +5,7 @@ const TapNEarnBanner = () => {
     <TapEarnBannerAbsc
       hedding={"Tap & Earn"}
       para={"Tap continuously and earn VEs & rewards instantly"}
-      navigateTo={"/"}
+      navigateTo={"/tap-n-earn"}
       val={true}
     />
   );
