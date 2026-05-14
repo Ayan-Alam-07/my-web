@@ -10,22 +10,7 @@ import LandingAboutVELoop from "./LandingAboutVELoop";
 import LandingFooter from "./LandingFooter";
 
 const LandingPage = () => {
-  const [showLoader, setShowLoader] = useState(true);
-
-  useEffect(() => {
-    // Disable scroll while loader is active
-    document.body.style.overflow = "hidden";
-
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-      document.body.style.overflow = "auto"; // Enable scroll after loader
-    }, 2500);
-
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "auto"; // Reset scroll on unmount
-    };
-  }, []);
+  const [showLoader, setShowLoader] = useState(false);
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>

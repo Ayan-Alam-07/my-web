@@ -1,0 +1,309 @@
+/* .hero {
+  padding: 80px 20px 60px;
+  background:
+    radial-gradient(1200px 500px at 20% -10%, #ffe9c7 0%, transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, #d8e9ff 0%, transparent 55%),
+    #fafaf7;
+  border-bottom: 1px solid #ececea;
+}
+.inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid #e6e6e3; color: #2a2a33;
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  box-shadow: 0 2px 8px rgba(20, 19, 26, 0.04);
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #16a34a; box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
+}
+.title {
+  margin: 22px 0 14px;
+  font-size: 36px; line-height: 1.08;
+  letter-spacing: -0.02em; font-weight: 800;
+}
+.accent {
+  background: linear-gradient(90deg, #f97316, #db2777);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.sub {
+  font-size: 16px; line-height: 1.55; color: #55545e;
+  max-width: 540px; margin: 0 auto;
+}
+.actions {
+  margin: 28px auto 0;
+  display: flex; flex-direction: column; gap: 10px; align-items: center;
+}
+.primary, .ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 24px; border-radius: 12px;
+  font-weight: 600; font-size: 15px; text-decoration: none;
+  width: 100%; max-width: 320px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.primary { background: #14131a; color: #fff; box-shadow: 0 10px 24px rgba(20, 19, 26, 0.18); }
+.primary:hover { transform: translateY(-1px); }
+.ghost { background: transparent; color: #14131a; border: 1px solid #d8d8d4; }
+.proof {
+  margin-top: 36px;
+  display: flex; flex-direction: column; gap: 10px; align-items: center;
+  color: #55545e; font-size: 14px;
+}
+.avatars { display: flex; }
+.avatars span {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, #ffd29d, #ff8fa3);
+  border: 2px solid #fafaf7; margin-left: -8px;
+}
+.avatars span:nth-child(2) { background: linear-gradient(135deg, #a7e8bd, #5fb1ff); }
+.avatars span:nth-child(3) { background: linear-gradient(135deg, #c7b6ff, #ff9bd2); }
+.avatars span:nth-child(4) { background: linear-gradient(135deg, #ffe27a, #ff8a5b); }
+
+@media (min-width: 576px) {
+  .title { font-size: 46px; }
+  .actions { flex-direction: row; justify-content: center; }
+  .primary, .ghost { width: auto; }
+  .proof { flex-direction: row; }
+}
+@media (min-width: 992px) {
+  .hero { padding: 120px 24px 90px; }
+  .title { font-size: 60px; }
+  .sub { font-size: 18px; }
+} */
+
+.hero {
+  padding: 80px 20px 60px;
+
+  background:
+    radial-gradient(
+      1200px 500px at 20% -10%,
+      rgba(249, 115, 22, 0.14) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      rgba(59, 130, 246, 0.12) 0%,
+      transparent 55%
+    ),
+    #181a2a;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #f5f7ff;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.18),
+    0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+.title {
+  margin: 22px 0 14px;
+
+  font-size: 36px;
+  line-height: 1.08;
+
+  letter-spacing: -0.02em;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.accent {
+  background: linear-gradient(90deg, #f97316, #db2777);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.sub {
+  font-size: 16px;
+  line-height: 1.65;
+
+  color: #aeb4d0;
+
+  max-width: 540px;
+
+  margin: 0 auto;
+}
+
+.actions {
+  margin: 28px auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-items: center;
+}
+
+.primary,
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 24px;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  text-decoration: none;
+
+  width: 100%;
+  max-width: 320px;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, #f97316, #db2777);
+
+  color: #ffffff;
+
+  box-shadow: 0 14px 34px rgba(249, 115, 22, 0.22);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 20px 44px rgba(249, 115, 22, 0.28);
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.ghost:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.proof {
+  margin-top: 36px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-items: center;
+
+  color: #aeb4d0;
+
+  font-size: 14px;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars span {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #ffd29d, #ff8fa3);
+
+  border: 2px solid #181a2a;
+
+  margin-left: -8px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.avatars span:nth-child(2) {
+  background: linear-gradient(135deg, #a7e8bd, #5fb1ff);
+}
+
+.avatars span:nth-child(3) {
+  background: linear-gradient(135deg, #c7b6ff, #ff9bd2);
+}
+
+.avatars span:nth-child(4) {
+  background: linear-gradient(135deg, #ffe27a, #ff8a5b);
+}
+
+@media (min-width: 576px) {
+  .title {
+    font-size: 46px;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .primary,
+  .ghost {
+    width: auto;
+  }
+
+  .proof {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 120px 24px 90px;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .sub {
+    font-size: 18px;
+  }
+}

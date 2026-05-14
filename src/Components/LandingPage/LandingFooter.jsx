@@ -8,23 +8,36 @@ import facebookImg from "../../assets/landing/landing-footer/footer-facebook.web
 import instaImg from "../../assets/landing/landing-footer/footer-insta.webp";
 import telegramImg from "../../assets/landing/landing-footer/footer-telegram.webp";
 import youtubeImg from "../../assets/landing/landing-footer/footer-youtube.webp";
+import { useNavigate } from "react-router-dom";
 
 const LandingFooter = () => {
+  const navigate = useNavigate();
+
   const earnMny = [
     {
       title: "EARN MONEY",
       options: [
-        "Watch Videos",
-        "Take Surveys",
-        "Play Games",
-        "Fill Captcha",
-        "Social Tasks",
+        { hds: "Watch Videos", link: "" },
+        { hds: "Take Surveys", link: "" },
+        { hds: "Play Games", link: "" },
+        { hds: "Fill Captcha", link: "" },
+        { hds: "Social Tasks", link: "" },
       ],
     },
-    { title: "For Business", options: "business@veloop.com" },
+    {
+      title: "For Business",
+      options: [
+        { hds: "business@veloop.com", link: "" },
+        { hds: "Contact Us", link: "/customer-service" },
+      ],
+    },
     {
       title: "Company",
-      options: ["About Us", "Terms of Service", "Privacy Policy"],
+      options: [
+        { hds: "About Us", link: "" },
+        { hds: "Terms of Service", link: "" },
+        { hds: "Privacy Policy", link: "" },
+      ],
     },
   ];
 
@@ -95,15 +108,11 @@ const LandingFooter = () => {
                   {section.title}
                 </h3>
                 <ul className={style.footerListCont}>
-                  {typeof section.options === "string" ? (
-                    <li>{section.options}</li>
-                  ) : (
-                    section.options.map((item, idx) => (
-                      <li key={idx}>
-                        {typeof item === "string" ? item : item.para}
-                      </li>
-                    ))
-                  )}
+                  {section.options.map((item, idx) => (
+                    <li key={idx} onClick={() => navigate(item.link)}>
+                      {item.hds}
+                    </li>
+                  ))}
                 </ul>
               </div>
             ))}

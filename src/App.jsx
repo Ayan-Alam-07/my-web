@@ -30,6 +30,7 @@ import SpinWheel from "./RewardSections/SpinWheel/SpinWheel";
 import LvlDashboard from "./RewardSections/LevelXP/pages/LvlDashboard";
 import LeaderboardPage from "./RewardSections/Leaderboard/pages/LeaderboardPage";
 import TapEarn from "./Components/TapNEarn/pages/TapEarn";
+import CustomerServicePage from "./Components/Support/Pages/CustomerServicePage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -39,16 +40,15 @@ const App = () => {
       <ScrollToTop />
       {isLoading && <Loader />}
 
+      {/* always opens wheather its public or private */}
       <Routes>
-        {/* public routes no login required */}
+        <Route path="/" element={<LandingPage />}></Route>
         <Route
-          path="/"
-          element={
-            // <PublicOnlyRoute>
-            <LandingPage />
-            // </PublicOnlyRoute>
-          }
+          path="/customer-service"
+          element={<CustomerServicePage />}
         ></Route>
+
+        {/* public routes no login required */}
         <Route
           path="/login"
           element={

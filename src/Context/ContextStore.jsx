@@ -37,6 +37,7 @@ export const ListProvider = ({ children }) => {
     { id: 19, name: "Level-Up" },
     { id: 20, name: "Leaderboard" },
     { id: 21, name: "Tap & Earn" },
+    { id: 22, name: "Customer Support" },
   ]);
 
   const [withdrawals, setWithdrawals] = useState([]);
