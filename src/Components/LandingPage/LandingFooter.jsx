@@ -109,8 +109,10 @@ const LandingFooter = () => {
                 </h3>
                 <ul className={style.footerListCont}>
                   {section.options.map((item, idx) => (
-                    <li key={idx} onClick={() => navigate(item.link)}>
-                      {item.hds}
+                    <li key={idx}>
+                      <span onClick={() => navigate(item.link)}>
+                        {item.hds}
+                      </span>
                     </li>
                   ))}
                 </ul>
