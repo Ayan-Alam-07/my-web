@@ -91,19 +91,20 @@
 
 @media (max-width: 575px) {
   .navInner {
-    padding: 14px 16px;
+    padding: 14px 20px;
   }
   .brand {
     font-size: 24px;
+    margin: 0 0 0 14px;
   }
   .navActions {
     position: absolute;
-    padding: 25px 0 80px;
+    padding: 25px 0 75px;
     background-color: #fff;
     width: 100%;
     justify-content: space-around;
     border: none;
-    bottom: -92vh;
+    bottom: -94vh;
     left: 0%;
   }
 
