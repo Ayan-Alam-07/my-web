@@ -21,7 +21,8 @@
 .brand {
   font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.6px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 
 .navLinks {
@@ -98,13 +99,13 @@
     margin: 0 0 0 14px;
   }
   .navActions {
-    position: absolute;
-    padding: 25px 0 75px;
+    position: fixed;
+    padding: 25px 0 40px;
     background-color: #fff;
     width: 100%;
     justify-content: space-around;
     border: none;
-    bottom: -94vh;
+    bottom: 0px;
     left: 0%;
   }
 
