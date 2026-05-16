@@ -56,22 +56,26 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  padding: 9px 16px;
+  padding: 10px 16px;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
+  outline: none;
+  transition: all 0.4s ease-in-out;
 }
 
-.secondaryBtn {
-  color: #111111;
+.clickedBtn,
+.unclickedBtn {
   border: 1px solid #111111;
-  background: #ffffff;
 }
 
-.primaryBtn {
+.clickedBtn {
+  color: #111111;
+  background-color: #ffffff;
+}
+.unclickedBtn {
   color: #ffffff;
   background: #111111;
-  border: 1px solid #111111;
 }
 
 @media (max-width: 991px) {

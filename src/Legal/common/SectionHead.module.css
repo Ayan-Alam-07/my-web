@@ -1,0 +1,25 @@
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgb(240, 240, 240);
+  font-family: "outfit", Arial, Helvetica, sans-serif;
+}
+
+.sectionHead h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+@media (min-width: 576px) {
+  .sectionHead {
+    padding: 14px;
+  }
+  .sectionHead h2 {
+    font-size: 1.6rem;
+  }
+}

@@ -19,15 +19,20 @@
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
+  margin-bottom: 22px;
+}
+.eyebrow span {
+  padding: 10px 16px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  letter-spacing: 0.1em;
 }
 
 .hero h1 {
   font-size: clamp(2rem, 4vw, 3.3rem);
   line-height: 1.15;
   margin: 0 0 18px;
-  max-width: 980px;
+  max-width: 1040px;
 }
 
 .heroText {
@@ -79,19 +84,7 @@
 .summarySection,
 .supportSection,
 .finalNoticeSection {
-  margin-top: 44px;
-}
-
-.sectionHead {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.sectionHead h2 {
-  font-size: 1.6rem;
-  margin: 0;
+  margin-top: 60px;
 }
 
 .sectionIntro {
@@ -152,7 +145,7 @@
 .cautionCard h3,
 .supportCard h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .groupIcon {
@@ -174,7 +167,16 @@
 
 .policyLinkCard h4 {
   margin: 0 0 8px;
-  font-size: 1rem;
+  font-size: 1.07rem;
+}
+
+.policyLinkCard span {
+  color: #3985ff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.policyLinkCard span:hover {
+  color: #6ca4ff;
 }
 
 .policyLinkCard p,
@@ -203,11 +205,14 @@
   .supportGrid {
     grid-template-columns: 1fr;
   }
+  .eyebrow {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 768px) {
   .main {
-    padding: 28px 16px 64px;
+    padding: 28px 16px 140px;
   }
 
   .hero h1 {

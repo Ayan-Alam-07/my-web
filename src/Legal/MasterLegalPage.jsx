@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 import styles from "./MasterLegalPage.module.css";
 import LegalNav from "./common/LegalNav";
+import SectionHead from "./common/SectionHead";
 
 const policyGroups = [
   {
@@ -176,10 +177,12 @@ const MasterLegalPage = () => {
   return (
     <div className={styles.page}>
       <LegalNav />
-      <div className="container">
+      <div className="container px-0 px-md-3">
         <main className={styles.main}>
           <section className={styles.hero}>
-            <p className={styles.eyebrow}>Legal & Policy Center</p>
+            <p className={styles.eyebrow}>
+              <span>Legal & Policy Center</span>
+            </p>
             <h1>
               Legal information, policy documents, important cautions, and
               compliance notices for VELOOP Rewards.
@@ -215,10 +218,11 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.noticeSection}>
-            <div className={styles.sectionHead}>
-              <FaExclamationTriangle />
-              <h2>Important platform notices</h2>
-            </div>
+            <SectionHead
+              Icon={FaExclamationTriangle}
+              title={"Important platform notices"}
+            />
+
             <div className={styles.noticeBox}>
               <ul>
                 {importantNotices.map((notice, index) => (
@@ -229,10 +233,7 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.policiesSection}>
-            <div className={styles.sectionHead}>
-              <FaGavel />
-              <h2>Policy navigation</h2>
-            </div>
+            <SectionHead Icon={FaGavel} title={"Policy navigation"} />
             <p className={styles.sectionIntro}>
               Review the policy categories below to find the document relevant
               to your question. Each linked page addresses a specific area of
@@ -256,7 +257,9 @@ const MasterLegalPage = () => {
                         className={styles.policyLinkCard}
                       >
                         <h4>{item.title}</h4>
-                        <p>{item.desc}</p>
+                        <p>
+                          {item.desc} <span>Learn more</span>
+                        </p>
                       </Link>
                     ))}
                   </div>
@@ -266,10 +269,8 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.cautionSection}>
-            <div className={styles.sectionHead}>
-              <FaUserShield />
-              <h2>Key user cautions</h2>
-            </div>
+            <SectionHead Icon={FaUserShield} title={"Key user cautions"} />
+
             <div className={styles.cautionGrid}>
               {cautions.map((item, index) => (
                 <article key={index} className={styles.cautionCard}>
@@ -281,10 +282,8 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.summarySection}>
-            <div className={styles.sectionHead}>
-              <FaInfoCircle />
-              <h2>Plain-language summary</h2>
-            </div>
+            <SectionHead Icon={FaInfoCircle} title={"Plain-language summary"} />
+
             <div className={styles.summaryBox}>
               <p>
                 Before using VELOOP Rewards, every user should understand the
@@ -301,10 +300,11 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.supportSection}>
-            <div className={styles.sectionHead}>
-              <FaEnvelope />
-              <h2>Support & compliance information</h2>
-            </div>
+            <SectionHead
+              Icon={FaEnvelope}
+              title={"Support & compliance information"}
+            />
+
             <div className={styles.supportGrid}>
               <div className={styles.supportCard}>
                 <h3>Contact details</h3>
@@ -344,10 +344,7 @@ const MasterLegalPage = () => {
           </section>
 
           <section className={styles.finalNoticeSection}>
-            <div className={styles.sectionHead}>
-              <FaGavel />
-              <h2>Final legal notice</h2>
-            </div>
+            <SectionHead Icon={FaGavel} title={"Final legal notice"} />
             <div className={styles.finalNoticeBox}>
               <p>
                 This Legal & Policy Center is provided to improve transparency,
