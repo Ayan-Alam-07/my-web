@@ -303,6 +303,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./QuickLinks.module.css";
 import QuickLinkAbs from "./QuickLinkAbs";
+import { GiMining } from "react-icons/gi";
 
 import {
   Flame,
@@ -320,41 +321,6 @@ import {
 } from "lucide-react";
 
 const links = [
-  // {
-  //   id: 1,
-  //   icon: <Flame size={15} />,
-  //   title: "Daily Streak",
-  //   class: "wrapper1",
-  //   border: "border1",
-  // },
-  // {
-  //   id: 2,
-  //   icon: <RotateCw size={15} />,
-  //   title: "Spin Wheel",
-  //   class: "wrapper2",
-  //   border: "border2",
-  // },
-  // {
-  //   id: 4,
-  //   icon: <Award size={15} />,
-  //   title: "Badges",
-  //   class: "wrapper4",
-  //   border: "border4",
-  // },
-  // {
-  //   id: 5,
-  //   icon: <Crown size={15} />,
-  //   title: "Level XP",
-  //   class: "wrapper5",
-  //   border: "border5",
-  // },
-  // {
-  //   id: 3,
-  //   icon: <Target size={15} />,
-  //   title: "Daily Missions",
-  //   class: "wrapper3",
-  //   border: "border3",
-  // },
   {
     id: 1,
     icon: <Gift size={15} />,
@@ -403,6 +369,13 @@ const links = [
     title: "Surprise Rewards",
     class: "wrapper11",
     border: "border11",
+  },
+  {
+    id: 8,
+    icon: <GiMining size={18} />,
+    title: "Mine & Earn",
+    class: "wrapper13",
+    border: "border13",
   },
 ];
 

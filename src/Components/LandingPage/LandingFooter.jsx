@@ -26,17 +26,23 @@ const LandingFooter = () => {
     },
     {
       title: "For Business",
-      options: [
-        { hds: "business@veloop.com", link: "" },
-        { hds: "Contact Us", link: "/customer-service" },
-      ],
+      options: [{ hds: "business@veloop.com", link: "" }],
     },
     {
       title: "Company",
       options: [
         { hds: "About Us", link: "" },
-        { hds: "Terms of Service", link: "" },
+        { hds: "Contact Us", link: "/customer-service" },
+      ],
+    },
+    {
+      title: "Legal",
+      options: [
+        { hds: "Terms & Conditions", link: "" },
         { hds: "Privacy Policy", link: "" },
+        { hds: "Disclaimer", link: "" },
+        { hds: "Refund & Cancellation", link: "" },
+        { hds: "Legal / Policies", link: "/legal" },
       ],
     },
   ];
@@ -88,8 +94,8 @@ const LandingFooter = () => {
       </div>
       <footer className={style.footerCont}>
         <div className="container-fluid pt-5 px-lg-5">
-          <div className="row ">
-            <div className="col-12 col-lg-3  mt-2 mb-5 my-lg-0 ">
+          <div className="row justify-content-between justify-content-md-around justify-content-lg-between">
+            <div className="col-12 col-lg-2  mt-2 mb-4 my-lg-0 ">
               <h3 className={style.soonAppHds}>Get Soon The App</h3>
               <img
                 src={storeImg}
@@ -99,14 +105,8 @@ const LandingFooter = () => {
             </div>
 
             {earnMny.map((section, index) => (
-              <div key={index} className="col-6 col-sm-4 col-lg-3  ">
-                <h3
-                  className={`${style.footerSecHds} ${
-                    index === 2 ? style.footerSecHdsMob : ""
-                  }`}
-                >
-                  {section.title}
-                </h3>
+              <div key={index} className="col-6 col-sm-5 col-lg-2  ">
+                <h3 className={`${style.footerSecHds} `}>{section.title}</h3>
                 <ul className={style.footerListCont}>
                   {section.options.map((item, idx) => (
                     <li key={idx}>

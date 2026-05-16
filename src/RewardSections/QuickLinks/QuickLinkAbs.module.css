@@ -173,6 +173,91 @@
   border-color: rgba(6, 182, 212, 0.35);
 }
 
+/* ============================= Mining ================================== */
+/* ======================================================================= */
+
+.wrapper13 {
+  background: linear-gradient(135deg, #ffcc4d, #ff9f1c, #ffb703);
+  background-size: 200% 200%;
+  animation: goldShift 5s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* energetic luxury shine */
+.wrapper13::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -130%;
+  width: 70%;
+  height: 160%;
+
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.12) 55%,
+    transparent 80%
+  );
+
+  transform: rotate(18deg);
+  animation: goldShine 3.8s linear infinite;
+}
+
+/* soft reward glow */
+.wrapper13::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.22),
+    transparent 38%
+  );
+
+  opacity: 0.9;
+}
+
+.border13:hover {
+  border-color: rgba(255, 191, 0, 0.55);
+
+  box-shadow:
+    0 0 14px rgba(255, 191, 0, 0.25),
+    0 0 36px rgba(255, 153, 0, 0.22),
+    0 0 58px rgba(255, 208, 0, 0.16);
+}
+
+/* moving molten gold */
+@keyframes goldShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* premium streak */
+@keyframes goldShine {
+  0% {
+    left: -140%;
+  }
+
+  100% {
+    left: 180%;
+  }
+}
+
+/* ======================================================================= */
+/* ======================================================================= */
 .title {
   color: #ececec;
   font-size: 14px;

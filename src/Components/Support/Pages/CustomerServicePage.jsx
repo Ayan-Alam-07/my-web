@@ -13,7 +13,7 @@ export default function CustomerServicePage() {
   return (
     <main className={styles.page}>
       <div className="container-fluid px-0">
-        <CommonNavArr id={22} navigation={"/Home"} />
+        <CommonNavArr id={22} navigation={-1} />
         <Hero />
         <div className="container">
           <Stats />

@@ -1,0 +1,216 @@
+.page {
+  background: #ffffff;
+  color: #111111;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.hero {
+  padding: 16px 0 28px;
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  max-width: 980px;
+}
+
+.heroText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 980px;
+  color: #333333;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.metaCard,
+.noticeBox,
+.groupCard,
+.cautionCard,
+.summaryBox,
+.supportCard,
+.finalNoticeBox {
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+}
+
+.metaCard {
+  padding: 18px;
+}
+
+.metaCard span {
+  display: block;
+  font-size: 0.82rem;
+  color: #555555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaCard strong {
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.noticeSection,
+.policiesSection,
+.cautionSection,
+.summarySection,
+.supportSection,
+.finalNoticeSection {
+  margin-top: 44px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sectionHead h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.sectionIntro {
+  max-width: 900px;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 22px;
+}
+
+.noticeBox,
+.summaryBox,
+.finalNoticeBox,
+.supportCard,
+.cautionCard,
+.groupCard {
+  padding: 24px;
+}
+
+.noticeBox ul,
+.summaryBox ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.noticeBox li,
+.summaryBox li {
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+.groupGrid,
+.cautionGrid,
+.supportGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.groupGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cautionGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.supportGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.groupTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.groupTitleRow h3,
+.cautionCard h3,
+.supportCard h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.groupIcon {
+  font-size: 1rem;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.policyLinkCard {
+  text-decoration: none;
+  color: #111111;
+  border: 1px solid #e5e5e5;
+  padding: 18px;
+}
+
+.policyLinkCard h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.policyLinkCard p,
+.cautionCard p,
+.supportCard p,
+.summaryBox p,
+.finalNoticeBox p {
+  margin: 0;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.cautionCard p,
+.supportCard p {
+  margin-top: 10px;
+}
+
+.finalNoticeBox p + p {
+  margin-top: 14px;
+}
+
+@media (max-width: 992px) {
+  .metaGrid,
+  .groupGrid,
+  .cautionGrid,
+  .supportGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 28px 16px 64px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
