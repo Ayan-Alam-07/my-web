@@ -97,11 +97,11 @@
     font-size: 24px;
   }
   .navActions {
+    position: absolute;
     padding: 25px 0 48px;
     background-color: #fff;
     width: 100%;
     justify-content: space-around;
-    position: absolute;
     border: none;
     bottom: -95vh;
     left: 0%;
