@@ -98,12 +98,12 @@
   }
   .navActions {
     position: absolute;
-    padding: 25px 0 48px;
+    padding: 25px 0 80px;
     background-color: #fff;
     width: 100%;
     justify-content: space-around;
     border: none;
-    bottom: -95vh;
+    bottom: -92vh;
     left: 0%;
   }
 
