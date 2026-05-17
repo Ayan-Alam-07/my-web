@@ -31,7 +31,7 @@ const LandingFooter = () => {
     {
       title: "Company",
       options: [
-        { hds: "About Us", link: "" },
+        { hds: "About Us", link: "/about-us" },
         { hds: "Contact Us", link: "/customer-service" },
       ],
     },

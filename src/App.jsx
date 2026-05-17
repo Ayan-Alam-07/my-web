@@ -32,6 +32,7 @@ import LeaderboardPage from "./RewardSections/Leaderboard/pages/LeaderboardPage"
 import TapEarn from "./Components/TapNEarn/pages/TapEarn";
 import CustomerServicePage from "./Components/Support/Pages/CustomerServicePage";
 import MasterLegalPage from "./Legal/MasterLegalPage";
+import AboutUsPage from "./Legal/About/AboutUsPage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -50,6 +51,7 @@ const App = () => {
         ></Route>
 
         <Route path="/legal" element={<MasterLegalPage />}></Route>
+        <Route path="/about-us" element={<AboutUsPage />}></Route>
 
         {/* public routes no login required */}
         <Route

@@ -1,0 +1,161 @@
+.page {
+  background: #ffffff;
+  color: #111111;
+  min-height: 100vh;
+  font-family: "nunito", Arial, sans-serif;
+}
+
+.main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #555555;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+  color: #111111;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 16px 0 28px;
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.eyebrow span {
+  padding: 10px 16px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  letter-spacing: 0.1em;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  max-width: 1040px;
+}
+
+.heroText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 980px;
+  color: #333333;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.supportCard,
+.metaCard,
+.finalNoticeBox {
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+}
+
+.metaCard {
+  padding: 18px;
+}
+
+.metaCard span {
+  display: block;
+  font-size: 0.82rem;
+  color: #555555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaCard strong {
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.supportSection,
+.finalNoticeSection {
+  margin-top: 60px;
+}
+
+.supportCard,
+.finalNoticeBox {
+  padding: 24px;
+}
+
+.supportGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.supportGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.supportCard h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.noticeBox ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.noticeBox li {
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+.supportCard p,
+.finalNoticeBox p {
+  margin: 0;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.supportCard p {
+  margin-top: 10px;
+}
+
+.finalNoticeBox p + p {
+  margin-top: 14px;
+}
+
+@media (max-width: 992px) {
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+  .eyebrow {
+    margin-bottom: 30px;
+  }
+  .supportGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 28px 16px 140px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,89 +1,15 @@
-.page {
-  background: #ffffff;
-  color: #111111;
-  min-height: 100vh;
-  font-family: "nunito", Arial, sans-serif;
-}
-
-.main {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 36px 24px 80px;
-}
-
-.hero {
-  padding: 16px 0 28px;
-}
-
-.eyebrow {
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-}
-.eyebrow span {
-  padding: 10px 16px;
-  border: 2px solid #000;
-  border-radius: 12px;
-  letter-spacing: 0.1em;
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1.15;
-  margin: 0 0 18px;
-  max-width: 1040px;
-}
-
-.heroText {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 980px;
-  color: #333333;
-}
-
-.metaGrid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.metaCard,
 .noticeBox,
 .groupCard,
 .cautionCard,
-.summaryBox,
-.supportCard,
-.finalNoticeBox {
-  border: 1px solid #d9d9d9;
+.summaryBox {
+  border: 1px solid #dbdbdb;
   background: #ffffff;
-}
-
-.metaCard {
-  padding: 18px;
-}
-
-.metaCard span {
-  display: block;
-  font-size: 0.82rem;
-  color: #555555;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.metaCard strong {
-  font-size: 0.98rem;
-  line-height: 1.5;
 }
 
 .noticeSection,
 .policiesSection,
 .cautionSection,
-.summarySection,
-.supportSection,
-.finalNoticeSection {
+.summarySection {
   margin-top: 60px;
 }
 
@@ -96,8 +22,6 @@
 
 .noticeBox,
 .summaryBox,
-.finalNoticeBox,
-.supportCard,
 .cautionCard,
 .groupCard {
   padding: 24px;
@@ -116,8 +40,7 @@
 }
 
 .groupGrid,
-.cautionGrid,
-.supportGrid {
+.cautionGrid {
   display: grid;
   gap: 20px;
 }
@@ -130,10 +53,6 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.supportGrid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .groupTitleRow {
   display: flex;
   align-items: center;
@@ -142,8 +61,7 @@
 }
 
 .groupTitleRow h3,
-.cautionCard h3,
-.supportCard h3 {
+.cautionCard h3 {
   margin: 0;
   font-size: 1.15rem;
 }
@@ -181,41 +99,19 @@
 
 .policyLinkCard p,
 .cautionCard p,
-.supportCard p,
-.summaryBox p,
-.finalNoticeBox p {
+.summaryBox p {
   margin: 0;
   line-height: 1.75;
   color: #333333;
 }
 
-.cautionCard p,
-.supportCard p {
+.cautionCard p {
   margin-top: 10px;
 }
 
-.finalNoticeBox p + p {
-  margin-top: 14px;
-}
-
 @media (max-width: 992px) {
-  .metaGrid,
   .groupGrid,
-  .cautionGrid,
-  .supportGrid {
+  .cautionGrid {
     grid-template-columns: 1fr;
-  }
-  .eyebrow {
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .main {
-    padding: 28px 16px 140px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
   }
 }

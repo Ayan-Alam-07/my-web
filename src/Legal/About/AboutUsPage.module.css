@@ -1,0 +1,24 @@
+.highlightSection,
+.contentSection {
+  margin-top: 42px;
+}
+
+.highlightBox,
+.contentBox {
+  padding: 10px 16px;
+}
+
+.contentBox p + p {
+  margin-top: 14px;
+}
+
+.contentBox ul {
+  margin: 14px 0;
+  padding-left: 20px;
+}
+
+.contentBox li {
+  margin-bottom: 10px;
+  line-height: 1.75;
+  color: #333333;
+}

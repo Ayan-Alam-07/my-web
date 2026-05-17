@@ -17,6 +17,7 @@ import {
 import styles from "./MasterLegalPage.module.css";
 import LegalNav from "./common/LegalNav";
 import SectionHead from "./common/SectionHead";
+import LegalHero from "./common/LegalHero";
 
 const policyGroups = [
   {
@@ -175,204 +176,117 @@ const summaryPoints = [
 
 const MasterLegalPage = () => {
   return (
-    <div className={styles.page}>
-      <LegalNav />
-      <div className="container px-0 px-md-3">
-        <main className={styles.main}>
-          <section className={styles.hero}>
-            <p className={styles.eyebrow}>
-              <span>Legal & Policy Center</span>
-            </p>
-            <h1>
-              Legal information, policy documents, important cautions, and
-              compliance notices for VELOOP Rewards.
-            </h1>
-            <p className={styles.heroText}>
-              This page is the central legal hub for VELOOP Rewards. It helps
-              users access the rules, notices, explanations, and policy
-              documents that govern account usage, rewards, withdrawals,
-              privacy, advertising, fraud prevention, user conduct, virtual
-              platform credits, and general platform compliance.
-            </p>
+    <LegalHero
+      crumb={false}
+      badge={"Legal & Policy Center"}
+      hTitle={
+        "Legal information, policy documents, important cautions, and compliance notices for VELOOP Rewards."
+      }
+      hText={
+        "This page is the central legal hub for VELOOP Rewards. It helps users access the rules, notices, explanations, and policy documents that govern account usage, rewards, withdrawals, privacy, advertising, fraud prevention, user conduct, virtual platform credits, and general platform compliance."
+      }
+      metaInfo={[
+        { title: "Effective Date", value: "Launch Date" },
+        { title: "Last Updated", value: "May 16, 2026" },
+        { title: "Owner", value: "Ayan Alam" },
+        {
+          title: "Operating Model",
+          value: "Online-operated platform based in Ramgarh, Jharkhand, India",
+        },
+      ]}
+      fNoticeText={[
+        "This Legal & Policy Center is provided to improve transparency, user awareness, and access to the rules that govern VELOOP Rewards. Individual policy documents contain more detailed terms applicable to specific areas of platform use, and those detailed documents should be reviewed regularly.",
+        "If any summary on this page differs from a more specific policy page, the more specific legal document will control for that subject matter. VELOOP Rewards reserves the right to amend, expand, replace, suspend, or remove any policy, reward rule, verification standard, feature, or operational process at any time, subject to business, operational, compliance, or legal requirements.",
+        "All use of VELOOP Rewards is subject to applicable Indian law and the platform’s published governing terms. Continued use of the platform after updates may be treated as acceptance of the revised legal materials.",
+      ]}
+      supportTitle={["Contact details", "Response and operations"]}
+      supportDesc={[
+        "For support requests, withdrawal concerns, legal questions, copyright complaints, or compliance-related communications, please contact the appropriate platform email with relevant account details or screenshots where required.",
+        "VELOOP Rewards is an online-operated rewards platform. Users requesting account deletion or personal data deletion may be required to complete account verification before action is processed.",
+      ]}
+    >
+      <section className={styles.noticeSection}>
+        <SectionHead
+          Icon={FaExclamationTriangle}
+          title={"Important platform notices"}
+        />
 
-            <div className={styles.metaGrid}>
-              <div className={styles.metaCard}>
-                <span>Effective Date</span>
-                <strong>Launch Date</strong>
-              </div>
-              <div className={styles.metaCard}>
-                <span>Last Updated</span>
-                <strong>May 16, 2026</strong>
-              </div>
-              <div className={styles.metaCard}>
-                <span>Owner</span>
-                <strong>Ayan Alam</strong>
-              </div>
-              <div className={styles.metaCard}>
-                <span>Operating Model</span>
-                <strong>
-                  Online-operated platform based in Ramgarh, Jharkhand, India
-                </strong>
-              </div>
-            </div>
-          </section>
+        <div className={styles.noticeBox}>
+          <ul>
+            {importantNotices.map((notice, index) => (
+              <li key={index}>{notice}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-          <section className={styles.noticeSection}>
-            <SectionHead
-              Icon={FaExclamationTriangle}
-              title={"Important platform notices"}
-            />
+      <section className={styles.policiesSection}>
+        <SectionHead Icon={FaGavel} title={"Policy navigation"} />
+        <p className={styles.sectionIntro}>
+          Review the policy categories below to find the document relevant to
+          your question. Each linked page addresses a specific area of platform
+          use and should be read carefully before participating in earnings,
+          referrals, withdrawals, or optional platform features.
+        </p>
 
-            <div className={styles.noticeBox}>
-              <ul>
-                {importantNotices.map((notice, index) => (
-                  <li key={index}>{notice}</li>
+        <div className={styles.groupGrid}>
+          {policyGroups.map((group, index) => (
+            <article key={index} className={styles.groupCard}>
+              <div className={styles.groupTitleRow}>
+                <span className={styles.groupIcon}>{group.icon}</span>
+                <h3>{group.title}</h3>
+              </div>
+
+              <div className={styles.linkList}>
+                {group.items.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.path}
+                    className={styles.policyLinkCard}
+                  >
+                    <h4>{item.title}</h4>
+                    <p>
+                      {item.desc} <span>Learn more</span>
+                    </p>
+                  </Link>
                 ))}
-              </ul>
-            </div>
-          </section>
-
-          <section className={styles.policiesSection}>
-            <SectionHead Icon={FaGavel} title={"Policy navigation"} />
-            <p className={styles.sectionIntro}>
-              Review the policy categories below to find the document relevant
-              to your question. Each linked page addresses a specific area of
-              platform use and should be read carefully before participating in
-              earnings, referrals, withdrawals, or optional platform features.
-            </p>
-
-            <div className={styles.groupGrid}>
-              {policyGroups.map((group, index) => (
-                <article key={index} className={styles.groupCard}>
-                  <div className={styles.groupTitleRow}>
-                    <span className={styles.groupIcon}>{group.icon}</span>
-                    <h3>{group.title}</h3>
-                  </div>
-
-                  <div className={styles.linkList}>
-                    {group.items.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        to={item.path}
-                        className={styles.policyLinkCard}
-                      >
-                        <h4>{item.title}</h4>
-                        <p>
-                          {item.desc} <span>Learn more</span>
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.cautionSection}>
-            <SectionHead Icon={FaUserShield} title={"Key user cautions"} />
-
-            <div className={styles.cautionGrid}>
-              {cautions.map((item, index) => (
-                <article key={index} className={styles.cautionCard}>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.summarySection}>
-            <SectionHead Icon={FaInfoCircle} title={"Plain-language summary"} />
-
-            <div className={styles.summaryBox}>
-              <p>
-                Before using VELOOP Rewards, every user should understand the
-                following basic points. This summary is provided for convenience
-                only. Where a full policy exists, the detailed policy page will
-                control in case of any inconsistency.
-              </p>
-              <ul>
-                {summaryPoints.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
-          <section className={styles.supportSection}>
-            <SectionHead
-              Icon={FaEnvelope}
-              title={"Support & compliance information"}
-            />
-
-            <div className={styles.supportGrid}>
-              <div className={styles.supportCard}>
-                <h3>Contact details</h3>
-                <p>
-                  <strong>Support Email:</strong> velooprewardsteam@gmail.com
-                </p>
-                <p>
-                  <strong>Business / Legal Email:</strong>{" "}
-                  veloop.ifratech@gmail.com
-                </p>
-                <p>
-                  For support requests, withdrawal concerns, legal questions,
-                  copyright complaints, or compliance-related communications,
-                  please contact the appropriate platform email with relevant
-                  account details or screenshots where required.
-                </p>
               </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-              <div className={styles.supportCard}>
-                <h3>Response and operations</h3>
-                <p>
-                  <FaClock /> <strong>Response Time:</strong> Usually within 24
-                  to 72 hours
-                </p>
-                <p>
-                  <FaMapMarkerAlt /> <strong>Location:</strong> Ramgarh,
-                  Jharkhand, India
-                </p>
-                <p>
-                  VELOOP Rewards is an online-operated rewards platform. Users
-                  requesting account deletion or personal data deletion may be
-                  required to complete account verification before action is
-                  processed.
-                </p>
-              </div>
-            </div>
-          </section>
+      <section className={styles.cautionSection}>
+        <SectionHead Icon={FaUserShield} title={"Key user cautions"} />
 
-          <section className={styles.finalNoticeSection}>
-            <SectionHead Icon={FaGavel} title={"Final legal notice"} />
-            <div className={styles.finalNoticeBox}>
-              <p>
-                This Legal & Policy Center is provided to improve transparency,
-                user awareness, and access to the rules that govern VELOOP
-                Rewards. Individual policy documents contain more detailed terms
-                applicable to specific areas of platform use, and those detailed
-                documents should be reviewed regularly.
-              </p>
-              <p>
-                If any summary on this page differs from a more specific policy
-                page, the more specific legal document will control for that
-                subject matter. VELOOP Rewards reserves the right to amend,
-                expand, replace, suspend, or remove any policy, reward rule,
-                verification standard, feature, or operational process at any
-                time, subject to business, operational, compliance, or legal
-                requirements.
-              </p>
-              <p>
-                All use of VELOOP Rewards is subject to applicable Indian law
-                and the platform’s published governing terms. Continued use of
-                the platform after updates may be treated as acceptance of the
-                revised legal materials.
-              </p>
-            </div>
-          </section>
-        </main>
-      </div>
-    </div>
+        <div className={styles.cautionGrid}>
+          {cautions.map((item, index) => (
+            <article key={index} className={styles.cautionCard}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.summarySection}>
+        <SectionHead Icon={FaInfoCircle} title={"Plain-language summary"} />
+
+        <div className={styles.summaryBox}>
+          <p>
+            Before using VELOOP Rewards, every user should understand the
+            following basic points. This summary is provided for convenience
+            only. Where a full policy exists, the detailed policy page will
+            control in case of any inconsistency.
+          </p>
+          <ul>
+            {summaryPoints.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </LegalHero>
   );
 };
 
