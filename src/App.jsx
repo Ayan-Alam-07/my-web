@@ -33,6 +33,21 @@ import TapEarn from "./Components/TapNEarn/pages/TapEarn";
 import CustomerServicePage from "./Components/Support/Pages/CustomerServicePage";
 import MasterLegalPage from "./Legal/MasterLegalPage";
 import AboutUsPage from "./Legal/About/AboutUsPage";
+import AdvertisingOfferwallPolicyPage from "./Legal/Advertising/AdvertisingOfferwallPolicyPage";
+import FutureFeaturesNoticePage from "./Legal/FutureNotice/FutureFeaturesNoticePage";
+import SecurityPlatformProtectionPage from "./Legal/SecurityProtection/SecurityPlatformProtectionPage";
+import LegalNoticePage from "./Legal/NoticePage/LegalNoticePage";
+import WithdrawalRewardVerificationPolicyPage from "./Legal/WithdrawalPolicy/WithdrawalRewardVerificationPolicyPage";
+import PlatformCurrencyPolicyPage from "./Legal/CurrencyPolicy/PlatformCurrencyPolicyPage";
+import ContactCompliancePage from "./Legal/ContactCompliance/ContactCompliancePage";
+import EarningsDisclaimerPage from "./Legal/EarningDisclaimer/EarningsDisclaimerPage";
+import CommunityRulesPage from "./Legal/CommunityRules/CommunityRulesPage";
+import AntiFraudPolicyPage from "./Legal/AntiFraud/AntiFraudPolicyPage";
+import RefundCancellationPage from "./Legal/RefundCancellation/RefundCancellationPage";
+import DisclaimerPage from "./Legal/Disclaimer/DisclaimerPage";
+import PrivacyPolicyPage from "./Legal/PrivacyPolicy/PrivacyPolicyPage";
+import TermsConditionsPage from "./Legal/TermsConditions/TermsConditionsPage";
+import DmcaCopyrightPolicyPage from "./Legal/DmcaPolicy/DmcaCopyrightPolicyPage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -49,9 +64,65 @@ const App = () => {
           path="/customer-service"
           element={<CustomerServicePage />}
         ></Route>
-
         <Route path="/legal" element={<MasterLegalPage />}></Route>
         <Route path="/about-us" element={<AboutUsPage />}></Route>
+        <Route
+          path="/advertising-offerwall-policy"
+          element={<AdvertisingOfferwallPolicyPage />}
+        ></Route>
+        <Route
+          path="/future-features-notice"
+          element={<FutureFeaturesNoticePage />}
+        ></Route>
+        <Route
+          path="/security-platform-protection"
+          element={<SecurityPlatformProtectionPage />}
+        ></Route>
+        <Route
+          path="/withdrawal-verification-policy"
+          element={<WithdrawalRewardVerificationPolicyPage />}
+        ></Route>
+        <Route
+          path="/platform-currency-policy"
+          element={<PlatformCurrencyPolicyPage />}
+        ></Route>
+        <Route
+          path="/contact-compliance"
+          element={<ContactCompliancePage />}
+        ></Route>
+
+        <Route
+          path="/earnings-disclaimer"
+          element={<EarningsDisclaimerPage />}
+        ></Route>
+
+        <Route path="/community-rules" element={<CommunityRulesPage />}></Route>
+
+        <Route
+          path="/anti-fraud-policy"
+          element={<AntiFraudPolicyPage />}
+        ></Route>
+
+        <Route
+          path="/refund-cancellation-policy"
+          element={<RefundCancellationPage />}
+        ></Route>
+
+        <Route path="/disclaimer" element={<DisclaimerPage />}></Route>
+
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />}></Route>
+
+        <Route
+          path="/terms-and-conditions"
+          element={<TermsConditionsPage />}
+        ></Route>
+
+        <Route
+          path="/dmca-copyright-policy"
+          element={<DmcaCopyrightPolicyPage />}
+        ></Route>
+
+        <Route path="/legal-notice" element={<LegalNoticePage />}></Route>
 
         {/* public routes no login required */}
         <Route
@@ -78,9 +149,7 @@ const App = () => {
             </PublicOnlyRoute>
           }
         />
-
         {/* ADMIN ROUTE */}
-
         <Route
           path="/admin"
           element={
@@ -89,7 +158,6 @@ const App = () => {
             </AdminRoute>
           }
         />
-
         {/* private route login required */}
         <Route
           path="/Home"
@@ -99,7 +167,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/daily-bonus"
           element={
@@ -108,7 +175,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/Wallet"
           element={
@@ -117,7 +183,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/redeem-history"
           element={
@@ -126,7 +191,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/Payout"
           element={
@@ -135,7 +199,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/captcha-tasks"
           element={
@@ -144,7 +207,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/giveaway-code"
           element={
@@ -153,7 +215,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="taskOptionChecker"
           element={
@@ -162,7 +223,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/exchange-center"
           element={
@@ -171,7 +231,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/watchAd-bonus"
           element={
@@ -180,7 +239,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/Referral"
           element={
@@ -189,7 +247,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/invite-history"
           element={
@@ -198,7 +255,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/watch-Ads"
           element={
@@ -207,7 +263,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/tap-n-earn"
           element={
@@ -216,7 +271,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/tap-token"
           element={
@@ -225,7 +279,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/daily-streak"
           element={
@@ -234,7 +287,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/spin-wheel"
           element={
@@ -243,7 +295,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/Lvl-Dashboard"
           element={
@@ -252,7 +303,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/leaderboard"
           element={

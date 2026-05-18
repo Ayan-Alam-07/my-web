@@ -36,7 +36,7 @@ const LegalNav = () => {
               className={`${styles[act.class]} 
               ${onEnter !== idx ? styles.clickedBtn : styles.unclickedBtn}`}
               onClick={() =>
-                idx !== 1 ? navigateTo(-1) : navigateTo(act.navigate)
+                idx !== 1 ? navigateTo("/") : navigateTo(act.navigate)
               }
             >
               <act.icon size={idx === 1 && 20} />

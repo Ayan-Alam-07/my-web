@@ -38,10 +38,10 @@ const LandingFooter = () => {
     {
       title: "Legal",
       options: [
-        { hds: "Terms & Conditions", link: "" },
-        { hds: "Privacy Policy", link: "" },
-        { hds: "Disclaimer", link: "" },
-        { hds: "Refund & Cancellation", link: "" },
+        { hds: "Terms & Conditions", link: "/terms-and-conditions" },
+        { hds: "Privacy Policy", link: "/privacy-policy" },
+        { hds: "Disclaimer", link: "/disclaimer" },
+        { hds: "Refund & Cancellation", link: "/refund-cancellation-policy" },
         { hds: "Legal / Policies", link: "/legal" },
       ],
     },

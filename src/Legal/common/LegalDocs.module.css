@@ -1,0 +1,39 @@
+.noticeSection,
+.contentSection {
+  margin-top: 42px;
+}
+
+.noticeBox,
+.card {
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  padding: 24px;
+}
+
+.noticeBox p,
+.card p,
+.card li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.card p + p {
+  margin-top: 14px;
+}
+
+.card ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .noticeBox,
+  .card {
+    padding: 18px;
+  }
+}
