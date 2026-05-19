@@ -21,6 +21,8 @@ import RewardSections from "../../RewardSections/RewardSections";
 import QuickLinks from "../../RewardSections/QuickLinks/QuickLinks";
 import RewardArrow from "../CommonComponents/RewardArrow";
 import LeaderboardBanner from "../../RewardSections/Leaderboard/LeaderboardBanner";
+import SupportBanner from "../Support/SupportBanner";
+import BonusBanner from "./Bonus/BonusBanner";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -84,7 +86,7 @@ const HomeEarn = () => {
           </div>
         </div>
         <div className="row justify-content-center mt-2 mb-3 pb-1 px-2">
-          <div className="col-12 col-md-11 col-lg-10 p-0">
+          <div className="col-12 col-md-11 col-lg-12 p-0">
             <DailyBonusBanner />
           </div>
         </div>
@@ -107,12 +109,12 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <div className="row justify-content-evenly mt-2 mb-4 pb-3 px-2">
-          <div className="col-12 col-md-9 col-lg-4 p-0">
+        <div className="row justify-content-between mt-2 mb-4 pb-3 px-2 mx-md-2 mx-lg-3">
+          <div className="col-12 col-md-12 col-lg-5 p-0">
             <TapEarnBanner />
           </div>
 
-          <div className="col-12 col-md-9 col-lg-4 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
+          <div className="col-12 col-md-12 col-lg-5 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
             <TapToken />
           </div>
         </div>
@@ -137,32 +139,8 @@ const HomeEarn = () => {
               </span>
             </p>
           </div>
-          <div className="row justify-content-center my-3">
-            <div
-              className="col-12 col-md-11 p-0"
-              onClick={() => navigate("/watchAd-bonus")}
-            >
-              <div className={style.bonusFeatureCard}>
-                <div className={style.bonusFeatureContent}>
-                  <h4 className={style.bonusFeatureTitle}>
-                    Watch Ads <span style={{ color: "#fff" }}>To</span> Claim
-                    Bonus
-                  </h4>
-
-                  <p className={style.bonusFeatureDesc}>
-                    Complete quick ad views and unlock bonus VEs instantly.
-                  </p>
-
-                  <div className={style.bonusFeatureBtn}>Claim Your Bonus</div>
-                </div>
-
-                <div className={style.bonusIconWrapper}>
-                  <FaGift className={style.bonusIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+        <BonusBanner />
 
         <div className="row ">
           <div className="col-12">
@@ -186,9 +164,9 @@ const HomeEarn = () => {
           </div>
         </div>
 
-        <div className="row justify-content-evenly align-items-stretch mt-2 mt-lg-3 pb-3 pb-lg-2">
+        <div className="row justify-content-between align-items-stretch mt-2 mt-lg-3 pb-3 pb-lg-2 mx-md-2 mx-lg-3">
           {/* CAPTCHA */}
-          <div className="col-lg-4 col-12 col-md-9 mt-2 mt-lg-0 mx-1 mx-md-4 mx-lg-0">
+          <div className="col-12 col-md-12 col-lg-5 mt-2 mt-lg-0 mx-1 mx-md-0">
             <div
               className={style.taskCard}
               onClick={() => navigate("/captcha-tasks")}
@@ -211,7 +189,7 @@ const HomeEarn = () => {
           </div>
 
           {/* EXCHANGE */}
-          <div className="col-lg-4 col-12 col-md-9 pt-2 mt-4 mt-lg-0 pt-lg-0 mx-1 mx-md-4 mx-lg-0">
+          <div className="col-12 col-md-12 col-lg-5 pt-2 mt-4 mt-lg-0 pt-lg-0 mx-1 mx-md-0">
             <div
               className={style.taskCard}
               onClick={() => navigate("/exchange-center")}
@@ -258,8 +236,7 @@ const HomeEarn = () => {
         <WatchAdBanner />
 
         {/* leaderboard  */}
-
-        <div className="row mt-3 mb-lg-2">
+        <div className="row mt-0 mb-lg-2">
           <div className="col-12">
             <div>
               <p className={`m-0 ${style.HomeEarnpara}`}>
@@ -276,7 +253,7 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <div className="mt-1 pt-1 mb-5 pb-3">
+        <div className="mt-1 pt-1 mb-5 pb-3 mb-lg-4 mx-md-2 mx-lg-3">
           <LeaderboardBanner />
         </div>
 
@@ -298,7 +275,9 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-        <ReferralEntryCard />
+        <div className="mx-md-2 mx-lg-3">
+          <ReferralEntryCard />
+        </div>
 
         {/* giveaway section */}
         <div className="row  mb-lg-2">
@@ -319,7 +298,7 @@ const HomeEarn = () => {
           </div>
         </div>
 
-        <div className="row justify-content-around mb-3 mt-1">
+        <div className="row justify-content-around mb-3 mt-1 ">
           <div className="col-12 col-md-11 mb-3 pb-2 p-0">
             <div
               className={style.rewardGiveawayCard}
@@ -382,8 +361,30 @@ const HomeEarn = () => {
           <QuickLinks />
         </div>
 
+        {/* customer support */}
+        <div className="row mb-1">
+          <div className="col-12 mt-3 mb-2">
+            <div>
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Contact Us: <span className={style.homeEarnTaskUnd3}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
+                  style={{ width: "50px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Reach us to
+              encounter any of your issues.
+            </p>
+          </div>
+        </div>
+        <div className="mx-md-2 mx-lg-3">
+          <SupportBanner />
+        </div>
+
         {/* follow & Earn */}
-        <div className="row ">
+        <div className="row mt-4 pt-3">
           <div className="col-12 mt-3">
             <div>
               <p className={`m-0 ${style.HomeEarnpara}`}>
@@ -401,7 +402,7 @@ const HomeEarn = () => {
           </div>
         </div>
         <div className="row justify-content-around mx-sm-3 mx-lg-0">
-          <div className="col-12 col-lg-11 mx-lg-3 px-lg-5 px-0 mt-3 pt-1 mb-4">
+          <div className="col-12 col-lg-12 mx-lg-3 ps-lg-3 pe-lg-5 px-0 mt-3 pt-1 mb-4">
             {follows.map((follow, idx) => (
               <div key={idx} className={style.socialTaskCard}>
                 {/* LEFT SIDE */}

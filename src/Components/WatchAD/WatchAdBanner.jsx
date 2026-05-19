@@ -7,8 +7,8 @@ const WatchAdBanner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="row justify-content-center mt-2 pt-1 mb-5 pb-2">
-      <div className="col-12 col-md-10 col-lg-11">
+    <div className="row justify-content-center mt-2 pt-1 mb-5 pb-2 pb-lg-0 mx-md-2 mx-lg-2">
+      <div className="col-12 col-md-12 col-lg-12">
         <div
           className={style.watchAdsPremiumCard}
           onClick={() => navigate("/watch-Ads")}
