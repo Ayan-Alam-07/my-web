@@ -71,7 +71,7 @@ Mobile-first responsive
     box-shadow 0.5s ease;
 
   font-family:
-    "Inter",
+    "outfit",
     "Segoe UI",
     system-ui,
     -apple-system,
@@ -277,7 +277,7 @@ Mobile-first responsive
   margin: 0 20px 6px 0;
   font-size: 5.3vw;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: -0.02em;
 
@@ -395,7 +395,7 @@ Mobile-first responsive
 
   padding: 12px 18px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   font-size: 0.875rem;
 
