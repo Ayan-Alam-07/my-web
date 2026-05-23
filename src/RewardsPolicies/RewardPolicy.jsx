@@ -341,20 +341,6 @@ const RewardPolicy = () => {
       cTitle={"help-center"}
     >
       <section className={styles.section}>
-        <SectionHead Icon={FaSearch} title="Search help topics" />
-        <div className={styles.searchWrap}>
-          <FaSearch className={styles.searchIcon} />
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search rewards, withdrawals, referrals, virtual credits, safety rules..."
-            className={styles.searchInput}
-          />
-        </div>
-      </section>
-
-      <section className={styles.section}>
         <SectionHead Icon={FaBookOpen} title="Quick categories" />
         <div className={styles.cardGrid}>
           {categoryCards.map((card) => {
@@ -437,7 +423,7 @@ const RewardPolicy = () => {
         </div>
       </section>
 
-      <section className={styles.noticeBox}>
+      <section className={`pt-5 ${styles.noticeBox}`}>
         <SectionHead Icon={FaUserShield} title="Placement recommendation" />
         <ul>
           <li>
