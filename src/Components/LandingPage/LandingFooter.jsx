@@ -22,6 +22,7 @@ const LandingFooter = () => {
         { hds: "Play Games", link: "" },
         { hds: "Fill Captcha", link: "" },
         { hds: "Social Tasks", link: "" },
+        { hds: "Rewards Policies", link: "/help-center" },
       ],
     },
     {

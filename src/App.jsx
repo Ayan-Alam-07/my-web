@@ -48,6 +48,37 @@ import DisclaimerPage from "./Legal/Disclaimer/DisclaimerPage";
 import PrivacyPolicyPage from "./Legal/PrivacyPolicy/PrivacyPolicyPage";
 import TermsConditionsPage from "./Legal/TermsConditions/TermsConditionsPage";
 import DmcaCopyrightPolicyPage from "./Legal/DmcaPolicy/DmcaCopyrightPolicyPage";
+import RewardPolicy from "./RewardsPolicies/RewardPolicy";
+import WatchAdsPage from "./RewardsPolicies/WatchAdPolicy/WatchAdsPage";
+import DailyCheckInPage from "./RewardsPolicies/DailyCheckInPolicy/DailyCheckInPage";
+import MiningPage from "./RewardsPolicies/MiningPolicy/MiningPage";
+import SpinTheWheelPage from "./RewardsPolicies/SpinTheWheelPolicy/SpinTheWheelPage";
+import SocialFollowRewardsPage from "./RewardsPolicies/SocialFollowRewardsPolicy/SocialFollowRewardsPage";
+import LeaderboardRewardsPage from "./RewardsPolicies/LeaderboardRewardsPolicy/LeaderboardRewardsPage";
+import TapAndEarnPage from "./RewardsPolicies/TapAndEarnPolicy/TapAndEarnPage";
+import SolveCaptchaPage from "./RewardsPolicies/SolveCaptchaPolicy/SolveCaptchaPage";
+import ReferAndEarnPage from "./RewardsPolicies/ReferAndEarnPolicy/ReferAndEarnPage";
+import LevelSystemPage from "./RewardsPolicies/LevelSystemPolicy/LevelSystemPage";
+import GemsExchangeCenterPage from "./RewardsPolicies/GemsExchangeCenterPolicy/GemsExchangeCenterPage";
+import WatchAdBonusesPage from "./RewardsPolicies/WatchAdBonusesPolicy/WatchAdBonusesPage";
+import PromoCodesPage from "./RewardsPolicies/PromoCodesPolicy/PromoCodesPage";
+import TeamBattlePage from "./RewardsPolicies/TeamBattlePolicy/TeamBattlePage";
+import ReferralMilestonesPage from "./RewardsPolicies/ReferralMilestonesPolicy/ReferralMilestonesPage";
+import LuckyDrawPage from "./RewardsPolicies/LuckyDrawPolicy/LuckyDrawPage";
+import CollectCardsPage from "./RewardsPolicies/CollectCardsPolicy/CollectCardsPage";
+import SurpriseRewardsPage from "./RewardsPolicies/SurpriseRewardsPolicy/SurpriseRewardsPage";
+import MysteryRewardsPage from "./RewardsPolicies/MysteryRewardsPolicy/MysteryRewardsPage";
+import WhatIsVELOOPRewardsPage from "./RewardsPolicies/WhatIsVELOOPRewardsPolicy/WhatIsVELOOPRewardsPage";
+import PlatformCurrenciesPage from "./RewardsPolicies/PlatformCurrenciesPolicy/PlatformCurrenciesPage";
+import JoinMembershipPage from "./RewardsPolicies/JoinMembershipPolicy/JoinMembershipPage";
+import StreakRewardsPage from "./RewardsPolicies/StreakRewardsPolicy/StreakRewardsPage";
+import MissionsAndBadgesPage from "./RewardsPolicies/MissionsAndBadgesPolicy/MissionsAndBadgesPage";
+import WalletOverviewPage from "./RewardsPolicies/WalletOverviewPolicy/WalletOverviewPage";
+import SwapCenterPage from "./RewardsPolicies/SwapCenterPolicy/SwapCenterPage";
+import HowWithdrawalsWorkPage from "./RewardsPolicies/HowWithdrawalsWorkPolicy/HowWithdrawalsWorkPage";
+import RewardVerificationPage from "./RewardsPolicies/RewardVerificationPolicy/RewardVerificationPage";
+import MultipleAccountsAndVPNPage from "./RewardsPolicies/MultipleAccountsAndVPNPolicy/MultipleAccountsAndVPNPage";
+import BotEmulatorAutoclickerRulesPage from "./RewardsPolicies/BotEmulatorAutoclickerRulesPolicy/BotEmulatorAutoclickerRulesPage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -57,9 +88,11 @@ const App = () => {
       <ScrollToTop />
       {isLoading && <Loader />}
 
-      {/* always opens wheather its public or private */}
       <Routes>
+        {/* always opens wheather its public or private */}
         <Route path="/" element={<LandingPage />}></Route>
+
+        {/* Legal Docs */}
         <Route
           path="/customer-service"
           element={<CustomerServicePage />}
@@ -123,6 +156,160 @@ const App = () => {
         ></Route>
 
         <Route path="/legal-notice" element={<LegalNoticePage />}></Route>
+
+        {/* Rewards Policies */}
+        <Route
+          path="/help-center/earning/watch-ads"
+          element={<WatchAdsPage />}
+        ></Route>
+        <Route
+          path="/help-center/earning/daily-rewards"
+          element={<DailyCheckInPage />}
+        ></Route>
+
+        <Route path="/help-center" element={<RewardPolicy />}></Route>
+
+        <Route
+          path="/help-center/earning/mining-rewards"
+          element={<MiningPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/spin-the-wheel"
+          element={<SpinTheWheelPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/follow-and-earn"
+          element={<SocialFollowRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/leaderboard-rewards"
+          element={<LeaderboardRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/tap-and-earn"
+          element={<TapAndEarnPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/solve-captcha"
+          element={<SolveCaptchaPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/safety/referral-rewards"
+          element={<ReferAndEarnPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/level-system"
+          element={<LevelSystemPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/wallet/gems-exchange-center"
+          element={<GemsExchangeCenterPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/watch-ad-bonuses"
+          element={<WatchAdBonusesPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/safety/promo-codes"
+          element={<PromoCodesPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/team-battle"
+          element={<TeamBattlePage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/referral-milestones"
+          element={<ReferralMilestonesPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/lucky-draw"
+          element={<LuckyDrawPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/collect-cards"
+          element={<CollectCardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/surprise-rewards"
+          element={<SurpriseRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/future/mystery-rewards"
+          element={<MysteryRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/getting-started/what-is-veloop-rewards"
+          element={<WhatIsVELOOPRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/getting-started/platform-currencies"
+          element={<PlatformCurrenciesPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/getting-started/join-membership"
+          element={<JoinMembershipPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/streak-rewards"
+          element={<StreakRewardsPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/earning/missions-and-badges"
+          element={<MissionsAndBadgesPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/wallet/wallet-overview"
+          element={<WalletOverviewPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/wallet/swap-center"
+          element={<SwapCenterPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/withdrawals/how-withdrawals-work"
+          element={<HowWithdrawalsWorkPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/withdrawals/reward-verification"
+          element={<RewardVerificationPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/safety/multiple-accounts-and-vpn"
+          element={<MultipleAccountsAndVPNPage />}
+        ></Route>
+
+        <Route
+          path="/help-center/safety/bot-emulator-autoclicker-rules"
+          element={<BotEmulatorAutoclickerRulesPage />}
+        ></Route>
+
+        {/* <Route path="/help-center" element={<RewardPolicy />}></Route> */}
 
         {/* public routes no login required */}
         <Route

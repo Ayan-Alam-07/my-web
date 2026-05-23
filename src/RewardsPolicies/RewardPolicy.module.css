@@ -1,0 +1,194 @@
+.section {
+  margin-top: 2rem;
+}
+
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  opacity: 0.7;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.75rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 0.98rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.categoryCard,
+.quickQuestion {
+  display: block;
+  padding: 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(231, 231, 231, 0.9);
+  background: rgba(167, 164, 164, 0.04);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cardIcon {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.categoryCard h3 {
+  margin: 0 0 0.35rem 10px;
+  font-size: 1rem;
+}
+
+.categoryCard p {
+  margin: 0;
+  opacity: 0.84;
+  line-height: 1.55;
+}
+
+.moreDetails {
+  color: #3985ff;
+  text-decoration: underline;
+}
+.moreDetails:hover {
+  color: #619eff;
+}
+
+.quickQuestionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+
+/* .quickQuestion {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+} */
+
+.quickQuestionIcon {
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.accordionItem {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  overflow: hidden;
+}
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordionPanel {
+  padding: 0 1.1rem 1rem;
+}
+
+.accordionPanel p {
+  margin: 0 0 0.85rem;
+  opacity: 0.9;
+  line-height: 1.65;
+}
+
+.inlineRouteLink {
+  text-decoration: none;
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.inlineRouteLink span {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.routesTableWrap {
+  overflow-x: auto;
+}
+
+.routesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.routesTable th,
+.routesTable td {
+  padding: 0.9rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  text-align: left;
+  vertical-align: top;
+}
+
+.routesTable th {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.routesTable code {
+  white-space: nowrap;
+  color: #f8fafc;
+}
+
+.noticeBox ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .routesTable th,
+  .routesTable td {
+    font-size: 0.92rem;
+  }
+
+  .searchInput {
+    font-size: 0.95rem;
+  }
+}

@@ -15,6 +15,7 @@ const LegalHero = ({
   fNoticeText,
   supportTitle,
   supportDesc,
+  isRewards = null,
 }) => {
   const supportInfo = [
     {
@@ -44,7 +45,11 @@ const LegalHero = ({
             <div className={styles.breadcrumbs}>
               <Link to="/">Home</Link>
               <span>/</span>
-              <Link to="/legal">Legal</Link>
+              {isRewards !== null ? (
+                <Link to="/help-center">help-center</Link>
+              ) : (
+                <Link to="/legal">Legal</Link>
+              )}
               <span>/</span>
               <span>{cTitle}</span>
             </div>
