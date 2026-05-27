@@ -57,13 +57,14 @@
 }
 
 .lowerFootDetail {
-  padding: 0 4.7vw !important;
+  padding: 0 4.7vw 3vw !important;
   font-family: "nunito";
   font-weight: 600;
+  text-align: center;
   cursor: text;
 }
 .lowerFootSocials {
-  padding: 3vw 0 0 0;
+  padding: 3vw 0;
   text-align: center;
 }
 .lowerFootAnc {
@@ -116,6 +117,7 @@
   }
   .lowerFootDetail {
     padding: 0 12px !important;
+    text-align: start;
   }
   .lowerFootAnc {
     margin: 0 1.17vw;
