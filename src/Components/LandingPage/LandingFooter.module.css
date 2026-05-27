@@ -29,16 +29,23 @@
   margin: 0;
   list-style: none;
 }
-.footerListCont li span:hover {
-  color: #ffffff99;
-  cursor: pointer;
-  text-decoration: underline;
-}
 .footerListCont li {
   padding: 1.5vw 0;
   font-size: 4vw;
-  color: #e9e9e9;
+  font-weight: 400;
   font-family: "outfit";
+}
+
+.footerListCont li a,
+.lowerPrivacy {
+  color: #e9e9e9;
+  text-decoration: none;
+}
+
+.footerListCont li a:hover {
+  color: #ffffffa8;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .footerSecHds {
   font-family: "poppins";
@@ -64,10 +71,15 @@
   margin: 0 2.07vw;
 }
 .lowerFootAnc img:hover,
-.lowerFootDetail span:hover {
+.lowerPrivacy:hover {
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
 }
+
+.lowerPrivacy {
+  text-decoration: underline;
+}
+
 /* FIXME: MEDIA QUERY */
 @media (min-width: 575px) {
   .upperFooter {

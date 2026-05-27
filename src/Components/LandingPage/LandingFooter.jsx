@@ -8,7 +8,7 @@ import facebookImg from "../../assets/landing/landing-footer/footer-facebook.web
 import instaImg from "../../assets/landing/landing-footer/footer-insta.webp";
 import telegramImg from "../../assets/landing/landing-footer/footer-telegram.webp";
 import youtubeImg from "../../assets/landing/landing-footer/footer-youtube.webp";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LandingFooter = () => {
   const navigate = useNavigate();
@@ -17,11 +17,15 @@ const LandingFooter = () => {
     {
       title: "EARN MONEY",
       options: [
-        { hds: "Watch Videos", link: "" },
-        { hds: "Take Surveys", link: "" },
-        { hds: "Play Games", link: "" },
-        { hds: "Fill Captcha", link: "" },
-        { hds: "Social Tasks", link: "" },
+        { hds: "Watch Videos", link: "//help-center/earning/watch-ads" },
+        {
+          hds: "Withdrawals",
+          link: "/help-center/withdrawals/how-withdrawals-work",
+        },
+        { hds: "Staking", link: "" },
+        { hds: "Mine & earn", link: "/help-center/earning/mining-rewards" },
+        { hds: "Fill Captcha", link: "/help-center/earning/solve-captcha" },
+        { hds: "Level System", link: "/help-center/earning/level-system" },
         { hds: "Rewards Policies", link: "/help-center" },
       ],
     },
@@ -111,9 +115,19 @@ const LandingFooter = () => {
                 <ul className={style.footerListCont}>
                   {section.options.map((item, idx) => (
                     <li key={idx}>
-                      <span onClick={() => navigate(item.link)}>
+                      <Link
+                        to={item.link}
+                        style={{
+                          textDecoration:
+                            (idx === section.options.length - 1 &&
+                              index === 0) ||
+                            (idx === section.options.length - 1 && index === 3)
+                              ? "underline"
+                              : "none",
+                        }}
+                      >
                         {item.hds}
-                      </span>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -126,7 +140,16 @@ const LandingFooter = () => {
           style={{ borderTop: "2px solid rgba(255,255,255,0.15)" }}
         >
           <div className={`col-12 col-sm-6 ${style.lowerFootDetail}`}>
-            <FaRegCopyright /> 2025, VELoop. <span>Terms & Privacy policy</span>
+            <FaRegCopyright /> 2025, VELoop.{" "}
+            <span>
+              <Link className={style.lowerPrivacy} to={"/terms-and-conditions"}>
+                Terms
+              </Link>{" "}
+              <span>&</span>{" "}
+              <Link className={style.lowerPrivacy} to={"/privacy-policy"}>
+                Policy
+              </Link>
+            </span>
           </div>
           <div className={`col-12 col-sm-6 ${style.lowerFootSocials}`}>
             {socials.map((social, idx) => (
