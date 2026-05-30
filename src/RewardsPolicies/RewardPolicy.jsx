@@ -143,7 +143,7 @@ const faqGroups = [
       {
         q: "Is joining mandatory and is there any investment?",
         a: "Joining is optional. The platform is not presented as an investment, banking, gambling, or betting service, and internal virtual credits remain platform-controlled digital reward units.",
-        route: "/help-center/getting-started/join-membership",
+        route: "/help-center/getting-started/weekly-leaderboard-entry",
       },
     ],
   },
