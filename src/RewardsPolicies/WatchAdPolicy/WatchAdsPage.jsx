@@ -13,7 +13,7 @@ const WatchAdsPage = () => {
   return (
     <LegalHero
       crumb={true}
-      cTitle={"earning/watch-ads"}
+      cTitle={"earning / watch-ads"}
       badge="Feature Rules"
       hTitle="Watch Ads"
       hText="This page explains how Watch Ads rewards work on VELOOP Rewards, how valid views are credited, what may delay or block rewards, and what users should do if an ad does not credit correctly."

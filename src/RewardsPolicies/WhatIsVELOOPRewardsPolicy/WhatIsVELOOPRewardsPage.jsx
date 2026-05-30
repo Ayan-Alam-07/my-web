@@ -14,6 +14,7 @@ const WhatIsVELOOPRewardsPage = () => {
   return (
     <LegalHero
       crumb={true}
+      cTitle={"getting-started / what-is-veloop-rewards"}
       badge="Getting Started"
       hTitle="What is VELOOP Rewards?"
       hText="This page explains what VELOOP Rewards is, how the platform works, what users can do, and how virtual rewards are used inside the platform."

@@ -13,7 +13,8 @@ const DailyCheckInPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"earning / daily-rewards"}
+      badge="Check in"
       hTitle="Daily Check-In"
       hText="This page explains how the Daily Check-In streak works on VELOOP Rewards, when users must claim their daily reward, what may reset a streak, and what to do if a valid claim does not appear."
       metaInfo={[

@@ -13,7 +13,8 @@ const WeeklyLeaderboardEntry = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Leaderboard"
+      cTitle={"getting-started / weekly-leaderboard-entry"}
+      badge="Leaderboard Entry"
       hTitle="Weekly Leaderboard Entry"
       hText="This page explains how the optional weekly leaderboard works, the current entry charge, how rewards are distributed, and the important rules users should review before joining."
       metaInfo={[

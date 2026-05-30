@@ -16,7 +16,8 @@ const PlatformCurrenciesPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Getting Started"
+      cTitle={"getting-started / platform-currencies"}
+      badge="Currency"
       hTitle="Platform Currencies"
       hText="This page explains what VEs, XP, Gems, Tokens, and Spins are, how they are used inside VELOOP Rewards, and how some supported credits may connect to exchange or redemption features."
       metaInfo={[
