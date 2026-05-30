@@ -13,14 +13,15 @@ const StreakRewardsPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Earning Rules"
+      cTitle={"earning / streak-rewards"}
+      badge="Streak"
       hTitle="Streak Rewards"
-      hText="This page explains how streak rewards work, how streaks continue or reset, and when streak-based rewards may be denied or removed."
+      hText="This page explains how streak rewards work on VELOOP Rewards, what users must do to maintain a streak, when a streak may reset, and what to do if a valid streak action is not credited."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 23, 2026" },
         { title: "Last Updated", value: "May 23, 2026" },
         { title: "Reward Type", value: "Recurring engagement reward" },
-        { title: "Validation", value: "Subject to platform review" },
+        { title: "Tracking", value: "Requires valid activity tracking" },
       ]}
       fNoticeText={[
         "Streak rewards depend on valid recurring activity completed within the required time window.",
@@ -36,33 +37,61 @@ const StreakRewardsPage = () => {
       <section className={styles.section}>
         <SectionHead Icon={FaCalendarCheck} title="How streak rewards work" />
         <p>
-          Streak rewards are given when a user completes qualifying actions on
-          consecutive eligible periods, such as daily or recurring activity
-          windows, without breaking the required pattern.
+          Streak rewards are given when a user completes the required qualifying
+          action during each eligible streak period, such as a daily activity
+          window, without missing the required pattern.
+        </p>
+        <p>
+          As a general rule, missing a required streak action for the active
+          period may reset that streak, unless a specific feature or campaign
+          states otherwise.
         </p>
       </section>
 
       <section className={styles.section}>
         <SectionHead Icon={FaRedoAlt} title="How streaks reset" />
         <p>
-          A streak may reset if the required action is not completed on time, if
-          a claim becomes invalid, or if a platform condition needed for the
-          streak is not satisfied. Specific streak timing and reset rules may
-          vary between features and campaigns.
+          A streak may reset if the required action is not completed within the
+          allowed time window, if the activity is not properly recorded, or if
+          the action becomes invalid under the applicable feature rules.
+        </p>
+        <p>
+          Streak timing, grace conditions, and reset rules may vary between
+          features, so users should follow the instructions shown inside the
+          active streak feature or campaign.
         </p>
       </section>
 
       <section className={styles.section}>
-        <SectionHead Icon={FaShieldAlt} title="Validation and restrictions" />
+        <SectionHead Icon={FaCalendarCheck} title="Tracking tips" />
+        <p>
+          To reduce the risk of missed streak credit, users should complete the
+          required activity with a stable internet connection and allow the
+          feature to finish loading before leaving the page or app.
+        </p>
+        <p>
+          If a valid streak action appears uncredited because of a network or
+          technical issue, the user should contact support within a reasonable
+          time with the approximate date, account details, and relevant feature
+          information.
+        </p>
+      </section>
+
+      <section className={styles.section}>
+        <SectionHead Icon={FaShieldAlt} title="Eligibility and fair use" />
         <ul>
-          <li>Only valid and trackable activity may count toward a streak.</li>
           <li>
-            Duplicate, artificial, or manipulated activity may invalidate a
-            streak.
+            Only valid, eligible, and properly tracked activity may count toward
+            a streak.
           </li>
           <li>
-            VPN use, automation, emulator activity, or account abuse may lead to
-            reset, cancellation, or reversal.
+            Duplicate, artificial, or manipulated activity may cause a streak
+            reward to be denied or reset.
+          </li>
+          <li>
+            VPN use, automation, emulator activity, or other account abuse may
+            lead to streak cancellation, reversal, feature restriction, or
+            further account review.
           </li>
         </ul>
       </section>
@@ -70,9 +99,10 @@ const StreakRewardsPage = () => {
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Important notice" />
         <p>
-          Completing an action does not always guarantee streak credit unless
-          the action is properly tracked, eligible, and accepted by the
-          platform’s validation systems.
+          Completing a required action usually counts toward a streak when the
+          action is eligible and properly tracked. If a user believes a valid
+          streak action was missed in error, the user should contact support for
+          review.
         </p>
       </section>
     </LegalHero>

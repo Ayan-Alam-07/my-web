@@ -13,11 +13,12 @@ const GemsExchangeCenterPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"wallet / gems-exchange-center"}
+      badge="Gem EXC."
       hTitle="Gems Exchange Center"
-      hText="This page explains the Gems exchange feature, including exchange logic, conversion controls, reversals, and feature restrictions."
+      hText="This page explains how the Gems Exchange Center works, how eligible users can convert Gems into supported platform credits, how conversion rates are applied, and how technical issues or invalid activity are handled."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 20, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,13 +27,13 @@ const GemsExchangeCenterPage = () => {
         },
       ]}
       fNoticeText={[
-        "Gems and other internal platform currencies are virtual digital units controlled entirely by VELOOP Rewards and may be exchanged only through approved in-platform systems.",
-        "Exchange rates, limits, conversion rules, or feature availability may be changed, suspended, corrected, or removed at any time.",
+        "Gems and other internal platform balances are virtual platform credits that may be used or exchanged only through supported VELOOP Rewards features.",
+        "Exchange rates, limits, and feature availability may be updated from time to time based on platform conditions, and we aim to provide notice for major changes whenever reasonably possible.",
       ]}
       supportTitle={["Support details", "Exchange review"]}
       supportDesc={[
-        "Users who believe an eligible exchange action was incorrectly processed may contact support for review subject to available system logs.",
-        "The platform may reverse, deny, or correct exchange transactions where abuse, error, or invalid activity is detected.",
+        "Users who believe an eligible exchange was processed incorrectly may contact support and should include their account details, exchange time, relevant screenshots, and a short explanation of the issue for review.",
+        "Where a technical error, invalid activity, or incorrect balance processing is confirmed, the platform may correct the affected exchange record under current platform rules.",
       ]}
       isRewards={true}
     >
@@ -40,9 +41,13 @@ const GemsExchangeCenterPage = () => {
         <SectionHead Icon={FaGem} title="How it works" />
         <p>
           The Gems Exchange Center allows eligible users to convert Gems into
-          supported in-platform credits such as VEs where the platform makes
-          such conversion available. All exchanges are internal platform actions
-          only and do not represent external financial conversion rights.
+          supported platform credits, such as VEs, where that conversion option
+          is currently available.
+        </p>
+        <p>
+          All exchanges are internal platform conversions only. They do not
+          represent bank transfers, cash conversion, or any external financial
+          exchange service.
         </p>
       </section>
       <section className={styles.section}>
@@ -50,15 +55,21 @@ const GemsExchangeCenterPage = () => {
         <ul>
           <li>
             Exchange availability may depend on current conversion settings,
-            platform balances, and eligibility checks.
+            supported balances, and eligibility checks.
           </li>
           <li>
-            Conversion rates are platform-controlled and may be changed without
-            prior notice.
+            Conversion rates are set by the platform and may be updated from
+            time to time as the platform economy or feature rules change.
           </li>
           <li>
-            Completed exchanges may be treated as final except where correction,
-            fraud review, or technical error requires reversal.
+            Where reasonably possible, major conversion changes should be
+            communicated in advance through the platform or relevant help
+            content.
+          </li>
+          <li>
+            Completed exchanges are generally final, but users who experience a
+            technical issue during conversion may contact support for manual
+            review.
           </li>
         </ul>
       </section>
@@ -67,24 +78,28 @@ const GemsExchangeCenterPage = () => {
         <ul>
           <li>
             Manipulated balances, exploit-driven exchanges, fraudulent
-            accumulation, or system abuse are prohibited.
+            accumulation, or abuse of exchange features are not allowed.
           </li>
           <li>
-            Invalid exchange activity may lead to reversal, balance adjustment,
-            exchange suspension, or account action.
+            Where invalid exchange activity is confirmed, the platform may
+            adjust balances, reverse the affected exchange, limit access to
+            exchange features, or apply account restrictions under platform
+            rules.
           </li>
           <li>
-            Internal currency balances remain platform-managed and may be
-            corrected if they were issued improperly.
+            Internal platform credit balances may be corrected if they were
+            created, credited, or converted improperly due to error or misuse.
           </li>
         </ul>
       </section>
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          Gems exchange is an internal virtual-credit conversion feature only.
-          Exchange rates, eligibility, and resulting balances remain subject to
-          platform control, review, and correction.
+          Gems Exchange is an internal virtual-credit conversion feature.
+          Exchange rates, eligibility, and resulting balances are applied
+          according to current platform rules and may be reviewed where a
+          technical issue, verification problem, or misuse concern is
+          identified.
         </p>
       </section>
     </LegalHero>

@@ -13,11 +13,12 @@ const ReferAndEarnPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"safety / referral-rewards"}
+      badge="Refer"
       hTitle="Refer & Earn"
-      hText="This page explains the referral feature, including eligible referrals, fixed referral rewards, abuse restrictions, and reward review rules."
+      hText="This page explains the referral feature, including eligible referrals, fixed referral rewards, abuse restrictions, and reward review rules. A referred user may need to sign up through the valid referral flow complete an eligible first activity, and satisfy any required account verification or anti-abuse checks before a referral reward is approved."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 20, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,13 +27,13 @@ const ReferAndEarnPage = () => {
         },
       ]}
       fNoticeText={[
-        "Referral rewards are promotional platform credits and apply only to valid, unique, eligible, and non-self referrals accepted by the platform.",
-        "Fake referrals, duplicate referrals, multiple-account referrals, or self-referrals are prohibited and may result in account enforcement action.",
+        "Referral rewards are promotional platform credits and apply only to real, unique, eligible, and non-self referrals accepted under platform rules.",
+        "We encourage users to share VELOOP genuinely. Self-referrals, fake signups, duplicate accounts, or other referral abuse may lead to reward cancellation or account action.",
       ]}
       supportTitle={["Support details", "Referral review"]}
       supportDesc={[
-        "Users disputing a referral outcome may contact support, but referral acceptance remains subject to platform validation records and anti-abuse review.",
-        "Referral rewards may be delayed, denied, reversed, or removed where eligibility or authenticity requirements are not satisfied.",
+        "If a user believes a referral was rejected or not credited in error, the user may contact official support with the account ID, referral details, and any relevant evidence for review.",
+        "Referral rewards may be delayed, denied, reversed, or removed where authenticity, eligibility, or anti-abuse requirements are not satisfied.",
       ]}
       isRewards={true}
     >
@@ -53,16 +54,20 @@ const ReferAndEarnPage = () => {
         />
         <ul>
           <li>
-            Only authentic and valid new-user referrals may qualify for referral
-            rewards.
+            Only genuine new users who join through a valid referral method may
+            qualify as eligible referrals.
           </li>
           <li>
-            Referral rewards may require completion of platform-defined
-            conditions before approval.
+            The referred user may need to complete a first eligible activity and
+            pass any required verification or anti-abuse checks.
           </li>
           <li>
-            The platform may revise reward amounts, eligibility rules, or
-            referral conditions at any time.
+            Referral rewards are issued only after successful validation by the
+            platform.
+          </li>
+          <li>
+            The platform may revise referral reward amounts, conditions, or
+            availability at any time.
           </li>
         </ul>
       </section>
@@ -74,8 +79,9 @@ const ReferAndEarnPage = () => {
             manipulation, or referral abuse are prohibited.
           </li>
           <li>
-            Multiple suspicious referrals may result in permanent suspension and
-            forfeiture of related balances or credits.
+            Repeated or serious referral abuse may lead to reward forfeiture,
+            account restriction, suspension, or other enforcement action under
+            platform rules.
           </li>
           <li>
             The platform may reverse referral rewards where fraud, inauthentic

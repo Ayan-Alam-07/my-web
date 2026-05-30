@@ -1,16 +1,11 @@
-.wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px 70px;
+.page {
   background: radial-gradient(
     ellipse at top,
     #1a1033 0%,
     #0a0617 60%,
     #000 100%
   );
-  overflow: hidden;
-  min-height: 100vh;
+
   font-family:
     "nunito",
     system-ui,
@@ -24,6 +19,14 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+}
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px 70px;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 .glow {
@@ -432,7 +435,7 @@
 
 @media (min-width: 992px) {
   .wrapper {
-    padding: 50px 20px 20px;
+    padding: 50px 20px 60px;
   }
 
   .card {

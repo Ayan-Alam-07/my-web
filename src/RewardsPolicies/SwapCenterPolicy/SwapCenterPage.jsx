@@ -13,32 +13,33 @@ const SwapCenterPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Wallet"
+      cTitle={"wallet / swap-center"}
+      badge="Internal Exchange"
       hTitle="Swap Center"
-      hText="This page explains how internal platform values may be exchanged inside VELOOP Rewards and what limits or restrictions may apply."
+      hText="This page explains how supported platform values can be swapped inside VELOOP Rewards, how current conversion rates are applied, and what eligibility, validation, or technical limits may affect a swap."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 23, 2026" },
         { title: "Last Updated", value: "May 23, 2026" },
         { title: "Feature Type", value: "Internal platform exchange feature" },
         { title: "Availability", value: "Subject to platform support" },
       ]}
       fNoticeText={[
-        "Swap rates, conversion directions, limits, and minimum requirements may change at any time.",
-        "Completed swap actions may be treated as final unless the platform reverses them for technical correction, fraud handling, or policy enforcement.",
+        "Current swap rates, supported conversion directions, limits, and minimum requirements are shown at the time of the swap request and may be updated from time to time.",
+        "Completed swaps are generally final, but if a technical issue affects the conversion process, users may contact support for review.",
       ]}
       supportTitle={["Support details", "Swap notice"]}
       supportDesc={[
-        "Users with swap-related issues should contact support with account details, balance values, and the time of the attempted exchange.",
-        "The platform may pause or disable swap access at any time for security, compliance, fraud review, or operational maintenance.",
+        "Users with swap-related issues should contact support with their account details, balance values, the time of the attempted swap, and any relevant screenshot of the issue.",
+        "Swap access may be paused temporarily for security review, technical maintenance, or feature updates where necessary to protect users and platform integrity.",
       ]}
       isRewards={true}
     >
       <section className={styles.section}>
         <SectionHead Icon={FaExchangeAlt} title="What the Swap Center does" />
         <p>
-          The Swap Center allows supported in-platform values to be exchanged
-          into other supported platform values where the feature is made
-          available by VELOOP Rewards.
+          The Swap Center allows eligible users to exchange one supported
+          platform value into another supported platform value when that swap
+          option is currently available in VELOOP Rewards.
         </p>
       </section>
 
@@ -46,22 +47,26 @@ const SwapCenterPage = () => {
         <SectionHead Icon={FaCoins} title="Supported example" />
         <p>
           A current supported example is that Gems may be exchanged into VEs
-          where the option is available. Other exchange directions may be added,
-          changed, restricted, or removed in the future.
+          when that option is active. Other exchange directions may be added,
+          updated, or discontinued over time as platform features evolve.
         </p>
       </section>
 
       <section className={styles.section}>
         <SectionHead Icon={FaShieldAlt} title="Validation and restrictions" />
         <ul>
-          <li>Swap requests may depend on account standing and eligibility.</li>
           <li>
-            Exchange values may vary based on current platform settings and
-            rules.
+            Swap features are available to eligible users, subject to standard
+            account and security verification checks.
           </li>
           <li>
-            Invalid or suspicious activity may cause a swap to be denied,
-            reviewed, or reversed.
+            Exchange values may vary based on the current platform rate,
+            supported conversion rules, and feature settings shown at the time
+            of confirmation.
+          </li>
+          <li>
+            If unusual or invalid activity is detected, a swap may be paused,
+            reviewed, or corrected under current platform rules.
           </li>
         </ul>
       </section>
@@ -69,9 +74,9 @@ const SwapCenterPage = () => {
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Important notice" />
         <p>
-          Users should review current conversion details before confirming a
-          swap, because platform rates and feature conditions may change without
-          prior notice.
+          Users should review the current conversion rate, minimum requirements,
+          and resulting balance details before confirming a swap. The rate shown
+          at confirmation is the rate used for that swap request.
         </p>
       </section>
     </LegalHero>

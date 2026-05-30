@@ -13,11 +13,12 @@ const LeaderboardRewardsPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"earning / leaderboard-rewards"}
+      badge="Leaderboard"
       hTitle="Leaderboard Rewards"
-      hText="This page explains VELOOP Rewards leaderboard participation, weekly ranking periods, reward eligibility, ranking validation, and abuse-control rules."
+      hText="This page explains how leaderboard competitions work, how weekly rankings are calculated and finalized, how ties are handled, and when eligible winners receive leaderboard rewards after fair-play verification."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May20, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,39 +27,48 @@ const LeaderboardRewardsPage = () => {
         },
       ]}
       fNoticeText={[
-        "Leaderboard rewards are based on relative weekly ranking and may depend on verified activity, score calculation rules, and anti-abuse review.",
-        "Leaderboard positions are provisional until the applicable review, event close, and validation processes are completed.",
+        "Leaderboard rewards are based on official weekly ranking, valid activity, published scoring rules, and fair-play verification.",
+        "Rankings may update during the competition period in real time, but they become official only after the event closes and the final verification window is completed.",
       ]}
       supportTitle={["Support details", "Ranking review"]}
       supportDesc={[
-        "Users who believe leaderboard results were recorded incorrectly may contact support, subject to system logs and event validation rules.",
-        "Final leaderboard outcomes will be determined by official platform records and fraud-review results.",
+        "Users who believe a leaderboard score, rank, or result was recorded incorrectly may contact support for review based on official event logs and scoring records.",
+        "After the event closes, final outcomes are confirmed through system verification so that eligible winners can receive rewards fairly.",
       ]}
       isRewards={true}
     >
       <section className={styles.section}>
         <SectionHead Icon={FaTrophy} title="How it works" />
         <p>
-          Leaderboard rewards are based on weekly performance or ranking
-          outcomes within the applicable competition period. Users may receive
-          leaderboard rewards only if their activity remains valid and their
-          ranking remains eligible after review.
+          Leaderboard rewards are based on user performance during the active
+          weekly competition period. During the event, rankings may update as
+          eligible activity is recorded under the platform’s scoring rules.
+        </p>
+        <p>
+          After the event closes, the platform completes a fair-play and scoring
+          review before finalizing official rankings and issuing eligible
+          rewards.
         </p>
       </section>
       <section className={styles.section}>
         <SectionHead Icon={FaCheckCircle} title="Ranking rules" />
         <ul>
           <li>
-            Leaderboard periods are weekly unless otherwise stated by the
-            platform.
+            Leaderboard periods are weekly unless a different event period is
+            announced for a specific competition.
           </li>
           <li>
-            Reward outcomes may depend on rank position, tie rules, event
-            eligibility, and official system scoring.
+            Displayed rankings may update during the event, but official
+            rankings are finalized only after the competition closes and the
+            verification review is completed.
           </li>
           <li>
-            Displayed rankings may be adjusted after verification, correction,
-            dispute review, or fraud detection.
+            Reward outcomes depend on final rank position, event eligibility,
+            and official system scoring records.
+          </li>
+          <li>
+            In case of a tie, the user who reached the qualifying score first
+            will be ranked higher.
           </li>
         </ul>
       </section>
@@ -67,24 +77,28 @@ const LeaderboardRewardsPage = () => {
         <ul>
           <li>
             Artificial engagement, bot usage, fake activity, exploit behavior,
-            multiple accounts, or manipulation attempts are prohibited.
+            multiple accounts, or attempts to manipulate leaderboard outcomes
+            are not allowed.
           </li>
           <li>
-            Invalid activity may result in score removal, rank adjustment,
-            disqualification, reward reversal, or suspension.
+            We conduct a fair-play review after each event to protect
+            leaderboard integrity and confirm that final rankings reflect valid
+            activity.
           </li>
           <li>
-            The platform may withhold leaderboard rewards pending review where
-            suspicious conduct is detected.
+            Where invalid activity is confirmed, the platform may remove scores,
+            adjust rankings, disqualify entries, or restrict reward eligibility
+            under platform rules.
           </li>
         </ul>
       </section>
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          Weekly leaderboard participation does not guarantee a reward merely
-          because activity was recorded. Final eligibility depends on verified
-          ranking, fair participation, and compliance with platform rules.
+          Leaderboard rewards are issued after final ranking verification so
+          that winners are determined fairly and consistently. Once official
+          results are confirmed, eligible winners receive rewards according to
+          the final event standings.
         </p>
       </section>
     </LegalHero>

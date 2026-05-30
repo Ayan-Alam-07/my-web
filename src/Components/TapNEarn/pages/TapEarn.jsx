@@ -87,117 +87,119 @@ export default function TapEarn() {
 
   return (
     <div className="container-fluid px-0">
-      <CommonNavArr id={21} navigation={"/Home"} />
-      <div className={styles.page}>
-        <div className="container px-1 px-md-3">
-          <div className={`${styles.bgOrb} ${styles.orb1}`} />
-          <div className={`${styles.bgOrb} ${styles.orb2}`} />
-          <div className={`${styles.bgOrb} ${styles.orb3}`} />
+      <div className={styles.pageColor}>
+        <CommonNavArr id={21} navigation={"/Home"} />
+        <div className={styles.page}>
+          <div className="container px-1 px-md-3">
+            <div className={`${styles.bgOrb} ${styles.orb1}`} />
+            <div className={`${styles.bgOrb} ${styles.orb2}`} />
+            <div className={`${styles.bgOrb} ${styles.orb3}`} />
 
-          {particles.map((p) => (
-            <motion.span
-              key={p.id}
-              className={styles.particle}
-              style={{
-                left: p.left + "%",
-                top: p.top + "%",
-                width: p.size,
-                height: p.size,
-              }}
-              animate={{ y: [0, -40, 0], opacity: [0.2, 1, 0.2] }}
-              transition={{
-                duration: p.dur,
-                delay: p.delay,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.brand}>
-                <div className={styles.brandIcon}>
-                  <FaBolt />
-                </div>
-                <div>
-                  <div className={styles.brandTitle}>Tap & Earn</div>
-                  <span className={styles.brandSub}>WEB3 REWARD ENGINE</span>
-                </div>
-              </div>
-              <div className={styles.balancePill}>
-                <FaCoins style={{ color: "#ffd76a" }} />
-                <span
-                  style={{ color: "#cfd3e1", fontSize: 12, letterSpacing: 1 }}
-                >
-                  BALANCE
-                </span>
-                <span className={styles.balanceVal}>
-                  {tokens.toFixed(2)} VES
-                </span>
-              </div>
-            </div>
-
-            <TapStats
-              taps={taps}
-              spins={spins}
-              tokens={tokens}
-              locked={locked}
-            />
-
-            <div className={styles.tapWrap}>
-              <TapCoin onTap={handleTap} locked={locked}>
-                <AnimatePresence>
-                  {locked && (
-                    <LockOverlay
-                      shake={lockShake}
-                      flash={lockFlash}
-                      cooldown={cooldown}
-                    />
-                  )}
-                </AnimatePresence>
-
-                <AnimatePresence>
-                  {popups.map((p) => (
-                    <RewardPopup key={p.id} {...p} />
-                  ))}
-                </AnimatePresence>
-              </TapCoin>
-
-              <div className={styles.tapHelp}>
-                {locked ? (
-                  <span style={{ color: "#ff9aa3" }}>
-                    <FaLock style={{ marginRight: 8 }} />
-                    Reward engine cooling down…
-                  </span>
-                ) : (
-                  <span>
-                    <FaUnlock style={{ marginRight: 8, color: "#6dffb0" }} />
-                    Tap the coin to mint rewards
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className={styles.bottomLabel}>
-              <motion.div
-                className={styles.bottomBadge}
-                animate={{
-                  boxShadow: [
-                    "0 10px 40px rgba(255,170,50,0.18)",
-                    "0 10px 60px rgba(255,170,50,0.35)",
-                    "0 10px 40px rgba(255,170,50,0.18)",
-                  ],
+            {particles.map((p) => (
+              <motion.span
+                key={p.id}
+                className={styles.particle}
+                style={{
+                  left: p.left + "%",
+                  top: p.top + "%",
+                  width: p.size,
+                  height: p.size,
                 }}
+                animate={{ y: [0, -40, 0], opacity: [0.2, 1, 0.2] }}
                 transition={{
-                  duration: 2.4,
+                  duration: p.dur,
+                  delay: p.delay,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-              >
-                <span className={styles.pulseDot} />⚡ PREMIUM REWARD ENGINE
-                ACTIVE
-              </motion.div>
+              />
+            ))}
+
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.brand}>
+                  <div className={styles.brandIcon}>
+                    <FaBolt />
+                  </div>
+                  <div>
+                    <div className={styles.brandTitle}>Tap & Earn</div>
+                    <span className={styles.brandSub}>WEB3 REWARD ENGINE</span>
+                  </div>
+                </div>
+                <div className={styles.balancePill}>
+                  <FaCoins style={{ color: "#ffd76a" }} />
+                  <span
+                    style={{ color: "#cfd3e1", fontSize: 12, letterSpacing: 1 }}
+                  >
+                    BALANCE
+                  </span>
+                  <span className={styles.balanceVal}>
+                    {tokens.toFixed(2)} VES
+                  </span>
+                </div>
+              </div>
+
+              <TapStats
+                taps={taps}
+                spins={spins}
+                tokens={tokens}
+                locked={locked}
+              />
+
+              <div className={styles.tapWrap}>
+                <TapCoin onTap={handleTap} locked={locked}>
+                  <AnimatePresence>
+                    {locked && (
+                      <LockOverlay
+                        shake={lockShake}
+                        flash={lockFlash}
+                        cooldown={cooldown}
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  <AnimatePresence>
+                    {popups.map((p) => (
+                      <RewardPopup key={p.id} {...p} />
+                    ))}
+                  </AnimatePresence>
+                </TapCoin>
+
+                <div className={styles.tapHelp}>
+                  {locked ? (
+                    <span style={{ color: "#ff9aa3" }}>
+                      <FaLock style={{ marginRight: 8 }} />
+                      Reward engine cooling down…
+                    </span>
+                  ) : (
+                    <span>
+                      <FaUnlock style={{ marginRight: 8, color: "#6dffb0" }} />
+                      Tap the coin to mint rewards
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.bottomLabel}>
+                <motion.div
+                  className={styles.bottomBadge}
+                  animate={{
+                    boxShadow: [
+                      "0 10px 40px rgba(255,170,50,0.18)",
+                      "0 10px 60px rgba(255,170,50,0.35)",
+                      "0 10px 40px rgba(255,170,50,0.18)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2.4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <span className={styles.pulseDot} />⚡ PREMIUM REWARD ENGINE
+                  ACTIVE
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

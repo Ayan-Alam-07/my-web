@@ -13,23 +13,28 @@ const MultipleAccountsAndVPNPage = () => {
   return (
     <LegalHero
       crumb={true}
+      cTitle={"safety / multiple-accounts-and-vpn"}
       badge="Safety Rules"
       hTitle="Multiple Accounts and VPN Rules"
       hText="This page explains VELOOP Rewards rules regarding duplicate accounts, self-referrals, masked access, and VPN-related restrictions."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 21, 2026" },
         { title: "Last Updated", value: "May 23, 2026" },
         { title: "Multiple Accounts", value: "Not allowed" },
-        { title: "VPN Usage", value: "Not allowed where restricted by policy" },
+        {
+          title: "VPN Usage",
+          value:
+            "Use of VPNs or proxies to hide location or bypass checks is prohibited",
+        },
       ]}
       fNoticeText={[
-        "Users may maintain only the account allowed for genuine personal use unless the platform expressly permits otherwise.",
-        "Duplicate accounts, self-referrals, location masking, or suspicious network behavior may lead to reward cancellation, forfeiture, suspension, or permanent ban.",
+        "To keep rewards fair for genuine users, each person may use only the account permitted for personal use unless the platform expressly allows otherwise.",
+        "Duplicate accounts, self-referrals, location masking, or confirmed abuse patterns may lead to reward cancellation, account review, restriction, suspension, or permanent ban under platform rules.",
       ]}
       supportTitle={["Support details", "Safety notice"]}
       supportDesc={[
         "Users who believe an account restriction was applied incorrectly may contact support with their account information for review.",
-        "The platform may use device, network, behavior, and account signals to identify duplicate ownership, masked access, or abuse patterns.",
+        "The platform may use device, network, behavior, and account signals to detect duplicate ownership, masked access, or automated abuse patterns. Normal residential, office, or public network usage does not by itself mean a violation, but unusual combinations of risk signals may trigger review.",
       ]}
       isRewards={true}
     >
@@ -45,28 +50,40 @@ const MultipleAccountsAndVPNPage = () => {
       <section className={styles.section}>
         <SectionHead Icon={FaGlobe} title="VPN and masked access" />
         <p>
-          VPN or proxy usage is prohibited where it hides actual region,
-          bypasses restrictions, manipulates eligibility, interferes with reward
-          systems, or triggers fraud detection controls.
+          Users must not use VPNs, proxy services, or other masking tools to
+          hide their real location, bypass regional restrictions, manipulate
+          eligibility, or interfere with platform security checks. Access from
+          masked or misleading network sources may trigger account review or
+          additional verification.
         </p>
       </section>
 
       <section className={styles.section}>
-        <SectionHead Icon={FaShieldAlt} title="Enforcement actions" />
+        <SectionHead Icon={FaShieldAlt} title="Possible account actions" />
         <ul>
-          <li>Reward cancellation or reversal.</li>
-          <li>Referral invalidation.</li>
-          <li>Withdrawal denial or account review.</li>
-          <li>Suspension, restriction, or permanent termination.</li>
+          <li>
+            Reward cancellation or reversal where activity is found invalid.
+          </li>
+          <li>
+            Referral invalidation for duplicate, self, or inauthentic referrals.
+          </li>
+          <li>
+            Withdrawal review, delay, or denial where security concerns arise.
+          </li>
+          <li>
+            Account restriction, suspension, or permanent termination for
+            repeated or serious violations.
+          </li>
         </ul>
       </section>
 
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Important notice" />
         <p>
-          The platform reserves the right to restrict access in selected regions
-          or usage environments based on operational, legal, compliance,
-          security, or business considerations.
+          Some regions, devices, or usage environments may be restricted where
+          required for legal, compliance, security, or operational reasons.
+          Users should access the platform only through approved and genuine
+          usage conditions.
         </p>
       </section>
     </LegalHero>

@@ -41,7 +41,10 @@ const CommonNavArr = ({ id, name, navigation }) => {
 
   return (
     <>
-      <nav className={`shadow-sm ${id === 3 && style.giveSpec}`}>
+      <nav
+        className={`shadow-sm ${style.glassNavbar} ${id === 3 && style.giveSpec}`}
+        style={{ width: id === 21 ? "99%" : "" }}
+      >
         <div className="container-fluid">
           <div className="container">
             <div className="row p-0 ">

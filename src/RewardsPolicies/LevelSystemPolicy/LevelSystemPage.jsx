@@ -13,11 +13,12 @@ const LevelSystemPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"earning / level-system"}
+      badge="Levels"
       hTitle="Level System"
-      hText="This page explains the XP and level progression system, including progression logic, reward eligibility, resets, and enforcement controls."
+      hText="This page explains how the XP and level system works on VELOOP Rewards, how users level up through valid activity, what benefits progression may unlock, and how the platform handles invalid or automated XP activity."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 20, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,13 +27,13 @@ const LevelSystemPage = () => {
         },
       ]}
       fNoticeText={[
-        "XP and level progression are platform-controlled virtual progression systems used for engagement, rewards logic, feature access, or status benefits where applicable.",
-        "The platform may rebalance, reset, reclassify, or modify progression requirements, XP logic, and level rewards at any time.",
+        "XP and level progression are virtual platform systems used to recognize user activity, unlock feature-based benefits, and support progression-based engagement.",
+        "To maintain a fair and balanced experience, the platform may occasionally update progression requirements, XP logic, level thresholds, or related benefits.",
       ]}
       supportTitle={["Support details", "Progress review"]}
       supportDesc={[
-        "Users may contact support for review of major progression discrepancies, subject to available activity logs and system verification.",
-        "Platform records control level status, XP totals, and reward eligibility in the event of a dispute.",
+        "Users may contact support if they notice a major XP or level discrepancy, with the approximate date, account details, and relevant feature activity.",
+        "Reported issues may be reviewed using available activity logs, system records, and applicable progression rules.",
       ]}
       isRewards={true}
     >
@@ -40,9 +41,18 @@ const LevelSystemPage = () => {
         <SectionHead Icon={FaLayerGroup} title="How it works" />
         <p>
           The VELOOP Rewards level system uses XP or similar progression metrics
-          to measure user activity and participation. Levels may unlock
-          additional platform benefits, status recognition, or reward
-          opportunities as defined by current platform rules.
+          to reflect valid user activity and participation across supported
+          features.
+        </p>
+        <p>
+          As users progress through levels, they may unlock additional platform
+          benefits, status recognition, feature access, or reward opportunities
+          under the current level structure.
+        </p>
+        <p>
+          If progression is credited incorrectly because of a technical issue,
+          invalid activity, or system error, the platform may correct the XP or
+          level status to maintain fairness across the platform.
         </p>
       </section>
       <section className={styles.section}>
@@ -53,13 +63,13 @@ const LevelSystemPage = () => {
             the platform.
           </li>
           <li>
-            Level thresholds, progression rates, and related benefits may be
-            changed, expanded, reduced, or reset.
+            Leveling up may unlock feature-based benefits, status recognition,
+            or reward opportunities under the active level structure.
           </li>
           <li>
-            Progression does not create ownership rights over any specific
-            future reward or advantage unless expressly confirmed by the
-            platform.
+            Level thresholds, progression rates, and related benefits may evolve
+            over time as the platform updates or improves the progression
+            system.
           </li>
         </ul>
       </section>
@@ -67,25 +77,39 @@ const LevelSystemPage = () => {
         <SectionHead Icon={FaShieldAlt} title="Invalid activity" />
         <ul>
           <li>
-            Artificial XP farming, exploit abuse, repeated invalid actions, or
-            account manipulation are prohibited.
+            Artificial XP farming, such as using unauthorized scripts,
+            automation tools, exploit abuse, or manipulated account activity, is
+            prohibited.
           </li>
           <li>
-            The platform may remove XP, adjust levels, block benefits, or
-            suspend accounts where abuse is detected.
+            Natural user participation and genuine platform activity are fully
+            allowed and encouraged.
           </li>
           <li>
-            Incorrectly credited progression may be corrected without prior
-            notice.
+            Where abuse or invalid progression is detected, the platform may
+            remove XP, adjust levels, limit benefits, or take further account
+            action under the applicable rules.
           </li>
         </ul>
       </section>
+
+      <section className={styles.section}>
+        <SectionHead Icon={FaCheckCircle} title="How XP is earned" />
+        <p>
+          XP may be earned through eligible actions across supported VELOOP
+          Rewards features, such as daily participation, missions, ads,
+          referrals, games, or other valid engagement activities made available
+          by the platform.
+        </p>
+      </section>
+
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          The level system is a virtual progression framework only. XP and
-          levels may be updated or corrected by the platform, and users should
-          not treat progression as a guaranteed future reward entitlement.
+          The level system is designed to reward valid engagement and help users
+          progress through platform activity over time. XP, levels, and related
+          benefits may be updated or corrected where needed to maintain
+          fairness, system accuracy, and feature balance.
         </p>
       </section>
     </LegalHero>

@@ -15,9 +15,9 @@ const DailyCheckInPage = () => {
       crumb={true}
       badge="Feature Rules"
       hTitle="Daily Check-In"
-      hText="This page explains the VELOOP Rewards daily streak feature, including streak continuity, eligibility, forfeiture conditions, and verification rules."
+      hText="This page explains how the Daily Check-In streak works on VELOOP Rewards, when users must claim their daily reward, what may reset a streak, and what to do if a valid claim does not appear."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 19, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,13 +26,13 @@ const DailyCheckInPage = () => {
         },
       ]}
       fNoticeText={[
-        "Daily check-in rewards are part of the platform’s engagement system and may depend on valid login, streak continuity, and platform rule compliance.",
-        "Missed check-ins, technical failures, policy abuse, or suspicious behavior may interrupt, reset, or invalidate streak progress.",
+        "Daily Check-In rewards are part of the platform’s engagement system and are generally credited when a user completes a valid daily claim within the active claim window.",
+        "Missed check-ins, technical issues, invalid activity, or unsupported claim attempts may interrupt or reset streak progress under current platform rules.",
       ]}
       supportTitle={["Support details", "Streak review"]}
       supportDesc={[
-        "Users should contact support if a completed daily claim appears missing, subject to account review and system logs.",
-        "Streak restoration is not guaranteed and may be denied where no valid platform record exists.",
+        "If a completed daily claim appears missing, users should contact support with their Account ID, claim date, approximate time of attempt, and a screenshot where available.",
+        "Manual streak restoration is generally not available unless a verified platform-wide technical issue or a valid system-record mismatch is identified during review.",
       ]}
       isRewards={true}
     >
@@ -41,47 +41,71 @@ const DailyCheckInPage = () => {
         <p>
           The daily check-in system is based on streak participation. Users may
           claim eligible streak-based rewards by checking in during the
-          applicable period on consecutive days.
+          applicable daily claim period on consecutive days.
+        </p>
+        <p>
+          A daily claim window lasts for one platform day and resets according
+          to the platform’s active schedule. Users should complete their claim
+          within that period to maintain their streak.
+        </p>
+        <p>
+          A daily claim window lasts from 00:00 to 23:59 IST each day. Users
+          should complete their daily claim within this period to maintain
+          streak continuity.
         </p>
       </section>
       <section className={styles.section}>
         <SectionHead Icon={FaCheckCircle} title="Streak rules" />
         <ul>
           <li>
-            Users must complete valid daily participation to maintain streak
-            progression.
+            Users must complete one valid daily claim within each active claim
+            window to maintain streak progression.
           </li>
           <li>
-            Missed claim windows may reset or interrupt streak-related benefits.
+            Missing a claim window may reset the streak or interrupt
+            streak-related benefits under current feature rules.
           </li>
           <li>
-            Reward values, streak milestones, and claim windows may be changed
-            by the platform.
+            Reward values, streak milestones, and claim timing rules may be
+            updated by the platform from time to time.
           </li>
         </ul>
       </section>
+
+      <section className={styles.section}>
+        <SectionHead Icon={FaCheckCircle} title="If your check-in is missing" />
+        <p>
+          If a daily claim does not appear correctly, users should first refresh
+          the app or page and wait a short time for the system to update. If the
+          claim still appears missing, the user should contact official support
+          with the Account ID, claim date, approximate time of attempt, and a
+          screenshot where available.
+        </p>
+      </section>
+
       <section className={styles.section}>
         <SectionHead Icon={FaShieldAlt} title="Invalid activity" />
         <ul>
           <li>
-            Fake engagement, multiple accounts, automated claims, or suspicious
-            claim patterns are prohibited.
+            Using multiple accounts, bots, automated claims, or other invalid
+            methods to maintain a streak is not allowed.
           </li>
           <li>
-            Platform records control claim validity in the event of disputes.
+            Platform records and available system logs are used to review claim
+            validity in the event of disputes.
           </li>
           <li>
-            Streak rewards may be withheld, reversed, or reset where abuse or
-            error is detected.
+            Streak rewards may be withheld, reversed, or reset where abuse,
+            invalid activity, or system correction is required.
           </li>
         </ul>
       </section>
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          Daily check-in is a streak-based feature, not a guaranteed
-          entitlement. Users are responsible for timely participation, and the
-          platform may validate or reject disputed streak claims.
+          Daily Check-In is designed to reward consistent participation. Users
+          should complete each daily claim on time, and disputed streak issues
+          may be reviewed using available platform records and system logs.
         </p>
       </section>
     </LegalHero>

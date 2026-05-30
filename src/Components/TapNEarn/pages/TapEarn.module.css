@@ -1,14 +1,9 @@
-.page {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  color: #fff;
+.pageColor {
   background:
     radial-gradient(
       1200px 800px at 20% -10%,
       rgba(255, 196, 64, 0.18),
-      transparent 60%
+      transparent 100%
     ),
     radial-gradient(
       900px 700px at 110% 10%,
@@ -21,13 +16,20 @@
       transparent 60%
     ),
     linear-gradient(180deg, #07070d 0%, #0a0a16 50%, #05050a 100%);
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
   font-family:
     "outfit",
     "Segoe UI",
     system-ui,
     -apple-system,
     sans-serif;
+}
+.page {
+  overflow: hidden;
   padding: 24px 16px 80px;
+  position: relative;
 }
 
 .bgOrb {

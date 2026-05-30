@@ -10,7 +10,7 @@ const HomeNav = () => {
 
   return (
     <div
-      className="container-fluid"
+      className="container-fluid px-0"
       style={{
         width: "100%",
         // backgroundColor: "#151726",
@@ -20,7 +20,7 @@ const HomeNav = () => {
         zIndex: "100",
       }}
     >
-      <div className="container">
+      <div className="container px-3">
         <nav className={style.homeNav}>
           <div className="row justify-content-between align-items-center">
             <div className="col-5" style={{ cursor: "pointer" }}>

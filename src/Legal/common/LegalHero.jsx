@@ -29,7 +29,7 @@ const LegalHero = ({
     {
       title: supportTitle[1],
       subTitle1: "Response Time:",
-      value1: "Usually within 24 to 72 hours",
+      value1: "Usually within 24 to 48 hours",
       subTitle2: "Location:",
       value2: "Ramgarh, Jharkhand, India",
       desc: supportDesc[1],

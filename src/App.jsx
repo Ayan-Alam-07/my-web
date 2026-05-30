@@ -70,7 +70,7 @@ import SurpriseRewardsPage from "./RewardsPolicies/SurpriseRewardsPolicy/Surpris
 import MysteryRewardsPage from "./RewardsPolicies/MysteryRewardsPolicy/MysteryRewardsPage";
 import WhatIsVELOOPRewardsPage from "./RewardsPolicies/WhatIsVELOOPRewardsPolicy/WhatIsVELOOPRewardsPage";
 import PlatformCurrenciesPage from "./RewardsPolicies/PlatformCurrenciesPolicy/PlatformCurrenciesPage";
-import JoinMembershipPage from "./RewardsPolicies/JoinMembershipPolicy/JoinMembershipPage";
+// import JoinMembershipPage from "./RewardsPolicies/JoinMembershipPolicy/JoinMembershipPage";
 import StreakRewardsPage from "./RewardsPolicies/StreakRewardsPolicy/StreakRewardsPage";
 import MissionsAndBadgesPage from "./RewardsPolicies/MissionsAndBadgesPolicy/MissionsAndBadgesPage";
 import WalletOverviewPage from "./RewardsPolicies/WalletOverviewPolicy/WalletOverviewPage";
@@ -79,6 +79,7 @@ import HowWithdrawalsWorkPage from "./RewardsPolicies/HowWithdrawalsWorkPolicy/H
 import RewardVerificationPage from "./RewardsPolicies/RewardVerificationPolicy/RewardVerificationPage";
 import MultipleAccountsAndVPNPage from "./RewardsPolicies/MultipleAccountsAndVPNPolicy/MultipleAccountsAndVPNPage";
 import BotEmulatorAutoclickerRulesPage from "./RewardsPolicies/BotEmulatorAutoclickerRulesPolicy/BotEmulatorAutoclickerRulesPage";
+import WeeklyLeaderboardEntry from "./RewardsPolicies/JoinMembershipPolicy/WeeklyLeaderboardEntry";
 
 const App = () => {
   const { isLoading } = useList();
@@ -265,8 +266,8 @@ const App = () => {
         ></Route>
 
         <Route
-          path="/help-center/getting-started/join-membership"
-          element={<JoinMembershipPage />}
+          path="/help-center/getting-started/weekly-leaderboard-entry"
+          element={<WeeklyLeaderboardEntry />}
         ></Route>
 
         <Route

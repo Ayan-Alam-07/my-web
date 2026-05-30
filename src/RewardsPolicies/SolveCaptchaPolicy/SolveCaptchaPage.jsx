@@ -13,11 +13,12 @@ const SolveCaptchaPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"earning / solve-captcha"}
+      badge="Task"
       hTitle="Solve Captcha"
-      hText="This page explains the captcha task feature, including task validity, crediting standards, abuse prevention, and enforcement conditions."
+      hText="This page explains how Solve Captcha tasks work on VELOOP Rewards, how task accuracy affects crediting, what limits may apply, and how the platform reviews invalid or automated completion."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 19, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,13 +27,13 @@ const SolveCaptchaPage = () => {
         },
       ]}
       fNoticeText={[
-        "Captcha-related tasks may be creditable only where the platform records valid completion under the applicable task rules.",
-        "Task availability, credit amount, and completion criteria may be changed, limited, or removed at any time.",
+        "Solve Captcha rewards are generally credited when an eligible task is completed accurately and recorded successfully under the active task rules.",
+        "Task availability, reward amount, daily limits, and completion criteria may change depending on platform conditions, abuse controls, or campaign settings.",
       ]}
       supportTitle={["Support details", "Task review"]}
       supportDesc={[
-        "Users may contact support if a valid captcha task appears uncredited, subject to available task records and verification review.",
-        "The platform may deny claims where completion cannot be verified or where abuse indicators exist.",
+        "Users may contact support if a valid captcha task appears uncredited, with their Account ID, task date, approximate time, and a screenshot where available.",
+        "Claims may be reviewed using available task records and verification checks, but tasks may remain uncredited where completion cannot be confirmed or abuse indicators are present.",
       ]}
       isRewards={true}
     >
@@ -40,25 +41,35 @@ const SolveCaptchaPage = () => {
         <SectionHead Icon={FaKeyboard} title="How it works" />
         <p>
           Users may complete eligible captcha-based tasks to receive platform
-          rewards where such tasks are made available by VELOOP Rewards. The
-          platform may define task rules, attempt conditions, validation
-          methods, and reward values in its sole discretion.
+          rewards when such tasks are made available by VELOOP Rewards. The
+          platform sets the task rules, attempt conditions, verification steps,
+          and reward values for each task type under the current feature
+          settings.
+        </p>
+        <p>
+          Automated verification may be used to confirm that captcha tasks were
+          completed by a real user and submitted correctly. This helps maintain
+          fair reward distribution and reduce abuse across the platform.
         </p>
       </section>
       <section className={styles.section}>
         <SectionHead Icon={FaCheckCircle} title="Task completion rules" />
         <ul>
           <li>
-            Only correctly completed and validly recorded captcha tasks may be
-            credited.
+            Only accurately completed and successfully recorded captcha tasks
+            may be credited.
           </li>
           <li>
-            The platform may apply frequency limits, quality controls, or
-            session-based restrictions.
+            Occasional errors may happen, but consistently high accuracy is
+            required for continued participation and reward crediting.
+          </li>
+          <li>
+            Daily task limits, quality controls, or session-based restrictions
+            may apply depending on current platform conditions.
           </li>
           <li>
             Reward values may be modified, paused, or withdrawn depending on
-            operational or campaign conditions.
+            operational, campaign, or abuse-prevention conditions.
           </li>
         </ul>
       </section>
@@ -67,24 +78,40 @@ const SolveCaptchaPage = () => {
         <ul>
           <li>
             Automation tools, scripted completion, task bypassing, bulk abuse,
-            or manipulated responses are prohibited.
+            or manipulated responses are not allowed.
           </li>
           <li>
-            Repeated invalid behavior may result in credit denial, task removal,
-            feature restriction, or account enforcement action.
+            Repeatedly incorrect, invalid, or suspicious task behavior may lead
+            to credit denial, temporary task restriction, feature limitation, or
+            further account review.
           </li>
           <li>
-            Completion attempts rejected by the platform or relevant systems may
-            receive no reward.
+            Completion attempts rejected by the platform or relevant
+            verification systems may receive no reward.
           </li>
         </ul>
       </section>
+
+      <section className={styles.section}>
+        <SectionHead
+          Icon={FaCheckCircle}
+          title="If a captcha task is not credited"
+        />
+        <p>
+          If a completed captcha task does not appear correctly, users should
+          wait briefly for the system to update and then refresh the page or
+          app. If the task still appears uncredited, the user should contact
+          support with the Account ID, task date, approximate time, and a
+          screenshot where available.
+        </p>
+      </section>
+
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          Captcha rewards apply only to genuine, verifiable task completion.
-          Platform and system validation control whether a task is accepted and
-          credited.
+          Solve Captcha rewards are intended for genuine human task completion.
+          Accurate responses, successful verification, and valid system
+          recording help determine whether a task is accepted and credited.
         </p>
       </section>
     </LegalHero>

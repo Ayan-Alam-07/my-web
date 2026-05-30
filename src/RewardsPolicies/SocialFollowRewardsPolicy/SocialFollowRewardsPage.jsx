@@ -13,11 +13,12 @@ const SocialFollowRewardsPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Feature Rules"
+      cTitle={"earning / follow-and-earn"}
+      badge="Follow"
       hTitle="Social Follow Rewards"
-      hText="This page explains the one-time social follow reward feature, including eligibility, verification, duplication limits, and invalid claim rules."
+      hText="This page explains how one-time Social Follow Rewards work, how users can complete follow verification, what eligibility limits apply, and how valid claims are reviewed and credited."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 20, 2026" },
         { title: "Last Updated", value: "May 19, 2026" },
         { title: "Owner", value: "Ayan Alam" },
         {
@@ -26,38 +27,55 @@ const SocialFollowRewardsPage = () => {
         },
       ]}
       fNoticeText={[
-        "Social follow rewards are intended as one-time promotional rewards to verify genuine user engagement with official VELOOP Rewards social channels.",
-        "These rewards may require validation and are not intended for repeated, duplicate, temporary, or manipulated claims.",
+        "Social Follow Rewards are one-time promotional rewards intended for genuine engagement with official VELOOP Rewards social channels.",
+        "Reward credit may require follow verification and may be denied where claims are duplicate, unverifiable, or inconsistent with current platform rules.",
       ]}
       supportTitle={["Support details", "Verification notice"]}
       supportDesc={[
-        "Users who believe a valid one-time social follow reward was not credited may contact support with the requested verification details.",
-        "The platform may deny repeated, unverifiable, or suspicious follow claims even where a user attempts manual submission.",
+        "If a valid one-time Social Follow Reward was not credited, users may contact support and should include their registered email, social media username, campaign name if available, and a screenshot or other requested proof of follow status.",
+        "Claims may be denied where follow verification cannot be confirmed, where duplicate submissions are detected, or where the claim does not satisfy the active campaign rules.",
       ]}
       isRewards={true}
     >
       <section className={styles.section}>
         <SectionHead Icon={FaUsers} title="How it works" />
-        <p>
-          Eligible users may receive a one-time promotional reward for following
-          an official VELOOP Rewards social media profile or page where such
-          reward activity is offered by the platform.
-        </p>
+        <div>
+          <p>
+            Eligible users may receive a one-time promotional reward when a
+            Social Follow campaign is active for an official VELOOP Rewards
+            social profile or page.
+          </p>
+          <ol>
+            <li>
+              Open the official VELOOP Rewards social profile from the platform.
+            </li>
+            <li>Follow the profile and return to the app or feature page.</li>
+            <li>
+              Tap the verification or claim button and complete any required
+              verification step.
+            </li>
+          </ol>
+          <p>
+            Where verification is successful, the reward may be credited
+            automatically or after review under the active campaign rules.
+          </p>
+        </div>
       </section>
       <section className={styles.section}>
         <SectionHead Icon={FaCheckCircle} title="Eligibility and limits" />
         <ul>
           <li>
-            Social follow rewards are one-time only unless explicitly stated
-            otherwise by the platform.
+            Social Follow Rewards are one-time only unless a different rule is
+            clearly stated for a specific campaign.
           </li>
           <li>
-            Users may be required to complete verification steps before the
-            reward is approved.
+            Users may need to complete a claim or verification step, such as
+            returning to the app, tapping verify, or submitting the requested
+            follow details.
           </li>
           <li>
-            Repeated, duplicate, reversed, or unverifiable follow actions may be
-            rejected.
+            Duplicate, unverifiable, or already-used follow claims may be
+            rejected under the campaign rules.
           </li>
         </ul>
       </section>
@@ -65,25 +83,28 @@ const SocialFollowRewardsPage = () => {
         <SectionHead Icon={FaShieldAlt} title="Invalid activity" />
         <ul>
           <li>
-            Fake follows, temporary follows for claim abuse, multiple-account
-            submissions, or manipulated social activity are prohibited.
+            Fake follows, multiple-account submissions, or manipulated social
+            activity are not allowed.
           </li>
           <li>
-            The platform may refuse, reverse, or remove credits if follow
-            verification fails.
+            Social Follow Rewards are intended for genuine followers.
+            Unfollowing immediately after claiming or using abusive follow
+            patterns may lead to loss of eligibility for future promotional
+            events.
           </li>
           <li>
-            The availability of social follow rewards may be changed, suspended,
-            or discontinued at any time.
+            If follow verification cannot be confirmed, the platform may refuse
+            or remove the related reward credit under the active campaign rules.
           </li>
         </ul>
       </section>
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Summary and caution" />
         <p>
-          Social follow rewards are limited, promotional, and
-          verification-based. They are intended only to confirm genuine one-time
-          engagement with official platform social channels.
+          Social Follow Rewards are limited one-time promotional rewards for
+          genuine engagement with official VELOOP Rewards social channels. Once
+          the required verification is successfully completed, eligible users
+          may receive the applicable campaign reward.
         </p>
       </section>
     </LegalHero>

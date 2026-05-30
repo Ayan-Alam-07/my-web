@@ -13,32 +13,36 @@ const HowWithdrawalsWorkPage = () => {
   return (
     <LegalHero
       crumb={true}
+      cTitle={"withdrawals / how-withdrawals-work"}
       badge="Withdrawals"
       hTitle="How Withdrawals Work"
       hText="This page explains the minimum threshold, supported payout methods, processing expectations, and withdrawal-related requirements."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 23, 2026" },
         { title: "Last Updated", value: "May 23, 2026" },
         { title: "Minimum Withdrawal", value: "Rs. 10" },
-        { title: "Standard Processing Target", value: "Within 24 hours" },
+        {
+          title: "Processing Time",
+          value: "Usually within 24 hours, up to 72 hours in review cases",
+        },
       ]}
       fNoticeText={[
-        "Submitting a withdrawal request does not guarantee approval, instant processing, or payout without review.",
-        "Withdrawals may be delayed, reviewed, rejected, limited, or reversed where suspicious activity, invalid details, or policy violations are detected.",
+        "Withdrawal requests are processed for eligible accounts that comply with platform rules, verification requirements, and fair-play standards.",
+        "Requests may take longer or require review where payout details are incorrect, verification is incomplete, or unusual activity is detected.",
       ]}
       supportTitle={["Support details", "Withdrawal review notice"]}
       supportDesc={[
-        "Users should contact support for withdrawal issues using the official support email and include relevant account and payout details.",
-        "Processing times may vary due to manual review, verification checks, queue load, payout partner availability, holidays, or security investigations.",
+        "Users with withdrawal issues should contact official support and include their registered account details, selected payout method, payout address or ID, request time, and any relevant screenshot.",
+        "Processing times may vary due to queue load, payout partner availability, holidays, verification checks, or manual security review.",
       ]}
       isRewards={true}
     >
       <section className={styles.section}>
         <SectionHead Icon={FaMoneyCheckAlt} title="Eligibility and threshold" />
         <p>
-          Eligible users may request a withdrawal or supported redemption once
-          they meet the current minimum withdrawal amount of Rs. 10 and satisfy
-          platform verification and account compliance conditions.
+          Eligible users may request a withdrawal or supported redemption after
+          reaching the current minimum withdrawal threshold of Rs. 10 and
+          completing any required verification or account checks.
         </p>
       </section>
 
@@ -50,24 +54,33 @@ const HowWithdrawalsWorkPage = () => {
           <li>Amazon Gift Cards</li>
           <li>Google Play Gift Cards</li>
         </ul>
+        <p>
+          Available payout methods may vary based on user eligibility, region,
+          payout partner support, and current platform availability.
+        </p>
       </section>
 
       <section className={styles.section}>
         <SectionHead Icon={FaClock} title="Processing and review" />
         <p>
-          Withdrawals are generally targeted for processing within 24 hours, but
-          actual timing may vary. Every request remains subject to payout detail
-          accuracy, account standing, anti-fraud review, and operational
-          capacity.
+          We aim to process eligible withdrawal requests within 24 hours.
+          However, users should allow up to 72 hours during high-volume periods,
+          payout partner delays, holidays, or manual security and verification
+          review.
+        </p>
+        <p>
+          Processing depends on correct payout details, successful verification,
+          and compliance with current platform rules.
         </p>
       </section>
 
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Important notice" />
         <p>
-          Users must provide correct payout details and remain policy-compliant,
-          because invalid information, suspicious behavior, or failed
-          verification may prevent payment from being completed.
+          To avoid delays, users should provide accurate payout details and
+          complete any required verification steps. Incorrect information,
+          failed verification, or confirmed policy violations may prevent a
+          withdrawal from being completed.
         </p>
       </section>
     </LegalHero>

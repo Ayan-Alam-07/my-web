@@ -377,373 +377,402 @@ const DailyBonus = () => {
 
   return (
     <div className="container-fluid px-0">
-      <CommonNavArr id={14} navigation={"/Home"} />
-      <div className={styles.page}>
-        <div className="container px-3">
-          <div className={styles.bgGlow} />
-          <div className={styles.bgGlow2} />
-          <div className={styles.gridOverlay} />
+      <div className={styles.pageColor}>
+        <CommonNavArr id={14} navigation={"/Home"} />
+        <div className={styles.page}>
+          <div className="container px-3">
+            <div className={styles.bgGlow} />
+            <div className={styles.bgGlow2} />
+            <div className={styles.gridOverlay} />
 
-          <div className={styles.container}>
-            {/* Header */}
-            <header className={styles.header}>
-              <div className={styles.headerLeft}>
-                <div className={styles.logoWrapper}>
-                  <GemIcon size={28} />
-                  <div className={styles.logoGlow} />
+            <div className={styles.container}>
+              {/* Header */}
+              <header className={styles.header}>
+                <div className={styles.headerLeft}>
+                  <div className={styles.logoWrapper}>
+                    <GemIcon size={28} />
+                    <div className={styles.logoGlow} />
+                  </div>
+                  <div>
+                    <h1 className={styles.logoText}>GemVault</h1>
+                    <p className={styles.logoSub}>Daily Rewards</p>
+                  </div>
                 </div>
-                <div>
-                  <h1 className={styles.logoText}>GemVault</h1>
-                  <p className={styles.logoSub}>Daily Rewards</p>
+                <div className={styles.gemBalance}>
+                  <GemIcon size={18} />
+                  <span className={styles.gemCount}>{totalGems}</span>
                 </div>
-              </div>
-              <div className={styles.gemBalance}>
-                <GemIcon size={18} />
-                <span className={styles.gemCount}>{totalGems}</span>
-              </div>
-            </header>
+              </header>
 
-            {/* Main Card */}
-            <div className={styles.mainCard}>
-              {sparkles.length > 0 && (
-                <div className={styles.sparkleContainer}>
-                  {sparkles.map((s) => (
-                    <div
-                      key={s.id}
-                      className={styles.sparkle}
-                      style={{
-                        left: `${s.x}%`,
-                        top: `${s.y}%`,
-                        "--delay": `${s.delay}s`,
-                        "--duration": `${s.duration}s`,
-                      }}
-                    >
-                      <SparkleIcon size={s.size} color={s.color} />
+              {/* Main Card */}
+              <div className={styles.mainCard}>
+                {sparkles.length > 0 && (
+                  <div className={styles.sparkleContainer}>
+                    {sparkles.map((s) => (
+                      <div
+                        key={s.id}
+                        className={styles.sparkle}
+                        style={{
+                          left: `${s.x}%`,
+                          top: `${s.y}%`,
+                          "--delay": `${s.delay}s`,
+                          "--duration": `${s.duration}s`,
+                        }}
+                      >
+                        <SparkleIcon size={s.size} color={s.color} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Top Badge */}
+                <div className={styles.badgeRow}>
+                  <div className={styles.badge}>
+                    <SparkleIcon size={12} color="#fbbf24" />
+                    <span>Daily Bonus</span>
+                  </div>
+                  <div className={styles.streakBadge}>
+                    <span className={styles.streakFlame}>🔥</span>
+                    <span>{streak} Day Streak</span>
+                  </div>
+                </div>
+
+                {/* Gem Display */}
+                <div
+                  className={`${styles.gemDisplay} ${gemPulse ? styles.gemPulse : ""}`}
+                >
+                  <div className={styles.gemGlowRing} />
+                  <div className={styles.gemGlowRing2} />
+                  <div className={styles.gemIconWrapper}>
+                    <GemIcon size={80} className={styles.mainGem} />
+                    <div className={styles.gemShine} />
+                  </div>
+                  <div className={styles.gemLabel}>
+                    <span className={styles.gemAmount}>+15</span>
+                    <span className={styles.gemUnit}>Gems</span>
+                  </div>
+                </div>
+
+                {/* Timer Progress */}
+                {claimState === "timing" && (
+                  <div className={styles.timerSection}>
+                    <div className={styles.timerBarBg}>
+                      <div
+                        className={styles.timerBarFill}
+                        style={{ width: `${progressPercent}%` }}
+                      />
+                      <div
+                        className={styles.timerBarGlow}
+                        style={{ left: `${progressPercent}%` }}
+                      />
                     </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Top Badge */}
-              <div className={styles.badgeRow}>
-                <div className={styles.badge}>
-                  <SparkleIcon size={12} color="#fbbf24" />
-                  <span>Daily Bonus</span>
-                </div>
-                <div className={styles.streakBadge}>
-                  <span className={styles.streakFlame}>🔥</span>
-                  <span>{streak} Day Streak</span>
-                </div>
-              </div>
-
-              {/* Gem Display */}
-              <div
-                className={`${styles.gemDisplay} ${gemPulse ? styles.gemPulse : ""}`}
-              >
-                <div className={styles.gemGlowRing} />
-                <div className={styles.gemGlowRing2} />
-                <div className={styles.gemIconWrapper}>
-                  <GemIcon size={80} className={styles.mainGem} />
-                  <div className={styles.gemShine} />
-                </div>
-                <div className={styles.gemLabel}>
-                  <span className={styles.gemAmount}>+15</span>
-                  <span className={styles.gemUnit}>Gems</span>
-                </div>
-              </div>
-
-              {/* Timer Progress */}
-              {claimState === "timing" && (
-                <div className={styles.timerSection}>
-                  <div className={styles.timerBarBg}>
-                    <div
-                      className={styles.timerBarFill}
-                      style={{ width: `${progressPercent}%` }}
-                    />
-                    <div
-                      className={styles.timerBarGlow}
-                      style={{ left: `${progressPercent}%` }}
-                    />
-                  </div>
-                  <div className={styles.timerLabels}>
-                    <span>0:00</span>
-                    <span className={styles.timerCenter}>
-                      {formatTime(timer)} remaining
-                    </span>
-                    <span>2:00</span>
-                  </div>
-                </div>
-              )}
-
-              {/* Claim Button */}
-              <button
-                className={`${styles.claimBtn} ${
-                  claimState === "idle"
-                    ? styles.claimBtnIdle
-                    : claimState === "installing"
-                      ? styles.claimBtnInstall
-                      : claimState === "timing"
-                        ? styles.claimBtnTiming
-                        : claimState === "claimed"
-                          ? styles.claimBtnClaimed
-                          : styles.claimBtnCooldown
-                }`}
-                onClick={
-                  claimState === "idle"
-                    ? handleClaim
-                    : claimState === "installing"
-                      ? handleInstall
-                      : null
-                }
-                disabled={
-                  claimState === "timing" ||
-                  claimState === "claimed" ||
-                  claimState === "cooldown"
-                }
-              >
-                {claimState === "idle" && <div className={styles.btnShimmer} />}
-                {getButtonContent()}
-              </button>
-
-              {/* Success Overlay */}
-              {showSuccess && (
-                <div className={styles.successOverlay}>
-                  <div className={styles.successContent}>
-                    <div className={styles.successIcon}>
-                      <CheckIcon size={40} />
+                    <div className={styles.timerLabels}>
+                      <span>0:00</span>
+                      <span className={styles.timerCenter}>
+                        {formatTime(timer)} remaining
+                      </span>
+                      <span>2:00</span>
                     </div>
-                    <span className={styles.successText}>+15 Gems Added!</span>
+                  </div>
+                )}
+
+                {/* Claim Button */}
+                <button
+                  className={`${styles.claimBtn} ${
+                    claimState === "idle"
+                      ? styles.claimBtnIdle
+                      : claimState === "installing"
+                        ? styles.claimBtnInstall
+                        : claimState === "timing"
+                          ? styles.claimBtnTiming
+                          : claimState === "claimed"
+                            ? styles.claimBtnClaimed
+                            : styles.claimBtnCooldown
+                  }`}
+                  onClick={
+                    claimState === "idle"
+                      ? handleClaim
+                      : claimState === "installing"
+                        ? handleInstall
+                        : null
+                  }
+                  disabled={
+                    claimState === "timing" ||
+                    claimState === "claimed" ||
+                    claimState === "cooldown"
+                  }
+                >
+                  {claimState === "idle" && (
+                    <div className={styles.btnShimmer} />
+                  )}
+                  {getButtonContent()}
+                </button>
+
+                {/* Success Overlay */}
+                {showSuccess && (
+                  <div className={styles.successOverlay}>
+                    <div className={styles.successContent}>
+                      <div className={styles.successIcon}>
+                        <CheckIcon size={40} />
+                      </div>
+                      <span className={styles.successText}>
+                        +15 Gems Added!
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Weekly Tracker */}
+                <div className={styles.weekSection}>
+                  <h3 className={styles.weekTitle}>This Week</h3>
+                  <div className={styles.weekGrid}>
+                    {DAYS.map((day, i) => {
+                      const isPast = i < currentDay;
+                      const isToday = i === currentDay;
+                      const isClaimedDay =
+                        isPast ||
+                        (isToday &&
+                          (claimState === "claimed" ||
+                            claimState === "cooldown"));
+                      return (
+                        <div
+                          key={day}
+                          className={`${styles.dayCell} ${
+                            isClaimedDay
+                              ? styles.dayClaimed
+                              : isToday
+                                ? styles.dayToday
+                                : styles.dayUpcoming
+                          }`}
+                        >
+                          <span className={styles.dayLabel}>{day}</span>
+                          <div className={styles.dayGemSlot}>
+                            {isClaimedDay ? (
+                              <GemIcon
+                                size={18}
+                                className={styles.dayGemIcon}
+                              />
+                            ) : isToday ? (
+                              <div className={styles.dayDot} />
+                            ) : (
+                              <div className={styles.dayEmpty} />
+                            )}
+                          </div>
+                          <span className={styles.dayReward}>+15</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              )}
+              </div>
 
-              {/* Weekly Tracker */}
-              <div className={styles.weekSection}>
-                <h3 className={styles.weekTitle}>This Week</h3>
-                <div className={styles.weekGrid}>
-                  {DAYS.map((day, i) => {
-                    const isPast = i < currentDay;
-                    const isToday = i === currentDay;
-                    const isClaimedDay =
-                      isPast ||
-                      (isToday &&
-                        (claimState === "claimed" ||
-                          claimState === "cooldown"));
+              {/* How It Works */}
+              <div className={styles.rulesCard}>
+                <div className={styles.rulesHeader}>
+                  <h2 className={styles.rulesTitle}>How It Works</h2>
+                  <p className={styles.rulesSub}>
+                    3 simple steps to earn your daily gems
+                  </p>
+                </div>
+
+                <div className={styles.stepsContainer}>
+                  {/* Connector Line */}
+                  <div className={styles.connectorLine} />
+
+                  {[
+                    {
+                      step: 1,
+                      icon: <CursorIcon />,
+                      title: "Click Claim Button",
+                      desc: "Tap the claim button above to start the process",
+                    },
+                    {
+                      step: 2,
+                      icon: <DownloadIcon />,
+                      title: "Install & Open App for 2 Min",
+                      desc: "Download the sponsored app and keep it open for at least 2 minutes",
+                    },
+                    {
+                      step: 3,
+                      icon: <CheckIcon size={20} />,
+                      title: "Receive Your Reward Instantly",
+                      desc: "15 gems will be credited to your balance immediately",
+                    },
+                  ].map((item, idx) => {
+                    const status = getStepStatus(item.step);
                     return (
                       <div
-                        key={day}
-                        className={`${styles.dayCell} ${
-                          isClaimedDay
-                            ? styles.dayClaimed
-                            : isToday
-                              ? styles.dayToday
-                              : styles.dayUpcoming
+                        key={item.step}
+                        className={`${styles.step} ${
+                          status === "done"
+                            ? styles.stepDone
+                            : status === "active"
+                              ? styles.stepActive
+                              : styles.stepPending
                         }`}
                       >
-                        <span className={styles.dayLabel}>{day}</span>
-                        <div className={styles.dayGemSlot}>
-                          {isClaimedDay ? (
-                            <GemIcon size={18} className={styles.dayGemIcon} />
-                          ) : isToday ? (
-                            <div className={styles.dayDot} />
-                          ) : (
-                            <div className={styles.dayEmpty} />
-                          )}
+                        <div className={styles.stepLeft}>
+                          <div
+                            className={`${styles.stepNumber} ${
+                              status === "done"
+                                ? styles.stepNumberDone
+                                : status === "active"
+                                  ? styles.stepNumberActive
+                                  : styles.stepNumberPending
+                            }`}
+                          >
+                            {status === "done" ? (
+                              <CheckIcon size={16} />
+                            ) : (
+                              item.icon
+                            )}
+                          </div>
+                          {idx < 2 && <div className={styles.stepConnector} />}
                         </div>
-                        <span className={styles.dayReward}>+15</span>
+                        <div className={styles.stepContent}>
+                          <h4 className={styles.stepTitle}>{item.title}</h4>
+                          <p className={styles.stepDesc}>{item.desc}</p>
+                        </div>
+                        {status === "done" && (
+                          <span className={styles.stepDoneTag}>Done</span>
+                        )}
+                        {status === "active" && (
+                          <span className={styles.stepActiveTag}>
+                            In Progress
+                          </span>
+                        )}
                       </div>
                     );
                   })}
                 </div>
               </div>
-            </div>
 
-            {/* How It Works */}
-            <div className={styles.rulesCard}>
-              <div className={styles.rulesHeader}>
-                <h2 className={styles.rulesTitle}>How It Works</h2>
-                <p className={styles.rulesSub}>
-                  3 simple steps to earn your daily gems
-                </p>
-              </div>
-
-              <div className={styles.stepsContainer}>
-                {/* Connector Line */}
-                <div className={styles.connectorLine} />
-
-                {[
-                  {
-                    step: 1,
-                    icon: <CursorIcon />,
-                    title: "Click Claim Button",
-                    desc: "Tap the claim button above to start the process",
-                  },
-                  {
-                    step: 2,
-                    icon: <DownloadIcon />,
-                    title: "Install & Open App for 2 Min",
-                    desc: "Download the sponsored app and keep it open for at least 2 minutes",
-                  },
-                  {
-                    step: 3,
-                    icon: <CheckIcon size={20} />,
-                    title: "Receive Your Reward Instantly",
-                    desc: "15 gems will be credited to your balance immediately",
-                  },
-                ].map((item, idx) => {
-                  const status = getStepStatus(item.step);
-                  return (
-                    <div
-                      key={item.step}
-                      className={`${styles.step} ${
-                        status === "done"
-                          ? styles.stepDone
-                          : status === "active"
-                            ? styles.stepActive
-                            : styles.stepPending
-                      }`}
-                    >
-                      <div className={styles.stepLeft}>
-                        <div
-                          className={`${styles.stepNumber} ${
-                            status === "done"
-                              ? styles.stepNumberDone
-                              : status === "active"
-                                ? styles.stepNumberActive
-                                : styles.stepNumberPending
-                          }`}
-                        >
-                          {status === "done" ? (
-                            <CheckIcon size={16} />
-                          ) : (
-                            item.icon
-                          )}
-                        </div>
-                        {idx < 2 && <div className={styles.stepConnector} />}
-                      </div>
-                      <div className={styles.stepContent}>
-                        <h4 className={styles.stepTitle}>{item.title}</h4>
-                        <p className={styles.stepDesc}>{item.desc}</p>
-                      </div>
-                      {status === "done" && (
-                        <span className={styles.stepDoneTag}>Done</span>
-                      )}
-                      {status === "active" && (
-                        <span className={styles.stepActiveTag}>
-                          In Progress
-                        </span>
-                      )}
+              {/* Trust Badges */}
+              <div className={styles.trustSection}>
+                <div className={styles.trustCard}>
+                  <ShieldIcon />
+                  <div className={styles.trustInfo}>
+                    <h4>Secure & Verified</h4>
+                    <p>
+                      All rewards are verified and credited instantly to your
+                      account
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.trustGrid}>
+                  <div className={styles.trustItem}>
+                    <div className={styles.trustIconWrap}>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M10 1L12.39 6.26L18 7.27L14 11.14L14.94 16.73L10 14.27L5.06 16.73L6 11.14L2 7.27L7.61 6.26L10 1Z"
+                          fill="#f59e0b"
+                        />
+                      </svg>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Trust Badges */}
-            <div className={styles.trustSection}>
-              <div className={styles.trustCard}>
-                <ShieldIcon />
-                <div className={styles.trustInfo}>
-                  <h4>Secure & Verified</h4>
-                  <p>
-                    All rewards are verified and credited instantly to your
-                    account
-                  </p>
-                </div>
-              </div>
-              <div className={styles.trustGrid}>
-                <div className={styles.trustItem}>
-                  <div className={styles.trustIconWrap}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 1L12.39 6.26L18 7.27L14 11.14L14.94 16.73L10 14.27L5.06 16.73L6 11.14L2 7.27L7.61 6.26L10 1Z"
-                        fill="#f59e0b"
-                      />
-                    </svg>
+                    <span>Trusted by 50K+ Users</span>
                   </div>
-                  <span>Trusted by 50K+ Users</span>
-                </div>
-                <div className={styles.trustItem}>
-                  <div className={styles.trustIconWrap}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <circle
-                        cx="10"
-                        cy="10"
-                        r="8"
-                        stroke="#10b981"
-                        strokeWidth="1.5"
+                  <div className={styles.trustItem}>
+                    <div className={styles.trustIconWrap}>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
                         fill="none"
-                      />
-                      <path
-                        d="M6 10L9 13L14 7"
-                        stroke="#10b981"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                      >
+                        <circle
+                          cx="10"
+                          cy="10"
+                          r="8"
+                          stroke="#10b981"
+                          strokeWidth="1.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M6 10L9 13L14 7"
+                          stroke="#10b981"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Instant Payout</span>
                   </div>
-                  <span>Instant Payout</span>
-                </div>
-                <div className={styles.trustItem}>
-                  <div className={styles.trustIconWrap}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <rect
-                        x="3"
-                        y="3"
-                        width="14"
-                        height="14"
-                        rx="3"
-                        stroke="#7c3aed"
-                        strokeWidth="1.5"
+                  <div className={styles.trustItem}>
+                    <div className={styles.trustIconWrap}>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
                         fill="none"
-                      />
-                      <path
-                        d="M7 10H13M10 7V13"
-                        stroke="#7c3aed"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+                      >
+                        <rect
+                          x="3"
+                          y="3"
+                          width="14"
+                          height="14"
+                          rx="3"
+                          stroke="#7c3aed"
+                          strokeWidth="1.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M7 10H13M10 7V13"
+                          stroke="#7c3aed"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>15 Gems / Day</span>
                   </div>
-                  <span>15 Gems / Day</span>
-                </div>
-                <div className={styles.trustItem}>
-                  <div className={styles.trustIconWrap}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 2C5.58 2 2 5.58 2 10C2 14.42 5.58 18 10 18C14.42 18 18 14.42 18 10C18 5.58 14.42 2 10 2ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z"
-                        fill="#3b82f6"
-                      />
-                    </svg>
+                  <div className={styles.trustItem}>
+                    <div className={styles.trustIconWrap}>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M10 2C5.58 2 2 5.58 2 10C2 14.42 5.58 18 10 18C14.42 18 18 14.42 18 10C18 5.58 14.42 2 10 2ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z"
+                          fill="#3b82f6"
+                        />
+                      </svg>
+                    </div>
+                    <span>24/7 Support</span>
                   </div>
-                  <span>24/7 Support</span>
                 </div>
               </div>
-            </div>
 
-            {/* FAQ */}
-            <div className={styles.faqCard}>
-              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
-              <FAQItem
-                question="How often can I claim the daily bonus?"
-                answer="You can claim once every 24 hours. The timer resets at midnight based on your local timezone."
-              />
-              <FAQItem
-                question="What happens if I close the app before 2 minutes?"
-                answer="The timer will pause. You need to keep the sponsored app open for a continuous 2 minutes to receive the reward."
-              />
-              <FAQItem
-                question="Do the gems expire?"
-                answer="No, your earned gems never expire. They stay in your balance until you use them."
-              />
-              <FAQItem
-                question="Is there a streak bonus?"
-                answer="Currently, each day gives a flat 15 gems. Streak bonuses may be introduced in future updates."
-              />
-            </div>
+              {/* FAQ */}
+              <div className={styles.faqCard}>
+                <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+                <FAQItem
+                  question="How often can I claim the daily bonus?"
+                  answer="You can claim once every 24 hours. The timer resets at midnight based on your local timezone."
+                />
+                <FAQItem
+                  question="What happens if I close the app before 2 minutes?"
+                  answer="The timer will pause. You need to keep the sponsored app open for a continuous 2 minutes to receive the reward."
+                />
+                <FAQItem
+                  question="Do the gems expire?"
+                  answer="No, your earned gems never expire. They stay in your balance until you use them."
+                />
+                <FAQItem
+                  question="Is there a streak bonus?"
+                  answer="Currently, each day gives a flat 15 gems. Streak bonuses may be introduced in future updates."
+                />
+              </div>
 
-            <SecFooter />
+              <SecFooter />
+            </div>
           </div>
         </div>
       </div>

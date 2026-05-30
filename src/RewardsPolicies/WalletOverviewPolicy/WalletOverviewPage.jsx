@@ -13,37 +13,38 @@ const WalletOverviewPage = () => {
   return (
     <LegalHero
       crumb={true}
-      badge="Wallet"
-      hTitle="Wallet Overview"
-      hText="This page explains what the VELOOP Rewards wallet shows, what users can do inside it, and how wallet balances are handled."
+      cTitle={"wallet / wallet-overview"}
+      badge="Rewards Dashboard"
+      hTitle="Rewards Dashboard Overview"
+      hText="This page explains what the VELOOP Rewards dashboard shows, how users can view reward balances and activity, and how supported balance records are reviewed and maintained."
       metaInfo={[
-        { title: "Effective Date", value: "Launch Date" },
+        { title: "Effective Date", value: "May 20, 2026" },
         { title: "Last Updated", value: "May 23, 2026" },
-        { title: "Wallet Type", value: "Internal platform wallet" },
-        { title: "Balance Nature", value: "Virtual in-platform values" },
+        { title: "Feature Type", value: "Internal rewards dashboard" },
+        { title: "Balance Nature", value: "Virtual in-platform reward values" },
       ]}
       fNoticeText={[
-        "Wallet balances are platform records used for internal reward, progression, and redemption purposes.",
-        "Balances may be reviewed, frozen, corrected, reversed, or removed where required for fraud handling, technical correction, or policy enforcement.",
+        "Displayed balances are internal platform records used for rewards, feature access, progression, and supported redemption flows.",
+        "To protect users and platform integrity, balances may be reviewed or temporarily limited where technical errors, verification issues, or security concerns are detected.",
       ]}
       supportTitle={["Support details", "Wallet notice"]}
       supportDesc={[
-        "Users with wallet-related concerns should provide account details, screenshots, and a clear explanation of the balance issue when contacting support.",
-        "Displayed balances do not create an unconditional withdrawal right unless redemption is supported and successfully approved.",
+        "Users with balance-related concerns should include their registered account details, relevant screenshots, and a short explanation of the issue when contacting support.",
+        "Where redemption is supported, requests are processed under the platform’s normal verification and approval process.",
       ]}
       isRewards={true}
     >
       <section className={styles.section}>
-        <SectionHead Icon={FaWallet} title="What the wallet shows" />
+        <SectionHead Icon={FaWallet} title="What the dashboard shows" />
         <p>
-          The VELOOP Rewards wallet may display supported balances such as VEs,
-          Gems, XP, Tokens, Spins, and other reward-related values depending on
-          current platform features.
+          The VELOOP Rewards dashboard may display supported balances such as
+          VEs, Gems, XP, Tokens, Spins, and other reward-related values,
+          depending on the features currently available on the platform.
         </p>
       </section>
 
       <section className={styles.section}>
-        <SectionHead Icon={FaListAlt} title="What users can do" />
+        <SectionHead Icon={FaListAlt} title="What users can do here" />
         <ul>
           <li>Check supported platform balances.</li>
           <li>Review reward and balance movement where available.</li>
@@ -55,19 +56,21 @@ const WalletOverviewPage = () => {
       <section className={styles.section}>
         <SectionHead Icon={FaLock} title="Platform controls" />
         <p>
-          The wallet is subject to account status, feature availability,
-          verification checks, geographic restrictions, fraud monitoring, and
-          technical validation. Wallet access or balances may be limited or
-          adjusted where necessary.
+          The dashboard is subject to account status, feature availability,
+          verification checks, security monitoring, and technical validation.
+          Where unusual activity, account issues, or system errors are detected,
+          some balance functions may be temporarily limited while the issue is
+          reviewed.
         </p>
       </section>
 
       <section className={styles.noticeBox}>
         <SectionHead Icon={FaExclamationTriangle} title="Important notice" />
         <p>
-          Internal wallet balances do not function as independent stored money
-          and may only be used through officially supported VELOOP Rewards
-          systems.
+          These balances are internal platform reward records, not a bank
+          balance, deposit account, or independent stored-money service, and
+          they can be used only through officially supported VELOOP Rewards
+          features.
         </p>
       </section>
     </LegalHero>
