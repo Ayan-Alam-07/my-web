@@ -132,10 +132,10 @@ export default function DailyCheckIn() {
 
   return (
     <div className="container-fluid px-0">
-      <CommonNavArr id={17} navigation={"/Home"} />
-
       <div className={styles.pageWrapper}>
-        <div className="container mt-4 px-md-1 px-lg-2">
+        <CommonNavArr id={17} navigation={"/Home"} />
+
+        <div className="container mt-4 mt-md-5 px-md-1 px-lg-2">
           <div className={styles.heroSection}>
             <div className={styles.heroLeft}>
               <div className={styles.topBadge}>

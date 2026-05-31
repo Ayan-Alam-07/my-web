@@ -169,181 +169,183 @@ const SpinWheel = () => {
 
   return (
     <div className="container-fluid px-0">
-      <CommonNavArr id={18} navigation={"/Home"} />
+      <div className={styles.pageColor}>
+        <CommonNavArr id={18} navigation={"/Home"} />
 
-      <div className={styles.page}>
-        <div className="container px-3">
-          <div className={styles.topSection}>
-            <div>
-              <h1 className={styles.title}>Turn Luck Into Rewards</h1>
-              <p className={styles.subtitle}>
-                Spin daily and win premium rewards
-              </p>
+        <div className={styles.page}>
+          <div className="container px-3">
+            <div className={styles.topSection}>
+              <div>
+                <h1 className={styles.title}>Turn Luck Into Rewards</h1>
+                <p className={styles.subtitle}>
+                  Spin daily and win premium rewards
+                </p>
+              </div>
+
+              <div className={styles.spinsCard}>
+                <span>Available Spins</span>
+                <h2>{spins}</h2>
+              </div>
             </div>
 
-            <div className={styles.spinsCard}>
-              <span>Available Spins</span>
-              <h2>{spins}</h2>
-            </div>
-          </div>
+            {!isFetchSpin ? (
+              <>
+                <div className={styles.wheelSection}>
+                  <div className={styles.pointer}></div>
 
-          {!isFetchSpin ? (
-            <>
-              <div className={styles.wheelSection}>
-                <div className={styles.pointer}></div>
-
-                <div
-                  className={styles.wheel}
-                  style={{
-                    transform: `rotate(${rotation}deg)`,
-                    transition:
-                      "transform 5.5s cubic-bezier(0.12, 0.8, 0.18, 1)",
-                  }}
-                >
-                  {rewards.map((reward, index) => {
-                    const angle = 360 / rewards.length;
-                    return (
-                      <div
-                        key={reward._id}
-                        className={styles.slice}
-                        style={{
-                          transform: `rotate(${index * angle}deg)`,
-                        }}
-                      >
+                  <div
+                    className={styles.wheel}
+                    style={{
+                      transform: `rotate(${rotation}deg)`,
+                      transition:
+                        "transform 5.5s cubic-bezier(0.12, 0.8, 0.18, 1)",
+                    }}
+                  >
+                    {rewards.map((reward, index) => {
+                      const angle = 360 / rewards.length;
+                      return (
                         <div
-                          className={styles.sliceShape}
+                          key={reward._id}
+                          className={styles.slice}
                           style={{
-                            background: reward.color,
+                            transform: `rotate(${index * angle}deg)`,
                           }}
                         >
-                          <div className={styles.sliceInner}>
-                            <span
-                              className={styles.sliceLabel}
-                              style={{
-                                fontSize:
-                                  index === 4 || index === 5 ? "15px" : "",
-                              }}
-                            >
-                              <span className="d-inline-block me-1">
-                                {getRewardIcon(reward)}
+                          <div
+                            className={styles.sliceShape}
+                            style={{
+                              background: reward.color,
+                            }}
+                          >
+                            <div className={styles.sliceInner}>
+                              <span
+                                className={styles.sliceLabel}
+                                style={{
+                                  fontSize:
+                                    index === 4 || index === 5 ? "15px" : "",
+                                }}
+                              >
+                                <span className="d-inline-block me-1">
+                                  {getRewardIcon(reward)}
+                                </span>
+                                <span>
+                                  {index === 8
+                                    ? "Loose"
+                                    : index === 4 || index === 5
+                                      ? `₹ ${reward.amount} RS`
+                                      : index === 3
+                                        ? "1 Spin"
+                                        : reward.title}
+                                </span>
                               </span>
-                              <span>
-                                {index === 8
-                                  ? "Loose"
-                                  : index === 4 || index === 5
-                                    ? `₹ ${reward.amount} RS`
-                                    : index === 3
-                                      ? "1 Spin"
-                                      : reward.title}
-                              </span>
-                            </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
 
-                  <div className={styles.centerCircle}>
-                    <button
-                      className={styles.spinButton}
-                      onClick={handleSpin}
-                      disabled={isLoading || spins <= 0 || isSpinning}
-                    >
-                      {isSpinning ? "ZoOo" : "SPIN"}
-                    </button>
+                    <div className={styles.centerCircle}>
+                      <button
+                        className={styles.spinButton}
+                        onClick={handleSpin}
+                        disabled={isLoading || spins <= 0 || isSpinning}
+                      >
+                        {isSpinning ? "ZoOo" : "SPIN"}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="d-flex justify-content-center align-items-center">
-                <button
-                  disabled={isSpinning}
-                  className={`${styles.spinWheelBtn} ${spins <= 0 && styles.outOfspin}`}
-                  onClick={handleSpin}
-                >
-                  {isSpinning
-                    ? "Wait for Reward"
-                    : spins <= 0
-                      ? "Out of spin"
-                      : "Spin & Win"}
-                </button>
-              </div>
-            </>
-          ) : (
-            <CirLoader id={1} para={"Fetching the Spin Rewards"} />
-          )}
-
-          <div>
-            <h5 className="mb-4">Rewards Probabilities: </h5>
-            <div className={styles.rewardCards}>
-              {rewards.map((reward, idx) => (
-                <div key={reward._id} className={styles.rewardCard}>
-                  <div
-                    className={styles.rewardCardIcon}
-                    style={{ background: reward.color }}
+                <div className="d-flex justify-content-center align-items-center">
+                  <button
+                    disabled={isSpinning}
+                    className={`${styles.spinWheelBtn} ${spins <= 0 && styles.outOfspin}`}
+                    onClick={handleSpin}
                   >
-                    {getRewardIcon(reward)}
-                  </div>
-
-                  <div className="d-flex justify-content-between align-items-center align-items-lg-start flex-column">
-                    <h4>
-                      {idx === 8
-                        ? "Lose"
-                        : idx === 4 || idx === 5
-                          ? `Gift Card ₹${reward.amount}`
-                          : idx === 3
-                            ? "Free Spin"
-                            : reward.title}
-                    </h4>
-                    <p className="m-0">{reward.probability}% Chance</p>
-                  </div>
+                    {isSpinning
+                      ? "Wait for Reward"
+                      : spins <= 0
+                        ? "Out of spin"
+                        : "Spin & Win"}
+                  </button>
                 </div>
-              ))}
-            </div>
-          </div>
+              </>
+            ) : (
+              <CirLoader id={1} para={"Fetching the Spin Rewards"} />
+            )}
 
-          {showPopup && selectedReward && (
-            <div className={styles.popupOverlay}>
-              <div className={styles.popupCard}>
-                <div className={styles.popupGlow}></div>
+            <div>
+              <h5 className="mb-4">Rewards Probabilities: </h5>
+              <div className={styles.rewardCards}>
+                {rewards.map((reward, idx) => (
+                  <div key={reward._id} className={styles.rewardCard}>
+                    <div
+                      className={styles.rewardCardIcon}
+                      style={{ background: reward.color }}
+                    >
+                      {getRewardIcon(reward)}
+                    </div>
 
-                <div
-                  className={styles.popupRewardIcon}
-                  style={{ background: selectedReward.color }}
-                >
-                  <span className="d-inline-block mt-2">
-                    {getRewardIcon(selectedReward)}
-                  </span>
-                </div>
-
-                <h2>
-                  {selectedReward.type === "empty"
-                    ? "Unfortunately"
-                    : "Congratulations"}
-                </h2>
-                <p>
-                  {selectedReward.type === "empty" ? "You Lose" : "You Won"}
-                </p>
-
-                <h1>{selectedReward.title}</h1>
-
-                <button
-                  className={` ${styles.popupButton} ${styles.discardRwd}`}
-                  onClick={handleDiscardReward}
-                  disabled={isLoading}
-                >
-                  No Thanks
-                </button>
-
-                <button
-                  className={` mt-3 ${styles.popupButton}`}
-                  onClick={handleClaimReward}
-                  disabled={isLoading}
-                >
-                  Claim Reward
-                </button>
+                    <div className="d-flex justify-content-between align-items-center align-items-lg-start flex-column">
+                      <h4>
+                        {idx === 8
+                          ? "Lose"
+                          : idx === 4 || idx === 5
+                            ? `Gift Card ₹${reward.amount}`
+                            : idx === 3
+                              ? "Free Spin"
+                              : reward.title}
+                      </h4>
+                      <p className="m-0">{reward.probability}% Chance</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          )}
+
+            {showPopup && selectedReward && (
+              <div className={styles.popupOverlay}>
+                <div className={styles.popupCard}>
+                  <div className={styles.popupGlow}></div>
+
+                  <div
+                    className={styles.popupRewardIcon}
+                    style={{ background: selectedReward.color }}
+                  >
+                    <span className="d-inline-block mt-2">
+                      {getRewardIcon(selectedReward)}
+                    </span>
+                  </div>
+
+                  <h2>
+                    {selectedReward.type === "empty"
+                      ? "Unfortunately"
+                      : "Congratulations"}
+                  </h2>
+                  <p>
+                    {selectedReward.type === "empty" ? "You Lose" : "You Won"}
+                  </p>
+
+                  <h1>{selectedReward.title}</h1>
+
+                  <button
+                    className={` ${styles.popupButton} ${styles.discardRwd}`}
+                    onClick={handleDiscardReward}
+                    disabled={isLoading}
+                  >
+                    No Thanks
+                  </button>
+
+                  <button
+                    className={` mt-3 ${styles.popupButton}`}
+                    onClick={handleClaimReward}
+                    disabled={isLoading}
+                  >
+                    Claim Reward
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
