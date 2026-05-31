@@ -1,0 +1,53 @@
+.profileWrapper {
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 90px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.pageTitle {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.pageSubtitle {
+  margin-top: 6px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.95rem;
+}
+
+.profileLoading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+
+  .pageSubtitle {
+    font-size: 0.85rem;
+  }
+}

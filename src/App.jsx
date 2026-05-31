@@ -80,6 +80,7 @@ import RewardVerificationPage from "./RewardsPolicies/RewardVerificationPolicy/R
 import MultipleAccountsAndVPNPage from "./RewardsPolicies/MultipleAccountsAndVPNPolicy/MultipleAccountsAndVPNPage";
 import BotEmulatorAutoclickerRulesPage from "./RewardsPolicies/BotEmulatorAutoclickerRulesPolicy/BotEmulatorAutoclickerRulesPage";
 import WeeklyLeaderboardEntry from "./RewardsPolicies/JoinMembershipPolicy/WeeklyLeaderboardEntry";
+import UserProfile from "./Components/Profile/UserProfile";
 
 const App = () => {
   const { isLoading } = useList();
@@ -355,6 +356,16 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
+
+        <Route
+          path="/user-profile"
+          element={
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          }
+        ></Route>
+
         <Route
           path="/daily-bonus"
           element={

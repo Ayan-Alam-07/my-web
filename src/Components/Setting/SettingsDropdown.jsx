@@ -57,11 +57,16 @@ export default function SettingsDropdown() {
     },
     {
       id: 4,
+      title: "Profile",
+      click: () => navigate("/user-profile"),
+    },
+    {
+      id: 5,
       title: "Leaderboard",
       click: () => navigate("/leaderboard"),
     },
     {
-      id: 5,
+      id: 6,
       title: "Redeem History",
       click: () => {
         setIsRedeemHistory(true);
@@ -90,7 +95,7 @@ export default function SettingsDropdown() {
           {/* Avatar */}
           <div
             className={` ${styles.avatar}`}
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/user-profile")}
           >
             {user?.photo ? (
               <img src={user.photo} alt="profile" />
