@@ -41,6 +41,11 @@ export default function SettingsDropdown() {
 
   const dropDownMenu = [
     {
+      id: 4,
+      title: "Profile",
+      click: () => navigate("/user-profile"),
+    },
+    {
       id: 1,
       title: "Refer & Earn",
       click: () => navigate("/referral"),
@@ -55,11 +60,7 @@ export default function SettingsDropdown() {
       title: "Wallet",
       click: () => navigate("/wallet"),
     },
-    {
-      id: 4,
-      title: "Profile",
-      click: () => navigate("/user-profile"),
-    },
+
     {
       id: 5,
       title: "Leaderboard",
