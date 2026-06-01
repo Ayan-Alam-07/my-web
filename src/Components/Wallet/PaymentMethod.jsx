@@ -5,6 +5,16 @@ import { useList } from "../../Context/ContextStore";
 const PaymentMethod = () => {
   const { locationData } = useList(); // Or show a loader
 
-  return <>{locationData.country === "IN" ? <PayoutInd /> : <PayoutGlob />}</>;
+  return (
+    <>
+      <PayoutInd />
+
+      {/* {locationData.country === "IN" || locationData.error ? (
+        <PayoutInd />
+      ) : (
+        <PayoutGlob />
+      )} */}
+    </>
+  );
 };
 export default PaymentMethod;

@@ -22,6 +22,7 @@ const CommonNavArr = ({ id, name, navigation }) => {
     setIsInviteToHistory,
     isWalletToHistory,
     setIsWalletToHistory,
+    setIsRedeemHistory,
   } = useList();
 
   // const { list } = useList();
@@ -64,6 +65,7 @@ const CommonNavArr = ({ id, name, navigation }) => {
                         } else if (id === 16 && isWalletToHistory) {
                           navigate("/wallet");
                           setIsWalletToHistory(false);
+                          setIsRedeemHistory(false);
                         } else {
                           handleArrowClick();
                         }

@@ -14,7 +14,7 @@ const RefreshCoins = ({ ref }) => {
   return (
     <FaSyncAlt
       onClick={handleRefresh}
-      className={`${style.walletRefresh} ${ref === 1 ? style.refFir : style.refSec} ${isLoading ? style.rotate : ""}`}
+      className={`${style.walletRefresh} ${ref === 1 ? style.refFir : ""} ${isLoading ? style.rotate : ""}`}
     />
   );
 };

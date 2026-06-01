@@ -1,4 +1,4 @@
-.tabsPara {
+/* .tabsPara {
   margin: 0;
   font-size: 3.6vw;
   font-family: "poppins";
@@ -9,13 +9,18 @@
   justify-content: space-evenly;
 }
 .selectPymtMode {
-  margin: 3vw 0 0 0;
+  margin: 4vw 0 0 0;
   text-transform: capitalize;
-  font-family: "outfit";
+  font-family: "nunito";
+  display: flex;
+  align-items: start;
   font-weight: 700;
   font-size: 3.2vw;
   letter-spacing: 0.2vw;
-  color: red;
+  color: rgb(255, 49, 49);
+}
+.selectedMode {
+  color: #007bff;
 }
 .scrollPayout {
   margin: 3vw 0 0 2vw;
@@ -56,10 +61,7 @@
   padding: 0 5px;
   height: 57px;
 }
-/* .paymentLogoBtc {
-  background-size: cover;
-  height: 57px;
-} */
+
 .paymentLogoUpi:hover,
 .paymentLogoAmazon:hover,
 .paymentLogoGPlay:hover,
@@ -215,6 +217,7 @@
   }
   .selectPymtMode {
     font-size: 2.12vw;
+    align-items: center;
   }
   .scrollPayout {
     font-size: 2.4vw;
@@ -267,7 +270,7 @@
 @media (min-width: 992px) {
   .paymentOptionsLogo:hover {
     transform: scale(1.1);
-    transition: ease-in-out 0.1s;
+    transition: ease-in-out 0.3s;
   }
   .tabsPara {
     font-size: 1.29vw;
@@ -275,7 +278,7 @@
   .selectPymtMode {
     font-size: 1.25vw;
     letter-spacing: 0.1vw;
-    margin-top: 0.72vw;
+    margin-top: 2vw;
   }
   .scrollPayout {
     letter-spacing: 0.1vw;
@@ -322,5 +325,413 @@
     font-size: 1.5vw;
     margin: 3.8vw 1.2vw 0 0;
     padding: 1.5vw 4.8vw;
+  }
+} */
+
+:root {
+  --surface-primary: #1f2438;
+  --surface-secondary: #252b42;
+  --surface-hover: #2d3552;
+
+  --border-primary: rgba(255, 255, 255, 0.06);
+  --border-active: rgba(99, 102, 241, 0.35);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a7afc7;
+  --text-muted: #7f879d;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --primary: #6366f1;
+}
+
+.appContainer {
+  width: 100%;
+  font-family:
+    "nunito",
+    sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* =======================================
+   STATUS BANNER
+======================================= */
+
+.statusBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 30px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  font-size: 0.96rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.defaultBanner {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+}
+
+.selectedBanner {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+/* =======================================
+   HEADER
+======================================= */
+
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.pageHeader h2 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 0.1px;
+}
+
+.pageHeader p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* =======================================
+   PAYMENT GRID
+======================================= */
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+/* =======================================
+   PAYMENT CARD
+======================================= */
+
+.methodCard {
+  position: relative;
+  /* background: var(--surface-primary); */
+  border: 1px solid var(--border-primary);
+  border-radius: 24px;
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: var(--surface-secondary);
+}
+.methodCard:hover {
+  transform: translateY(-4px);
+}
+.methodCardUnSelected:hover {
+  background: #292f49;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.selected {
+  border-color: var(--border-active);
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(124, 58, 237, 0.06)
+  );
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+/* =======================================
+   CARD HEADER
+======================================= */
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.logoArea {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.logoArea img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.checkIcon {
+  color: var(--success);
+  font-size: 1rem;
+  margin: 0 0 0 17px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.selected .checkIcon {
+  opacity: 1;
+}
+
+/* =======================================
+   CONTENT
+======================================= */
+
+.methodContent h4 {
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.methodContent p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* =======================================
+   META
+======================================= */
+
+.methodMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+/* =======================================
+   BADGE
+======================================= */
+
+.methodBadge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: #97a2ff;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* =======================================
+   DISABLED CARD
+======================================= */
+
+.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  transform: none;
+}
+
+.lockBadge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+/* =======================================
+   TRUST SECTION
+======================================= */
+
+.trustSection {
+  margin-bottom: 36px;
+}
+
+.trustHeader {
+  color: white;
+  font-size: 1.17rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.trustCard {
+  background: linear-gradient(135deg, #232547, #1c1e35);
+  /* background: var(--surface-primary); */
+  /* border: 1px solid var(--border-primary); */
+  border: 1px solid #323461;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.trustCard:hover {
+  background: linear-gradient(135deg, #26284d, #21233d);
+  transform: translateY(-2px);
+}
+
+.trustIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  color: #8692ff;
+  font-size: 1rem;
+}
+
+.trustCard span {
+  color: rgb(231, 231, 231);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+
+.payoutBtn {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payoutBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+}
+
+.payoutBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width: 991px) {
+  .paymentGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trustGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pageHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .statusBanner {
+    font-size: 1.05rem;
+  }
+
+  .methodBadge {
+    font-size: 0.85rem;
+  }
+  .lockBadge {
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
+  }
+  .payoutBtn {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .paymentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .statusBanner {
+    padding: 16px 15px;
+    gap: 8px;
+    font-size: 3.7vw;
+    border-radius: 12px;
+  }
+
+  .methodBadge {
+    padding: 8px 16px;
+    font-size: 3.17vw;
+  }
+
+  .trustCard {
+    gap: 14px;
+    flex-direction: column;
+    padding: 20px 12px;
+  }
+
+  .trustIcon {
+    width: 58px;
+    height: 48px;
+    font-size: 4.47vw;
+  }
+
+  .trustCard span {
+    font-size: 3.3vw;
+    text-align: center;
+  }
+
+  .payoutBtn {
+    font-size: 4.2vw;
   }
 }

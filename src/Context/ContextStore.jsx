@@ -46,7 +46,7 @@ export const ListProvider = ({ children }) => {
   const [arrowState, setArrowState] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isInviteToHistory, setIsInviteToHistory] = useState(false);
-  const [isRedeemHistory, setIsRedeemHistory] = useState(true);
+  const [isRedeemHistory, setIsRedeemHistory] = useState(false);
   const [isWalletToHistory, setIsWalletToHistory] = useState(false);
 
   const [rewards, setRewards] = useState([]);

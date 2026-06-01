@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import CommonNavArr from "../CommonComponents/CommonNavArr";
 import WalletBody from "./WalletBody";
 import { useList } from "../../Context/ContextStore";
 // import { getMyWithdrawals } from "../../services/walletService";
@@ -26,7 +25,6 @@ const Wallet = () => {
 
   return (
     <>
-      <CommonNavArr id={1} navigation={"/Home"} />
       <WalletBody />
     </>
   );
