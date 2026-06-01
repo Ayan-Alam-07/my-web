@@ -88,60 +88,6 @@ const WithdrawalAnalytics = () => {
           </div>
         ))}
       </div>
-
-      <div className={styles.tableCard}>
-        <div className={styles.tableHeader}>
-          <h4>Recent Withdrawals</h4>
-        </div>
-
-        {withdrawalList.length === 0 ? (
-          <div className={styles.emptyState}>No withdrawals found</div>
-        ) : (
-          <div className={styles.tableWrapper}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Amount</th>
-
-                  <th>Status</th>
-
-                  <th>Method</th>
-
-                  <th>Date</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {withdrawalList.slice(0, 5).map((withdrawal, index) => (
-                  <tr key={withdrawal?._id || index}>
-                    <td>₹{withdrawal?.amount || 0}</td>
-
-                    <td>
-                      <span
-                        className={`${styles.status} ${
-                          withdrawal?.status?.toLowerCase() === "approved"
-                            ? styles.success
-                            : styles.pending
-                        }`}
-                      >
-                        {withdrawal?.status || "Pending"}
-                      </span>
-                    </td>
-
-                    <td>{withdrawal?.paymentMethod || "UPI"}</td>
-
-                    <td>
-                      {withdrawal?.createdAt
-                        ? new Date(withdrawal.createdAt).toLocaleDateString()
-                        : "--"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
