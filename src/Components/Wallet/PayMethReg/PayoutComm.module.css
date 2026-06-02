@@ -438,24 +438,25 @@
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
-  background: var(--surface-secondary);
+  background: #292f49;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 .methodCard:hover {
   transform: translateY(-4px);
 }
 .methodCardUnSelected:hover {
-  background: #292f49;
-  border-color: rgba(255, 255, 255, 0.12);
+  background: #2a304b;
+  border-color: rgba(255, 255, 255, 0.185);
 }
 
 .selected {
   border-color: var(--border-active);
   background: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.08),
-    rgba(124, 58, 237, 0.06)
+    rgba(96, 98, 238, 0.13),
+    rgba(124, 58, 237, 0.11)
   );
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 10px 30px rgba(99, 101, 241, 0.226);
 }
 
 /* =======================================
