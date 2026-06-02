@@ -5,17 +5,11 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { useList } from "../../../Context/ContextStore";
 
 import styles from "./XPProgress.module.css";
+import { useNavigate } from "react-router-dom";
 
 const XPProgress = () => {
-  const { level, data, dataLoading } = useList();
-
-  console.group("XP PROGRESS");
-
-  console.log("Level:", level);
-  console.log("XP Data:", data);
-  console.log("Loading:", dataLoading);
-
-  console.groupEnd();
+  const { level, data, dataLoading, setProfileToLvl } = useList();
+  const navigate = useNavigate();
 
   if (dataLoading) {
     return (
@@ -25,16 +19,8 @@ const XPProgress = () => {
     );
   }
 
-  if (!data) {
-    console.error("XP PROGRESS ERROR: XP data missing");
-
-    return null;
-  }
-
   const currentXP = Number(data?.xp) || 0;
-
   const nextXP = Number(data?.nextXP) || 0;
-
   const progress = Number(data?.progress) || 0;
 
   return (
@@ -42,7 +28,6 @@ const XPProgress = () => {
       <div className={styles.header}>
         <div>
           <h3>Level Progress</h3>
-
           <p>Earn XP and unlock higher rewards</p>
         </div>
 
@@ -51,11 +36,15 @@ const XPProgress = () => {
 
       <div className="row">
         <div className="col-lg-4">
-          <div className={styles.levelCard}>
+          <div
+            className={styles.levelCard}
+            onClick={() => {
+              navigate("/Lvl-Dashboard");
+              setProfileToLvl(true);
+            }}
+          >
             <FaTrophy className={styles.levelIcon} />
-
             <h2>LVL {level}</h2>
-
             <span>Current Level</span>
           </div>
         </div>
@@ -64,7 +53,6 @@ const XPProgress = () => {
           <div className={styles.progressCard}>
             <div className={styles.progressTop}>
               <span>XP Progress</span>
-
               <span>
                 {currentXP}
                 {" / "}
@@ -84,10 +72,8 @@ const XPProgress = () => {
             <div className={styles.progressInfo}>
               <div>
                 <FaArrowTrendUp />
-
                 <span>{progress.toFixed(0)}% Completed</span>
               </div>
-
               <div>Next Level Reward</div>
             </div>
           </div>

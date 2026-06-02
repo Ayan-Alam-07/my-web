@@ -270,6 +270,7 @@ const WalletBody = () => {
       theme: ["#ec4899", "rgba(236, 72, 153, 0.1)"],
     },
   ];
+  const statsLen = stats.length;
 
   return (
     <div className="container-fluid px-1 px-md-2">
@@ -296,13 +297,23 @@ const WalletBody = () => {
                         </span>
                       </div>
                       <h2 className={styles.heroTitle}>Net Worth</h2>
+
                       <p className={styles.heroSubtitle}>
                         <span className={styles.veCount}>
                           <FaCoins className={styles.coinIcon} />
                           <AnimatedValue end={walletMetrics.coins} />
                         </span>
-                        <span className={styles.veLabel}>Available VEs</span>
+                        <span
+                          className={`d-none d-md-inline-block ${styles.veLabel}`}
+                        >
+                          Available VEs
+                        </span>
                       </p>
+                      <span
+                        className={`d-md-none mt-2 d-inline-block ${styles.veLabel}`}
+                      >
+                        Available VEs
+                      </span>
                     </div>
 
                     <div className={styles.heroActions}>
@@ -329,7 +340,7 @@ const WalletBody = () => {
                       />
                     </div>
                     <div className={styles.balanceMeta}>
-                      <span className={styles.label}>Current VE Value</span>
+                      <span className={styles.label}>Current VEs Value</span>
                       <span className={styles.label}>|</span>
                       <span className={styles.label}>
                         Lifetime: ₹{walletMetrics.totalLifetime.toFixed(0)}
@@ -356,8 +367,13 @@ const WalletBody = () => {
             {/* SECTION 2: PORTFOLIO OVERVIEW */}
             <section className={`row g-4 ${styles.statsGrid}`}>
               {stats.map((stat, idx) => (
-                <div key={stat.title} className="col-12 col-md-6 col-lg-3">
-                  <div className={styles.statCard}>
+                <div
+                  key={stat.title}
+                  className={`${statsLen - 1 === idx || statsLen - 2 === idx ? "col-6" : "col-12"} col-md-6 col-lg-3`}
+                >
+                  <div
+                    className={`${styles.statCard} ${statsLen - 1 === idx || statsLen - 2 === idx ? `flex-column flex-md-row text-center text-md-start ${styles.statsExcept}` : ""}`}
+                  >
                     <div
                       className={styles.statIconBox}
                       style={{

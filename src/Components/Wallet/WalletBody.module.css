@@ -94,7 +94,7 @@ body {
   width: 100%;
   /* padding: 20px; */
   font-family:
-    "Inter",
+    "poppins",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -149,7 +149,7 @@ body {
 .badgeGroup {
   display: flex;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .statusBadge {
@@ -178,7 +178,7 @@ body {
 .heroTitle {
   font-size: 1.2rem;
   color: var(--text-muted);
-  margin: 0 0 5px 0;
+  margin: 0 0 7px 0;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -486,7 +486,7 @@ body {
 
 @media (max-width: 575px) {
   .tabsHeader {
-    padding: 5px;
+    padding: 4px;
     width: 100%;
   }
 
@@ -498,5 +498,15 @@ body {
     padding: 4vw 3vw;
     font-size: 3.5vw;
     width: 50%;
+  }
+  .statsExcept {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tabBtn {
+    padding: 4vw 2.8vw;
+    font-size: 3.3vw;
   }
 }

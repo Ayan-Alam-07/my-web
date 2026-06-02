@@ -48,6 +48,7 @@ export const ListProvider = ({ children }) => {
   const [isInviteToHistory, setIsInviteToHistory] = useState(false);
   const [isRedeemHistory, setIsRedeemHistory] = useState(false);
   const [isWalletToHistory, setIsWalletToHistory] = useState(false);
+  const [profileToLvl, setProfileToLvl] = useState(false);
 
   const [rewards, setRewards] = useState([]);
   const [currentDay, setCurrentDay] = useState(1);
@@ -300,6 +301,8 @@ export const ListProvider = ({ children }) => {
         nextClaimAt,
         setNextClaimAt,
         level,
+        profileToLvl,
+        setProfileToLvl,
 
         fetchRewards,
 
