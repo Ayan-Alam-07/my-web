@@ -26,7 +26,7 @@ export const ListProvider = ({ children }) => {
     { id: 8, name: "Login" },
     { id: 9, name: "Register" },
     { id: 10, name: "Forget Password" },
-    { id: 11, name: "Reffer & Earn" },
+    { id: 11, name: "Refer & Earn" },
     { id: 12, name: "Referral History" },
     { id: 13, name: "Watch Ads" },
     { id: 14, name: "Daily Bonus" },

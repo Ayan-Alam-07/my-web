@@ -36,7 +36,7 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
       value: data?.xp || currentUserRank?.xp || 0,
     },
     {
-      title: "Weekly VEs",
+      title: "Weekly VE",
       icon: <FaCoins />,
       class: "statVEs",
       value: currentUserRank?.weeklyCoinsEarned ?? 0,
@@ -127,8 +127,12 @@ const LeaderboardHero = ({ currentUserRank, participated }) => {
                   className={idx === rankStats.length - 1 ? "col-12" : "col-6"}
                 >
                   <div className={styles.rankStat}>
-                    <span>{stats.title}</span>
-
+                    <span className="d-inline-flex">
+                      {stats.title}
+                      {idx === rankStats.length - 1 && (
+                        <span style={{ textTransform: "lowercase" }}>s</span>
+                      )}
+                    </span>
                     <strong>
                       <div
                         className={`${styles.rankStatIcon} ${styles[stats.class]}`}

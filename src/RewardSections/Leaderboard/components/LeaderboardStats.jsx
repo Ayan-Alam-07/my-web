@@ -24,7 +24,7 @@ const LeaderboardStats = ({
       tone: styles.blue,
     },
     {
-      label: `Weekly VEs`,
+      label: `Weekly VE`,
       value: currentUserRank?.weeklyCoinsEarned
         ? currentUserRank?.weeklyCoinsEarned
         : "--",
@@ -49,7 +49,12 @@ const LeaderboardStats = ({
         <div key={stat.label} className="col-6 col-md-4 col-xl-3">
           <div className={styles.statCard}>
             <div className={styles.topRow}>
-              <span>{stat.label}</span>
+              <span>
+                {stat.label}
+                {idx === stats.length - 2 && (
+                  <span style={{ textTransform: "lowercase" }}>s</span>
+                )}
+              </span>
               <div className={`${styles.iconBox} ${stat.tone}`}>
                 {stat.icon}
               </div>
