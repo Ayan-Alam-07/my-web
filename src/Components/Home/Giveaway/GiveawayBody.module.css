@@ -5,7 +5,7 @@
     #0a0617 60%,
     #000 100%
   );
-
+  padding: 0 0 30px 0;
   font-family:
     "nunito",
     system-ui,
@@ -19,14 +19,14 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  min-height: 100vh;
 }
 .wrapper {
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 40px 16px 70px;
+  padding: 40px 16px 0px;
   overflow: hidden;
-  min-height: 100vh;
 }
 
 .glow {
@@ -337,7 +337,7 @@
 
 @media (min-width: 576px) {
   .wrapper {
-    padding: 80px 50px 0px;
+    padding: 80px 50px 44px;
   }
 
   .glow {
@@ -435,7 +435,7 @@
 
 @media (min-width: 992px) {
   .wrapper {
-    padding: 50px 20px 60px;
+    padding: 50px 20px 10px;
   }
 
   .card {

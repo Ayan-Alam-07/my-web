@@ -13,6 +13,7 @@ import {
 import CommonNavArr from "../../../Components/CommonComponents/CommonNavArr";
 import { useList } from "../../../Context/ContextStore";
 import { showError, showSuccess } from "../../../utils/Toast";
+import SecFooter from "../../../Components/CommonComponents/SecFooter";
 
 const LeaderboardPage = () => {
   const [joining, setJoining] = useState(false);
@@ -132,6 +133,12 @@ const LeaderboardPage = () => {
             </div>
           </div>
         </div>
+        <SecFooter
+          mt={25}
+          mb={15}
+          name={"Leaderboard"}
+          link={"/help-center/getting-started/weekly-leaderboard-entry"}
+        />
       </div>
     </div>
   );

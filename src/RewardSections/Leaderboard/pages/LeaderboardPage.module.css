@@ -1,5 +1,6 @@
 .pageWrap {
   min-height: 100vh;
+  padding: 0 0 27px 0;
   background:
     radial-gradient(
       circle at top left,

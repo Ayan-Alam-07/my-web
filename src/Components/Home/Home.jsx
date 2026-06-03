@@ -4,6 +4,7 @@ import HomeEarn from "./HomeEarn";
 import { useLocation } from "react-router-dom";
 import { useList } from "../../Context/ContextStore";
 import { useEffect } from "react";
+import SecFooter from "../CommonComponents/SecFooter";
 
 const Home = () => {
   const location = useLocation();
@@ -21,6 +22,12 @@ const Home = () => {
       <HomeNav></HomeNav>
       <HomeHero></HomeHero>
       <HomeEarn></HomeEarn>
+      <SecFooter
+        mt={0}
+        mb={30}
+        name={"Rewards Policies"}
+        link={"/help-center"}
+      />
     </>
   );
 };

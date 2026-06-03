@@ -1,7 +1,8 @@
 /* Footer */
 .footer {
-  margin-top: 40px;
+  /* margin: 40px 0 10px; */
   text-align: center;
+  z-index: 999;
 }
 
 .footerDivider {
@@ -17,8 +18,8 @@
 
 .footerText {
   font-size: 12px;
-  color: #475569;
   margin: 0 0 8px;
+  color: #53637a;
 }
 
 .footerLinks {
@@ -30,16 +31,29 @@
 
 .footerLink {
   font-size: 12px;
-  color: #64748b;
+  color: #6b7d96;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
-.footerLink:hover {
+.others {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover,
+.others:hover {
   color: #a78bfa;
 }
 
 .footerDot {
   color: #334155;
   font-size: 12px;
+}
+
+@media (max-width: 991px) {
+  .footerLink,
+  .footerText {
+    font-size: 13.5px;
+  }
 }

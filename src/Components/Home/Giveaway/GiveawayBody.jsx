@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useList } from "../../../Context/ContextStore";
 import styles from "./GiveawayBody.module.css";
 import CommonNavArr from "../../CommonComponents/CommonNavArr";
+import SecFooter from "../../CommonComponents/SecFooter";
 
 export default function GiveawayBody() {
   const [code, setCode] = useState("");
@@ -154,6 +155,12 @@ export default function GiveawayBody() {
           </div>
         </div>
       </section>
+      <SecFooter
+        mt={80}
+        mb={10}
+        name={"Watch AD"}
+        link={"/help-center/earning/watch-ads"}
+      />
     </div>
   );
 }

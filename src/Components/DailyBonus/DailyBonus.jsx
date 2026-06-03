@@ -771,7 +771,12 @@ const DailyBonus = () => {
                 />
               </div>
 
-              <SecFooter />
+              <SecFooter
+                mt={25}
+                mb={0}
+                name={"Daily Bonus"}
+                link={"/help-center/earning/daily-rewards"}
+              />
             </div>
           </div>
         </div>

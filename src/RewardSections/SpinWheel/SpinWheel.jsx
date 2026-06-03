@@ -13,6 +13,7 @@ import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
 import { showError } from "../../utils/Toast";
 import CirLoader from "../../Components/CommonComponents/CirLoader";
+import SecFooter from "../../Components/CommonComponents/SecFooter";
 
 const SpinWheel = () => {
   const [rewards, setRewards] = useState([]);
@@ -346,6 +347,10 @@ const SpinWheel = () => {
               </div>
             )}
           </div>
+          <SecFooter
+            name={"Spin the Wheel"}
+            link={"/help-center/earning/spin-the-wheel"}
+          />
         </div>
       </div>
     </div>

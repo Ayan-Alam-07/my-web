@@ -6,6 +6,8 @@ import { TbDeviceTvOld } from "react-icons/tb";
 
 import style from "./WatchAd.module.css";
 import CommonNavArr from "../CommonComponents/CommonNavArr";
+import SecFooter from "../CommonComponents/SecFooter";
+
 import { useList } from "../../Context/ContextStore";
 import { showError } from "../../utils/Toast";
 
@@ -141,6 +143,12 @@ const WatchAd = () => {
           ))}
         </div>
       </div>
+      <SecFooter
+        mt={50}
+        mb={37}
+        name={"Watch AD"}
+        link={"/help-center/earning/watch-ads"}
+      />
     </div>
   );
 };

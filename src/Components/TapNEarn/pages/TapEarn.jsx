@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaBolt, FaCoins, FaLock, FaUnlock } from "react-icons/fa";
 import styles from "./TapEarn.module.css";
 import CommonNavArr from "../../../Components/CommonComponents/CommonNavArr";
+import SecFooter from "../../../Components/CommonComponents/SecFooter";
 
 import TapCoin from "../components/TapCoin";
 import TapStats from "../components/TapStats";
@@ -202,6 +203,12 @@ export default function TapEarn() {
               </div>
             </div>
           </div>
+          <SecFooter
+            mt={100}
+            mb={10}
+            name={"Tap & Earn"}
+            link={"/help-center/earning/tap-and-earn"}
+          />
         </div>
       </div>
     </div>

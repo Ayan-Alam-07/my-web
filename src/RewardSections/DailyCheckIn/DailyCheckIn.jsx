@@ -16,6 +16,7 @@ import {
 import { claimDailyCheckinReward } from "../../services/dailyCheckinService";
 import { useList } from "../../Context/ContextStore";
 import CommonNavArr from "../../Components/CommonComponents/CommonNavArr";
+import SecFooter from "../../Components/CommonComponents/SecFooter";
 import CirLoader from "../../Components/CommonComponents/CirLoader";
 
 export default function DailyCheckIn() {
@@ -290,6 +291,10 @@ export default function DailyCheckIn() {
               );
             })}
           </div>
+          <SecFooter
+            name={"Daily Streak"}
+            link={"/help-center/earning/streak-rewards"}
+          />
         </div>
       </div>
     </div>

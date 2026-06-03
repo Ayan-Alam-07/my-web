@@ -5,6 +5,7 @@ import { FaCopy, FaGift, FaUsers, FaShare } from "react-icons/fa";
 import style from "./Reffer.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import SecFooter from "../CommonComponents/SecFooter";
 
 export default function Referral() {
   const { user, setIsLoading, isLoading } = useList();
@@ -152,6 +153,12 @@ export default function Referral() {
           </div>
         </div>
       </div>
+      <SecFooter
+        mt={50}
+        mb={37}
+        name={"Refer & Earn"}
+        link={"/help-center/safety/referral-rewards"}
+      />
     </div>
   );
 }

@@ -1,49 +1,3 @@
-// import { useEffect, useState } from "react";
-// import styles from "./LvlDashboard.module.css";
-
-// import LvlProgressBar from "../Components/LvlProgressBar";
-// import LvlBadge from "../Components/LvlBadge";
-// import LvlLeaderboard from "../Components/LvlLeaderboard";
-// import ActionButtons from "../Components/ActionButtons";
-// import CommonNavArr from "../../../Components/CommonComponents/CommonNavArr";
-// import CirLoader from "../../../Components/CommonComponents/CirLoader";
-// import { useList } from "../../../Context/ContextStore";
-
-// const LvlDashboard = () => {
-//   const { data, leaderboard, dataLoading, fetchData } = useList();
-
-//   const token = localStorage.getItem("token");
-
-//   return (
-//     <div className="container-fluid px-0">
-//       <CommonNavArr id={19} navigation={"/Home"} />
-
-//       {dataLoading ? (
-//         <CirLoader id={4} para={"Fetching!! Your Levels..."} />
-//       ) : (
-//         <div className={`${styles.container} px-3`}>
-//           <div className={styles.header}>
-//             <h1>Level {data.level}</h1>
-//             <div className={styles.coins}>💰 {data.coins}</div>
-//           </div>
-
-//           <LvlBadge badge={data.badge} />
-
-//           <div className={styles.card}>
-//             <LvlProgressBar />
-//           </div>
-
-//           <ActionButtons token={token} refresh={fetchData} />
-
-//           <LvlLeaderboard users={leaderboard} />
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default LvlDashboard;
-
 import styles from "./LvlDashboard.module.css";
 import { useList } from "../../../Context/ContextStore";
 import CommonNavArr from "../../../Components/CommonComponents/CommonNavArr";
@@ -57,6 +11,7 @@ import LvlStatsGrid from "../Components/LvlStatsGrid";
 import ActionButtons from "../Components/ActionButtons";
 import LeaderboardBanner from "../../Leaderboard/LeaderboardBanner";
 import { useEffect } from "react";
+import SecFooter from "../../../Components/CommonComponents/SecFooter";
 
 const LvlDashboard = () => {
   const { data, dataLoading, fetchData } = useList();
@@ -120,6 +75,12 @@ const LvlDashboard = () => {
           <LeaderboardBanner />
         </div>
       </section>
+      <SecFooter
+        mt={25}
+        mb={10}
+        name={"Level System"}
+        link={"/help-center/earning/level-system"}
+      />
     </div>
   );
 };
