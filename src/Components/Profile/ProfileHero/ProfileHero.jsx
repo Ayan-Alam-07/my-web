@@ -11,7 +11,7 @@ import styles from "./ProfileHero.module.css";
 const ProfileHero = () => {
   const navigate = useNavigate();
 
-  const { user, level, data } = useList();
+  const { user, level, data, setProfileToLvl } = useList();
 
   const extractedName = user?.email ? user.email.split("@")[0] : "VELOOP User";
 
@@ -37,7 +37,10 @@ const ProfileHero = () => {
         <div className={styles.leftSection}>
           <div
             className={styles.avatarContainer}
-            onClick={() => navigate("/Lvl-Dashboard")}
+            onClick={() => {
+              navigate("/Lvl-Dashboard");
+              setProfileToLvl(true);
+            }}
           >
             {user?.photo ? (
               <img src={user.photo} alt="profile" className={styles.avatar} />
