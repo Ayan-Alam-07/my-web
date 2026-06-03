@@ -15,65 +15,19 @@ import { useList } from "../../../Context/ContextStore";
 import { showError, showSuccess } from "../../../utils/Toast";
 
 const LeaderboardPage = () => {
-  const [loading, setLoading] = useState(true);
-  const { isLoading, setIsLoading } = useList();
   const [joining, setJoining] = useState(false);
-  const [leaderboard, setLeaderboard] = useState([]);
-  const [currentUserRank, setCurrentUserRank] = useState(null);
-
-  const participated = currentUserRank?.participated || 0;
-
-  const [meta, setMeta] = useState({
-    page: 1,
-    limit: 20,
-    total: 0,
-    totalPages: 1,
-  });
-
-  const fetchLeaderboard = async (page = 1) => {
-    try {
-      const token =
-        localStorage.getItem("token") ||
-        localStorage.getItem("accessToken") ||
-        sessionStorage.getItem("token") ||
-        sessionStorage.getItem("accessToken");
-
-      if (!token) {
-        showError("Please login first.");
-        window.location.href = "/login";
-        return;
-      }
-
-      setIsLoading(true);
-
-      const response = await getWeeklyLeaderboard(page, 20);
-      const payload = response?.data || response || {};
-      console.log(payload);
-
-      setLeaderboard(payload.data || []);
-      setCurrentUserRank(payload.currentUserRank || null);
-
-      setMeta({
-        page: payload.page || 1,
-        limit: payload.limit || 20,
-        total: payload.total || 0,
-        totalPages: payload.totalPages || 1,
-      });
-    } catch (error) {
-      console.error("Failed to fetch leaderboard", error);
-
-      if (error?.response?.status === 401) {
-        localStorage.removeItem("token");
-        localStorage.removeItem("accessToken");
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem("accessToken");
-        showError("Session expired. Please login again.");
-        window.location.href = "/login";
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const {
+    isLoading,
+    setIsLoading,
+    leaderboard,
+    setLeaderboard,
+    currentUserRank,
+    setCurrentUserRank,
+    meta,
+    setMeta,
+    participated,
+    fetchLeaderboard,
+  } = useList();
 
   useEffect(() => {
     fetchLeaderboard(1);

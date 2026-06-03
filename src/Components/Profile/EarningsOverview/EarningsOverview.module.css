@@ -2,98 +2,41 @@
   margin-bottom: 24px;
 }
 
-.header {
-  margin-bottom: 18px;
-}
-
-.header h3 {
-  color: #ffffff;
-
-  font-size: 1.2rem;
-
-  font-weight: 700;
-
-  margin-bottom: 4px;
-}
-
-.header p {
-  color: rgba(255, 255, 255, 0.6);
-
-  margin: 0;
-}
-
-.card {
-  height: 100%;
-
-  background: linear-gradient(
-    145deg,
-    rgba(33, 42, 66, 0.95),
-    rgba(20, 27, 43, 0.95)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  border-radius: 24px;
-
+.earnCard {
   padding: 22px;
-
   display: flex;
-
   align-items: center;
-
-  gap: 18px;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-
-  border-color: #5f6fff;
+  gap: 14px;
+  border: 1px solid #c2c2c242;
 }
 
 .icon {
   width: 64px;
-
   height: 64px;
-
   border-radius: 18px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  background: rgba(255, 255, 255, 0.05);
-
+  background: rgba(255, 255, 255, 0.096);
   font-size: 24px;
-
   flex-shrink: 0;
 }
 
-.card h2 {
+.earnCard h2 {
   color: white;
-
   margin-bottom: 4px;
-
-  font-size: 1.5rem;
-
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
-.card p {
+.earnCard p {
   margin: 0;
-
   color: rgba(255, 255, 255, 0.6);
-
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
-  .card {
+  .earnCard {
     padding: 18px;
   }
 
@@ -103,7 +46,7 @@
     font-size: 20px;
   }
 
-  .card h2 {
+  .earnCard h2 {
     font-size: 1.25rem;
   }
 }

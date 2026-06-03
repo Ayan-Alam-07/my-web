@@ -10,15 +10,10 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import styles from "./QuickActions.module.css";
+import css from "../UserProfile.module.css";
 
 const QuickActions = () => {
   const navigate = useNavigate();
-
-  console.group("QUICK ACTIONS");
-
-  console.log("Quick Actions Component Rendered");
-
-  console.groupEnd();
 
   const actions = [
     {
@@ -67,10 +62,11 @@ const QuickActions = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <h3>Quick Actions</h3>
-
-        <p>Access important sections instantly</p>
+      <div className={css.header}>
+        <div>
+          <h3>Quick Actions</h3>
+          <p>Access important sections instantly</p>
+        </div>
       </div>
 
       <div className="row g-3">

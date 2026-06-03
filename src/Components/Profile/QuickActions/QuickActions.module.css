@@ -2,97 +2,66 @@
   margin-top: 10px;
 }
 
-.header {
+/* .header {
   margin-bottom: 20px;
 }
 
 .header h3 {
   color: white;
-
   font-size: 1.2rem;
-
   font-weight: 700;
-
   margin-bottom: 6px;
 }
 
 .header p {
   color: rgba(255, 255, 255, 0.6);
-
   margin: 0;
-
   font-size: 0.9rem;
-}
+} */
 
 .actionCard {
   height: 120px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(30, 38, 59, 0.95),
-    rgba(19, 26, 41, 0.95)
-  );
-
+  background: linear-gradient(135deg, #232547, #1c1e35);
   border: 1px solid rgba(255, 255, 255, 0.06);
-
   border-radius: 22px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   align-items: center;
-
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
 .actionCard:hover {
   transform: translateY(-6px);
-
   border-color: #5f6fff;
-
   box-shadow: 0 12px 30px rgba(95, 111, 255, 0.18);
 }
 
 .icon {
   width: 54px;
-
   height: 54px;
-
   border-radius: 16px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   margin-bottom: 12px;
-
   background: rgba(95, 111, 255, 0.12);
-
   color: #5f6fff;
-
   font-size: 22px;
 }
 
 .actionCard span {
   color: white;
-
   font-size: 0.9rem;
-
   font-weight: 600;
-
   text-align: center;
+  letter-spacing: 0.45px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .actionCard {
-    height: 105px;
+    height: 120px;
   }
 
   .icon {
@@ -102,6 +71,12 @@
   }
 
   .actionCard span {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .actionCard span {
+    font-size: 3.58vw;
   }
 }

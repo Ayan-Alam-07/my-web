@@ -5,6 +5,7 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { useList } from "../../../Context/ContextStore";
 
 import styles from "./XPProgress.module.css";
+import css from "../UserProfile.module.css";
 import { useNavigate } from "react-router-dom";
 
 const XPProgress = () => {
@@ -24,8 +25,8 @@ const XPProgress = () => {
   const progress = Number(data?.progress) || 0;
 
   return (
-    <div className={styles.card}>
-      <div className={styles.header}>
+    <div className={css.card}>
+      <div className={`${css.header} ${styles.header}`}>
         <div>
           <h3>Level Progress</h3>
           <p>Earn XP and unlock higher rewards</p>
@@ -49,7 +50,7 @@ const XPProgress = () => {
           </div>
         </div>
 
-        <div className="col-lg-8">
+        <div className="col-lg-8 mt-4 mt-lg-0">
           <div className={styles.progressCard}>
             <div className={styles.progressTop}>
               <span>XP Progress</span>

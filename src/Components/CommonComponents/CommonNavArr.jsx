@@ -24,7 +24,9 @@ const CommonNavArr = ({ id, name, navigation }) => {
     setIsWalletToHistory,
     setIsRedeemHistory,
     profileToLvl,
-    setProfileToLv,
+    setProfileToLvl,
+    profileToRef,
+    setProfileToRef,
   } = useList();
 
   // const { list } = useList();
@@ -62,15 +64,18 @@ const CommonNavArr = ({ id, name, navigation }) => {
                           navigate("/captcha-tasks");
                           setArrowState(false);
                         } else if (id === 12 && isInviteToHistory) {
-                          navigate("/referral");
+                          navigate(-1);
                           setIsInviteToHistory(false);
+                        } else if (id === 11 && profileToRef) {
+                          setProfileToRef(false);
+                          navigate(-1);
                         } else if (id === 16 && isWalletToHistory) {
                           navigate("/wallet");
                           setIsWalletToHistory(false);
                           setIsRedeemHistory(false);
                         } else if (id === 19 && profileToLvl) {
                           navigate(-1);
-                          setProfileToLv(false);
+                          setProfileToLvl(false);
                         } else {
                           handleArrowClick();
                         }

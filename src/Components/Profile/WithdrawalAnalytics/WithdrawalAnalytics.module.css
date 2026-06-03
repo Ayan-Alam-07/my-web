@@ -2,69 +2,31 @@
   margin-bottom: 24px;
 }
 
-.header {
-  margin-bottom: 18px;
-}
-
-.header h3 {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.header p {
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
-}
-
 .analyticsCard {
-  background: linear-gradient(
-    145deg,
-    rgba(33, 42, 66, 0.95),
-    rgba(20, 27, 43, 0.95)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  border-radius: 22px;
-
   padding: 20px;
-
   text-align: center;
-
   transition: 0.3s ease;
-}
-
-.analyticsCard:hover {
-  transform: translateY(-5px);
-
-  border-color: #5f6fff;
 }
 
 .icon {
   font-size: 28px;
-
   margin-bottom: 12px;
 }
 
 .analyticsCard h2 {
   color: white;
-
   margin-bottom: 6px;
-
+  font-size: 1.7rem;
   font-weight: 700;
 }
 
 .analyticsCard p {
   color: rgba(255, 255, 255, 0.6);
-
   margin: 0;
 }
 
 .emptyState {
   text-align: center;
-
   padding: 40px;
-
   color: rgba(255, 255, 255, 0.6);
 }

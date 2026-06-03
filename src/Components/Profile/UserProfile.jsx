@@ -31,15 +31,15 @@ export default function UserProfile() {
         <div className={`container mt-4 ${styles.profileWrapper}`}>
           <ProfileHero />
 
-          <div className="mt-4">
+          <div className="mt-4 pt-1">
             <StatsSection />
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 mt-lg-4 pt-2">
             <EarningsOverview />
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 mt-lg-4">
             <XPProgress />
           </div>
 
@@ -53,11 +53,11 @@ export default function UserProfile() {
             </div>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4 pt-3 pt-lg-0 mt-lg-3">
             <WithdrawalAnalytics />
           </div>
 
-          <div className="mt-5">
+          <div className="mt-4 pt-3 pt-lg-2">
             <QuickActions />
           </div>
         </div>

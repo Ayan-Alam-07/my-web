@@ -1,119 +1,49 @@
-.card {
-  height: 100%;
-
-  padding: 24px;
-
-  border-radius: 24px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(33, 42, 66, 0.95),
-    rgba(20, 27, 43, 0.95)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  border-color: #5f6fff;
-
-  transform: translateY(-4px);
-}
-
-.header {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 24px;
-}
-
-.header h3 {
-  color: white;
-
-  margin: 0;
-
-  font-size: 1.2rem;
-
-  font-weight: 700;
-}
-
-.header p {
-  margin-top: 5px;
-
-  color: rgba(255, 255, 255, 0.6);
-
-  font-size: 0.85rem;
-}
-
 .headerIcon {
   font-size: 1.8rem;
-
+  cursor: pointer;
   color: #5f6fff;
 }
 
 .codeBox {
   background: rgba(255, 255, 255, 0.04);
-
   border: 1px dashed rgba(95, 111, 255, 0.6);
-
   border-radius: 18px;
-
   padding: 20px;
-
   text-align: center;
-
   margin-bottom: 20px;
 }
 
 .codeBox span {
   color: rgba(255, 255, 255, 0.65);
-
   font-size: 0.85rem;
 }
 
 .codeBox h2 {
   color: white;
-
   margin-top: 8px;
-
   letter-spacing: 2px;
-
   font-weight: 700;
 }
 
 .buttonRow {
   display: flex;
-
   gap: 12px;
-
   margin-bottom: 20px;
 }
 
 .primaryBtn,
 .secondaryBtn {
   flex: 1;
-
   border: none;
-
   border-radius: 14px;
-
   padding: 12px;
-
   cursor: pointer;
-
   transition: 0.3s ease;
-
   font-weight: 600;
 }
 
 .primaryBtn {
   background: #5f6fff;
-
   color: white;
 }
 
@@ -123,7 +53,6 @@
 
 .secondaryBtn {
   background: rgba(255, 255, 255, 0.08);
-
   color: white;
 }
 
@@ -133,26 +62,31 @@
 
 .historyCard {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
-
   padding: 14px;
-
   border-radius: 14px;
-
   cursor: pointer;
-
   background: rgba(255, 255, 255, 0.04);
-
   color: white;
-
   transition: 0.3s ease;
 }
 
 .historyCard:hover {
   background: rgba(95, 111, 255, 0.12);
+}
+
+@media (max-width: 992px) {
+  .header {
+    align-items: start;
+  }
+}
+@media (max-width: 575px) {
+  .primaryBtn,
+  .secondaryBtn,
+  .historyCard {
+    padding: 16px 12px;
+    font-size: 3.8vw;
+  }
 }

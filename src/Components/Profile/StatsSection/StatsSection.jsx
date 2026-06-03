@@ -6,24 +6,10 @@ import { FaWallet } from "react-icons/fa";
 import { useList } from "../../../Context/ContextStore";
 
 import styles from "./StatsSection.module.css";
+import css from "../UserProfile.module.css";
 
 const StatsSection = () => {
-  const { user, level, data, withdrawals } = useList();
-
-  console.group("STATS SECTION");
-
-  console.log("Coins:", user?.coins);
-  console.log("Level:", level);
-  console.log("XP:", data?.xp);
-  console.log("Withdrawals:", withdrawals);
-
-  console.groupEnd();
-
-  if (!user) {
-    console.error("STATS SECTION ERROR: User not found");
-
-    return null;
-  }
+  const { user, level, data, withdrawals, rank } = useList();
 
   const stats = [
     {
@@ -42,8 +28,8 @@ const StatsSection = () => {
     },
     {
       id: 3,
-      title: "Current Level",
-      value: level ?? 0,
+      title: "Rank",
+      value: rank ?? 0,
       icon: <FaTrophy />,
       color: "#00C853",
     },
@@ -60,7 +46,7 @@ const StatsSection = () => {
     <div className="row g-3 mb-4">
       {stats.map((stat) => (
         <div key={stat.id} className="col-6 col-lg-3">
-          <div className={styles.card}>
+          <div className={css.card}>
             <div
               className={styles.icon}
               style={{
@@ -70,7 +56,10 @@ const StatsSection = () => {
               {stat.icon}
             </div>
 
-            <h4 className={styles.value}>{stat.value}</h4>
+            <h4 className={styles.value}>
+              {stat.id === 3 && <span className="me-1">#</span>}
+              {stat.value}
+            </h4>
 
             <p className={styles.title}>{stat.title}</p>
           </div>

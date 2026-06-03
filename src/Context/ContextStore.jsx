@@ -6,6 +6,7 @@ import { getMyWithdrawals } from "../services/walletService";
 
 import { getDailyCheckinRewards } from "../services/dailyCheckinService";
 import { getLevel, getLeaderboard } from "../services/levelService";
+import { getWeeklyLeaderboard } from "../services/leaderboardApi";
 
 const ListContext = createContext();
 
@@ -49,6 +50,7 @@ export const ListProvider = ({ children }) => {
   const [isRedeemHistory, setIsRedeemHistory] = useState(false);
   const [isWalletToHistory, setIsWalletToHistory] = useState(false);
   const [profileToLvl, setProfileToLvl] = useState(false);
+  const [profileToRef, setProfileToRef] = useState(false);
 
   const [rewards, setRewards] = useState([]);
   const [currentDay, setCurrentDay] = useState(1);
@@ -58,8 +60,18 @@ export const ListProvider = ({ children }) => {
   const [data, setData] = useState(null);
   const [level, setLevel] = useState(0);
   const [dataLoading, setDataLoading] = useState(true);
-  const [leaderboard, setLeaderboard] = useState([]);
 
+  // leaderboard
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [currentUserRank, setCurrentUserRank] = useState(null);
+  const [meta, setMeta] = useState({
+    page: 1,
+    limit: 20,
+    total: 0,
+    totalPages: 1,
+  });
+  const participated = currentUserRank?.participated || 0;
+  const rank = currentUserRank?.rank || 0;
   const navigate = useNavigate();
   // const token = localStorage.getItem("token");
 
@@ -90,7 +102,60 @@ export const ListProvider = ({ children }) => {
   }, [user?.token]);
 
   // =========================
-  // 🔐 Level & leaderboard
+  // 🔐 Leaderboard
+  // =========================
+
+  const fetchLeaderboard = async (page = 1) => {
+    try {
+      const token =
+        localStorage.getItem("token") ||
+        localStorage.getItem("accessToken") ||
+        sessionStorage.getItem("token") ||
+        sessionStorage.getItem("accessToken");
+
+      if (!token) {
+        showError("Please login first.");
+        window.location.href = "/login";
+        return;
+      }
+
+      setIsLoading(true);
+
+      const response = await getWeeklyLeaderboard(page, 20);
+      const payload = response?.data || response || {};
+      console.log(payload); // log statement
+
+      setLeaderboard(payload.data || []);
+      setCurrentUserRank(payload.currentUserRank || null);
+
+      setMeta({
+        page: payload.page || 1,
+        limit: payload.limit || 20,
+        total: payload.total || 0,
+        totalPages: payload.totalPages || 1,
+      });
+    } catch (error) {
+      console.error("Failed to fetch leaderboard", error);
+
+      if (error?.response?.status === 401) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("accessToken");
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("accessToken");
+        showError("Session expired. Please login again.");
+        window.location.href = "/login";
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLeaderboard(1);
+  }, []);
+
+  // =========================
+  // 🔐 Level
   // =========================
 
   const fetchData = async () => {
@@ -303,6 +368,15 @@ export const ListProvider = ({ children }) => {
         level,
         profileToLvl,
         setProfileToLvl,
+        currentUserRank,
+        setCurrentUserRank,
+        meta,
+        setMeta,
+        participated,
+        rank,
+        fetchLeaderboard,
+        profileToRef,
+        setProfileToRef,
 
         fetchRewards,
 

@@ -13,20 +13,6 @@ const ProfileHero = () => {
 
   const { user, level, data } = useList();
 
-  console.group("PROFILE HERO");
-
-  console.log("User Object:", user);
-  console.log("Level:", level);
-  console.log("XP Data:", data);
-
-  console.groupEnd();
-
-  if (!user) {
-    console.error("PROFILE HERO ERROR: User object missing");
-
-    return null;
-  }
-
   const extractedName = user?.email ? user.email.split("@")[0] : "VELOOP User";
 
   const avatarLetter = user?.email ? user.email.charAt(0).toUpperCase() : "V";
@@ -34,14 +20,10 @@ const ProfileHero = () => {
   const xpProgress = useMemo(() => {
     const progress = Number(data?.progress) || 0;
 
-    console.log("XP Progress Calculated:", progress);
-
     return Math.min(progress, 100);
   }, [data]);
 
   const copyUserId = () => {
-    console.log("Copying User ID:", user?.userId);
-
     navigator.clipboard.writeText(user?.userId || "");
 
     showSuccess("User ID Copied");

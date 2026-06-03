@@ -4,15 +4,10 @@ import { FcApproval } from "react-icons/fc";
 import { useList } from "../../../Context/ContextStore";
 
 import styles from "./WithdrawalAnalytics.module.css";
+import css from "../UserProfile.module.css";
 
 const WithdrawalAnalytics = () => {
   const { withdrawals } = useList();
-
-  console.group("WITHDRAWAL ANALYTICS");
-
-  console.log("Withdrawals:", withdrawals);
-
-  console.groupEnd();
 
   const withdrawalList = Array.isArray(withdrawals) ? withdrawals : [];
 
@@ -61,17 +56,18 @@ const WithdrawalAnalytics = () => {
   ];
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <h3>Withdrawal Analytics</h3>
-
-        <p>Monitor your payout performance</p>
+    <div className={styles.card}>
+      <div className={css.header}>
+        <div>
+          <h3>Withdrawal Analytics</h3>
+          <p>Monitor your payout performance</p>
+        </div>
       </div>
 
       <div className="row g-3 mb-4">
         {analyticsCards.map((card) => (
           <div key={card.id} className="col-md-6 col-xl-3">
-            <div className={styles.analyticsCard}>
+            <div className={`${css.card} ${styles.analyticsCard}`}>
               <div
                 className={styles.icon}
                 style={{

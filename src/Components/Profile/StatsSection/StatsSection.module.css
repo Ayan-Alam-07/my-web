@@ -1,50 +1,36 @@
-.card {
-  height: 100%;
-
-  background: linear-gradient(
-    145deg,
-    rgba(38, 48, 75, 0.95),
-    rgba(24, 32, 51, 0.95)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  border-radius: 20px;
-
-  padding: 20px;
-
-  transition: all 0.3s ease;
-
-  backdrop-filter: blur(14px);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-
-  border-color: #5f6fff;
-
-  box-shadow: 0 12px 30px rgba(95, 111, 255, 0.18);
-}
-
 .icon {
   font-size: 1.8rem;
-
   margin-bottom: 14px;
 }
 
 .value {
   color: white;
-
   font-size: 1.7rem;
   font-weight: 700;
-
   margin-bottom: 8px;
 }
 
 .title {
   margin: 0;
-
   color: rgba(255, 255, 255, 0.65);
-
   font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 575px) {
+  .value {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 3.4vw;
+  }
+}
+
+@media (max-width: 374px) {
+  .value {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 3.4vw;
+  }
 }

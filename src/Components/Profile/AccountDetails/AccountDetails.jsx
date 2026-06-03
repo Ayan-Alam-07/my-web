@@ -7,24 +7,10 @@ import { FaMedal } from "react-icons/fa";
 import { useList } from "../../../Context/ContextStore";
 
 import styles from "./AccountDetails.module.css";
+import css from "../UserProfile.module.css";
 
 const AccountDetails = () => {
   const { user, level, data, isAuthenticated } = useList();
-
-  console.group("ACCOUNT DETAILS");
-
-  console.log("User:", user);
-  console.log("Level:", level);
-  console.log("XP Data:", data);
-  console.log("Authenticated:", isAuthenticated);
-
-  console.groupEnd();
-
-  if (!user) {
-    console.error("ACCOUNT DETAILS ERROR: User Missing");
-
-    return null;
-  }
 
   const details = [
     {
@@ -55,8 +41,8 @@ const AccountDetails = () => {
   ];
 
   return (
-    <div className={styles.card}>
-      <div className={styles.header}>
+    <div className={`${css.card} ${styles.accCard}`}>
+      <div className={css.header}>
         <h3>Account Details</h3>
 
         <div className={isAuthenticated ? styles.online : styles.offline}>
@@ -65,14 +51,23 @@ const AccountDetails = () => {
       </div>
 
       <div className={styles.details}>
-        {details.map((item) => (
-          <div key={item.title} className={styles.detailItem}>
+        {details.map((item, idx) => (
+          <div
+            key={item.title}
+            className={styles.detailItem}
+            style={{
+              marginBottom: idx === details.length - 1 ? "7.44px" : "",
+            }}
+          >
             <div className={styles.icon}>{item.icon}</div>
 
             <div>
               <p className={styles.label}>{item.title}</p>
 
-              <h5 className={styles.value}>{item.value}</h5>
+              <h5 className={styles.value}>
+                {details.length - 3 === idx ? "0" : ""}
+                {item.value}{" "}
+              </h5>
             </div>
           </div>
         ))}
