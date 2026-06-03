@@ -2,6 +2,7 @@ import { FaPlayCircle, FaCoins } from "react-icons/fa";
 import { MdOndemandVideo } from "react-icons/md";
 import style from "./WatchAdBanner.module.css";
 import { useNavigate } from "react-router-dom";
+import RewardArrow from "../CommonComponents/RewardArrow";
 
 const WatchAdBanner = () => {
   const navigate = useNavigate();
@@ -34,7 +35,10 @@ const WatchAdBanner = () => {
                 </p>
 
                 <div>
-                  <button className={style.watchAdBtn}>Watch Ad</button>
+                  <button className={style.watchAdBtn}>
+                    <span className="me-2">Watch Ad</span>{" "}
+                    <RewardArrow marginB={"3px"} />
+                  </button>
                 </div>
 
                 <div className={style.watchAdsCounter}>
