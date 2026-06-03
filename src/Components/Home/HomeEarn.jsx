@@ -402,7 +402,7 @@ const HomeEarn = () => {
           </div>
         </div>
         <div className="row justify-content-around mx-sm-3 mx-lg-0">
-          <div className="col-12 col-lg-12 mx-lg-3 ps-lg-3 pe-lg-5 px-0 mt-3 pt-1 mb-4">
+          <div className="col-12 col-lg-12 mx-lg-3 ps-lg-3 pe-lg-5 px-0 mt-3 pt-1 mb-4 px-1 px-md-0">
             {follows.map((follow, idx) => (
               <div key={idx} className={style.socialTaskCard}>
                 {/* LEFT SIDE */}

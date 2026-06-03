@@ -294,7 +294,7 @@ Mobile-first responsive
 
 .description {
   margin: 0 0 18px;
-
+  display: none;
   color: var(--muted);
 
   font-size: 0.875rem;
@@ -393,12 +393,12 @@ Mobile-first responsive
 
   width: 100%;
 
-  padding: 12px 18px;
-
+  padding: 16px 18px;
+  margin: 10px 0 0 0;
   font-weight: 700;
 
-  font-size: 0.875rem;
-
+  font-size: 4.1vw;
+  letter-spacing: 0.3px;
   color: #0e1230;
 
   border-radius: 12px;
@@ -683,8 +683,8 @@ TABLET — min-width: 576px
   }
 
   .description {
+    display: block;
     font-size: 0.95rem;
-
     margin-bottom: 22px;
   }
 
@@ -711,6 +711,7 @@ TABLET — min-width: 576px
   }
 
   .cta {
+    margin: 0;
     width: 86%;
     padding: 15px 22px;
     font-size: 1rem;

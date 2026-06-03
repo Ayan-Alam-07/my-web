@@ -429,9 +429,9 @@
   gap: 8px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  padding: 12px 14px;
+  padding: 15px 16px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 4vw;
   font-weight: 500;
   transition: 0.2s;
 }

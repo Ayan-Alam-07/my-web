@@ -476,15 +476,15 @@
   gap: 0.55rem;
   width: 100%;
   min-height: 3.15rem;
-  padding: 0.9rem 1rem;
+  padding: 1rem;
   margin: 5px 0 0 0;
   border: none;
   border-radius: 1rem;
   cursor: pointer;
   background: linear-gradient(135deg, #fbbf24, #f59e0b);
   /* color: #1f2937; */
-  color: #f3f3f3;
-  font-size: 3.75vw;
+  color: #181a2a;
+  font-size: 4vw;
   font-weight: 900;
   letter-spacing: 0.5px;
   box-shadow:
