@@ -64,7 +64,7 @@ const WithdrawalAnalytics = () => {
         </div>
       </div>
 
-      <div className="row g-3 mb-4">
+      <div className="row g-3 mb-4 px-2 px-md-0">
         {analyticsCards.map((card) => (
           <div key={card.id} className="col-md-6 col-xl-3">
             <div className={`${css.card} ${styles.analyticsCard}`}>
