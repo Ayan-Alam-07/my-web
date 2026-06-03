@@ -44,7 +44,12 @@ const HomeNav = () => {
                     />
                   )}
                   {locationData.loading ? "Reg...." : locationData.country_code}
-                  {locationData.error ? "Err. 404..." : ""}
+                  <span className="d-md-none">
+                    {locationData.error ? "Err.." : ""}
+                  </span>
+                  <span className="d-none d-md-inline-block">
+                    {locationData.error ? "Err. 404..." : ""}
+                  </span>
                 </span>
                 <div className="ms-4">
                   <SettingsDropdown />
