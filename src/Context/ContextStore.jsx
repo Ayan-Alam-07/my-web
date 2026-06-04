@@ -151,8 +151,11 @@ export const ListProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (!user?.token) {
+      return;
+    }
     fetchLeaderboard(1);
-  }, []);
+  }, [user?.token]);
 
   // =========================
   // 🔐 Level
