@@ -4,6 +4,7 @@ import styles from "./SecFooter.module.css";
 
 const SecFooter = ({ name, link, mt = 40, mb = 20 }) => {
   const navigate = useNavigate();
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = [
     { title: "Terms", link: "terms-and-conditions" },
@@ -19,24 +20,25 @@ const SecFooter = ({ name, link, mt = 40, mb = 20 }) => {
       <div className={styles.footerDivider} />
       <p className={styles.footerText}>
         <span
-          className={styles.others}
           onClick={() => navigate("/dmca-copyright-policy")}
           style={{ cursor: "pointer" }}
         >
-          © 2025
+          © 2025-{currentYear}
         </span>{" "}
+        <span>VELoop Rewards</span> <span className={styles.footerDot}>·</span>{" "}
+        All rights reserved
+      </p>
+      <div className={styles.footerLinks}>
         <span
-          className={styles.others}
+          className={styles.footerLink}
           onClick={() => {
-            console.log("clicked");
             navigate(link);
           }}
         >
           {name}
-        </span>{" "}
-        · All rights reserved
-      </p>
-      <div className={styles.footerLinks}>
+        </span>
+        <span className={styles.footerDot}>·</span>
+
         {footerLinks.map((link, idx) => (
           <React.Fragment key={link.title}>
             <span

@@ -158,8 +158,8 @@ export default function GiveawayBody() {
       <SecFooter
         mt={80}
         mb={10}
-        name={"Watch AD"}
-        link={"/help-center/earning/watch-ads"}
+        name={"Giveaway"}
+        link={"/help-center/safety/promo-codes"}
       />
     </div>
   );

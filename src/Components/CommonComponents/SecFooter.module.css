@@ -17,9 +17,10 @@
 }
 
 .footerText {
-  font-size: 12px;
+  font-size: 12.5px;
   margin: 0 0 8px;
   color: #53637a;
+  letter-spacing: 0.3px;
 }
 
 .footerLinks {
@@ -34,6 +35,7 @@
   color: #6b7d96;
   cursor: pointer;
   transition: color 0.2s ease;
+  letter-spacing: 0.2px;
 }
 
 .others {
@@ -47,13 +49,26 @@
 }
 
 .footerDot {
-  color: #334155;
+  color: #7a8799;
   font-size: 12px;
 }
 
-@media (max-width: 991px) {
-  .footerLink,
+@media (max-width: 992px) {
   .footerText {
+    font-size: 14px;
+  }
+  .footerLink {
     font-size: 13.5px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footerText {
+    font-size: 3.2vw;
+    letter-spacing: 0.2px;
+  }
+  .footerLink {
+    font-size: 3.07vw;
+    letter-spacing: 0.1px;
   }
 }
