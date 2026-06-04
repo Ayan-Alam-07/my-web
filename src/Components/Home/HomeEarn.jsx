@@ -23,6 +23,7 @@ import RewardArrow from "../CommonComponents/RewardArrow";
 import LeaderboardBanner from "../../RewardSections/Leaderboard/LeaderboardBanner";
 import SupportBanner from "../Support/SupportBanner";
 import BonusBanner from "./Bonus/BonusBanner";
+import SecFooter from "../CommonComponents/SecFooter";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -447,6 +448,13 @@ const HomeEarn = () => {
         >
           More Features & Earning option are on the Way...
         </p>
+
+        <SecFooter
+          mt={0}
+          mb={30}
+          name={"Rewards Policies"}
+          link={"/help-center"}
+        />
       </div>
     </div>
   );
