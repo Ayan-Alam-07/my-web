@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { showError, showSuccess, showWarning } from "../utils/Toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getMyWithdrawals } from "../services/walletService";
 
@@ -32,7 +32,7 @@ export const ListProvider = ({ children }) => {
     { id: 13, name: "Watch Ads" },
     { id: 14, name: "Daily Bonus" },
     { id: 15, name: "Tap Token" },
-    { id: 16, name: "Redeem History" },
+    { id: 16, name: "Withdrawal History" },
     { id: 17, name: "Daily Streak" },
     { id: 18, name: "Spin The Wheel" },
     { id: 19, name: "Level-Up" },
@@ -61,6 +61,9 @@ export const ListProvider = ({ children }) => {
   const [level, setLevel] = useState(0);
   const [dataLoading, setDataLoading] = useState(true);
 
+  // location
+  const location = useLocation();
+
   // leaderboard
   const [leaderboard, setLeaderboard] = useState([]);
   const [currentUserRank, setCurrentUserRank] = useState(null);
@@ -74,6 +77,14 @@ export const ListProvider = ({ children }) => {
   const rank = currentUserRank?.rank || 0;
   const navigate = useNavigate();
   // const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (location.pathname !== "/withdrawal-history") {
+      setIsRedeemHistory(false);
+    } else {
+      setIsRedeemHistory(true);
+    }
+  }, [location.pathname]);
 
   // =========================
   // 🔐 fetching Withdrawals

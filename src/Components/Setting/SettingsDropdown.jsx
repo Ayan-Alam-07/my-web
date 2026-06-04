@@ -55,23 +55,18 @@ export default function SettingsDropdown() {
       title: "Tasks",
       click: () => navigate("/captcha-tasks"),
     },
-    {
-      id: 3,
-      title: "Wallet",
-      click: () => navigate("/wallet"),
-    },
 
     {
-      id: 5,
+      id: 3,
       title: "Leaderboard",
       click: () => navigate("/leaderboard"),
     },
     {
-      id: 6,
-      title: "Redeem History",
+      id: 5,
+      title: "Withdrawal History",
       click: () => {
         setIsRedeemHistory(true);
-        navigate("/redeem-history");
+        navigate("/withdrawal-history");
       },
     },
   ];

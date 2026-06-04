@@ -202,7 +202,7 @@ const Transactions = () => {
               onClick={() => {
                 setIsWalletToHistory(true);
                 setIsRedeemHistory(true);
-                navigate("/redeem-history");
+                navigate("/withdrawal-history");
               }}
             >
               see all transactions{" "}

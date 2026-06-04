@@ -383,7 +383,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/redeem-history"
+          path="/withdrawal-history"
           element={
             <ProtectedRoute>
               <Transactions />
