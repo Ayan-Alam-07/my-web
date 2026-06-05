@@ -8,7 +8,7 @@ const LvlHeroCard = ({ data }) => {
   const metaLvlData = [
     { title: "Current badge", reward: data?.badge || "Starter" },
     { title: "XP left to next level", reward: `${remaining} XP` },
-    { title: "Next Level", reward: data.level },
+    { title: "Next Level", reward: data.level + 1 },
   ];
 
   const metaRewards = [
@@ -42,8 +42,7 @@ const LvlHeroCard = ({ data }) => {
           {metaLvlData.map((meta, idx) => (
             <div
               key={idx}
-              className={`${styles.metaBox} ${idx === metaLvlData.length - 1 ? styles.nextLevel : ""}`}
-              style={{ width: idx === metaLvlData.length - 1 ? "96%" : "" }}
+              className={`${styles.metaBox} ${idx === metaLvlData.length - 1 ? styles.nextLevel : ""} ${idx === metaLvlData.length - 1 ? styles.extraWdth : ""}`}
             >
               <span>{meta.title}</span>
               <strong>{meta.reward}</strong>

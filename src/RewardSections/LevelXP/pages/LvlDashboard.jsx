@@ -33,7 +33,7 @@ const LvlDashboard = () => {
     >
       <CommonNavArr id={19} navigation={"/Home"} />
 
-      <section className={`container mt-4 ${styles.container} px-3`}>
+      <section className={`container mt-4 mt-md-5 ${styles.container} px-3`}>
         <div className={styles.topGrid}>
           <LvlHeroCard data={data} />
           <LvlBadge badge={data.badge} />
@@ -76,7 +76,7 @@ const LvlDashboard = () => {
         </div>
       </section>
       <SecFooter
-        mt={25}
+        mt={60}
         mb={10}
         name={"Level System"}
         link={"/help-center/earning/level-system"}
