@@ -1,15 +1,17 @@
-// src/Components/Bonus/BonusBody.jsx
-
 import { useEffect, useState } from "react";
-import style from "./BonusBody.module.css";
+import styles from "./BonusBody.module.css";
+import SecFooter from "../../CommonComponents/SecFooter";
 import { GiProfit } from "react-icons/gi";
+import { FaCheck, FaLock, FaShieldAlt, FaCoins } from "react-icons/fa";
+import { BsLightningFill } from "react-icons/bs";
+import { TiTick } from "react-icons/ti";
+
 import {
   claimBonusReward,
   getBonusRewards,
 } from "../../../services/bounsService";
 import { showError, showSuccess } from "../../../utils/Toast";
 import { useList } from "../../../Context/ContextStore";
-import { TiTick } from "react-icons/ti";
 
 const BonusBody = () => {
   const { fetchCoins, setIsLoading } = useList();
@@ -23,7 +25,7 @@ const BonusBody = () => {
     const fetchBonusRewards = async () => {
       try {
         const data = await getBonusRewards();
-
+        console.log(data);
         setDoneWatch(data?.todayAdsWatched || 0);
         setWatchBonus(data?.rewards || []);
       } catch (error) {
@@ -70,76 +72,149 @@ const BonusBody = () => {
   };
 
   return (
-    <div className="container-fluid mt-4 pt-1">
-      <div className="container">
-        <div className="row mb-4">
-          {watchBonus.map((bonus) => {
-            const completed = Math.min(doneWatch, bonus.reqWatch);
-            const progress = (completed / bonus.reqWatch) * 100;
-            const isUnlocked = doneWatch >= bonus.reqWatch;
-            const isClaimed = bonus.claimed;
+    <div className="container-fluid px-0 px-md-2">
+      <div className="container mt-3 pt-1">
+        <div className={styles.bonusContainer}>
+          <div className={styles.bonusHeader}>
+            <h1 className={styles.bonusTitle}>PRIZE VAULT</h1>
+            <div className={styles.bonusSubtitle}>{doneWatch} Ads Watched</div>
+          </div>
 
-            return (
-              <div
-                key={bonus._id}
-                className="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-3"
-              >
-                <div className={style.bonusCont}>
-                  <div className={style.bonusinfoPointCont}>
-                    <p className={style.adPara}>
-                      <span className={style.adText}>Ad</span> Bonus
-                    </p>
+          <div className={styles.ladderContainer}>
+            <div className={styles.energyRail}>
+              {watchBonus.map((bonus) => {
+                const isUnlocked = doneWatch >= bonus.reqWatch;
 
-                    <span className={style.bonusCoin}>
-                      + {bonus.bonusCoin} <span>VEs</span>
-                    </span>
-                  </div>
+                const isClaimed = bonus.claimed;
 
-                  <div className={style.progressWrap}>
-                    <div className={style.progressText}>
-                      {Math.round(progress)}%
-                    </div>
+                return (
+                  <div
+                    key={`node-${bonus._id}`}
+                    className={`
+          ${styles.railNode}
+          ${
+            isClaimed
+              ? styles.completedNode
+              : isUnlocked
+                ? styles.activeNode
+                : ""
+          }
+        `}
+                  />
+                );
+              })}
+            </div>
 
-                    <div className={style.progressBar}>
-                      <div
-                        className={style.progressFill}
-                        style={{ width: `${progress}%` }}
-                      ></div>
-                    </div>
-                  </div>
+            <div className={styles.rewardsStack}>
+              {watchBonus.map((bonus) => {
+                const isUnlocked = doneWatch >= bonus.reqWatch;
 
-                  <div className={style.bonusAdCount}>
-                    <h4 className={style.bonusCount}>
-                      <span className={style.completedBonus}>{completed}</span>{" "}
-                      /{" "}
-                      <span className={style.bonusReqWatch}>
-                        {bonus.reqWatch}
-                      </span>
-                    </h4>
+                const isClaimed = bonus.claimed;
 
-                    <button
-                      className={`${style.claimBtn} ${
-                        isUnlocked && !isClaimed ? style.active : ""
-                      } ${!isUnlocked ? style.locked : ""} ${isClaimed ? style.bonusClaimed : ""}`}
-                      onClick={() => handleClaim(bonus)}
-                      disabled={loadingId === bonus._id || isClaimed}
-                    >
-                      {isClaimed ? <TiTick size={18} /> : <GiProfit />}
+                const isLoading = loadingId === bonus._id;
 
-                      {isClaimed
-                        ? "Claimed"
-                        : loadingId === bonus._id
-                          ? "Claiming..."
+                console.group(
+                  `%c[PRIZE VAULT] ${bonus._id}`,
+                  "color:#FFD700;font-weight:bold",
+                );
+
+                console.log("bonusCoin:", bonus.bonusCoin);
+
+                console.log("reqWatch:", bonus.reqWatch);
+
+                console.log("doneWatch:", doneWatch);
+
+                console.log("claimed:", isClaimed);
+
+                console.log("unlocked:", isUnlocked);
+
+                console.groupEnd();
+
+                return (
+                  <div
+                    key={bonus._id}
+                    className={`${styles.token}
+          ${
+            isClaimed
+              ? styles.claimed
+              : isUnlocked
+                ? styles.active
+                : styles.locked
+          }`}
+                  >
+                    {/* <div className={styles.tokenGlow} /> */}
+
+                    <div className={styles.tokenVisual}>
+                      <div className={styles.tokenLabel}>
+                        {isClaimed
+                          ? "COLLECTED"
                           : isUnlocked
-                            ? "Claim"
-                            : "Locked"}
-                    </button>
+                            ? "UNLOCKED"
+                            : "LOCKED"}
+                      </div>
+
+                      <div className={styles.tokenAmount}>
+                        <span className={styles.tokenValue}>
+                          +{bonus.bonusCoin}
+                        </span>
+
+                        <span className={styles.tokenCurrency}>VEs</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.tokenAction}>
+                      {isClaimed ? (
+                        <button disabled className={styles.claimedBadge}>
+                          <TiTick />
+                          Owned
+                        </button>
+                      ) : isLoading ? (
+                        <button disabled className={styles.btnClaim}>
+                          Claiming...
+                        </button>
+                      ) : isUnlocked ? (
+                        <button
+                          onClick={() => handleClaim(bonus)}
+                          className={styles.btnClaim}
+                        >
+                          <GiProfit />
+                          Collect
+                        </button>
+                      ) : (
+                        <div
+                          className={`${styles.tokenLabel} ${styles.btnStatus}`}
+                        >
+                          <FaLock size={20} className="me-2" />
+                          {isClaimed
+                            ? "COLLECTED"
+                            : isUnlocked
+                              ? "UNLOCKED"
+                              : "LOCKED"}
+                        </div>
+                      )}
+                      <div className={styles.tokenReq}>
+                        {isClaimed
+                          ? "Achievement Unlocked"
+                          : isUnlocked
+                            ? "Ready To Collect"
+                            : `${Math.max(
+                                0,
+                                bonus.reqWatch - doneWatch,
+                              )} Ads Required`}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
         </div>
+        <SecFooter
+          mt={30}
+          mb={35}
+          name={"Bonus"}
+          link={"/help-center/earning/watch-ad-bonuses"}
+        />
       </div>
     </div>
   );
