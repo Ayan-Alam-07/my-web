@@ -403,12 +403,18 @@
   }
 }
 
+@media (max-width: 699px) {
+  .rewardsStack {
+    min-width: 500px;
+  }
+}
+
 @media (max-width: 575px) {
   .ladderContainer {
     margin: 0 0 0 60px;
   }
   .rewardsStack {
-    min-width: calc(100% + 16vw);
+    min-width: calc(100% + 22vw);
     gap: 24px;
   }
   .tokenValue {
@@ -454,6 +460,20 @@
   }
 }
 
+@media (max-width: 500px) {
+  .ladderContainer {
+    margin: 0 0 0 5vw;
+  }
+
+  .rewardsStack {
+    min-width: calc(100% + 25vw);
+    gap: 36px;
+  }
+  .tokenValue {
+    font-size: 10vw;
+  }
+}
+
 @media (max-width: 435px) {
   .ladderContainer {
     gap: 14px;
@@ -466,6 +486,13 @@
   }
   .tokenValue {
     font-size: 10vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .ladderContainer {
+    gap: 14px;
+    margin: 0 0 0 4vw;
   }
 }
 

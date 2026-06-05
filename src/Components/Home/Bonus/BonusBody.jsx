@@ -73,7 +73,7 @@ const BonusBody = () => {
 
   return (
     <div className="container-fluid px-0 px-md-2">
-      <div className="container mt-3 pt-1">
+      <div className="container mt-3 pt-2">
         <div className={styles.bonusContainer}>
           <div className={styles.bonusHeader}>
             <h1 className={styles.bonusTitle}>PRIZE VAULT</h1>
