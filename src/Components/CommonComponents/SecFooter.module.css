@@ -3,6 +3,14 @@
   /* margin: 40px 0 10px; */
   text-align: center;
   z-index: 999;
+  font-family:
+    "nunito",
+    "outfit",
+    system-ui,
+    -apple-system,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .footerDivider {

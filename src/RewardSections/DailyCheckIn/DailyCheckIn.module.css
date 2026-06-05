@@ -1,6 +1,6 @@
 .pageWrapper {
   min-height: 100vh;
-  padding: 24px 0 50px;
+  padding: 24px 0 0;
   background:
     radial-gradient(
       circle at top left,
@@ -418,7 +418,7 @@
 @media (min-width: 576px) {
   .pageWrapper {
     min-height: 100vh;
-    padding: 32px 0 50px;
+    padding: 32px 0 0;
   }
 
   .heroSection {
@@ -578,7 +578,7 @@
 
 @media (min-width: 992px) {
   .pageWrapper {
-    padding: 24px 0 35px;
+    padding: 24px 0 0;
   }
 
   .heroSection {

@@ -292,6 +292,8 @@ export default function DailyCheckIn() {
             })}
           </div>
           <SecFooter
+            mt={70}
+            mb={37}
             name={"Daily Streak"}
             link={"/help-center/earning/streak-rewards"}
           />
