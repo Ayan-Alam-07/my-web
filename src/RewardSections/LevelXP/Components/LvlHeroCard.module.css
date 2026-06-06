@@ -82,14 +82,16 @@
   min-width: 100%;
   padding: 14px 16px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
+  /* background: rgba(255, 255, 255, 0.04); */
+  background: rgba(255, 255, 255, 0.062);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .metaBox span {
   display: block;
-  color: #9eadc4;
+  color: #b3c5df;
   font-size: 0.8rem;
+  letter-spacing: 0.4px;
   margin-bottom: 6px;
 }
 

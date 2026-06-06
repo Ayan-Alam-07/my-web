@@ -19,7 +19,7 @@ const LvlHeroCard = ({ data }) => {
       desc: "Use your VEs to redeem rewards, & stay active.",
     },
     {
-      title: "Next Reward",
+      title: "Next Lvl Reward",
       value: `${data?.lvlReward}`,
       icon: <PiTreasureChestFill />,
       desc: "Use your VEs to redeem rewards, & stay active.",
@@ -42,7 +42,7 @@ const LvlHeroCard = ({ data }) => {
           {metaLvlData.map((meta, idx) => (
             <div
               key={idx}
-              className={`${styles.metaBox} ${idx === metaLvlData.length - 1 ? styles.nextLevel : ""} ${idx === metaLvlData.length - 1 ? styles.extraWdth : ""}`}
+              className={`${metaLvlData.length - 1 === idx ? "d-none d-md-inline-block" : ""} ${styles.metaBox} ${idx === metaLvlData.length - 1 ? styles.nextLevel : ""} ${idx === metaLvlData.length - 1 ? styles.extraWdth : ""}`}
             >
               <span>{meta.title}</span>
               <strong>{meta.reward}</strong>

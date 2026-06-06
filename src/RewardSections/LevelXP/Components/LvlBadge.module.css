@@ -48,8 +48,8 @@
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 700;
-  /* color: #f8fafc; */
-  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafcf5;
+  background: rgba(255, 255, 255, 0.082);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -139,6 +139,7 @@
 .content p {
   margin: 0;
   color: #cbd5e1;
+  letter-spacing: 0.3px;
   line-height: 1.65;
 }
 
@@ -449,9 +450,45 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 991px) {
+  .content h3 {
+    font-size: 4vw;
+  }
+  .content p {
+    font-size: 18px;
+  }
+  .metaItem span {
+    font-size: 14.5px;
+  }
+  .metaItem strong {
+    font-size: 18px;
+  }
+  .badgeCard {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 575px) {
   .meta {
-    grid-template-columns: 1fr;
+    grid-template-columns: unset;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .metaItem:nth-child(1) {
+    width: 40%;
+  }
+
+  .badgeCard {
+    padding: 24px 20px;
+  }
+
+  .metaItem span {
+    font-size: 3.5vw;
+  }
+
+  .metaItem strong {
+    font-size: 4vw;
   }
 
   .outerRing {
@@ -459,7 +496,22 @@
     height: 146px;
   }
 
+  .badgeShell {
+    margin: 30px 0 20px;
+  }
+
   .icon {
     font-size: 2.5rem;
+  }
+  .content h3 {
+    font-size: 7.5vw;
+  }
+  .content p {
+    font-size: 17px;
+  }
+}
+@media (max-width: 375px) {
+  .content p {
+    font-size: 4.5vw;
   }
 }
