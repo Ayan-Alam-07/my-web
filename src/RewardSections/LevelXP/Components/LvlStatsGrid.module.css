@@ -1,6 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 18px;
 }
 
@@ -27,17 +28,27 @@
   color: #f2f8ff;
   font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 4px;
+  margin: 8px 0;
 }
 
 .card p {
   margin: 0;
   color: #cbd5e1;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 991px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .card strong {
+    font-size: 22px;
+  }
+
+  .card p {
+    font-size: 0.85rem;
   }
 }

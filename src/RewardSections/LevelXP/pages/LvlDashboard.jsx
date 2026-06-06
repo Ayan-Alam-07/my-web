@@ -7,8 +7,6 @@ import LvlHeroCard from "../Components/LvlHeroCard";
 import LvlProgressBar from "../Components/LvlProgressBar";
 import LvlBadge from "../Components/LvlBadge";
 import LvlStatsGrid from "../Components/LvlStatsGrid";
-// import LvlLeaderboard from "../../Leaderboard/LvlLeaderboard";
-import ActionButtons from "../Components/ActionButtons";
 import LeaderboardBanner from "../../Leaderboard/LeaderboardBanner";
 import { useEffect } from "react";
 import SecFooter from "../../../Components/CommonComponents/SecFooter";
@@ -44,34 +42,22 @@ const LvlDashboard = () => {
           <div className={styles.cardHeader}>
             <div>
               <p className={styles.eyebrow}>Level progress</p>
-              <h3>Keep going, you’re close to the next reward</h3>
+              <h3 className="d-md-none">Keep Going On</h3>
+              <h3 className="d-none d-md-block">
+                Keep going, you’re close to the next reward
+              </h3>
             </div>
             <span className={styles.softPill}>Live XP</span>
           </div>
           <LvlProgressBar status={true} />
         </div>
 
-        <div className={styles.mainGrid}>
-          {/* <div className={styles.leftColumn}> */}
-          <LvlStatsGrid data={data} />
-
-          <div className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div>
-                <p className={styles.eyebrow}>Boost your earnings</p>
-                <h3>Complete more actions to unlock faster growth</h3>
-              </div>
-            </div>
-
-            <ActionButtons token={token} refresh={fetchData} />
-            {/* </div> */}
+        <div className="row">
+          <div className={styles.mainGrid}>
+            <LvlStatsGrid data={data} />
           </div>
-
-          {/* <div className={styles.rightColumn}> */}
-          {/* </div> */}
         </div>
         <div className="mt-4">
-          {/* <LvlLeaderboard users={leaderboard} /> */}
           <LeaderboardBanner />
         </div>
       </section>

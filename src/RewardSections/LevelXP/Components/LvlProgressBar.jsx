@@ -12,9 +12,6 @@ const LvlProgressBar = ({ status }) => {
   const progress = Math.max(0, Math.min(100, data?.progress ?? 0));
   const remaining = Math.max(nextXP - xp, 0);
 
-  // add this color instead of white color in LvlDashboard compoentn and related compoennts
-  // color: #f2f8ff
-
   return (
     <div className={styles.wrapper}>
       {status && (
