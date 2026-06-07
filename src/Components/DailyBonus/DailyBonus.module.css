@@ -5,7 +5,21 @@
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  padding-bottom: 60px;
+  margin: 28px 0 0 0;
+  padding-bottom: 30px;
+  font-family:
+    "nunito",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .bgGlow {
@@ -53,7 +67,7 @@
 .container {
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 7px;
   position: relative;
   z-index: 1;
 }
@@ -64,6 +78,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0 24px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 
 .headerLeft {
@@ -340,6 +355,7 @@
 
 .gemAmount {
   font-size: 36px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
   font-weight: 800;
   background: linear-gradient(135deg, #c4b5fd, #fbbf24);
   -webkit-background-clip: text;
@@ -350,7 +366,7 @@
 }
 
 .gemUnit {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #94a3b8;
   text-transform: uppercase;
@@ -610,28 +626,36 @@
 }
 
 .weekTitle {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 }
 
 .weekGrid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 12px;
 }
 
 .dayCell {
+  min-width: 46%;
+  margin: 4px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   padding: 8px 0;
   border-radius: 12px;
   transition: all 0.2s ease;
+}
+.maxDay {
+  width: 100%;
 }
 
 .dayClaimed {
@@ -700,9 +724,10 @@
 }
 
 .dayReward {
-  font-size: 10px;
-  font-weight: 600;
-  color: #a78bfa;
+  font-size: 18px;
+  font-weight: 700;
+  color: #af94ff;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 
 .dayUpcoming .dayReward {
@@ -1066,8 +1091,14 @@
   line-height: 1.6;
 }
 
+.trustCard,
+.rulesCard,
+.faqCard {
+  margin-top: 30px;
+}
+
 /* Responsive */
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .weekGrid {
     gap: 2px;
   }
@@ -1092,5 +1123,374 @@
   .rulesCard,
   .faqCard {
     padding: 24px 16px;
+  }
+} */
+
+/* ==========================================
+   TABLETS (576px+)
+========================================== */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 620px;
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 28px 0 30px;
+  }
+
+  .logoWrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .logoText {
+    font-size: 24px;
+  }
+
+  .logoSub {
+    font-size: 12px;
+  }
+
+  .gemBalance {
+    padding: 10px 18px;
+  }
+
+  .gemCount {
+    font-size: 18px;
+  }
+
+  .mainCard {
+    padding: 36px 32px;
+    border-radius: 30px;
+  }
+
+  .badgeRow {
+    margin-bottom: 40px;
+  }
+
+  .badge,
+  .streakBadge {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .gemIconWrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 28px;
+  }
+
+  .gemAmount {
+    font-size: 52px;
+  }
+
+  .gemUnit {
+    font-size: 16px;
+  }
+
+  .claimBtn {
+    padding: 18px 24px;
+    font-size: 17px;
+  }
+
+  .weekSection {
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+
+  .weekGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .dayCell {
+    padding: 14px 0;
+  }
+
+  .dayGemSlot {
+    width: 42px;
+    height: 42px;
+  }
+
+  .dayLabel {
+    font-size: 13.5px;
+  }
+
+  .dayReward {
+    font-size: 19.5px;
+  }
+
+  .rulesCard,
+  .faqCard {
+    padding: 34px 32px;
+    border-radius: 28px;
+  }
+
+  .rulesTitle,
+  .faqTitle {
+    font-size: 26px;
+  }
+
+  .rulesSub {
+    font-size: 15px;
+  }
+
+  .step {
+    gap: 18px;
+    padding: 18px 0;
+  }
+
+  .stepNumber {
+    width: 52px;
+    height: 52px;
+  }
+
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .stepDesc {
+    font-size: 15px;
+  }
+
+  .trustCard {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .trustInfo h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .trustInfo p {
+    font-size: 15.5px;
+  }
+
+  .trustGrid {
+    gap: 12px;
+  }
+
+  .trustItem {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  .faqQuestion span {
+    font-size: 16.5px;
+  }
+
+  .faqAnswer p {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   LAPTOPS (992px+)
+========================================== */
+
+@media (min-width: 992px) {
+  .page {
+    margin-top: 16px;
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 0 24px;
+  }
+
+  /* Hero Area Layout */
+  .mainCard {
+    padding: 30px 50px;
+    border-radius: 36px;
+  }
+
+  .header {
+    padding: 34px 0;
+  }
+
+  .logoText {
+    font-size: 24px;
+  }
+
+  .logoSub {
+    font-size: 13px;
+  }
+
+  .gemBalance {
+    padding: 12px 22px;
+  }
+
+  .gemCount {
+    font-size: 20px;
+  }
+
+  .badgeRow {
+    margin-bottom: 20px;
+  }
+
+  .badge,
+  .streakBadge {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .gemIconWrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .gemGlowRing {
+    width: 200px;
+    height: 200px;
+  }
+
+  .gemGlowRing2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .gemAmount {
+    font-size: 60px;
+  }
+
+  .gemUnit {
+    font-size: 20px;
+  }
+
+  .claimBtn {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px 28px;
+    font-size: 18px;
+  }
+
+  .timerSection {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .weekSection {
+    margin-top: 38px;
+  }
+
+  .weekTitle {
+    font-size: 15px;
+  }
+
+  .weekGrid {
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 14px;
+  }
+
+  .dayCell {
+    padding: 18px 0;
+    border-radius: 16px;
+    gap: 2px;
+  }
+
+  .dayGemSlot {
+    width: 60px;
+    height: 60px;
+  }
+
+  .dayLabel {
+    font-size: 13px;
+  }
+
+  .dayReward {
+    font-size: 18px;
+  }
+
+  /* How It Works */
+
+  .rulesCard {
+    margin-top: 28px;
+    padding: 42px;
+  }
+
+  .rulesTitle {
+    font-size: 28px;
+  }
+
+  .rulesSub {
+    font-size: 15px;
+  }
+
+  .step {
+    gap: 24px;
+    padding: 10px 0;
+  }
+
+  .stepNumber {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .connectorLine {
+    left: 29px;
+  }
+
+  .stepTitle {
+    font-size: 17px;
+  }
+
+  .stepDesc {
+    font-size: 15px;
+    max-width: 700px;
+  }
+
+  /* Trust */
+
+  .trustCard {
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  .trustCard h4 {
+    font-size: 20px;
+  }
+
+  .trustGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .trustItem {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 110px;
+    font-size: 14px;
+  }
+
+  .trustIconWrap {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* FAQ */
+
+  .faqCard {
+    padding: 42px;
+    margin-top: 28px;
+  }
+
+  .faqTitle {
+    font-size: 28px;
+  }
+
+  .faqQuestion span {
+    font-size: 16px;
+  }
+
+  .faqAnswer p {
+    font-size: 15px;
+    max-width: 850px;
   }
 }
