@@ -1,0 +1,440 @@
+/* ==========================
+   VE MINING BANNER
+========================== */
+
+.miningBanner {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  width: 100%;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    rgba(28, 43, 77, 0.97),
+    rgba(36, 36, 61, 0.97)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.miningBanner:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(251, 191, 36, 0.25);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(251, 191, 36, 0.08);
+}
+
+/* ==========================
+   HOTTEST BADGE
+========================== */
+
+.hotBadge {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  z-index: 5;
+
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.4);
+}
+
+/* ==========================
+   MINING VISUAL
+========================== */
+
+.miningVisual {
+  position: relative;
+
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+
+  gap: 6px;
+
+  width: 170px;
+  height: 170px;
+
+  transform: rotate(-45deg);
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 4px;
+
+  animation: idlePulse 3s infinite;
+}
+
+.activeCell {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+
+  box-shadow:
+    0 0 10px #fbbf24,
+    0 0 20px rgba(251, 191, 36, 0.45);
+
+  animation: miningPulse 1.5s infinite;
+}
+
+/* ENERGY ORB */
+
+.energyOrb {
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(251, 191, 36, 0.35),
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+
+  animation: orbFloat 4s ease-in-out infinite;
+}
+
+/* FLOATING TOKENS */
+
+.floatToken,
+.floatToken2,
+.floatToken3 {
+  position: absolute;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  color: #fbbf24;
+
+  text-shadow: 0 0 12px #fbbf24;
+
+  pointer-events: none;
+}
+
+.floatToken {
+  left: 20%;
+  bottom: 30px;
+  animation: tokenFloat 3s infinite;
+}
+
+.floatToken2 {
+  right: 25%;
+  bottom: 40px;
+  animation: tokenFloat 2.6s infinite;
+}
+
+.floatToken3 {
+  left: 50%;
+  bottom: 20px;
+  animation: tokenFloat 3.5s infinite;
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.miningContent {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.miningLabel {
+  width: fit-content;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: #818cf8;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.miningTitle {
+  margin: 0;
+  color: #f8fcf8;
+  font-size: 2rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+}
+.titleHighlight {
+  background: linear-gradient(135deg, #ffffff, #ffd700);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.miningDesc {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+/* ==========================
+   FEATURES
+========================== */
+
+.miningFeatures {
+  display: none;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.featurePill {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.miningBtn {
+  width: fit-content;
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  font-size: 4vw;
+
+  font-weight: 700;
+
+  color: white;
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.miningBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes miningPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes idlePulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes tokenFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media (min-width: 576px) {
+  .miningBanner {
+    padding: 28px;
+  }
+
+  .miningVisual {
+    height: 220px;
+  }
+
+  .grid {
+    width: 220px;
+    height: 220px;
+  }
+
+  .miningTitle {
+    font-size: 2.4rem;
+  }
+
+  .miningDesc {
+    font-size: 1rem;
+  }
+
+  .featurePill {
+    font-size: 13px;
+  }
+}
+
+/* ==========================
+   LAPTOPS
+========================== */
+
+@media (min-width: 992px) {
+  .miningBanner {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 36px;
+  }
+
+  .miningVisual {
+    width: 38%;
+
+    height: 260px;
+  }
+
+  .miningContent {
+    width: 58%;
+  }
+
+  .miningFeatures {
+    display: flex;
+  }
+
+  .grid {
+    width: 260px;
+    height: 260px;
+  }
+
+  .miningTitle {
+    font-size: 2.5rem;
+  }
+
+  .miningDesc {
+    max-width: 90%;
+    font-size: 1.05rem;
+  }
+
+  .miningBtn {
+    padding: 18px 22px;
+    margin-top: 14px;
+    width: 87%;
+    font-size: 17px;
+  }
+}

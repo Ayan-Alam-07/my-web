@@ -24,6 +24,7 @@ import LeaderboardBanner from "../../RewardSections/Leaderboard/LeaderboardBanne
 import SupportBanner from "../Support/SupportBanner";
 import BonusBanner from "./Bonus/BonusBanner";
 import SecFooter from "../CommonComponents/SecFooter";
+import MiningBanner from "../Mining/MiningBanner";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -118,6 +119,28 @@ const HomeEarn = () => {
           <div className="col-12 col-md-12 col-lg-5 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
             <TapToken />
           </div>
+        </div>
+
+        {/* mining */}
+        <div className="row justify-content-center pt-2 mb-1">
+          <div className="col-12">
+            <div className="mt-2">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Mine & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Tap repeatedly to
+              earn instant VEs, Gift cards and rewards
+            </p>
+          </div>
+        </div>
+        <div className="mt-2  mb-4 pb-4">
+          <MiningBanner />
         </div>
 
         {/* bonus section */}
