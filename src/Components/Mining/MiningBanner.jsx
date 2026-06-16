@@ -1,10 +1,11 @@
 import styles from "./MiningBanner.module.css";
-import { FaBolt, FaArrowRight } from "react-icons/fa";
+import { FaBolt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { GiMiner } from "react-icons/gi";
 import { IoMdInfinite } from "react-icons/io";
 import { RiSecurePaymentFill } from "react-icons/ri";
+import RewardArrow from "../CommonComponents/RewardArrow";
 
 const MiningBanner = () => {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ const MiningBanner = () => {
         <div className={styles.floatToken2}>+VE</div>
         <div className={styles.floatToken3}>+VE</div>
         <div className={styles.floatToken4}>+VE</div>
+        <div className={styles.floatToken5}>+VE</div>
       </div>
 
       {/* CONTENT */}
@@ -53,8 +55,14 @@ const MiningBanner = () => {
         </h2>
 
         <p className={styles.miningDesc}>
-          Generate VEs Rewards automatically while staying active. A brand new
-          passive earning system available only on VEloop Rewards.
+          <span className="d-none d-lg-block">
+            Generate VEs Rewards automatically while staying active. A brand new
+            passive earning system available only on VEloop Rewards.
+          </span>
+          <span className="d-lg-none">
+            Stay active and earn passively with new system — available
+            exclusively on VELoop Rewards.
+          </span>
         </p>
 
         <div className={styles.miningFeatures}>
@@ -73,7 +81,7 @@ const MiningBanner = () => {
         <button className={styles.miningBtn}>
           <FaBolt />
           Start Mining
-          <FaArrowRight />
+          <RewardArrow />
         </button>
       </div>
     </div>
