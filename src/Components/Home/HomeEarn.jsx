@@ -78,11 +78,8 @@ const HomeEarn = () => {
               </p>
             </div>
             <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Complete Tasks and
-              Get Bonus Rewards.{" "}
-              <span className="d-none d-md-inline-block">
-                Trusted Globally for Earning Online.
-              </span>
+              <span className="text-danger fw-bold">*</span> Don't miss your
+              daily bonus—earn extra VEs and valuable rewards each day.
             </p>
           </div>
         </div>
@@ -131,8 +128,9 @@ const HomeEarn = () => {
               </p>
             </div>
             <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Tap repeatedly to
-              earn instant VEs, Gift cards and rewards
+              <span className="text-danger fw-bold">*</span>Mine VEs
+              effortlessly and redeem them for gift cards, rewards, and special
+              offers.
             </p>
           </div>
         </div>
@@ -153,8 +151,8 @@ const HomeEarn = () => {
               </p>
             </div>
             <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Tap repeatedly to
-              earn instant VEs, Gift cards and rewards
+              <span className="text-danger fw-bold">*</span>Contribute daily by
+              claiming 1 Sync. Gather 30 Syncs and get rewarded with ₹10.
             </p>
           </div>
         </div>
