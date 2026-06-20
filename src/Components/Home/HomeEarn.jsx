@@ -25,6 +25,7 @@ import SupportBanner from "../Support/SupportBanner";
 import BonusBanner from "./Bonus/BonusBanner";
 import SecFooter from "../CommonComponents/SecFooter";
 import MiningBanner from "../Mining/MiningBanner";
+import ContributionBanner from "../Contribution/ContributionBanner";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -62,11 +63,9 @@ const HomeEarn = () => {
         <div className="mt-5 pt-2">
           <ReferralBanner />
         </div>
-
         {/* Rewards Sections */}
         <h3 className={`pb-2 ${style.HomeEarnpara}`}>Features:</h3>
         <RewardSections />
-
         <div className="row justify-content-center mt-4">
           <div className="col-12">
             <div className="mt-2">
@@ -92,7 +91,6 @@ const HomeEarn = () => {
             <DailyBonusBanner />
           </div>
         </div>
-
         {/* Tap and Earn */}
         <div className="row justify-content-center">
           <div className="col-12">
@@ -120,7 +118,6 @@ const HomeEarn = () => {
             <TapToken />
           </div>
         </div>
-
         {/* mining */}
         <div className="row justify-content-center pt-2 mb-1">
           <div className="col-12">
@@ -141,6 +138,28 @@ const HomeEarn = () => {
         </div>
         <div className="mt-2  mb-4 pb-4">
           <MiningBanner />
+        </div>
+
+        {/* contribution section */}
+        <div className="row justify-content-center pt-2 mb-1">
+          <div className="col-12">
+            <div className="mt-2">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Contribution : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span> Tap repeatedly to
+              earn instant VEs, Gift cards and rewards
+            </p>
+          </div>
+        </div>
+        <div className="mt-2  mb-4 pb-4">
+          <ContributionBanner />
         </div>
 
         {/* bonus section */}
@@ -165,7 +184,6 @@ const HomeEarn = () => {
           </div>
         </div>
         <BonusBanner />
-
         <div className="row ">
           <div className="col-12">
             <div className="mt-5">
@@ -187,7 +205,6 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-
         <div className="row justify-content-between align-items-stretch mt-2 mt-lg-3 pb-3 pb-lg-2 mx-md-2 mx-lg-3">
           {/* CAPTCHA */}
           <div className="col-12 col-md-12 col-lg-5 mt-2 mt-lg-0 mx-1 mx-md-0">
@@ -237,7 +254,6 @@ const HomeEarn = () => {
             </div>
           </div>
         </div>
-
         {/* watch ad */}
         <div className="row ">
           <div className="col-12">
@@ -258,7 +274,6 @@ const HomeEarn = () => {
           </div>
         </div>
         <WatchAdBanner />
-
         {/* leaderboard  */}
         <div className="row mt-0 mb-lg-2">
           <div className="col-12">
@@ -280,7 +295,6 @@ const HomeEarn = () => {
         <div className="mt-1 pt-1 mb-5 pb-3 mb-lg-4 mx-md-2 mx-lg-3">
           <LeaderboardBanner />
         </div>
-
         {/* reffer section */}
         <div className="row  mt-3 mb-lg-2">
           <div className="col-12">
@@ -302,7 +316,6 @@ const HomeEarn = () => {
         <div className="mx-md-2 mx-lg-3">
           <ReferralEntryCard />
         </div>
-
         {/* giveaway section */}
         <div className="row  mb-lg-2">
           <div className="col-12">
@@ -321,7 +334,6 @@ const HomeEarn = () => {
             </p>
           </div>
         </div>
-
         <div className="row justify-content-around mb-3 mt-1 ">
           <div className="col-12 col-md-11 mb-3 pb-2 p-0">
             <div
@@ -378,13 +390,11 @@ const HomeEarn = () => {
             </div>
           </div>
         </div>
-
         {/* Quick Links */}
         <p className={`pt-2 mb-0 ${style.HomeEarnpara}`}> Upcoming Features:</p>
         <div className="">
           <QuickLinks />
         </div>
-
         {/* customer support */}
         <div className="row mb-1">
           <div className="col-12 mt-3 mb-2">
@@ -406,7 +416,6 @@ const HomeEarn = () => {
         <div className="mx-md-2 mx-lg-3">
           <SupportBanner />
         </div>
-
         {/* follow & Earn */}
         <div className="row mt-4 pt-3">
           <div className="col-12 mt-3">
@@ -465,7 +474,6 @@ const HomeEarn = () => {
             ))}
           </div>
         </div>
-
         <SecFooter
           mt={0}
           mb={30}
