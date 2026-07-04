@@ -1,0 +1,735 @@
+:root {
+  --gold: #ffd54a;
+  --goldDark: #ffb300;
+  --blue: #38bdf8;
+  --green: #22c55e;
+  --bg: #07111f;
+  --card: #0e1628;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #fff;
+  --muted: rgba(255, 255, 255, 0.65);
+}
+
+.heroCard {
+  position: relative;
+  overflow: hidden;
+  padding: 36px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #111827 0%, #0b1324 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(28px);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+  transition: 0.35s;
+  isolation: isolate;
+}
+
+.heroCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 213, 74, 0.16);
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.25),
+    0 0 60px rgba(255, 213, 74, 0.01);
+}
+
+.heroCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.12),
+    transparent,
+    rgba(255, 213, 74, 0.12)
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glowOne {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: -180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.15),
+    transparent 72%
+  );
+  filter: blur(20px);
+  animation: floatGlow1 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.glowTwo {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: -140px;
+  bottom: -140px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.12),
+    transparent 70%
+  );
+  filter: blur(24px);
+  animation: floatGlow2 14s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    );
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 36px;
+  z-index: 2;
+}
+
+.left {
+  flex: 1;
+}
+
+.badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.vaultBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.14);
+  color: #7dd3fc;
+  backdrop-filter: blur(16px);
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  color: #4ade80;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 12px #22c55e;
+  animation: livePulse 1.5s infinite;
+}
+
+.heroLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
+}
+
+.heroReward {
+  font-size: 78px;
+  line-height: 1;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 35px rgba(255, 213, 74, 0.15);
+}
+
+.heroSubtitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.rewardWrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rewardGlow {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 70%
+  );
+  animation: rewardPulse 3s ease infinite;
+}
+
+.rewardIcon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  font-size: 42px;
+  background: linear-gradient(145deg, #ffd54a, #ffb300);
+  color: #111827;
+  box-shadow: 0 20px 40px rgba(255, 213, 74, 0.28);
+  transition: 0.35s;
+  z-index: 2;
+}
+
+.rewardIcon:hover {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 28px 55px rgba(255, 213, 74, 0.35);
+}
+
+@keyframes rewardPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+@keyframes floatGlow1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(35px) translateX(-20px);
+  }
+}
+
+@keyframes floatGlow2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+.progressSection {
+  position: relative;
+  margin-top: 36px;
+  z-index: 2;
+}
+
+.progressTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progressTop span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.progressTop strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffd54a;
+}
+
+.progressBar {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.progressBar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.015) 50%,
+    transparent 100%
+  );
+  background-size: 60px 100%;
+  animation: trackMove 5s linear infinite;
+  pointer-events: none;
+}
+
+.progressFill {
+  position: relative;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #facc15, #38bdf8);
+  overflow: hidden;
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 0 18px rgba(255, 213, 74, 0.35),
+    0 0 40px rgba(255, 213, 74, 0.15);
+}
+
+.progressShine {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shineMove 2.6s linear infinite;
+}
+
+@keyframes shineMove {
+  100% {
+    left: 140%;
+  }
+}
+
+@keyframes trackMove {
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 38px;
+  position: relative;
+  z-index: 2;
+}
+
+.statCard {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.35s;
+  backdrop-filter: blur(16px);
+}
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.14),
+    transparent 70%
+  );
+  transition: 0.35s;
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 213, 74, 0.14);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(255, 213, 74, 0.08);
+}
+
+.statCard:hover::before {
+  transform: scale(1.2);
+}
+
+.statIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 213, 74, 0.16),
+    rgba(255, 179, 0, 0.08)
+  );
+  color: #ffd54a;
+  border: 1px solid rgba(255, 213, 74, 0.14);
+  box-shadow: 0 10px 20px rgba(255, 213, 74, 0.12);
+}
+
+.statCard h3 {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.statCard p {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+.contributeButton,
+.completedButton,
+.claimedButton {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  margin-top: 34px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.35s;
+  z-index: 2;
+}
+
+.contributeButton {
+  color: #111827;
+  background: linear-gradient(135deg, #ffd54a, #ffc107, #ffb300);
+  background-size: 200% 200%;
+  box-shadow:
+    0 18px 40px rgba(255, 193, 7, 0.3),
+    0 0 0 rgba(255, 213, 74, 0.2);
+  animation: buttonGradient 6s linear infinite;
+}
+
+.contributeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.contributeButton:hover::before {
+  animation: buttonSweep 0.9s ease;
+}
+
+.contributeButton:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 25px 50px rgba(255, 193, 7, 0.38),
+    0 0 35px rgba(255, 213, 74, 0.18);
+}
+
+.contributeButton:active {
+  transform: scale(0.985);
+}
+
+.completedButton {
+  cursor: not-allowed;
+  color: #fff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 18px 40px rgba(34, 197, 94, 0.25);
+}
+
+.claimedButton {
+  cursor: not-allowed;
+  color: #fff;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.25);
+}
+
+.completedButton::after,
+.claimedButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: statusSweep 3.5s linear infinite;
+}
+
+@keyframes buttonSweep {
+  100% {
+    left: 170%;
+  }
+}
+
+@keyframes statusSweep {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(170%);
+  }
+}
+
+@keyframes buttonGradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroCard {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  .heroHeader {
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .rewardWrapper {
+    align-self: center;
+  }
+
+  .heroReward {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroCard {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .heroHeader {
+    align-items: center;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroReward {
+    font-size: 56px;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .rewardWrapper {
+    display: none;
+    width: 110px;
+    height: 110px;
+  }
+
+  .rewardGlow {
+    width: 110px;
+    height: 110px;
+  }
+
+  .rewardIcon {
+    width: 82px;
+    height: 82px;
+    font-size: 34px;
+    border-radius: 24px;
+  }
+
+  .progressSection {
+    margin-top: 28px;
+  }
+
+  .statsGrid {
+    gap: 15px;
+  }
+
+  .statCard {
+    flex-direction: column;
+    padding: 16px;
+    gap: 22px;
+  }
+
+  .statIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .contributeButton,
+  .completedButton,
+  .claimedButton {
+    height: 58px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .heroCard {
+    padding: 18px 14px;
+  }
+
+  .heroReward {
+    font-size: 48px;
+  }
+
+  .heroLabel {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .rewardWrapper {
+    width: 96px;
+    height: 96px;
+  }
+
+  .rewardGlow {
+    width: 96px;
+    height: 96px;
+  }
+
+  .rewardIcon {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+    border-radius: 20px;
+  }
+
+  .progressBar {
+    height: 14px;
+  }
+
+  .footerTitle {
+    font-size: 14px;
+  }
+
+  .footerAmount {
+    font-size: 28px;
+  }
+
+  .statCard {
+    padding: 16px;
+  }
+
+  .statCard h3 {
+    font-size: 20px;
+  }
+
+  .statCard p {
+    font-size: 11px;
+  }
+
+  .contributeButton,
+  .completedButton,
+  .claimedButton {
+    height: 54px;
+    border-radius: 18px;
+  }
+}

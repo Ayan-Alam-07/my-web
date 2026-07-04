@@ -1,0 +1,210 @@
+.celebrationOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(14px);
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.celebrationModal {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 430px;
+  padding: 42px 34px;
+  border-radius: 34px;
+  text-align: center;
+  background: linear-gradient(160deg, #111827, #0b1220);
+  border: 1px solid rgba(255, 213, 74, 0.15);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(255, 213, 74, 0.08);
+  animation: modalPop 0.4s ease;
+}
+
+.celebrationModal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    130deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  pointer-events: none;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.trophyContainer {
+  width: 115px;
+  height: 115px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 56px;
+  color: #111827;
+  background: linear-gradient(135deg, #ffd54a, #ffb300);
+  box-shadow:
+    0 0 40px rgba(255, 213, 74, 0.3),
+    0 22px 45px rgba(255, 179, 0, 0.28);
+  animation: trophyFloat 2.2s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.rewardUnlocked {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.celebrationModal h2 {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.celebrationModal p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 26px;
+}
+
+.rewardAmount {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #ffd54a, #ffb300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 213, 74, 0.25);
+}
+
+.claimRewardBtn {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  background: linear-gradient(135deg, #ffd54a, #ffb300);
+  box-shadow: 0 18px 40px rgba(255, 213, 74, 0.3);
+  transition: 0.3s;
+}
+
+.claimRewardBtn svg {
+  font-size: 18px;
+}
+
+.claimRewardBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(255, 213, 74, 0.4);
+}
+
+.claimRewardBtn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .celebrationModal {
+    padding: 34px 24px;
+    border-radius: 28px;
+  }
+  .trophyContainer {
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+  }
+  .rewardAmount {
+    font-size: 60px;
+  }
+  .celebrationModal h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .celebrationOverlay {
+    padding: 16px;
+  }
+  .celebrationModal {
+    padding: 28px 20px;
+  }
+  .trophyContainer {
+    width: 88px;
+    height: 88px;
+    font-size: 42px;
+    margin-bottom: 22px;
+  }
+  .rewardUnlocked {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .celebrationModal h2 {
+    font-size: 26px;
+  }
+  .celebrationModal p {
+    font-size: 14px;
+  }
+  .rewardAmount {
+    font-size: 52px;
+  }
+  .claimRewardBtn {
+    height: 54px;
+    font-size: 15px;
+  }
+}

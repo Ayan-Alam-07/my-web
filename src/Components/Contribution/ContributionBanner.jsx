@@ -11,7 +11,10 @@ export default function ContributionBanner() {
   const percentage = (completedDays / totalDays) * 100;
 
   return (
-    <div className={styles.banner} onClick={() => navigate("/contribution")}>
+    <div
+      className={styles.banner}
+      onClick={() => navigate("/contribution-vault")}
+    >
       <div className={styles.bgGlow}></div>
 
       <div className={styles.left}>
@@ -49,7 +52,7 @@ export default function ContributionBanner() {
           className={styles.cta}
           onClick={(e) => {
             e.stopPropagation();
-            navigate("/contribution");
+            navigate("/contribution-vault");
           }}
         >
           <span className="d-inline-block me-2">Open Vault</span>{" "}

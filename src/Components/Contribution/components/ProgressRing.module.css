@@ -1,0 +1,604 @@
+.progressCard {
+  position: relative;
+  overflow: hidden;
+  padding: 24px 34px 14px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #101827, #091220);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.22);
+  transition: 0.35s;
+  height: 100%;
+}
+
+.progressCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 213, 74, 0.14);
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.3),
+    0 0 50px rgba(255, 213, 74, 0.04);
+}
+
+.progressCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    transparent,
+    rgba(255, 213, 74, 0.08)
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 72%
+  );
+  filter: blur(22px);
+  animation: floatGlow 10s ease infinite alternate;
+}
+
+.cardGlow2 {
+  position: absolute;
+  left: -120px;
+  bottom: -120px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.14),
+    transparent 72%
+  );
+  filter: blur(26px);
+  animation: floatGlow2 12s ease infinite alternate;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.18) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    );
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.cardHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 213, 74, 0.08);
+  border: 1px solid rgba(255, 213, 74, 0.12);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffd54a;
+  margin-bottom: 18px;
+}
+
+.cardHeader h3 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.cardHeader p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.58);
+  max-width: 340px;
+}
+
+.percentChip {
+  min-width: 82px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26px;
+  font-size: 22px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.progressRingWrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ringGlow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 72%
+  );
+  filter: blur(16px);
+  animation: ringPulse 4s ease infinite;
+}
+
+.progressSvg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+  z-index: 3;
+}
+
+.progressTrack {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.045);
+  stroke-width: 12;
+}
+
+.progressCircle {
+  fill: none;
+  stroke: url(#progressGradient);
+  stroke-width: 12;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 18px rgba(255, 213, 74, 0.45));
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: ringGlow 3s ease-in-out infinite;
+}
+
+.progressCircle::before {
+  content: "";
+}
+
+.ringOrbit {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  animation: orbitOne 18s linear infinite;
+}
+
+.ringOrbit::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #ffd54a;
+  box-shadow: 0 0 18px #ffd54a;
+}
+
+.ringOrbit2 {
+  position: absolute;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.12);
+  animation: orbitTwo 12s linear infinite reverse;
+}
+
+.ringOrbit2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 18px #38bdf8;
+}
+
+.progressCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.dayCircle {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: 0.35s;
+}
+
+.progressRingWrapper:hover .dayCircle {
+  transform: scale(1.05);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(255, 213, 74, 0.08);
+}
+
+.progressDay {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 213, 74, 0.18);
+}
+
+.progressTotal {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.progressCenter p {
+  margin: 13px 0 5px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.progressPercentage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 15px;
+  font-weight: 900;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.progressPercentage svg {
+  font-size: 14px;
+  color: #ffd54a;
+}
+
+@keyframes orbitOne {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitTwo {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes ringGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(255, 213, 74, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 28px rgba(255, 213, 74, 0.75));
+  }
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px) translateX(-25px);
+  }
+}
+
+@keyframes floatGlow2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-35px) translateX(25px);
+  }
+}
+
+.progressFooter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.progressFooter > div {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  transition: 0.35s;
+}
+
+.progressFooter > div::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.14),
+    transparent 72%
+  );
+  transition: 0.35s;
+}
+
+.progressFooter > div:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 213, 74, 0.14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+}
+
+.progressFooter > div:hover::before {
+  transform: scale(1.2);
+}
+
+.progressFooter span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.progressFooter strong {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(255, 213, 74, 0.15);
+}
+
+@media (max-width: 992px) {
+  .progressCard {
+    padding: 28px;
+  }
+
+  .cardHeader h3 {
+    font-size: 26px;
+  }
+
+  .progressRingWrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .dayCircle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .progressDay {
+    font-size: 52px;
+  }
+
+  .percentChip {
+    width: 72px;
+    height: 72px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progressCard {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .cardHeader {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .percentChip {
+    align-self: flex-start;
+  }
+
+  .progressRingWrapper {
+    width: 360px;
+    height: 360px;
+  }
+
+  .ringOrbit {
+    width: 320px;
+    height: 320px;
+  }
+
+  .ringOrbit2 {
+    width: 227px;
+    height: 227px;
+  }
+
+  .dayCircle {
+    width: 108px;
+    height: 108px;
+  }
+
+  .progressDay {
+    font-size: 40px;
+  }
+
+  .progressFooter {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .progressCard {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .cardHeader {
+    align-items: center;
+  }
+
+  .cardHeader h3 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .cardHeader p {
+    font-size: 13px;
+    padding: 0 0 10px;
+  }
+
+  .percentChip {
+    display: none;
+    width: 64px;
+    height: 64px;
+    font-size: 18px;
+  }
+
+  .progressRingWrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ringGlow {
+    width: 170px;
+    height: 170px;
+  }
+
+  .ringOrbit {
+    width: 257px;
+    height: 257px;
+  }
+
+  .ringOrbit2 {
+    width: 183px;
+    height: 183px;
+  }
+
+  .dayCircle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .progressDay {
+    font-size: 30px;
+  }
+
+  .progressTotal {
+    font-size: 14px;
+  }
+
+  .progressCenter p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 12px;
+  }
+
+  .progressPercentage {
+    padding: 8px 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .progressFooter > div {
+    padding: 18px;
+  }
+
+  .progressFooter strong {
+    font-size: 24px;
+  }
+}

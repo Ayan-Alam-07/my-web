@@ -81,6 +81,7 @@ import MultipleAccountsAndVPNPage from "./RewardsPolicies/MultipleAccountsAndVPN
 import BotEmulatorAutoclickerRulesPage from "./RewardsPolicies/BotEmulatorAutoclickerRulesPolicy/BotEmulatorAutoclickerRulesPage";
 import WeeklyLeaderboardEntry from "./RewardsPolicies/JoinMembershipPolicy/WeeklyLeaderboardEntry";
 import UserProfile from "./Components/Profile/UserProfile";
+import ContributionVault from "./Components/Contribution/pages/ContributionVault";
 
 const App = () => {
   const { isLoading } = useList();
@@ -398,6 +399,16 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
+
+        <Route
+          path="/contribution-vault"
+          element={
+            <ProtectedRoute>
+              <ContributionVault />
+            </ProtectedRoute>
+          }
+        ></Route>
+
         <Route
           path="/captcha-tasks"
           element={

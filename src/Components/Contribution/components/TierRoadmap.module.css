@@ -1,0 +1,574 @@
+.roadmapCard {
+  position: relative;
+  overflow: hidden;
+  padding: 36px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #0f172a, #091220);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
+  transition: 0.35s;
+  isolation: isolate;
+}
+
+.roadmapCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 213, 74, 0.12);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(255, 213, 74, 0.03);
+}
+
+.roadmapCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    transparent,
+    rgba(255, 213, 74, 0.08)
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -180px;
+  right: -160px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 72%
+  );
+  filter: blur(35px);
+  animation: roadmapGlow 12s ease infinite alternate;
+}
+
+.cardHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  z-index: 2;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 213, 74, 0.08);
+  border: 1px solid rgba(255, 213, 74, 0.14);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #ffd54a;
+  margin-bottom: 18px;
+}
+
+.cardHeader h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.cardHeader p {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.currentProgress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffd54a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  z-index: 2;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin: 20px 0 0 0;
+  z-index: 2;
+}
+
+.timelineNode {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  font-size: 28px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(18px);
+  transition: 0.35s;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.timelineNode::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.18;
+  transition: 0.35s;
+}
+
+.timelineNode:hover {
+  transform: translateY(-6px) scale(1.06);
+}
+
+.connector {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  width: calc(100% + 28px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(40px);
+  overflow: hidden;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.connector::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ffd54a, #f59e0b);
+  transition: 0.7s;
+}
+
+.connectorActive::after {
+  width: 100%;
+}
+
+.tierCard {
+  position: relative;
+  overflow: hidden;
+  width: 240px;
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.35s;
+  backdrop-filter: blur(18px);
+}
+
+.tierCard::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.18;
+  transition: 0.35s;
+}
+
+.timelineItem:hover .tierCard {
+  transform: translateY(-6px);
+  border-color: rgba(255, 213, 74, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32);
+}
+
+.timelineItem:hover .tierCard::before {
+  transform: scale(1.25);
+}
+
+.tierTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tierTop h3 {
+  font-size: 19px;
+  margin: 0;
+  font-weight: 900;
+  color: #fff;
+}
+
+.tierTop span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.tierCard p {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffd54a;
+  margin-bottom: 18px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bronze {
+  color: #cd7f32;
+  border-color: rgba(205, 127, 50, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(205, 127, 50, 0.18),
+    rgba(205, 127, 50, 0.05)
+  );
+  box-shadow: 0 12px 16px rgba(205, 127, 50, 0.15);
+}
+
+.bronze::before {
+  background: radial-gradient(
+    circle,
+    rgba(205, 127, 50, 0.55),
+    transparent 72%
+  );
+}
+
+.silver {
+  color: #c0c0c0;
+  border-color: rgba(192, 192, 192, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(192, 192, 192, 0.18),
+    rgba(192, 192, 192, 0.05)
+  );
+  box-shadow: 0 12px 30px rgba(192, 192, 192, 0.12);
+}
+
+.silver::before {
+  background: radial-gradient(
+    circle,
+    rgba(192, 192, 192, 0.45),
+    transparent 72%
+  );
+}
+
+.gold {
+  color: #ffd54a;
+  border-color: rgba(255, 213, 74, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 213, 74, 0.18),
+    rgba(255, 213, 74, 0.05)
+  );
+  box-shadow: 0 12px 30px rgba(255, 213, 74, 0.16);
+}
+
+.gold::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.55),
+    transparent 72%
+  );
+}
+
+.platinum {
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(168, 85, 247, 0.18),
+    rgba(168, 85, 247, 0.05)
+  );
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.15);
+}
+
+.platinum::before {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.5), transparent 72%);
+}
+
+.diamond {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(56, 189, 248, 0.18),
+    rgba(56, 189, 248, 0.05)
+  );
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.16);
+}
+
+.diamond::before {
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.55),
+    transparent 72%
+  );
+}
+
+.legend {
+  color: #ffd54a;
+  border-color: rgba(255, 213, 74, 0.32);
+  background: linear-gradient(180deg, #ffd54a, #f59e0b);
+  box-shadow:
+    0 18px 40px rgba(255, 213, 74, 0.25),
+    0 0 40px rgba(255, 213, 74, 0.18);
+}
+
+.legend svg {
+  color: #111827;
+}
+
+.legend::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    transparent 72%
+  );
+}
+
+.unlocked {
+  animation: unlockPulse 2.5s infinite;
+}
+
+.unlocked + .connector::after {
+  animation: connectorFlow 2.8s linear infinite;
+}
+
+.active {
+  transform: scale(1.12);
+  box-shadow:
+    0 1px 14px rgba(255, 213, 74, 0.22),
+    0 0 14px rgba(255, 213, 74, 0.12);
+  animation: activeFloat 3s ease-in-out infinite;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid rgba(255, 213, 74, 0.45);
+  animation: activeRing 2s infinite;
+}
+
+.timelineItem:hover .timelineNode {
+  transform: translateY(-4px) scale(1.07);
+}
+
+.timelineItem:hover .status {
+  background: rgba(255, 213, 74, 0.08);
+  border-color: rgba(255, 213, 74, 0.18);
+  color: #ffd54a;
+}
+
+@keyframes unlockPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 213, 74, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 8px rgba(255, 213, 74, 0.35),
+      0 0 10px rgba(255, 213, 74, 0.12);
+  }
+}
+
+@keyframes connectorFlow {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.8);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes activeFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1.12);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.14);
+  }
+}
+
+@keyframes activeRing {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes roadmapGlow {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-30px, 25px) scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .roadmapCard {
+    padding: 30px 30px 50px;
+    border-radius: 28px;
+  }
+
+  .cardHeader {
+    gap: 22px;
+  }
+
+  .currentProgress {
+    width: 80px;
+    height: 72px;
+    font-size: 18px;
+  }
+
+  .timeline {
+    gap: 22px;
+  }
+
+  .timelineItem {
+    align-items: stretch;
+  }
+
+  .timelineNode {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+    margin: 0 auto;
+  }
+
+  .tierCard {
+    margin-top: 18px;
+  }
+
+  .tierTop {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmapCard {
+    padding: 20px 18px 37px;
+    border-radius: 22px;
+  }
+
+  .cardHeader {
+    /* text-align: center; */
+    align-items: center;
+  }
+
+  .cardHeader h2 {
+    font-size: 24px;
+  }
+
+  .cardHeader p {
+    font-size: 13px;
+  }
+
+  .currentProgress {
+    display: none;
+    width: 64px;
+    height: 64px;
+    font-size: 16px;
+  }
+
+  .timelineNode {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+    border-radius: 18px;
+  }
+
+  .tierCard {
+    padding: 18px;
+  }
+
+  .tierTop h3 {
+    font-size: 17px;
+  }
+
+  .tierCard p {
+    font-size: 14px;
+  }
+
+  .status {
+    width: 100%;
+    justify-content: center;
+  }
+}

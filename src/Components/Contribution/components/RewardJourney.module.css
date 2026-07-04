@@ -1,0 +1,574 @@
+.rewardJourney {
+  position: relative;
+  margin-top: 28px;
+  padding: 34px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #101828, #09111f);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  isolation: isolate;
+}
+
+.rewardJourney:hover {
+  border-color: rgba(255, 213, 74, 0.14);
+  box-shadow:
+    0 45px 100px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(255, 213, 74, 0.05);
+}
+
+.rewardJourney::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    transparent,
+    rgba(255, 213, 74, 0.08)
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.bgGlow {
+  position: absolute;
+  top: -180px;
+  right: -140px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 72%
+  );
+  filter: blur(40px);
+  animation: floatGlow1 12s ease-in-out infinite alternate;
+}
+
+.bgGlow2 {
+  position: absolute;
+  bottom: -160px;
+  left: -120px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.16),
+    transparent 72%
+  );
+  filter: blur(40px);
+  animation: floatGlow2 14s ease-in-out infinite alternate;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 34px;
+  z-index: 5;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 213, 74, 0.08);
+  border: 1px solid rgba(255, 213, 74, 0.15);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: #ffd54a;
+  margin-bottom: 14px;
+}
+
+.header h2 {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.header p {
+  max-width: 460px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.timelineWrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 12px 0 18px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  z-index: 5;
+}
+
+.timelineWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 35px;
+  min-width: max-content;
+  padding: 6px 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.milestone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.node {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.45);
+  background: linear-gradient(180deg, #1b2436, #111827);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  transition: 0.35s;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent);
+  opacity: 0.35;
+}
+
+.node:hover {
+  transform: translateY(-6px) scale(1.06);
+}
+
+.unlocked {
+  background: linear-gradient(145deg, #ffd54a, #f59e0b);
+  color: #111827;
+  border-color: rgba(255, 213, 74, 0.4);
+  box-shadow:
+    0 20px 45px rgba(255, 213, 74, 0.28),
+    0 0 35px rgba(255, 213, 74, 0.18);
+}
+
+.unlocked::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 26px;
+  border: 2px solid rgba(255, 213, 74, 0.35);
+  animation: unlockPulse 2.5s infinite;
+}
+
+.active {
+  background: linear-gradient(145deg, #38bdf8, #2563eb);
+  color: #fff;
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow:
+    0 20px 45px rgba(56, 189, 248, 0.28),
+    0 0 35px rgba(56, 189, 248, 0.16);
+  animation: currentFloat 3s ease-in-out infinite;
+}
+
+.connector {
+  position: absolute;
+  top: 36px;
+  left: 120px;
+  width: calc(100% + 50px);
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.connector::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ffd54a, #f59e0b);
+  transition: 0.7s;
+}
+
+.connectorFill::after {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  width: calc(100% + 15px);
+  margin-top: 22px;
+  padding: 22px 20px 10px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.025)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  transition: 0.35s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.18),
+    transparent 72%
+  );
+  opacity: 0;
+  transition: 0.35s;
+}
+
+.milestone:hover .card {
+  transform: translateY(-8px);
+  border-color: rgba(255, 213, 74, 0.18);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+.milestone:hover .card::before {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.rewardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.rewardTop h4 {
+  font-size: 17px;
+  margin: 0;
+  font-weight: 900;
+  color: #fff;
+}
+
+.rewardTop span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.rewardAmount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffd54a;
+  margin-bottom: 14px;
+}
+
+.rewardAmount svg {
+  font-size: 22px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 600;
+}
+
+.finalVault {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 34px;
+  padding: 24px 40px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffd54a, #f59e0b);
+  overflow: hidden;
+  color: #111827;
+  box-shadow:
+    0 28px 60px rgba(255, 213, 74, 0.25),
+    0 0 45px rgba(255, 213, 74, 0.12);
+  transition: 0.35s;
+}
+
+.finalVault:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 40px 80px rgba(255, 213, 74, 0.35),
+    0 0 60px rgba(255, 213, 74, 0.18);
+}
+
+.finalVault::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.finalVault:hover::before {
+  animation: cardShine 1.5s ease;
+}
+
+.finalIcon {
+  width: 100px;
+  height: 90px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 45px;
+  flex-shrink: 0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.finalVault span {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.finalVault h3 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.finalVault p {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.arrow {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 22px;
+  transition: 0.35s;
+  flex-shrink: 0;
+}
+
+.finalVault:hover .arrow {
+  transform: translateX(6px);
+}
+@keyframes progressSweep {
+  to {
+    left: 180%;
+  }
+}
+
+@keyframes unlockPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 213, 74, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 28px rgba(255, 213, 74, 0.35),
+      0 0 60px rgba(255, 213, 74, 0.15);
+  }
+}
+
+@keyframes currentFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatGlow1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-35px, 25px) scale(1.15);
+  }
+}
+
+@keyframes floatGlow2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(35px, -20px) scale(1.18);
+  }
+}
+
+@keyframes cardShine {
+  100% {
+    transform: translateX(180%);
+  }
+}
+
+@media (max-width: 900px) {
+  .rewardJourney {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rewardJourney {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .header h2 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .timeline {
+    gap: 34px;
+  }
+
+  .milestone {
+    width: 180px;
+  }
+
+  .node {
+    width: 70px;
+    height: 64px;
+    font-size: 24px;
+  }
+
+  .connector {
+    left: 100px;
+    width: calc(100% + 30px);
+    top: 30px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .rewardAmount {
+    font-size: 22px;
+  }
+
+  .finalVault {
+    padding: 22px;
+  }
+  .arrow {
+    display: none;
+  }
+  .finalIcon {
+    width: 100px;
+    height: 90px;
+    font-size: 40px;
+  }
+
+  .finalVault h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    gap: 45px;
+  }
+  .connector {
+    width: calc(100% + 30px);
+    top: 30px;
+  }
+
+  .header {
+    margin: 0 0 14px;
+  }
+
+  .card {
+    padding: 20px 16px 10px;
+  }
+
+  .rewardTop h4 {
+    font-size: 16px;
+  }
+
+  .rewardTop span {
+    font-size: 10px;
+  }
+
+  .rewardAmount {
+    font-size: 20px;
+  }
+
+  .finalIcon {
+    width: 90px;
+    height: 80px;
+    font-size: 34px;
+  }
+
+  .finalVault h3 {
+    font-size: 23px;
+  }
+}
