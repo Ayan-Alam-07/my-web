@@ -129,7 +129,7 @@ ${currentDay >= milestones[index + 1].day ? styles.connectorFill : ""}
           </div>
 
           <div className="ms-sm-4 ms-lg-5">
-            <span>ULTIMATE VAULT</span>
+            <span>Unlock On Day 30</span>
 
             <h3>₹10 Cash Reward</h3>
 
