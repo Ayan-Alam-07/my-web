@@ -14,6 +14,10 @@ import CommonNavArr from "../../CommonComponents/CommonNavArr";
 
 import { showSuccess, showError } from "../../../utils/Toast";
 import TierRoadmap from "../components/TierRoadmap";
+import ContributionGuide from "../components/ContributionGuide";
+import QuickActions from "../components/QuickActions";
+
+import { FaCrown, FaGem, FaMedal, FaShieldHalved } from "react-icons/fa6";
 
 export default function ContributionVault() {
   const TOTAL_DAYS = 30;
@@ -33,13 +37,66 @@ export default function ContributionVault() {
 
   const milestones = useMemo(
     () => [
-      { day: 7, reward: "25 VEs" },
-      { day: 15, reward: "50 VEs" },
-      { day: 21, reward: "75 VEs" },
-      { day: 30, reward: "₹10" },
+      { day: 7, reward: "50 VEs", tier: "Silver" },
+      { day: 15, reward: "100 VEs", tier: "Gold" },
+      { day: 21, reward: "150 VEs", tier: "Platinum" },
+      { day: 30, reward: "₹10", tier: "Legend" },
     ],
     [],
   );
+
+  const tiers = [
+    {
+      name: "Bronze",
+      min: 0,
+      max: 19,
+      reward: "+1000 SVEs",
+      icon: <FaShieldHalved />,
+      color: "bronze",
+    },
+    {
+      name: "Silver",
+      min: 20,
+      max: 39,
+      reward: "+1000 SVEs",
+      icon: <FaMedal />,
+      color: "silver",
+    },
+    {
+      name: "Gold",
+      min: 40,
+      max: 59,
+      reward: "+1000 SVEs",
+      icon: <FaGem />,
+      color: "gold",
+    },
+    {
+      name: "Platinum",
+      min: 60,
+      max: 79,
+      reward: "+1000 SVEs",
+      icon: <FaGem />,
+      color: "platinum",
+    },
+    {
+      name: "Diamond",
+      min: 80,
+      max: 99,
+      reward: "+1000 SVEs",
+      icon: <FaCrown />,
+      color: "diamond",
+    },
+    {
+      name: "Legend",
+      min: 100,
+      max: 100,
+      reward: "₹10 Reward",
+      icon: <FaCrown />,
+      color: "legend",
+    },
+  ];
+
+  const completion = 55;
 
   const contributeToday = () => {
     if (hasContributedToday) return;
@@ -104,6 +161,8 @@ export default function ContributionVault() {
                 totalDays={TOTAL_DAYS}
                 progress={progress}
               />
+
+              <ContributionGuide display={true} />
             </div>
             <AnalyticsGrid
               streak={currentStreak}
@@ -112,7 +171,7 @@ export default function ContributionVault() {
               reward="₹10"
             />
             <div className="mt-4">
-              <TierRoadmap completion={40} />
+              <TierRoadmap completion={completion} tiers={tiers} />
             </div>
 
             {missedDays > 0 && (
@@ -126,12 +185,20 @@ export default function ContributionVault() {
               </div>
             )}
 
-            <div className="mb-4">
-              <RewardJourney
-                currentDay={contributedDays}
-                milestones={milestones}
-              />
-            </div>
+            <RewardJourney
+              currentDay={contributedDays}
+              milestones={milestones}
+              tiers={tiers}
+              completion={completion}
+            />
+          </div>
+
+          <div className="mb-5">
+            <QuickActions />
+          </div>
+
+          <div className={`mb-5  pb-4 ${styles.mobDisplay}`}>
+            <ContributionGuide />
           </div>
         </div>
 

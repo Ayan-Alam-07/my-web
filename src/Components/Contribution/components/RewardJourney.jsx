@@ -1,6 +1,7 @@
 import {
   FaGift,
   FaLock,
+  FaCoins,
   FaCircleCheck,
   FaGem,
   FaArrowRight,
@@ -14,8 +15,9 @@ import styles from "./RewardJourney.module.css";
 
 export default function RewardJourney({
   currentDay,
-
   milestones,
+  tiers,
+  completion,
 }) {
   const wrapperRef = useRef(null);
 
@@ -103,11 +105,11 @@ ${currentDay >= milestones[index + 1].day ? styles.connectorFill : ""}
                   <div className={styles.rewardTop}>
                     <h4>Day {item.day}</h4>
 
-                    <span>Milestone</span>
+                    <span>{item.tier}</span>
                   </div>
 
                   <div className={styles.rewardAmount}>
-                    <FaGem />
+                    {index !== milestones.length - 1 ? <FaCoins /> : <FaGem />}
 
                     {item.reward}
                   </div>

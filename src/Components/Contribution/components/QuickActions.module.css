@@ -1,0 +1,83 @@
+.right h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.actionGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.actionCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 40px 22px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.actionCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.18);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.actionCard > svg:first-child {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffd54a, #f59e0b);
+  color: #111827;
+  flex-shrink: 0;
+}
+
+.actionCard div {
+  flex: 1;
+}
+
+.actionCard h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.actionCard p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.actionCard > svg:last-child {
+  color: #38bdf8;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.actionCard:hover > svg:last-child {
+  transform: translateX(6px);
+}
+
+@media (max-width: 480px) {
+  .actionCard {
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .right {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .arrow {
+    display: none;
+  }
+}

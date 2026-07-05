@@ -1,0 +1,152 @@
+.guideSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  height: 100%;
+  /* margin-top: 28px; */
+  padding: 28px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #101827, #0a1220);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: auto;
+}
+
+.guideSection::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 74, 0.14),
+    transparent 72%
+  );
+  filter: blur(30px);
+}
+
+.left {
+  flex: 1.3;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 213, 74, 0.08);
+  border: 1px solid rgba(255, 213, 74, 0.14);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffd54a;
+  margin-bottom: 8px;
+}
+
+.left h2 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.left > p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 28px;
+  max-width: 600px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 213, 74, 0.16);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.stepNumber {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffd54a, #f59e0b);
+  color: #111827;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.step span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+}
+
+@media (max-width: 1300px) {
+  .display {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .guideSection {
+    padding: 20px;
+  }
+
+  .left h2 {
+    font-size: 24px;
+    margin: 0 0 26px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .stepNumber {
+    width: 54px;
+    height: 42px;
+  }
+  .step {
+    flex-direction: row;
+    text-align: start;
+    gap: 16px;
+  }
+}

@@ -1,66 +1,7 @@
-import {
-  FaLock,
-  FaCircleCheck,
-  FaCrown,
-  FaGem,
-  FaMedal,
-  FaShieldHalved,
-} from "react-icons/fa6";
-
+import { FaCircleCheck, FaLock } from "react-icons/fa6";
 import styles from "./TierRoadmap.module.css";
 
-export default function TierRoadmap({ completion }) {
-  const tiers = [
-    {
-      name: "Bronze",
-      min: 0,
-      max: 19,
-      reward: "+1000 SVEs",
-      icon: <FaShieldHalved />,
-      color: "bronze",
-    },
-    {
-      name: "Silver",
-      min: 20,
-      max: 39,
-      reward: "+1000 SVEs",
-      icon: <FaMedal />,
-      color: "silver",
-    },
-    {
-      name: "Gold",
-      min: 40,
-      max: 59,
-      reward: "+1000 SVEs",
-      icon: <FaGem />,
-      color: "gold",
-    },
-    {
-      name: "Platinum",
-      min: 60,
-      max: 79,
-      reward: "+1000 SVEs",
-      icon: <FaGem />,
-      color: "platinum",
-    },
-    {
-      name: "Diamond",
-      min: 80,
-      max: 99,
-      reward: "+1000 SVEs",
-      icon: <FaCrown />,
-      color: "diamond",
-    },
-    {
-      name: "Legend",
-      min: 100,
-      max: 100,
-      reward: "₹10 Reward",
-      icon: <FaCrown />,
-      color: "legend",
-    },
-  ];
-
+export default function TierRoadmap({ completion, tiers }) {
   return (
     <section className={styles.roadmapCard}>
       <div className={styles.cardGlow}></div>
@@ -113,7 +54,9 @@ ${completion >= tiers[index + 1].min ? styles.connectorActive : ""}
                   <h3>{tier.name}</h3>
 
                   <span>
-                    {tier.min}% -{tier.max}%
+                    {tiers.length - 1 === index
+                      ? "100%"
+                      : `${tier.min}% - ${tier.max}%`}
                   </span>
                 </div>
 
