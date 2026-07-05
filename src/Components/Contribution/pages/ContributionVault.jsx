@@ -193,11 +193,11 @@ export default function ContributionVault() {
             />
           </div>
 
-          <div className="mb-5">
+          <div className="mb-5 pb-lg-5">
             <QuickActions />
           </div>
 
-          <div className={`mb-5  pb-4 ${styles.mobDisplay}`}>
+          <div className={`mb-5 pb-4 ${styles.mobDisplay}`}>
             <ContributionGuide />
           </div>
         </div>
