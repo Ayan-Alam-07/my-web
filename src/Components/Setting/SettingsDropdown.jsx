@@ -52,7 +52,7 @@ export default function SettingsDropdown() {
     },
     {
       id: 2,
-      title: "Tasks",
+      title: "Task",
       click: () => navigate("/captcha-tasks"),
     },
 
