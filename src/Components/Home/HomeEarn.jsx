@@ -26,6 +26,7 @@ import BonusBanner from "./Bonus/BonusBanner";
 import SecFooter from "../CommonComponents/SecFooter";
 import MiningBanner from "../Mining/MiningBanner";
 import ContributionBanner from "../Contribution/ContributionBanner";
+import StakingBanner from "../Staking/StakingBanner";
 
 const HomeEarn = () => {
   const navigate = useNavigate();
@@ -136,6 +137,29 @@ const HomeEarn = () => {
         </div>
         <div className="mt-2  mb-4 pb-4">
           <MiningBanner />
+        </div>
+
+        {/* mining */}
+        <div className="row justify-content-center pt-2 mb-1">
+          <div className="col-12">
+            <div className="mt-2">
+              <p className={`m-0 ${style.HomeEarnpara}`}>
+                Stake & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
+                <span
+                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
+                  style={{ width: "42px" }}
+                ></span>
+              </p>
+            </div>
+            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
+              <span className="text-danger fw-bold">*</span>Mine VEs
+              effortlessly and redeem them for gift cards, rewards, and special
+              offers.
+            </p>
+          </div>
+        </div>
+        <div className="mt-2  mb-4 pb-4">
+          <StakingBanner />
         </div>
 
         {/* contribution section */}
