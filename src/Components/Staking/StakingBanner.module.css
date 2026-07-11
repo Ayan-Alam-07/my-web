@@ -7,7 +7,7 @@
   padding: 22px 20px;
   border-radius: 32px;
   cursor: pointer;
-  background: linear-gradient(160deg, #08101d 0%, #0d1728 45%, #121f34 100%);
+  background: linear-gradient(160deg, #0b1627 0%, #101c31 45%, #14233a 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.45),
@@ -980,7 +980,7 @@
   .stakingBanner {
     padding: 20px 15px;
     border-radius: 24px;
-    gap: 10px;
+    gap: 9px;
   }
 
   .topBadge {
@@ -1013,9 +1013,19 @@
     transform: scale(0.82);
   }
 
+  .ring:nth-child(15),
+  .ring:nth-child(16) {
+    display: none;
+  }
+
+  .ring:nth-child(17) {
+    height: 225px;
+    width: 225px;
+  }
+
   .coin {
-    top: 20px;
-    left: -25%;
+    top: 18px;
+    left: -15%;
     height: 47px;
     width: 47px;
     font-size: 20px;
@@ -1028,16 +1038,16 @@
   }
 
   .float2 {
-    top: 67px;
-    right: -40%;
+    top: 65px;
+    right: -21%;
   }
   .float3 {
     bottom: 20px;
-    left: -44%;
+    left: -35%;
   }
 
   .content {
-    gap: 16px;
+    gap: 12px;
   }
   .tabContent {
     gap: 5px;
@@ -1089,8 +1099,8 @@
   .prevUnit {
     /* display: block; */
     font-size: 13px;
+    font-weight: 600;
     margin: 4px 0 0 0;
-    font-weight: 500;
   }
 
   .features {
@@ -1117,6 +1127,7 @@
 @media (max-width: 430px) {
   .heding {
     font-size: 32px;
+    margin-top: 3px;
   }
 
   .description {
@@ -1124,7 +1135,7 @@
   }
 
   .visual {
-    height: 180px;
+    height: 160px;
   }
   .topBadgeHide {
     display: none;
@@ -1132,6 +1143,15 @@
 
   .vault {
     transform: scale(0.74);
+  }
+
+  .vaultBody {
+    height: 80px;
+    width: 120px;
+  }
+  .vaultTop {
+    width: 80px;
+    height: 18px;
   }
 
   .ringArea {
@@ -1168,7 +1188,11 @@
     display: block;
   }
   .previewArrow {
-    top: 21%;
+    top: 20%;
+    left: 43%;
+  }
+  .previewCard {
+    padding: 8px 14px;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
