@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   padding: 50px 60px;
-  margin: 10px 0 60px 0;
+  margin: 10px 0 0px 0;
   background: url("https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1600")
     center/cover no-repeat;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
@@ -129,7 +129,7 @@
     padding: 25px 20px;
     border-radius: 16px;
     align-items: flex-start;
-    margin: 10px 0 60px 0;
+    margin: 10px 0 0px 0;
   }
 
   .content {
@@ -167,7 +167,7 @@
     min-height: 260px;
     padding: 35px 40px;
     border-radius: 20px;
-    margin: 10px 0 70px 0;
+    margin: 10px 0 0px 0;
   }
 
   .content h2 {

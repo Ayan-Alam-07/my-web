@@ -27,7 +27,7 @@ import SecFooter from "../CommonComponents/SecFooter";
 import MiningBanner from "../Mining/MiningBanner";
 import ContributionBanner from "../Contribution/ContributionBanner";
 import StakingBanner from "../Staking/StakingBanner";
-
+import HomeHeading from "../CommonComponents/HomeHeading";
 const HomeEarn = () => {
   const navigate = useNavigate();
 
@@ -64,438 +64,241 @@ const HomeEarn = () => {
         <div className="mt-5 pt-2">
           <ReferralBanner />
         </div>
+
         {/* Rewards Sections */}
-        <h3 className={`pb-2 ${style.HomeEarnpara}`}>Features:</h3>
-        <RewardSections />
-        <div className="row justify-content-center mt-4">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Daily Bonus : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Don't miss your
-              daily bonus—earn extra VEs and valuable rewards each day.
-            </p>
-          </div>
+        <div className="mb-3">
+          <h3 className={`pb-1 ${style.HomeEarnpara}`}>Features:</h3>
+          <RewardSections />
         </div>
-        <div className="row justify-content-center mt-2 mb-3 pb-1 px-2">
-          <div className="col-12 col-md-12 p-0">
-            <DailyBonusBanner />
-          </div>
-        </div>
+
+        {/* daily bonus */}
+        <HomeHeading title={"Daily Bonus"}>
+          <DailyBonusBanner />
+        </HomeHeading>
+
         {/* Tap and Earn */}
-        <div className="row justify-content-center">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Tap & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
+        <HomeHeading title={"Tap & Earn"}>
+          <div className="row justify-content-between px-2 mx-md-2 mx-lg-3">
+            <div className="col-12 col-md-12 col-lg-5 p-0">
+              <TapEarnBanner />
             </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Tap repeatedly to
-              earn instant VEs, Gift cards and rewards
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-between mt-2 mb-4 pb-3 px-2 mx-md-2 mx-lg-3">
-          <div className="col-12 col-md-12 col-lg-5 p-0">
-            <TapEarnBanner />
-          </div>
 
-          <div className="col-12 col-md-12 col-lg-5 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
-            <TapToken />
-          </div>
-        </div>
-        {/* mining */}
-        <div className="row justify-content-center pt-2 mb-1">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Mine & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
+            <div className="col-12 col-md-12 col-lg-5 p-0 mt-4 pt-2 pt-md-3 mt-lg-0 pt-lg-0">
+              <TapToken />
             </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span>Mine VEs
-              effortlessly and redeem them for gift cards, rewards, and special
-              offers.
-            </p>
           </div>
-        </div>
-        <div className="mt-2  mb-4 pb-4">
+        </HomeHeading>
+
+        {/* mining */}
+        <HomeHeading title={"Mine & Earn"}>
           <MiningBanner />
-        </div>
+        </HomeHeading>
 
-        {/* mining */}
-        <div className="row justify-content-center pt-2 mb-1">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Stake & Earn : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span>Mine VEs
-              effortlessly and redeem them for gift cards, rewards, and special
-              offers.
-            </p>
-          </div>
-        </div>
-        <div className="mt-2  mb-4 pb-4">
+        {/* staking */}
+        <HomeHeading title={"Stake & Earn"}>
           <StakingBanner />
-        </div>
+        </HomeHeading>
 
         {/* contribution section */}
-        <div className="row justify-content-center pt-2 mb-1">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Contribution : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span>Contribute daily by
-              claiming 1 Sync. Gather 30 Syncs and get rewarded with ₹10.
-            </p>
-          </div>
-        </div>
-        <div className="mt-2  mb-4 pb-4">
+        <HomeHeading title={"Contribution"}>
           <ContributionBanner />
-        </div>
+        </HomeHeading>
 
         {/* bonus section */}
-        <div className="row justify-content-center">
-          <div className="col-12">
-            <div className="mt-2">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Bonus VEs : <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Complete Tasks and
-              Get Bonus Rewards.{" "}
-              <span className="d-none d-md-inline-block">
-                Trusted Globally for Earning Online.
-              </span>
-            </p>
-          </div>
-        </div>
-        <BonusBanner />
-        <div className="row ">
-          <div className="col-12">
-            <div className="mt-5">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Do Tasks & Get Paid :{" "}
-                <span className={style.homeEarnTaskUnd}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd}`}
-                  style={{ width: "42px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Complete Task &
-              Earn Money
-              <span className="d-none d-md-inline-block">
-                , Simple Tasks for Instant Pay.
-              </span>
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-between align-items-stretch mt-2 mt-lg-3 pb-3 pb-lg-2 mx-md-2 mx-lg-3">
-          {/* CAPTCHA */}
-          <div className="col-12 col-md-12 col-lg-5 mt-2 mt-lg-0 mx-1 mx-md-0">
-            <div
-              className={style.taskCard}
-              onClick={() => navigate("/captcha-tasks")}
-            >
-              <div className={`${style.taskCardIcon} ${style.captchaIcon}`}>
-                <FaKeyboard />
-              </div>
+        <HomeHeading title={"Bonus VEs"}>
+          <BonusBanner />
+        </HomeHeading>
 
-              <h5 className={style.taskCardTitle}>Captcha Tasks</h5>
-
-              <p className={style.taskCardDesc}>
-                Solve simple captchas and earn Gems rewards instantly.
-              </p>
-
-              <div className={`${style.taskCardAction} ${style.captchaAction}`}>
-                Start Task
-                <FaArrowRight className={style.taskCardArrow} />
-              </div>
-            </div>
-          </div>
-
-          {/* EXCHANGE */}
-          <div className="col-12 col-md-12 col-lg-5 pt-2 mt-4 mt-lg-0 pt-lg-0 mx-1 mx-md-0">
-            <div
-              className={style.taskCard}
-              onClick={() => navigate("/exchange-center")}
-            >
-              <div className={`${style.taskCardIcon} ${style.exchangeIcon}`}>
-                <FaExchangeAlt />
-              </div>
-
-              <h5 className={style.taskCardTitle}>Exchange Center</h5>
-
-              <p className={style.taskCardDesc}>
-                Convert gems into VEs to redeem rewards and gift cards.
-              </p>
-
+        {/* task */}
+        <HomeHeading title={"Do Tasks & Get Paid"}>
+          <div className="row justify-content-between align-items-stretch mt-2 mt-lg-3 mx-md-2 mx-lg-3">
+            {/* CAPTCHA */}
+            <div className="col-12 col-md-12 col-lg-5 mt-2 mt-lg-0 mx-1 mx-md-0">
               <div
-                className={`${style.taskCardAction} ${style.exchangeAction}`}
+                className={style.taskCard}
+                onClick={() => navigate("/captcha-tasks")}
               >
-                Open Center
-                <FaArrowRight className={style.taskCardArrow} />
+                <div className={`${style.taskCardIcon} ${style.captchaIcon}`}>
+                  <FaKeyboard />
+                </div>
+
+                <h5 className={style.taskCardTitle}>Captcha Tasks</h5>
+
+                <p className={style.taskCardDesc}>
+                  Solve simple captchas and earn Gems rewards instantly.
+                </p>
+
+                <div
+                  className={`${style.taskCardAction} ${style.captchaAction}`}
+                >
+                  Start Task
+                  <FaArrowRight className={style.taskCardArrow} />
+                </div>
+              </div>
+            </div>
+
+            {/* EXCHANGE */}
+            <div className="col-12 col-md-12 col-lg-5 pt-2 mt-4 mt-lg-0 pt-lg-0 mx-1 mx-md-0">
+              <div
+                className={style.taskCard}
+                onClick={() => navigate("/exchange-center")}
+              >
+                <div className={`${style.taskCardIcon} ${style.exchangeIcon}`}>
+                  <FaExchangeAlt />
+                </div>
+
+                <h5 className={style.taskCardTitle}>Exchange Center</h5>
+
+                <p className={style.taskCardDesc}>
+                  Convert gems into VEs to redeem rewards and gift cards.
+                </p>
+
+                <div
+                  className={`${style.taskCardAction} ${style.exchangeAction}`}
+                >
+                  Open Center
+                  <FaArrowRight className={style.taskCardArrow} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </HomeHeading>
+
         {/* watch ad */}
-        <div className="row ">
-          <div className="col-12">
-            <div className="mt-5">
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Watch ADs & Earn :
-                <span className={style.homeEarnTaskUnd2}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd2}`}
-                  style={{ width: "55px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Watch Ads & Earn
-              Real Cash with Instant Withdrawal.
-            </p>
-          </div>
-        </div>
-        <WatchAdBanner />
+        <HomeHeading title={"Watch ADs & Earn"}>
+          <WatchAdBanner />
+        </HomeHeading>
+
         {/* leaderboard  */}
-        <div className="row mt-0 mb-lg-2">
-          <div className="col-12">
-            <div>
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Leaderboard :<span className={style.homeEarnTaskUnd3}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
-                  style={{ width: "50px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Participate in
-              leaderboard and get rewarded even when you are offline
-            </p>
-          </div>
-        </div>
-        <div className="mt-1 pt-1 mb-5 pb-3 mb-lg-4 mx-md-2 mx-lg-3">
+        <HomeHeading title={"Leaderboard"}>
           <LeaderboardBanner />
-        </div>
+        </HomeHeading>
+
         {/* reffer section */}
-        <div className="row  mt-3 mb-lg-2">
-          <div className="col-12">
-            <div>
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Refer & Earn :<span className={style.homeEarnTaskUnd3}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
-                  style={{ width: "50px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Invite your friends
-              & Earn Money.
-            </p>
-          </div>
-        </div>
-        <div className="mx-md-2 mx-lg-3">
+        <HomeHeading title={"Refer & Earn"}>
           <ReferralEntryCard />
-        </div>
+        </HomeHeading>
+
         {/* giveaway section */}
-        <div className="row  mb-lg-2">
-          <div className="col-12">
-            <div>
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Giveaway Code :<span className={style.homeEarnTaskUnd3}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
-                  style={{ width: "50px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Enter giveaway code
-              and earn cash.
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-around mb-3 mt-1 ">
-          <div className="col-12 col-md-11 mb-3 pb-2 p-0">
-            <div
-              className={style.rewardGiveawayCard}
-              onClick={() => navigate("/giveaway-code")}
-            >
-              {/* background image */}
-              <img
-                loading="lazy"
-                src={giveawayBanner}
-                className={style.rewardGiveawayBg}
-                alt="Exclusive giveaway section where users can earn exciting rewards"
-              />
-
-              {/* sparkle particles */}
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-              <span className={style.rewardSparkle}></span>
-
-              {/* glass overlay content */}
-              <div className={style.rewardGiveawayContent}>
-                <div className={style.rewardIconBox}>
-                  <FaGift />
-                </div>
-
-                <div className={style.rewardTextArea}>
-                  <h4 className={style.rewardTitle}>
-                    Exclusive Giveaway Rewards
-                  </h4>
-
-                  <p className={style.rewardDesc}>
-                    Enter special giveaway codes and unlock exciting VEs rewards
-                    instantly.
-                  </p>
-
-                  <div className={style.rewardCTA}>
-                    Enter Giveaway
-                    <RewardArrow />
-                  </div>
-                </div>
-
-                <RiHandCoinFill
-                  className={`d-none d-md-inline-block ${style.rewardClaimIcon}`}
+        <HomeHeading title={"Giveaway Code"}>
+          <div className="row justify-content-around mt-1 ">
+            <div className="col-12 col-md-11 mb-3 pb-2 p-0">
+              <div
+                className={style.rewardGiveawayCard}
+                onClick={() => navigate("/giveaway-code")}
+              >
+                {/* background image */}
+                <img
+                  loading="lazy"
+                  src={giveawayBanner}
+                  className={style.rewardGiveawayBg}
+                  alt="Exclusive giveaway section where users can earn exciting rewards"
                 />
+
+                {/* sparkle particles */}
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+                <span className={style.rewardSparkle}></span>
+
+                {/* glass overlay content */}
+                <div className={style.rewardGiveawayContent}>
+                  <div className={style.rewardIconBox}>
+                    <FaGift />
+                  </div>
+
+                  <div className={style.rewardTextArea}>
+                    <h4 className={style.rewardTitle}>
+                      Exclusive Giveaway Rewards
+                    </h4>
+
+                    <p className={style.rewardDesc}>
+                      Enter special giveaway codes and unlock exciting VEs
+                      rewards instantly.
+                    </p>
+
+                    <div className={style.rewardCTA}>
+                      Enter Giveaway
+                      <RewardArrow />
+                    </div>
+                  </div>
+
+                  <RiHandCoinFill
+                    className={`d-none d-md-inline-block ${style.rewardClaimIcon}`}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </HomeHeading>
+
         {/* Quick Links */}
         <p className={`pt-2 mb-0 ${style.HomeEarnpara}`}> Upcoming Features:</p>
         <div className="">
           <QuickLinks />
         </div>
+
         {/* customer support */}
-        <div className="row mb-1">
-          <div className="col-12 mt-3 mb-2">
-            <div>
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Contact Us: <span className={style.homeEarnTaskUnd3}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
-                  style={{ width: "50px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Reach us to
-              encounter any of your issues.
-            </p>
-          </div>
-        </div>
-        <div className="mx-md-2 mx-lg-3">
+        <HomeHeading title={"Contact Us"}>
           <SupportBanner />
-        </div>
+        </HomeHeading>
+
         {/* follow & Earn */}
-        <div className="row mt-4 pt-3">
-          <div className="col-12 mt-3">
-            <div>
-              <p className={`m-0 ${style.HomeEarnpara}`}>
-                Follow & Earn :<span className={style.homeEarnTaskUnd3}></span>{" "}
-                <span
-                  className={`d-block mt-1 ${style.homeEarnTaskUnd3}`}
-                  style={{ width: "50px" }}
-                ></span>
-              </p>
-            </div>
-            <p className={`text-white mt-2 fw-medium ${style.HomeEarnDesc}`}>
-              <span className="text-danger fw-bold">*</span> Follow Us In Social
-              Media & Earn Real Money.
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-around mx-sm-3 mx-lg-0">
-          <div className="col-12 col-lg-12 mx-lg-3 ps-lg-3 pe-lg-5 px-0 mt-3 pt-1 mb-4 px-1 px-md-0">
-            {follows.map((follow, idx) => (
-              <div key={idx} className={style.socialTaskCard}>
-                {/* LEFT SIDE */}
-                <div className={style.socialTaskLeft}>
-                  <div
-                    className={style.socialLogoBox}
+        <HomeHeading title={"Follow & Earn"}>
+          <div className="row justify-content-around mx-sm-3 mx-lg-0">
+            <div className="col-12 col-lg-12 mx-lg-3 ps-lg-3 pe-lg-5 px-0 mt-1 pt-1 px-1 px-md-0">
+              {follows.map((follow, idx) => (
+                <div key={idx} className={style.socialTaskCard}>
+                  {/* LEFT SIDE */}
+                  <div className={style.socialTaskLeft}>
+                    <div
+                      className={style.socialLogoBox}
+                      onClick={() =>
+                        window.open(
+                          follow.link,
+                          "_blank",
+                          "noopener,noreferrer",
+                        )
+                      }
+                    >
+                      <img
+                        loading="lazy"
+                        src={follow.logo}
+                        alt={follow.altKey}
+                        className={style.socialLogoImg}
+                      />
+                    </div>
+                    <div className={style.socialTaskInfo}>
+                      <p className={style.socialTaskTitle}>{follow.name}</p>
+                      <p className={style.socialTaskReward}>
+                        Earn <span>50 VEs</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CTA BUTTON */}
+                  <button
+                    className={style.socialFollowBtn}
                     onClick={() =>
                       window.open(follow.link, "_blank", "noopener,noreferrer")
                     }
                   >
-                    <img
-                      loading="lazy"
-                      src={follow.logo}
-                      alt={follow.altKey}
-                      className={style.socialLogoImg}
-                    />
-                  </div>
-                  <div className={style.socialTaskInfo}>
-                    <p className={style.socialTaskTitle}>{follow.name}</p>
-                    <p className={style.socialTaskReward}>
-                      Earn <span>50 VEs</span>
-                    </p>
-                  </div>
+                    Follow
+                  </button>
                 </div>
-
-                {/* CTA BUTTON */}
-                <button
-                  className={style.socialFollowBtn}
-                  onClick={() =>
-                    window.open(follow.link, "_blank", "noopener,noreferrer")
-                  }
-                >
-                  Follow
-                </button>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </HomeHeading>
+
+        {/* home footer */}
         <SecFooter
           mt={0}
           mb={30}

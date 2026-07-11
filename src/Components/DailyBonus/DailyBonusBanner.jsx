@@ -84,7 +84,7 @@ export default function DailyBonusBanner() {
 
   return (
     <section
-      className={`mx-md-2 mx-lg-3 mb-3 ${styles.banner}`}
+      className={`mx-md-2 mx-lg-3 ${styles.banner}`}
       aria-label="Daily claim bonus banner"
       onClick={goToBonus}
     >

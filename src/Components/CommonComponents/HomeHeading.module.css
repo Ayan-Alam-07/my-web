@@ -1,0 +1,32 @@
+.HomeEarnpara {
+  color: #fff;
+  font-size: 20px;
+  font-family: "nunito";
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 17px 0;
+}
+
+.homeEarnTaskUnd {
+  display: block;
+  height: 5px;
+  width: 84px;
+  border-radius: 5px;
+  background-color: #ffd700;
+}
+
+@media (min-width: 575px) {
+  .HomeEarnpara {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .HomeEarnpara {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1301px) {
+  .HomeEarnpara {
+    font-size: 23px;
+  }
+}
