@@ -36,7 +36,7 @@ export default function BalanceCard({
           </div>
         </div>
 
-        <div className="text-center mb-5 mb-sm-5 mb-lg-4 ">
+        <div className="text-center mb-4 pb-3 pb-sm-0 mb-sm-5 mb-lg-4 ">
           {/* Label */}
 
           <span className={styles.label}>Current Stake Balance</span>

@@ -405,6 +405,10 @@
     grid-template-columns: 1fr;
   }
 
+  .statCard {
+    padding: 16px;
+  }
+
   .statValue,
   .earningValue {
     font-size: 18px;
