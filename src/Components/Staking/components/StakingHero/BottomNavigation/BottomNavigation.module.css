@@ -1,0 +1,164 @@
+/* ===========================
+   STAKING BOTTOM NAVIGATION
+=========================== */
+
+.nav {
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 0 26px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(21, 31, 49, 0.96),
+    rgba(18, 27, 44, 0.99)
+  );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  overflow: visible;
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+
+.link {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  text-decoration: none;
+
+  color: #99abc2;
+
+  transition: all 0.3s ease;
+}
+
+.link svg {
+  font-size: 21px;
+  transition: 0.3s;
+}
+
+.link span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.link:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Active Route */
+
+.link:global(.active) {
+  color: #60a5fa;
+}
+
+.link:global(.active) svg {
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   CENTER BUTTON
+=========================== */
+
+.center {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform: translate(-50%, -45%);
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: white;
+
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+
+  border: 6px solid #141d29;
+
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.15);
+
+  transition: all 0.35s ease;
+
+  z-index: 5;
+}
+
+.center svg {
+  font-size: 28px;
+}
+
+.center:hover {
+  transform: translate(-50%, -50%) scale(1.07);
+
+  box-shadow: 0 22px 50px rgba(37, 99, 235, 0.45);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 991px) {
+  .nav {
+    height: 88px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav {
+    height: 82px;
+    padding: 0;
+  }
+
+  .center {
+    width: 60px;
+    height: 60px;
+  }
+
+  .center svg {
+    font-size: 24px;
+  }
+
+  .link svg {
+    font-size: 18px;
+  }
+
+  .link span {
+    font-size: 10px;
+  }
+}

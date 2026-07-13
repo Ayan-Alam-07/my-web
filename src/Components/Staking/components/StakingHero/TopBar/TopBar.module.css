@@ -1,0 +1,228 @@
+.topBar {
+  display: flex;
+  padding: 0 32px;
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.iconButton {
+  position: relative;
+
+  width: 54px;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #f8fafc;
+
+  font-size: 19px;
+
+  transition: 0.35s;
+
+  backdrop-filter: blur(18px);
+}
+
+.iconButton:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(59, 130, 246, 0.18);
+
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.badge {
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  color: white;
+}
+
+.mission {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 18px;
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.12),
+    rgba(59, 130, 246, 0.06)
+  );
+
+  border: 1px solid rgba(59, 130, 246, 0.12);
+
+  backdrop-filter: blur(18px);
+
+  transition: 0.35s;
+}
+
+.mission:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(96, 165, 250, 0.28);
+
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18);
+}
+
+.missionIcon {
+  width: 44px;
+
+  height: 44px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+  color: white;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.title {
+  font-size: 15px;
+
+  font-weight: 800;
+
+  color: white;
+}
+
+.text small {
+  margin-top: 3px;
+
+  font-size: 12px;
+
+  color: #94a3b8;
+}
+
+.time {
+  margin-left: auto;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(16, 185, 129, 0.12);
+
+  border: 1px solid rgba(16, 185, 129, 0.18);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  color: #34d399;
+}
+
+@media (max-width: 991px) {
+  .topBar {
+    padding: 0 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .topBar {
+    gap: 12px;
+    padding: 0 9px;
+  }
+
+  .iconButton {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 17px;
+  }
+
+  .mission {
+    padding: 12px 14px;
+  }
+
+  .missionIcon {
+    width: 38px;
+
+    height: 38px;
+
+    font-size: 15px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .text small {
+    font-size: 11px;
+  }
+
+  .time {
+    display: none;
+  }
+}

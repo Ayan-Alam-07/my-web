@@ -82,6 +82,7 @@ import BotEmulatorAutoclickerRulesPage from "./RewardsPolicies/BotEmulatorAutocl
 import WeeklyLeaderboardEntry from "./RewardsPolicies/JoinMembershipPolicy/WeeklyLeaderboardEntry";
 import UserProfile from "./Components/Profile/UserProfile";
 import ContributionVault from "./Components/Contribution/pages/ContributionVault";
+import StakingPage from "./Components/Staking/page/StakingPage";
 
 const App = () => {
   const { isLoading } = useList();
@@ -94,7 +95,6 @@ const App = () => {
       <Routes>
         {/* always opens wheather its public or private */}
         <Route path="/" element={<LandingPage />}></Route>
-
         {/* Legal Docs */}
         <Route
           path="/customer-service"
@@ -126,40 +126,30 @@ const App = () => {
           path="/contact-compliance"
           element={<ContactCompliancePage />}
         ></Route>
-
         <Route
           path="/earnings-disclaimer"
           element={<EarningsDisclaimerPage />}
         ></Route>
-
         <Route path="/community-rules" element={<CommunityRulesPage />}></Route>
-
         <Route
           path="/anti-fraud-policy"
           element={<AntiFraudPolicyPage />}
         ></Route>
-
         <Route
           path="/refund-cancellation-policy"
           element={<RefundCancellationPage />}
         ></Route>
-
         <Route path="/disclaimer" element={<DisclaimerPage />}></Route>
-
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />}></Route>
-
         <Route
           path="/terms-and-conditions"
           element={<TermsConditionsPage />}
         ></Route>
-
         <Route
           path="/dmca-copyright-policy"
           element={<DmcaCopyrightPolicyPage />}
         ></Route>
-
         <Route path="/legal-notice" element={<LegalNoticePage />}></Route>
-
         {/* Rewards Policies */}
         <Route
           path="/help-center/earning/watch-ads"
@@ -169,151 +159,120 @@ const App = () => {
           path="/help-center/earning/daily-rewards"
           element={<DailyCheckInPage />}
         ></Route>
-
         <Route path="/help-center" element={<RewardPolicy />}></Route>
-
         <Route
           path="/help-center/earning/mining-rewards"
           element={<MiningPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/spin-the-wheel"
           element={<SpinTheWheelPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/follow-and-earn"
           element={<SocialFollowRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/leaderboard-rewards"
           element={<LeaderboardRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/tap-and-earn"
           element={<TapAndEarnPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/solve-captcha"
           element={<SolveCaptchaPage />}
         ></Route>
-
         <Route
           path="/help-center/safety/referral-rewards"
           element={<ReferAndEarnPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/level-system"
           element={<LevelSystemPage />}
         ></Route>
-
         <Route
           path="/help-center/wallet/gems-exchange-center"
           element={<GemsExchangeCenterPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/watch-ad-bonuses"
           element={<WatchAdBonusesPage />}
         ></Route>
-
         <Route
           path="/help-center/safety/promo-codes"
           element={<PromoCodesPage />}
         ></Route>
-
         <Route
           path="/help-center/future/team-battle"
           element={<TeamBattlePage />}
         ></Route>
-
         <Route
           path="/help-center/future/referral-milestones"
           element={<ReferralMilestonesPage />}
         ></Route>
-
         <Route
           path="/help-center/future/lucky-draw"
           element={<LuckyDrawPage />}
         ></Route>
-
         <Route
           path="/help-center/future/collect-cards"
           element={<CollectCardsPage />}
         ></Route>
-
         <Route
           path="/help-center/future/surprise-rewards"
           element={<SurpriseRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/future/mystery-rewards"
           element={<MysteryRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/getting-started/what-is-veloop-rewards"
           element={<WhatIsVELOOPRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/getting-started/platform-currencies"
           element={<PlatformCurrenciesPage />}
         ></Route>
-
         <Route
           path="/help-center/getting-started/weekly-leaderboard-entry"
           element={<WeeklyLeaderboardEntry />}
         ></Route>
-
         <Route
           path="/help-center/earning/streak-rewards"
           element={<StreakRewardsPage />}
         ></Route>
-
         <Route
           path="/help-center/earning/missions-and-badges"
           element={<MissionsAndBadgesPage />}
         ></Route>
-
         <Route
           path="/help-center/wallet/wallet-overview"
           element={<WalletOverviewPage />}
         ></Route>
-
         <Route
           path="/help-center/wallet/swap-center"
           element={<SwapCenterPage />}
         ></Route>
-
         <Route
           path="/help-center/withdrawals/how-withdrawals-work"
           element={<HowWithdrawalsWorkPage />}
         ></Route>
-
         <Route
           path="/help-center/withdrawals/reward-verification"
           element={<RewardVerificationPage />}
         ></Route>
-
         <Route
           path="/help-center/safety/multiple-accounts-and-vpn"
           element={<MultipleAccountsAndVPNPage />}
         ></Route>
-
         <Route
           path="/help-center/safety/bot-emulator-autoclicker-rules"
           element={<BotEmulatorAutoclickerRulesPage />}
         ></Route>
-
         {/* <Route path="/help-center" element={<RewardPolicy />}></Route> */}
-
         {/* public routes no login required */}
         <Route
           path="/login"
@@ -357,7 +316,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/user-profile"
           element={
@@ -366,7 +324,6 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/daily-bonus"
           element={
@@ -399,12 +356,19 @@ const App = () => {
             </ProtectedRoute>
           }
         ></Route>
-
         <Route
           path="/contribution-vault"
           element={
             <ProtectedRoute>
               <ContributionVault />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/staking"
+          element={
+            <ProtectedRoute>
+              <StakingPage />
             </ProtectedRoute>
           }
         ></Route>
