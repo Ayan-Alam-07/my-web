@@ -1,4 +1,5 @@
 import styles from "./ActionButtons.module.css";
+import { AiOutlineSwap } from "react-icons/ai";
 
 import {
   FaPlus,
@@ -10,51 +11,52 @@ import {
 const actions = [
   {
     title: "Invest",
-    subtitle: "Create Stake",
+    subtitle: "Grow Your VEs",
     icon: FaPlus,
-    color: "#2563EB",
-    action: "create",
+    className: styles.invest,
   },
   {
     title: "Swap",
-    subtitle: "Stake ↔ Wallet",
+    subtitle: "SVEs ⇄ VEs",
     icon: FaArrowRightArrowLeft,
-    color: "#8B5CF6",
-    action: "swap",
+    className: styles.swap,
   },
   {
-    title: "Activate",
-    subtitle: "Today's Mission",
+    title: "Revive",
+    subtitle: "Daily Stake",
     icon: FaBolt,
-    color: "#10B981",
-    action: "activate",
+    className: styles.revive,
   },
   {
     title: "History",
-    subtitle: "Transactions",
+    subtitle: "Portfolio",
     icon: FaClockRotateLeft,
-    color: "#F59E0B",
-    action: "history",
+    className: styles.history,
   },
 ];
 
 export default function ActionButtons() {
   return (
     <section className={styles.actions}>
-      {actions.map((item) => (
-        <button key={item.action} className={styles.card}>
-          <div
-            className={styles.icon}
-            style={{
-              background: `linear-gradient(135deg, ${item.color}, ${item.color}CC)`,
-            }}
-          >
-            <item.icon />
+      {actions.map((action, idx) => (
+        <button key={action.title} className={styles.card}>
+          <div className={`${styles.iconWrapper} ${action.className}`}>
+            <action.icon />
           </div>
 
-          <span className={styles.title}>{item.title}</span>
+          <div className="text-center text-sm-start">
+            <h4>{action.title}</h4>
 
-          <small className={styles.subtitle}>{item.subtitle}</small>
+            {actions.length - 3 === idx ? (
+              <span>
+                SVEs <AiOutlineSwap /> VEs
+              </span>
+            ) : (
+              <span>{action.subtitle}</span>
+            )}
+          </div>
+
+          <div className={styles.hoverGlow}></div>
         </button>
       ))}
     </section>

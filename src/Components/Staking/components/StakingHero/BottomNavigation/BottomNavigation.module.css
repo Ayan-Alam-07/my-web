@@ -19,8 +19,8 @@
 
   background: linear-gradient(
     180deg,
-    rgba(21, 31, 49, 0.96),
-    rgba(18, 27, 44, 0.99)
+    rgba(24, 35, 56, 0.96),
+    rgba(22, 33, 53, 0.99)
   );
 
   backdrop-filter: blur(24px);
@@ -47,7 +47,7 @@
 
   text-decoration: none;
 
-  color: #99abc2;
+  color: #a0b2c9;
 
   transition: all 0.3s ease;
 }
@@ -58,7 +58,7 @@
 }
 
 .link span {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2px;
 }
@@ -159,6 +159,6 @@
   }
 
   .link span {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
