@@ -17,24 +17,28 @@ export const heroMockData = {
 
   hourlyHistory: [
     {
-      from: "10:00",
-      to: "11:00",
-      earned: 6.42,
-    },
-    {
-      from: "11:00",
-      to: "12:00",
-      earned: 6.58,
+      from: "13:00",
+      to: "14:00",
+      totalThatTime: 13000,
+      earned: 6.73,
     },
     {
       from: "12:00",
       to: "13:00",
+      totalThatTime: 12000,
       earned: 6.81,
     },
     {
-      from: "13:00",
-      to: "14:00",
-      earned: 6.73,
+      from: "11:00",
+      to: "12:00",
+      totalThatTime: 11950,
+      earned: 6.58,
+    },
+    {
+      from: "10:00",
+      to: "11:00",
+      totalThatTime: 9560,
+      earned: 6.42,
     },
   ],
 };

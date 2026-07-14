@@ -1,9 +1,10 @@
 import styles from "./DailyEarningCard.module.css";
-
+import css from "../ActionButtons/ActionButtons.module.css";
 import { FaArrowTrendUp, FaClock } from "react-icons/fa6";
 import { SiBoosty } from "react-icons/si";
 import { IoDiamond } from "react-icons/io5";
 import { MdOutlineFlashOn } from "react-icons/md";
+import { BiSolidCoinStack } from "react-icons/bi";
 
 import AnimatedCounter from "../../../../CommonComponents/AnimatedCounter";
 
@@ -50,13 +51,11 @@ export default function DailyEarningCard({ todayProfit, history }) {
               <MdOutlineFlashOn /> Boost Active Earnings
             </span>
 
-            <small>
-              Watch ads to temporarily increase your staking returns.
-            </small>
+            <small>Boost to temporarily increase your staking returns.</small>
           </div>
 
           <button className={styles.boostBtn}>
-            <SiBoosty /> Boost your Stake
+            <SiBoosty size={22} /> Boost your Stake
           </button>
 
           <span className={styles.boostHint}>
@@ -67,27 +66,35 @@ export default function DailyEarningCard({ todayProfit, history }) {
       </div>
 
       <div className={styles.right}>
-        <div className={styles.rightHeader}>
-          <FaClock />
-          Hourly Earnings
-        </div>
-
+        <h3 className={css.actionHds}>Rewards Activity:</h3>
         {history.map((item) => (
           <div key={item.from} className={styles.historyItem}>
-            <span>
-              {item.from} - {item.to}
-            </span>
-
-            <div className={styles.progressTrack}>
-              <div
-                className={styles.progressFill}
-                style={{
-                  width: `${(item.earned / 7) * 100}%`,
-                }}
-              />
+            <div className={styles.iconWrapper}>
+              <BiSolidCoinStack />
             </div>
+            <div
+              className="d-flex justify-content-between"
+              style={{ width: "100%" }}
+            >
+              <div className={styles.hisLeft}>
+                <span className={styles.defaultTitle}>
+                  Staking Rewards Earned
+                </span>
+                <span className={styles.mobileTitle}>
+                  <span className={styles.extraShort}>Reward</span> Earned
+                </span>
+                <strong>
+                  {item.from} - {item.to}
+                </strong>
+              </div>
 
-            <strong>+{item.earned.toFixed(2)}</strong>
+              <div className={styles.hisRight}>
+                <span>
+                  {item.totalThatTime} <span className={styles.unit}>VEs</span>
+                </span>
+                <strong>+{item.earned.toFixed(2)} VEs</strong>
+              </div>
+            </div>
           </div>
         ))}
       </div>
