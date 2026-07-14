@@ -397,10 +397,6 @@
     gap: 12px;
   }
 
-  .liveRate {
-    font-size: 12px;
-  }
-
   .stats {
     grid-template-columns: 1fr;
   }

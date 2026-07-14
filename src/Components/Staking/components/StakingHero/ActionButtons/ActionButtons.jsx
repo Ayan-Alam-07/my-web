@@ -37,28 +37,31 @@ const actions = [
 
 export default function ActionButtons() {
   return (
-    <section className={styles.actions}>
-      {actions.map((action, idx) => (
-        <button key={action.title} className={styles.card}>
-          <div className={`${styles.iconWrapper} ${action.className}`}>
-            <action.icon />
-          </div>
+    <section>
+      <h3 className={styles.actionHds}>Actions:</h3>
+      <div className={styles.actions}>
+        {actions.map((action, idx) => (
+          <button key={action.title} className={styles.card}>
+            <div className={`${styles.iconWrapper} ${action.className}`}>
+              <action.icon />
+            </div>
 
-          <div className="text-center text-sm-start">
-            <h4>{action.title}</h4>
+            <div className="text-center text-sm-start">
+              <h4>{action.title}</h4>
 
-            {actions.length - 3 === idx ? (
-              <span>
-                SVEs <AiOutlineSwap /> VEs
-              </span>
-            ) : (
-              <span>{action.subtitle}</span>
-            )}
-          </div>
+              {actions.length - 3 === idx ? (
+                <span>
+                  SVEs <AiOutlineSwap /> VEs
+                </span>
+              ) : (
+                <span>{action.subtitle}</span>
+              )}
+            </div>
 
-          <div className={styles.hoverGlow}></div>
-        </button>
-      ))}
+            <div className={styles.hoverGlow}></div>
+          </button>
+        ))}
+      </div>
     </section>
   );
 }
