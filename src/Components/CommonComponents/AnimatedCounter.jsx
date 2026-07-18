@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react";
 
 export default function AnimatedCounter({
-  value,
-  duration = 900,
-  formatter = (v) => Math.round(v),
+  value = 0,
+  duration = 1200,
+  formatter = (v) => Math.round(v).toLocaleString("en-IN"),
 }) {
-  const [displayValue, setDisplayValue] = useState(value);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let start = displayValue;
-    let end = value;
+    let start = 0;
 
-    let startTime = null;
+    const end = Number(value);
 
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp;
+    const incrementTime = 45;
 
-      const progress = Math.min((timestamp - startTime) / duration, 1);
+    const steps = duration / incrementTime;
 
-      const current = start + (end - start) * progress;
+    const stepValue = end / steps;
 
-      setDisplayValue(current);
+    const timer = setInterval(() => {
+      start += stepValue;
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(start);
       }
-    };
+    }, incrementTime);
 
-    requestAnimationFrame(animate);
-  }, [value]);
+    return () => clearInterval(timer);
+  }, [value, duration]);
 
-  return formatter(displayValue);
+  return formatter(count);
 }

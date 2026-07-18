@@ -83,6 +83,7 @@ import WeeklyLeaderboardEntry from "./RewardsPolicies/JoinMembershipPolicy/Weekl
 import UserProfile from "./Components/Profile/UserProfile";
 import ContributionVault from "./Components/Contribution/pages/ContributionVault";
 import StakingPage from "./Components/Staking/page/StakingPage";
+import Portfolio from "./Components/Staking/components/PortfolioOverview/Portfolio";
 
 const App = () => {
   const { isLoading } = useList();
@@ -369,6 +370,15 @@ const App = () => {
           element={
             <ProtectedRoute>
               <StakingPage />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/staking/portfolios"
+          element={
+            <ProtectedRoute>
+              <Portfolio />
             </ProtectedRoute>
           }
         ></Route>
