@@ -1,0 +1,121 @@
+.wrapper {
+  position: relative;
+  width: 250px;
+  /* width: 100%; */
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: #26335a;
+  opacity: 0.94;
+}
+
+.progress {
+  fill: none;
+  stroke: url(#portfolioGradient);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s ease;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.label {
+  font-size: 1.05rem;
+  color: #a4b2d1;
+  margin-bottom: 8px;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 3.4rem;
+  line-height: 1;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.days {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #43a0ff;
+}
+
+.progress {
+  animation: progressAnimation 1.5s ease forwards;
+}
+
+@keyframes progressAnimation {
+  from {
+    stroke-dashoffset: 692;
+  }
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.08),
+    transparent 72%
+  );
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 35px rgba(59, 130, 246, 0.04),
+    0 0 45px rgba(59, 130, 246, 0.08);
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    margin: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 220px;
+    height: 225px;
+  }
+
+  .content h2 {
+    font-size: 3.1rem;
+  }
+
+  .days {
+    font-size: 1.15rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .content h2 {
+    font-size: 3rem;
+  }
+}

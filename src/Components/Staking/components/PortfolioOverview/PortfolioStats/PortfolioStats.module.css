@@ -1,0 +1,296 @@
+.wrapper,
+.gMobWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gMobWrapper {
+  display: none;
+}
+
+.row,
+.gMobRow {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: 1fr 1.2fr 1fr;
+}
+
+.stat {
+  padding: 0px 22px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.stat:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.title {
+  font-size: 1rem;
+  color: #a2adc8;
+  letter-spacing: 0.4px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.value {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f8faff;
+}
+.investAmount {
+  font-size: 1.9rem;
+}
+.endDate {
+  font-size: 1.32rem;
+}
+
+.green {
+  color: #4ef27c;
+}
+
+.gold {
+  color: #ffd44a;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.horizontal {
+  width: 93%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
+}
+
+.valueRow {
+  display: flex;
+  align-items: center;
+  /* gap: 7px; */
+}
+
+.valueRow svg {
+  height: 20px;
+  width: 20px;
+}
+
+.dateConc {
+  justify-content: start;
+}
+
+@media (max-width: 1439px) {
+  .value {
+    font-size: 1.45rem;
+  }
+  .investAmount {
+    font-size: 1.78rem;
+  }
+  .endDate {
+    font-size: 1.23rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  /* .stat {
+    padding: 0px 18px;
+  } */
+  .value {
+    font-size: 1.34rem;
+  }
+  .investAmount {
+    font-size: 1.45rem;
+  }
+  .title {
+    font-size: 0.94rem;
+  }
+  .endDate {
+    font-size: 1.12rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .value {
+    font-size: 1.33rem;
+  }
+  .investAmount {
+    font-size: 1.37rem;
+  }
+  .endDate {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .value {
+    font-size: 1.39rem;
+  }
+  .endDate {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    display: none;
+  }
+  .gMobWrapper {
+    display: block;
+  }
+
+  .gMobRow {
+    grid-template-columns: 1fr 1.1fr;
+  }
+
+  .stat {
+    border: none !important;
+    padding: 0px 24px;
+  }
+  .statGMobBorder {
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .stat:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 670px) {
+  .value {
+    font-size: 1.4rem;
+  }
+  .investAmount {
+    font-size: 1.5rem;
+  }
+  .endDate {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .stat {
+    padding: 0 20px;
+  }
+  .value {
+    font-size: 1.35rem;
+  }
+  .investAmount {
+    font-size: 1.42rem;
+  }
+  .endDate {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .stat {
+    padding: 0 17px;
+  }
+}
+
+@media (max-width: 460px) {
+  .stat {
+    align-items: center;
+    justify-content: start;
+    padding: 14px 16px 0;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .gMobRow {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+  .value {
+    width: 100%;
+    display: flex;
+    letter-spacing: 0.5px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+  }
+  .unit {
+    margin: 7px 0 2px 0;
+    font-size: 0.95rem;
+    color: #e4e4e4;
+  }
+  .investAmount {
+    font-size: 1.3rem;
+  }
+  .endDate {
+    font-size: 1rem;
+  }
+  .valueRow svg {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+@media (max-width: 440px) {
+  .stat {
+    padding: 15px 15px 0;
+  }
+  .gMobRow {
+    grid-template-columns: 0.95fr 1.1fr;
+  }
+  .value {
+    font-size: 1.32rem;
+  }
+  .endDate {
+    font-size: 0.97rem;
+  }
+  .dateConc {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stat {
+    padding: 10px 14px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .stat {
+    padding: 10px 12px 0;
+  }
+  .title {
+    font-size: 3.7vw;
+  }
+  .value {
+    font-size: 1.2rem;
+  }
+  .investAmount {
+    font-size: 1.25rem;
+  }
+  .endDate {
+    font-size: 0.9rem;
+  }
+  .unit {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .title {
+    font-size: 3.4vw;
+  }
+  .stat {
+    padding: 10px 11px 0;
+  }
+  .value {
+    font-size: 1.1rem;
+  }
+  .investAmount {
+    font-size: 1.2rem;
+  }
+  .endDate {
+    font-size: 0.85rem;
+  }
+}

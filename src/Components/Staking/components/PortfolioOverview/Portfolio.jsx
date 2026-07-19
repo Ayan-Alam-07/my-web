@@ -3,6 +3,7 @@ import portfolioData from "./mock/portfolioMockData";
 
 import PortfolioHeader from "./PortfolioHeader/PortfolioHeader";
 import PortfolioOverview from "./PortfolioOverview/PortfolioOverview";
+import ActivePortfolio from "./ActivePortfolio/ActivePortfolio";
 
 console.log(portfolioData);
 
@@ -15,9 +16,9 @@ const Portfolio = () => {
 
           <PortfolioOverview overview={portfolioData.overview} />
 
-          {/* <ActivePortfolio portfolio={portfolioData.activePortfolio} />
+          <ActivePortfolio portfolio={portfolioData.activePortfolio} />
 
-      <UnlockPortfolio unlock={portfolioData.unlock} />
+          {/* <UnlockPortfolio unlock={portfolioData.unlock} />
 
       <Analytics analytics={portfolioData.analytics} /> */}
         </section>
