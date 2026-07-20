@@ -132,7 +132,7 @@
   }
 
   .edgeGlow {
-    display: none;
+    top: 50%;
   }
 }
 
