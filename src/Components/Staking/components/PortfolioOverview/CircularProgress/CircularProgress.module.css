@@ -42,7 +42,8 @@
 
 .content h2 {
   margin: 0;
-  font-size: 3.4rem;
+  font-size: 3.37rem;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
   line-height: 1;
   font-weight: 800;
   color: #ffffff;
@@ -102,7 +103,7 @@
   }
 
   .content h2 {
-    font-size: 3.1rem;
+    font-size: 3.07rem;
   }
 
   .days {
@@ -116,6 +117,6 @@
 
 @media (max-width: 420px) {
   .content h2 {
-    font-size: 3rem;
+    font-size: 2.97rem;
   }
 }

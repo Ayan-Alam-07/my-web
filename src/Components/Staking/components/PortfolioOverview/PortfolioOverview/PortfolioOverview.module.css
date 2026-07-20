@@ -1,23 +1,14 @@
 .card,
 .mobStats {
   width: 100%;
-
   display: grid;
-
   grid-template-columns: 1.55fr auto 1fr auto 1.1fr auto 1fr;
-
   align-items: center;
-
   background: linear-gradient(180deg, #1c2641, #131a31);
-
   border: 1px solid rgba(59, 130, 246, 0.25);
-
   border-radius: 30px;
-
   padding: 34px;
-
   position: relative;
-
   overflow: hidden;
   box-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
   transition: 0.35s;
@@ -25,17 +16,13 @@
 
 .card::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   background: radial-gradient(
     circle at top right,
     rgba(59, 130, 246, 0.12),
     transparent 60%
   );
-
   pointer-events: none;
 }
 
@@ -47,39 +34,29 @@
 
 .left {
   display: flex;
-
   flex-direction: column;
-
   gap: 16px;
 }
 
 .label {
   font-size: 0.9rem;
-
   font-weight: 700;
-
   letter-spacing: 1.2px;
-
   color: #d4d8e5;
 }
 
 .balanceRow {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
 }
 
 .balanceRow h2 {
   margin: 0;
-
   font-size: 2.3rem;
-
+  font-family: "poppins", Arial, Helvetica, sans-serif;
   font-weight: 800;
-
   color: white;
-
   line-height: 1;
 }
 
@@ -89,19 +66,12 @@
 
 .eye {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: none;
-
   border: none;
-
   cursor: pointer;
-
   color: #aeb8d3;
-
   transition: 0.25s;
 }
 
@@ -119,77 +89,53 @@
 
 .divider {
   width: 1px;
-
   height: 120px;
-
   background: rgba(255, 255, 255, 0.08);
 }
 
 .stat {
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   text-align: center;
-
   gap: 14px;
 }
 
 .icon {
   width: 72px;
-
   height: 72px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border: 1px solid;
 }
 
 .green {
   background: rgba(34, 197, 94, 0.08);
-
   border-color: rgba(34, 197, 94, 0.25);
-
   color: #4ade80;
-
   box-shadow: 0 0 25px rgba(34, 197, 94, 0.12);
 }
 
 .gold {
   background: rgba(250, 204, 21, 0.08);
-
   border-color: rgba(250, 204, 21, 0.25);
-
   color: #facc15;
-
   box-shadow: 0 0 25px rgba(250, 204, 21, 0.12);
 }
 
 .blue {
   background: rgba(59, 130, 246, 0.08);
-
   border-color: rgba(59, 130, 246, 0.25);
-
   color: #3b82f6;
-
   box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
 }
 
 .stat h3 {
   margin: 0;
-
   font-size: 2rem;
-
   font-weight: 800;
-
   color: white;
 }
 
